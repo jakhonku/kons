@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangiliklar | O'zbekiston Davlat Konservatoriyasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="inner-page">
+    <header class="main-header">
+        <div class="header-top">
+            <button class="menu-toggle" id="menu-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="7" x2="20" y2="7"></line>
+                    <line x1="4" y1="17" x2="20" y2="17"></line>
+                </svg>
+            </button>
+            <div class="header-logo">
+                <a href="index.html" class="logo-box">
+                    <img src="./Konservatoriya_logo_white-05.png" alt="O'zbekiston Davlat Konservatoriyasi Logotipi">
+                </a>
+            </div>
+            <div class="header-right">
+                <a href="taqvim.html" class="calendar-link">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                        <text x="12" y="18" text-anchor="middle" font-size="7" font-family="Inter" font-weight="900" fill="currentColor" stroke-width="0" id="current-day">15</text>
+                    </svg>
+                    <span>TADBIRLAR TAQVIMI</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-main">
+                <div class="sidebar-header">
+                    <h2>MENYU</h2>
+                    <button class="close-sidebar" id="close-sidebar">&times;</button>
+                </div>
+                <nav class="main-nav-links">
+                    <button class="nav-item" data-target="kons-links">Konservatoriya</button>
+                    <button class="nav-item" data-target="talaba-links">Talabalar uchun</button>
+                    <button class="nav-item" data-target="abit-links">Abituriyentlar uchun</button>
+                    <button class="nav-item" data-target="xalqaro-links">Xalqaro aloqalar</button>
+                    <button class="nav-item" data-target="axborot-links">Axborot xizmati</button>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="social-mini">
+                        <a href="#" aria-label="Telegram" class="social-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="social-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-secondary">
+                <div class="secondary-panel" id="kons-links">
+                    <h3>Konservatoriya</h3>
+                    <a href="tarix.html">Konservatoriya tarixi</a>
+                    <a href="tuzilma.html">Tuzilma</a>
+                    <a href="rahbariyat.html">Rahbariyat</a>
+                    <a href="hujjatlar.html">Me'yoriy hujjatlar</a>
+                    <a href="#">Online murojaat</a>
+                    <a href="#">Yashil universitet</a>
+                </div>
+                <div class="secondary-panel" id="talaba-links">
+                    <h3>Talabalar uchun</h3>
+                    <a href="#">Dars jadvallari</a>
+                    <a href="#">Grantlar</a>
+                    <a href="#">Kelajakka qadam</a>
+                    <a href="#">HEMIS-talaba</a>
+                    <a href="#">Online kutubxona</a>
+                    <a href="#">To'garaklar</a>
+                    <a href="#">O'quv rejalar</a>
+                    <a href="#">Talabalar turar joyi</a>
+                </div>
+                <div class="secondary-panel" id="abit-links">
+                    <h3>Abituriyentlar uchun</h3>
+                    <a href="#">Ta'lim yo'nalishlari</a>
+                    <a href="#">Qabul ta'lablari</a>
+                    <a href="#">Ta'lim dasturlari</a>
+                    <a href="#">Qabul kvotasi</a>
+                    <a href="#">Kasbiy va ijodiy imtihonlar</a>
+                </div>
+                <div class="secondary-panel" id="xalqaro-links">
+                    <h3>Xalqaro aloqalar</h3>
+                    <a href="#">Hamkor tashkilotlar</a>
+                    <a href="#">Xorijiy dasturlar</a>
+                    <a href="#">Xalqaro memorandumlar</a>
+                </div>
+                <div class="secondary-panel" id="axborot-links">
+                    <h3>Axborot xizmati</h3>
+                    <a href="yangiliklar.html">Yangiliklar</a>
+                    <a href="#">Videogalereya</a>
+                    <a href="taqvim.html">Kutilayotgan tadbirlar</a>
+                    <a href="#">Fotogalareya</a>
+                    <a href="#">Kontaktlar</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="content-wrapper">
+        <section class="page-hero">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+                <nav class="page-top-nav" style="display: flex; justify-content: space-between; align-items: center; padding-top: 40px; margin-bottom: 20px;">
+                    <ul class="breadcrumbs" style="display: flex; gap: 10px; list-style: none; font-size: 0.85rem;">
+                        <li><a href="index.html" style="color: var(--primary-blue); text-decoration: none;">Bosh sahifa</a></li>
+                        <li><a href="#" style="color: var(--primary-blue); text-decoration: none;">Axborot</a></li>
+                        <li style="color: var(--text-muted);">Yangiliklar</li>
+                    </ul>
+                    <a href="index.html" class="back-btn" style="display: flex; align-items: center; gap: 8px; color: var(--primary-blue); text-decoration: none; font-weight: 700; font-size: 0.8rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        ORQAGA QAYTISH
+                    </a>
+                </nav>
+                <div class="hero-text-wrap" style="padding-bottom: 40px;">
+                    <span class="section-tag">Axborot xizmati</span>
+                    <h1>So'nggi <span>Yangiliklar</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="news-feed" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                    <article class="news-card" style="background: white; border: 1px solid #eee; overflow: hidden; transition: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=2070" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px;">
+                            <span style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 700;">12 APREL, 2026</span>
+                            <h3 style="margin: 10px 0; color: var(--primary-blue);">Xalqaro Teatr Kuni munosabati bilan tantanali kecha</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="./Konservatoriya_logo_white-05.png" alt="Logo" class="footer-logo-img">
+                <p>O'zbekiston Davlat Konservatoriyasi - San'at cho'qqisiga birgalikda!</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Bog'lanish</h4>
+                    <p>Toshkent sh., Olmazor tumani, <br>Mustaqillik ko'chasi, 31-uy</p>
+                    <p>Tel: +998 71 234-56-78</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Ijtimoiy Tarmoqlar</h4>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></a>
+                        <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 O'zbekiston Davlat Konservatoriyasi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
