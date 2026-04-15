@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(npm run:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(claude:*)"
+    ]
+  }
+}
