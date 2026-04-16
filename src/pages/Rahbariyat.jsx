@@ -9,12 +9,12 @@ const BREADCRUMBS = [
 const LEADERS = [
   {
     title: 'Rektor',
-    name: "Madaminov Kamoliddin O'tkurovich",
-    degree: "San'atshunoslik fanlari doktori, professor",
+    name: "Kamoliddin Turdimurodovich Oʻrinboyev ",
+    degree: "Oʻzbekiston Respublikasi xalq artisti, professor",
     phone: '+998 71 234-56-78',
     email: 'rektor@konservatoriya.uz',
     bio: "O'zbekiston Davlat Konservatoriyasini 2018-yildan boshqarib kelmoqda. Xalqaro musiqa tanlovlari g'olibi, 80 dan ortiq ilmiy ishlar muallifi.",
-    initials: 'MK',
+    initials: 'KO',
   },
   {
     title: "Ta'lim ishlari bo'yicha prorektor",
@@ -46,11 +46,11 @@ const LEADERS = [
 ];
 
 const DEANS = [
-  { faculty: 'Akademik xonandalik fakulteti',          name: "Rahimova Sarvinoz Bekovna",        degree: "San'atshunoslik fanlari nomzodi, dotsent", phone: '+998 71 234-57-01', email: 'xonandalik@konservatoriya.uz',   initials: 'RS' },
-  { faculty: "Cholg'u ijrochiligi fakulteti",           name: "Karimov Sherzod Rustamovich",      degree: "Professor",                               phone: '+998 71 234-57-03', email: 'cholgu@konservatoriya.uz',       initials: 'KS' },
-  { faculty: 'Kompozitsiya va musiqa nazariyasi',       name: "Mirzayeva Gulnora Abdullayevna",   degree: "San'atshunoslik fanlari doktori, professor",phone: '+998 71 234-57-05', email: 'kompozitsiya@konservatoriya.uz', initials: 'MG' },
-  { faculty: "Xalq cholg'ulari fakulteti",              name: "Qodirov Murod Davlatovich",        degree: "Dotsent",                                 phone: '+998 71 234-57-07', email: 'xalqcholgu@konservatoriya.uz',   initials: 'QM' },
-  { faculty: "Musiqa san'ati va pedagogika fakulteti",  name: "Hasanova Dilnoza Ibrohimovna",     degree: "San'atshunoslik fanlari nomzodi, dotsent", phone: '+998 71 234-57-09', email: 'pedagogika@konservatoriya.uz',   initials: 'HD' },
+  { faculty: 'Akademik xonandalik fakulteti', name: "Rahimova Sarvinoz Bekovna", degree: "San'atshunoslik fanlari nomzodi, dotsent", phone: '+998 71 234-57-01', email: 'xonandalik@konservatoriya.uz', initials: 'RS' },
+  { faculty: "Cholg'u ijrochiligi fakulteti", name: "Karimov Sherzod Rustamovich", degree: "Professor", phone: '+998 71 234-57-03', email: 'cholgu@konservatoriya.uz', initials: 'KS' },
+  { faculty: 'Kompozitsiya va musiqa nazariyasi', name: "Mirzayeva Gulnora Abdullayevna", degree: "San'atshunoslik fanlari doktori, professor", phone: '+998 71 234-57-05', email: 'kompozitsiya@konservatoriya.uz', initials: 'MG' },
+  { faculty: "Xalq cholg'ulari fakulteti", name: "Qodirov Murod Davlatovich", degree: "Dotsent", phone: '+998 71 234-57-07', email: 'xalqcholgu@konservatoriya.uz', initials: 'QM' },
+  { faculty: "Musiqa san'ati va pedagogika fakulteti", name: "Hasanova Dilnoza Ibrohimovna", degree: "San'atshunoslik fanlari nomzodi, dotsent", phone: '+998 71 234-57-09', email: 'pedagogika@konservatoriya.uz', initials: 'HD' },
 ];
 
 function Avatar({ initials, size = 88 }) {
@@ -107,8 +107,8 @@ export default function Rahbariyat() {
                 position: 'relative',
                 overflow: 'hidden',
               }}
-              onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(26,26,56,0.12)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
+                onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(26,26,56,0.12)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
               >
                 {/* Yuqori gold chiziq */}
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold)' }} />
@@ -155,8 +155,8 @@ export default function Rahbariyat() {
                 padding: '28px',
                 transition: 'box-shadow 0.3s',
               }}
-              onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(26,26,56,0.1)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
+                onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(26,26,56,0.1)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
                   <Avatar initials={dean.initials} size={52} />
