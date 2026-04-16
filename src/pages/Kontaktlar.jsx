@@ -95,23 +95,23 @@ export default function Kontaktlar() {
 
               {/* Ijtimoiy tarmoqlar */}
               <div style={{ marginTop: '40px' }}>
-                <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--accent-gold)', marginBottom: '15px' }}>
+                <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--gold-dark)', marginBottom: '15px' }}>
                   Ijtimoiy tarmoqlar
                 </h4>
                 <div style={{ display: 'flex', gap: '12px' }}>
                   {['Telegram', 'Instagram', 'Facebook', 'YouTube'].map((name) => (
                     <a key={name} href="#" style={{
                       padding: '8px 16px',
-                      border: '1px solid var(--primary-blue)',
-                      color: 'var(--primary-blue)',
+                      border: '1px solid var(--navy)',
+                      color: 'var(--navy)',
                       textDecoration: 'none',
                       fontSize: '0.75rem',
                       fontWeight: 700,
                       letterSpacing: '1px',
                       transition: '0.3s',
                     }}
-                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--primary-blue)'; e.currentTarget.style.color = 'white'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--primary-blue)'; }}
+                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--navy)'; e.currentTarget.style.color = 'white'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--navy)'; }}
                     >
                       {name}
                     </a>
@@ -129,7 +129,7 @@ export default function Kontaktlar() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <h3 style={{ color: 'var(--primary-blue)', marginBottom: '30px', fontSize: '1.5rem' }}>
+                  <h3 style={{ color: 'var(--navy)', marginBottom: '30px', fontSize: '1.5rem' }}>
                     Murojaat <span>Yuborish</span>
                   </h3>
                   <div className="form-grid" style={{ marginBottom: '20px' }}>
@@ -174,7 +174,7 @@ export default function Kontaktlar() {
           position: 'absolute',
           top: '20px',
           left: '20px',
-          background: 'var(--primary-blue)',
+          background: 'var(--navy)',
           color: 'white',
           padding: '12px 20px',
           fontSize: '0.8rem',

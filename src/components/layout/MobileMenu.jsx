@@ -5,6 +5,8 @@ import { NAV_MENU, UTILITY_LINKS } from '../../data/navigation';
 import { useScrollLock } from '../../hooks/useScrollLock';
 import MobileAccordion from './MobileAccordion';
 
+const LANGS = ['UZ', 'RU', 'EN'];
+
 export default function MobileMenu({ isOpen, onClose }) {
   useScrollLock(isOpen);
 
@@ -25,8 +27,9 @@ export default function MobileMenu({ isOpen, onClose }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.35 }}
             onClick={onClose}
+            aria-hidden="true"
           />
 
           {/* Asosiy panel */}
@@ -35,7 +38,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.42, ease: [0.4, 0, 0.2, 1] }}
             role="dialog"
             aria-modal="true"
             aria-label="Navigatsiya menyusi"
@@ -45,8 +48,8 @@ export default function MobileMenu({ isOpen, onClose }) {
               <Link to="/" className="mob-logo" onClick={onClose}>
                 <img
                   src="/Konservatoriya_logo_white-05.png"
-                  alt="Logo"
-                  style={{ height: '38px' }}
+                  alt="O'zbekiston Davlat Konservatoriyasi"
+                  style={{ height: '36px' }}
                 />
               </Link>
               <button
@@ -54,8 +57,8 @@ export default function MobileMenu({ isOpen, onClose }) {
                 onClick={onClose}
                 aria-label="Menyuni yopish"
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="1.5"
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="1.6"
                   strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
@@ -64,7 +67,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             </div>
 
             {/* Asosiy nav */}
-            <nav className="mob-nav">
+            <nav className="mob-nav" aria-label="Asosiy navigatsiya">
               {NAV_MENU.map((item, i) => (
                 <MobileAccordion
                   key={item.id}
@@ -75,17 +78,33 @@ export default function MobileMenu({ isOpen, onClose }) {
               ))}
             </nav>
 
-            {/* Pastki utility linklar */}
+            {/* Pastki qism: til va utility linklar */}
             <motion.div
               className="mob-footer"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.45, duration: 0.35 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.42, duration: 0.32, ease: 'easeOut' }}
             >
+              {/* Til tanlash */}
+              <div className="mob-langs">
+                {LANGS.map((lang) => (
+                  <button key={lang} className="mob-lang-btn">
+                    {lang}
+                  </button>
+                ))}
+              </div>
+
               <div className="mob-footer-line" />
+
+              {/* Utility havolalar */}
               <div className="mob-utility">
                 {UTILITY_LINKS.map(({ label, to }) => (
-                  <Link key={label} to={to} className="mob-utility-link" onClick={onClose}>
+                  <Link
+                    key={label}
+                    to={to}
+                    className="mob-utility-link"
+                    onClick={onClose}
+                  >
                     {label}
                   </Link>
                 ))}

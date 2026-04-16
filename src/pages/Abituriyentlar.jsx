@@ -177,14 +177,14 @@ export default function Abituriyentlar() {
                 <div style={{
                   fontSize: '2.5rem',
                   fontFamily: 'var(--font-serif)',
-                  color: 'var(--accent-gold)',
+                  color: 'var(--gold)',
                   lineHeight: 1,
                   marginBottom: '15px',
                 }}>
                   {step.num}
                 </div>
-                <h4 style={{ color: 'var(--primary-blue)', fontSize: '0.95rem', marginBottom: '10px' }}>{step.title}</h4>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>{step.desc}</p>
+                <h4 style={{ color: 'var(--navy)', fontSize: '0.95rem', marginBottom: '10px' }}>{step.title}</h4>
+                <p style={{ fontSize: '0.82rem', color: '#666', lineHeight: 1.6 }}>{step.desc}</p>
               </div>
             ))}
           </div>
@@ -215,12 +215,12 @@ export default function Abituriyentlar() {
                     <td>{d.degree}</td>
                     <td>{d.duration}</td>
                     <td>{d.form}</td>
-                    <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--primary-blue)' }}>{d.quota}</td>
+                    <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--navy)' }}>{d.quota}</td>
                   </tr>
                 ))}
-                <tr style={{ background: 'var(--cream-bg)', fontWeight: 700 }}>
-                  <td colSpan={5} style={{ textAlign: 'right', fontWeight: 700, paddingRight: '20px' }}>Jami:</td>
-                  <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--accent-gold)', fontSize: '1.1rem' }}>{totalQuota}</td>
+                <tr style={{ background: 'var(--light-100)', fontWeight: 700 }}>
+                  <td colSpan={5} style={{ textAlign: 'right', fontWeight: 700, paddingRight: '20px', color: 'var(--navy)' }}>Jami:</td>
+                  <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--gold-dark)', fontSize: '1.1rem' }}>{totalQuota}</td>
                 </tr>
               </tbody>
             </table>
@@ -243,7 +243,7 @@ export default function Abituriyentlar() {
                 <div style={{
                   width: '28px',
                   height: '28px',
-                  background: 'var(--primary-blue)',
+                  background: 'var(--navy)',
                   color: 'white',
                   borderRadius: '50%',
                   display: 'flex',
@@ -255,7 +255,7 @@ export default function Abituriyentlar() {
                 }}>
                   {i + 1}
                 </div>
-                <span style={{ fontSize: '0.9rem', color: 'var(--text-main)' }}>{doc}</span>
+                <span style={{ fontSize: '0.9rem', color: '#555' }}>{doc}</span>
               </div>
             ))}
           </div>

@@ -46,62 +46,30 @@ const LEADERS = [
 ];
 
 const DEANS = [
-  {
-    faculty: 'Akademik xonandalik fakulteti',
-    name: "Rahimova Sarvinoz Bekovna",
-    degree: "San'atshunoslik fanlari nomzodi, dotsent",
-    phone: '+998 71 234-57-01',
-    email: 'xonandalik@konservatoriya.uz',
-    initials: 'RS',
-  },
-  {
-    faculty: "Cholg'u ijrochiligi fakulteti",
-    name: "Karimov Sherzod Rustamovich",
-    degree: "Professor",
-    phone: '+998 71 234-57-03',
-    email: 'cholgu@konservatoriya.uz',
-    initials: 'KS',
-  },
-  {
-    faculty: 'Kompozitsiya va musiqa nazariyasi fakulteti',
-    name: "Mirzayeva Gulnora Abdullayevna",
-    degree: "San'atshunoslik fanlari doktori, professor",
-    phone: '+998 71 234-57-05',
-    email: 'kompozitsiya@konservatoriya.uz',
-    initials: 'MG',
-  },
-  {
-    faculty: "Xalq cholg'ulari fakulteti",
-    name: "Qodirov Murod Davlatovich",
-    degree: "Dotsent",
-    phone: '+998 71 234-57-07',
-    email: 'xalqcholgu@konservatoriya.uz',
-    initials: 'QM',
-  },
-  {
-    faculty: "Musiqa san'ati va pedagogika fakulteti",
-    name: "Hasanova Dilnoza Ibrohimovna",
-    degree: "San'atshunoslik fanlari nomzodi, dotsent",
-    phone: '+998 71 234-57-09',
-    email: 'pedagogika@konservatoriya.uz',
-    initials: 'HD',
-  },
+  { faculty: 'Akademik xonandalik fakulteti',          name: "Rahimova Sarvinoz Bekovna",        degree: "San'atshunoslik fanlari nomzodi, dotsent", phone: '+998 71 234-57-01', email: 'xonandalik@konservatoriya.uz',   initials: 'RS' },
+  { faculty: "Cholg'u ijrochiligi fakulteti",           name: "Karimov Sherzod Rustamovich",      degree: "Professor",                               phone: '+998 71 234-57-03', email: 'cholgu@konservatoriya.uz',       initials: 'KS' },
+  { faculty: 'Kompozitsiya va musiqa nazariyasi',       name: "Mirzayeva Gulnora Abdullayevna",   degree: "San'atshunoslik fanlari doktori, professor",phone: '+998 71 234-57-05', email: 'kompozitsiya@konservatoriya.uz', initials: 'MG' },
+  { faculty: "Xalq cholg'ulari fakulteti",              name: "Qodirov Murod Davlatovich",        degree: "Dotsent",                                 phone: '+998 71 234-57-07', email: 'xalqcholgu@konservatoriya.uz',   initials: 'QM' },
+  { faculty: "Musiqa san'ati va pedagogika fakulteti",  name: "Hasanova Dilnoza Ibrohimovna",     degree: "San'atshunoslik fanlari nomzodi, dotsent", phone: '+998 71 234-57-09', email: 'pedagogika@konservatoriya.uz',   initials: 'HD' },
 ];
 
-function Avatar({ initials }) {
+function Avatar({ initials, size = 88 }) {
   return (
     <div style={{
-      width: '90px',
-      height: '90px',
+      width: size,
+      height: size,
       borderRadius: '50%',
-      background: 'var(--primary-blue)',
-      color: 'white',
+      background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
+      border: '3px solid var(--gold)',
+      color: 'var(--white)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize: '1.6rem',
-      fontFamily: 'var(--font-serif)',
+      fontSize: size > 70 ? '1.5rem' : '1rem',
+      fontFamily: 'var(--font-display)',
+      fontStyle: 'italic',
       flexShrink: 0,
+      letterSpacing: '1px',
     }}>
       {initials}
     </div>
@@ -121,48 +89,51 @@ export default function Rahbariyat() {
       <section className="main-content">
         <div className="container">
 
-          {/* Rahbariyat */}
+          {/* ── REKTORAT ── */}
           <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Rahbariyat</h2>
+            <h2>Rektorat</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px', marginBottom: '60px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginBottom: '60px' }}>
             {LEADERS.map((leader) => (
-              <div key={leader.name} className="rahbar-card" style={{
-                border: '1px solid #e8e4dc',
-                padding: '35px',
+              <div key={leader.name} style={{
+                background: 'var(--white)',
+                border: '1px solid var(--light-border)',
+                padding: '32px',
                 display: 'flex',
-                gap: '25px',
+                gap: '22px',
                 alignItems: 'flex-start',
-                transition: 'box-shadow 0.3s',
-              }}>
+                transition: 'box-shadow 0.3s, transform 0.3s',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+              onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(26,26,56,0.12)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
+              >
+                {/* Yuqori gold chiziq */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gold)' }} />
+
                 <Avatar initials={leader.initials} />
+
                 <div style={{ flex: 1 }}>
-                  <div style={{
-                    fontSize: '0.7rem',
-                    fontWeight: 700,
-                    letterSpacing: '2px',
-                    textTransform: 'uppercase',
-                    color: 'var(--accent-gold)',
-                    marginBottom: '8px',
-                  }}>
+                  <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--gold-dark)', marginBottom: '8px' }}>
                     {leader.title}
                   </div>
-                  <h3 style={{ fontSize: '1.2rem', color: 'var(--primary-blue)', marginBottom: '6px' }}>
+                  <h3 style={{ fontSize: '1.15rem', color: 'var(--navy)', marginBottom: '5px', fontWeight: 500, fontFamily: 'var(--font-display)' }}>
                     {leader.name}
                   </h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '12px', fontStyle: 'italic' }}>
+                  <p style={{ fontSize: '0.82rem', color: '#888', marginBottom: '12px', fontStyle: 'italic' }}>
                     {leader.degree}
                   </p>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-main)', lineHeight: 1.6, marginBottom: '15px' }}>
+                  <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.65, marginBottom: '16px', fontFamily: 'var(--font-serif)' }}>
                     {leader.bio}
                   </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                    <a href={`tel:${leader.phone}`} style={{ fontSize: '0.85rem', color: 'var(--primary-blue)', textDecoration: 'none', fontWeight: 600 }}>
-                      📞 {leader.phone}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingTop: '12px', borderTop: '1px solid var(--light-border)' }}>
+                    <a href={`tel:${leader.phone}`} style={{ fontSize: '0.82rem', color: 'var(--navy)', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <span style={{ color: 'var(--gold-dark)' }}>📞</span> {leader.phone}
                     </a>
-                    <a href={`mailto:${leader.email}`} style={{ fontSize: '0.85rem', color: 'var(--primary-blue)', textDecoration: 'none' }}>
-                      ✉ {leader.email}
+                    <a href={`mailto:${leader.email}`} style={{ fontSize: '0.82rem', color: '#777', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <span style={{ color: 'var(--gold-dark)' }}>✉</span> {leader.email}
                     </a>
                   </div>
                 </div>
@@ -170,52 +141,62 @@ export default function Rahbariyat() {
             ))}
           </div>
 
-          {/* Dekanlar */}
+          {/* ── DEKANLAR ── */}
           <div className="section-divider">
             <h2>Fakultet dekanlari</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '60px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px', marginBottom: '60px' }}>
             {DEANS.map((dean) => (
               <div key={dean.name} style={{
-                border: '1px solid #e8e4dc',
+                background: 'var(--white)',
+                border: '1px solid var(--light-border)',
+                borderTop: '3px solid var(--gold)',
                 padding: '28px',
-                borderTop: '4px solid var(--accent-gold)',
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
-                  <div style={{
-                    width: '55px',
-                    height: '55px',
-                    borderRadius: '50%',
-                    background: 'var(--cream-bg)',
-                    border: '2px solid var(--accent-gold)',
-                    color: 'var(--primary-blue)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1rem',
-                    fontFamily: 'var(--font-serif)',
-                    fontWeight: 700,
-                    flexShrink: 0,
-                  }}>
-                    {dean.initials}
-                  </div>
+                transition: 'box-shadow 0.3s',
+              }}
+              onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(26,26,56,0.1)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
+                  <Avatar initials={dean.initials} size={52} />
                   <div>
-                    <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--accent-gold)', marginBottom: '4px' }}>Dekan</div>
-                    <h4 style={{ fontSize: '1rem', color: 'var(--primary-blue)', lineHeight: 1.3 }}>{dean.name}</h4>
+                    <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--gold-dark)', marginBottom: '4px' }}>Dekan</div>
+                    <h4 style={{ fontSize: '0.95rem', color: 'var(--navy)', lineHeight: 1.3, fontFamily: 'var(--font-display)' }}>{dean.name}</h4>
                   </div>
                 </div>
-                <p style={{ fontSize: '0.8rem', color: 'var(--accent-gold)', fontStyle: 'italic', marginBottom: '10px' }}>
+                <p style={{ fontSize: '0.78rem', color: 'var(--gold-dark)', fontStyle: 'italic', marginBottom: '8px', fontFamily: 'var(--font-serif)' }}>
                   {dean.faculty}
                 </p>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>{dean.degree}</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <a href={`tel:${dean.phone}`} style={{ fontSize: '0.8rem', color: 'var(--primary-blue)', textDecoration: 'none' }}>
-                    {dean.phone}
-                  </a>
-                  <a href={`mailto:${dean.email}`} style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                    {dean.email}
-                  </a>
+                <p style={{ fontSize: '0.78rem', color: '#888', marginBottom: '14px' }}>{dean.degree}</p>
+                <div style={{ paddingTop: '12px', borderTop: '1px solid var(--light-border)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <a href={`tel:${dean.phone}`} style={{ fontSize: '0.78rem', color: 'var(--navy)', textDecoration: 'none', fontWeight: 600 }}>{dean.phone}</a>
+                  <a href={`mailto:${dean.email}`} style={{ fontSize: '0.78rem', color: '#888', textDecoration: 'none' }}>{dean.email}</a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ── QABUL SOATLARI ── */}
+          <div className="section-divider">
+            <h2>Qabul soatlari</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--light-border)', marginBottom: '60px', border: '1px solid var(--light-border)' }}>
+            {[
+              { day: 'Dushanba – Juma', time: '09:00 – 13:00', label: 'Rektor qabulxonasi' },
+              { day: 'Dushanba – Juma', time: '14:00 – 17:00', label: 'Prorektorlar' },
+              { day: 'Seshanba, Payshanba', time: '10:00 – 12:00', label: 'Fakultet dekanlari' },
+              { day: 'Shanba', time: '10:00 – 13:00', label: 'Navbatchi prorektor' },
+            ].map((item) => (
+              <div key={item.label} style={{ background: 'var(--white)', padding: '28px 24px', textAlign: 'center' }}>
+                <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--gold-dark)', marginBottom: '10px' }}>
+                  {item.day}
+                </div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 300, color: 'var(--navy)', marginBottom: '8px' }}>
+                  {item.time}
+                </div>
+                <div style={{ fontSize: '0.78rem', color: '#888', fontFamily: 'var(--font-sans)' }}>
+                  {item.label}
                 </div>
               </div>
             ))}

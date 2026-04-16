@@ -100,7 +100,7 @@ export default function Home() {
           <div className="ornament" style={{ maxWidth: '300px' }}>
             <div className="ornament-diamond" />
           </div>
-          <p style={{ color: 'rgba(240,237,232,0.6)', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '35px' }}>
+          <p style={{ color: '#555', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '35px' }}>
             Markaziy Osiyoning eng qadimgi va nufuzli oliy musiqa ta'lim muassasasi. 1936-yildan beri musiqa san'atining eng buyuk namoyandalari shu devorlar ichida yetishib chiqqan.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
@@ -113,25 +113,25 @@ export default function Home() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px',
-                color: 'rgba(240,237,232,0.5)',
+                color: '#888',
                 fontSize: '0.8rem',
                 fontFamily: 'var(--font-sans)',
                 fontWeight: 600,
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
-                transition: 'color 0.3s, gap 0.3s',
+                transition: 'color 0.3s',
                 textDecoration: 'none',
                 padding: '8px 0',
-                borderBottom: '1px solid var(--border-subtle)',
+                borderBottom: '1px solid rgba(26,26,56,0.1)',
               }}
-              onMouseOver={(e) => { e.currentTarget.style.color = 'var(--gold-light)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.color = 'rgba(240,237,232,0.5)'; }}
+              onMouseOver={(e) => { e.currentTarget.style.color = 'var(--gold-dark)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.color = '#888'; }}
               >
-                <span style={{ color: 'var(--gold)', fontSize: '1rem' }}>→</span> {label}
+                <span style={{ color: 'var(--gold-dark)', fontSize: '1rem' }}>→</span> {label}
               </Link>
             ))}
           </div>
-          <Link to="/tarix" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block' }}>
+          <Link to="/tarix" className="btn-outline-dark" style={{ textDecoration: 'none', display: 'inline-block' }}>
             TARIXNI O'QING
           </Link>
         </div>
@@ -155,18 +155,18 @@ export default function Home() {
       </section>
 
       {/* ── TEZKOR HAVOLALAR 3D GRID ─────────────────────── */}
-      <section style={{ background: 'var(--bg-surface)', borderTop: '1px solid var(--border-subtle)', padding: '100px 0' }}>
+      <section style={{ background: 'var(--white)', borderTop: '1px solid var(--light-border)', borderBottom: '1px solid var(--light-border)', padding: '100px 0' }}>
         <div className="container">
           <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="section-tag">Navigatsiya</span>
+            <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Navigatsiya</span>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '3.2rem',
               fontWeight: 300,
-              color: 'var(--text-primary)',
+              color: 'var(--navy)',
               marginTop: '10px',
             }}>
-              Tezkor <span>Yo'nalishlar</span>
+              Tezkor <span style={{ color: 'var(--gold-dark)', fontStyle: 'italic' }}>Yo'nalishlar</span>
             </h2>
             <div className="ornament" style={{ justifyContent: 'center' }}>
               <div className="ornament-diamond" />
@@ -176,8 +176,7 @@ export default function Home() {
           <div className="reveal" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1px',
-            background: 'var(--border-subtle)',
+            gap: '16px',
           }}>
             {QUICK_LINKS.map((item, i) => (
               <Link
@@ -186,58 +185,65 @@ export default function Home() {
                 data-reveal-index={i}
                 style={{
                   display: 'block',
-                  background: 'var(--bg-card)',
-                  padding: '50px 40px',
+                  background: 'var(--white)',
+                  border: '1px solid var(--light-border)',
+                  padding: '44px 36px',
                   textDecoration: 'none',
-                  transition: 'all 0.45s cubic-bezier(0.16,1,0.3,1)',
+                  transition: 'all 0.4s cubic-bezier(0.16,1,0.3,1)',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.background = 'var(--bg-elevated)';
-                  e.currentTarget.style.transform = 'translateY(-6px) perspective(600px) rotateX(3deg)';
-                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px var(--border-gold)';
+                  e.currentTarget.style.background = 'var(--navy)';
+                  e.currentTarget.style.transform = 'translateY(-5px)';
+                  e.currentTarget.style.boxShadow = '0 16px 48px rgba(26,26,56,0.18)';
+                  e.currentTarget.style.borderColor = 'var(--navy)';
+                  e.currentTarget.querySelectorAll('[data-title]').forEach(el => el.style.color = '#fff');
+                  e.currentTarget.querySelectorAll('[data-sub]').forEach(el => el.style.color = 'rgba(208,208,224,0.7)');
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.background = 'var(--bg-card)';
+                  e.currentTarget.style.background = 'var(--white)';
                   e.currentTarget.style.transform = 'none';
                   e.currentTarget.style.boxShadow = 'none';
+                  e.currentTarget.style.borderColor = 'var(--light-border)';
+                  e.currentTarget.querySelectorAll('[data-title]').forEach(el => el.style.color = 'var(--navy)');
+                  e.currentTarget.querySelectorAll('[data-sub]').forEach(el => el.style.color = '#888');
                 }}
               >
                 <div style={{
-                  fontSize: '2.2rem',
+                  fontSize: '2rem',
                   color: 'var(--gold)',
-                  marginBottom: '20px',
+                  marginBottom: '18px',
                   lineHeight: 1,
                   fontFamily: 'serif',
-                  textShadow: '0 2px 12px rgba(201,168,76,0.4)',
                 }}>
                   {item.icon}
                 </div>
-                <h3 style={{
+                <h3 data-title="" style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '1.4rem',
-                  fontWeight: 300,
-                  color: 'var(--text-primary)',
-                  marginBottom: '10px',
+                  fontSize: '1.35rem',
+                  fontWeight: 400,
+                  color: 'var(--navy)',
+                  marginBottom: '8px',
+                  transition: 'color 0.3s',
                 }}>
                   {item.label}
                 </h3>
-                <p style={{
+                <p data-sub="" style={{
                   fontSize: '0.78rem',
-                  color: 'var(--text-secondary)',
+                  color: '#888',
                   fontFamily: 'var(--font-sans)',
                   letterSpacing: '0.05em',
+                  transition: 'color 0.3s',
                 }}>
                   {item.sub}
                 </p>
                 <div style={{
                   position: 'absolute',
-                  bottom: '28px',
-                  right: '36px',
-                  color: 'var(--gold-dim)',
-                  fontSize: '1.2rem',
-                  transition: 'transform 0.3s',
+                  bottom: '24px',
+                  right: '32px',
+                  color: 'var(--gold)',
+                  fontSize: '1.1rem',
                 }}>
                   →
                 </div>
