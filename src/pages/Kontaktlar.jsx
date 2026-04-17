@@ -162,28 +162,6 @@ export default function Kontaktlar() {
         </div>
       </section>
 
-      {/* Xarita */}
-      <div style={{ width: '100%', height: '420px', background: '#e8e4dc', position: 'relative' }}>
-        <iframe
-          title="Konservatoriya xaritasi"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=69.2200%2C41.2950%2C69.2450%2C41.3100&layer=mapnik&marker=41.3029%2C69.2331"
-          style={{ width: '100%', height: '100%', border: 'none' }}
-          loading="lazy"
-        />
-        <div style={{
-          position: 'absolute',
-          top: '20px',
-          left: '20px',
-          background: 'var(--navy)',
-          color: 'white',
-          padding: '12px 20px',
-          fontSize: '0.8rem',
-          fontWeight: 700,
-          letterSpacing: '1px',
-        }}>
-          O'ZBEKISTON DAVLAT KONSERVATORIYASI
-        </div>
-      </div>
     </main>
   );
 }

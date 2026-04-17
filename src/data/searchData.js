@@ -1,0 +1,142 @@
+/* Sayt bo'ylab qidiruv uchun ma'lumotlar bazasi */
+
+export const SEARCH_PAGES = [
+  {
+    title: 'Konservatoriya tarixi',
+    path: '/tarix',
+    desc: "O'zbekiston Davlat Konservatoriyasining 1936 yildan bugungi kungacha tarixi",
+    keywords: 'tarix asos tashkil 1936 musiqa',
+  },
+  {
+    title: 'Muassasa tuzilmasi',
+    path: '/tuzilma',
+    desc: 'Kafedra, bo\'lim va strukturaviy bo\'linmalar',
+    keywords: 'tuzilma struktura kafedra bolim',
+  },
+  {
+    title: 'Rahbariyat',
+    path: '/rahbariyat',
+    desc: 'Rektor, prorektorlar, dekanlar va boshqaruv hay\'ati',
+    keywords: 'rahbariyat rektor prorektor dekan hay\'at',
+  },
+  {
+    title: "Me'yoriy hujjatlar",
+    path: '/hujjatlar',
+    desc: 'Nizomlar, buyruqlar va rasmiy hujjatlar',
+    keywords: 'hujjat nizam buyruq qoida',
+  },
+  {
+    title: 'Yangiliklar',
+    path: '/yangiliklar',
+    desc: 'Konservatoriya yangiliklari va e\'lonlar',
+    keywords: 'yangilikar xabar elon press',
+  },
+  {
+    title: 'Tadbirlar taqvimi',
+    path: '/taqvim',
+    desc: 'Kontsertlar, imtihonlar va tadbirlar jadvali',
+    keywords: 'taqvim jadval tadbir kontsert imtihon',
+  },
+  {
+    title: 'Kontaktlar',
+    path: '/kontaktlar',
+    desc: "Manzil, telefon va bog'lanish ma'lumotlari",
+    keywords: 'kontakt manzil telefon email boglanish',
+  },
+  {
+    title: 'Abituriyentlar',
+    path: '/abituriyentlar',
+    desc: "Qabul shartlari, hujjatlar va imtihon ma'lumotlari",
+    keywords: 'abituriyent qabul kirish imtihon hujjat',
+  },
+  {
+    title: 'Talabalar',
+    path: '/talabalar',
+    desc: "Talabalar uchun xizmatlar va ma'lumotlar",
+    keywords: 'talaba xizmat',
+  },
+  {
+    title: 'Dars jadvallari',
+    path: '/dars-jadvali',
+    desc: 'Haftalik dars jadvali va o\'quv vaqtlari',
+    keywords: 'dars jadval hafta',
+  },
+  {
+    title: "O'quv rejalar",
+    path: '/oquv-rejalar',
+    desc: "Bakalavr va magistratura o'quv rejalari",
+    keywords: 'reja oquv bakalavr magistr',
+  },
+  {
+    title: 'Sillabuslar',
+    path: '/sillabuslar',
+    desc: "O'quv dasturlari va fanlar bo'yicha sillabuslar",
+    keywords: 'sillabus dastur fan',
+  },
+  {
+    title: 'HEMIS-talaba',
+    path: '/hemis-talaba',
+    desc: "HEMIS tizimi — talabalar shaxsiy kabineti",
+    keywords: 'hemis tizim kabinet portal',
+  },
+  {
+    title: 'Grantlar',
+    path: '/grantlar',
+    desc: "Davlat va xalqaro grantlar, stipendiyalar",
+    keywords: 'grant stipendiya xalqaro moliya',
+  },
+  {
+    title: 'Kelajakka qadam',
+    path: '/kelajakka-qadam',
+    desc: "Karyera markazi va ish joylash bo'yicha yordam",
+    keywords: 'karyera ish bandlik bitiruvchi',
+  },
+  {
+    title: 'Online kutubxona',
+    path: '/kutubxona',
+    desc: "Nota bazasi, kitoblar, audio va video materiallar",
+    keywords: 'kutubxona nota kitob audio video',
+  },
+  {
+    title: 'Registrator ofisi',
+    path: '/registrator',
+    desc: "Hujjatlar olish, ma'lumotnomalar va murojaat",
+    keywords: 'registrator hujjat murojaaat malumotnoma',
+  },
+  {
+    title: "To'garaklar",
+    path: '/togaraklar',
+    desc: "Ijodiy, sport va madaniy to'garaklar",
+    keywords: 'togarak klub sport ijod madaniy',
+  },
+  {
+    title: 'Talabalar turar joyi',
+    path: '/yotoqxona',
+    desc: "Yotoqxona xonalari, narxlar va qulayliklar",
+    keywords: 'yotoqxona turar xona narx qulaylik',
+  },
+  {
+    title: 'Xalqaro aloqalar',
+    path: '/xalqaro',
+    desc: "Xalqaro hamkorlik, almashinuv dasturlari",
+    keywords: 'xalqaro hamkor almashinuv chet el',
+  },
+  {
+    title: 'Fotogalereya',
+    path: '/fotogalereya',
+    desc: "Konservatoriya tasvir galereyasi",
+    keywords: 'foto galereya rasm tasvir',
+  },
+  {
+    title: 'Videogalereya',
+    path: '/videogalereya',
+    desc: 'Kontsertlar va tadbirlar video yozuvlari',
+    keywords: 'video galereya yozuv kontsert',
+  },
+  {
+    title: 'Yashil universitet',
+    path: '/yashil-universitet',
+    desc: "Ekologik tashabbus va yashil kampus",
+    keywords: 'yashil ekologiya kampus tashabbus',
+  },
+];
