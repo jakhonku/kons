@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { UTILITY_LINKS } from '../../data/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
+import AccessibilityWidget from '../AccessibilityWidget';
 
 export default function UtilityBar({ onSearchOpen }) {
   return (
@@ -16,8 +17,10 @@ export default function UtilityBar({ onSearchOpen }) {
           ))}
         </nav>
 
-        {/* O'ng: til + qidiruv */}
+        {/* O'ng: a11y + til + qidiruv */}
         <div className="utility-right">
+          <AccessibilityWidget />
+          <div className="utility-divider" />
           <LanguageSwitcher />
 
           <div className="utility-divider" />
