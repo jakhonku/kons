@@ -24,6 +24,7 @@ import Kutubxona from './pages/Kutubxona';
 import Registrator from './pages/Registrator';
 import Togaraklar from './pages/Togaraklar';
 import Yotoqxona from './pages/Yotoqxona';
+import TadbirBatafsil from './pages/TadbirBatafsil';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="hujjatlar" element={<Hujjatlar />} />
           <Route path="yangiliklar" element={<Yangiliklar />} />
           <Route path="taqvim" element={<Taqvim />} />
+          <Route path="taqvim/:id" element={<TadbirBatafsil />} />
           <Route path="kontaktlar" element={<Kontaktlar />} />
           <Route path="abituriyentlar" element={<Abituriyentlar />} />
           <Route path="talabalar" element={<Talabalar />} />
