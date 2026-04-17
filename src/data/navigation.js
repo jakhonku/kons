@@ -7,7 +7,7 @@ export const UTILITY_LINKS = [
   { label: 'Bizga tashrif buyuring', to: '/kontaktlar' },
   { label: 'HEMIS-talaba',           to: '/talabalar' },
   { label: 'Online murojaat',        to: '/kontaktlar' },
-  { label: 'Xayriya',               to: '/kontaktlar' },
+  { label: 'Online kutubxona',      to: '/kutubxona' },
 ];
 
 export const NAV_MENU = [
