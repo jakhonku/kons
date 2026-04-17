@@ -14,6 +14,16 @@ import Xalqaro from './pages/Xalqaro';
 import Fotogalereya from './pages/Fotogalereya';
 import Videogalereya from './pages/Videogalereya';
 import YashilUniversitet from './pages/YashilUniversitet';
+import DarsJadvali from './pages/DarsJadvali';
+import OquvRejalar from './pages/OquvRejalar';
+import Sillabuslar from './pages/Sillabuslar';
+import HemisTalaba from './pages/HemisTalaba';
+import Grantlar from './pages/Grantlar';
+import KelajakkaQadam from './pages/KelajakkaQadam';
+import Kutubxona from './pages/Kutubxona';
+import Registrator from './pages/Registrator';
+import Togaraklar from './pages/Togaraklar';
+import Yotoqxona from './pages/Yotoqxona';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -35,6 +45,16 @@ export default function App() {
           <Route path="fotogalereya" element={<Fotogalereya />} />
           <Route path="videogalereya" element={<Videogalereya />} />
           <Route path="yashil-universitet" element={<YashilUniversitet />} />
+          <Route path="dars-jadvali" element={<DarsJadvali />} />
+          <Route path="oquv-rejalar" element={<OquvRejalar />} />
+          <Route path="sillabuslar" element={<Sillabuslar />} />
+          <Route path="hemis-talaba" element={<HemisTalaba />} />
+          <Route path="grantlar" element={<Grantlar />} />
+          <Route path="kelajakka-qadam" element={<KelajakkaQadam />} />
+          <Route path="kutubxona" element={<Kutubxona />} />
+          <Route path="registrator" element={<Registrator />} />
+          <Route path="togaraklar" element={<Togaraklar />} />
+          <Route path="yotoqxona" element={<Yotoqxona />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

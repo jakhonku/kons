@@ -48,26 +48,26 @@ export const NAV_MENU = [
       {
         heading: "O'quv jarayoni",
         links: [
-          { label: 'Dars jadvallari',              to: '/talabalar' },
-          { label: "O'quv rejalar",                to: '/talabalar' },
-          { label: "O'quv dasturlari (Sillabuslar)", to: '/talabalar' },
-          { label: 'HEMIS-talaba',                 to: '/talabalar' },
+          { label: 'Dars jadvallari',              to: '/dars-jadvali' },
+          { label: "O'quv rejalar",                to: '/oquv-rejalar' },
+          { label: "O'quv dasturlari (Sillabuslar)", to: '/sillabuslar' },
+          { label: 'HEMIS-talaba',                 to: '/hemis-talaba' },
         ],
       },
       {
         heading: "Qo'llab-quvvatlash",
         links: [
-          { label: 'Grantlar',                       to: '/talabalar' },
-          { label: 'Kelajakka qadam',                to: '/talabalar' },
-          { label: 'Online kutubxona',               to: '/talabalar' },
-          { label: 'Registrator ofisiga murojaat',   to: '/talabalar' },
+          { label: 'Grantlar',                       to: '/grantlar' },
+          { label: 'Kelajakka qadam',                to: '/kelajakka-qadam' },
+          { label: 'Online kutubxona',               to: '/kutubxona' },
+          { label: 'Registrator ofisiga murojaat',   to: '/registrator' },
         ],
       },
       {
         heading: 'Talabalar hayoti',
         links: [
-          { label: "To'garaklar",       to: '/talabalar' },
-          { label: 'Talabalar turar joyi', to: '/talabalar' },
+          { label: "To'garaklar",       to: '/togaraklar' },
+          { label: 'Talabalar turar joyi', to: '/yotoqxona' },
         ],
       },
     ],

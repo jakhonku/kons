@@ -14,22 +14,22 @@ const STATS = [
 ];
 
 const OQUV = [
-  { icon: '📅', title: 'Dars jadvallari',              desc: 'Joriy semestr uchun barcha guruhlar jadvali', href: '#' },
-  { icon: '📋', title: "O'quv rejalar",                 desc: "Bakalavr va magistratura o'quv rejalari",    href: '#' },
-  { icon: '📖', title: "O'quv dasturlari (Sillabuslar)", desc: "Barcha fanlar bo'yicha sillabuslar",          href: '#' },
-  { icon: '💻', title: 'HEMIS-talaba',                  desc: 'Shaxsiy kabinet va elektron reyting',        href: '#' },
+  { icon: '📅', title: 'Dars jadvallari',              desc: 'Joriy semestr uchun barcha guruhlar jadvali', to: '/dars-jadvali' },
+  { icon: '📋', title: "O'quv rejalar",                 desc: "Bakalavr va magistratura o'quv rejalari",    to: '/oquv-rejalar' },
+  { icon: '📖', title: "O'quv dasturlari (Sillabuslar)", desc: "Barcha fanlar bo'yicha sillabuslar",         to: '/sillabuslar' },
+  { icon: '💻', title: 'HEMIS-talaba',                  desc: 'Shaxsiy kabinet va elektron reyting',        to: '/hemis-talaba' },
 ];
 
 const SUPPORT = [
-  { icon: '🎓', title: 'Grantlar',                     desc: "Davlat va xorijiy grantlar, stipendiyalar",  href: '#' },
-  { icon: '🚀', title: 'Kelajakka qadam',               desc: "Karyera markazi va ish bilan ta'minlash",   href: '#' },
-  { icon: '📚', title: 'Online kutubxona',              desc: 'Elektron kitoblar va nota bazasi',           href: '#' },
-  { icon: '🏛️', title: 'Registrator ofisi',             desc: "Hujjatlar, guvohnomalar, murojaat",          href: '#' },
+  { icon: '🎓', title: 'Grantlar',                     desc: "Davlat va xorijiy grantlar, stipendiyalar",  to: '/grantlar' },
+  { icon: '🚀', title: 'Kelajakka qadam',               desc: "Karyera markazi va ish bilan ta'minlash",   to: '/kelajakka-qadam' },
+  { icon: '📚', title: 'Online kutubxona',              desc: 'Elektron kitoblar va nota bazasi',           to: '/kutubxona' },
+  { icon: '🏛️', title: 'Registrator ofisi',             desc: "Hujjatlar, guvohnomalar, murojaat",          to: '/registrator' },
 ];
 
 const LIFE = [
-  { icon: '🎭', title: "To'garaklar",        desc: "Ijodiy, sport va madaniy to'garaklar",     href: '#' },
-  { icon: '🏠', title: 'Talabalar shaharchasi', desc: "Yotoqxona, ovqatlanish, dam olish joylari", href: '#' },
+  { icon: '🎭', title: "To'garaklar",        desc: "Ijodiy, sport va madaniy to'garaklar",     to: '/togaraklar' },
+  { icon: '🏠', title: 'Talabalar shaharchasi', desc: "Yotoqxona, ovqatlanish, dam olish joylari", to: '/yotoqxona' },
 ];
 
 const SCHEDULE_DAYS = ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma'];
@@ -66,14 +66,12 @@ export default function Talabalar() {
             <h2>O'quv jarayoni</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '50px' }}>
+          <div className="g-4" style={{ marginBottom: '50px' }}>
             {OQUV.map((item) => (
-              <a key={item.title} href={item.href} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '28px 22px', textDecoration: 'none', display: 'block', transition: 'all 0.3s', position: 'relative', overflow: 'hidden' }}
+              <Link key={item.title} to={item.to} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '28px 22px', textDecoration: 'none', display: 'block', transition: 'all 0.3s', position: 'relative', overflow: 'hidden' }}
                 onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(26,26,56,0.1)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--light-border)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'var(--gold)', transform: 'scaleX(0)', transition: '0.3s', transformOrigin: 'left' }}
-                  onMouseOver={(e) => { e.currentTarget.style.transform = 'scaleX(1)'; }} />
                 <div style={{ fontSize: '1.8rem', marginBottom: '14px', lineHeight: 1 }}>{item.icon}</div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400, lineHeight: 1.3 }}>
                   {item.title}
@@ -82,7 +80,7 @@ export default function Talabalar() {
                 <div style={{ marginTop: '16px', fontSize: '0.7rem', color: 'var(--gold-dark)', fontWeight: 700, letterSpacing: '1px', fontFamily: 'var(--font-sans)' }}>
                   O'tish →
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -91,9 +89,9 @@ export default function Talabalar() {
             <h2>Qo'llab-quvvatlash</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '50px' }}>
+          <div className="g-4" style={{ marginBottom: '50px' }}>
             {SUPPORT.map((item) => (
-              <a key={item.title} href={item.href} style={{ background: 'var(--light-50)', border: '1px solid var(--light-border)', padding: '28px 22px', textDecoration: 'none', display: 'block', transition: 'all 0.3s' }}
+              <Link key={item.title} to={item.to} style={{ background: 'var(--light-50)', border: '1px solid var(--light-border)', padding: '28px 22px', textDecoration: 'none', display: 'block', transition: 'all 0.3s' }}
                 onMouseOver={(e) => { e.currentTarget.style.background = 'var(--white)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(26,26,56,0.1)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.background = 'var(--light-50)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
@@ -102,7 +100,7 @@ export default function Talabalar() {
                   {item.title}
                 </h3>
                 <p style={{ fontSize: '0.78rem', color: '#888', lineHeight: 1.5 }}>{item.desc}</p>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -111,9 +109,9 @@ export default function Talabalar() {
             <h2>Talabalar hayoti</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '50px' }}>
+          <div className="g-2" style={{ marginBottom: '50px' }}>
             {LIFE.map((item) => (
-              <a key={item.title} href={item.href} style={{ background: 'var(--navy)', border: '1px solid var(--navy)', padding: '36px', textDecoration: 'none', display: 'flex', gap: '20px', alignItems: 'flex-start', transition: 'opacity 0.3s' }}
+              <Link key={item.title} to={item.to} style={{ background: 'var(--navy)', border: '1px solid var(--navy)', padding: '36px', textDecoration: 'none', display: 'flex', gap: '20px', alignItems: 'flex-start', transition: 'opacity 0.3s' }}
                 onMouseOver={(e) => { e.currentTarget.style.opacity = '0.85'; }}
                 onMouseOut={(e) => { e.currentTarget.style.opacity = '1'; }}
               >
@@ -126,7 +124,7 @@ export default function Talabalar() {
                     {item.desc}
                   </p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
 

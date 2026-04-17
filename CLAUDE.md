@@ -32,6 +32,11 @@ All routes are flat children of `<Layout>` in `src/App.jsx`. Layout renders `<He
 | `/taqvim` | Tadbirlar taqvimi |
 | `/kontaktlar` | Kontaktlar |
 | `/abituriyentlar` | Abituriyentlar |
+| `/talabalar` | Talabalar |
+| `/xalqaro` | Xalqaro aloqalar |
+| `/fotogalereya` | Fotogalereya |
+| `/videogalereya` | Videogalereya |
+| `/yashil-universitet` | Yashil Universitet |
 
 ### Adding a new page
 
@@ -91,3 +96,7 @@ Page entry animation: wrap content in a `div` with `className="page-transition"`
 - **`LanguageSwitcher`** — local state only (UZ/RU/EN), no i18n library connected.
 - **Static assets** (`/image.png`, `/Konservatoriya_logo_white-05.png`) live in `public/` and are referenced as root-relative paths.
 - **Footer** social icon hover is handled via inline `onMouseOver`/`onMouseOut` (not CSS classes).
+
+### Orphaned files
+
+`src/components/layout/Sidebar.jsx` and `src/hooks/useSidebar.js` exist but are not imported anywhere — legacy code from a previous nav design. Do not wire them up; use `MobileMenu`/`MegaDropdown` instead.
