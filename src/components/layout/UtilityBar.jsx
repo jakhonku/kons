@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { UTILITY_LINKS } from '../../data/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 
-export default function UtilityBar() {
+export default function UtilityBar({ onSearchOpen }) {
   return (
     <div className="utility-bar">
       <div className="utility-inner">
@@ -22,7 +22,11 @@ export default function UtilityBar() {
 
           <div className="utility-divider" />
 
-          <button className="utility-search" aria-label="Qidiruv">
+          <button
+            className="utility-search"
+            aria-label="Qidiruv"
+            onClick={onSearchOpen}
+          >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="1.8"
               strokeLinecap="round" strokeLinejoin="round">

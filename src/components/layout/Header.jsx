@@ -5,6 +5,7 @@ import UtilityBar from './UtilityBar';
 import DesktopNav from './DesktopNav';
 import HamburgerIcon from './HamburgerIcon';
 import MobileMenu from './MobileMenu';
+import SearchPanel from './SearchPanel';
 
 const MONTHS_SHORT = ['YAN','FEV','MAR','APR','MAY','IYN','IYL','AVG','SEN','OKT','NOY','DEK'];
 
@@ -94,6 +95,7 @@ function CalendarBtn() {
 }
 
 export default function Header() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled,    setScrolled]    = useState(false);
   const [mobileOpen,  setMobileOpen]  = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
@@ -117,7 +119,7 @@ export default function Header() {
     <>
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         {/* Utility bar — faqat desktop */}
-        {isDesktop && <UtilityBar />}
+        {isDesktop && <UtilityBar onSearchOpen={() => setIsSearchOpen(true)} />}
 
         {/* Asosiy navbar */}
         <div className="navbar">
@@ -152,6 +154,9 @@ export default function Header() {
 
       {/* Mobile fullscreen menu */}
       <MobileMenu isOpen={mobileOpen} onClose={closeMobile} />
+
+      {/* Global Search Panel */}
+      <SearchPanel isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }
