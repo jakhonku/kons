@@ -1,5 +1,13 @@
 import { Link } from 'react-router-dom';
-import { History, Building2, Users, UserPlus, Calendar, FileText } from 'lucide-react';
+import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio } from 'lucide-react';
+
+const LATEST_NEWS = [
+  { id: 1, cat: 'Voqealar', title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
+  { id: 2, cat: "Ta'lim", title: "Yangi o'quv dasturlari tasdiqlandi" },
+  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi g'olibi bo'ldi" },
+  { id: 4, cat: 'Xalqaro', title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
+  { id: 5, cat: 'Voqealar', title: "Bahor konsert mavsumi boshlanadi" },
+];
 
 const STATS = [
   { num: '1936', label: 'Yildan buyon' },
@@ -9,12 +17,12 @@ const STATS = [
 ];
 
 const QUICK_LINKS = [
-  { icon: History,   label: 'Konservatoriya tarixi', sub: '1936-yildan bugun',      to: '/tarix' },
-  { icon: Building2, label: 'Muassasa tuzilmasi',   sub: 'Fakultet va kafedralar', to: '/tuzilma' },
-  { icon: Users,     label: 'Rahbariyat',            sub: 'Rektor va prorektor',    to: '/rahbariyat' },
-  { icon: UserPlus,  label: 'Abituriyentlar',        sub: 'Qabul 2026 — Kvota',    to: '/abituriyentlar' },
-  { icon: Calendar,  label: 'Tadbirlar taqvimi',    sub: 'Kelgusi konsertlar',      to: '/taqvim' },
-  { icon: FileText,  label: "Me'yoriy hujjatlar",   sub: 'PDF, Ustav, Qoidalar',   to: '/hujjatlar' },
+  { icon: History, label: 'Konservatoriya tarixi', sub: '1936-yildan bugun', to: '/tarix' },
+  { icon: Building2, label: 'Muassasa tuzilmasi', sub: 'Fakultet va kafedralar', to: '/tuzilma' },
+  { icon: Users, label: 'Rahbariyat', sub: 'Rektor va prorektor', to: '/rahbariyat' },
+  { icon: UserPlus, label: 'Abituriyentlar', sub: 'Qabul 2026 — Kvota', to: '/abituriyentlar' },
+  { icon: Calendar, label: 'Tadbirlar taqvimi', sub: 'Kelgusi konsertlar', to: '/taqvim' },
+  { icon: FileText, label: "Me'yoriy hujjatlar", sub: 'PDF, Ustav, Qoidalar', to: '/hujjatlar' },
 ];
 
 export default function Home() {
@@ -34,7 +42,7 @@ export default function Home() {
           </span>
 
           <h1>
-            O'zbekiston<br />
+            Oʻzbekiston<br />
             Davlat <span>Konservatoriyasi</span>
           </h1>
 
@@ -92,7 +100,7 @@ export default function Home() {
           </div>
         ))}
       </div>
- 
+
       {/* ── VIZUAL GALEREYA (YANGI) ───────────────────────── */}
       <section style={{ padding: '80px 0', background: 'var(--bg-deep)', borderTop: '1px solid var(--border-subtle)' }}>
         <div className="container">
@@ -105,7 +113,7 @@ export default function Home() {
               <div className="ornament-diamond" />
             </div>
           </div>
-          
+
           <div className="reveal home-gallery-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
@@ -134,6 +142,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── YANGILIKLAR LENTASI ───────────────────────────── */}
+      <div className="news-ticker-wrap">
+        <div className="news-ticker-label">
+          <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
+          <span>So'nggi yangiliklar</span>
+        </div>
+        <div className="news-ticker-track-wrap">
+          <div className="news-ticker-track">
+            {[...LATEST_NEWS, ...LATEST_NEWS].map((item, i) => (
+              <span key={i} className="news-ticker-item">
+                <span className="news-ticker-cat">{item.cat}</span>
+                {item.title}
+                <span className="news-ticker-sep">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
+        <Link to="/yangiliklar" className="news-ticker-btn">
+          Batafsil <ArrowRight size={13} strokeWidth={2} />
+        </Link>
+      </div>
 
       {/* ── TEZKOR HAVOLALAR 3D GRID ─────────────────────── */}
       <section style={{ background: 'var(--white)', borderTop: '1px solid var(--light-border)', borderBottom: '1px solid var(--light-border)', padding: '100px 0' }}>
@@ -272,8 +302,8 @@ export default function Home() {
                     transition: '0.3s',
                     fontFamily: 'var(--font-sans)',
                   }}
-                  onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(201,168,76,0.12)'; e.currentTarget.style.color = 'var(--gold-light)'; }}
-                  onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(7,7,14,0.6)'; e.currentTarget.style.color = 'rgba(240,237,232,0.6)'; }}
+                    onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(201,168,76,0.12)'; e.currentTarget.style.color = 'var(--gold-light)'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(7,7,14,0.6)'; e.currentTarget.style.color = 'rgba(240,237,232,0.6)'; }}
                   >
                     {label} →
                   </a>
@@ -294,8 +324,8 @@ export default function Home() {
               transform: 'perspective(800px) rotateY(-4deg)',
               transition: 'transform 0.6s',
             }}
-            onMouseOver={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(0deg)'; }}
-            onMouseOut={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(-4deg)'; }}
+              onMouseOver={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(0deg)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(-4deg)'; }}
             >
               <span className="section-tag" style={{ marginBottom: '16px' }}>DIQQAT</span>
               <h3 style={{ color: 'var(--text-primary)', fontSize: '1.8rem', fontWeight: 300, marginBottom: '16px' }}>

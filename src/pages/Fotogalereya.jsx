@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Radio } from 'lucide-react';
 import PageHero from '../components/PageHero';
 
 const BREADCRUMBS = [
@@ -8,6 +10,14 @@ const BREADCRUMBS = [
 ];
 
 const CATEGORIES = ['Barchasi', 'Konsertlar', 'Tadbirlar', 'Kampus', 'Xalqaro'];
+
+const LATEST_NEWS = [
+  { id: 1, cat: 'Voqealar',   title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
+  { id: 2, cat: "Ta'lim",     title: "Yangi o'quv dasturlari tasdiqlandi" },
+  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi g'olibi bo'ldi" },
+  { id: 4, cat: 'Xalqaro',    title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
+  { id: 5, cat: 'Voqealar',   title: "Bahor konsert mavsumi boshlanadi" },
+];
 
 const PHOTOS = [
   { id: 1, cat: 'Konsertlar',  title: 'Simfonik Orkestr yozgi mavsumi', year: '2025', img: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800&h=600&fit=crop' },
@@ -76,6 +86,28 @@ export default function Fotogalereya() {
 
         </div>
       </section>
+
+      {/* News Ticker */}
+      <div className="news-ticker-wrap">
+        <div className="news-ticker-label">
+          <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
+          <span>So'nggi yangiliklar</span>
+        </div>
+        <div className="news-ticker-track-wrap">
+          <div className="news-ticker-track">
+            {[...LATEST_NEWS, ...LATEST_NEWS].map((item, i) => (
+              <span key={i} className="news-ticker-item">
+                <span className="news-ticker-cat">{item.cat}</span>
+                {item.title}
+                <span className="news-ticker-sep">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
+        <Link to="/yangiliklar" className="news-ticker-btn">
+          Batafsil <ArrowRight size={13} strokeWidth={2} />
+        </Link>
+      </div>
 
       {/* Lightbox */}
       {lightbox && (
