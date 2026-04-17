@@ -167,7 +167,7 @@ export default function Abituriyentlar() {
           <div className="section-divider">
             <h2>Qabul bosqichlari</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0', marginBottom: '60px', border: '1px solid #e8e4dc' }}>
+          <div className="steps-grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0', marginBottom: '60px', border: '1px solid #e8e4dc' }}>
             {STEPS.map((step, i) => (
               <div key={step.num} style={{
                 padding: '30px 25px',
@@ -230,7 +230,7 @@ export default function Abituriyentlar() {
           <div className="section-divider">
             <h2>Kerakli hujjatlar</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '60px' }}>
+          <div className="docs-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '60px' }}>
             {DOCUMENTS.map((doc, i) => (
               <div key={i} style={{
                 display: 'flex',

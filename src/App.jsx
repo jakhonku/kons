@@ -11,6 +11,12 @@ import Kontaktlar from './pages/Kontaktlar';
 import Abituriyentlar from './pages/Abituriyentlar';
 import Talabalar from './pages/Talabalar';
 import Xalqaro from './pages/Xalqaro';
+import HamkorTashkilotlar from './pages/HamkorTashkilotlar';
+import XorijiyDasturlar from './pages/XorijiyDasturlar';
+import XalqaroMemorandumlar from './pages/XalqaroMemorandumlar';
+import Erasmus from './pages/Erasmus';
+import XalqaroStipendiyalar from './pages/XalqaroStipendiyalar';
+import QoshmaKonsertlar from './pages/QoshmaKonsertlar';
 import Fotogalereya from './pages/Fotogalereya';
 import Videogalereya from './pages/Videogalereya';
 import YashilUniversitet from './pages/YashilUniversitet';
@@ -25,6 +31,7 @@ import Registrator from './pages/Registrator';
 import Togaraklar from './pages/Togaraklar';
 import Yotoqxona from './pages/Yotoqxona';
 import TadbirBatafsil from './pages/TadbirBatafsil';
+import Sayohat360 from './pages/Sayohat360';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -44,6 +51,12 @@ export default function App() {
           <Route path="abituriyentlar" element={<Abituriyentlar />} />
           <Route path="talabalar" element={<Talabalar />} />
           <Route path="xalqaro" element={<Xalqaro />} />
+          <Route path="hamkor-tashkilotlar" element={<HamkorTashkilotlar />} />
+          <Route path="xorijiy-dasturlar" element={<XorijiyDasturlar />} />
+          <Route path="xalqaro-memorandumlar" element={<XalqaroMemorandumlar />} />
+          <Route path="erasmus" element={<Erasmus />} />
+          <Route path="xalqaro-stipendiyalar" element={<XalqaroStipendiyalar />} />
+          <Route path="qoshma-konsertlar" element={<QoshmaKonsertlar />} />
           <Route path="fotogalereya" element={<Fotogalereya />} />
           <Route path="videogalereya" element={<Videogalereya />} />
           <Route path="yashil-universitet" element={<YashilUniversitet />} />
@@ -57,6 +70,7 @@ export default function App() {
           <Route path="registrator" element={<Registrator />} />
           <Route path="togaraklar" element={<Togaraklar />} />
           <Route path="yotoqxona" element={<Yotoqxona />} />
+          <Route path="sayohat-360" element={<Sayohat360 />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

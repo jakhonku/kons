@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { Clock, MapPin } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -73,8 +74,8 @@ export default function Togaraklar() {
                         {item.name}
                       </h3>
                       <div style={{ fontSize: '0.75rem', color: '#888', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                        <span>🕐 {item.schedule}</span>
-                        <span>📍 {item.room}</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Clock size={12} strokeWidth={2} />{item.schedule}</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><MapPin size={12} strokeWidth={2} />{item.room}</span>
                       </div>
                     </div>
                     <div style={{ textAlign: 'right', flexShrink: 0 }}>

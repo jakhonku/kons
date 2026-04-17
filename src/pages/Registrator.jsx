@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { MapPin, Clock, Phone } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -33,15 +34,15 @@ export default function Registrator() {
           {/* Location & hours */}
           <div className="g-3" style={{ marginBottom: '50px' }}>
             {[
-              { icon: '📍', title: 'Manzil', lines: ['1-bino, 105-xona', '(Asosiy binoning 1-qavati)'] },
-              { icon: '🕐', title: 'Ish vaqti', lines: ['Dushanba – Juma: 09:00 – 17:00', 'Tushlik: 13:00 – 14:00'] },
-              { icon: '📞', title: "Bog'lanish", lines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'] },
+              { icon: MapPin, title: 'Manzil',       lines: ['1-bino, 105-xona', '(Asosiy binoning 1-qavati)'] },
+              { icon: Clock,  title: 'Ish vaqti',    lines: ['Dushanba – Juma: 09:00 – 17:00', 'Tushlik: 13:00 – 14:00'] },
+              { icon: Phone,  title: "Bog'lanish",   lines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'] },
             ].map((item) => (
               <div key={item.title} style={{
                 background: 'var(--white)', border: '1px solid var(--light-border)',
                 borderTop: '3px solid var(--gold)', padding: '28px 24px',
               }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '12px' }}>{item.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '12px' }}><item.icon size={28} strokeWidth={1.5} /></div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--navy)', marginBottom: '10px', fontWeight: 400 }}>{item.title}</h3>
                 {item.lines.map((line) => (
                   <p key={line} style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, margin: 0 }}>{line}</p>

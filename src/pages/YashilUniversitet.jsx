@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { Leaf, Sun, Recycle, Droplets, Bike, TrendingDown } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -7,12 +8,12 @@ const BREADCRUMBS = [
 ];
 
 const GOALS = [
-  { icon: '🌱', title: 'Yashil muhit',         desc: "Kampusda 500 dan ortiq daraxt va o'simliklar, ekologik hududlar." },
-  { icon: '☀️', title: 'Quyosh energiyasi',    desc: "Binolar energiyasining 30% quyosh panellaridan ta'minlanadi." },
-  { icon: '♻️', title: 'Chiqindilarni saralash', desc: "Uch xil idish orqali chiqindilarni qayta ishlash tizimi." },
-  { icon: '💧', title: "Suv tejamliligi",       desc: "Avtomatik sug'orish va suv sarfini nazorat qilish tizimi." },
-  { icon: '🚲', title: 'Velosiped infratuzilmasi', desc: "Campus bo'ylab velosiped yo'llari va parkovkalar." },
-  { icon: '📊', title: 'Carbon izini kamaytirish', desc: "2030 yilgacha carbon-neutral maqomini olish maqsadi." },
+  { icon: Leaf,        title: 'Yashil muhit',            desc: "Kampusda 500 dan ortiq daraxt va o'simliklar, ekologik hududlar." },
+  { icon: Sun,         title: 'Quyosh energiyasi',       desc: "Binolar energiyasining 30% quyosh panellaridan ta'minlanadi." },
+  { icon: Recycle,     title: 'Chiqindilarni saralash',  desc: "Uch xil idish orqali chiqindilarni qayta ishlash tizimi." },
+  { icon: Droplets,    title: "Suv tejamliligi",         desc: "Avtomatik sug'orish va suv sarfini nazorat qilish tizimi." },
+  { icon: Bike,        title: 'Velosiped infratuzilmasi', desc: "Campus bo'ylab velosiped yo'llari va parkovkalar." },
+  { icon: TrendingDown, title: 'Carbon izini kamaytirish', desc: "2030 yilgacha carbon-neutral maqomini olish maqsadi." },
 ];
 
 const ACHIEVEMENTS = [
@@ -40,7 +41,7 @@ export default function YashilUniversitet() {
       />
 
       {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: '#1a3a2a', borderBottom: '2px solid #4ade80' }}>
+      <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: '#1a3a2a', borderBottom: '2px solid #4ade80' }}>
         {ACHIEVEMENTS.map((a, i) => (
           <div key={a.label} style={{ padding: '32px 20px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.6rem', fontWeight: 300, color: '#4ade80', lineHeight: 1, marginBottom: '8px' }}>
@@ -68,13 +69,13 @@ export default function YashilUniversitet() {
             <h2>Yashil Maqsadlar</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '50px' }}>
+          <div className="page-stats-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '50px' }}>
             {GOALS.map((g) => (
               <div key={g.title} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '28px 24px', borderTop: '3px solid #4ade80', transition: '0.3s' }}
                 onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(26,56,26,0.1)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '14px', lineHeight: 1 }}>{g.icon}</div>
+                <div style={{ color: '#4ade80', marginBottom: '14px', lineHeight: 1 }}><g.icon size={32} strokeWidth={1.5} /></div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: '#1a3a2a', marginBottom: '8px', fontWeight: 400 }}>{g.title}</h3>
                 <p style={{ fontSize: '0.83rem', color: '#555', lineHeight: 1.6 }}>{g.desc}</p>
               </div>

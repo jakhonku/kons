@@ -52,11 +52,11 @@ export default function TadbirBatafsil() {
       />
 
       <section className="main-content">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 350px', gap: '60px', padding: '60px 0' }}>
+        <div className="container tadbir-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 350px', gap: '60px', padding: '60px 0' }}>
           
           {/* Chap qism: Rasm va Tavsif */}
           <div>
-            <div style={{ width: '100%', height: '450px', overflow: 'hidden', borderRadius: '4px', marginBottom: '40px', border: '1px solid var(--border-subtle)' }}>
+            <div className="tadbir-img" style={{ width: '100%', height: '450px', overflow: 'hidden', borderRadius: '4px', marginBottom: '40px', border: '1px solid var(--border-subtle)' }}>
               <img src={event.img} alt={event.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             

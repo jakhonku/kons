@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { Calendar, BarChart2, ClipboardList, FileText, MessageCircle, GraduationCap } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -7,12 +8,12 @@ const BREADCRUMBS = [
 ];
 
 const FEATURES = [
-  { icon: '📅', title: 'Dars jadvali', desc: "Joriy va keyingi semestr jadvallari. Individual darslar va guruh mashg'ulotlari." },
-  { icon: '📊', title: 'Elektron reyting', desc: "Barcha fanlar bo'yicha baholar, davomad va yakuniy natijalar." },
-  { icon: '📝', title: 'Topshiriqlar', desc: "O'qituvchilar tomonidan berilgan vazifalar va ularni topshirish muddatlari." },
-  { icon: '📄', title: 'Hujjatlar', desc: "Ma'lumotnoma, guvohnoma va boshqa rasmiy hujjatlarni olish." },
-  { icon: '💬', title: 'Murojaat', desc: "Dekanat va kafedralarga elektron murojaat yuborish." },
-  { icon: '🎓', title: 'Stipendiya', desc: "Stipendiya va grantlar haqida ma'lumot va to'lovlar tarixi." },
+  { icon: Calendar,       title: 'Dars jadvali',     desc: "Joriy va keyingi semestr jadvallari. Individual darslar va guruh mashg'ulotlari." },
+  { icon: BarChart2,      title: 'Elektron reyting', desc: "Barcha fanlar bo'yicha baholar, davomad va yakuniy natijalar." },
+  { icon: ClipboardList,  title: 'Topshiriqlar',     desc: "O'qituvchilar tomonidan berilgan vazifalar va ularni topshirish muddatlari." },
+  { icon: FileText,       title: 'Hujjatlar',        desc: "Ma'lumotnoma, guvohnoma va boshqa rasmiy hujjatlarni olish." },
+  { icon: MessageCircle,  title: 'Murojaat',         desc: "Dekanat va kafedralarga elektron murojaat yuborish." },
+  { icon: GraduationCap,  title: 'Stipendiya',       desc: "Stipendiya va grantlar haqida ma'lumot va to'lovlar tarixi." },
 ];
 
 export default function HemisTalaba() {
@@ -29,7 +30,7 @@ export default function HemisTalaba() {
         <div className="container">
 
           {/* Main CTA */}
-          <div style={{
+          <div className="page-cta-block" style={{
             background: 'linear-gradient(110deg, var(--navy) 0%, #1e1e5a 100%)',
             borderTop: '3px solid var(--gold)',
             padding: '56px 64px',
@@ -78,7 +79,7 @@ export default function HemisTalaba() {
                 onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(26,26,56,0.1)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--light-border)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '16px', lineHeight: 1 }}>{f.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '16px', lineHeight: 1 }}><f.icon size={32} strokeWidth={1.5} /></div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--navy)', marginBottom: '10px', fontWeight: 400 }}>
                   {f.title}
                 </h3>

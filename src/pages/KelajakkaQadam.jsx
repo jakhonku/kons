@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { Target, Handshake, Clipboard, Globe, Mic, TrendingUp } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -7,12 +8,12 @@ const BREADCRUMBS = [
 ];
 
 const SERVICES = [
-  { icon: '🎯', title: 'Karyera maslahat', desc: "Individual karyera maslahati, portfoilo tuzish, auditsiya tayyorgarlik" },
-  { icon: '🤝', title: 'Hamkorlar bilan uchrashuvlar', desc: "Opera teatrlari, filarmoniya va musiqa maktablari vakillari bilan uchrashuv" },
-  { icon: '📋', title: 'CV va motivatsion xat', desc: "Xalqaro standartlarga mos CV va motivatsion xat tayyorlash" },
-  { icon: '🌐', title: 'Xorijiy imkoniyatlar', desc: "Chet el teatrlari va orkestrlariga qabul haqida ma'lumot" },
-  { icon: '🎤', title: 'Mock audition', desc: "Auditsiyaga tayyorgarlik: professional hakamlar oldida mashq" },
-  { icon: '📊', title: 'Bandlik statistikasi', desc: "Bitiruvchilarimizning 85% birinchi yilda ishga joylashadi" },
+  { icon: Target,     title: 'Karyera maslahat',         desc: "Individual karyera maslahati, portfoilo tuzish, auditsiya tayyorgarlik" },
+  { icon: Handshake,  title: 'Hamkorlar bilan uchrashuvlar', desc: "Opera teatrlari, filarmoniya va musiqa maktablari vakillari bilan uchrashuv" },
+  { icon: Clipboard,  title: 'CV va motivatsion xat',    desc: "Xalqaro standartlarga mos CV va motivatsion xat tayyorlash" },
+  { icon: Globe,      title: 'Xorijiy imkoniyatlar',     desc: "Chet el teatrlari va orkestrlariga qabul haqida ma'lumot" },
+  { icon: Mic,        title: 'Mock audition',            desc: "Auditsiyaga tayyorgarlik: professional hakamlar oldida mashq" },
+  { icon: TrendingUp, title: 'Bandlik statistikasi',     desc: "Bitiruvchilarimizning 85% birinchi yilda ishga joylashadi" },
 ];
 
 const PARTNERS = [
@@ -38,7 +39,7 @@ export default function KelajakkaQadam() {
         <div className="container">
 
           {/* Stats banner */}
-          <div style={{
+          <div className="page-stats-3" style={{
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
             background: 'var(--navy)', borderBottom: '2px solid var(--gold)',
             marginBottom: '60px',
@@ -69,7 +70,7 @@ export default function KelajakkaQadam() {
                 onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(26,26,56,0.09)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--light-border)'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '14px' }}>{s.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '14px' }}><s.icon size={32} strokeWidth={1.5} /></div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400 }}>{s.title}</h3>
                 <p style={{ fontSize: '0.82rem', color: '#888', lineHeight: 1.65 }}>{s.desc}</p>
               </div>

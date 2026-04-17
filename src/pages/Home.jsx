@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { History, Building2, Users, UserPlus, Calendar, FileText } from 'lucide-react';
 
 const STATS = [
   { num: '1936', label: 'Yildan buyon' },
@@ -8,12 +9,12 @@ const STATS = [
 ];
 
 const QUICK_LINKS = [
-  { icon: '♩', label: 'Konservatoriya tarixi', sub: '1936-yildan bugun',  to: '/tarix' },
-  { icon: '♪', label: 'Muassasa tuzilmasi',   sub: 'Fakultet va kafedralar', to: '/tuzilma' },
-  { icon: '♫', label: 'Rahbariyat',            sub: 'Rektor va prorektor', to: '/rahbariyat' },
-  { icon: '♬', label: 'Abituriyentlar',        sub: 'Qabul 2026 — Kvota', to: '/abituriyentlar' },
-  { icon: '𝄞', label: 'Tadbirlar taqvimi',    sub: 'Kelgusi konsertlar',  to: '/taqvim' },
-  { icon: '𝄢', label: "Me'yoriy hujjatlar",   sub: 'PDF, Ustav, Qoidalar', to: '/hujjatlar' },
+  { icon: History,   label: 'Konservatoriya tarixi', sub: '1936-yildan bugun',      to: '/tarix' },
+  { icon: Building2, label: 'Muassasa tuzilmasi',   sub: 'Fakultet va kafedralar', to: '/tuzilma' },
+  { icon: Users,     label: 'Rahbariyat',            sub: 'Rektor va prorektor',    to: '/rahbariyat' },
+  { icon: UserPlus,  label: 'Abituriyentlar',        sub: 'Qabul 2026 — Kvota',    to: '/abituriyentlar' },
+  { icon: Calendar,  label: 'Tadbirlar taqvimi',    sub: 'Kelgusi konsertlar',      to: '/taqvim' },
+  { icon: FileText,  label: "Me'yoriy hujjatlar",   sub: 'PDF, Ustav, Qoidalar',   to: '/hujjatlar' },
 ];
 
 export default function Home() {
@@ -105,11 +106,11 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="reveal" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(4, 1fr)', 
+          <div className="reveal home-gallery-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
             gridTemplateRows: 'repeat(2, 280px)',
-            gap: '12px' 
+            gap: '12px'
           }}>
             <div style={{ gridColumn: 'span 2', gridRow: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
               <img src="/images/fotohisobot/img3.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
@@ -153,7 +154,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="reveal" style={{
+          <div className="reveal quick-links-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '16px',
@@ -191,13 +192,11 @@ export default function Home() {
                 }}
               >
                 <div style={{
-                  fontSize: '2rem',
                   color: 'var(--gold)',
                   marginBottom: '18px',
                   lineHeight: 1,
-                  fontFamily: 'serif',
                 }}>
-                  {item.icon}
+                  <item.icon size={32} strokeWidth={1.5} />
                 </div>
                 <h3 data-title="" style={{
                   fontFamily: 'var(--font-display)',

@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { Music, BookOpen, Video } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -11,21 +12,21 @@ const COLLECTIONS = [
     title: 'Nota bazasi',
     count: '12 000+',
     desc: "Klassik va zamonaviy nota yozuvlari, partituralar",
-    icon: '🎵',
+    icon: Music,
     items: ["Barcha davrlar klassik asarlari", "O'zbek milliy musiqa notaglari", "Kamera va orkestr partituralari", "Fortepiano, vokal, torli cholg'ular"],
   },
   {
     title: "O'quv adabiyotlari",
     count: '8 500+',
     desc: "Darsliklar, metodik qo'llanmalar, ilmiy maqolalar",
-    icon: '📚',
+    icon: BookOpen,
     items: ["Musiqa nazariyasi darsliklar", "Ijrochilik pedagogikasi", "Musiqa tarixi va musiqashunoslik", "Xalqaro ilmiy jurnallar"],
   },
   {
     title: 'Audio va video',
     count: '3 200+',
     desc: "Kontsert yozuvlari, master-klass videolari",
-    icon: '🎬',
+    icon: Video,
     items: ["Konservatoriya kontsertlari arxivi", "Jahon yulduzlari yozuvlari", "O'quv master-klasslar", "Opera va balet postanovkalari"],
   },
 ];
@@ -44,7 +45,7 @@ export default function Kutubxona() {
         <div className="container">
 
           {/* Stats */}
-          <div style={{
+          <div className="page-stats-4" style={{
             display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
             background: 'var(--navy)', borderBottom: '2px solid var(--gold)', marginBottom: '60px',
           }}>
@@ -75,7 +76,7 @@ export default function Kutubxona() {
                 onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(26,26,56,0.1)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>{col.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '12px' }}><col.icon size={32} strokeWidth={1.5} /></div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 300, color: 'var(--gold-dark)', lineHeight: 1, marginBottom: '8px' }}>
                   {col.count}
                 </div>

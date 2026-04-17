@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { Mic2, Music, Music2, Headphones, GraduationCap } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -16,11 +17,11 @@ const MILESTONES = [
 ];
 
 const FACULTIES = [
-  { name: "Akademik xonandalik", icon: "♪", count: "8 kafedra" },
-  { name: "Cholg'u ijrochiligi",  icon: "♫", count: "12 kafedra" },
-  { name: "Kompozitsiya",          icon: "𝄞", count: "6 kafedra" },
-  { name: "Xalq cholg'ulari",     icon: "♬", count: "7 kafedra" },
-  { name: "Musiqa pedagogikasi",  icon: "𝄢", count: "5 kafedra" },
+  { name: "Akademik xonandalik", icon: Mic2,         count: "8 kafedra" },
+  { name: "Cholg'u ijrochiligi",  icon: Music,        count: "12 kafedra" },
+  { name: "Kompozitsiya",          icon: Music2,       count: "6 kafedra" },
+  { name: "Xalq cholg'ulari",     icon: Headphones,   count: "7 kafedra" },
+  { name: "Musiqa pedagogikasi",  icon: GraduationCap, count: "5 kafedra" },
 ];
 
 export default function Tarix() {
@@ -54,12 +55,12 @@ export default function Tarix() {
             <h2>Tarixiy bosqichlar</h2>
           </div>
 
-          <div style={{ position: 'relative', marginBottom: '60px' }}>
+          <div className="timeline-container" style={{ position: 'relative', marginBottom: '60px' }}>
             {/* Vertikal chiziq */}
-            <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: 'linear-gradient(180deg, transparent, var(--gold), transparent)', transform: 'translateX(-50%)' }} />
+            <div className="timeline-line" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: 'linear-gradient(180deg, transparent, var(--gold), transparent)', transform: 'translateX(-50%)' }} />
 
             {MILESTONES.map((m, i) => (
-              <div key={m.year} style={{
+              <div key={m.year} className="timeline-item" style={{
                 display: 'flex',
                 justifyContent: i % 2 === 0 ? 'flex-start' : 'flex-end',
                 marginBottom: '32px',
@@ -78,7 +79,7 @@ export default function Tarix() {
                   boxShadow: '0 0 0 2px var(--gold)',
                   zIndex: 1,
                 }} />
-                <div style={{
+                <div className="timeline-card" style={{
                   width: '44%',
                   background: 'var(--white)',
                   border: '1px solid var(--light-border)',
@@ -108,13 +109,13 @@ export default function Tarix() {
             <h2>Fakultetlar</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1px', background: 'var(--light-border)', marginBottom: '60px', border: '1px solid var(--light-border)' }}>
+          <div className="faculties-grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1px', background: 'var(--light-border)', marginBottom: '60px', border: '1px solid var(--light-border)' }}>
             {FACULTIES.map((f) => (
               <div key={f.name} style={{ background: 'var(--white)', padding: '32px 20px', textAlign: 'center', transition: 'background 0.3s' }}
                 onMouseOver={(e) => { e.currentTarget.style.background = 'var(--navy)'; e.currentTarget.querySelectorAll('*').forEach(el => { el.style.color = el.dataset.keep ? el.style.color : '#fff'; }); }}
                 onMouseOut={(e) => { e.currentTarget.style.background = 'var(--white)'; e.currentTarget.querySelectorAll('*').forEach(el => { el.style.color = ''; }); }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '14px', lineHeight: 1 }}>{f.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '14px', lineHeight: 1, display: 'flex', justifyContent: 'center' }}><f.icon size={32} strokeWidth={1.5} /></div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', color: 'var(--navy)', marginBottom: '6px', lineHeight: 1.3 }}>{f.name}</div>
                 <div style={{ fontSize: '0.7rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 600, letterSpacing: '1px' }}>{f.count}</div>
               </div>

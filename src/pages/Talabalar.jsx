@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import { Calendar, Clipboard, BookOpen, Monitor, GraduationCap, TrendingUp, Library, Building2, Music2, Home } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -14,22 +15,22 @@ const STATS = [
 ];
 
 const OQUV = [
-  { icon: '📅', title: 'Dars jadvallari',              desc: 'Joriy semestr uchun barcha guruhlar jadvali', to: '/dars-jadvali' },
-  { icon: '📋', title: "O'quv rejalar",                 desc: "Bakalavr va magistratura o'quv rejalari",    to: '/oquv-rejalar' },
-  { icon: '📖', title: "O'quv dasturlari (Sillabuslar)", desc: "Barcha fanlar bo'yicha sillabuslar",         to: '/sillabuslar' },
-  { icon: '💻', title: 'HEMIS-talaba',                  desc: 'Shaxsiy kabinet va elektron reyting',        to: '/hemis-talaba' },
+  { icon: Calendar,  title: 'Dars jadvallari',               desc: 'Joriy semestr uchun barcha guruhlar jadvali', to: '/dars-jadvali' },
+  { icon: Clipboard, title: "O'quv rejalar",                  desc: "Bakalavr va magistratura o'quv rejalari",    to: '/oquv-rejalar' },
+  { icon: BookOpen,  title: "O'quv dasturlari (Sillabuslar)", desc: "Barcha fanlar bo'yicha sillabuslar",         to: '/sillabuslar' },
+  { icon: Monitor,   title: 'HEMIS-talaba',                   desc: 'Shaxsiy kabinet va elektron reyting',        to: '/hemis-talaba' },
 ];
 
 const SUPPORT = [
-  { icon: '🎓', title: 'Grantlar',                     desc: "Davlat va xorijiy grantlar, stipendiyalar",  to: '/grantlar' },
-  { icon: '🚀', title: 'Kelajakka qadam',               desc: "Karyera markazi va ish bilan ta'minlash",   to: '/kelajakka-qadam' },
-  { icon: '📚', title: 'Online kutubxona',              desc: 'Elektron kitoblar va nota bazasi',           to: '/kutubxona' },
-  { icon: '🏛️', title: 'Registrator ofisi',             desc: "Hujjatlar, guvohnomalar, murojaat",          to: '/registrator' },
+  { icon: GraduationCap, title: 'Grantlar',          desc: "Davlat va xorijiy grantlar, stipendiyalar",  to: '/grantlar' },
+  { icon: TrendingUp,    title: 'Kelajakka qadam',   desc: "Karyera markazi va ish bilan ta'minlash",    to: '/kelajakka-qadam' },
+  { icon: Library,       title: 'Online kutubxona',  desc: 'Elektron kitoblar va nota bazasi',            to: '/kutubxona' },
+  { icon: Building2,     title: 'Registrator ofisi', desc: "Hujjatlar, guvohnomalar, murojaat",          to: '/registrator' },
 ];
 
 const LIFE = [
-  { icon: '🎭', title: "To'garaklar",        desc: "Ijodiy, sport va madaniy to'garaklar",     to: '/togaraklar' },
-  { icon: '🏠', title: 'Talabalar shaharchasi', desc: "Yotoqxona, ovqatlanish, dam olish joylari", to: '/yotoqxona' },
+  { icon: Music2, title: "To'garaklar",          desc: "Ijodiy, sport va madaniy to'garaklar",       to: '/togaraklar' },
+  { icon: Home,   title: 'Talabalar shaharchasi', desc: "Yotoqxona, ovqatlanish, dam olish joylari",  to: '/yotoqxona' },
 ];
 
 const SCHEDULE_DAYS = ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma'];
@@ -45,7 +46,7 @@ export default function Talabalar() {
       />
 
       {/* Statistika */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
+      <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {STATS.map((s) => (
           <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>
@@ -72,7 +73,7 @@ export default function Talabalar() {
                 onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(26,26,56,0.1)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--light-border)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
               >
-                <div style={{ fontSize: '1.8rem', marginBottom: '14px', lineHeight: 1 }}>{item.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '14px', lineHeight: 1 }}><item.icon size={28} strokeWidth={1.5} /></div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400, lineHeight: 1.3 }}>
                   {item.title}
                 </h3>
@@ -95,7 +96,7 @@ export default function Talabalar() {
                 onMouseOver={(e) => { e.currentTarget.style.background = 'var(--white)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(26,26,56,0.1)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.background = 'var(--light-50)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <div style={{ fontSize: '1.8rem', marginBottom: '14px', lineHeight: 1 }}>{item.icon}</div>
+                <div style={{ color: 'var(--gold)', marginBottom: '14px', lineHeight: 1 }}><item.icon size={28} strokeWidth={1.5} /></div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400, lineHeight: 1.3 }}>
                   {item.title}
                 </h3>
@@ -115,7 +116,7 @@ export default function Talabalar() {
                 onMouseOver={(e) => { e.currentTarget.style.opacity = '0.85'; }}
                 onMouseOut={(e) => { e.currentTarget.style.opacity = '1'; }}
               >
-                <div style={{ fontSize: '2rem', lineHeight: 1, flexShrink: 0 }}>{item.icon}</div>
+                <div style={{ color: 'var(--gold)', lineHeight: 1, flexShrink: 0 }}><item.icon size={32} strokeWidth={1.5} /></div>
                 <div>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--white)', marginBottom: '8px', fontWeight: 300 }}>
                     {item.title}

@@ -113,17 +113,17 @@ export const NAV_MENU = [
       {
         heading: 'Hamkorlik',
         links: [
-          { label: 'Hamkor tashkilotlar',   to: '/xalqaro' },
-          { label: 'Xorijiy dasturlar',     to: '/xalqaro' },
-          { label: 'Xalqaro memorandumlar', to: '/xalqaro' },
+          { label: 'Hamkor tashkilotlar',   to: '/hamkor-tashkilotlar' },
+          { label: 'Xorijiy dasturlar',     to: '/xorijiy-dasturlar' },
+          { label: 'Xalqaro memorandumlar', to: '/xalqaro-memorandumlar' },
         ],
       },
       {
         heading: 'Dasturlar',
         links: [
-          { label: 'Erasmus+ dasturi',       to: '/xalqaro' },
-          { label: "Xalqaro stipendiyalar",  to: '/xalqaro' },
-          { label: "Qo'shma konsertlar",     to: '/xalqaro' },
+          { label: 'Erasmus+ dasturi',      to: '/erasmus' },
+          { label: "Xalqaro stipendiyalar", to: '/xalqaro-stipendiyalar' },
+          { label: "Qo'shma konsertlar",    to: '/qoshma-konsertlar' },
         ],
       },
     ],
@@ -148,14 +148,15 @@ export const NAV_MENU = [
       {
         heading: 'Media',
         links: [
-          { label: 'Videogalereya', to: '/videogalereya' },
-          { label: 'Fotogalereya',  to: '/fotogalereya' },
+          { label: 'Videogalereya',        to: '/videogalereya' },
+          { label: 'Fotogalereya',         to: '/fotogalereya' },
+          { label: '360° Virtual sayohat', to: '/sayohat-360' },
         ],
       },
       {
         heading: "Bog'lanish",
         links: [
-          { label: 'Kontaktlar',       to: '/kontaktlar' },
+          { label: 'Kontaktlar',         to: '/kontaktlar' },
           { label: 'Yashil universitet', to: '/yashil-universitet' },
         ],
       },
