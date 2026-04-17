@@ -91,65 +91,45 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-      {/* ── AKADEMIK MEROS ───────────────────────────────── */}
-      <section className="split-section">
-        <div className="section-text-dark reveal-left">
-          <span className="section-tag">Biz Haqimizda</span>
-          <h2>Akademik <span>Meros</span></h2>
-          <div className="ornament" style={{ maxWidth: '300px' }}>
-            <div className="ornament-diamond" />
-          </div>
-          <p style={{ color: '#555', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '35px' }}>
-            Markaziy Osiyoning eng qadimgi va nufuzli oliy musiqa ta'lim muassasasi. 1936-yildan beri musiqa san'atining eng buyuk namoyandalari shu devorlar ichida yetishib chiqqan.
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-            {[
-              { label: 'Konservatoriya tarixi', to: '/tarix' },
-              { label: 'Muassasa tuzilmasi', to: '/tuzilma' },
-              { label: 'Rahbariyat', to: '/rahbariyat' },
-            ].map(({ label, to }) => (
-              <Link key={to} to={to} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                color: '#888',
-                fontSize: '0.8rem',
-                fontFamily: 'var(--font-sans)',
-                fontWeight: 600,
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                transition: 'color 0.3s',
-                textDecoration: 'none',
-                padding: '8px 0',
-                borderBottom: '1px solid rgba(26,26,56,0.1)',
-              }}
-              onMouseOver={(e) => { e.currentTarget.style.color = 'var(--gold-dark)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.color = '#888'; }}
-              >
-                <span style={{ color: 'var(--gold-dark)', fontSize: '1rem' }}>→</span> {label}
-              </Link>
-            ))}
-          </div>
-          <Link to="/tarix" className="btn-outline-dark" style={{ textDecoration: 'none', display: 'inline-block' }}>
-            TARIXNI O'QING
-          </Link>
-        </div>
-
-        {/* 3D Image */}
-        <div className="section-image-feature reveal-right" style={{ padding: '80px 60px' }}>
-          <div className="image-3d-wrap">
-            <div className="image-3d-inner">
-              <img
-                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070"
-                alt="Konservatoriya"
-                style={{ filter: 'grayscale(30%) brightness(0.8)', display: 'block' }}
-              />
+ 
+      {/* ── VIZUAL GALEREYA (YANGI) ───────────────────────── */}
+      <section style={{ padding: '80px 0', background: 'var(--bg-deep)', borderTop: '1px solid var(--border-subtle)' }}>
+        <div className="container">
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: '50px' }}>
+            <span className="section-tag">Fotohisobot</span>
+            <h2 style={{ fontSize: '3rem', fontWeight: 300, marginTop: '10px' }}>
+              Konservatoriya <span>Hayotidan</span>
+            </h2>
+            <div className="ornament" style={{ justifyContent: 'center' }}>
+              <div className="ornament-diamond" />
             </div>
-            <div className="year-badge-3d">
-              <div className="yr">1936</div>
-              <div className="lb">dan buyon</div>
+          </div>
+          
+          <div className="reveal" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(4, 1fr)', 
+            gridTemplateRows: 'repeat(2, 280px)',
+            gap: '12px' 
+          }}>
+            <div style={{ gridColumn: 'span 2', gridRow: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+              <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1200" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G1" />
+              <div className="gallery-hover-overlay">Konsert zalidagi jarayon</div>
             </div>
+            <div style={{ position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+              <img src="https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G2" />
+            </div>
+            <div style={{ position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
+            </div>
+            <div style={{ gridColumn: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+              <img src="https://images.unsplash.com/photo-1523240715632-d984723145e1?q=80&w=1000" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G4" />
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '40px' }} className="reveal">
+            <Link to="/fotogalereya" className="btn-outline light" style={{ textDecoration: 'none', display: 'inline-block' }}>
+              BARCHA RASMLARNI KO'RISH
+            </Link>
           </div>
         </div>
       </section>
