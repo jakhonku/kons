@@ -112,17 +112,17 @@ export default function Home() {
             gap: '12px' 
           }}>
             <div style={{ gridColumn: 'span 2', gridRow: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
-              <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1200" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G1" />
-              <div className="gallery-hover-overlay">Konsert zalidagi jarayon</div>
+              <img src="/images/fotohisobot/img3.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
+              <div className="gallery-hover-overlay">Simfonik orkestr konserti</div>
             </div>
             <div style={{ position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
-              <img src="https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G2" />
+              <img src="/images/fotohisobot/img1.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G1" />
             </div>
             <div style={{ position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
+              <img src="/images/fotohisobot/img2.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G2" />
             </div>
             <div style={{ gridColumn: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
-              <img src="https://images.unsplash.com/photo-1523240715632-d984723145e1?q=80&w=1000" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G4" />
+              <img src="/image.png" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G4" />
             </div>
           </div>
 
