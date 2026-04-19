@@ -17,7 +17,8 @@
       "Bash(sed -i 's/style={{ display: '\\\\''grid'\\\\'', gridTemplateColumns: '\\\\''repeat\\(3, 1fr\\)'\\\\'', gap: '\\\\''18px'\\\\'', marginBottom: '\\\\''50px'\\\\'' }}/className=\"g-3\" style={{ marginBottom: '\\\\''50px'\\\\'' }}/g' src/pages/Grantlar.jsx)",
       "Bash(sed -i 's/style={{ display: '\\\\''grid'\\\\'', gridTemplateColumns: '\\\\''repeat\\(3, 1fr\\)'\\\\'', gap: '\\\\''20px'\\\\'', marginBottom: '\\\\''60px'\\\\'' }}/className=\"g-3\" style={{ marginBottom: '\\\\''60px'\\\\'' }}/g' src/pages/KelajakkaQadam.jsx)",
       "Bash(find *)",
-      "Bash(xargs wc *)"
+      "Bash(xargs wc *)",
+      "Bash(kill %1)"
     ]
   }
 }

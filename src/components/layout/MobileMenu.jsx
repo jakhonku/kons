@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_MENU, UTILITY_LINKS } from '../../data/navigation';
 import { useScrollLock } from '../../hooks/useScrollLock';
 import MobileAccordion from './MobileAccordion';
+import AccessibilityWidget from '../AccessibilityWidget';
 
 const LANGS = ['UZ', 'RU', 'EN'];
 
@@ -92,6 +93,13 @@ export default function MobileMenu({ isOpen, onClose }) {
                     {lang}
                   </button>
                 ))}
+              </div>
+
+              <div className="mob-footer-line" />
+
+              {/* Maxsus imkoniyatlar (nogironlar uchun) */}
+              <div className="mob-a11y">
+                <AccessibilityWidget />
               </div>
 
               <div className="mob-footer-line" />
