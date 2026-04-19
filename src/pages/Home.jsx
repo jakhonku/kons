@@ -78,7 +78,7 @@ export default function Home() {
             </footer>
           </blockquote>
 
-          <div style={{ display: 'flex', gap: '14px' }}>
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
             <Link to="/tarix" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block' }}>
               BATAFSIL
             </Link>

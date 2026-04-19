@@ -95,7 +95,7 @@ export default function Kutubxona() {
           </div>
 
           {/* Access */}
-          <div style={{
+          <div className="page-cta-block" style={{
             background: 'linear-gradient(110deg, var(--navy) 0%, #1e1e5a 100%)',
             borderTop: '3px solid var(--gold)', padding: '48px 56px',
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',

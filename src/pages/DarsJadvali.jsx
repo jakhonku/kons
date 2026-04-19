@@ -145,7 +145,7 @@ export default function DarsJadvali() {
           </div>
 
           {/* HEMIS CTA */}
-          <div style={{
+          <div className="page-cta-block" style={{
             background: 'linear-gradient(110deg, var(--navy) 0%, var(--navy-light) 100%)',
             padding: '40px 48px',
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
