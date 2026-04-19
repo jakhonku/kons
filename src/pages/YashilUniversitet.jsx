@@ -87,10 +87,10 @@ export default function YashilUniversitet() {
             <h2>Amalga oshirilgan tadbirlar</h2>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0', marginBottom: '60px', border: '1px solid var(--light-border)', overflow: 'hidden' }}>
+          <div className="yashil-timeline" style={{ display: 'flex', flexDirection: 'column', gap: '0', marginBottom: '60px', border: '1px solid var(--light-border)', overflow: 'hidden' }}>
             {INITIATIVES.map((init, i) => (
-              <div key={init.year} style={{ display: 'flex', gap: '0', borderBottom: i < INITIATIVES.length - 1 ? '1px solid var(--light-border)' : 'none' }}>
-                <div style={{ width: '100px', background: '#1a3a2a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div key={init.year} className="yashil-timeline-row" style={{ display: 'flex', gap: '0', borderBottom: i < INITIATIVES.length - 1 ? '1px solid var(--light-border)' : 'none' }}>
+                <div className="yashil-timeline-year" style={{ width: '100px', background: '#1a3a2a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 300, color: '#4ade80' }}>{init.year}</span>
                 </div>
                 <div style={{ padding: '22px 28px', background: 'var(--white)', flex: 1 }}>

@@ -492,8 +492,9 @@ img { display: block; max-width: 100%; }
 .mob-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 2400;
   will-change: opacity;
 }
@@ -502,15 +503,19 @@ img { display: block; max-width: 100%; }
 .mob-panel {
   position: fixed;
   top: 0; left: 0;
-  width: min(420px, 92vw);
+  width: min(380px, 86vw);
   height: 100vh;
+  height: 100dvh;
   background: var(--bg-deep);
   border-right: 1px solid var(--border-gold);
   z-index: 2500;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   will-change: transform;
+  box-shadow: 8px 0 40px rgba(0,0,0,0.5);
 }
 
 /* Panel header */
@@ -2548,7 +2553,7 @@ img { display: block; max-width: 100%; }
   .gallery-grid { grid-template-columns: 1fr; }
   .partners-grid { grid-template-columns: 1fr; }
   .stats-row { grid-template-columns: 1fr; }
-  .mob-panel { width: 100vw; }
+  .mob-panel { width: min(340px, 86vw); }
 
   /* Stats banners – 1 column on very small screens */
   .page-stats-4,
@@ -3111,3 +3116,96 @@ img { display: block; max-width: 100%; }
   .news-ticker-btn { padding: 0 14px; font-size: 0.6rem; }
   .news-ticker-item { font-size: 0.7rem; }
 }
+
+/* ============================================================
+   PAGE-LEVEL RESPONSIVE GRIDS (inline-style overrides)
+   — Base desktop styles + mobile overrides
+   ============================================================ */
+
+/* Home — Talabalar section */
+.home-talabalar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+  gap: 60px;
+}
+.home-talabalar-card {
+  width: 380px;
+  flex-shrink: 0;
+}
+
+/* Xalqaro — partners & programs base (desktop) */
+.xalqaro-partners { grid-template-columns: repeat(4, 1fr); }
+.xalqaro-programs { grid-template-columns: repeat(3, 1fr); }
+
+/* ── TABLET (768px – 1023px) ─────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .xalqaro-partners  { grid-template-columns: repeat(3, 1fr) !important; }
+  .xalqaro-programs  { grid-template-columns: repeat(2, 1fr) !important; }
+  .tuzilma-prorektor-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .tuzilma-kafedra-grid   { grid-template-columns: repeat(2, 1fr) !important; }
+  .tuzilma-dept-grid      { grid-template-columns: repeat(2, 1fr) !important; }
+  .news-rest-grid         { grid-template-columns: repeat(2, 1fr) !important; }
+  .talabalar-quick-grid   { grid-template-columns: repeat(3, 1fr) !important; }
+  .abit-info-pair         { grid-template-columns: 1fr !important; }
+}
+
+/* ── MOBILE (≤768px) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Home — Talabalar section stack */
+  .home-talabalar-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 60px 0 !important;
+    gap: 40px !important;
+  }
+  .home-talabalar-card {
+    width: 100% !important;
+    padding: 32px !important;
+    transform: none !important;
+  }
+  .home-talabalar-card:hover,
+  .home-talabalar-card:focus { transform: none !important; }
+
+  /* Hero / section sizing on home */
+  .full-section .container h2 { font-size: 2.2rem !important; }
+
+  /* Xalqaro */
+  .xalqaro-partners { grid-template-columns: repeat(2, 1fr) !important; }
+  .xalqaro-programs { grid-template-columns: 1fr !important; }
+
+  /* Tuzilma */
+  .tuzilma-prorektor-grid { grid-template-columns: 1fr !important; }
+  .tuzilma-kafedra-grid   { grid-template-columns: repeat(2, 1fr) !important; }
+  .tuzilma-dept-grid      { grid-template-columns: 1fr !important; }
+
+  /* Yangiliklar */
+  .news-featured-grid { grid-template-columns: 1fr !important; }
+  .news-rest-grid     { grid-template-columns: 1fr !important; }
+
+  /* Talabalar quick links */
+  .talabalar-quick-grid { grid-template-columns: 1fr !important; }
+
+  /* Abituriyentlar info pair */
+  .abit-info-pair { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  /* YashilUniversitet timeline — stack year on top */
+  .yashil-timeline-row {
+    flex-direction: column !important;
+  }
+  .yashil-timeline-year {
+    width: 100% !important;
+    padding: 14px !important;
+    min-height: 50px;
+  }
+}
+
+/* ── VERY SMALL (≤480px) ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .xalqaro-partners { grid-template-columns: 1fr !important; }
+  .tuzilma-kafedra-grid { grid-template-columns: 1fr !important; }
+  .home-talabalar-card { padding: 24px !important; }
+  .full-section .container h2 { font-size: 1.8rem !important; }
+}
+

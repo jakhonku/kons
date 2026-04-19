@@ -112,7 +112,7 @@ export default function Tuzilma() {
               </div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--navy)' }}>Rektor</div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+            <div className="tuzilma-prorektor-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
               {["Ta'lim ishlari prorektori", "Ilmiy-ijodiy ishlar prorektori", "Xalqaro aloqalar prorektori", "Ma'muriy-xo'jalik prorektori"].map((p) => (
                 <div key={p} style={{ padding: '14px', border: '1px solid var(--light-border)', background: 'var(--light-50)', fontSize: '0.78rem', color: 'var(--navy)', textAlign: 'center', lineHeight: 1.4, fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
                   {p}
@@ -141,7 +141,7 @@ export default function Tuzilma() {
                     {fac.kafedralar.length} kafedra
                   </div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--light-border)' }}>
+                <div className="tuzilma-kafedra-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--light-border)' }}>
                   {fac.kafedralar.map((k) => (
                     <div key={k} style={{ background: 'var(--white)', padding: '14px 18px', fontSize: '0.82rem', color: '#555', fontFamily: 'var(--font-serif)' }}>
                       {k}
@@ -157,7 +157,7 @@ export default function Tuzilma() {
             <h2>Ma'muriy bo'limlar</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '60px' }}>
+          <div className="tuzilma-dept-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '60px' }}>
             {DEPARTMENTS.map((d) => (
               <div key={d.name} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '22px 24px', borderLeft: '3px solid var(--gold)' }}>
                 <h4 style={{ color: 'var(--navy)', marginBottom: '6px', fontSize: '0.95rem', fontFamily: 'var(--font-display)' }}>{d.name}</h4>

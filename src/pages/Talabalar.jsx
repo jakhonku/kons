@@ -159,7 +159,7 @@ export default function Talabalar() {
           </div>
 
           {/* Tezkor havolalar */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--gold)', marginBottom: '40px' }}>
+          <div className="talabalar-quick-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--gold)', marginBottom: '40px' }}>
             {[
               { label: 'HEMIS Tizimi', href: '#', desc: 'Shaxsiy kabinet' },
               { label: 'Online Kutubxona', href: '#', desc: 'Elektron resurslar' },

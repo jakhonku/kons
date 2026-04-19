@@ -91,7 +91,7 @@ export default function Yangiliklar() {
 
           {/* Asosiy yangilik (featured) */}
           {featured && (
-            <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '0', marginTop: '40px', marginBottom: '40px', border: '1px solid var(--light-border)', overflow: 'hidden' }}>
+            <div className="news-featured-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '0', marginTop: '40px', marginBottom: '40px', border: '1px solid var(--light-border)', overflow: 'hidden' }}>
               <div style={{ position: 'relative', minHeight: '380px', overflow: 'hidden' }}>
                 <img
                   src={featured.image}
@@ -124,7 +124,7 @@ export default function Yangiliklar() {
 
           {/* Qolgan yangiliklar */}
           {rest.length > 0 && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '40px' }}>
+            <div className="news-rest-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '40px' }}>
               {rest.map((item) => (
                 <article
                   key={item.id}

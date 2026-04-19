@@ -261,7 +261,7 @@ export default function Abituriyentlar() {
           </div>
 
           {/* Qo'shimcha ma'lumot */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '60px' }}>
+          <div className="abit-info-pair" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '60px' }}>
             <div className="info-box">
               <h4>Kasbiy-ijodiy imtihon</h4>
               <p>

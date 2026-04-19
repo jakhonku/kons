@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero';
+import { UtensilsCrossed, Piano, Wifi, Shirt, Dumbbell, ShieldCheck } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -13,12 +14,12 @@ const ROOMS = [
 ];
 
 const AMENITIES = [
-  { icon: '🍽️', title: 'Oshxona', desc: "Nonushta, tushlik, kechki ovqat. Ish vaqti: 07:00–21:00" },
-  { icon: '🎹', title: 'Mashq xonalari', desc: "24 soat ochiq 8 ta mashq xonasi (fortepiano bilan)" },
-  { icon: '📶', title: 'Wi-Fi', desc: "Barcha binolarda tezkor internet. Parol — talaba ID" },
-  { icon: '👕', title: 'Kir yuvish', desc: "Avtomatik kir yuvish mashinalari, 1-qavatda" },
-  { icon: '🏃', title: 'Sport', desc: "Sport zali va futbol maydoni. Erkin foydalanish" },
-  { icon: '🔒', title: 'Xavfsizlik', desc: "24 soat qo'riqchi, video kuzatuv, kirish kartasi" },
+  { icon: UtensilsCrossed, title: 'Oshxona',         desc: "Nonushta, tushlik, kechki ovqat. Ish vaqti: 07:00–21:00" },
+  { icon: Piano,           title: 'Mashq xonalari', desc: "24 soat ochiq 8 ta mashq xonasi (fortepiano bilan)" },
+  { icon: Wifi,            title: 'Wi-Fi',           desc: "Barcha binolarda tezkor internet. Parol — talaba ID" },
+  { icon: Shirt,           title: 'Kir yuvish',      desc: "Avtomatik kir yuvish mashinalari, 1-qavatda" },
+  { icon: Dumbbell,        title: 'Sport',           desc: "Sport zali va futbol maydoni. Erkin foydalanish" },
+  { icon: ShieldCheck,     title: 'Xavfsizlik',      desc: "24 soat qo'riqchi, video kuzatuv, kirish kartasi" },
 ];
 
 export default function Yotoqxona() {
@@ -35,7 +36,7 @@ export default function Yotoqxona() {
         <div className="container">
 
           {/* Stats */}
-          <div style={{
+          <div className="page-stats-3" style={{
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
             background: 'var(--navy)', borderBottom: '2px solid var(--gold)', marginBottom: '60px',
           }}>
@@ -103,13 +104,24 @@ export default function Yotoqxona() {
           <div className="g-3" style={{ marginBottom: '60px' }}>
             {AMENITIES.map((a) => (
               <div key={a.title} style={{
-                display: 'flex', gap: '16px', alignItems: 'flex-start',
-                padding: '22px 24px', background: 'var(--white)', border: '1px solid var(--light-border)',
-              }}>
-                <div style={{ fontSize: '1.6rem', lineHeight: 1, flexShrink: 0, marginTop: 2 }}>{a.icon}</div>
+                display: 'flex', gap: '18px', alignItems: 'flex-start',
+                padding: '24px 26px', background: 'var(--white)', border: '1px solid var(--light-border)',
+                borderLeft: '3px solid var(--gold)', transition: 'box-shadow 0.3s, transform 0.3s',
+              }}
+                onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 28px rgba(26,26,56,0.09)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
+              >
+                <div style={{
+                  width: 44, height: 44, flexShrink: 0,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: 'var(--light-50)', border: '1px solid var(--light-border)',
+                  color: 'var(--gold-dark)',
+                }}>
+                  <a.icon size={22} strokeWidth={1.5} />
+                </div>
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', color: 'var(--navy)', marginBottom: '4px', fontWeight: 400 }}>{a.title}</h4>
-                  <p style={{ fontSize: '0.78rem', color: '#888', lineHeight: 1.6, margin: 0 }}>{a.desc}</p>
+                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.98rem', color: 'var(--navy)', marginBottom: '6px', fontWeight: 500 }}>{a.title}</h4>
+                  <p style={{ fontSize: '0.8rem', color: '#777', lineHeight: 1.6, margin: 0 }}>{a.desc}</p>
                 </div>
               </div>
             ))}

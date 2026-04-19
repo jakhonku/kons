@@ -114,23 +114,18 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="reveal home-gallery-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gridTemplateRows: 'repeat(2, 280px)',
-            gap: '12px'
-          }}>
-            <div style={{ gridColumn: 'span 2', gridRow: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+          <div className="reveal home-gallery-grid">
+            <div className="gallery-item-home gallery-item-wide-tall">
               <img src="/images/fotohisobot/img3.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
               <div className="gallery-hover-overlay">Simfonik orkestr konserti</div>
             </div>
-            <div style={{ position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+            <div className="gallery-item-home">
               <img src="/images/fotohisobot/img1.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G1" />
             </div>
-            <div style={{ position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+            <div className="gallery-item-home">
               <img src="/images/fotohisobot/img2.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G2" />
             </div>
-            <div style={{ gridColumn: 'span 2', position: 'relative', overflow: 'hidden' }} className="gallery-item-home">
+            <div className="gallery-item-home gallery-item-wide">
               <img src="/image.png" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G4" />
             </div>
           </div>
@@ -268,16 +263,10 @@ export default function Home() {
         style={{ background: "url('https://images.unsplash.com/photo-1523240715632-d984723145e1?q=80&w=2070') center/cover fixed" }}
       >
         <div className="container" style={{ width: '100%' }}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '100px 0',
-            gap: '60px',
-          }}>
+          <div className="home-talabalar-row">
 
             {/* Chap matn */}
-            <div style={{ flex: 1, color: 'var(--text-primary)' }}>
+            <div style={{ flex: 1, color: 'var(--text-primary)', minWidth: 0 }}>
               <span className="section-tag light">Talabalar uchun</span>
               <h2 style={{ fontSize: '3.5rem', fontWeight: 300, marginBottom: '20px', marginTop: '10px' }}>
                 Talabalar <span>Hayoti</span>
@@ -313,9 +302,7 @@ export default function Home() {
             </div>
 
             {/* O'ng — Shisha karta */}
-            <div style={{
-              width: '380px',
-              flexShrink: 0,
+            <div className="home-talabalar-card" style={{
               background: 'rgba(7,7,14,0.7)',
               backdropFilter: 'blur(30px)',
               border: '1px solid var(--border-gold)',

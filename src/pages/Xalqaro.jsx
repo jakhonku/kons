@@ -50,7 +50,7 @@ export default function Xalqaro() {
       />
 
       {/* Statistika */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
+      <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {STATS.map((s, i) => (
           <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>
@@ -71,7 +71,7 @@ export default function Xalqaro() {
             <h2>Hamkor tashkilotlar</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--light-border)', border: '1px solid var(--light-border)', marginBottom: '50px' }}>
+          <div className="xalqaro-partners" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--light-border)', border: '1px solid var(--light-border)', marginBottom: '50px' }}>
             {PARTNERS.map((p) => (
               <div key={p.name} style={{ background: 'var(--white)', padding: '28px 20px', textAlign: 'center', transition: '0.3s', cursor: 'pointer' }}
                 onMouseOver={(e) => { e.currentTarget.style.background = 'var(--light-50)'; }}
@@ -89,7 +89,7 @@ export default function Xalqaro() {
             <h2>Xalqaro dasturlar</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '50px' }}>
+          <div className="xalqaro-programs" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '50px' }}>
             {PROGRAMS.map((prog) => (
               <div key={prog.title} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '28px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                 <div style={{ flex: 1 }}>
