@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Tag, Clock, Search, FilterX } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import DatePicker from '../components/DatePicker';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -79,14 +80,13 @@ export default function Taqvim() {
             </div>
 
             <div className="filter-group">
-              <label style={{ color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', fontSize: '0.75rem' }}>
+              <label style={{ color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', fontSize: '0.75rem', fontFamily: 'var(--font-sans)', fontWeight: 700, letterSpacing: '1.5px', fontStyle: 'normal' }}>
                 <Calendar size={14} /> SANANI TANLANG:
               </label>
-              <input 
-                type="date" 
+              <DatePicker 
                 value={selectedDate} 
-                onChange={(e) => setSelectedDate(e.target.value)} 
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-gold)', color: 'white', padding: '12px', borderRadius: '4px', width: '100%', outline: 'none' }}
+                onChange={setSelectedDate} 
+                placeholder="Sanani tanlang"
               />
             </div>
 
