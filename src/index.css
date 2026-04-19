@@ -2854,6 +2854,23 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    HOME GALLERY
    ============================================================ */
+.home-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 280px);
+  gap: 12px;
+}
+.gallery-item-home {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-item-wide-tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.gallery-item-wide {
+  grid-column: span 2;
+}
 .gallery-item-home:hover img {
   transform: scale(1.08);
   filter: brightness(0.6);
