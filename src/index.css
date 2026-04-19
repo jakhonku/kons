@@ -278,10 +278,16 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
   gap: 30px;
 }
+.nav-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
 .nav-logo img {
-  height: 42px;
+  height: 40px;
   width: auto;
   display: block;
+  flex-shrink: 0;
 }
 
 /* ---- Desktop Nav Wrapper (with dropdown context) ---- */
@@ -471,6 +477,7 @@ img { display: block; max-width: 100%; }
   padding: 0 12px;
   transition: border-color 0.3s, background 0.3s;
   will-change: transform;
+  color: var(--gold-light);
 }
 .hamburger:hover { border-color: var(--gold); background: rgba(201,168,76,0.07); }
 .hamburger.open  { border-color: var(--gold); background: rgba(201,168,76,0.07); }
@@ -625,7 +632,25 @@ img { display: block; max-width: 100%; }
 .mob-utility-link:hover { color: var(--gold); border-color: var(--border-gold); }
 
 /* Mobile: utility bar yashiriladi, faqat navbar */
-@media (max-width: 1023px) { :root { --header-height: 68px; } }
+@media (max-width: 1023px) { 
+  :root { --header-height: 64px; } 
+  .navbar {
+    padding: 0 16px;
+    gap: 10px;
+    height: 64px;
+  }
+}
+
+/* Kichik ekranlarda logo va elementlar joy talashmasligi uchun */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .nav-logo img {
+    height: 32px;
+  }
+}
 
 /* ============================================================
    PAGE TRANSITION

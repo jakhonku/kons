@@ -10,6 +10,7 @@ import SearchPanel from './SearchPanel';
 const MONTHS_SHORT = ['YAN','FEV','MAR','APR','MAY','IYN','IYL','AVG','SEN','OKT','NOY','DEK'];
 
 function CalendarBtn() {
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const now   = new Date();
   const day   = now.getDate();
   const month = MONTHS_SHORT[now.getMonth()];
@@ -20,9 +21,9 @@ function CalendarBtn() {
       style={{
         display:        'flex',
         alignItems:     'center',
-        gap:            '12px',
-        padding:        '0 16px 0 14px',
-        height:         '46px',
+        gap:            isDesktop ? '12px' : '8px',
+        padding:        isDesktop ? '0 16px 0 14px' : '0 10px 0 8px',
+        height:         isDesktop ? '46px' : '38px',
         border:         '1px solid rgba(201,168,76,0.35)',
         background:     'rgba(201,168,76,0.04)',
         textDecoration: 'none',
@@ -83,7 +84,7 @@ function CalendarBtn() {
         {/* Kun */}
         <span style={{
           fontFamily: 'var(--font-display)',
-          fontSize:   '1.4rem',
+          fontSize:   isDesktop ? '1.4rem' : '1.1rem',
           fontWeight: 300,
           color:      'var(--gold-light)',
         }}>
