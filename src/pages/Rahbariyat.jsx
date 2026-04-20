@@ -8,13 +8,13 @@ const BREADCRUMBS = [
 
 const REKTOR = {
   title: 'Rektor',
-  name: "Kamoliddin Turdimurodovich O'rinboyev",
-  degree: "O'zbekiston Respublikasi xalq artisti, professor",
+  name: "Kamoliddin Urinbayev Turdimuratovich",
+  degree: "O‘zbekiston davlat konservatoriyasi rektori,",
   phone: '+998 71 234-56-78',
   email: 'rektor@konservatoriya.uz',
-  bio: "O'zbekiston Davlat Konservatoriyasini 2018-yildan boshqarib kelmoqda. Xalqaro musiqa tanlovlari g'olibi, Osiyo va Yevropa sahnalarida faol ijro etgan. 80 dan ortiq ilmiy va metodik ishlar muallifi, bir qancha xalqaro musiqa festivallarining bosh hakam a'zosi.",
+  bio: "O‘zbekiston xalq artisti, professor",
   initials: 'KO',
-  since: '2018',
+  since: '',
   photo: '/images/rahbariyat/rektor.jpg',
 };
 
@@ -103,14 +103,14 @@ export default function Rahbariyat() {
                 Rektor
               </div>
               <div style={{ marginTop: '10px', fontSize: '0.65rem', color: 'rgba(201,168,76,0.5)', letterSpacing: '2px', fontFamily: 'var(--font-sans)' }}>
-                {REKTOR.since} yildan buyon
+                {REKTOR.since} 
               </div>
             </div>
 
             {/* RIGHT — info */}
             <div className="rektor-info-col">
               <div style={{ fontSize: '0.58rem', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--gold)', opacity: 0.7, marginBottom: '20px', fontFamily: 'var(--font-sans)' }}>
-                O'zbekiston Davlat Konservatoriyasi — Rahbar
+                O'zbekiston Davlat Konservatoriyasi — Rektori
               </div>
 
               <h1 className="rektor-name">
