@@ -9,7 +9,7 @@ const BREADCRUMBS = [
 const REKTOR = {
   title: 'Rektor',
   name: "Kamoliddin Urinbayev Turdimuratovich",
-  degree: "O‘zbekiston davlat konservatoriyasi rektori,",
+  degree: "O‘zbekiston davlat konservatoriyasi rektori",
   phone: '+998 71 234-56-78',
   email: 'rektor@konservatoriya.uz',
   bio: "O‘zbekiston xalq artisti, professor",
