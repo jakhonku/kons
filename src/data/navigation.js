@@ -7,7 +7,6 @@ export const UTILITY_LINKS = [
   { label: 'Bizga tashrif buyuring', to: '/kontaktlar' },
   { label: 'HEMIS-talaba',           to: '/talabalar' },
   { label: 'Online murojaat',        to: '/kontaktlar' },
-  { label: 'Online kutubxona',      to: '/kutubxona' },
 ];
 
 export const NAV_MENU = [
@@ -23,14 +22,17 @@ export const NAV_MENU = [
           { label: 'Muassasa tuzilmasi',     to: '/tuzilma' },
           { label: 'Rahbariyat',             to: '/rahbariyat' },
           { label: "Me'yoriy hujjatlar",     to: '/hujjatlar' },
+          { label: '"Musiqa" jurnali',       to: '/musiqa-jurnali' },
         ],
       },
       {
         heading: 'Xizmatlar',
         links: [
-          { label: 'Online murojaat',    to: '/kontaktlar' },
-          { label: 'Yashil universitet', to: '/yashil-universitet' },
-          { label: 'Kontaktlar',         to: '/kontaktlar' },
+          { label: 'Online murojaat',      to: '/kontaktlar' },
+          { label: 'Yashil universitet',   to: '/yashil-universitet' },
+          { label: 'Kontaktlar',           to: '/kontaktlar' },
+          { label: "HEMIS-o'qituvchi",     to: '/hemis-oquvchi' },
+          { label: '360° Virtual sayohat', to: '/sayohat-360' },
         ],
       },
     ],
@@ -148,9 +150,8 @@ export const NAV_MENU = [
       {
         heading: 'Media',
         links: [
-          { label: 'Videogalereya',        to: '/videogalereya' },
-          { label: 'Fotogalereya',         to: '/fotogalereya' },
-          { label: '360° Virtual sayohat', to: '/sayohat-360' },
+          { label: 'Videogalereya', to: '/videogalereya' },
+          { label: 'Fotogalereya',  to: '/fotogalereya' },
         ],
       },
       {

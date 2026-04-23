@@ -32,6 +32,8 @@ import Togaraklar from './pages/Togaraklar';
 import Yotoqxona from './pages/Yotoqxona';
 import TadbirBatafsil from './pages/TadbirBatafsil';
 import Sayohat360 from './pages/Sayohat360';
+import MusiqaJurnali from './pages/MusiqaJurnali';
+import HemisOquvchi from './pages/HemisOquvchi';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -71,6 +73,8 @@ export default function App() {
           <Route path="togaraklar" element={<Togaraklar />} />
           <Route path="yotoqxona" element={<Yotoqxona />} />
           <Route path="sayohat-360" element={<Sayohat360 />} />
+          <Route path="musiqa-jurnali" element={<MusiqaJurnali />} />
+          <Route path="hemis-oquvchi" element={<HemisOquvchi />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
