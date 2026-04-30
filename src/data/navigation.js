@@ -3,11 +3,7 @@
    Navigatsiya Ma'lumotlari — Yagona manba
    ============================================================ */
 
-export const UTILITY_LINKS = [
-  { label: 'Bizga tashrif buyuring', to: '/kontaktlar' },
-  { label: 'HEMIS-talaba',           to: '/talabalar' },
-  { label: 'Online murojaat',        to: '/kontaktlar' },
-];
+export const UTILITY_LINKS = [];
 
 export const NAV_MENU = [
   {
