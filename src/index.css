@@ -2498,6 +2498,221 @@ img { display: block; max-width: 100%; }
 .qabul-label { font-size: 0.78rem; color: #888; font-family: var(--font-sans); }
 
 /* ============================================================
+   AFISHA / KONSERT E'LONLARI (Home page)
+   ============================================================ */
+.afisha-section {
+  background: var(--cream);
+  padding: 100px 0;
+  border-top: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--light-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.afisha-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(168,137,30,0.04) 28px, rgba(168,137,30,0.04) 29px);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.afisha-row {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.afisha-info { color: var(--navy); }
+
+.afisha-heading {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--navy);
+  margin: 12px 0 0;
+  letter-spacing: -0.01em;
+}
+.afisha-heading span {
+  color: var(--gold-dark);
+  font-style: italic;
+}
+
+.afisha-lede {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #555;
+  margin: 18px 0 32px;
+  max-width: 460px;
+}
+
+.afisha-counter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.afisha-counter-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+}
+.afisha-counter-sep {
+  width: 60px;
+  height: 1px;
+  background: var(--gold-dark);
+}
+.afisha-counter-total {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  color: #888;
+}
+
+.afisha-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.afisha-arrow {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.afisha-arrow:hover {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+.afisha-carousel {
+  position: relative;
+}
+
+.afisha-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(26,26,56,0.18);
+  border: 1px solid var(--light-border);
+}
+.afisha-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.afisha-poster-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,7,14,0) 35%, rgba(7,7,14,0.55) 70%, rgba(7,7,14,0.92) 100%);
+}
+.afisha-poster-meta {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 36px 40px 38px;
+  color: var(--text-primary);
+}
+.afisha-poster-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 6px 12px;
+  border: 1px solid rgba(201,168,76,0.5);
+  margin-bottom: 16px;
+}
+.afisha-poster-meta h3 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin: 0 0 14px;
+}
+.afisha-poster-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(240,237,232,0.85);
+  letter-spacing: 0.05em;
+}
+.afisha-poster-info span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.afisha-dots {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+.afisha-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.7);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.afisha-dot.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .afisha-section { padding: 70px 0; }
+  .afisha-row { grid-template-columns: 1fr; gap: 50px; }
+  .afisha-heading { font-size: 2.4rem; }
+  .afisha-poster { aspect-ratio: 16 / 11; max-height: 520px; }
+  .afisha-poster-meta { padding: 24px 26px 28px; }
+  .afisha-poster-meta h3 { font-size: 1.45rem; }
+}
+
+@media (max-width: 600px) {
+  .afisha-section { padding: 56px 0; }
+  .afisha-heading { font-size: 1.9rem; }
+  .afisha-lede { font-size: 0.95rem; }
+  .afisha-poster { aspect-ratio: 4 / 5; }
+  .afisha-poster-meta { padding: 20px 20px 24px; }
+  .afisha-poster-meta h3 { font-size: 1.2rem; }
+  .afisha-poster-info { gap: 10px; font-size: 0.7rem; }
+  .afisha-counter-num { font-size: 1.8rem; }
+  .afisha-counter-sep { width: 36px; }
+}
+
+/* ============================================================
    RESPONSIVE GRID UTILITIES  (use className on grid containers)
    ============================================================ */
 .g-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }

@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, MapPin, Clock } from 'lucide-react';
 
 const LATEST_NEWS = [
   { id: 1, cat: 'Voqealar', title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
@@ -16,6 +18,45 @@ const STATS = [
   { num: '120+', label: "Xalqaro hamkor" },
 ];
 
+const AFISHA = [
+  {
+    id: 1,
+    image: '/images/fotohisobot/img1.jpg',
+    tag: 'Simfonik orkestr',
+    title: 'Bahor simfoniyasi',
+    date: '15 May 2026',
+    time: '19:00',
+    venue: 'Katta zal',
+  },
+  {
+    id: 2,
+    image: '/images/fotohisobot/img2.jpg',
+    tag: 'Mumtoz musiqa',
+    title: "O'zbek mumtoz musiqasi kechasi",
+    date: '22 May 2026',
+    time: '18:30',
+    venue: 'Kichik zal',
+  },
+  {
+    id: 3,
+    image: '/images/fotohisobot/img3.jpg',
+    tag: 'Bitiruv konserti',
+    title: 'Yosh ijodkorlar kechasi',
+    date: '5 Iyun 2026',
+    time: '19:00',
+    venue: 'Katta zal',
+  },
+  {
+    id: 4,
+    image: '/images/fotohisobot/3M7A1143 (2).JPG',
+    tag: 'Gala konsert',
+    title: "Xalqaro tanlov g'oliblari",
+    date: '12 Iyun 2026',
+    time: '19:30',
+    venue: 'Katta zal',
+  },
+];
+
 const QUICK_LINKS = [
   { icon: History, label: 'Konservatoriya tarixi', sub: '1936-yildan bugun', to: '/tarix' },
   { icon: Building2, label: 'Muassasa tuzilmasi', sub: 'Fakultet va kafedralar', to: '/tuzilma' },
@@ -26,6 +67,19 @@ const QUICK_LINKS = [
 ];
 
 export default function Home() {
+  const [afishaIdx, setAfishaIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAfishaIdx((i) => (i + 1) % AFISHA.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, []);
+
+  const afishaPrev = () => setAfishaIdx((i) => (i - 1 + AFISHA.length) % AFISHA.length);
+  const afishaNext = () => setAfishaIdx((i) => (i + 1) % AFISHA.length);
+  const current = AFISHA[afishaIdx];
+
   return (
     <main>
 
@@ -88,6 +142,85 @@ export default function Home() {
           </div>
 
           <div className="hero-year">Konservatoriya · 1936</div>
+        </div>
+      </section>
+
+      {/* ── AFISHA / KONSERT E'LONLARI ──────────────────── */}
+      <section className="afisha-section">
+        <div className="container">
+          <div className="afisha-row">
+
+            {/* Chap — matn */}
+            <div className="afisha-info reveal reveal-left">
+              <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Afisha</span>
+              <h2 className="afisha-heading">
+                Yaqinlashayotgan <span>konsertlar</span>
+              </h2>
+              <div className="ornament">
+                <div className="ornament-diamond" />
+              </div>
+              <p className="afisha-lede">
+                Konservatoriya sahnasida bo'lib o'tadigan tadbirlar, simfonik orkestr chiqishlari va xalqaro tanlov g'oliblari konsertlari.
+              </p>
+
+              <div className="afisha-counter">
+                <span className="afisha-counter-num">{String(afishaIdx + 1).padStart(2, '0')}</span>
+                <span className="afisha-counter-sep" />
+                <span className="afisha-counter-total">{String(AFISHA.length).padStart(2, '0')}</span>
+              </div>
+
+              <div className="afisha-actions">
+                <button type="button" className="afisha-arrow" onClick={afishaPrev} aria-label="Oldingi">
+                  <ChevronLeft size={20} strokeWidth={1.5} />
+                </button>
+                <button type="button" className="afisha-arrow" onClick={afishaNext} aria-label="Keyingi">
+                  <ChevronRight size={20} strokeWidth={1.5} />
+                </button>
+                <Link to="/taqvim" className="btn-outline" style={{ marginLeft: '12px', textDecoration: 'none' }}>
+                  BARCHA TADBIRLAR
+                </Link>
+              </div>
+            </div>
+
+            {/* O'ng — afisha karuseli */}
+            <div className="afisha-carousel reveal reveal-right">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.id}
+                  className="afisha-poster"
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <img src={current.image} alt={current.title} />
+                  <div className="afisha-poster-grad" />
+                  <div className="afisha-poster-meta">
+                    <span className="afisha-poster-tag">{current.tag}</span>
+                    <h3>{current.title}</h3>
+                    <div className="afisha-poster-info">
+                      <span><Calendar size={13} strokeWidth={1.7} /> {current.date}</span>
+                      <span><Clock size={13} strokeWidth={1.7} /> {current.time}</span>
+                      <span><MapPin size={13} strokeWidth={1.7} /> {current.venue}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              <div className="afisha-dots">
+                {AFISHA.map((p, i) => (
+                  <button
+                    key={p.id}
+                    type="button"
+                    className={`afisha-dot ${i === afishaIdx ? 'is-active' : ''}`}
+                    onClick={() => setAfishaIdx(i)}
+                    aria-label={`Afisha ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
