@@ -2498,6 +2498,369 @@ img { display: block; max-width: 100%; }
 .qabul-label { font-size: 0.78rem; color: #888; font-family: var(--font-sans); }
 
 /* ============================================================
+   TICKET CARDS — Taqvim page
+   ============================================================ */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.ticket-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  isolation: isolate;
+}
+.ticket-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.ticket-card:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.15);
+}
+.ticket-card:hover::before { opacity: 1; }
+.ticket-card:hover .ticket-poster img {
+  transform: scale(1.06);
+}
+
+/* ── Poster (left) ─────────────────────────────── */
+.ticket-poster {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+.ticket-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.78) saturate(1.05);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ticket-poster-grad {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7,7,14,0) 40%, rgba(7,7,14,0.85) 100%),
+    linear-gradient(90deg, rgba(7,7,14,0.4) 0%, transparent 60%);
+}
+
+.ticket-date-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(7,7,14,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  padding: 10px 14px 12px;
+  text-align: center;
+  min-width: 64px;
+  z-index: 2;
+}
+.ticket-date-month {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.ticket-date-day {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+  margin: 4px 0 2px;
+}
+.ticket-date-week {
+  display: block;
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ticket-free-flag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.ticket-venue-overlay {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.ticket-venue-overlay svg { color: var(--gold); flex-shrink: 0; }
+
+/* ── Perforated divider ────────────────────────── */
+.ticket-perforation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 240px;
+  width: 0;
+  border-left: 1px dashed var(--border-gold);
+  z-index: 3;
+  pointer-events: none;
+}
+.ticket-notch {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+}
+.ticket-notch-left {
+  top: -10px;
+  left: -9px;
+}
+.ticket-notch-right {
+  bottom: -10px;
+  left: -9px;
+}
+
+/* ── Body (right) ──────────────────────────────── */
+.ticket-body {
+  padding: 26px 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+.ticket-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0 0 14px;
+  transition: color 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ticket-title-link:hover .ticket-title { color: var(--gold-light); }
+
+.ticket-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.ticket-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.ticket-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 0;
+  margin-top: auto;
+  margin-bottom: 18px;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.ticket-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.ticket-meta-item > svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.ticket-meta-item > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ticket-meta-label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 2px;
+}
+.ticket-meta-val {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ticket-meta-val.is-free { color: var(--gold-light); }
+.ticket-meta-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+.ticket-btn-detail {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ticket-btn-detail:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+.ticket-btn-buy {
+  flex: 1;
+  padding: 12px 18px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.ticket-btn-buy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-110%);
+  transition: transform 0.6s ease;
+}
+.ticket-btn-buy:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(201,168,76,0.35);
+}
+.ticket-btn-buy:hover::after { transform: translateX(110%); }
+.ticket-btn-free {
+  flex: 1;
+  padding: 12px 18px;
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .ticket-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .ticket-card { grid-template-columns: 1fr; }
+  .ticket-poster { aspect-ratio: 16/9; }
+  .ticket-perforation {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    height: 0;
+    border-left: none;
+    border-top: 1px dashed var(--border-gold);
+    transform: translateY(0);
+  }
+  .ticket-perforation { top: calc(56.25% - 1px); }
+  .ticket-notch-left { top: -10px; left: -9px; bottom: auto; }
+  .ticket-notch-right { top: -10px; left: auto; right: -9px; bottom: auto; }
+  .ticket-body { padding: 24px 22px; }
+  .ticket-title { font-size: 1.15rem; }
+  .ticket-actions { flex-direction: column; }
+  .ticket-btn-detail, .ticket-btn-buy, .ticket-btn-free { width: 100%; }
+}
+
+/* ============================================================
    AFISHA / KONSERT E'LONLARI (Home page)
    ============================================================ */
 .afisha-section {
@@ -2666,6 +3029,46 @@ img { display: block; max-width: 100%; }
   gap: 6px;
 }
 
+.afisha-poster-cta {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201,168,76,0.25);
+}
+.afisha-poster-price {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+.afisha-ticket-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 22px;
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.afisha-ticket-btn:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
 .afisha-dots {
   position: absolute;
   top: 24px;
@@ -2710,6 +3113,9 @@ img { display: block; max-width: 100%; }
   .afisha-poster-info { gap: 10px; font-size: 0.7rem; }
   .afisha-counter-num { font-size: 1.8rem; }
   .afisha-counter-sep { width: 36px; }
+  .afisha-poster-cta { margin-top: 16px; padding-top: 14px; }
+  .afisha-poster-price { font-size: 1.1rem; }
+  .afisha-ticket-btn { padding: 10px 16px; font-size: 0.65rem; letter-spacing: 1.5px; }
 }
 
 /* ============================================================

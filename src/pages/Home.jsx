@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, MapPin, Clock } from 'lucide-react';
+import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, MapPin, Clock, Ticket } from 'lucide-react';
 
 const LATEST_NEWS = [
   { id: 1, cat: 'Voqealar', title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
@@ -21,41 +21,107 @@ const STATS = [
 const AFISHA = [
   {
     id: 1,
-    image: '/images/fotohisobot/img1.jpg',
+    image: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1200&auto=format&fit=crop',
     tag: 'Simfonik orkestr',
     title: 'Bahor simfoniyasi',
     date: '15 May 2026',
     time: '19:00',
     venue: 'Katta zal',
+    price: "150 000 so'm",
   },
   {
     id: 2,
-    image: '/images/fotohisobot/img2.jpg',
+    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=1200&auto=format&fit=crop',
     tag: 'Mumtoz musiqa',
     title: "O'zbek mumtoz musiqasi kechasi",
     date: '22 May 2026',
     time: '18:30',
     venue: 'Kichik zal',
+    price: "100 000 so'm",
   },
   {
     id: 3,
-    image: '/images/fotohisobot/img3.jpg',
+    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop',
     tag: 'Bitiruv konserti',
     title: 'Yosh ijodkorlar kechasi',
     date: '5 Iyun 2026',
     time: '19:00',
     venue: 'Katta zal',
+    price: "80 000 so'm",
   },
   {
     id: 4,
-    image: '/images/fotohisobot/3M7A1143 (2).JPG',
+    image: 'https://images.unsplash.com/photo-1465225314224-587cd83d322b?q=80&w=1200&auto=format&fit=crop',
     tag: 'Gala konsert',
     title: "Xalqaro tanlov g'oliblari",
     date: '12 Iyun 2026',
     time: '19:30',
     venue: 'Katta zal',
+    price: "200 000 so'm",
+  },
+  {
+    id: 5,
+    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Pianino kechasi',
+    title: 'Chopin va Liszt kechasi',
+    date: '20 Iyun 2026',
+    time: '19:00',
+    venue: 'Kichik zal',
+    price: "120 000 so'm",
+  },
+  {
+    id: 6,
+    image: 'https://images.unsplash.com/photo-1519683109079-d5f539e1542f?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Opera',
+    title: "Layli va Majnun — opera kechasi",
+    date: '28 Iyun 2026',
+    time: '19:30',
+    venue: 'Katta zal',
+    price: "180 000 so'm",
+  },
+  {
+    id: 7,
+    image: 'https://images.unsplash.com/photo-1518972559570-7cc1309f3229?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Xor konserti',
+    title: 'Akademik xor — Sharq sadosi',
+    date: '4 Iyul 2026',
+    time: '18:00',
+    venue: 'Katta zal',
+    price: "90 000 so'm",
+  },
+  {
+    id: 8,
+    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Jazz',
+    title: 'Jazz oqshomi — Konservatoriya jazz kvinteti',
+    date: '11 Iyul 2026',
+    time: '20:00',
+    venue: 'Kichik zal',
+    price: "110 000 so'm",
+  },
+  {
+    id: 9,
+    image: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Kamerali ansambl',
+    title: 'Mozart va Beethoven — kamerali kecha',
+    date: '18 Iyul 2026',
+    time: '19:00',
+    venue: 'Kichik zal',
+    price: "130 000 so'm",
+  },
+  {
+    id: 10,
+    image: 'https://images.unsplash.com/photo-1470019693664-1d202d2c0907?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Mavsum yopilishi',
+    title: "Yakuniy gala — Bahor-yoz mavsumi 2026",
+    date: '25 Iyul 2026',
+    time: '19:30',
+    venue: 'Katta zal',
+    price: "250 000 so'm",
   },
 ];
+
+const ITICKET_URL = 'https://iticket.uz/';
 
 const QUICK_LINKS = [
   { icon: History, label: 'Konservatoriya tarixi', sub: '1936-yildan bugun', to: '/tarix' },
@@ -202,6 +268,18 @@ export default function Home() {
                       <span><Calendar size={13} strokeWidth={1.7} /> {current.date}</span>
                       <span><Clock size={13} strokeWidth={1.7} /> {current.time}</span>
                       <span><MapPin size={13} strokeWidth={1.7} /> {current.venue}</span>
+                    </div>
+                    <div className="afisha-poster-cta">
+                      <span className="afisha-poster-price">{current.price}</span>
+                      <a
+                        href={ITICKET_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="afisha-ticket-btn"
+                      >
+                        <Ticket size={15} strokeWidth={1.8} />
+                        BILET OLISH
+                      </a>
                     </div>
                   </div>
                 </motion.div>
