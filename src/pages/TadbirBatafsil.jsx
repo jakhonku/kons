@@ -1,40 +1,30 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Calendar, MapPin, Clock, Tag, Ticket, ArrowLeft, ArrowRight, Music2, User } from 'lucide-react';
 import PageHero from '../components/PageHero';
-
-const EVENTS = [
-  {
-    id: 1,
-    month: 'Apr',
-    day: '14',
-    weekday: 'Sesh',
-    title: 'Aziz Ismatov, Viola Mahorat Darsi',
-    venue: 'Organ Zali',
-    tags: 'Bepul, Musiqa, Master-klass',
-    time: '17:00 | Bepul',
-    desc: "O'zbekiston Davlat Konservatoriyasining ko'p yillik tajribaga ega o'qituvchisi Aziz Ismatov tomonidan viola cholg'usi ijrochilari uchun mahorat darsi tashkil etilmoqda. Darsda texnik mahorat, asar talqini va sahna madaniyati masalalari ko'rib chiqiladi.",
-    img: 'https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=1200',
-    ticketUrl: 'https://iticket.uz/'
-  },
-  {
-    id: 2,
-    month: 'Apr',
-    day: '20',
-    weekday: 'Dush',
-    title: 'Simfonik Orkestr: Bahor Ijrosi',
-    venue: 'Katta Zal',
-    tags: 'Konsert, Simfonik, To\'lovli',
-    time: '18:30 | 50,000 UZS',
-    desc: "Bahorning eng go'zal taronalari simfonik orkestr ijrosida. Dasturda jahon va o'zbek klassik kompozitorlarining sara asarlari o'rin olgan. Dirijyor: Xalqaro tanlovlar g'olibi.",
-    img: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1200',
-    ticketUrl: 'https://iticket.uz/'
-  },
-];
+import { EVENTS, ITICKET_URL } from '../data/events';
 
 export default function TadbirBatafsil() {
   const { id } = useParams();
-  const event = EVENTS.find(e => e.id === parseInt(id));
+  const navigate = useNavigate();
+  const idNum = parseInt(id, 10);
+  const eventIndex = EVENTS.findIndex(e => e.id === idNum);
+  const event = EVENTS[eventIndex];
 
-  if (!event) return <div className="container">Tadbir topilmadi</div>;
+  if (!event) {
+    return (
+      <main className="content-wrapper">
+        <div className="container" style={{ padding: '120px 0', textAlign: 'center' }}>
+          <h2 style={{ color: 'var(--navy)', fontSize: '2rem', marginBottom: '16px' }}>Tadbir topilmadi</h2>
+          <Link to="/taqvim" className="btn-outline">← Taqvimga qaytish</Link>
+        </div>
+      </main>
+    );
+  }
+
+  const [timeOnly, priceText] = event.time.split('|').map(s => s.trim());
+  const tagList = event.tags.split(',').map(t => t.trim()).filter(Boolean);
+  const prevEvent = eventIndex > 0 ? EVENTS[eventIndex - 1] : null;
+  const nextEvent = eventIndex < EVENTS.length - 1 ? EVENTS[eventIndex + 1] : null;
 
   const BREADCRUMBS = [
     { label: 'Bosh sahifa', to: '/' },
@@ -45,69 +35,161 @@ export default function TadbirBatafsil() {
   return (
     <main className="content-wrapper">
       <PageHero
-        tag={event.tags}
+        tag="Tadbir batafsil"
         title={event.title}
         emphasis=""
         breadcrumbs={BREADCRUMBS}
       />
 
-      <section className="main-content">
-        <div className="container tadbir-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 350px', gap: '60px', padding: '60px 0' }}>
-          
-          {/* Chap qism: Rasm va Tavsif */}
-          <div>
-            <div className="tadbir-img" style={{ width: '100%', height: '450px', overflow: 'hidden', borderRadius: '4px', marginBottom: '40px', border: '1px solid var(--border-subtle)' }}>
-              <img src={event.img} alt={event.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      {/* ── HERO POSTER + KEY INFO ──────────────────────── */}
+      <section className="tadbir-hero">
+        <div className="container">
+          <div className="tadbir-hero-grid">
+
+            {/* Poster */}
+            <div className="tadbir-poster-wrap reveal reveal-left">
+              <div className="tadbir-poster">
+                <img src={event.img} alt={event.title} />
+                <div className="tadbir-poster-grad" />
+                <div className="tadbir-poster-date">
+                  <span className="tadbir-poster-date-month">{event.month}</span>
+                  <span className="tadbir-poster-date-day">{event.day}</span>
+                  <span className="tadbir-poster-date-week">{event.weekday}</span>
+                </div>
+                {event.free && <span className="tadbir-poster-free">BEPUL</span>}
+                <div className="tadbir-poster-tags">
+                  {tagList.slice(0, 3).map((t, i) => (
+                    <span key={i} className="tadbir-poster-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-            
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: 'var(--navy)', marginBottom: '24px' }}>
-              Tadbir <span>Haqida</span>
-            </h2>
-            <div className="ornament" style={{ marginBottom: '30px' }}>
-              <div className="ornament-diamond" />
-            </div>
-            
-            <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', lineHeight: '1.8', color: '#111', fontStyle: 'italic', fontWeight: 500 }}>
-              {event.desc}
-            </p>
+
+            {/* Info card */}
+            <aside className="tadbir-info-card reveal reveal-right">
+              <span className="section-tag" style={{ color: 'var(--gold)' }}>Tadbir ma'lumotlari</span>
+              <h2 className="tadbir-info-title">{event.title}</h2>
+              <p className="tadbir-info-artist"><User size={14} strokeWidth={1.8} /> {event.artist}</p>
+
+              <div className="tadbir-info-rows">
+                <div className="tadbir-info-row">
+                  <Calendar size={18} strokeWidth={1.6} />
+                  <div>
+                    <span className="tadbir-info-label">Sana</span>
+                    <span className="tadbir-info-val">{event.day} {event.month}, {event.weekday}</span>
+                  </div>
+                </div>
+                <div className="tadbir-info-row">
+                  <Clock size={18} strokeWidth={1.6} />
+                  <div>
+                    <span className="tadbir-info-label">Vaqt</span>
+                    <span className="tadbir-info-val">{timeOnly}</span>
+                  </div>
+                </div>
+                <div className="tadbir-info-row">
+                  <MapPin size={18} strokeWidth={1.6} />
+                  <div>
+                    <span className="tadbir-info-label">Manzil</span>
+                    <span className="tadbir-info-val">{event.venue}</span>
+                    <span className="tadbir-info-sub">O'zbekiston Davlat Konservatoriyasi</span>
+                  </div>
+                </div>
+                <div className="tadbir-info-row">
+                  <Tag size={18} strokeWidth={1.6} />
+                  <div>
+                    <span className="tadbir-info-label">Narxi</span>
+                    <span className={`tadbir-info-val ${event.free ? 'is-free' : 'is-price'}`}>
+                      {priceText || 'Bepul'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {!event.free ? (
+                <a href={ITICKET_URL} target="_blank" rel="noopener noreferrer" className="tadbir-buy-btn">
+                  <Ticket size={16} strokeWidth={2} />
+                  BILET OLISH
+                </a>
+              ) : (
+                <div className="tadbir-free-banner">
+                  <Ticket size={16} strokeWidth={2} />
+                  KIRISH BEPUL
+                </div>
+              )}
+
+              <p className="tadbir-info-note">
+                Biletlar <strong>iticket.uz</strong> operatori orqali sotiladi. Tadbir kuni kassada ham mavjud.
+              </p>
+            </aside>
           </div>
+        </div>
+      </section>
 
-          {/* O'ng qism: Ma'lumotlar va Chipta */}
-          <aside>
-            <div style={{ background: 'var(--navy)', color: 'white', padding: '40px', borderRadius: '4px', position: 'sticky', top: '120px' }}>
-              <div style={{ marginBottom: '30px' }}>
-                <span style={{ fontSize: '0.65rem', color: 'var(--gold)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Sana va Vaqt</span>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem' }}>{event.day} {event.month}, {event.weekday}</div>
-                <div style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', marginTop: '4px' }}>{event.time.split('|')[0]}</div>
+      {/* ── DESCRIPTION + PROGRAM ──────────────────────── */}
+      <section className="tadbir-content">
+        <div className="container">
+          <div className="tadbir-content-grid">
+
+            {/* Description */}
+            <div className="reveal">
+              <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Tadbir haqida</span>
+              <h3 className="tadbir-section-h">Bayoni</h3>
+              <div className="ornament" style={{ margin: '12px 0 24px' }}>
+                <div className="ornament-diamond" />
               </div>
-
-              <div style={{ marginBottom: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '30px' }}>
-                <span style={{ fontSize: '0.65rem', color: 'var(--gold)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Manzil / Zal</span>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem' }}>{event.venue}</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginTop: '4px' }}>O'zbekiston Davlat Konservatoriyasi binosi</div>
-              </div>
-
-              <div style={{ marginBottom: '40px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '30px' }}>
-                <span style={{ fontSize: '0.65rem', color: 'var(--gold)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Narxi</span>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--gold-light)' }}>{event.time.split('|')[1] || 'Bepul'}</div>
-              </div>
-
-              <a 
-                href={event.ticketUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-outline light" 
-                style={{ width: '100%', textAlign: 'center', background: 'var(--gold)', color: 'var(--bg-deep)', border: 'none', fontWeight: 700 }}
-              >
-                BILET OLISH
-              </a>
-
-              <div style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.75rem', opacity: 0.6 }}>
-                Biletlar iticket.uz operatori orqali sotiladi
-              </div>
+              <p className="tadbir-desc">{event.desc}</p>
             </div>
-          </aside>
 
+            {/* Program */}
+            {event.program && event.program.length > 0 && (
+              <div className="reveal reveal-d2">
+                <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Konsert dasturi</span>
+                <h3 className="tadbir-section-h">Programma</h3>
+                <div className="ornament" style={{ margin: '12px 0 24px' }}>
+                  <div className="ornament-diamond" />
+                </div>
+                <ol className="tadbir-program">
+                  {event.program.map((p, i) => (
+                    <li key={i}>
+                      <span className="tadbir-program-num">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="tadbir-program-text"><Music2 size={14} strokeWidth={1.8} /> {p}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PREV / NEXT NAVIGATION ──────────────────────── */}
+      <section className="tadbir-nav">
+        <div className="container">
+          <div className="tadbir-nav-row">
+            {prevEvent ? (
+              <button type="button" className="tadbir-nav-btn" onClick={() => navigate(`/taqvim/${prevEvent.id}`)}>
+                <ArrowLeft size={16} strokeWidth={1.8} />
+                <div>
+                  <span className="tadbir-nav-label">Oldingi tadbir</span>
+                  <span className="tadbir-nav-title">{prevEvent.title}</span>
+                </div>
+              </button>
+            ) : <span />}
+
+            <Link to="/taqvim" className="tadbir-nav-back">
+              BARCHA TADBIRLAR
+            </Link>
+
+            {nextEvent ? (
+              <button type="button" className="tadbir-nav-btn tadbir-nav-btn-r" onClick={() => navigate(`/taqvim/${nextEvent.id}`)}>
+                <div>
+                  <span className="tadbir-nav-label">Keyingi tadbir</span>
+                  <span className="tadbir-nav-title">{nextEvent.title}</span>
+                </div>
+                <ArrowRight size={16} strokeWidth={1.8} />
+              </button>
+            ) : <span />}
+          </div>
         </div>
       </section>
     </main>

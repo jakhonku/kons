@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, MapPin, Clock, Ticket } from 'lucide-react';
+import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, MapPin, Clock, Ticket, X } from 'lucide-react';
 
 const LATEST_NEWS = [
   { id: 1, cat: 'Voqealar', title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
@@ -134,13 +134,21 @@ const QUICK_LINKS = [
 
 export default function Home() {
   const [afishaIdx, setAfishaIdx] = useState(0);
+  const [afishaOpen, setAfishaOpen] = useState(false);
+  const [afishaShown, setAfishaShown] = useState(true);
 
   useEffect(() => {
+    const t = setTimeout(() => setAfishaOpen(true), 1200);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (!afishaOpen) return;
     const id = setInterval(() => {
       setAfishaIdx((i) => (i + 1) % AFISHA.length);
-    }, 4500);
+    }, 5000);
     return () => clearInterval(id);
-  }, []);
+  }, [afishaOpen]);
 
   const afishaPrev = () => setAfishaIdx((i) => (i - 1 + AFISHA.length) % AFISHA.length);
   const afishaNext = () => setAfishaIdx((i) => (i + 1) % AFISHA.length);
@@ -211,96 +219,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── AFISHA / KONSERT E'LONLARI ──────────────────── */}
-      <section className="afisha-section">
-        <div className="container">
-          <div className="afisha-row">
-
-            {/* Chap — matn */}
-            <div className="afisha-info reveal reveal-left">
-              <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Afisha</span>
-              <h2 className="afisha-heading">
-                Yaqinlashayotgan <span>konsertlar</span>
-              </h2>
-              <div className="ornament">
-                <div className="ornament-diamond" />
-              </div>
-              <p className="afisha-lede">
-                Konservatoriya sahnasida bo'lib o'tadigan tadbirlar, simfonik orkestr chiqishlari va xalqaro tanlov g'oliblari konsertlari.
-              </p>
-
-              <div className="afisha-counter">
-                <span className="afisha-counter-num">{String(afishaIdx + 1).padStart(2, '0')}</span>
-                <span className="afisha-counter-sep" />
-                <span className="afisha-counter-total">{String(AFISHA.length).padStart(2, '0')}</span>
-              </div>
-
-              <div className="afisha-actions">
-                <button type="button" className="afisha-arrow" onClick={afishaPrev} aria-label="Oldingi">
-                  <ChevronLeft size={20} strokeWidth={1.5} />
-                </button>
-                <button type="button" className="afisha-arrow" onClick={afishaNext} aria-label="Keyingi">
-                  <ChevronRight size={20} strokeWidth={1.5} />
-                </button>
-                <Link to="/taqvim" className="btn-outline" style={{ marginLeft: '12px', textDecoration: 'none' }}>
-                  BARCHA TADBIRLAR
-                </Link>
-              </div>
-            </div>
-
-            {/* O'ng — afisha karuseli */}
-            <div className="afisha-carousel reveal reveal-right">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={current.id}
-                  className="afisha-poster"
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <img src={current.image} alt={current.title} />
-                  <div className="afisha-poster-grad" />
-                  <div className="afisha-poster-meta">
-                    <span className="afisha-poster-tag">{current.tag}</span>
-                    <h3>{current.title}</h3>
-                    <div className="afisha-poster-info">
-                      <span><Calendar size={13} strokeWidth={1.7} /> {current.date}</span>
-                      <span><Clock size={13} strokeWidth={1.7} /> {current.time}</span>
-                      <span><MapPin size={13} strokeWidth={1.7} /> {current.venue}</span>
-                    </div>
-                    <div className="afisha-poster-cta">
-                      <span className="afisha-poster-price">{current.price}</span>
-                      <a
-                        href={ITICKET_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="afisha-ticket-btn"
-                      >
-                        <Ticket size={15} strokeWidth={1.8} />
-                        BILET OLISH
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="afisha-dots">
-                {AFISHA.map((p, i) => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    className={`afisha-dot ${i === afishaIdx ? 'is-active' : ''}`}
-                    onClick={() => setAfishaIdx(i)}
-                    aria-label={`Afisha ${i + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* ── STATS ────────────────────────────────────────── */}
       <div className="stats-row">
@@ -551,6 +469,90 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── SUZIB TURUVCHI AFISHA WIDGET (o'ng tomon) ─────── */}
+      {afishaShown && (
+        <AnimatePresence>
+          {afishaOpen ? (
+            <motion.aside
+              key="open"
+              className="afisha-float"
+              initial={{ opacity: 0, x: 40, y: -20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              exit={{ opacity: 0, x: 40 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="afisha-float-head">
+                <span className="afisha-float-label">
+                  <span className="afisha-float-pulse" />
+                  AFISHA
+                </span>
+                <div className="afisha-float-head-btns">
+                  <button type="button" onClick={() => setAfishaOpen(false)} aria-label="Yopish" className="afisha-float-mini-btn">
+                    —
+                  </button>
+                  <button type="button" onClick={() => setAfishaShown(false)} aria-label="Berkitish" className="afisha-float-mini-btn">
+                    <X size={12} strokeWidth={2.2} />
+                  </button>
+                </div>
+              </div>
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.id}
+                  className="afisha-float-body"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.45 }}
+                >
+                  <div className="afisha-float-img">
+                    <img src={current.image} alt={current.title} />
+                    <span className="afisha-float-tag">{current.tag}</span>
+                  </div>
+                  <div className="afisha-float-info">
+                    <h4>{current.title}</h4>
+                    <div className="afisha-float-meta">
+                      <span><Calendar size={11} strokeWidth={1.8} /> {current.date}</span>
+                      <span><Clock size={11} strokeWidth={1.8} /> {current.time}</span>
+                    </div>
+                    <div className="afisha-float-venue">
+                      <MapPin size={11} strokeWidth={1.8} /> {current.venue}
+                    </div>
+                  </div>
+                  <div className="afisha-float-foot">
+                    <span className="afisha-float-price">{current.price}</span>
+                    <a href={ITICKET_URL} target="_blank" rel="noopener noreferrer" className="afisha-float-buy">
+                      <Ticket size={12} strokeWidth={2} /> BILET
+                    </a>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              <div className="afisha-float-nav">
+                <button type="button" onClick={afishaPrev} aria-label="Oldingi"><ChevronLeft size={13} /></button>
+                <span>{afishaIdx + 1} / {AFISHA.length}</span>
+                <button type="button" onClick={afishaNext} aria-label="Keyingi"><ChevronRight size={13} /></button>
+              </div>
+            </motion.aside>
+          ) : (
+            <motion.button
+              key="closed"
+              type="button"
+              className="afisha-float-tab"
+              onClick={() => setAfishaOpen(true)}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 30 }}
+              transition={{ duration: 0.4 }}
+              aria-label="Afishani ochish"
+            >
+              <Ticket size={14} strokeWidth={1.8} />
+              <span>AFISHA</span>
+            </motion.button>
+          )}
+        </AnimatePresence>
+      )}
 
     </main>
   );

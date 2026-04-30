@@ -2498,6 +2498,395 @@ img { display: block; max-width: 100%; }
 .qabul-label { font-size: 0.78rem; color: #888; font-family: var(--font-sans); }
 
 /* ============================================================
+   TADBIR BATAFSIL — Event detail page
+   ============================================================ */
+.tadbir-hero {
+  background: var(--cream);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--light-border);
+}
+.tadbir-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+.tadbir-poster-wrap { display: flex; }
+.tadbir-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(26,26,56,0.22);
+  border: 1px solid var(--light-border);
+}
+.tadbir-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tadbir-poster-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,7,14,0.0) 30%, rgba(7,7,14,0.55) 70%, rgba(7,7,14,0.92) 100%);
+}
+.tadbir-poster-date {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: rgba(7,7,14,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  padding: 14px 18px 16px;
+  text-align: center;
+  min-width: 84px;
+}
+.tadbir-poster-date-month {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.tadbir-poster-date-day {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.tadbir-poster-date-week {
+  display: block;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.tadbir-poster-free {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  padding: 8px 14px;
+}
+.tadbir-poster-tags {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tadbir-poster-tag {
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.5);
+  color: var(--gold-light);
+  padding: 6px 12px;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.tadbir-info-card {
+  background: var(--navy);
+  color: var(--text-primary);
+  padding: 48px 44px;
+  position: relative;
+  border: 1px solid var(--border-gold);
+  display: flex;
+  flex-direction: column;
+}
+.tadbir-info-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #fff;
+  margin: 14px 0 10px;
+}
+.tadbir-info-artist {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  margin: 0 0 26px;
+}
+.tadbir-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 28px;
+  border-top: 1px solid rgba(201,168,76,0.18);
+}
+.tadbir-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.18);
+}
+.tadbir-info-row > svg {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.tadbir-info-row > div { display: flex; flex-direction: column; }
+.tadbir-info-label {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+.tadbir-info-val {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.3;
+}
+.tadbir-info-val.is-free,
+.tadbir-info-val.is-price { color: var(--gold-light); font-size: 1.2rem; }
+.tadbir-info-sub {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+.tadbir-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.tadbir-buy-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-110%);
+  transition: transform 0.7s ease;
+}
+.tadbir-buy-btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201,168,76,0.4);
+}
+.tadbir-buy-btn:hover::after { transform: translateX(110%); }
+
+.tadbir-free-banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.tadbir-info-note {
+  margin: 18px 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+}
+.tadbir-info-note strong { color: var(--gold); font-weight: 700; }
+
+/* ── Description + Program ───────────────────── */
+.tadbir-content {
+  background: var(--white);
+  padding: 90px 0;
+  border-bottom: 1px solid var(--light-border);
+}
+.tadbir-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+.tadbir-section-h {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--navy);
+  margin: 12px 0 0;
+}
+.tadbir-desc {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: #444;
+}
+
+.tadbir-program {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: tprog;
+}
+.tadbir-program li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--light-border);
+}
+.tadbir-program li:last-child { border-bottom: none; }
+.tadbir-program-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--gold-dark);
+  font-style: italic;
+}
+.tadbir-program-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--navy);
+  line-height: 1.45;
+}
+.tadbir-program-text svg { color: var(--gold-dark); flex-shrink: 0; }
+
+/* ── Prev/Next nav ───────────────────────────── */
+.tadbir-nav {
+  background: var(--cream);
+  padding: 50px 0 80px;
+}
+.tadbir-nav-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.tadbir-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background: transparent;
+  border: 1px solid var(--light-border);
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  width: 100%;
+}
+.tadbir-nav-btn:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.tadbir-nav-btn:hover .tadbir-nav-label { color: var(--gold); }
+.tadbir-nav-btn-r {
+  justify-content: flex-end;
+  text-align: right;
+}
+.tadbir-nav-btn > svg { color: var(--gold-dark); flex-shrink: 0; transition: color 0.3s ease; }
+.tadbir-nav-btn:hover > svg { color: var(--gold); }
+.tadbir-nav-btn > div { display: flex; flex-direction: column; min-width: 0; }
+.tadbir-nav-label {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+.tadbir-nav-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px;
+}
+.tadbir-nav-back {
+  padding: 14px 22px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.tadbir-nav-back:hover {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .tadbir-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .tadbir-content-grid { grid-template-columns: 1fr; gap: 50px; }
+  .tadbir-poster { aspect-ratio: 16/10; max-height: 540px; }
+  .tadbir-info-card { padding: 36px 28px; }
+  .tadbir-nav-row { grid-template-columns: 1fr; }
+  .tadbir-nav-back { order: -1; justify-self: center; }
+  .tadbir-nav-title { max-width: none; }
+}
+
+@media (max-width: 600px) {
+  .tadbir-hero { padding: 50px 0; }
+  .tadbir-content { padding: 60px 0; }
+  .tadbir-info-title { font-size: 1.4rem; }
+  .tadbir-section-h { font-size: 1.7rem; }
+  .tadbir-desc { font-size: 1rem; }
+  .tadbir-poster-date { padding: 10px 14px 12px; min-width: 64px; }
+  .tadbir-poster-date-day { font-size: 1.9rem; }
+}
+
+/* ============================================================
    TICKET CARDS — Taqvim page
    ============================================================ */
 .ticket-grid {
@@ -2861,261 +3250,270 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
-   AFISHA / KONSERT E'LONLARI (Home page)
+   AFISHA FLOAT — suzib turuvchi widget (Home page)
    ============================================================ */
-.afisha-section {
-  background: var(--cream);
-  padding: 100px 0;
-  border-top: 1px solid var(--light-border);
-  border-bottom: 1px solid var(--light-border);
-  position: relative;
+.afisha-float {
+  position: fixed;
+  top: calc(var(--header-height) + 24px);
+  right: 24px;
+  width: 280px;
+  background: rgba(15, 15, 28, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(201,168,76,0.35);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,168,76,0.08);
+  z-index: 90;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.afisha-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(168,137,30,0.04) 28px, rgba(168,137,30,0.04) 29px);
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.afisha-row {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 70px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.afisha-info { color: var(--navy); }
-
-.afisha-heading {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.15;
-  color: var(--navy);
-  margin: 12px 0 0;
-  letter-spacing: -0.01em;
-}
-.afisha-heading span {
-  color: var(--gold-dark);
-  font-style: italic;
-}
-
-.afisha-lede {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: #555;
-  margin: 18px 0 32px;
-  max-width: 460px;
-}
-
-.afisha-counter {
+.afisha-float-head {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 28px;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  background: rgba(201,168,76,0.06);
 }
-.afisha-counter-num {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 300;
-  color: var(--navy);
-  line-height: 1;
-}
-.afisha-counter-sep {
-  width: 60px;
-  height: 1px;
-  background: var(--gold-dark);
-}
-.afisha-counter-total {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 3px;
-  color: #888;
-}
-
-.afisha-actions {
-  display: flex;
+.afisha-float-label {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
 }
-.afisha-arrow {
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--navy);
+.afisha-float-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--gold);
+  position: relative;
+}
+.afisha-float-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  animation: pulseRing 1.8s ease-out infinite;
+}
+@keyframes pulseRing {
+  0% { transform: scale(0.7); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.afisha-float-head-btns {
+  display: flex;
+  gap: 4px;
+}
+.afisha-float-mini-btn {
+  width: 22px;
+  height: 22px;
   background: transparent;
-  color: var(--navy);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.55);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.2s ease;
 }
-.afisha-arrow:hover {
-  background: var(--navy);
+.afisha-float-mini-btn:hover {
+  border-color: var(--gold);
   color: var(--gold);
 }
 
-.afisha-carousel {
-  position: relative;
+.afisha-float-body {
+  display: flex;
+  flex-direction: column;
 }
 
-.afisha-poster {
+.afisha-float-img {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16/10;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(26,26,56,0.18);
-  border: 1px solid var(--light-border);
 }
-.afisha-poster img {
+.afisha-float-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: brightness(0.92);
 }
-.afisha-poster-grad {
+.afisha-float-tag {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(7,7,14,0) 35%, rgba(7,7,14,0.55) 70%, rgba(7,7,14,0.92) 100%);
-}
-.afisha-poster-meta {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 36px 40px 38px;
-  color: var(--text-primary);
-}
-.afisha-poster-tag {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-  padding: 6px 12px;
+  top: 10px;
+  left: 10px;
+  background: rgba(7,7,14,0.8);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(201,168,76,0.5);
-  margin-bottom: 16px;
-}
-.afisha-poster-meta h3 {
-  font-family: var(--font-display);
-  font-size: 1.85rem;
-  font-weight: 400;
-  line-height: 1.25;
-  color: var(--text-primary);
-  margin: 0 0 14px;
-}
-.afisha-poster-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+  color: var(--gold);
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  color: rgba(240,237,232,0.85);
-  letter-spacing: 0.05em;
-}
-.afisha-poster-info span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  padding: 4px 8px;
 }
 
-.afisha-poster-cta {
-  margin-top: 22px;
+.afisha-float-info {
+  padding: 12px 14px 10px;
+}
+.afisha-float-info h4 {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.afisha-float-meta {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 4px;
+}
+.afisha-float-meta span,
+.afisha-float-venue {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.afisha-float-venue {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  color: rgba(255,255,255,0.5);
+}
+.afisha-float-meta svg,
+.afisha-float-venue svg { color: var(--gold-dim); flex-shrink: 0; }
+
+.afisha-float-foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding-top: 20px;
-  border-top: 1px solid rgba(201,168,76,0.25);
+  gap: 10px;
+  padding: 10px 14px 12px;
+  border-top: 1px solid rgba(201,168,76,0.18);
 }
-.afisha-poster-price {
+.afisha-float-price {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: var(--gold);
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  white-space: nowrap;
 }
-.afisha-ticket-btn {
+.afisha-float-buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 12px;
+  border: 1px solid var(--gold);
+  transition: all 0.25s ease;
+}
+.afisha-float-buy:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+.afisha-float-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px 10px;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  background: rgba(0,0,0,0.25);
+}
+.afisha-float-nav button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.3);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+.afisha-float-nav button:hover {
+  background: var(--gold);
+  color: var(--bg-deep);
+  border-color: var(--gold);
+}
+.afisha-float-nav span {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.5);
+  min-width: 36px;
+  text-align: center;
+}
+
+/* ── Yopilgan holatdagi yorliq ─────────────── */
+.afisha-float-tab {
+  position: fixed;
+  top: calc(var(--header-height) + 24px);
+  right: 0;
+  z-index: 90;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: var(--gold);
   color: var(--bg-deep);
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 12px 22px;
-  border: 1px solid var(--gold);
-  transition: all 0.3s ease;
+  letter-spacing: 2.5px;
+  padding: 10px 14px 10px 12px;
+  border: none;
   cursor: pointer;
+  box-shadow: -4px 8px 20px rgba(0,0,0,0.4);
+  transition: padding 0.25s ease, transform 0.25s ease;
 }
-.afisha-ticket-btn:hover {
-  background: transparent;
-  color: var(--gold);
-  transform: translateY(-2px);
+.afisha-float-tab:hover {
+  padding-right: 18px;
+  transform: translateX(-2px);
+}
+.afisha-float-tab svg { flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .afisha-float {
+    width: 240px;
+    right: 12px;
+    top: calc(var(--header-height) + 12px);
+  }
+  .afisha-float-info h4 { font-size: 0.84rem; }
 }
 
-.afisha-dots {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 2;
-}
-.afisha-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.7);
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.afisha-dot.is-active {
-  background: var(--gold);
-  border-color: var(--gold);
-  transform: scale(1.2);
-}
-
-@media (max-width: 1024px) {
-  .afisha-section { padding: 70px 0; }
-  .afisha-row { grid-template-columns: 1fr; gap: 50px; }
-  .afisha-heading { font-size: 2.4rem; }
-  .afisha-poster { aspect-ratio: 16 / 11; max-height: 520px; }
-  .afisha-poster-meta { padding: 24px 26px 28px; }
-  .afisha-poster-meta h3 { font-size: 1.45rem; }
-}
-
-@media (max-width: 600px) {
-  .afisha-section { padding: 56px 0; }
-  .afisha-heading { font-size: 1.9rem; }
-  .afisha-lede { font-size: 0.95rem; }
-  .afisha-poster { aspect-ratio: 4 / 5; }
-  .afisha-poster-meta { padding: 20px 20px 24px; }
-  .afisha-poster-meta h3 { font-size: 1.2rem; }
-  .afisha-poster-info { gap: 10px; font-size: 0.7rem; }
-  .afisha-counter-num { font-size: 1.8rem; }
-  .afisha-counter-sep { width: 36px; }
-  .afisha-poster-cta { margin-top: 16px; padding-top: 14px; }
-  .afisha-poster-price { font-size: 1.1rem; }
-  .afisha-ticket-btn { padding: 10px 16px; font-size: 0.65rem; letter-spacing: 1.5px; }
+@media (max-width: 480px) {
+  .afisha-float { display: none; }
+  .afisha-float-tab { display: none; }
 }
 
 /* ============================================================
