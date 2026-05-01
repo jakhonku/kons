@@ -61,13 +61,6 @@ const PROREKTORS = [
   },
 ];
 
-const DEANS = [
-  { faculty: 'Akademik xonandalik fakulteti',         name: "Rahimova Sarvinoz Bekovna",     degree: "San'atshunoslik fanlari nomzodi, dotsent",         phone: '+998 71 234-57-01', email: 'xonandalik@konservatoriya.uz',  initials: 'RS', photo: null },
-  { faculty: "Cholg'u ijrochiligi fakulteti",          name: "Karimov Sherzod Rustamovich",   degree: "Professor",                                        phone: '+998 71 234-57-03', email: 'cholgu@konservatoriya.uz',      initials: 'KS', photo: null },
-  { faculty: 'Kompozitsiya va musiqa nazariyasi',      name: "Mirzayeva Gulnora Abdullayevna",degree: "San'atshunoslik fanlari doktori, professor",        phone: '+998 71 234-57-05', email: 'kompozitsiya@konservatoriya.uz',initials: 'MG', photo: null },
-  { faculty: "Xalq cholg'ulari fakulteti",             name: "Qodirov Murod Davlatovich",     degree: "Dotsent",                                          phone: '+998 71 234-57-07', email: 'xalqcholgu@konservatoriya.uz',  initials: 'QM', photo: null },
-  { faculty: "Musiqa san'ati va pedagogika fakulteti", name: "Hasanova Dilnoza Ibrohimovna",  degree: "San'atshunoslik fanlari nomzodi, dotsent",         phone: '+998 71 234-57-09', email: 'pedagogika@konservatoriya.uz',  initials: 'HD', photo: null },
-];
 
 export default function Rahbariyat() {
   return (
@@ -132,34 +125,6 @@ export default function Rahbariyat() {
             ))}
           </div>
 
-          {/* ── DEKANLAR ── */}
-          <div className="section-divider">
-            <h2>Fakultet dekanlari</h2>
-          </div>
-
-          <div className="dekan-grid">
-            {DEANS.map((dean) => (
-              <div key={dean.name} className="dekan-card">
-                <div className="dekan-photo">
-                  {dean.photo ? (
-                    <img src={dean.photo} alt={dean.name} />
-                  ) : (
-                    <span className="dekan-initials">{dean.initials}</span>
-                  )}
-                </div>
-                <div className="dekan-body">
-                  <div className="dekan-badge">Dekan</div>
-                  <h4 className="dekan-name">{dean.name}</h4>
-                  <p className="dekan-faculty">{dean.faculty}</p>
-                  <p className="dekan-degree">{dean.degree}</p>
-                  <div className="dekan-contacts">
-                    <a href={`tel:${dean.phone}`} className="dekan-phone">{dean.phone}</a>
-                    <a href={`mailto:${dean.email}`} className="dekan-email">{dean.email}</a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
 
           {/* ── QABUL SOATLARI ── */}
           <div className="section-divider">
@@ -170,7 +135,6 @@ export default function Rahbariyat() {
             {[
               { day: 'Dushanba – Juma', time: '09:00 – 13:00', label: 'Rektor qabulxonasi' },
               { day: 'Dushanba – Juma', time: '14:00 – 17:00', label: 'Prorektorlar' },
-              { day: 'Seshanba, Payshanba', time: '10:00 – 12:00', label: 'Fakultet dekanlari' },
               { day: 'Shanba', time: '10:00 – 13:00', label: 'Navbatchi prorektor' },
             ].map((item) => (
               <div key={item.label} className="qabul-item">

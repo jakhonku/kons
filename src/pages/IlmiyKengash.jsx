@@ -35,9 +35,9 @@ export default function IlmiyKengash() {
           heading: "Kengash a'zolari (asosiy tarkib)",
           cards: [
             { tag: 'Rais', title: 'Toshmatov Behruz Aliyevich', desc: "San'atshunoslik fanlari doktori, professor. Ilmiy-ijodiy ishlar prorektori." },
-            { tag: 'Rais o\'rinbosari', title: 'Mirzayeva Gulnora Abdullayevna', desc: "San'atshunoslik fanlari doktori, professor. Kompozitsiya fakulteti dekani." },
+            { tag: 'Rais o\'rinbosari', title: 'Mirzayeva Gulnora Abdullayevna', desc: "San'atshunoslik fanlari doktori, professor." },
             { tag: 'Ilmiy kotib', title: 'Aliyeva Nigora Sherzodovna', desc: "Filologiya fanlari doktori, dotsent. Musiqa nazariyasi kafedrasi mudiri." },
-            { tag: 'A\'zo', title: 'Karimov Sherzod Rustamovich', desc: 'Professor, Cholg\'u ijrochiligi fakulteti dekani.' },
+            { tag: 'A\'zo', title: 'Karimov Sherzod Rustamovich', desc: 'Professor.' },
             { tag: 'A\'zo', title: 'Yusupov Akbar Murodovich', desc: 'Professor, Orkestr sinfi kafedrasi mudiri.' },
             { tag: 'A\'zo', title: 'Tursunov Otabek Murodovich', desc: 'Professor, Musiqa nazariyasi kafedrasi.' },
           ],

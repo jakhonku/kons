@@ -16,8 +16,8 @@ export const SEARCH_PAGES = [
   {
     title: 'Rahbariyat',
     path: '/rahbariyat',
-    desc: 'Rektor, prorektorlar, dekanlar va boshqaruv hay\'ati',
-    keywords: 'rahbariyat rektor prorektor dekan hay\'at',
+    desc: 'Rektor, prorektorlar va boshqaruv hay\'ati',
+    keywords: 'rahbariyat rektor prorektor hay\'at',
   },
   {
     title: "Me'yoriy hujjatlar",

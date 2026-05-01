@@ -12,7 +12,7 @@ const FEATURES = [
   { icon: BarChart2,     title: 'Reyting va baholar',  desc: "Talabalarga baho qo'yish, davomadni belgilash va yakuniy natijalar." },
   { icon: ClipboardList, title: 'Topshiriqlar',        desc: "Talabalar uchun vazifalar yaratish va topshirishlarni kuzatish." },
   { icon: FileText,      title: 'O\'quv materiallar',  desc: "Kurs materiallari, sillabuslar va metodik qo'llanmalarni yuklash." },
-  { icon: MessageCircle, title: 'Xabarlar',            desc: "Talabalar va dekanat bilan tizim ichida muloqot." },
+  { icon: MessageCircle, title: 'Xabarlar',            desc: "Talabalar va ma'muriyat bilan tizim ichida muloqot." },
   { icon: Users,         title: 'Guruh ro\'yxati',     desc: "Tahsil olayotgan talabalar, ularning ma'lumotlari va faoliyati." },
 ];
 

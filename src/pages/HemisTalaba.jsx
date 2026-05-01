@@ -12,7 +12,7 @@ const FEATURES = [
   { icon: BarChart2,      title: 'Elektron reyting', desc: "Barcha fanlar bo'yicha baholar, davomad va yakuniy natijalar." },
   { icon: ClipboardList,  title: 'Topshiriqlar',     desc: "O'qituvchilar tomonidan berilgan vazifalar va ularni topshirish muddatlari." },
   { icon: FileText,       title: 'Hujjatlar',        desc: "Ma'lumotnoma, guvohnoma va boshqa rasmiy hujjatlarni olish." },
-  { icon: MessageCircle,  title: 'Murojaat',         desc: "Dekanat va kafedralarga elektron murojaat yuborish." },
+  { icon: MessageCircle,  title: 'Murojaat',         desc: "Registrator ofisi va kafedralarga elektron murojaat yuborish." },
   { icon: GraduationCap,  title: 'Stipendiya',       desc: "Stipendiya va grantlar haqida ma'lumot va to'lovlar tarixi." },
 ];
 

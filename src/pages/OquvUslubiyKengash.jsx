@@ -37,7 +37,7 @@ export default function OquvUslubiyKengash() {
             head: ['Sana', 'Mavzu', 'Mas\'ul'],
             rows: [
               ['10.01.2026', "2025-2026 1-semestr yakunlari tahlili", "O'quv ishlari prorektori"],
-              ['12.02.2026', 'Yangi o\'quv rejalari muhokamasi', 'Dekanlar kengashi'],
+              ['12.02.2026', 'Yangi o\'quv rejalari muhokamasi', 'O\'quv bo\'limi'],
               ['18.03.2026', 'Sillabuslar ekspertizasi', 'Metodbo\'lim'],
               ['15.04.2026', "Bitiruv ishlari himoyasi tartibi", "Davlat attestatsiya komissiyasi"],
               ['22.05.2026', "Yozgi sessiya tahlili", "O'quv ishlari prorektori"],

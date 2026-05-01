@@ -11,7 +11,6 @@ const FACULTIES = [
     id: 1,
     name: 'Akademik xonandalik fakulteti',
     icon: '♪',
-    head: "Rahimova Sarvinoz Bekovna",
     kafedralar: [
       "Akademik xonandalik",
       "Opera tayyorlash",
@@ -23,7 +22,6 @@ const FACULTIES = [
     id: 2,
     name: "Cholg'u ijrochiligi fakulteti",
     icon: '♫',
-    head: "Karimov Sherzod Rustamovich",
     kafedralar: [
       "Fortepiano",
       "Torli cholg'ular",
@@ -36,7 +34,6 @@ const FACULTIES = [
     id: 3,
     name: 'Kompozitsiya va musiqa nazariyasi fakulteti',
     icon: '𝄞',
-    head: "Mirzayeva Gulnora Abdullayevna",
     kafedralar: [
       "Kompozitsiya",
       "Musiqa nazariyasi",
@@ -48,7 +45,6 @@ const FACULTIES = [
     id: 4,
     name: "Xalq cholg'ulari fakulteti",
     icon: '♬',
-    head: "Qodirov Murod Davlatovich",
     kafedralar: [
       "Dutor va g'ijjak",
       "Doira va zarbli cholg'ular",
@@ -60,7 +56,6 @@ const FACULTIES = [
     id: 5,
     name: "Musiqa san'ati va pedagogika fakulteti",
     icon: '𝄢',
-    head: "Hasanova Dilnoza Ibrohimovna",
     kafedralar: [
       "Musiqa pedagogikasi",
       "Maktabgacha ta'lim musiqasi",
@@ -133,9 +128,6 @@ export default function Tuzilma() {
                   <div style={{ fontSize: '1.8rem', color: 'var(--gold)', lineHeight: 1, width: '40px', textAlign: 'center' }}>{fac.icon}</div>
                   <div style={{ flex: 1 }}>
                     <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--navy)', fontWeight: 400 }}>{fac.name}</h3>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--gold-dark)', marginTop: '3px', fontFamily: 'var(--font-sans)' }}>
-                      Dekan: {fac.head}
-                    </div>
                   </div>
                   <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '2px', color: '#888', fontFamily: 'var(--font-sans)', textTransform: 'uppercase' }}>
                     {fac.kafedralar.length} kafedra
