@@ -9,10 +9,10 @@ const BREADCRUMBS = [
 const REKTOR = {
   title: 'Rektor',
   name: "Kamoliddin Urinbayev Turdimuratovich",
-  degree: "O‘zbekiston davlat konservatoriyasi rektori",
+  role: "O‘zbekiston davlat konservatoriyasi rektori",
+  degree: "O‘zbekiston xalq artisti, professor",
   phone: '+998 71 234-56-78',
   email: 'rektor@konservatoriya.uz',
-  bio: "O‘zbekiston xalq artisti, professor",
   initials: 'KO',
   since: '',
   photo: '/images/rahbariyat/rektor.jpg',
@@ -22,10 +22,10 @@ const PROREKTORS = [
   {
     title: "O'quv ishlari bo'yicha prorektor",
     name: "Farhod Abdullayev",
-    degree: "O'quv ishlari bo'yicha prorektor",
+    degree: "Pedagogika fanlari nomzodi, dotsent",
     phone: '+998 71 234-56-80',
     email: 'prorektor-oquv@konservatoriya.uz',
-    bio: "O'zbekiston davlat konservatoriyasida o'quv-metodik ishlarni tashkil etish, ta'lim sifatini nazorat qilish va o'quv jarayonini takomillashtirish sohasida faoliyat yuritadi.",
+    bio: "O'quv-metodik ishlarni tashkil etish, ta'lim sifatini nazorat qilish va o'quv jarayonini takomillashtirish sohasida faoliyat yuritadi.",
     initials: 'FA',
     photo: '/images/rahbariyat/Farhod Abdullayev.JPG',
   },
@@ -49,6 +49,16 @@ const PROREKTORS = [
     initials: 'XJ',
     photo: null,
   },
+  {
+    title: "Xalqaro hamkorlik bo'yicha prorektor",
+    name: "Yusupova Madina Otabekovna",
+    degree: "Filologiya fanlari nomzodi, dotsent",
+    phone: '+998 71 234-56-86',
+    email: 'prorektor-xalqaro@konservatoriya.uz',
+    bio: "Xalqaro hamkorlik dasturlari, xorijiy hamkor universitetlar bilan aloqalar va talabalar mobilligini muvofiqlashtiradi.",
+    initials: 'YM',
+    photo: null,
+  },
 ];
 
 const DEANS = [
@@ -69,77 +79,22 @@ export default function Rahbariyat() {
         breadcrumbs={BREADCRUMBS}
       />
 
-      {/* ── REKTOR PANORAMA ── */}
-      <section className="rektor-section">
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'repeating-linear-gradient(135deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 60px)' }} />
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--gold-shimmer) 50%, var(--gold) 80%, transparent 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)' }} />
-
-        <div className="container">
-          <div className="rektor-layout">
-
-            {/* LEFT — portrait */}
-            <div className="rektor-photo-col">
-              <div className="rektor-portrait">
-                {REKTOR.photo ? (
-                  <img src={REKTOR.photo} alt={REKTOR.name} />
-                ) : (
-                  <span style={{ fontSize: '5rem', fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'rgba(201,168,76,0.35)', letterSpacing: '4px', userSelect: 'none' }}>
-                    {REKTOR.initials}
-                  </span>
-                )}
-                {/* corner accents */}
-                {[
-                  { top: -6, left: -6, borderTop: '2px solid var(--gold)', borderLeft: '2px solid var(--gold)' },
-                  { top: -6, right: -6, borderTop: '2px solid var(--gold)', borderRight: '2px solid var(--gold)' },
-                  { bottom: -6, left: -6, borderBottom: '2px solid var(--gold)', borderLeft: '2px solid var(--gold)' },
-                  { bottom: -6, right: -6, borderBottom: '2px solid var(--gold)', borderRight: '2px solid var(--gold)' },
-                ].map((s, i) => (
-                  <div key={i} style={{ position: 'absolute', width: 20, height: 20, ...s }} />
-                ))}
-              </div>
-
-              <div style={{ marginTop: '24px', padding: '7px 32px', background: 'var(--gold)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: '#08081a', fontFamily: 'var(--font-sans)', zIndex: 1 }}>
-                Rektor
-              </div>
-              <div style={{ marginTop: '10px', fontSize: '0.65rem', color: 'rgba(201,168,76,0.5)', letterSpacing: '2px', fontFamily: 'var(--font-sans)' }}>
-                {REKTOR.since} 
-              </div>
-            </div>
-
-            {/* RIGHT — info */}
-            <div className="rektor-info-col">
-              <div style={{ fontSize: '0.58rem', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--gold)', opacity: 0.7, marginBottom: '20px', fontFamily: 'var(--font-sans)' }}>
-                O'zbekiston Davlat Konservatoriyasi — Rektori
-              </div>
-
-              <h1 className="rektor-name">
-                {REKTOR.name.split(' ').slice(0, 2).join(' ')}<br />
-                <span style={{ fontStyle: 'normal', fontWeight: 500, color: 'var(--gold-shimmer)' }}>
-                  {REKTOR.name.split(' ').slice(2).join(' ')}
-                </span>
-              </h1>
-
-              <p style={{ fontSize: '0.85rem', color: 'rgba(201,168,76,0.65)', marginBottom: '24px', fontStyle: 'italic', fontFamily: 'var(--font-serif)', letterSpacing: '0.3px' }}>
-                {REKTOR.degree}
-              </p>
-
-              <div style={{ width: 60, height: 1, background: 'var(--gold)', opacity: 0.4, marginBottom: '24px' }} />
-
-              <p style={{ fontSize: '0.95rem', color: 'rgba(240,237,232,0.72)', lineHeight: 1.85, fontFamily: 'var(--font-serif)', marginBottom: '36px', maxWidth: 560 }}>
-                {REKTOR.bio}
-              </p>
-
-              <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap' }}>
-                <a href={`tel:${REKTOR.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--gold-light)', textDecoration: 'none', fontSize: '0.85rem', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7 }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.08-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  {REKTOR.phone}
-                </a>
-                <a href={`mailto:${REKTOR.email}`} style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'rgba(240,237,232,0.5)', textDecoration: 'none', fontSize: '0.85rem', fontFamily: 'var(--font-sans)' }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  {REKTOR.email}
-                </a>
-              </div>
+      {/* ── REKTOR — kinematik hero (centralasian.uz uslubida) ── */}
+      <section
+        className="rektor-cover"
+        style={REKTOR.photo ? { backgroundImage: `url(${REKTOR.photo})` } : undefined}
+      >
+        <div className="rektor-cover-overlay" aria-hidden="true" />
+        <div className="container rektor-cover-inner">
+          <div className="rektor-cover-text">
+            <div className="rektor-cover-eyebrow">Rektor</div>
+            <h1 className="rektor-cover-name-title">{REKTOR.name}</h1>
+            <p className="rektor-cover-role-line">{REKTOR.role},</p>
+            <p className="rektor-cover-degree-line">{REKTOR.degree}</p>
+            <div className="rektor-cover-contacts">
+              <a href={`tel:${REKTOR.phone}`} className="rektor-cover-contact">{REKTOR.phone}</a>
+              <span className="rektor-cover-dot" aria-hidden="true">•</span>
+              <a href={`mailto:${REKTOR.email}`} className="rektor-cover-contact">{REKTOR.email}</a>
             </div>
           </div>
         </div>

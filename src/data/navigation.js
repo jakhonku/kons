@@ -1,34 +1,43 @@
 /* ============================================================
    O'ZBEKISTON DAVLAT KONSERVATORIYASI
    Navigatsiya Ma'lumotlari — Yagona manba
+   Tuzilma "Сайт тузилмаси.docx" hujjatiga muvofiq joylashtirilgan.
    ============================================================ */
 
 export const UTILITY_LINKS = [];
 
 export const NAV_MENU = [
+  /* ---------- 1. TUZILMA ---------- */
   {
-    id: 'konservatoriya',
-    label: 'Konservatoriya',
-    to: '/tarix',
+    id: 'tuzilma',
+    label: 'Tuzilma',
+    to: '/tuzilma',
     columns: [
       {
-        heading: 'Muassasa',
+        heading: 'Boshqaruv',
         links: [
-          { label: 'Konservatoriya tarixi',  to: '/tarix' },
-          { label: 'Muassasa tuzilmasi',     to: '/tuzilma' },
-          { label: 'Rahbariyat',             to: '/rahbariyat' },
-          { label: "Me'yoriy hujjatlar",     to: '/hujjatlar' },
-          { label: '"Musiqa" jurnali',       to: '/musiqa-jurnali' },
+          { label: 'Konservatoriya tarixi', to: '/tarix' },
+          { label: 'Rahbariyat',            to: '/rahbariyat' },
+          { label: 'Vasiylik kengashi',     to: '/vasiylik-kengashi' },
+          { label: "O'quv uslubiy kengash", to: '/oquv-uslubiy-kengash' },
         ],
       },
       {
-        heading: 'Xizmatlar',
+        heading: "Akademik bo'linmalar",
         links: [
-          { label: 'Online murojaat',      to: '/kontaktlar' },
-          { label: 'Yashil universitet',   to: '/yashil-universitet' },
-          { label: 'Kontaktlar',           to: '/kontaktlar' },
-          { label: "HEMIS-o'qituvchi",     to: '/hemis-oquvchi' },
-          { label: '360° Virtual sayohat', to: '/sayohat-360' },
+          { label: 'Fakultetlar',          to: '/fakultetlar' },
+          { label: 'Kafedralar',           to: '/kafedralar' },
+          { label: "Bo'limlar",            to: '/bolimlar' },
+          { label: 'Nukus filiali',        to: '/nukus-filiali' },
+          { label: 'Jamoat tashkilotlari', to: '/jamoat-tashkilotlari' },
+        ],
+      },
+      {
+        heading: "Qo'shimcha",
+        links: [
+          { label: "Aloqa ma'lumotlari",  to: '/kontaktlar' },
+          { label: 'Yashil universitet',  to: '/yashil-universitet' },
+          { label: "Bo'sh ish o'rinlari", to: '/vakansiyalar' },
         ],
       },
     ],
@@ -38,62 +47,143 @@ export const NAV_MENU = [
     },
   },
 
+  /* ---------- 2. TA'LIM ---------- */
   {
-    id: 'talabalar',
-    label: 'Talabalar uchun',
-    to: '/talabalar',
+    id: 'talim',
+    label: "Ta'lim",
+    to: '/talim',
     columns: [
       {
         heading: "O'quv jarayoni",
         links: [
-          { label: 'Dars jadvallari',              to: '/dars-jadvali' },
-          { label: "O'quv rejalar",                to: '/oquv-rejalar' },
+          { label: 'Dars jadvallari',                to: '/dars-jadvali' },
+          { label: "O'quv rejalar",                  to: '/oquv-rejalar' },
           { label: "O'quv dasturlari (Sillabuslar)", to: '/sillabuslar' },
-          { label: 'HEMIS-talaba',                 to: '/hemis-talaba' },
         ],
       },
       {
-        heading: "Qo'llab-quvvatlash",
+        heading: 'Talabalar uchun',
         links: [
-          { label: 'Grantlar',                       to: '/grantlar' },
-          { label: 'Kelajakka qadam',                to: '/kelajakka-qadam' },
-          { label: 'Online kutubxona',               to: '/kutubxona' },
-          { label: 'Registrator ofisiga murojaat',   to: '/registrator' },
-        ],
-      },
-      {
-        heading: 'Talabalar hayoti',
-        links: [
-          { label: "To'garaklar",       to: '/togaraklar' },
-          { label: 'Talabalar turar joyi', to: '/yotoqxona' },
+          { label: 'Kelajakka qadam',                  to: '/kelajakka-qadam' },
+          { label: "To'garaklar",                      to: '/togaraklar' },
+          { label: 'Bitiruvchilar bandligi (career)',  to: '/bitiruvchilar-bandligi' },
         ],
       },
     ],
     featured: {
-      label: 'Talabalar Portali',
-      desc: "Barcha resurslar va imkoniyatlar — HEMIS tizimi orqali yagona joyda.",
+      label: "Akademik ta'lim",
+      desc: "Bakalavr, magistratura va doktorantura dasturlari yagona platformada.",
     },
   },
 
+  /* ---------- 3. ILM-FAN ---------- */
   {
-    id: 'abituriyentlar',
-    label: 'Abituriyentlar uchun',
+    id: 'ilm-fan',
+    label: 'Ilm-fan',
+    to: '/ilm-fan',
+    columns: [
+      {
+        heading: 'Ilmiy faoliyat',
+        links: [
+          { label: 'Ilmiy kengash',         to: '/ilmiy-kengash' },
+          { label: 'Ilmiy loyihalar',       to: '/ilmiy-loyihalar' },
+          { label: 'Doktorantura',          to: '/doktorantura' },
+          { label: 'Ilmiy konferensiyalar', to: '/ilmiy-konferensiyalar' },
+          { label: 'Grantlar',              to: '/grantlar' },
+        ],
+      },
+      {
+        heading: 'Nashriyot',
+        links: [
+          { label: 'Nashriyot',                  to: '/nashriyot' },
+          { label: 'Musiqa jurnali tahririyati', to: '/musiqa-jurnali-tahririyati' },
+          { label: '"Musiqa" jurnali',           to: '/musiqa-jurnali' },
+          { label: "Musiqa cholg'ulari laboratoriyasi", to: '/musiqa-cholgulari-laboratoriyasi' },
+          { label: 'Eurasian Music Journal',     to: '/eurasian-music-journal' },
+        ],
+      },
+    ],
+    featured: {
+      label: 'Ilmiy salohiyat',
+      desc: 'Musiqa fani sohasidagi yetakchi tadqiqot va nashriyot markazi.',
+    },
+  },
+
+  /* ---------- 4. INTERAKTIV XIZMATLAR ---------- */
+  {
+    id: 'interaktiv',
+    label: 'Interaktiv xizmatlar',
+    to: '/interaktiv-xizmatlar',
+    columns: [
+      {
+        heading: 'Onlayn xizmatlar',
+        links: [
+          { label: 'Online murojaat',  to: '/online-murojaat' },
+          { label: 'Online kutubxona', to: '/kutubxona' },
+        ],
+      },
+      {
+        heading: 'HEMIS tizimi',
+        links: [
+          { label: 'HEMIS-talaba',     to: '/hemis-talaba' },
+          { label: "HEMIS-o'qituvchi", to: '/hemis-oquvchi' },
+        ],
+      },
+      {
+        heading: 'Talabalar uchun',
+        links: [
+          { label: 'Registrator ofisiga murojaat', to: '/registrator' },
+          { label: 'Talabalar turar joyi',         to: '/yotoqxona' },
+        ],
+      },
+    ],
+    featured: {
+      label: 'Yagona xizmatlar',
+      desc: "Talaba va o'qituvchilar uchun barcha onlayn xizmatlar bir joyda.",
+    },
+  },
+
+  /* ---------- 5. IJODIY FAOLIYAT ---------- */
+  {
+    id: 'ijodiy',
+    label: 'Ijodiy faoliyat',
+    to: '/ijodiy-faoliyat',
+    columns: [
+      {
+        heading: 'Tadbirlar',
+        links: [
+          { label: 'Afisha',                  to: '/taqvim' },
+          { label: 'Jonli efir',              to: '/jonli-efir' },
+          { label: 'Musiqali teatr studiyasi', to: '/musiqali-teatr-studiyasi' },
+        ],
+      },
+    ],
+    featured: {
+      label: 'Sahna hayoti',
+      desc: 'Konservatoriyaning konsertlari, spektakllari va jonli efirlari.',
+    },
+  },
+
+  /* ---------- 6. QABUL ---------- */
+  {
+    id: 'qabul',
+    label: 'Qabul',
     to: '/abituriyentlar',
     columns: [
       {
         heading: "Ta'lim",
         links: [
-          { label: "Ta'lim yo'nalishlari", to: '/abituriyentlar' },
-          { label: "Ta'lim dasturlari",    to: '/abituriyentlar' },
+          { label: "Ta'lim yo'nalishlari", to: '/talim-yonalishlari' },
+          { label: "Ta'lim dasturlari",   to: '/talim-dasturlari' },
         ],
       },
       {
-        heading: 'Qabul 2026',
+        heading: 'Qabul jarayoni',
         links: [
-          { label: "Qabul ta'lablari",            to: '/abituriyentlar' },
-          { label: 'Qabul kvotasi',               to: '/abituriyentlar' },
-          { label: 'Kasbiy va ijodiy imtihonlar', to: '/abituriyentlar' },
-          { label: 'Imtihon natijalari',          to: '/abituriyentlar' },
+          { label: "Qabul ta'lablari",            to: '/qabul-talablari' },
+          { label: 'Qabul kvotasi',               to: '/qabul-kvotasi' },
+          { label: 'Kasbiy va ijodiy imtihonlar', to: '/kasbiy-imtihonlar' },
+          { label: 'Imtihon natijalari',          to: '/imtihon-natijalari' },
         ],
       },
     ],
@@ -103,6 +193,7 @@ export const NAV_MENU = [
     },
   },
 
+  /* ---------- 7. XALQARO ALOQALAR ---------- */
   {
     id: 'xalqaro',
     label: 'Xalqaro aloqalar',
@@ -111,17 +202,16 @@ export const NAV_MENU = [
       {
         heading: 'Hamkorlik',
         links: [
-          { label: 'Hamkor tashkilotlar',   to: '/hamkor-tashkilotlar' },
-          { label: 'Xorijiy dasturlar',     to: '/xorijiy-dasturlar' },
-          { label: 'Xalqaro memorandumlar', to: '/xalqaro-memorandumlar' },
+          { label: 'Hamkor tashkilotlar',    to: '/hamkor-tashkilotlar' },
+          { label: 'Xorijiy talabalar uchun', to: '/xorijiy-talabalar' },
+          { label: 'Xalqaro memorandumlar',  to: '/xalqaro-memorandumlar' },
         ],
       },
       {
         heading: 'Dasturlar',
         links: [
-          { label: 'Erasmus+ dasturi',      to: '/erasmus' },
-          { label: "Xalqaro stipendiyalar", to: '/xalqaro-stipendiyalar' },
-          { label: "Qo'shma konsertlar",    to: '/qoshma-konsertlar' },
+          { label: 'Study in Uzbekistan', to: '/study-in-uzbekistan' },
+          { label: 'Erasmus+',            to: '/erasmus' },
         ],
       },
     ],
@@ -131,16 +221,18 @@ export const NAV_MENU = [
     },
   },
 
+  /* ---------- 8. AXBOROT XIZMATI ---------- */
   {
     id: 'axborot',
     label: 'Axborot xizmati',
     to: '/yangiliklar',
     columns: [
       {
-        heading: 'Yangiliklar va tadbirlar',
+        heading: 'Yangiliklar',
         links: [
-          { label: 'Yangiliklar',           to: '/yangiliklar' },
-          { label: 'Kutilayotgan tadbirlar', to: '/taqvim' },
+          { label: 'Yangiliklar',              to: '/yangiliklar' },
+          { label: 'Online tur (360°)',        to: '/sayohat-360' },
+          { label: 'Rektor tabrigi va nutqlari', to: '/rektor-tabrigi' },
         ],
       },
       {
@@ -148,13 +240,7 @@ export const NAV_MENU = [
         links: [
           { label: 'Videogalereya', to: '/videogalereya' },
           { label: 'Fotogalereya',  to: '/fotogalereya' },
-        ],
-      },
-      {
-        heading: "Bog'lanish",
-        links: [
-          { label: 'Kontaktlar',         to: '/kontaktlar' },
-          { label: 'Yashil universitet', to: '/yashil-universitet' },
+          { label: 'Kontaktlar',    to: '/kontaktlar' },
         ],
       },
     ],

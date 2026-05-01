@@ -9,97 +9,13 @@ import SearchPanel from './SearchPanel';
 
 const MONTHS_SHORT = ['YAN','FEV','MAR','APR','MAY','IYN','IYL','AVG','SEN','OKT','NOY','DEK'];
 
-function CalendarBtn() {
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
-  const now   = new Date();
-  const day   = now.getDate();
-  const month = MONTHS_SHORT[now.getMonth()];
-  return (
-    <Link
-      to="/taqvim"
-      aria-label="Tadbirlar taqvimi"
-      style={{
-        display:        'flex',
-        alignItems:     'center',
-        gap:            isDesktop ? '12px' : '8px',
-        padding:        isDesktop ? '0 16px 0 14px' : '0 10px 0 8px',
-        height:         isDesktop ? '46px' : '38px',
-        border:         '1px solid rgba(201,168,76,0.35)',
-        background:     'rgba(201,168,76,0.04)',
-        textDecoration: 'none',
-        flexShrink:     0,
-        transition:     'border-color 0.25s, background 0.25s',
-      }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.borderColor = 'var(--gold)';
-        e.currentTarget.style.background  = 'rgba(201,168,76,0.1)';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(201,168,76,0.35)';
-        e.currentTarget.style.background  = 'rgba(201,168,76,0.04)';
-      }}
-    >
-      {/* TADBIRLAR matni */}
-      <span style={{
-        fontFamily:    'var(--font-sans)',
-        fontSize:      '0.62rem',
-        fontWeight:    700,
-        letterSpacing: '2px',
-        textTransform: 'uppercase',
-        color:         'rgba(240,237,232,0.65)',
-        lineHeight:    1,
-      }}>
-        TADBIRLAR
-      </span>
 
-      {/* Vertikal ajratgich */}
-      <span style={{
-        display:    'block',
-        width:      '1px',
-        height:     '26px',
-        background: 'rgba(201,168,76,0.3)',
-        flexShrink: 0,
-      }} />
-
-      {/* Kalendar kvadrat */}
-      <span style={{
-        display:        'flex',
-        flexDirection:  'column',
-        alignItems:     'center',
-        justifyContent: 'center',
-        lineHeight:     1,
-        gap:            '1px',
-      }}>
-        {/* Oy */}
-        <span style={{
-          fontFamily:    'var(--font-sans)',
-          fontSize:      '0.44rem',
-          fontWeight:    700,
-          letterSpacing: '1.5px',
-          textTransform: 'uppercase',
-          color:         '#e05050',
-        }}>
-          {month}
-        </span>
-        {/* Kun */}
-        <span style={{
-          fontFamily: 'var(--font-display)',
-          fontSize:   isDesktop ? '1.4rem' : '1.1rem',
-          fontWeight: 300,
-          color:      'var(--gold-light)',
-        }}>
-          {day}
-        </span>
-      </span>
-    </Link>
-  );
-}
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled,    setScrolled]    = useState(false);
   const [mobileOpen,  setMobileOpen]  = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isDesktop = useMediaQuery('(min-width: 1200px)');
   const location  = useLocation();
   const isHome    = location.pathname === '/';
 
@@ -186,18 +102,12 @@ export default function Header() {
             </>
           )}
 
-          {/* Desktop: horizontal mega nav + calendar */}
-          {isDesktop && (
-            <>
-              <DesktopNav />
-              <CalendarBtn />
-            </>
-          )}
+          {/* Desktop: horizontal mega nav */}
+          {isDesktop && <DesktopNav />}
 
-          {/* Mobile: calendar + hamburger */}
+          {/* Mobile: hamburger only */}
           {!isDesktop && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <CalendarBtn />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <HamburgerIcon
                 isOpen={mobileOpen}
                 onClick={toggleMobile}

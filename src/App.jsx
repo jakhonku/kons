@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+
+// Pages
 import Home from './pages/Home';
 import Tarix from './pages/Tarix';
 import Tuzilma from './pages/Tuzilma';
@@ -36,45 +38,132 @@ import MusiqaJurnali from './pages/MusiqaJurnali';
 import HemisOquvchi from './pages/HemisOquvchi';
 import NotFound from './pages/NotFound';
 
+// New Pages
+import VasiylikKengashi from './pages/VasiylikKengashi';
+import OquvUslubiyKengash from './pages/OquvUslubiyKengash';
+import Fakultetlar from './pages/Fakultetlar';
+import Kafedralar from './pages/Kafedralar';
+import Bolimlar from './pages/Bolimlar';
+import NukusFiliali from './pages/NukusFiliali';
+import JamoatTashkilotlari from './pages/JamoatTashkilotlari';
+import Vakansiyalar from './pages/Vakansiyalar';
+import Talim from './pages/Talim';
+import BitiruvchilarBandligi from './pages/BitiruvchilarBandligi';
+import IlmFan from './pages/IlmFan';
+import IlmiyKengash from './pages/IlmiyKengash';
+import IlmiyLoyihalar from './pages/IlmiyLoyihalar';
+import Doktorantura from './pages/Doktorantura';
+import IlmiyKonferensiyalar from './pages/IlmiyKonferensiyalar';
+import Nashriyot from './pages/Nashriyot';
+import MusiqaJurnaliTahririyati from './pages/MusiqaJurnaliTahririyati';
+import MusiqaCholgulariLaboratoriyasi from './pages/MusiqaCholgulariLaboratoriyasi';
+import EurasianMusicJournal from './pages/EurasianMusicJournal';
+import InteraktivXizmatlar from './pages/InteraktivXizmatlar';
+import OnlineMurojaat from './pages/OnlineMurojaat';
+import IjodiyFaoliyat from './pages/IjodiyFaoliyat';
+import Afisha from './pages/Afisha';
+import JonliEfir from './pages/JonliEfir';
+import MusiqaliTeatrStudiyasi from './pages/MusiqaliTeatrStudiyasi';
+import TalimYonalishlari from './pages/TalimYonalishlari';
+import TalimDasturlari from './pages/TalimDasturlari';
+import QabulTalablari from './pages/QabulTalablari';
+import QabulKvotasi from './pages/QabulKvotasi';
+import KasbiyImtihonlar from './pages/KasbiyImtihonlar';
+import ImtihonNatijalari from './pages/ImtihonNatijalari';
+import XorijiyTalabalar from './pages/XorijiyTalabalar';
+import StudyInUzbekistan from './pages/StudyInUzbekistan';
+import RektorTabrigi from './pages/RektorTabrigi';
+
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          
+          {/* Tuzilma */}
           <Route path="tarix" element={<Tarix />} />
           <Route path="tuzilma" element={<Tuzilma />} />
           <Route path="rahbariyat" element={<Rahbariyat />} />
+          <Route path="vasiylik-kengashi" element={<VasiylikKengashi />} />
+          <Route path="oquv-uslubiy-kengash" element={<OquvUslubiyKengash />} />
+          <Route path="fakultetlar" element={<Fakultetlar />} />
+          <Route path="kafedralar" element={<Kafedralar />} />
+          <Route path="bolimlar" element={<Bolimlar />} />
+          <Route path="nukus-filiali" element={<NukusFiliali />} />
+          <Route path="jamoat-tashkilotlari" element={<JamoatTashkilotlari />} />
+          <Route path="vakansiyalar" element={<Vakansiyalar />} />
+          <Route path="kontaktlar" element={<Kontaktlar />} />
           <Route path="hujjatlar" element={<Hujjatlar />} />
-          <Route path="yangiliklar" element={<Yangiliklar />} />
+
+          {/* Ta'lim */}
+          <Route path="talim" element={<Talim />} />
+          <Route path="dars-jadvali" element={<DarsJadvali />} />
+          <Route path="oquv-rejalar" element={<OquvRejalar />} />
+          <Route path="sillabuslar" element={<Sillabuslar />} />
+          <Route path="kelajakka-qadam" element={<KelajakkaQadam />} />
+          <Route path="togaraklar" element={<Togaraklar />} />
+          <Route path="bitiruvchilar-bandligi" element={<BitiruvchilarBandligi />} />
+          <Route path="talabalar" element={<Talabalar />} />
+
+          {/* Ilm-fan */}
+          <Route path="ilm-fan" element={<IlmFan />} />
+          <Route path="ilmiy-kengash" element={<IlmiyKengash />} />
+          <Route path="ilmiy-loyihalar" element={<IlmiyLoyihalar />} />
+          <Route path="doktorantura" element={<Doktorantura />} />
+          <Route path="ilmiy-konferensiyalar" element={<IlmiyKonferensiyalar />} />
+          <Route path="grantlar" element={<Grantlar />} />
+          <Route path="nashriyot" element={<Nashriyot />} />
+          <Route path="musiqa-jurnali-tahririyati" element={<MusiqaJurnaliTahririyati />} />
+          <Route path="musiqa-jurnali" element={<MusiqaJurnali />} />
+          <Route path="musiqa-cholgulari-laboratoriyasi" element={<MusiqaCholgulariLaboratoriyasi />} />
+          <Route path="eurasian-music-journal" element={<EurasianMusicJournal />} />
+
+          {/* Interaktiv */}
+          <Route path="interaktiv-xizmatlar" element={<InteraktivXizmatlar />} />
+          <Route path="online-murojaat" element={<OnlineMurojaat />} />
+          <Route path="kutubxona" element={<Kutubxona />} />
+          <Route path="hemis-talaba" element={<HemisTalaba />} />
+          <Route path="hemis-oquvchi" element={<HemisOquvchi />} />
+          <Route path="registrator" element={<Registrator />} />
+          <Route path="yotoqxona" element={<Yotoqxona />} />
+
+          {/* Ijodiy */}
+          <Route path="ijodiy-faoliyat" element={<IjodiyFaoliyat />} />
+          <Route path="afisha" element={<Afisha />} />
+          <Route path="jonli-efir" element={<JonliEfir />} />
+          <Route path="musiqali-teatr-studiyasi" element={<MusiqaliTeatrStudiyasi />} />
           <Route path="taqvim" element={<Taqvim />} />
           <Route path="taqvim/:id" element={<TadbirBatafsil />} />
-          <Route path="kontaktlar" element={<Kontaktlar />} />
+          <Route path="fotogalereya" element={<Fotogalereya />} />
+          <Route path="videogalereya" element={<Videogalereya />} />
+
+          {/* Qabul */}
           <Route path="abituriyentlar" element={<Abituriyentlar />} />
-          <Route path="talabalar" element={<Talabalar />} />
+          <Route path="talim-yonalishlari" element={<TalimYonalishlari />} />
+          <Route path="talim-dasturlari" element={<TalimDasturlari />} />
+          <Route path="qabul-talablari" element={<QabulTalablari />} />
+          <Route path="qabul-kvotasi" element={<QabulKvotasi />} />
+          <Route path="kasbiy-imtihonlar" element={<KasbiyImtihonlar />} />
+          <Route path="imtihon-natijalari" element={<ImtihonNatijalari />} />
+
+          {/* Xalqaro */}
           <Route path="xalqaro" element={<Xalqaro />} />
           <Route path="hamkor-tashkilotlar" element={<HamkorTashkilotlar />} />
+          <Route path="xorijiy-talabalar" element={<XorijiyTalabalar />} />
           <Route path="xorijiy-dasturlar" element={<XorijiyDasturlar />} />
           <Route path="xalqaro-memorandumlar" element={<XalqaroMemorandumlar />} />
           <Route path="erasmus" element={<Erasmus />} />
           <Route path="xalqaro-stipendiyalar" element={<XalqaroStipendiyalar />} />
           <Route path="qoshma-konsertlar" element={<QoshmaKonsertlar />} />
-          <Route path="fotogalereya" element={<Fotogalereya />} />
-          <Route path="videogalereya" element={<Videogalereya />} />
-          <Route path="yashil-universitet" element={<YashilUniversitet />} />
-          <Route path="dars-jadvali" element={<DarsJadvali />} />
-          <Route path="oquv-rejalar" element={<OquvRejalar />} />
-          <Route path="sillabuslar" element={<Sillabuslar />} />
-          <Route path="hemis-talaba" element={<HemisTalaba />} />
-          <Route path="grantlar" element={<Grantlar />} />
-          <Route path="kelajakka-qadam" element={<KelajakkaQadam />} />
-          <Route path="kutubxona" element={<Kutubxona />} />
-          <Route path="registrator" element={<Registrator />} />
-          <Route path="togaraklar" element={<Togaraklar />} />
-          <Route path="yotoqxona" element={<Yotoqxona />} />
+          <Route path="study-in-uzbekistan" element={<StudyInUzbekistan />} />
+
+          {/* Axborot xizmati */}
+          <Route path="yangiliklar" element={<Yangiliklar />} />
           <Route path="sayohat-360" element={<Sayohat360 />} />
-          <Route path="musiqa-jurnali" element={<MusiqaJurnali />} />
-          <Route path="hemis-oquvchi" element={<HemisOquvchi />} />
+          <Route path="rektor-tabrigi" element={<RektorTabrigi />} />
+          <Route path="yashil-universitet" element={<YashilUniversitet />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
