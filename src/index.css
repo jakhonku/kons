@@ -31,7 +31,7 @@
   --silver-light: #d0d0e0;
 
   /* ── Dark text (for light backgrounds) ── */
-  --text-primary:   #f0ede8;
+  --text-primary:   #ffffff;
   --text-secondary: #7a7888;
   --text-dark:      #1a1a38;
   --text-dark-muted:#5a5a78;
@@ -44,12 +44,12 @@
   --border-light:  rgba(26, 26, 56, 0.12);
 
   /* ── Fonts ── */
-  --font-display: "Cormorant Garamond", serif;
-  --font-serif:   "Crimson Pro", serif;
-  --font-sans:    "Inter", sans-serif;
-
+  --font-display: "Playfair Display", serif;
+  --font-serif:   "Playfair Display", serif;
+  --font-sans:    "Montserrat", sans-serif;
+  
   /* ── Layout ── */
-  --header-height: 104px; /* 36px utility + 68px navbar */
+  --header-height: 120px; /* 36px utility + 84px navbar */
   --transition:    all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -61,7 +61,8 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
   background: var(--bg-deep);
-  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -69,9 +70,10 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 span {
@@ -132,7 +134,7 @@ img { display: block; max-width: 100%; }
 }
 .utility-link {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -153,7 +155,7 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
   color: var(--text-secondary);
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: 600;
@@ -187,7 +189,7 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
   color: var(--text-secondary);
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: 600;
@@ -269,14 +271,14 @@ img { display: block; max-width: 100%; }
 
 /* ---- Main Navbar ---- */
 .navbar {
-  height: 68px;
-  max-width: 1400px;
+  height: 84px;
+  max-width: 1750px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 0 0 25px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 10px;
   min-width: 0;
 }
 .nav-logo {
@@ -285,7 +287,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
 }
 .nav-logo img {
-  height: 34px;
+  height: 46px;
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -301,7 +303,7 @@ img { display: block; max-width: 100%; }
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 12px;
   flex-wrap: nowrap;
 }
 .dnav-item-wrap { position: relative; flex-shrink: 0; }
@@ -309,26 +311,19 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 3px;
-  padding: 10px 6px;
+  padding: 8px 8px;
   font-family: var(--font-sans);
-  font-size: 0.64rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: rgba(240,237,232,0.65);
+  color: rgba(255,255,255,0.85);
   border: 1px solid transparent;
   border-radius: 2px;
   transition: color 0.25s, border-color 0.25s, background 0.25s;
   white-space: nowrap;
 }
-@media (min-width: 1280px) {
-  .navbar { padding: 0 32px; gap: 22px; }
-  .dnav-item { padding: 10px 14px; font-size: 0.7rem; letter-spacing: 1.2px; gap: 5px; }
-}
-@media (min-width: 1440px) {
-  .navbar { padding: 0 40px; gap: 30px; }
-  .dnav-item { padding: 10px 16px; font-size: 0.72rem; }
-}
+/* Media queries olib tashlandi, chunki ular kichik ekranlarda overlap keltirib chiqarayotgan edi */
 .dnav-item:hover,
 .dnav-item.active {
   color: var(--gold-light);
@@ -381,9 +376,9 @@ img { display: block; max-width: 100%; }
 /* Ustun sarlavhasi */
 .mega-heading {
   font-family: var(--font-sans);
-  font-size: 0.58rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--gold-dark);
   margin-bottom: 18px;
@@ -398,7 +393,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 400;
   color: #3a3a5c;
   padding: 7px 0;
@@ -920,9 +915,9 @@ img { display: block; max-width: 100%; }
 
 .hero-content h1 {
   font-family: var(--font-display);
-  font-size: 3.8rem;
-  font-weight: 300;
-  line-height: 1.1;
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 28px;
   color: var(--text-primary);
   letter-spacing: -0.01em;
@@ -933,7 +928,7 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-content p {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   color: var(--text-secondary);
   font-family: var(--font-serif);
   font-style: italic;
@@ -1046,10 +1041,10 @@ img { display: block; max-width: 100%; }
   display: inline-block;
   font-family: var(--font-sans);
   font-style: normal;
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   color: var(--gold);
   margin-bottom: 16px;
 }
@@ -1520,7 +1515,7 @@ img { display: block; max-width: 100%; }
 }
 
 .page-hero {
-  padding: 70px 0 50px;
+  padding: 35px 0 25px;
   background: var(--white);
   border-bottom: 1px solid var(--light-border);
   position: relative;
@@ -1542,8 +1537,8 @@ img { display: block; max-width: 100%; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 45px;
-  padding: 0 0 20px;
+  margin-bottom: 25px;
+  padding: 0 0 12px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -1640,7 +1635,7 @@ img { display: block; max-width: 100%; }
 
 .page-hero h1 {
   font-family: var(--font-display);
-  font-size: 3.8rem;
+  font-size: 2.2rem;
   font-weight: 300;
   color: var(--navy);
   letter-spacing: -0.02em;
@@ -3223,272 +3218,7 @@ img { display: block; max-width: 100%; }
   .ticket-btn-detail, .ticket-btn-buy, .ticket-btn-free { width: 100%; }
 }
 
-/* ============================================================
-   AFISHA FLOAT — suzib turuvchi widget (Home page)
-   ============================================================ */
-.afisha-float {
-  position: fixed;
-  top: calc(var(--header-height) + 24px);
-  right: 24px;
-  width: 280px;
-  background: rgba(15, 15, 28, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(201,168,76,0.35);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,168,76,0.08);
-  z-index: 90;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
 
-.afisha-float-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-  background: rgba(201,168,76,0.06);
-}
-.afisha-float-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-.afisha-float-pulse {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-  box-shadow: 0 0 8px var(--gold);
-  position: relative;
-}
-.afisha-float-pulse::after {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  animation: pulseRing 1.8s ease-out infinite;
-}
-@keyframes pulseRing {
-  0% { transform: scale(0.7); opacity: 1; }
-  100% { transform: scale(2); opacity: 0; }
-}
-
-.afisha-float-head-btns {
-  display: flex;
-  gap: 4px;
-}
-.afisha-float-mini-btn {
-  width: 22px;
-  height: 22px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.55);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  line-height: 1;
-  padding: 0;
-  transition: all 0.2s ease;
-}
-.afisha-float-mini-btn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.afisha-float-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.afisha-float-img {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/10;
-  overflow: hidden;
-}
-.afisha-float-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.92);
-}
-.afisha-float-tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(7,7,14,0.8);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(201,168,76,0.5);
-  color: var(--gold);
-  font-family: var(--font-sans);
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  padding: 4px 8px;
-}
-
-.afisha-float-info {
-  padding: 12px 14px 10px;
-}
-.afisha-float-info h4 {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #fff;
-  margin: 0 0 8px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.afisha-float-meta {
-  display: flex;
-  gap: 12px;
-  font-family: var(--font-sans);
-  font-size: 0.66rem;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 4px;
-}
-.afisha-float-meta span,
-.afisha-float-venue {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.afisha-float-venue {
-  font-family: var(--font-sans);
-  font-size: 0.66rem;
-  color: rgba(255,255,255,0.5);
-}
-.afisha-float-meta svg,
-.afisha-float-venue svg { color: var(--gold-dim); flex-shrink: 0; }
-
-.afisha-float-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 14px 12px;
-  border-top: 1px solid rgba(201,168,76,0.18);
-}
-.afisha-float-price {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  color: var(--gold-light);
-  white-space: nowrap;
-}
-.afisha-float-buy {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--gold);
-  color: var(--bg-deep);
-  font-family: var(--font-sans);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 7px 12px;
-  border: 1px solid var(--gold);
-  transition: all 0.25s ease;
-}
-.afisha-float-buy:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-}
-
-.afisha-float-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 12px 10px;
-  border-top: 1px solid rgba(201,168,76,0.12);
-  background: rgba(0,0,0,0.25);
-}
-.afisha-float-nav button {
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  border: 1px solid rgba(201,168,76,0.3);
-  color: rgba(255,255,255,0.7);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  transition: all 0.25s ease;
-}
-.afisha-float-nav button:hover {
-  background: var(--gold);
-  color: var(--bg-deep);
-  border-color: var(--gold);
-}
-.afisha-float-nav span {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.5);
-  min-width: 36px;
-  text-align: center;
-}
-
-/* ── Yopilgan holatdagi yorliq ─────────────── */
-.afisha-float-tab {
-  position: fixed;
-  top: calc(var(--header-height) + 24px);
-  right: 0;
-  z-index: 90;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--gold);
-  color: var(--bg-deep);
-  font-family: var(--font-sans);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  padding: 10px 14px 10px 12px;
-  border: none;
-  cursor: pointer;
-  box-shadow: -4px 8px 20px rgba(0,0,0,0.4);
-  transition: padding 0.25s ease, transform 0.25s ease;
-}
-.afisha-float-tab:hover {
-  padding-right: 18px;
-  transform: translateX(-2px);
-}
-.afisha-float-tab svg { flex-shrink: 0; }
-
-@media (max-width: 768px) {
-  .afisha-float {
-    width: 240px;
-    right: 12px;
-    top: calc(var(--header-height) + 12px);
-  }
-  .afisha-float-info h4 { font-size: 0.84rem; }
-}
-
-@media (max-width: 480px) {
-  .afisha-float { display: none; }
-  .afisha-float-tab { display: none; }
-}
 
 /* ============================================================
    RESPONSIVE GRID UTILITIES  (use className on grid containers)

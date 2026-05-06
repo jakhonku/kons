@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, MapPin, Clock, Ticket, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio } from 'lucide-react';
 
 const LATEST_NEWS = [
   { id: 1, cat: 'Voqealar', title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
-  { id: 2, cat: "Ta'lim", title: "Yangi o'quv dasturlari tasdiqlandi" },
-  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi g'olibi bo'ldi" },
+  { id: 2, cat: "Taʻlim", title: "Yangi oʻquv dasturlari tasdiqlandi" },
+  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi gʻolibi boʻldi" },
   { id: 4, cat: 'Xalqaro', title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
   { id: 5, cat: 'Voqealar', title: "Bahor konsert mavsumi boshlanadi" },
 ];
@@ -18,141 +17,22 @@ const STATS = [
   { num: '120+', label: "Xalqaro hamkor" },
 ];
 
-const AFISHA = [
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Simfonik orkestr',
-    title: 'Bahor simfoniyasi',
-    date: '15 May 2026',
-    time: '19:00',
-    venue: 'Katta zal',
-    price: "150 000 so'm",
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Mumtoz musiqa',
-    title: "O'zbek mumtoz musiqasi kechasi",
-    date: '22 May 2026',
-    time: '18:30',
-    venue: 'Kichik zal',
-    price: "100 000 so'm",
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Bitiruv konserti',
-    title: 'Yosh ijodkorlar kechasi',
-    date: '5 Iyun 2026',
-    time: '19:00',
-    venue: 'Katta zal',
-    price: "80 000 so'm",
-  },
-  {
-    id: 4,
-    image: 'https://images.unsplash.com/photo-1465225314224-587cd83d322b?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Gala konsert',
-    title: "Xalqaro tanlov g'oliblari",
-    date: '12 Iyun 2026',
-    time: '19:30',
-    venue: 'Katta zal',
-    price: "200 000 so'm",
-  },
-  {
-    id: 5,
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Pianino kechasi',
-    title: 'Chopin va Liszt kechasi',
-    date: '20 Iyun 2026',
-    time: '19:00',
-    venue: 'Kichik zal',
-    price: "120 000 so'm",
-  },
-  {
-    id: 6,
-    image: 'https://images.unsplash.com/photo-1519683109079-d5f539e1542f?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Opera',
-    title: "Layli va Majnun — opera kechasi",
-    date: '28 Iyun 2026',
-    time: '19:30',
-    venue: 'Katta zal',
-    price: "180 000 so'm",
-  },
-  {
-    id: 7,
-    image: 'https://images.unsplash.com/photo-1518972559570-7cc1309f3229?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Xor konserti',
-    title: 'Akademik xor — Sharq sadosi',
-    date: '4 Iyul 2026',
-    time: '18:00',
-    venue: 'Katta zal',
-    price: "90 000 so'm",
-  },
-  {
-    id: 8,
-    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Jazz',
-    title: 'Jazz oqshomi — Konservatoriya jazz kvinteti',
-    date: '11 Iyul 2026',
-    time: '20:00',
-    venue: 'Kichik zal',
-    price: "110 000 so'm",
-  },
-  {
-    id: 9,
-    image: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Kamerali ansambl',
-    title: 'Mozart va Beethoven — kamerali kecha',
-    date: '18 Iyul 2026',
-    time: '19:00',
-    venue: 'Kichik zal',
-    price: "130 000 so'm",
-  },
-  {
-    id: 10,
-    image: 'https://images.unsplash.com/photo-1470019693664-1d202d2c0907?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Mavsum yopilishi',
-    title: "Yakuniy gala — Bahor-yoz mavsumi 2026",
-    date: '25 Iyul 2026',
-    time: '19:30',
-    venue: 'Katta zal',
-    price: "250 000 so'm",
-  },
-];
 
-const ITICKET_URL = 'https://iticket.uz/';
+
+
 
 const QUICK_LINKS = [
-  { icon: History, label: 'Konservatoriya tarixi', sub: '1936-yildan bugun', to: '/tarix' },
   { icon: Building2, label: 'Muassasa tuzilmasi', sub: 'Fakultet va kafedralar', to: '/tuzilma' },
   { icon: Users, label: 'Rahbariyat', sub: 'Rektor va prorektor', to: '/rahbariyat' },
   { icon: UserPlus, label: 'Abituriyentlar', sub: 'Qabul 2026 — Kvota', to: '/abituriyentlar' },
   { icon: Calendar, label: 'Tadbirlar taqvimi', sub: 'Kelgusi konsertlar', to: '/taqvim' },
-  { icon: FileText, label: "Me'yoriy hujjatlar", sub: 'PDF, Ustav, Qoidalar', to: '/hujjatlar' },
+  { icon: FileText, label: "Meʻyoriy hujjatlar", sub: 'PDF, Ustav, Qoidalar', to: '/hujjatlar' },
 ];
 
 export default function Home() {
-  const [afishaIdx, setAfishaIdx] = useState(0);
-  const [afishaOpen, setAfishaOpen] = useState(false);
-  const [afishaShown, setAfishaShown] = useState(true);
 
-  useEffect(() => {
-    const t = setTimeout(() => setAfishaOpen(true), 1200);
-    return () => clearTimeout(t);
-  }, []);
 
-  useEffect(() => {
-    if (!afishaOpen) return;
-    const id = setInterval(() => {
-      setAfishaIdx((i) => (i + 1) % AFISHA.length);
-    }, 5000);
-    return () => clearInterval(id);
-  }, [afishaOpen]);
 
-  const afishaPrev = () => setAfishaIdx((i) => (i - 1 + AFISHA.length) % AFISHA.length);
-  const afishaNext = () => setAfishaIdx((i) => (i + 1) % AFISHA.length);
-  const current = AFISHA[afishaIdx];
 
   return (
     <main>
@@ -160,7 +40,7 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="hero">
         <div className="hero-visual">
-          <img src="/image.png" className="slide active" alt="Konservatoriya" />
+          <img src="/3M7A4170.JPG" className="slide active" alt="Konservatoriya" />
           <div className="staff-lines" />
         </div>
 
@@ -192,7 +72,7 @@ export default function Home() {
               lineHeight: 1.65,
               fontWeight: 300,
             }}>
-              Musiqa fani va san'ati har bir insonni yuksak axloq, go'zallik va nafosat ruhida tarbiyalashda qudratli vositadir.
+              Musiqa fani va sanʻati har bir insonni yuksak axloq, goʻzallik va nafosat ruhida tarbiyalashda qudratli vositadir.
             </p>
             <footer style={{
               marginTop: '14px',
@@ -207,7 +87,7 @@ export default function Home() {
           </blockquote>
 
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-            <Link to="/tarix" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block' }}>
+            <Link to="/tuzilma" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block' }}>
               BATAFSIL
             </Link>
             <Link to="/taqvim" className="btn-outline light" style={{ textDecoration: 'none', display: 'inline-block' }}>
@@ -470,89 +350,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SUZIB TURUVCHI AFISHA WIDGET (o'ng tomon) ─────── */}
-      {afishaShown && (
-        <AnimatePresence>
-          {afishaOpen ? (
-            <motion.aside
-              key="open"
-              className="afisha-float"
-              initial={{ opacity: 0, x: 40, y: -20 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              exit={{ opacity: 0, x: 40 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="afisha-float-head">
-                <span className="afisha-float-label">
-                  <span className="afisha-float-pulse" />
-                  AFISHA
-                </span>
-                <div className="afisha-float-head-btns">
-                  <button type="button" onClick={() => setAfishaOpen(false)} aria-label="Yopish" className="afisha-float-mini-btn">
-                    —
-                  </button>
-                  <button type="button" onClick={() => setAfishaShown(false)} aria-label="Berkitish" className="afisha-float-mini-btn">
-                    <X size={12} strokeWidth={2.2} />
-                  </button>
-                </div>
-              </div>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={current.id}
-                  className="afisha-float-body"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.45 }}
-                >
-                  <div className="afisha-float-img">
-                    <img src={current.image} alt={current.title} />
-                    <span className="afisha-float-tag">{current.tag}</span>
-                  </div>
-                  <div className="afisha-float-info">
-                    <h4>{current.title}</h4>
-                    <div className="afisha-float-meta">
-                      <span><Calendar size={11} strokeWidth={1.8} /> {current.date}</span>
-                      <span><Clock size={11} strokeWidth={1.8} /> {current.time}</span>
-                    </div>
-                    <div className="afisha-float-venue">
-                      <MapPin size={11} strokeWidth={1.8} /> {current.venue}
-                    </div>
-                  </div>
-                  <div className="afisha-float-foot">
-                    <span className="afisha-float-price">{current.price}</span>
-                    <a href={ITICKET_URL} target="_blank" rel="noopener noreferrer" className="afisha-float-buy">
-                      <Ticket size={12} strokeWidth={2} /> BILET
-                    </a>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="afisha-float-nav">
-                <button type="button" onClick={afishaPrev} aria-label="Oldingi"><ChevronLeft size={13} /></button>
-                <span>{afishaIdx + 1} / {AFISHA.length}</span>
-                <button type="button" onClick={afishaNext} aria-label="Keyingi"><ChevronRight size={13} /></button>
-              </div>
-            </motion.aside>
-          ) : (
-            <motion.button
-              key="closed"
-              type="button"
-              className="afisha-float-tab"
-              onClick={() => setAfishaOpen(true)}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 30 }}
-              transition={{ duration: 0.4 }}
-              aria-label="Afishani ochish"
-            >
-              <Ticket size={14} strokeWidth={1.8} />
-              <span>AFISHA</span>
-            </motion.button>
-          )}
-        </AnimatePresence>
-      )}
 
     </main>
   );

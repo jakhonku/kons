@@ -58,6 +58,11 @@ export default function DesktopNav() {
                 className={`dnav-item${isOpen || isCurrent ? ' active' : ''}`}
                 aria-expanded={isOpen}
                 aria-haspopup="true"
+                onClick={(e) => {
+                  if (item.to === '#') {
+                    e.preventDefault();
+                  }
+                }}
               >
                 {item.label}
                 <span className="dnav-chevron" aria-hidden="true">

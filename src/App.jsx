@@ -3,7 +3,6 @@ import Layout from './components/layout/Layout';
 
 // Pages
 import Home from './pages/Home';
-import Tarix from './pages/Tarix';
 import Tuzilma from './pages/Tuzilma';
 import Rahbariyat from './pages/Rahbariyat';
 import Hujjatlar from './pages/Hujjatlar';
@@ -61,9 +60,9 @@ import EurasianMusicJournal from './pages/EurasianMusicJournal';
 import InteraktivXizmatlar from './pages/InteraktivXizmatlar';
 import OnlineMurojaat from './pages/OnlineMurojaat';
 import IjodiyFaoliyat from './pages/IjodiyFaoliyat';
-import Afisha from './pages/Afisha';
+import RektorBio from './pages/RektorBio';
+
 import JonliEfir from './pages/JonliEfir';
-import MusiqaliTeatrStudiyasi from './pages/MusiqaliTeatrStudiyasi';
 import TalimYonalishlari from './pages/TalimYonalishlari';
 import TalimDasturlari from './pages/TalimDasturlari';
 import QabulTalablari from './pages/QabulTalablari';
@@ -82,9 +81,9 @@ export default function App() {
           <Route index element={<Home />} />
           
           {/* Tuzilma */}
-          <Route path="tarix" element={<Tarix />} />
           <Route path="tuzilma" element={<Tuzilma />} />
           <Route path="rahbariyat" element={<Rahbariyat />} />
+          <Route path="rahbariyat/rektor" element={<RektorBio />} />
           <Route path="vasiylik-kengashi" element={<VasiylikKengashi />} />
           <Route path="oquv-uslubiy-kengash" element={<OquvUslubiyKengash />} />
           <Route path="fakultetlar" element={<Fakultetlar />} />
@@ -130,9 +129,8 @@ export default function App() {
 
           {/* Ijodiy */}
           <Route path="ijodiy-faoliyat" element={<IjodiyFaoliyat />} />
-          <Route path="afisha" element={<Afisha />} />
+
           <Route path="jonli-efir" element={<JonliEfir />} />
-          <Route path="musiqali-teatr-studiyasi" element={<MusiqaliTeatrStudiyasi />} />
           <Route path="taqvim" element={<Taqvim />} />
           <Route path="taqvim/:id" element={<TadbirBatafsil />} />
           <Route path="fotogalereya" element={<Fotogalereya />} />

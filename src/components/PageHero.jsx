@@ -21,7 +21,7 @@ export default function PageHero({ tag, title, emphasis, breadcrumbs }) {
             Orqaga qaytish
           </button>
         </nav>
-        <div className="hero-text-wrap" style={{ paddingBottom: '40px' }}>
+        <div className="hero-text-wrap">
           <span className="section-tag">{tag}</span>
           <h1>
             {title} <span>{emphasis}</span>

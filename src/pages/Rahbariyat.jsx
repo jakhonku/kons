@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 
 const BREADCRUMBS = [
@@ -28,6 +29,7 @@ const PROREKTORS = [
     bio: "O'quv-metodik ishlarni tashkil etish, ta'lim sifatini nazorat qilish va o'quv jarayonini takomillashtirish sohasida faoliyat yuritadi.",
     initials: 'FA',
     photo: '/images/rahbariyat/Farhod Abdullayev.JPG',
+    reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
     title: "Ilmiy-ijodiy ishlari bo'yicha prorektor",
@@ -38,6 +40,7 @@ const PROREKTORS = [
     bio: "Ilmiy tadqiqotlar, xalqaro hamkorlik va ijodiy loyihalarni boshqaradi. Bir nechta xalqaro ilmiy jurnallarda maqolalari chop etilgan.",
     initials: 'TB',
     photo: null,
+    reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
     title: "Ma'muriy-xo'jalik ishlari bo'yicha prorektor",
@@ -48,6 +51,7 @@ const PROREKTORS = [
     bio: "Moddiy-texnik ta'minot, infratuzilma rivojlantirish va moliyaviy faoliyatni boshqaradi. 15 yillik davlat boshqaruvi tajribasiga ega.",
     initials: 'XJ',
     photo: null,
+    reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
     title: "Xalqaro hamkorlik bo'yicha prorektor",
@@ -58,6 +62,7 @@ const PROREKTORS = [
     bio: "Xalqaro hamkorlik dasturlari, xorijiy hamkor universitetlar bilan aloqalar va talabalar mobilligini muvofiqlashtiradi.",
     initials: 'YM',
     photo: null,
+    reception: "Dushanba – Juma, 14:00 – 17:00"
   },
 ];
 
@@ -81,14 +86,11 @@ export default function Rahbariyat() {
         <div className="container rektor-cover-inner">
           <div className="rektor-cover-text">
             <div className="rektor-cover-eyebrow">Rektor</div>
-            <h1 className="rektor-cover-name-title">{REKTOR.name}</h1>
-            <p className="rektor-cover-role-line">{REKTOR.role},</p>
-            <p className="rektor-cover-degree-line">{REKTOR.degree}</p>
-            <div className="rektor-cover-contacts">
-              <a href={`tel:${REKTOR.phone}`} className="rektor-cover-contact">{REKTOR.phone}</a>
-              <span className="rektor-cover-dot" aria-hidden="true">•</span>
-              <a href={`mailto:${REKTOR.email}`} className="rektor-cover-contact">{REKTOR.email}</a>
-            </div>
+            <Link to="/rahbariyat/rektor" className="rektor-cover-name-link" style={{ textDecoration: 'none' }}>
+              <h1 className="rektor-cover-name-title" style={{ transition: 'color 0.3s' }}>{REKTOR.name}</h1>
+            </Link>
+            <p className="rektor-cover-role-line">{REKTOR.role}</p>
+            {/* Degree va kontaktlar olib tashlandi, ular endi biografiya sahifasida */}
           </div>
         </div>
       </section>
@@ -120,27 +122,16 @@ export default function Rahbariyat() {
                     <a href={`tel:${p.phone}`} className="prorektor-phone">{p.phone}</a>
                     <a href={`mailto:${p.email}`} className="prorektor-email">{p.email}</a>
                   </div>
+                  <div className="prorektor-reception" style={{ 
+                    marginTop: '20px', 
+                    paddingTop: '15px', 
+                    borderTop: '1px solid rgba(255,255,255,0.05)',
+                    fontSize: '0.75rem',
+                    color: 'var(--gold)'
+                  }}>
+                    <strong>Qabul soati:</strong> {p.reception}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-
-          {/* ── QABUL SOATLARI ── */}
-          <div className="section-divider">
-            <h2>Qabul soatlari</h2>
-          </div>
-
-          <div className="qabul-grid">
-            {[
-              { day: 'Dushanba – Juma', time: '09:00 – 13:00', label: 'Rektor qabulxonasi' },
-              { day: 'Dushanba – Juma', time: '14:00 – 17:00', label: 'Prorektorlar' },
-              { day: 'Shanba', time: '10:00 – 13:00', label: 'Navbatchi prorektor' },
-            ].map((item) => (
-              <div key={item.label} className="qabul-item">
-                <div className="qabul-day">{item.day}</div>
-                <div className="qabul-time">{item.time}</div>
-                <div className="qabul-label">{item.label}</div>
               </div>
             ))}
           </div>

@@ -22,9 +22,8 @@ export default function IjodiyFaoliyat() {
         {
           heading: 'Asosiy yo\'nalishlar',
           cards: [
-            { tag: '01', title: 'Afisha', desc: "Joriy va kelgusi konsertlar, spektakllar va tanlovlar afishasi.", meta: '/afisha' },
+
             { tag: '02', title: 'Jonli efir', desc: "Tadbirlarning real-time onlayn translatsiyasi.", meta: '/jonli-efir' },
-            { tag: '03', title: 'Musiqali teatr studiyasi', desc: "Konservatoriya qoshidagi opera va kamera teatri.", meta: '/musiqali-teatr-studiyasi' },
           ],
         },
         {
