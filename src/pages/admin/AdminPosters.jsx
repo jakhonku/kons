@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Plus, Edit3, Trash2, Search, X, Image as ImageIcon, MapPin, Clock, Loader2, Eye } from 'lucide-react';
 import { useAdminPosters } from '../../hooks/useAdminStorage';
 import { uploadVideo, isVideoUrl } from '../../lib/supabase';
@@ -35,6 +36,7 @@ const EMPTY = {
 
 export default function AdminPosters() {
   const { items, loading, error, add, update, remove } = useAdminPosters();
+  const [params, setParams] = useSearchParams();
 
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(EMPTY);
