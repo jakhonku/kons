@@ -1,13 +1,16 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { NAV_MENU } from '../../data/navigation';
+import { buildNavMenu } from '../../data/navigation';
+import { useTranslation } from '../../contexts/LanguageContext';
 import MegaDropdown from './MegaDropdown';
 
 export default function DesktopNav() {
   const [activeId, setActiveId] = useState(null);
   const closeTimer = useRef(null);
   const { pathname } = useLocation();
+  const { t, lang } = useTranslation();
+  const NAV_MENU = useMemo(() => buildNavMenu(t), [t, lang]);
 
   const scheduleClose = useCallback(() => {
     clearTimeout(closeTimer.current);
@@ -41,7 +44,7 @@ export default function DesktopNav() {
     <div className="desktop-nav-wrap">
       <nav
         className="desktop-nav"
-        aria-label="Asosiy navigatsiya"
+        aria-label={t('common.helpLinks')}
         onMouseLeave={scheduleClose}
       >
         {NAV_MENU.map((item) => {

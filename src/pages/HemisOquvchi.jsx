@@ -3,17 +3,17 @@ import { Calendar, BarChart2, ClipboardList, FileText, MessageCircle, Users } fr
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Konservatoriya', to: '/tarix' },
-  { label: "HEMIS-o'qituvchi" },
+  { label: 'Konservatoriya', to: '/tuzilma' },
+  { label: "HEMIS-oʻqituvchi" },
 ];
 
 const FEATURES = [
-  { icon: Calendar,      title: 'Dars jadvali',       desc: "O'qituvchining joriy va keyingi semestr darslari jadvali." },
-  { icon: BarChart2,     title: 'Reyting va baholar',  desc: "Talabalarga baho qo'yish, davomadni belgilash va yakuniy natijalar." },
+  { icon: Calendar,      title: 'Dars jadvali',       desc: "Oʻqituvchining joriy va keyingi semestr darslari jadvali." },
+  { icon: BarChart2,     title: 'Reyting va baholar',  desc: "Talabalarga baho qoʻyish, davomadni belgilash va yakuniy natijalar." },
   { icon: ClipboardList, title: 'Topshiriqlar',        desc: "Talabalar uchun vazifalar yaratish va topshirishlarni kuzatish." },
-  { icon: FileText,      title: 'O\'quv materiallar',  desc: "Kurs materiallari, sillabuslar va metodik qo'llanmalarni yuklash." },
+  { icon: FileText,      title: 'Oʻquv materiallar',  desc: "Kurs materiallari, sillabuslar va metodik qoʻllanmalarni yuklash." },
   { icon: MessageCircle, title: 'Xabarlar',            desc: "Talabalar va ma'muriyat bilan tizim ichida muloqot." },
-  { icon: Users,         title: 'Guruh ro\'yxati',     desc: "Tahsil olayotgan talabalar, ularning ma'lumotlari va faoliyati." },
+  { icon: Users,         title: 'Guruh roʻyxati',     desc: "Tahsil olayotgan talabalar, ularning ma'lumotlari va faoliyati." },
 ];
 
 export default function HemisOquvchi() {
@@ -22,7 +22,7 @@ export default function HemisOquvchi() {
       <PageHero
         tag="Konservatoriya"
         title="HEMIS"
-        emphasis="O'qituvchi portali"
+        emphasis="Oʻqituvchi portali"
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -100,7 +100,7 @@ export default function HemisOquvchi() {
                 Kirish muammosi yuzaga keldimi?
               </h4>
               <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-                Kadrlar bo'limiga murojaat qiling — 1-bino, 110-xona. Telefon: +998 71 236-89-00.
+                Kadrlar boʻlimiga murojaat qiling — 1-bino, 110-xona. Telefon: +998 71 236-89-00.
                 Ish vaqti: Dushanba–Juma, 09:00–17:00.
               </p>
             </div>

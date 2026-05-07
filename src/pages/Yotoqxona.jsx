@@ -8,9 +8,9 @@ const BREADCRUMBS = [
 ];
 
 const ROOMS = [
-  { type: '2 kishilik xona', price: "320 000 so'm/oy", count: '48 xona', features: ['Umumiy hammom', 'Umumiy oshxona', "O'quv xonasi"] },
-  { type: '3 kishilik xona', price: "220 000 so'm/oy", count: '32 xona', features: ['Umumiy hammom', 'Umumiy oshxona', 'Wi-Fi'] },
-  { type: 'Alohida (magistrlar)', price: "480 000 so'm/oy", count: '16 xona', features: ['Shaxsiy hammom', 'Mini-oshxona', 'Konditsioner'] },
+  { type: '2 kishilik xona', price: "320 000 soʻm/oy", count: '48 xona', features: ['Umumiy hammom', 'Umumiy oshxona', "Oʻquv xonasi"] },
+  { type: '3 kishilik xona', price: "220 000 soʻm/oy", count: '32 xona', features: ['Umumiy hammom', 'Umumiy oshxona', 'Wi-Fi'] },
+  { type: 'Alohida (magistrlar)', price: "480 000 soʻm/oy", count: '16 xona', features: ['Shaxsiy hammom', 'Mini-oshxona', 'Konditsioner'] },
 ];
 
 const AMENITIES = [
@@ -19,7 +19,7 @@ const AMENITIES = [
   { icon: Wifi,            title: 'Wi-Fi',           desc: "Barcha binolarda tezkor internet. Parol — talaba ID" },
   { icon: Shirt,           title: 'Kir yuvish',      desc: "Avtomatik kir yuvish mashinalari, 1-qavatda" },
   { icon: Dumbbell,        title: 'Sport',           desc: "Sport zali va futbol maydoni. Erkin foydalanish" },
-  { icon: ShieldCheck,     title: 'Xavfsizlik',      desc: "24 soat qo'riqchi, video kuzatuv, kirish kartasi" },
+  { icon: ShieldCheck,     title: 'Xavfsizlik',      desc: "24 soat qoʻriqchi, video kuzatuv, kirish kartasi" },
 ];
 
 export default function Yotoqxona() {
@@ -42,7 +42,7 @@ export default function Yotoqxona() {
           }}>
             {[
               { num: '96', label: 'Jami xona' },
-              { num: '280', label: 'Talabaga mo\'ljallangan' },
+              { num: '280', label: 'Talabaga moʻljallangan' },
               { num: '5 daqiqa', label: 'Konservatoriyaga yurish' },
             ].map((s) => (
               <div key={s.label} style={{ padding: '36px 24px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' }}>

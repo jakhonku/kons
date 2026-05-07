@@ -11,11 +11,11 @@ export default function RektorTabrigi() {
         { label: 'Axborot xizmati', to: '/yangiliklar' },
         { label: 'Rektor tabrigi' },
       ]}
-      lead="O'zbekiston davlat konservatoriyasi rektorining tabriklari va ma'ruzalari."
+      lead="Oʻzbekiston davlat konservatoriyasi rektorining tabriklari va ma'ruzalari."
       sections={[
         {
-          heading: "Yangi o'quv yili munosabati bilan tabrik",
-          text: "Aziz ustozlar va qadrli talabalar! Sizlarni yangi o'quv yili boshlanishi bilan samimiy muborakbod etaman.",
+          heading: "Yangi oʻquv yili munosabati bilan tabrik",
+          text: "Aziz ustozlar va qadrli talabalar! Sizlarni yangi oʻquv yili boshlanishi bilan samimiy muborakbod etaman.",
         }
       ]}
     />

@@ -21,18 +21,18 @@ const REKTOR = {
 
 const PROREKTORS = [
   {
-    title: "O'quv ishlari bo'yicha prorektor",
+    title: "Oʻquv ishlari boʻyicha prorektor",
     name: "Farhod Abdullayev",
     degree: "Pedagogika fanlari nomzodi, dotsent",
     phone: '+998 71 234-56-80',
     email: 'prorektor-oquv@konservatoriya.uz',
-    bio: "O'quv-metodik ishlarni tashkil etish, ta'lim sifatini nazorat qilish va o'quv jarayonini takomillashtirish sohasida faoliyat yuritadi.",
+    bio: "Oʻquv-metodik ishlarni tashkil etish, ta'lim sifatini nazorat qilish va oʻquv jarayonini takomillashtirish sohasida faoliyat yuritadi.",
     initials: 'FA',
     photo: '/images/rahbariyat/Farhod Abdullayev.JPG',
     reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
-    title: "Ilmiy-ijodiy ishlari bo'yicha prorektor",
+    title: "Ilmiy-ijodiy ishlari boʻyicha prorektor",
     name: "Toshmatov Behruz Aliyevich",
     degree: "San'atshunoslik fanlari doktori, professor",
     phone: '+998 71 234-56-82',
@@ -43,7 +43,7 @@ const PROREKTORS = [
     reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
-    title: "Ma'muriy-xo'jalik ishlari bo'yicha prorektor",
+    title: "Ma'muriy-xoʻjalik ishlari boʻyicha prorektor",
     name: "Xoliqov Jamshid Normatovich",
     degree: "Iqtisod fanlari nomzodi",
     phone: '+998 71 234-56-84',
@@ -54,7 +54,7 @@ const PROREKTORS = [
     reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
-    title: "Xalqaro hamkorlik bo'yicha prorektor",
+    title: "Xalqaro hamkorlik boʻyicha prorektor",
     name: "Yusupova Madina Otabekovna",
     degree: "Filologiya fanlari nomzodi, dotsent",
     phone: '+998 71 234-56-86',
@@ -122,14 +122,9 @@ export default function Rahbariyat() {
                     <a href={`tel:${p.phone}`} className="prorektor-phone">{p.phone}</a>
                     <a href={`mailto:${p.email}`} className="prorektor-email">{p.email}</a>
                   </div>
-                  <div className="prorektor-reception" style={{ 
-                    marginTop: '20px', 
-                    paddingTop: '15px', 
-                    borderTop: '1px solid rgba(255,255,255,0.05)',
-                    fontSize: '0.75rem',
-                    color: 'var(--gold)'
-                  }}>
-                    <strong>Qabul soati:</strong> {p.reception}
+                  <div className="prorektor-reception">
+                    <strong>Qabul soati</strong>
+                    {p.reception}
                   </div>
                 </div>
               </div>

@@ -13,7 +13,7 @@ export default function Kafedralar() {
       title="Konservatoriya"
       emphasis="kafedralari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyaning 38 kafedrasi 5 fakultet ostida tashkil etilgan. Har bir kafedra o'z sohasi bo'yicha o'quv-uslubiy ishlarni amalga oshiradi va ilmiy tadqiqotlarni olib boradi."
+      lead="Konservatoriyaning 38 kafedrasi 5 fakultet ostida tashkil etilgan. Har bir kafedra oʻz sohasi boʻyicha oʻquv-uslubiy ishlarni amalga oshiradi va ilmiy tadqiqotlarni olib boradi."
       stats={[
         { value: '38', label: 'Kafedra' },
         { value: '220+', label: 'Pedagog' },
@@ -30,15 +30,15 @@ export default function Kafedralar() {
           ],
         },
         {
-          heading: "Cholg'u ijrochiligi fakulteti",
+          heading: "Cholgʻu ijrochiligi fakulteti",
           items: [
             { title: 'Fortepiano kafedrasi', desc: 'Mudir: prof. Rashidova Nargiza Bekovna' },
-            { title: "Torli cholg'ular kafedrasi", desc: "Mudir: prof. Akhmedov Davron Sherzodovich" },
-            { title: "Dam olish cholg'ulari kafedrasi", desc: "Mudir: dots. Mirzayev Bobur Olimovich" },
+            { title: "Torli cholgʻular kafedrasi", desc: "Mudir: prof. Akhmedov Davron Sherzodovich" },
+            { title: "Dam olish cholgʻulari kafedrasi", desc: "Mudir: dots. Mirzayev Bobur Olimovich" },
             { title: 'Kamera ansambli', desc: 'Mudir: prof. Sodiqova Madina Erkinovna' },
             { title: 'Orkestr sinfi va dirijyorlik', desc: "Mudir: prof. Yusupov Akbar Murodovich" },
             { title: 'Konsertmeyster sinfi', desc: 'Mudir: dots. Toshmatova Sevara Otabekovna' },
-            { title: 'Estrada-jaz cholg\'ulari', desc: 'Mudir: dots. Karimov Sardor Bobirovich' },
+            { title: 'Estrada-jaz cholgʻulari', desc: 'Mudir: dots. Karimov Sardor Bobirovich' },
           ],
         },
         {
@@ -51,10 +51,10 @@ export default function Kafedralar() {
           ],
         },
         {
-          heading: "Xalq cholg'ulari fakulteti",
+          heading: "Xalq cholgʻulari fakulteti",
           items: [
-            { title: "Dutor va g'ijjak kafedrasi", desc: 'Mudir: prof. Qodirova Madina Olimovna' },
-            { title: "Doira va zarbli cholg'ular", desc: "Mudir: dots. Akhmedov Sardor Bobirovich" },
+            { title: "Dutor va gʻijjak kafedrasi", desc: 'Mudir: prof. Qodirova Madina Olimovna' },
+            { title: "Doira va zarbli cholgʻular", desc: "Mudir: dots. Akhmedov Sardor Bobirovich" },
             { title: 'Ud va tanbur kafedrasi', desc: 'Mudir: prof. Toshmatov Akbar Sherzodovich' },
             { title: 'Xalq ansambli', desc: 'Mudir: dots. Mirzayeva Gulnora Otabekovna' },
             { title: 'Maqom san\'ati', desc: 'Mudir: prof. Yusupov Davron Murodovich' },
@@ -71,10 +71,10 @@ export default function Kafedralar() {
         },
       ]}
       contact={{
-        responsible: "O'quv-uslubiy bo'lim",
+        responsible: "Oʻquv-uslubiy boʻlim",
         phone: '+998 71 234-56-82',
         email: 'kafedralar@konservatoriya.uz',
-        address: "Toshkent sh., Mirobod tumani, Konservatoriya ko'chasi 1-uy",
+        address: "Toshkent sh., Mirobod tumani, Konservatoriya koʻchasi 1-uy",
       }}
     />
   );

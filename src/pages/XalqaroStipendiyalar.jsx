@@ -9,14 +9,14 @@ const BREADCRUMBS = [
 
 const SCHOLARSHIPS = [
   {
-    title: "O'zbekiston Davlat Stipendiyasi",
-    provider: "O'zbekiston Respublikasi",
+    title: "Oʻzbekiston Davlat Stipendiyasi",
+    provider: "Oʻzbekiston Respublikasi",
     flag: '🇺🇿',
-    amount: "To'liq moliyalash",
+    amount: "Toʻliq moliyalash",
     deadline: 'Mart 2026',
     level: 'Magistratura, Doktorantura',
     status: 'Ariza qabul',
-    desc: "Chet elda magistratura yoki doktorantura o'qish uchun to'liq davlat stipendiyasi. O'quv to'lovi, turar joy va kunlik xarajatlar qoplanadi.",
+    desc: "Chet elda magistratura yoki doktorantura oʻqish uchun toʻliq davlat stipendiyasi. Oʻquv toʻlovi, turar joy va kunlik xarajatlar qoplanadi.",
   },
   {
     title: "Erasmus+ Stipendiyasi",
@@ -26,23 +26,23 @@ const SCHOLARSHIPS = [
     deadline: 'Dekabr 2025',
     level: 'Bakalavr, Magistratura',
     status: 'Faol',
-    desc: "Yevropa Ittifoqining rasmiy ta'lim almashinuvi granti. Yevropa yetakchi musiqa universitetlarida 1 semestr yoki 1 yil o'qish.",
+    desc: "Yevropa Ittifoqining rasmiy ta'lim almashinuvi granti. Yevropa yetakchi musiqa universitetlarida 1 semestr yoki 1 yil oʻqish.",
   },
   {
     title: "Rossiya Davlat Stipendiyasi",
     provider: "Rossiya Federatsiyasi",
     flag: '🇷🇺',
-    amount: "To'liq moliyalash",
+    amount: "Toʻliq moliyalash",
     deadline: 'Yanvar 2026',
     level: 'Bakalavr, Magistratura',
     status: 'Ariza qabul',
-    desc: "Moskva va Sankt-Peterburg konservatoriyalarida o'qish uchun Rossiya hukumati stipendiyasi.",
+    desc: "Moskva va Sankt-Peterburg konservatoriyalarida oʻqish uchun Rossiya hukumati stipendiyasi.",
   },
   {
     title: "Xitoy Hukumati Stipendiyasi (CSC)",
     provider: "Xitoy Xalq Respublikasi",
     flag: '🇨🇳',
-    amount: "To'liq moliyalash",
+    amount: "Toʻliq moliyalash",
     deadline: 'Fevral 2026',
     level: 'Magistratura, Doktorantura',
     status: 'Ariza qabul',
@@ -52,29 +52,29 @@ const SCHOLARSHIPS = [
     title: "Koreya Hukumati Stipendiyasi (GKS)",
     provider: 'Janubiy Koreya',
     flag: '🇰🇷',
-    amount: "To'liq moliyalash",
+    amount: "Toʻliq moliyalash",
     deadline: 'Mart 2026',
     level: 'Magistratura',
     status: 'Ariza qabul',
-    desc: "Seul Milliy Universiteti yoki Koreya Badiiy Universitetida o'qish imkoniyati.",
+    desc: "Seul Milliy Universiteti yoki Koreya Badiiy Universitetida oʻqish imkoniyati.",
   },
   {
     title: "Turk Hukumati Stipendiyasi (Türkiye Bursları)",
     provider: 'Turkiya Respublikasi',
     flag: '🇹🇷',
-    amount: "To'liq moliyalash",
+    amount: "Toʻliq moliyalash",
     deadline: 'Fevral 2026',
     level: 'Bakalavr, Magistratura',
     status: 'Faol',
-    desc: "Istambul Davlat Konservatoriyasi va boshqa Turk musiqa institutlarida o'qish.",
+    desc: "Istambul Davlat Konservatoriyasi va boshqa Turk musiqa institutlarida oʻqish.",
   },
 ];
 
 const APPLY_STEPS = [
-  { num: '01', title: "Stipendiyani tanlash",    desc: "Siz uchun mos stipendiyani toping va talablarni diqqat bilan o'qing." },
+  { num: '01', title: "Stipendiyani tanlash",    desc: "Siz uchun mos stipendiyani toping va talablarni diqqat bilan oʻqing." },
   { num: '02', title: "Hujjatlarni tayyorlash",  desc: "Diplom, transkript, motivatsion xat, til sertifikati." },
-  { num: '03', title: "Konservatoriya tasdiqi",   desc: "Xalqaro aloqalar bo'limidan rasmiy tavsiya xati oling." },
-  { num: '04', title: "Ariza topshirish",         desc: "Belgilangan platforma yoki Xalqaro aloqalar bo'limi orqali topshiring." },
+  { num: '03', title: "Konservatoriya tasdiqi",   desc: "Xalqaro aloqalar boʻlimidan rasmiy tavsiya xati oling." },
+  { num: '04', title: "Ariza topshirish",         desc: "Belgilangan platforma yoki Xalqaro aloqalar boʻlimi orqali topshiring." },
 ];
 
 export default function XalqaroStipendiyalar() {
@@ -90,9 +90,9 @@ export default function XalqaroStipendiyalar() {
       <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {[
           { num: '6+',   label: 'Stipendiya dasturi' },
-          { num: '25+',  label: "Yillik o'rin" },
+          { num: '25+',  label: "Yillik oʻrin" },
           { num: '12',   label: 'Mamlakat' },
-          { num: '100%', label: "Ko'pchiligi to'liq moliyalash" },
+          { num: '100%', label: "Koʻpchiligi toʻliq moliyalash" },
         ].map((s, i) => (
           <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{s.num}</div>
@@ -106,8 +106,8 @@ export default function XalqaroStipendiyalar() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              Konservatoriya talabalari uchun xorijda o'qish imkonini beradigan davlat va
-              xalqaro stipendiyalar. Ko'pchiligi to'liq moliyalanadigan grantlar.
+              Konservatoriya talabalari uchun xorijda oʻqish imkonini beradigan davlat va
+              xalqaro stipendiyalar. Koʻpchiligi toʻliq moliyalanadigan grantlar.
             </p>
           </article>
 
@@ -168,9 +168,9 @@ export default function XalqaroStipendiyalar() {
           <div style={{ background: 'var(--cream)', border: '1px solid var(--light-border)', borderLeft: '4px solid var(--gold)', padding: '24px 32px', marginBottom: '60px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <div style={{ color: 'var(--gold-dark)', flexShrink: 0, marginTop: 2 }}><ChevronRight size={20} strokeWidth={2} /></div>
             <div>
-              <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1rem', marginBottom: '6px' }}>Xalqaro aloqalar bo'limi</h4>
+              <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1rem', marginBottom: '6px' }}>Xalqaro aloqalar boʻlimi</h4>
               <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-                Stipendiyalar bo'yicha konsultatsiya olish va hujjatlarni topshirish uchun:<br />
+                Stipendiyalar boʻyicha konsultatsiya olish va hujjatlarni topshirish uchun:<br />
                 2-bino, 201-xona &nbsp;·&nbsp; international@konservatoriya.uz &nbsp;·&nbsp; +998 71 234-56-91
               </p>
             </div>

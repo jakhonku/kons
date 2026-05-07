@@ -11,7 +11,7 @@ const STATS = [
   { num: '120+', label: 'Hamkor tashkilot' },
   { num: '40+',  label: 'Davlat' },
   { num: '15',   label: 'Faol memorandum' },
-  { num: '200+', label: "Chet ellik o'qituvchi" },
+  { num: '200+', label: "Chet ellik oʻqituvchi" },
 ];
 
 const REGIONS = [
@@ -23,7 +23,7 @@ const REGIONS = [
       { name: "Berliner Universität der Künste",           country: 'Germaniya',  flag: '🇩🇪', type: 'Talabalar almashinuvi', since: 2023, status: 'Faol' },
       { name: 'Varshava Frederic Chopin Musiqa Universiteti', country: 'Polsha', flag: '🇵🇱', type: 'Erasmus+ almashinuvi',  since: 2020, status: 'Faol' },
       { name: 'Rim Santa Cecilia Milliy Akademiyasi',      country: 'Italiya',    flag: '🇮🇹', type: 'Madaniy almashinuv',   since: 2018, status: 'Faol' },
-      { name: 'Barselona Oliy Musiqa Maktabi (ESMUC)',     country: 'Ispaniya',   flag: '🇪🇸', type: "Qo'shma dasturlar",    since: 2022, status: 'Yangi' },
+      { name: 'Barselona Oliy Musiqa Maktabi (ESMUC)',     country: 'Ispaniya',   flag: '🇪🇸', type: "Qoʻshma dasturlar",    since: 2022, status: 'Yangi' },
     ],
   },
   {
@@ -39,16 +39,16 @@ const REGIONS = [
     partners: [
       { name: 'Pekin Musiqa Konservatoriyasi',              country: 'Xitoy',     flag: '🇨🇳', type: 'Madaniy almashinuv',   since: 2020, status: 'Faol' },
       { name: "Seul Milliy Universiteti San'at Kolleji",    country: 'Janubiy Koreya', flag: '🇰🇷', type: 'Talabalar almashinuvi', since: 2019, status: 'Faol' },
-      { name: "Istambul Davlat Konservatoriyasi",           country: 'Turkiya',   flag: '🇹🇷', type: "Qo'shma konsertlar",   since: 2020, status: 'Faol' },
+      { name: "Istambul Davlat Konservatoriyasi",           country: 'Turkiya',   flag: '🇹🇷', type: "Qoʻshma konsertlar",   since: 2020, status: 'Faol' },
       { name: 'Tokio Musiqa va Badiiy San\'at Universiteti', country: 'Yaponiya', flag: '🇯🇵', type: 'Talabalar almashinuvi', since: 2022, status: 'Yangi' },
     ],
   },
   {
     region: "MDH va Markaziy Osiyo",
     partners: [
-      { name: 'Moskva Davlat Konservatoriyasi',             country: 'Rossiya',   flag: '🇷🇺', type: "Qo'shma dasturlar",    since: 2017, status: 'Faol' },
+      { name: 'Moskva Davlat Konservatoriyasi',             country: 'Rossiya',   flag: '🇷🇺', type: "Qoʻshma dasturlar",    since: 2017, status: 'Faol' },
       { name: 'Sankt-Peterburg Davlat Konservatoriyasi',   country: 'Rossiya',   flag: '🇷🇺', type: 'Ilmiy hamkorlik',       since: 2018, status: 'Faol' },
-      { name: "Qozog'iston Milliy Konservatoriyasi",        country: "Qozog'iston", flag: '🇰🇿', type: 'Talabalar almashinuvi', since: 2016, status: 'Faol' },
+      { name: "Qozogʻiston Milliy Konservatoriyasi",        country: "Qozogʻiston", flag: '🇰🇿', type: 'Talabalar almashinuvi', since: 2016, status: 'Faol' },
       { name: "Ozarbayjon Davlat Konservatoriyasi",         country: 'Ozarbayjon', flag: '🇦🇿', type: 'Madaniy almashinuv',  since: 2019, status: 'Faol' },
     ],
   },
@@ -78,7 +78,7 @@ export default function HamkorTashkilotlar() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              O'zbekiston Davlat Konservatoriyasi dunyo bo'ylab 120 dan ortiq yetakchi musiqa
+              Oʻzbekiston Davlat Konservatoriyasi dunyo boʻylab 120 dan ortiq yetakchi musiqa
               institutlari va universitetlari bilan faol hamkorlik olib boradi.
             </p>
           </article>
@@ -125,7 +125,7 @@ export default function HamkorTashkilotlar() {
               Yangi <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Hamkorlik</span>
             </h3>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.88rem', marginBottom: '24px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', maxWidth: 500, margin: '0 auto 24px' }}>
-              Xalqaro hamkorlik bo'yicha takliflaringiz yoki savolaringiz bo'lsa, Xalqaro aloqalar bo'limi bilan bog'laning.
+              Xalqaro hamkorlik boʻyicha takliflaringiz yoki savolaringiz boʻlsa, Xalqaro aloqalar boʻlimi bilan bogʻlaning.
             </p>
             <a href="/kontaktlar" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -136,7 +136,7 @@ export default function HamkorTashkilotlar() {
               onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = '#08081a'; }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--gold)'; }}
             >
-              <ExternalLink size={14} strokeWidth={2} /> BOG'LANISH
+              <ExternalLink size={14} strokeWidth={2} /> BOGʻLANISH
             </a>
           </div>
 

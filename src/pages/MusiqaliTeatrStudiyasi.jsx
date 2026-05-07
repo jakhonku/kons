@@ -23,8 +23,8 @@ export default function MusiqaliTeatrStudiyasi() {
         {
           heading: "Joriy va kelgusi spektakllar",
           cards: [
-            { tag: 'Opera · Premyera', title: 'La Traviata (G. Verdi)', desc: "Bahor mavsumining asosiy premyerasi. To'rtta sahna chiqishi.", meta: '12, 14, 18, 22 may 2026' },
-            { tag: 'Opera', title: 'Ayjamol (M. Bafoyev)', desc: "Zamonaviy o'zbek operasi. Mahalliy sahna mahorati.", meta: '5, 12 iyun 2026' },
+            { tag: 'Opera · Premyera', title: 'La Traviata (G. Verdi)', desc: "Bahor mavsumining asosiy premyerasi. Toʻrtta sahna chiqishi.", meta: '12, 14, 18, 22 may 2026' },
+            { tag: 'Opera', title: 'Ayjamol (M. Bafoyev)', desc: "Zamonaviy oʻzbek operasi. Mahalliy sahna mahorati.", meta: '5, 12 iyun 2026' },
             { tag: 'Musiqali spektakl', title: 'Sharqning gultoji', desc: "Milliy raqs va musiqa kompozitsiyasi.", meta: '2, 8 iyun 2026' },
             { tag: 'Bolalar', title: "Maqom ertaklari", desc: "Bolalar uchun musiqali sahna asari.", meta: 'Har shanba, 11:00' },
           ],
@@ -32,7 +32,7 @@ export default function MusiqaliTeatrStudiyasi() {
         {
           heading: "Studio jamoasi",
           items: [
-            { title: "Badiiy rahbar — prof. Aliyev Otabek Sherzodovich", desc: "O'zbekiston xalq artisti. 15+ yil tajriba." },
+            { title: "Badiiy rahbar — prof. Aliyev Otabek Sherzodovich", desc: "Oʻzbekiston xalq artisti. 15+ yil tajriba." },
             { title: "Bosh dirijyor — prof. Yusupov Akbar Murodovich", desc: "Orkestr sinfi kafedrasi mudiri." },
             { title: "Bosh rejissyor — Karimov Sardor Bobirovich", desc: "Toshkent davlat teatr san'ati instituti professori." },
             { title: "Xormeyster — prof. Tursunova Dilfuza Otabekovna", desc: "Xor dirijyorligi kafedrasi mudiri." },
@@ -44,7 +44,7 @@ export default function MusiqaliTeatrStudiyasi() {
           heading: "Talabalar uchun",
           items: [
             "Vokal va sahna mahorati intensiv treninglari",
-            "Klassik repertuarni o'rganish",
+            "Klassik repertuarni oʻrganish",
             "Kostyum dizayni va sahna jihozlanishi",
             "Aktyorlik mahorati va sahna nutqi",
             "Operatorlik va sahna texnikasi",
@@ -56,10 +56,10 @@ export default function MusiqaliTeatrStudiyasi() {
           table: {
             head: ['Spektakl turi', 'Standart chipta', 'Talaba chiptasi', 'Sezonda 4 ta'],
             rows: [
-              ['Premyera (asosiy sahna)', "150 000 so'm", "75 000 so'm", "480 000 so'm"],
-              ['Opera (asosiy sahna)', "120 000 so'm", "60 000 so'm", "400 000 so'm"],
-              ['Musiqali spektakl', "100 000 so'm", "50 000 so'm", "320 000 so'm"],
-              ['Bolalar spektakli', "60 000 so'm", "30 000 so'm", "192 000 so'm"],
+              ['Premyera (asosiy sahna)', "150 000 soʻm", "75 000 soʻm", "480 000 soʻm"],
+              ['Opera (asosiy sahna)', "120 000 soʻm", "60 000 soʻm", "400 000 soʻm"],
+              ['Musiqali spektakl', "100 000 soʻm", "50 000 soʻm", "320 000 soʻm"],
+              ['Bolalar spektakli', "60 000 soʻm", "30 000 soʻm", "192 000 soʻm"],
             ],
           },
         },

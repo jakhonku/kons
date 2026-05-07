@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const LANGS = [
-  { code: 'UZ', label: "O'zbek" },
-  { code: 'RU', label: 'Русский' },
-  { code: 'EN', label: 'English' },
-];
+import { useTranslation } from '../../contexts/LanguageContext';
+import { SUPPORTED_LANGUAGES } from '../../i18n';
 
 export default function LanguageSwitcher() {
-  const [active, setActive] = useState('UZ');
-  const [open, setOpen]     = useState(false);
+  const { lang, setLang, t } = useTranslation();
+  const [open, setOpen] = useState(false);
+
+  const active = SUPPORTED_LANGUAGES.find((l) => l.code === lang) || SUPPORTED_LANGUAGES[0];
 
   return (
     <div
@@ -20,7 +18,7 @@ export default function LanguageSwitcher() {
       {/* Joriy til + globe icon */}
       <button
         className="lang-trigger"
-        aria-label="Tilni almashtirish"
+        aria-label={t('common.switchLanguage')}
         aria-expanded={open}
         onClick={() => setOpen((p) => !p)}
       >
@@ -34,7 +32,7 @@ export default function LanguageSwitcher() {
           <line x1="2" y1="12" x2="22" y2="12" />
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
-        <span>{active}</span>
+        <span>{active.short}</span>
         <motion.svg
           width="8" height="8" viewBox="0 0 10 6" fill="none"
           animate={{ rotate: open ? 180 : 0 }}
@@ -56,13 +54,13 @@ export default function LanguageSwitcher() {
             transition={{ duration: 0.18, ease: 'easeOut' }}
             style={{ transformOrigin: 'top' }}
           >
-            {LANGS.map(({ code, label }) => (
+            {SUPPORTED_LANGUAGES.map(({ code, label, short }) => (
               <button
                 key={code}
-                className={`lang-option${active === code ? ' lang-option--active' : ''}`}
-                onClick={() => { setActive(code); setOpen(false); }}
+                className={`lang-option${lang === code ? ' lang-option--active' : ''}`}
+                onClick={() => { setLang(code); setOpen(false); }}
               >
-                <span className="lang-code">{code}</span>
+                <span className="lang-code">{short}</span>
                 <span className="lang-label">{label}</span>
               </button>
             ))}

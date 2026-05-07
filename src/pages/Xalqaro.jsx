@@ -9,7 +9,7 @@ const STATS = [
   { num: '120+', label: 'Hamkor tashkilot' },
   { num: '40+',  label: "Davlat" },
   { num: '15',   label: 'Faol memorandum' },
-  { num: '200+', label: "Chet ellik o'qituvchi" },
+  { num: '200+', label: "Chet ellik oʻqituvchi" },
 ];
 
 const PARTNERS = [
@@ -24,16 +24,16 @@ const PARTNERS = [
 ];
 
 const PROGRAMS = [
-  { title: "Erasmus+ ta'lim dasturi", desc: "Yevropa Ittifoqi universitetlarida talabalar va o'qituvchilar almashinuvi", badge: 'Faol', color: '#22c55e' },
+  { title: "Erasmus+ ta'lim dasturi", desc: "Yevropa Ittifoqi universitetlarida talabalar va oʻqituvchilar almashinuvi", badge: 'Faol', color: '#22c55e' },
   { title: "Xalqaro stipendiyalar",   desc: "Xorijda ta'lim olish uchun davlat va xorijiy grantlar", badge: "Ariza qabul", color: 'var(--gold-dark)' },
-  { title: "Qo'shma dasturlar",       desc: "Xorijiy universitetlar bilan qo'shma magistratura va doktorantura", badge: 'Yangi', color: 'var(--navy)' },
+  { title: "Qoʻshma dasturlar",       desc: "Xorijiy universitetlar bilan qoʻshma magistratura va doktorantura", badge: 'Yangi', color: 'var(--navy)' },
   { title: "Master-klass dasturlari", desc: "Xorijiy ustoz-musiqachilar bilan intensiv treninglar", badge: "Doimiy", color: '#6366f1' },
 ];
 
 const MEMORANDUMS = [
   { org: 'Vena Musiqa Universiteti',          year: 2019, type: "Talabalar almashinuvi" },
   { org: 'Parij Konservatoriyasi',            year: 2021, type: "Ilmiy hamkorlik" },
-  { org: 'Moskva Konservatoriyasi',           year: 2017, type: "Qo'shma dasturlar" },
+  { org: 'Moskva Konservatoriyasi',           year: 2017, type: "Qoʻshma dasturlar" },
   { org: 'Xyuston Universiteti',              year: 2022, type: "Tadqiqot almashinuvi" },
   { org: 'Pekin Konservatoriyasi',            year: 2020, type: "Madaniy almashinuv" },
   { org: "Berliner Universität der Künste",   year: 2023, type: "Talabalar almashinuvi" },

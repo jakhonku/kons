@@ -13,12 +13,12 @@ const COLLECTIONS = [
     count: '12 000+',
     desc: "Klassik va zamonaviy nota yozuvlari, partituralar",
     icon: Music,
-    items: ["Barcha davrlar klassik asarlari", "O'zbek milliy musiqa notaglari", "Kamera va orkestr partituralari", "Fortepiano, vokal, torli cholg'ular"],
+    items: ["Barcha davrlar klassik asarlari", "Oʻzbek milliy musiqa notaglari", "Kamera va orkestr partituralari", "Fortepiano, vokal, torli cholgʻular"],
   },
   {
-    title: "O'quv adabiyotlari",
+    title: "Oʻquv adabiyotlari",
     count: '8 500+',
-    desc: "Darsliklar, metodik qo'llanmalar, ilmiy maqolalar",
+    desc: "Darsliklar, metodik qoʻllanmalar, ilmiy maqolalar",
     icon: BookOpen,
     items: ["Musiqa nazariyasi darsliklar", "Ijrochilik pedagogikasi", "Musiqa tarixi va musiqashunoslik", "Xalqaro ilmiy jurnallar"],
   },
@@ -27,7 +27,7 @@ const COLLECTIONS = [
     count: '3 200+',
     desc: "Kontsert yozuvlari, master-klass videolari",
     icon: Video,
-    items: ["Konservatoriya kontsertlari arxivi", "Jahon yulduzlari yozuvlari", "O'quv master-klasslar", "Opera va balet postanovkalari"],
+    items: ["Konservatoriya kontsertlari arxivi", "Jahon yulduzlari yozuvlari", "Oʻquv master-klasslar", "Opera va balet postanovkalari"],
   },
 ];
 
@@ -117,7 +117,7 @@ export default function Kutubxona() {
               color: '#08081a', textDecoration: 'none', fontFamily: 'var(--font-sans)',
               fontWeight: 700, fontSize: '0.8rem', letterSpacing: '2px', textTransform: 'uppercase',
             }}>
-              Kutubxonaga o'tish →
+              Kutubxonaga oʻtish →
             </a>
           </div>
 

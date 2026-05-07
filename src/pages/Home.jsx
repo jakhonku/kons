@@ -1,38 +1,39 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { History, Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio } from 'lucide-react';
-
-const LATEST_NEWS = [
-  { id: 1, cat: 'Voqealar', title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
-  { id: 2, cat: "Taʻlim", title: "Yangi oʻquv dasturlari tasdiqlandi" },
-  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi gʻolibi boʻldi" },
-  { id: 4, cat: 'Xalqaro', title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
-  { id: 5, cat: 'Voqealar', title: "Bahor konsert mavsumi boshlanadi" },
-];
-
-const STATS = [
-  { num: '1936', label: 'Yildan buyon' },
-  { num: '5000+', label: 'Bitiruvchilar' },
-  { num: '48', label: 'Kafedra' },
-  { num: '120+', label: "Xalqaro hamkor" },
-];
-
-
-
-
-
-const QUICK_LINKS = [
-  { icon: Building2, label: 'Muassasa tuzilmasi', sub: 'Fakultet va kafedralar', to: '/tuzilma' },
-  { icon: Users, label: 'Rahbariyat', sub: 'Rektor va prorektor', to: '/rahbariyat' },
-  { icon: UserPlus, label: 'Abituriyentlar', sub: 'Qabul 2026 — Kvota', to: '/abituriyentlar' },
-  { icon: Calendar, label: 'Tadbirlar taqvimi', sub: 'Kelgusi konsertlar', to: '/taqvim' },
-  { icon: FileText, label: "Meʻyoriy hujjatlar", sub: 'PDF, Ustav, Qoidalar', to: '/hujjatlar' },
-];
+import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio } from 'lucide-react';
+import { useTranslation } from '../contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useTranslation();
 
+  const LATEST_NEWS = [
+    { id: 1, cat: t('home.news_categories.events'),       title: t('home.news_items.n1') },
+    { id: 2, cat: t('home.news_categories.education'),    title: t('home.news_items.n2') },
+    { id: 3, cat: t('home.news_categories.awards'),       title: t('home.news_items.n3') },
+    { id: 4, cat: t('home.news_categories.international'),title: t('home.news_items.n4') },
+    { id: 5, cat: t('home.news_categories.events'),       title: t('home.news_items.n5') },
+  ];
 
+  const STATS = [
+    { num: '1936',  label: t('home.stats.sinceYear') },
+    { num: '5000+', label: t('home.stats.graduates') },
+    { num: '48',    label: t('home.stats.departments') },
+    { num: '120+',  label: t('home.stats.partners') },
+  ];
 
+  const QUICK_LINKS = [
+    { icon: Building2, label: t('home.quickLinks.tuzilma.label'),       sub: t('home.quickLinks.tuzilma.sub'),       to: '/tuzilma' },
+    { icon: Users,     label: t('home.quickLinks.rahbariyat.label'),    sub: t('home.quickLinks.rahbariyat.sub'),    to: '/rahbariyat' },
+    { icon: UserPlus,  label: t('home.quickLinks.abituriyentlar.label'),sub: t('home.quickLinks.abituriyentlar.sub'),to: '/abituriyentlar' },
+    { icon: Calendar,  label: t('home.quickLinks.taqvim.label'),        sub: t('home.quickLinks.taqvim.sub'),        to: '/taqvim' },
+    { icon: FileText,  label: t('home.quickLinks.hujjatlar.label'),     sub: t('home.quickLinks.hujjatlar.sub'),     to: '/hujjatlar' },
+  ];
+
+  const STUDENT_LINKS = [
+    t('home.students.links.schedules'),
+    t('home.students.links.grants'),
+    t('home.students.links.hemis'),
+    t('home.students.links.library'),
+  ];
 
   return (
     <main>
@@ -46,12 +47,12 @@ export default function Home() {
 
         <div className="hero-content">
           <span className="section-tag" style={{ fontFamily: 'var(--font-sans)', fontStyle: 'normal', marginBottom: '18px' }}>
-            EST. 1936 · TOSHKENT
+            {t('home.hero.eyebrow')}
           </span>
 
           <h1>
-            Oʻzbekiston<br />
-            Davlat <span>Konservatoriyasi</span>
+            {t('home.hero.title1')}<br />
+            {t('home.hero.title2')} <span>{t('home.hero.titleEm')}</span>
           </h1>
 
           <div className="ornament">
@@ -72,7 +73,7 @@ export default function Home() {
               lineHeight: 1.65,
               fontWeight: 300,
             }}>
-              Musiqa fani va sanʻati har bir insonni yuksak axloq, goʻzallik va nafosat ruhida tarbiyalashda qudratli vositadir.
+              {t('home.hero.quote')}
             </p>
             <footer style={{
               marginTop: '14px',
@@ -82,20 +83,11 @@ export default function Home() {
               color: 'var(--gold)',
               fontWeight: 700,
             }}>
-              — SH. MIRZIYOYEV
+              {t('home.hero.quoteAuthor')}
             </footer>
           </blockquote>
 
-          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-            <Link to="/tuzilma" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block' }}>
-              BATAFSIL
-            </Link>
-            <Link to="/taqvim" className="btn-outline light" style={{ textDecoration: 'none', display: 'inline-block' }}>
-              TADBIRLAR
-            </Link>
-          </div>
-
-          <div className="hero-year">Konservatoriya · 1936</div>
+          <div className="hero-year">{t('home.hero.yearLabel')}</div>
         </div>
       </section>
 
@@ -110,13 +102,13 @@ export default function Home() {
         ))}
       </div>
 
-      {/* ── VIZUAL GALEREYA (YANGI) ───────────────────────── */}
+      {/* ── VIZUAL GALEREYA ───────────────────────── */}
       <section style={{ padding: '80px 0', background: 'var(--bg-deep)', borderTop: '1px solid var(--border-subtle)' }}>
         <div className="container">
           <div className="reveal" style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <span className="section-tag">Fotohisobot</span>
-            <h2 style={{ fontSize: '3rem', fontWeight: 300, marginTop: '10px' }}>
-              Konservatoriya <span>Hayotidan</span>
+            <span className="section-tag">{t('home.gallery.tag')}</span>
+            <h2 className="section-title light">
+              {t('home.gallery.title1')} <span>{t('home.gallery.titleEm')}</span>
             </h2>
             <div className="ornament" style={{ justifyContent: 'center' }}>
               <div className="ornament-diamond" />
@@ -126,7 +118,7 @@ export default function Home() {
           <div className="reveal home-gallery-grid">
             <div className="gallery-item-home gallery-item-wide-tall">
               <img src="/images/fotohisobot/img3.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
-              <div className="gallery-hover-overlay">Simfonik orkestr konserti</div>
+              <div className="gallery-hover-overlay">{t('home.gallery.photoCaption')}</div>
             </div>
             <div className="gallery-item-home">
               <img src="/images/fotohisobot/img1.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G1" />
@@ -141,7 +133,7 @@ export default function Home() {
 
           <div style={{ textAlign: 'center', marginTop: '40px' }} className="reveal">
             <Link to="/fotogalereya" className="btn-outline light" style={{ textDecoration: 'none', display: 'inline-block' }}>
-              BARCHA RASMLARNI KO'RISH
+              {t('home.gallery.viewAll')}
             </Link>
           </div>
         </div>
@@ -151,7 +143,7 @@ export default function Home() {
       <div className="news-ticker-wrap">
         <div className="news-ticker-label">
           <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
-          <span>So'nggi yangiliklar</span>
+          <span>{t('home.news.latest')}</span>
         </div>
         <div className="news-ticker-track-wrap">
           <div className="news-ticker-track">
@@ -165,34 +157,24 @@ export default function Home() {
           </div>
         </div>
         <Link to="/yangiliklar" className="news-ticker-btn">
-          Batafsil <ArrowRight size={13} strokeWidth={2} />
+          {t('home.news.readMore')} <ArrowRight size={13} strokeWidth={2} />
         </Link>
       </div>
 
-      {/* ── TEZKOR HAVOLALAR 3D GRID ─────────────────────── */}
+      {/* ── TEZKOR HAVOLALAR ─────────────────────── */}
       <section style={{ background: 'var(--white)', borderTop: '1px solid var(--light-border)', borderBottom: '1px solid var(--light-border)', padding: '100px 0' }}>
         <div className="container">
           <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Navigatsiya</span>
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '3.2rem',
-              fontWeight: 300,
-              color: 'var(--navy)',
-              marginTop: '10px',
-            }}>
-              Tezkor <span style={{ color: 'var(--gold-dark)', fontStyle: 'italic' }}>Yo'nalishlar</span>
+            <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>{t('home.quickLinks.tag')}</span>
+            <h2 className="section-title">
+              {t('home.quickLinks.title1')} <span style={{ color: 'var(--gold-dark)', fontStyle: 'italic' }}>{t('home.quickLinks.titleEm')}</span>
             </h2>
             <div className="ornament" style={{ justifyContent: 'center' }}>
               <div className="ornament-diamond" />
             </div>
           </div>
 
-          <div className="reveal quick-links-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '16px',
-          }}>
+          <div className="reveal quick-links-grid">
             {QUICK_LINKS.map((item, i) => (
               <Link
                 key={item.to}
@@ -276,18 +258,18 @@ export default function Home() {
 
             {/* Chap matn */}
             <div style={{ flex: 1, color: 'var(--text-primary)', minWidth: 0 }}>
-              <span className="section-tag light">Talabalar uchun</span>
-              <h2 style={{ fontSize: '3.5rem', fontWeight: 300, marginBottom: '20px', marginTop: '10px' }}>
-                Talabalar <span>Hayoti</span>
+              <span className="section-tag light">{t('home.students.tag')}</span>
+              <h2 className="section-title light">
+                {t('home.students.title1')} <span>{t('home.students.titleEm')}</span>
               </h2>
               <div className="ornament" style={{ maxWidth: '280px' }}>
                 <div className="ornament-diamond" />
               </div>
               <p style={{ fontSize: '1rem', color: 'rgba(240,237,232,0.6)', marginBottom: '40px', maxWidth: '460px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', lineHeight: 1.8 }}>
-                Barcha o'quv resurslari, dars jadvallari va xalqaro imkoniyatlar yagona portalda.
+                {t('home.students.desc')}
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'var(--border-subtle)', marginBottom: '40px', maxWidth: '460px' }}>
-                {['Dars jadvallari', 'Grantlar', 'HEMIS Tizimi', 'Online kutubxona'].map((label) => (
+                {STUDENT_LINKS.map((label) => (
                   <a key={label} href="#" style={{
                     display: 'block',
                     background: 'rgba(7,7,14,0.6)',
@@ -307,10 +289,10 @@ export default function Home() {
                   </a>
                 ))}
               </div>
-              <button className="btn-outline light">PORTALGA KIRISH</button>
+              <button className="btn-outline light">{t('home.students.portalEnter')}</button>
             </div>
 
-            {/* O'ng — Shisha karta */}
+            {/* Oʻng — Shisha karta */}
             <div className="home-talabalar-card" style={{
               background: 'rgba(7,7,14,0.7)',
               backdropFilter: 'blur(30px)',
@@ -323,13 +305,13 @@ export default function Home() {
               onMouseOver={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(0deg)'; }}
               onMouseOut={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(-4deg)'; }}
             >
-              <span className="section-tag" style={{ marginBottom: '16px' }}>DIQQAT</span>
+              <span className="section-tag" style={{ marginBottom: '16px' }}>{t('home.students.attentionTag')}</span>
               <h3 style={{ color: 'var(--text-primary)', fontSize: '1.8rem', fontWeight: 300, marginBottom: '16px' }}>
-                Kelajakka <span>Qadam</span>
+                {t('home.students.stepCardTitle1')} <span>{t('home.students.stepCardTitleEm')}</span>
               </h3>
               <div style={{ height: '1px', background: 'var(--border-gold)', margin: '20px 0' }} />
               <p style={{ color: 'rgba(240,237,232,0.6)', fontSize: '0.92rem', marginBottom: '30px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', lineHeight: 1.7 }}>
-                Talabalarimiz uchun xalqaro tanlovlar va malaka oshirish dasturlari e'lon qilindi.
+                {t('home.students.stepCardDesc')}
               </p>
               <Link to="/yangiliklar" style={{
                 color: 'var(--gold)',
@@ -342,15 +324,13 @@ export default function Home() {
                 alignItems: 'center',
                 gap: '8px',
               }}>
-                BATAFSIL MA'LUMOT <span>→</span>
+                {t('home.students.readMore')} <span>→</span>
               </Link>
             </div>
 
           </div>
         </div>
       </section>
-
-
 
     </main>
   );

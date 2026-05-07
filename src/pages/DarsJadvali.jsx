@@ -11,17 +11,17 @@ const TIMES = ['08:30 – 10:00', '10:15 – 11:45', '12:30 – 14:00', '14:15 �
 
 const SCHEDULE = {
   'Dushanba':   ['Solfejio (203-xona)', 'Fortepiano (101-xona)', '—', 'Musiqa nazariyasi (205-xona)', '—'],
-  'Seshanba':   ['—', 'Cholg\'u ansambli (Zal)', 'Garmoniya (204-xona)', '—', 'Vokal (102-xona)'],
+  'Seshanba':   ['—', 'Cholgʻu ansambli (Zal)', 'Garmoniya (204-xona)', '—', 'Vokal (102-xona)'],
   'Chorshanba': ['Fortepiano (101-xona)', '—', 'Solfejio (203-xona)', 'Kompozitsiya (206-xona)', '—'],
   'Payshanba':  ['Musiqa tarixi (207-xona)', 'Vokal (102-xona)', '—', 'Fortepiano (101-xona)', 'Garmoniya (204-xona)'],
-  'Juma':       ['—', 'Musiqa nazariyasi (205-xona)', 'Cholg\'u ansambli (Zal)', '—', '—'],
+  'Juma':       ['—', 'Musiqa nazariyasi (205-xona)', 'Cholgʻu ansambli (Zal)', '—', '—'],
 };
 
 const FACULTIES = [
   "Akademik xonandalik fakulteti",
-  "Cholg'u ijrochiligi fakulteti",
+  "Cholgʻu ijrochiligi fakulteti",
   "Kompozitsiya va musiqa nazariyasi",
-  "Xalq cholg'ulari fakulteti",
+  "Xalq cholgʻulari fakulteti",
   "Musiqa san'ati va pedagogika fakulteti",
 ];
 
@@ -50,8 +50,8 @@ export default function DarsJadvali() {
           }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
             <p style={{ fontSize: '0.88rem', color: 'rgba(240,237,232,0.8)', fontFamily: 'var(--font-serif)', lineHeight: 1.6, margin: 0 }}>
-              To'liq va individual dars jadvalingiz <strong style={{ color: 'var(--gold-light)' }}>HEMIS</strong> tizimida mavjud.
-              Quyidagi jadval 2025–2026 o'quv yili, 2-semestr uchun namunaviy jadval hisoblanadi.
+              Toʻliq va individual dars jadvalingiz <strong style={{ color: 'var(--gold-light)' }}>HEMIS</strong> tizimida mavjud.
+              Quyidagi jadval 2025–2026 oʻquv yili, 2-semestr uchun namunaviy jadval hisoblanadi.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function DarsJadvali() {
           <div className="g-3" style={{ marginBottom: '60px' }}>
             {[
               { label: 'Nazariy darslar', color: 'var(--navy)', desc: '203, 204, 205, 206, 207-xonalar' },
-              { label: 'Amaliy mashg\'ulotlar', color: 'var(--gold-dark)', desc: '101, 102-xonalar (individual)' },
+              { label: 'Amaliy mashgʻulotlar', color: 'var(--gold-dark)', desc: '101, 102-xonalar (individual)' },
               { label: 'Ansambl / Konsert', color: '#555', desc: 'Katta kontsert zali' },
             ].map((item) => (
               <div key={item.label} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', padding: '16px 20px', background: 'var(--white)', border: '1px solid var(--light-border)' }}>
@@ -159,7 +159,7 @@ export default function DarsJadvali() {
                 HEMIS tizimiga kiring
               </h3>
               <p style={{ fontSize: '0.85rem', color: 'rgba(240,237,232,0.6)', fontFamily: 'var(--font-serif)' }}>
-                O'zingizning individual dars jadvalingizni ko'ring
+                Oʻzingizning individual dars jadvalingizni koʻring
               </p>
             </div>
             <a href="https://student.hemis.uz" target="_blank" rel="noopener noreferrer" style={{
@@ -174,7 +174,7 @@ export default function DarsJadvali() {
               textTransform: 'uppercase',
               flexShrink: 0,
             }}>
-              HEMIS ga o'tish →
+              HEMIS ga oʻtish →
             </a>
           </div>
 

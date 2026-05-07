@@ -16,8 +16,8 @@ const STATS = [
 
 const OQUV = [
   { icon: Calendar,  title: 'Dars jadvallari',               desc: 'Joriy semestr uchun barcha guruhlar jadvali', to: '/dars-jadvali' },
-  { icon: Clipboard, title: "O'quv rejalar",                  desc: "Bakalavr va magistratura o'quv rejalari",    to: '/oquv-rejalar' },
-  { icon: BookOpen,  title: "O'quv dasturlari (Sillabuslar)", desc: "Barcha fanlar bo'yicha sillabuslar",         to: '/sillabuslar' },
+  { icon: Clipboard, title: "Oʻquv rejalar",                  desc: "Bakalavr va magistratura oʻquv rejalari",    to: '/oquv-rejalar' },
+  { icon: BookOpen,  title: "Oʻquv dasturlari (Sillabuslar)", desc: "Barcha fanlar boʻyicha sillabuslar",         to: '/sillabuslar' },
   { icon: Monitor,   title: 'HEMIS-talaba',                   desc: 'Shaxsiy kabinet va elektron reyting',        to: '/hemis-talaba' },
 ];
 
@@ -29,7 +29,7 @@ const SUPPORT = [
 ];
 
 const LIFE = [
-  { icon: Music2, title: "To'garaklar",          desc: "Ijodiy, sport va madaniy to'garaklar",       to: '/togaraklar' },
+  { icon: Music2, title: "Toʻgaraklar",          desc: "Ijodiy, sport va madaniy toʻgaraklar",       to: '/togaraklar' },
   { icon: Home,   title: 'Talabalar shaharchasi', desc: "Yotoqxona, ovqatlanish, dam olish joylari",  to: '/yotoqxona' },
 ];
 
@@ -62,9 +62,9 @@ export default function Talabalar() {
       <section className="main-content">
         <div className="container">
 
-          {/* O'quv jarayoni */}
+          {/* Oʻquv jarayoni */}
           <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>O'quv jarayoni</h2>
+            <h2>Oʻquv jarayoni</h2>
           </div>
 
           <div className="g-4" style={{ marginBottom: '50px' }}>
@@ -79,15 +79,15 @@ export default function Talabalar() {
                 </h3>
                 <p style={{ fontSize: '0.78rem', color: '#888', lineHeight: 1.5 }}>{item.desc}</p>
                 <div style={{ marginTop: '16px', fontSize: '0.7rem', color: 'var(--gold-dark)', fontWeight: 700, letterSpacing: '1px', fontFamily: 'var(--font-sans)' }}>
-                  O'tish →
+                  Oʻtish →
                 </div>
               </Link>
             ))}
           </div>
 
-          {/* Qo'llab-quvvatlash */}
+          {/* Qoʻllab-quvvatlash */}
           <div className="section-divider">
-            <h2>Qo'llab-quvvatlash</h2>
+            <h2>Qoʻllab-quvvatlash</h2>
           </div>
 
           <div className="g-4" style={{ marginBottom: '50px' }}>
@@ -129,7 +129,7 @@ export default function Talabalar() {
             ))}
           </div>
 
-          {/* Dars jadvali jadval ko'rinishi */}
+          {/* Dars jadvali jadval koʻrinishi */}
           <div className="section-divider">
             <h2>Joriy hafta jadvali</h2>
           </div>
@@ -154,7 +154,7 @@ export default function Talabalar() {
               </tbody>
             </table>
             <p style={{ fontSize: '0.78rem', color: '#999', marginTop: '12px', fontStyle: 'italic' }}>
-              * To'liq jadval HEMIS tizimida mavjud
+              * Toʻliq jadval HEMIS tizimida mavjud
             </p>
           </div>
 

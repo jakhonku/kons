@@ -1,23 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from '../../contexts/LanguageContext';
 
-const MUASSASA_LINKS = [
-  { label: 'Konservatoriya tarixi', to: '/tarix' },
-  { label: 'Muassasa tuzilmasi',    to: '/tuzilma' },
-  { label: 'Rahbariyat',            to: '/rahbariyat' },
-  { label: "Me'yoriy hujjatlar",    to: '/hujjatlar' },
-  { label: 'Abituriyentlar',        to: '/abituriyentlar' },
-  { label: 'Xalqaro aloqalar',      to: '/xalqaro' },
-  { label: 'Yangiliklar',           to: '/yangiliklar' },
+const MUASSASA_KEYS = [
+  { key: 'structure',    to: '/tuzilma' },
+  { key: 'management',   to: '/rahbariyat' },
+  { key: 'documents',    to: '/hujjatlar' },
+  { key: 'applicants',   to: '/abituriyentlar' },
+  { key: 'international', to: '/xalqaro' },
+  { key: 'news',         to: '/yangiliklar' },
 ];
 
-const TALABALAR_LINKS = [
-  { label: 'Talabalar',              to: '/talabalar' },
-  { label: 'Dars jadvallari',        to: '/dars-jadvali' },
-  { label: 'Online kutubxona',       to: '/kutubxona' },
-  { label: 'Registrator ofisi',      to: '/registrator' },
-  { label: "To'garaklar",            to: '/togaraklar' },
-  { label: 'Talabalar turar joyi',   to: '/yotoqxona' },
-  { label: 'HEMIS-talaba',           to: '/hemis-talaba' },
+const TALABALAR_KEYS = [
+  { key: 'students',    to: '/talabalar' },
+  { key: 'schedules',   to: '/dars-jadvali' },
+  { key: 'library',     to: '/kutubxona' },
+  { key: 'registrator', to: '/registrator' },
+  { key: 'clubs',       to: '/togaraklar' },
+  { key: 'dorm',        to: '/yotoqxona' },
+  { key: 'hemis',       to: '/hemis-talaba' },
 ];
 
 const SOCIAL = [
@@ -63,29 +63,35 @@ const SOCIAL = [
 ];
 
 export default function Footer() {
+  const { pathname } = useLocation();
+  const { t } = useTranslation();
+  const showMap = pathname === '/' || pathname === '/kontaktlar';
+
   return (
     <footer className="main-footer">
 
       {/* Google Maps */}
-      <div className="footer-map">
-        <iframe
-          title="Konservatoriya xaritada"
-          src="https://maps.google.com/maps?q=O%27zbekiston+Davlat+Konservatoriyasi+Toshkent&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0, display: 'block' }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-        <div className="footer-map-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          Mustaqillik ko'chasi 31, Toshkent
+      {showMap && (
+        <div className="footer-map">
+          <iframe
+            title={t('footer.mapTitle')}
+            src="https://maps.google.com/maps?q=O%27zbekiston+Davlat+Konservatoriyasi+Toshkent&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <div className="footer-map-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            {t('footer.mapBadge')}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Main grid */}
       <div className="footer-container">
@@ -93,10 +99,7 @@ export default function Footer() {
         {/* Col 1 — Logo & about */}
         <div className="footer-left">
           <img src="/Konservatoriya_logo_white-05.png" alt="Logo" className="footer-logo-img" />
-          <p>
-            O'zbekiston Davlat Konservatoriyasi — Markaziy Osiyoning eng qadimgi va nufuzli
-            oliy musiqa ta'lim muassasasi. 1936 yildan buyon.
-          </p>
+          <p>{t('footer.aboutText')}</p>
           <div className="footer-social">
             {SOCIAL.map(({ label, href, svg }) => (
               <a
@@ -115,31 +118,31 @@ export default function Footer() {
 
         {/* Col 2 — Muassasa */}
         <div className="footer-col">
-          <h4>Muassasa</h4>
-          {MUASSASA_LINKS.map(({ label, to }) => (
-            <Link key={to} to={to}>{label}</Link>
+          <h4>{t('footer.headings.institution')}</h4>
+          {MUASSASA_KEYS.map(({ key, to }) => (
+            <Link key={to} to={to}>{t(`footer.institutionLinks.${key}`)}</Link>
           ))}
         </div>
 
         {/* Col 3 — Talabalar */}
         <div className="footer-col">
-          <h4>Talabalar</h4>
-          {TALABALAR_LINKS.map(({ label, to }) => (
-            <Link key={to} to={to}>{label}</Link>
+          <h4>{t('footer.headings.students')}</h4>
+          {TALABALAR_KEYS.map(({ key, to }) => (
+            <Link key={to} to={to}>{t(`footer.studentLinks.${key}`)}</Link>
           ))}
         </div>
 
         {/* Col 4 — Kontakt */}
         <div className="footer-col footer-contact">
-          <h4>Bog'lanish</h4>
+          <h4>{t('footer.headings.contact')}</h4>
 
           <div className="footer-contact-item">
             <svg className="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
             </svg>
             <div>
-              <span>Toshkent sh., Olmazor tumani,</span>
-              <span>Mustaqillik ko'chasi, 31-uy</span>
+              <span>{t('footer.address.line1')}</span>
+              <span>{t('footer.address.line2')}</span>
             </div>
           </div>
 
@@ -167,8 +170,8 @@ export default function Footer() {
               <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
             </svg>
             <div>
-              <span>Dushanba – Juma: 09:00 – 18:00</span>
-              <span>Shanba: 09:00 – 14:00</span>
+              <span>{t('footer.hours.weekday')}</span>
+              <span>{t('footer.hours.saturday')}</span>
             </div>
           </div>
         </div>
@@ -177,13 +180,13 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="footer-bottom">
-        <span>© 2026 O'zbekiston Davlat Konservatoriyasi. Barcha huquqlar himoyalangan.</span>
+        <span>{t('footer.copyright')}</span>
         <div className="footer-bottom-right">
-          <Link to="/hujjatlar">Maxfiylik siyosati</Link>
+          <Link to="/hujjatlar">{t('footer.privacy')}</Link>
           <span className="footer-bottom-sep">·</span>
-          <Link to="/kontaktlar">Sayt xaritasi</Link>
+          <Link to="/kontaktlar">{t('footer.sitemap')}</Link>
           <span className="footer-bottom-sep" style={{ color: 'var(--gold-dim)', letterSpacing: '2px', fontSize: '0.65rem' }}>
-            TOSHKENT · O'ZBEKISTON
+            {t('footer.region')}
           </span>
         </div>
       </div>

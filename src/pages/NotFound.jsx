@@ -28,14 +28,14 @@ export default function NotFound() {
           Bunday sahifa <span>mavjud emas</span>
         </h1>
         <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.7, marginBottom: '40px' }}>
-          Siz qidirayotgan sahifa o'chirilgan, ko'chirilgan yoki hech qachon mavjud bo'lmagan bo'lishi mumkin.
+          Siz qidirayotgan sahifa oʻchirilgan, koʻchirilgan yoki hech qachon mavjud boʻlmagan boʻlishi mumkin.
         </p>
         <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link to="/" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block', padding: '14px 40px' }}>
             BOSH SAHIFAGA
           </Link>
           <Link to="/kontaktlar" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-block', padding: '14px 40px', borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }}>
-            BOG'LANISH
+            BOGʻLANISH
           </Link>
         </div>
       </div>

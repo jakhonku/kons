@@ -93,7 +93,7 @@ export default function Taqvim() {
         </div>
       </div>
 
-      {/* ── TADBIRLAR RO'YXATI ──────────────────────────── */}
+      {/* ── TADBIRLAR ROʻYXATI ──────────────────────────── */}
       <div className="events-list-v2" style={{ background: 'var(--bg-deep)', padding: '70px 0 90px' }}>
         <div className="container">
           {filteredEvents.length > 0 ? (
@@ -183,7 +183,7 @@ export default function Taqvim() {
             <div style={{ textAlign: 'center', padding: '120px 0', border: '1px dashed var(--border-gold)', borderRadius: '8px' }}>
               <Search size={48} color="var(--gold)" style={{ opacity: 0.3, marginBottom: '20px' }} />
               <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
-                Ushbu parametrlar bo'yicha hech qanday tadbir topilmadi.
+                Ushbu parametrlar boʻyicha hech qanday tadbir topilmadi.
               </div>
             </div>
           )}

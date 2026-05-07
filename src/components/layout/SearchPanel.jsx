@@ -116,13 +116,13 @@ export default function SearchPanel({ isOpen, onClose }) {
 
         {query && results.length === 0 && (
           <div className="search-empty">
-            <span>«{query}»</span> bo'yicha natija topilmadi
+            <span>«{query}»</span> boʻyicha natija topilmadi
           </div>
         )}
 
         {!query && (
           <div className="search-hint">
-            Qidirish uchun yozing &nbsp;·&nbsp; <kbd>↑</kbd><kbd>↓</kbd> tanlash &nbsp;·&nbsp; <kbd>Enter</kbd> o'tish &nbsp;·&nbsp; <kbd>Esc</kbd> yopish
+            Qidirish uchun yozing &nbsp;·&nbsp; <kbd>↑</kbd><kbd>↓</kbd> tanlash &nbsp;·&nbsp; <kbd>Enter</kbd> oʻtish &nbsp;·&nbsp; <kbd>Esc</kbd> yopish
           </div>
         )}
 

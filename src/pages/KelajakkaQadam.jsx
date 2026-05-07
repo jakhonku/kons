@@ -17,12 +17,12 @@ const SERVICES = [
 ];
 
 const PARTNERS = [
-  "O'zbek Milliy Simfonik Orkestri",
+  "Oʻzbek Milliy Simfonik Orkestri",
   "Alisher Navoiy nomidagi GABT",
   "Toshkent Davlat Filarmoniyasi",
   "Yoshlar simfonik orkestri",
   "Toshkent shahar musiqa maktablari",
-  "O'zbekiston Bastakorlar Uyushmasi",
+  "Oʻzbekiston Bastakorlar Uyushmasi",
 ];
 
 export default function KelajakkaQadam() {

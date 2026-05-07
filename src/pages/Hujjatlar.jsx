@@ -7,7 +7,7 @@ const BREADCRUMBS = [
 ];
 
 const DOCUMENTS = [
-  { title: 'Konservatoriya Ustavi', date: "O'zgartirilgan sana: 2023-yil 12-may" },
+  { title: 'Konservatoriya Ustavi', date: "Oʻzgartirilgan sana: 2023-yil 12-may" },
 ];
 
 export default function Hujjatlar() {
@@ -23,7 +23,7 @@ export default function Hujjatlar() {
         <div className="container">
           <article className="article-body">
             <p className="lead">
-              O'zbekiston davlat konservatoriyasi faoliyatini tartibga soluvchi asosiy
+              Oʻzbekiston davlat konservatoriyasi faoliyatini tartibga soluvchi asosiy
               normativ-huquqiy hujjatlar.
             </p>
             <div className="doc-list">

@@ -16,7 +16,7 @@ const CONTACT_ITEMS = [
       </svg>
     ),
     label: 'Manzil',
-    value: "Toshkent sh., Olmazor tumani,\nMustaqillik ko'chasi, 31-uy",
+    value: "Toshkent sh., Olmazor tumani,\nMustaqillik koʻchasi, 31-uy",
   },
   {
     icon: (
@@ -66,7 +66,7 @@ export default function Kontaktlar() {
     <main className="content-wrapper">
       <PageHero
         tag="Axborot xizmati"
-        title="Bog'lanish"
+        title="Bogʻlanish"
         emphasis="Ma'lumotlari"
         breadcrumbs={BREADCRUMBS}
       />
@@ -78,7 +78,7 @@ export default function Kontaktlar() {
             {/* Chap: aloqa ma'lumotlari */}
             <div>
               <p className="article-body lead" style={{ marginBottom: '40px' }}>
-                Bizga murojaat qiling — har qanday savol bo'yicha yordam berishga tayyormiz.
+                Bizga murojaat qiling — har qanday savol boʻyicha yordam berishga tayyormiz.
               </p>
 
               {CONTACT_ITEMS.map((item) => (
@@ -120,12 +120,12 @@ export default function Kontaktlar() {
               </div>
             </div>
 
-            {/* O'ng: forma */}
+            {/* Oʻng: forma */}
             <div>
               {sent ? (
                 <div className="info-box" style={{ borderColor: '#228B22' }}>
                   <h4 style={{ color: '#228B22' }}>Xabar yuborildi!</h4>
-                  <p>Tez orada siz bilan bog'lanamiz. Rahmat!</p>
+                  <p>Tez orada siz bilan bogʻlanamiz. Rahmat!</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>

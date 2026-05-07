@@ -13,7 +13,7 @@ const PROGRAMS = [
     badge: 'Faol',
     badgeColor: '#22c55e',
     icon: GraduationCap,
-    desc: "Yevropa Ittifoqi universitetlarida 1 semestr yoki 1 yillik o'qish imkoniyati. To'liq stipendiya.",
+    desc: "Yevropa Ittifoqi universitetlarida 1 semestr yoki 1 yillik oʻqish imkoniyati. Toʻliq stipendiya.",
     details: ["24 ta Yevropa universiteti", "Oylik 800–1200 € stipendiya", "Ariza: har yili dekabr–yanvar", "Til talabi: B2 darajasi"],
     deadline: 'Yanvar 2026',
   },
@@ -23,16 +23,16 @@ const PROGRAMS = [
     badgeColor: 'var(--gold-dark)',
     icon: Users,
     desc: "Hamkor universitetlar bilan talabalar almashinuvi. 1 semestrdan 1 yilgacha.",
-    details: ["Rossiya, Xitoy, Koreya, Turkiya", "To'liq yoki qisman stipendiya", "Ariza: aprel–may oylari", "IELTS / TOPIK talab qilinishi mumkin"],
+    details: ["Rossiya, Xitoy, Koreya, Turkiya", "Toʻliq yoki qisman stipendiya", "Ariza: aprel–may oylari", "IELTS / TOPIK talab qilinishi mumkin"],
     deadline: 'May 2026',
   },
   {
-    title: "Qo'shma Magistratura Dasturi",
+    title: "Qoʻshma Magistratura Dasturi",
     badge: 'Yangi',
     badgeColor: 'var(--navy)',
     icon: BookOpen,
-    desc: "Yevropa universitetlari bilan qo'shma 2 yillik magistratura. Ikki diplom beriladi.",
-    details: ["Vena va Parij universitetlari", "1-yil O'zbekistonda, 2-yil xorijda", "Ariza: mart–iyun oylari", "Magistratura darajasi talab qilinadi"],
+    desc: "Yevropa universitetlari bilan qoʻshma 2 yillik magistratura. Ikki diplom beriladi.",
+    details: ["Vena va Parij universitetlari", "1-yil Oʻzbekistonda, 2-yil xorijda", "Ariza: mart–iyun oylari", "Magistratura darajasi talab qilinadi"],
     deadline: 'Iyun 2026',
   },
   {
@@ -47,11 +47,11 @@ const PROGRAMS = [
 ];
 
 const STEPS = [
-  { num: '01', title: "Dasturni tanlash",       desc: "Siz uchun mos dasturni toping va talablarni diqqat bilan o'qing." },
+  { num: '01', title: "Dasturni tanlash",       desc: "Siz uchun mos dasturni toping va talablarni diqqat bilan oʻqing." },
   { num: '02', title: "Hujjatlarni tayyorlash", desc: "Diplom, transkript, motivatsion xat, rekomendatsiya xatlari." },
-  { num: '03', title: "Ariza topshirish",        desc: "Xalqaro aloqalar bo'limiga 2-bino, 201-xona ga hujjatlar topshiring." },
-  { num: '04', title: "Tanlov jarayoni",         desc: "Akademik ko'rsatkichlar va auditsiya natijalariga ko'ra tanlov." },
-  { num: '05', title: "Yo'llanma olish",         desc: "Tanlangan talabalar rasmiy yo'llanma va stipendiya hujjatlarini oladi." },
+  { num: '03', title: "Ariza topshirish",        desc: "Xalqaro aloqalar boʻlimiga 2-bino, 201-xona ga hujjatlar topshiring." },
+  { num: '04', title: "Tanlov jarayoni",         desc: "Akademik koʻrsatkichlar va auditsiya natijalariga koʻra tanlov." },
+  { num: '05', title: "Yoʻllanma olish",         desc: "Tanlangan talabalar rasmiy yoʻllanma va stipendiya hujjatlarini oladi." },
 ];
 
 export default function XorijiyDasturlar() {
@@ -69,7 +69,7 @@ export default function XorijiyDasturlar() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              Konservatoriya talabalari va o'qituvchilari uchun xorijda ta'lim olish,
+              Konservatoriya talabalari va oʻqituvchilari uchun xorijda ta'lim olish,
               tajriba almashish va rivojlanish dasturlari mavjud.
             </p>
           </article>
@@ -127,7 +127,7 @@ export default function XorijiyDasturlar() {
           <div style={{ background: 'var(--cream)', border: '1px solid var(--light-border)', borderLeft: '4px solid var(--gold)', padding: '24px 32px', marginBottom: '60px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <div style={{ color: 'var(--gold-dark)', flexShrink: 0, marginTop: 2 }}><ChevronRight size={20} strokeWidth={2} /></div>
             <div>
-              <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1rem', marginBottom: '6px' }}>Xalqaro aloqalar bo'limi</h4>
+              <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1rem', marginBottom: '6px' }}>Xalqaro aloqalar boʻlimi</h4>
               <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
                 2-bino, 201-xona &nbsp;·&nbsp; international@konservatoriya.uz &nbsp;·&nbsp; +998 71 234-56-91<br />
                 Ish vaqti: Dushanba–Juma, 09:00–17:00

@@ -8,12 +8,12 @@ const BREADCRUMBS = [
 ];
 
 const MEMORANDUMS = [
-  { org: 'Moskva Davlat Konservatoriyasi',           country: 'Rossiya',      flag: '🇷🇺', year: 2017, type: "Qo'shma dasturlar",    status: 'Faol' },
+  { org: 'Moskva Davlat Konservatoriyasi',           country: 'Rossiya',      flag: '🇷🇺', year: 2017, type: "Qoʻshma dasturlar",    status: 'Faol' },
   { org: 'Sankt-Peterburg Davlat Konservatoriyasi',  country: 'Rossiya',      flag: '🇷🇺', year: 2018, type: 'Ilmiy hamkorlik',       status: 'Faol' },
   { org: 'Vena Musiqa va Sanoat Badiiy Universiteti', country: 'Avstriya',    flag: '🇦🇹', year: 2019, type: 'Talabalar almashinuvi', status: 'Faol' },
-  { org: "Qozog'iston Milliy Konservatoriyasi",       country: "Qozog'iston", flag: '🇰🇿', year: 2016, type: 'Talabalar almashinuvi', status: 'Faol' },
+  { org: "Qozogʻiston Milliy Konservatoriyasi",       country: "Qozogʻiston", flag: '🇰🇿', year: 2016, type: 'Talabalar almashinuvi', status: 'Faol' },
   { org: "Seul Milliy Universiteti San'at Kolleji",   country: 'Janubiy Koreya', flag: '🇰🇷', year: 2019, type: 'Talabalar almashinuvi', status: 'Faol' },
-  { org: "Istambul Davlat Konservatoriyasi",          country: 'Turkiya',     flag: '🇹🇷', year: 2020, type: "Qo'shma konsertlar",   status: 'Faol' },
+  { org: "Istambul Davlat Konservatoriyasi",          country: 'Turkiya',     flag: '🇹🇷', year: 2020, type: "Qoʻshma konsertlar",   status: 'Faol' },
   { org: 'Pekin Musiqa Konservatoriyasi',             country: 'Xitoy',       flag: '🇨🇳', year: 2020, type: 'Madaniy almashinuv',   status: 'Faol' },
   { org: 'Varshava Frederic Chopin Musiqa Universiteti', country: 'Polsha',   flag: '🇵🇱', year: 2020, type: 'Erasmus+ almashinuvi', status: 'Faol' },
   { org: 'Parij Milliy Oliy Musiqa Konservatoriyasi', country: 'Fransiya',   flag: '🇫🇷', year: 2021, type: 'Ilmiy hamkorlik',       status: 'Faol' },
@@ -21,7 +21,7 @@ const MEMORANDUMS = [
   { org: "Tokio Musiqa va Badiiy San'at Universiteti", country: 'Yaponiya',  flag: '🇯🇵', year: 2022, type: 'Talabalar almashinuvi', status: 'Yangi' },
   { org: "Berliner Universität der Künste",           country: 'Germaniya',  flag: '🇩🇪', year: 2023, type: 'Talabalar almashinuvi', status: 'Yangi' },
   { org: 'Juilliard Maktabi',                         country: 'AQSh',       flag: '🇺🇸', year: 2023, type: 'Master-klass',          status: 'Yangi' },
-  { org: "Barselona Oliy Musiqa Maktabi (ESMUC)",     country: 'Ispaniya',   flag: '🇪🇸', year: 2022, type: "Qo'shma dasturlar",    status: 'Yangi' },
+  { org: "Barselona Oliy Musiqa Maktabi (ESMUC)",     country: 'Ispaniya',   flag: '🇪🇸', year: 2022, type: "Qoʻshma dasturlar",    status: 'Yangi' },
   { org: "Ozarbayjon Davlat Konservatoriyasi",         country: 'Ozarbayjon', flag: '🇦🇿', year: 2019, type: 'Madaniy almashinuv',   status: 'Faol' },
 ];
 
@@ -40,7 +40,7 @@ export default function XalqaroMemorandumlar() {
           { num: '15', label: 'Faol memorandum' },
           { num: '40+', label: 'Davlat' },
           { num: '2016', label: 'Birinchi memorandum' },
-          { num: '2023', label: "So'nggi imzo" },
+          { num: '2023', label: "Soʻnggi imzo" },
         ].map((s, i) => (
           <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{s.num}</div>
@@ -60,7 +60,7 @@ export default function XalqaroMemorandumlar() {
           </article>
 
           <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Memorandumlar ro'yxati</h2>
+            <h2>Memorandumlar roʻyxati</h2>
           </div>
 
           <div className="doc-list" style={{ marginBottom: '60px' }}>
@@ -100,7 +100,7 @@ export default function XalqaroMemorandumlar() {
               Yangi hamkorlik takliflari
             </h4>
             <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Xalqaro hamkorlik memorandumi tuzish bo'yicha murojaat uchun: Xalqaro aloqalar bo'limi,
+              Xalqaro hamkorlik memorandumi tuzish boʻyicha murojaat uchun: Xalqaro aloqalar boʻlimi,
               2-bino 201-xona · international@konservatoriya.uz · +998 71 234-56-91
             </p>
           </div>

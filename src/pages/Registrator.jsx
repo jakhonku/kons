@@ -8,14 +8,14 @@ const BREADCRUMBS = [
 ];
 
 const DOCUMENTS = [
-  { name: "O'qish to'g'risida ma'lumotnoma", days: '1 ish kuni', fee: 'Bepul' },
-  { name: "Talaba guvohnomasi (dublikat)", days: '3 ish kuni', fee: '25 000 so\'m' },
-  { name: "Akademik ko'chirma (Transcript)", days: '5 ish kuni', fee: 'Bepul' },
-  { name: "Xalqaro transcript (ingliz tilida)", days: '7 ish kuni', fee: '50 000 so\'m' },
+  { name: "Oʻqish toʻgʻrisida ma'lumotnoma", days: '1 ish kuni', fee: 'Bepul' },
+  { name: "Talaba guvohnomasi (dublikat)", days: '3 ish kuni', fee: '25 000 soʻm' },
+  { name: "Akademik koʻchirma (Transcript)", days: '5 ish kuni', fee: 'Bepul' },
+  { name: "Xalqaro transcript (ingliz tilida)", days: '7 ish kuni', fee: '50 000 soʻm' },
   { name: "Akademik ta'til uchun ariza", days: '10 ish kuni', fee: 'Bepul' },
-  { name: "Boshqa universitetga ko'chirish", days: '15 ish kuni', fee: 'Bepul' },
+  { name: "Boshqa universitetga koʻchirish", days: '15 ish kuni', fee: 'Bepul' },
   { name: "Diplom (bitiruvchilar)", days: 'Bitiruvdan keyin 30 kun', fee: 'Bepul' },
-  { name: "Diplom qo'shimchasi (Diploma Supplement)", days: '30 kun', fee: 'Bepul' },
+  { name: "Diplom qoʻshimchasi (Diploma Supplement)", days: '30 kun', fee: 'Bepul' },
 ];
 
 export default function Registrator() {
@@ -36,7 +36,7 @@ export default function Registrator() {
             {[
               { icon: MapPin, title: 'Manzil',       lines: ['1-bino, 105-xona', '(Asosiy binoning 1-qavati)'] },
               { icon: Clock,  title: 'Ish vaqti',    lines: ['Dushanba – Juma: 09:00 – 17:00', 'Tushlik: 13:00 – 14:00'] },
-              { icon: Phone,  title: "Bog'lanish",   lines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'] },
+              { icon: Phone,  title: "Bogʻlanish",   lines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'] },
             ].map((item) => (
               <div key={item.title} style={{
                 background: 'var(--white)', border: '1px solid var(--light-border)',
@@ -60,7 +60,7 @@ export default function Registrator() {
             <table style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--white)', border: '1px solid var(--light-border)', fontSize: '0.85rem' }}>
               <thead>
                 <tr style={{ background: 'var(--navy)' }}>
-                  {["Hujjat turi", "Tayyorlanish muddati", "To'lov"].map((h) => (
+                  {["Hujjat turi", "Tayyorlanish muddati", "Toʻlov"].map((h) => (
                     <th key={h} style={{ padding: '14px 20px', color: 'var(--gold-light)', fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '1.5px', textTransform: 'uppercase', textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
                       {h}
                     </th>

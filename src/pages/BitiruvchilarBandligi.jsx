@@ -13,7 +13,7 @@ export default function BitiruvchilarBandligi() {
       title="Bitiruvchilar"
       emphasis="bandligi"
       breadcrumbs={BREADCRUMBS}
-      lead="Career markazi bitiruvchilarni mehnat bozoriga tayyorlash, ish o'rinlari bilan ta'minlash va kasbiy o'sishini qo'llab-quvvatlash bilan shug'ullanadi. Markazning xizmatlari konservatoriya talabalari va bitiruvchilari uchun bepul."
+      lead="Career markazi bitiruvchilarni mehnat bozoriga tayyorlash, ish oʻrinlari bilan ta'minlash va kasbiy oʻsishini qoʻllab-quvvatlash bilan shugʻullanadi. Markazning xizmatlari konservatoriya talabalari va bitiruvchilari uchun bepul."
       stats={[
         { value: '92%', label: '6 oy ichida bandlik' },
         { value: '180+', label: 'Hamkor tashkilot' },
@@ -23,16 +23,16 @@ export default function BitiruvchilarBandligi() {
         {
           heading: "Career markazining xizmatlari",
           items: [
-            { title: 'Vakansiyalar bazasi', desc: "O'zbekiston va xorijiy musiqa muassasalari, teatrlar, ta'lim markazlari vakansiyalari." },
+            { title: 'Vakansiyalar bazasi', desc: "Oʻzbekiston va xorijiy musiqa muassasalari, teatrlar, ta'lim markazlari vakansiyalari." },
             { title: "CV va portfolio tayyorlash", desc: "Kasbiy CV, motivatsion xat va ijodiy portfoliolar yaratishda yordam." },
             { title: "Suhbatga tayyorgarlik", desc: "Mehnat suhbatlari simulyatsiyalari va kasbiy intervyu mahoratini oshirish." },
             { title: "Mentorlik dasturi", desc: "Tajribali bitiruvchilar va xalqaro mutaxassislar bilan jonli aloqalar." },
-            { title: 'Stajirovkalar', desc: "Yetakchi musiqa muassasalarida amaliyot o'tash dasturlari." },
-            { title: "Tadbirkorlik akademiyasi", desc: "Mustaqil ijodiy biznes ochish bo'yicha treninglar va grantlar." },
+            { title: 'Stajirovkalar', desc: "Yetakchi musiqa muassasalarida amaliyot oʻtash dasturlari." },
+            { title: "Tadbirkorlik akademiyasi", desc: "Mustaqil ijodiy biznes ochish boʻyicha treninglar va grantlar." },
           ],
         },
         {
-          heading: "Bitiruvchilar ish o'rinlari (asosiy yo'nalishlar)",
+          heading: "Bitiruvchilar ish oʻrinlari (asosiy yoʻnalishlar)",
           table: {
             head: ['Sektor', 'Asosiy ish beruvchilar', 'Bitiruvchi ulushi'],
             rows: [
@@ -47,7 +47,7 @@ export default function BitiruvchilarBandligi() {
         {
           heading: "Faol vakansiyalar",
           cards: [
-            { tag: 'Toshkent', title: "Birinchi violinist", desc: "O'zbekiston Davlat akademik orkestri uchun.", meta: 'Muddat: 30.06.2026' },
+            { tag: 'Toshkent', title: "Birinchi violinist", desc: "Oʻzbekiston Davlat akademik orkestri uchun.", meta: 'Muddat: 30.06.2026' },
             { tag: 'Buxoro', title: "Solist xonanda", desc: "Buxoro davlat opera teatri.", meta: 'Muddat: 15.07.2026' },
             { tag: 'Samarqand', title: "Musiqa pedagogi", desc: "Samarqand viloyati musiqa maktablari uchun.", meta: 'Muddat: 25.07.2026' },
           ],

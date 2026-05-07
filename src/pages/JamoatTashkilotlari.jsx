@@ -13,33 +13,33 @@ export default function JamoatTashkilotlari() {
       title="Jamoat"
       emphasis="tashkilotlari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyaning jamoat tashkilotlari xodimlar va talabalarning kasbiy, ijodiy va ijtimoiy faolligini muvofiqlashtiradi. Tashkilotlar a'zolari ko'ngillilik asosida ishlaydi va jamoatchilik nazoratini ta'minlaydi."
+      lead="Konservatoriyaning jamoat tashkilotlari xodimlar va talabalarning kasbiy, ijodiy va ijtimoiy faolligini muvofiqlashtiradi. Tashkilotlar a'zolari koʻngillilik asosida ishlaydi va jamoatchilik nazoratini ta'minlaydi."
       sections={[
         {
-          heading: "Faoliyat ko'rsatuvchi tashkilotlar",
+          heading: "Faoliyat koʻrsatuvchi tashkilotlar",
           cards: [
             {
               tag: '01',
-              title: "Kasaba uyushmasi qo'mitasi",
-              desc: "Xodimlar va talabalarning mehnat huquqlarini himoya qiluvchi, sog'lom yashash sharoitlarini ta'minlovchi asosiy tashkilot.",
+              title: "Kasaba uyushmasi qoʻmitasi",
+              desc: "Xodimlar va talabalarning mehnat huquqlarini himoya qiluvchi, sogʻlom yashash sharoitlarini ta'minlovchi asosiy tashkilot.",
               meta: 'Rais: Karimov Bobur Sherzodovich',
             },
             {
               tag: '02',
               title: "Yoshlar ittifoqi tashkiloti",
-              desc: "Talabalar tashabbuslari, ko'ngillilik harakatlari va ma'naviy-marifiy tadbirlarni tashkil etadi.",
+              desc: "Talabalar tashabbuslari, koʻngillilik harakatlari va ma'naviy-marifiy tadbirlarni tashkil etadi.",
               meta: 'Rais: Yusupov Sardor Bobirovich',
             },
             {
               tag: '03',
               title: "Talabalar uyushmasi",
-              desc: "Talabalar manfaatlarini himoya qiluvchi, ijodiy va ilmiy faollikni rag'batlantiruvchi o'zini-o'zi boshqaruv organi.",
+              desc: "Talabalar manfaatlarini himoya qiluvchi, ijodiy va ilmiy faollikni ragʻbatlantiruvchi oʻzini-oʻzi boshqaruv organi.",
               meta: "Rais: Mirzayeva Nargiza Otabekovna",
             },
             {
               tag: '04',
-              title: "Xotin-qizlar qo'mitasi",
-              desc: "Ayol xodimlar va talabalarning kasbiy o'sishi, oilaviy muammolari bo'yicha qo'llab-quvvatlash dasturlari.",
+              title: "Xotin-qizlar qoʻmitasi",
+              desc: "Ayol xodimlar va talabalarning kasbiy oʻsishi, oilaviy muammolari boʻyicha qoʻllab-quvvatlash dasturlari.",
               meta: "Rais: Tursunova Dilfuza Otabekovna",
             },
             {
@@ -60,11 +60,11 @@ export default function JamoatTashkilotlari() {
           heading: "Tashkilotlarning umumiy faoliyati",
           items: [
             "Xodimlarning ijtimoiy himoyasini ta'minlash",
-            "Talabalar boshlang'ich tashabbuslarini qo'llab-quvvatlash",
+            "Talabalar boshlangʻich tashabbuslarini qoʻllab-quvvatlash",
             "Ma'naviy-ma'rifiy tadbirlar tashkil etish",
-            "Madaniy va sport tadbirlarini o'tkazish",
-            "Sog'liqni saqlash va dam olish dasturlari",
-            "Xayriya va ko'ngillilik faoliyati",
+            "Madaniy va sport tadbirlarini oʻtkazish",
+            "Sogʻliqni saqlash va dam olish dasturlari",
+            "Xayriya va koʻngillilik faoliyati",
           ],
         },
       ]}

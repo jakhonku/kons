@@ -1,16 +1,10 @@
-/* Sayt bo'ylab qidiruv uchun ma'lumotlar bazasi */
+/* Sayt boʻylab qidiruv uchun ma'lumotlar bazasi */
 
 export const SEARCH_PAGES = [
   {
-    title: 'Konservatoriya tarixi',
-    path: '/tarix',
-    desc: "O'zbekiston Davlat Konservatoriyasining 1936 yildan bugungi kungacha tarixi",
-    keywords: 'tarix asos tashkil 1936 musiqa',
-  },
-  {
     title: 'Muassasa tuzilmasi',
     path: '/tuzilma',
-    desc: 'Kafedra, bo\'lim va strukturaviy bo\'linmalar',
+    desc: 'Kafedra, boʻlim va strukturaviy boʻlinmalar',
     keywords: 'tuzilma struktura kafedra bolim',
   },
   {
@@ -40,7 +34,7 @@ export const SEARCH_PAGES = [
   {
     title: 'Kontaktlar',
     path: '/kontaktlar',
-    desc: "Manzil, telefon va bog'lanish ma'lumotlari",
+    desc: "Manzil, telefon va bogʻlanish ma'lumotlari",
     keywords: 'kontakt manzil telefon email boglanish',
   },
   {
@@ -58,19 +52,19 @@ export const SEARCH_PAGES = [
   {
     title: 'Dars jadvallari',
     path: '/dars-jadvali',
-    desc: 'Haftalik dars jadvali va o\'quv vaqtlari',
+    desc: 'Haftalik dars jadvali va oʻquv vaqtlari',
     keywords: 'dars jadval hafta',
   },
   {
-    title: "O'quv rejalar",
+    title: "Oʻquv rejalar",
     path: '/oquv-rejalar',
-    desc: "Bakalavr va magistratura o'quv rejalari",
+    desc: "Bakalavr va magistratura oʻquv rejalari",
     keywords: 'reja oquv bakalavr magistr',
   },
   {
     title: 'Sillabuslar',
     path: '/sillabuslar',
-    desc: "O'quv dasturlari va fanlar bo'yicha sillabuslar",
+    desc: "Oʻquv dasturlari va fanlar boʻyicha sillabuslar",
     keywords: 'sillabus dastur fan',
   },
   {
@@ -88,7 +82,7 @@ export const SEARCH_PAGES = [
   {
     title: 'Kelajakka qadam',
     path: '/kelajakka-qadam',
-    desc: "Karyera markazi va ish joylash bo'yicha yordam",
+    desc: "Karyera markazi va ish joylash boʻyicha yordam",
     keywords: 'karyera ish bandlik bitiruvchi',
   },
   {
@@ -104,9 +98,9 @@ export const SEARCH_PAGES = [
     keywords: 'registrator hujjat murojaaat malumotnoma',
   },
   {
-    title: "To'garaklar",
+    title: "Toʻgaraklar",
     path: '/togaraklar',
-    desc: "Ijodiy, sport va madaniy to'garaklar",
+    desc: "Ijodiy, sport va madaniy toʻgaraklar",
     keywords: 'togarak klub sport ijod madaniy',
   },
   {

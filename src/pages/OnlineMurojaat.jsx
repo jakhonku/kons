@@ -10,7 +10,7 @@ const BREADCRUMBS = [
 const MUROJAAT_TURLARI = [
   'Taklif',
   'Shikoyat',
-  "Ma'lumot so'rash",
+  "Ma'lumot soʻrash",
   "Hamkorlik takliflari",
   'Boshqa',
 ];
@@ -36,9 +36,9 @@ export default function OnlineMurojaat() {
         <div className="container">
           <article className="article-body">
             <p className="lead">
-              O'zbekiston Respublikasi Konstitutsiyasining 35-moddasi va "Jismoniy va yuridik
-              shaxslarning murojaatlari to'g'risida"gi qonun asosida har bir fuqaroning konservatoriyaga
-              murojaat qilish huquqi mavjud. Murojaatlar 14 ish kuni ichida ko'rib chiqiladi va
+              Oʻzbekiston Respublikasi Konstitutsiyasining 35-moddasi va "Jismoniy va yuridik
+              shaxslarning murojaatlari toʻgʻrisida"gi qonun asosida har bir fuqaroning konservatoriyaga
+              murojaat qilish huquqi mavjud. Murojaatlar 14 ish kuni ichida koʻrib chiqiladi va
               rasmiy javob yuboriladi.
             </p>
           </article>
@@ -50,7 +50,7 @@ export default function OnlineMurojaat() {
                 Murojaat shakli
               </h2>
               <p style={{ color: '#888', fontSize: '0.85rem', marginBottom: '28px' }}>
-                Barcha maydonlar majburiy. Maxfiy ma'lumotlar O'zbekiston Respublikasi qonunchiligi asosida himoya qilinadi.
+                Barcha maydonlar majburiy. Maxfiy ma'lumotlar Oʻzbekiston Respublikasi qonunchiligi asosida himoya qilinadi.
               </p>
 
               {submitted ? (
@@ -63,7 +63,7 @@ export default function OnlineMurojaat() {
                   </h3>
                   <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '20px' }}>
                     Murojaat raqami: <strong style={{ color: 'var(--navy)' }}>OK-{Math.floor(Math.random() * 90000) + 10000}</strong><br />
-                    14 ish kuni ichida ko'rsatgan elektron pochtangizga javob yuboriladi.
+                    14 ish kuni ichida koʻrsatgan elektron pochtangizga javob yuboriladi.
                   </p>
                   <button onClick={() => setSubmitted(false)} className="btn-outline">
                     Yangi murojaat
@@ -125,7 +125,7 @@ export default function OnlineMurojaat() {
                 <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', marginBottom: '10px', textTransform: 'uppercase' }}>Yuzma-yuz qabul</div>
                 <div style={{ color: '#555', fontSize: '0.85rem', lineHeight: 1.7 }}>
                   Toshkent sh., Mirobod tumani,<br />
-                  Konservatoriya ko'chasi 1-uy<br />
+                  Konservatoriya koʻchasi 1-uy<br />
                   Bosh bino, 1-qavat
                 </div>
               </div>

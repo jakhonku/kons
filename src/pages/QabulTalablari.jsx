@@ -11,14 +11,14 @@ export default function QabulTalablari() {
         { label: 'Qabul', to: '/abituriyentlar' },
         { label: "Qabul talablari" },
       ]}
-      lead="Abituriyentlar uchun qo'yiladigan umumiy va maxsus talablar bilan tanishing."
+      lead="Abituriyentlar uchun qoʻyiladigan umumiy va maxsus talablar bilan tanishing."
       sections={[
         {
-          heading: "Hujjatlar ro'yxati",
+          heading: "Hujjatlar roʻyxati",
           items: [
             "Pasport (ID karta) nusxasi",
             "Diplom yoki attestat (asli)",
-            "3.5x4.5 o'lchamdagi rasm",
+            "3.5x4.5 oʻlchamdagi rasm",
             "Tibbiy ma'lumotnoma"
           ]
         }

@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Talabalar uchun', to: '/talabalar' },
-  { label: "O'quv rejalar" },
+  { label: "Oʻquv rejalar" },
 ];
 
 const PLANS = [
@@ -13,10 +13,10 @@ const PLANS = [
     programs: [
       { name: 'Fortepiano', code: '5111300', hours: 240, kafedra: "Fortepiano kafedrasi" },
       { name: 'Akademik xonandalik', code: '5111100', hours: 240, kafedra: "Xonandalik kafedrasi" },
-      { name: "Cholg'u ijrochiligi (skripka)", code: '5111200', hours: 240, kafedra: "Torli-kamon kafedrasi" },
-      { name: "Cholg'u ijrochiligi (viолончel)", code: '5111201', hours: 240, kafedra: "Torli-kamon kafedrasi" },
+      { name: "Cholgʻu ijrochiligi (skripka)", code: '5111200', hours: 240, kafedra: "Torli-kamon kafedrasi" },
+      { name: "Cholgʻu ijrochiligi (viолончel)", code: '5111201', hours: 240, kafedra: "Torli-kamon kafedrasi" },
       { name: 'Kompozitsiya', code: '5111400', hours: 240, kafedra: "Kompozitsiya kafedrasi" },
-      { name: "Xalq cholg'ulari (dutor)", code: '5111500', hours: 240, kafedra: "Xalq cholg'ulari kafedrasi" },
+      { name: "Xalq cholgʻulari (dutor)", code: '5111500', hours: 240, kafedra: "Xalq cholgʻulari kafedrasi" },
     ],
   },
   {
@@ -35,7 +35,7 @@ export default function OquvRejalar() {
     <main className="content-wrapper">
       <PageHero
         tag="Talabalar uchun"
-        title="O'quv"
+        title="Oʻquv"
         emphasis="Rejalar"
         breadcrumbs={BREADCRUMBS}
       />
@@ -53,7 +53,7 @@ export default function OquvRejalar() {
                 <table style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--white)', border: '1px solid var(--light-border)', fontSize: '0.85rem' }}>
                   <thead>
                     <tr style={{ background: 'var(--navy)' }}>
-                      {["Yo'nalish nomi", "Kod", "Jami soat", "Kafedra"].map((h) => (
+                      {["Yoʻnalish nomi", "Kod", "Jami soat", "Kafedra"].map((h) => (
                         <th key={h} style={{ padding: '14px 20px', color: 'var(--gold-light)', fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '1.5px', textTransform: 'uppercase', textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
                           {h}
                         </th>
@@ -94,8 +94,8 @@ export default function OquvRejalar() {
             borderLeft: '4px solid var(--gold)', padding: '20px 28px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              O'quv rejalari har yili <strong style={{ color: 'var(--navy)' }}>O'zbekiston Respublikasi Oliy ta'lim vazirligi</strong> tomonidan
-              tasdiqlangan standartlar asosida yangilanadi. Batafsil ma'lumot uchun Ta'lim ishlari bo'yicha prorektorat bilan bog'laning.
+              Oʻquv rejalari har yili <strong style={{ color: 'var(--navy)' }}>Oʻzbekiston Respublikasi Oliy ta'lim vazirligi</strong> tomonidan
+              tasdiqlangan standartlar asosida yangilanadi. Batafsil ma'lumot uchun Ta'lim ishlari boʻyicha prorektorat bilan bogʻlaning.
             </p>
           </div>
 

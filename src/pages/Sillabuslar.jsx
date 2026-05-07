@@ -3,15 +3,15 @@ import PageHero from '../components/PageHero';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Talabalar uchun', to: '/talabalar' },
-  { label: "O'quv dasturlari (Sillabuslar)" },
+  { label: "Oʻquv dasturlari (Sillabuslar)" },
 ];
 
 const SUBJECTS = [
   { kafedra: "Musiqa nazariyasi", fanlar: ["Solfejio", "Garmoniya", "Polifoniya", "Musiqa shakllari tahlili", "Musiqa tarixi"] },
   { kafedra: "Fortepiano", fanlar: ["Maxsus fortepiano", "Kamera ansambli", "Fortepiano pedagogikasi", "Konsertmeystirlik sinfi"] },
   { kafedra: "Xonandalik", fanlar: ["Vokal", "Opera tayyorgarligi", "Sahna mahorati", "Xor dirijyorligi"] },
-  { kafedra: "Kompozitsiya", fanlar: ["Kompozitsiya", "Orkestr partiturasini o'qish", "Aranjirovka", "Elektron musiqa"] },
-  { kafedra: "Xalq cholg'ulari", fanlar: ["Dutor", "G'ijjak", "Doira", "Xalq musiqasi tarixi"] },
+  { kafedra: "Kompozitsiya", fanlar: ["Kompozitsiya", "Orkestr partiturasini oʻqish", "Aranjirovka", "Elektron musiqa"] },
+  { kafedra: "Xalq cholgʻulari", fanlar: ["Dutor", "Gʻijjak", "Doira", "Xalq musiqasi tarixi"] },
 ];
 
 export default function Sillabuslar() {
@@ -19,7 +19,7 @@ export default function Sillabuslar() {
     <main className="content-wrapper">
       <PageHero
         tag="Talabalar uchun"
-        title="O'quv dasturlari"
+        title="Oʻquv dasturlari"
         emphasis="Sillabuslar"
         breadcrumbs={BREADCRUMBS}
       />
@@ -28,7 +28,7 @@ export default function Sillabuslar() {
         <div className="container">
 
           <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Kafedra bo'yicha sillabuslar</h2>
+            <h2>Kafedra boʻyicha sillabuslar</h2>
           </div>
 
           <div className="g-2" style={{ marginBottom: '60px' }}>
@@ -77,8 +77,8 @@ export default function Sillabuslar() {
             borderTop: '3px solid var(--gold)', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.9rem', color: 'rgba(240,237,232,0.75)', fontFamily: 'var(--font-serif)', lineHeight: 1.8, margin: 0 }}>
-              Barcha sillabuslar <strong style={{ color: 'var(--gold-light)' }}>2025–2026 o'quv yili</strong> uchun mo'ljallangan.
-              Qo'shimcha fanlar va yangilangan sillabuslar uchun tegishli kafedra o'qituvchilari bilan bog'laning.
+              Barcha sillabuslar <strong style={{ color: 'var(--gold-light)' }}>2025–2026 oʻquv yili</strong> uchun moʻljallangan.
+              Qoʻshimcha fanlar va yangilangan sillabuslar uchun tegishli kafedra oʻqituvchilari bilan bogʻlaning.
             </p>
           </div>
 

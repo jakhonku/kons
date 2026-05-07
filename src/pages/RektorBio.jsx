@@ -72,13 +72,13 @@ export default function RektorBio() {
                     <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(201,168,76,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)' }}>
                       <MapPin size={14} />
                     </div>
-                    <span style={{ color: 'var(--text-primary)', fontSize: '0.9rem' }}>Toshkent sh., Olmazor ko'chasi, 1-uy</span>
+                    <span style={{ color: 'var(--text-primary)', fontSize: '0.9rem' }}>Toshkent sh., Olmazor koʻchasi, 1-uy</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* O'ng tomon: Matnli ma'lumotlar */}
+            {/* Oʻng tomon: Matnli ma'lumotlar */}
             <div className="bio-content reveal reveal-delay-1">
               <div style={{ marginBottom: '40px' }}>
                 <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Biografiya</span>
@@ -109,13 +109,13 @@ export default function RektorBio() {
                     <h5 style={{ color: 'var(--navy)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <GraduationCap size={16} /> Ta'lim
                     </h5>
-                    <p style={{ fontSize: '0.9rem', color: '#666' }}>O'zbekiston davlat konservatoriyasi, Moskva davlat konservatoriyasi.</p>
+                    <p style={{ fontSize: '0.9rem', color: '#666' }}>Oʻzbekiston davlat konservatoriyasi, Moskva davlat konservatoriyasi.</p>
                   </div>
                   <div style={{ padding: '20px', borderLeft: '3px solid var(--gold)', background: 'rgba(26,26,56,0.03)' }}>
                     <h5 style={{ color: 'var(--navy)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <Award size={16} /> Unvonlar
                     </h5>
-                    <p style={{ fontSize: '0.9rem', color: '#666' }}>O'zbekiston xalq artisti, "Do'stlik" ordeni sohibi.</p>
+                    <p style={{ fontSize: '0.9rem', color: '#666' }}>Oʻzbekiston xalq artisti, "Doʻstlik" ordeni sohibi.</p>
                   </div>
                 </div>
               </div>

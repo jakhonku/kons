@@ -16,25 +16,25 @@ export default function HamburgerIcon({ isOpen, onClick }) {
       >
         {/* Yuqori chiziq */}
         <motion.line
-          x1="3" y1="6" x2="21" y2="6"
+          initial={{ x1: 3, y1: 6, x2: 21, y2: 6 }}
           animate={isOpen
             ? { x1: 4, y1: 4, x2: 20, y2: 20 }
             : { x1: 3, y1: 6, x2: 21, y2: 6 }
           }
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
         />
-        {/* O'rta chiziq */}
+        {/* Oʻrta chiziq */}
         <motion.line
-          x1="3" y1="12" x2="21" y2="12"
+          initial={{ x1: 3, y1: 12, x2: 21, y2: 12, opacity: 1 }}
           animate={isOpen
-            ? { opacity: 0, x1: 12, x2: 12 }
-            : { opacity: 1, x1: 3, x2: 21 }
+            ? { opacity: 0, x1: 12, y1: 12, x2: 12, y2: 12 }
+            : { opacity: 1, x1: 3, y1: 12, x2: 21, y2: 12 }
           }
           transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
         />
         {/* Pastki chiziq */}
         <motion.line
-          x1="3" y1="18" x2="21" y2="18"
+          initial={{ x1: 3, y1: 18, x2: 21, y2: 18 }}
           animate={isOpen
             ? { x1: 4, y1: 20, x2: 20, y2: 4 }
             : { x1: 3, y1: 18, x2: 21, y2: 18 }

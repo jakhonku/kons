@@ -13,7 +13,7 @@ export default function MusiqaJurnaliTahririyati() {
       title='"Musiqa" jurnali'
       emphasis="tahririyati"
       breadcrumbs={BREADCRUMBS}
-      lead={`"Musiqa" jurnali tahririyati maqolalarni qabul qilish, ekspertiza va nashriyot jarayonini boshqaradi. Jurnal Oliy attestatsiya komissiyasi tomonidan tasdiqlangan ilmiy nashrlar ro'yxatiga kiritilgan.`}
+      lead={`"Musiqa" jurnali tahririyati maqolalarni qabul qilish, ekspertiza va nashriyot jarayonini boshqaradi. Jurnal Oliy attestatsiya komissiyasi tomonidan tasdiqlangan ilmiy nashrlar roʻyxatiga kiritilgan.`}
       stats={[
         { value: '8', label: 'Yillik son' },
         { value: '40', label: 'Yillik maqola' },
@@ -24,17 +24,17 @@ export default function MusiqaJurnaliTahririyati() {
           heading: "Tahririyat tarkibi",
           cards: [
             { tag: 'Bosh muharrir', title: 'prof. Aliyeva Nigora Sherzodovna', desc: "Filologiya fanlari doktori. 18 yil tahririyat tajribasi." },
-            { tag: "Bosh muharrir o'rinbosari", title: 'prof. Tursunov Otabek Murodovich', desc: "Musiqa nazariyasi kafedrasi mudiri. Etnomusiqashunos." },
-            { tag: "Mas'ul kotib", title: 'doc. Yusupova Sevara Akbarovna', desc: "Musiqa tarixi mutaxassisi. Tahrir bo'limi rahbari." },
+            { tag: "Bosh muharrir oʻrinbosari", title: 'prof. Tursunov Otabek Murodovich', desc: "Musiqa nazariyasi kafedrasi mudiri. Etnomusiqashunos." },
+            { tag: "Mas'ul kotib", title: 'doc. Yusupova Sevara Akbarovna', desc: "Musiqa tarixi mutaxassisi. Tahrir boʻlimi rahbari." },
           ],
         },
         {
           heading: "Maqolalarni qabul qilish jarayoni",
           items: [
-            { title: "1. Qo'lyozma yuborish", desc: "Maqola elektron pochtaga (musiqa@konservatoriya.uz) yoki online tizim orqali yuboriladi." },
+            { title: "1. Qoʻlyozma yuborish", desc: "Maqola elektron pochtaga (musiqa@konservatoriya.uz) yoki online tizim orqali yuboriladi." },
             { title: '2. Texnik tekshiruv', desc: "Tahririyat 7 ish kuni ichida formatlash va texnik talablarga muvofiqligini tekshiradi." },
-            { title: "3. Ko'r-ko'rsatma ekspertiza", desc: "2 ta mustaqil taqrizchi 30 ish kuni ichida tahlil qiladi." },
-            { title: '4. Tahrir natijasi', desc: "3 ta yechim: qabul qilish / qayta ishlashni so'rash / rad etish." },
+            { title: "3. Koʻr-koʻrsatma ekspertiza", desc: "2 ta mustaqil taqrizchi 30 ish kuni ichida tahlil qiladi." },
+            { title: '4. Tahrir natijasi', desc: "3 ta yechim: qabul qilish / qayta ishlashni soʻrash / rad etish." },
           ],
         },
       ]}

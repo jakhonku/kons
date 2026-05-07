@@ -21,7 +21,7 @@ export default function MegaDropdown({ item, onClose, onMouseEnter, onMouseLeave
               {col.heading && (
                 <h4 className="mega-heading">{col.heading}</h4>
               )}
-              <ul className="mega-links">
+              <ul className={`mega-links ${(item.id === 'axborot' || item.id === 'ilm-fan') ? 'is-grid' : ''}`}>
                 {col.links.map((link, linkIdx) => (
                   <motion.li
                     key={link.label}
@@ -48,7 +48,7 @@ export default function MegaDropdown({ item, onClose, onMouseEnter, onMouseLeave
           ))}
         </div>
 
-        {/* Featured panel — o'ng tomon */}
+        {/* Featured panel — oʻng tomon */}
         {item.featured && (
           <motion.div
             className="mega-featured"
@@ -60,7 +60,7 @@ export default function MegaDropdown({ item, onClose, onMouseEnter, onMouseLeave
             <div className="mega-featured-label">{item.featured.label}</div>
             <p className="mega-featured-desc">{item.featured.desc}</p>
             <Link to={item.to} className="mega-featured-cta" onClick={onClose}>
-              Ko'proq →
+              Koʻproq →
             </Link>
           </motion.div>
         )}

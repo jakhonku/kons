@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { Accessibility, X, Type, Sun, Eye, RotateCcw, ChevronUp, ChevronDown } from 'lucide-react';
 
 const COLORBLIND_MODES = [
-  { id: 'none',         label: 'Oddiy ko\'rinish' },
+  { id: 'none',         label: 'Oddiy koʻrinish' },
   { id: 'deuteranopia', label: 'Yashil-qizil (D)' },
   { id: 'protanopia',   label: 'Qizil-yashil (P)' },
-  { id: 'tritanopia',   label: 'Ko\'k-sariq (T)' },
+  { id: 'tritanopia',   label: 'Koʻk-sariq (T)' },
   { id: 'grayscale',    label: 'Kulrang rejim' },
 ];
 

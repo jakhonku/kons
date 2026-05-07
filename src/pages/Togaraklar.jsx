@@ -4,7 +4,7 @@ import { Clock, MapPin } from 'lucide-react';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Talabalar uchun', to: '/talabalar' },
-  { label: "To'garaklar" },
+  { label: "Toʻgaraklar" },
 ];
 
 const CIRCLES = [
@@ -14,7 +14,7 @@ const CIRCLES = [
     items: [
       { name: "Kamera musiqa ansambli", schedule: "Seshanba, Payshanba 16:00", room: "Katta zal", leader: "Prof. Karimov Sh." },
       { name: "Tarix musiqa klubi", schedule: "Chorshanba 15:00", room: "207-xona", leader: "Dots. Mirzayeva G." },
-      { name: "Elektron musiqa studiyasi", schedule: "Juma 14:00", room: "Studiya (yerto'la)", leader: "O'qit. Nazarov A." },
+      { name: "Elektron musiqa studiyasi", schedule: "Juma 14:00", room: "Studiya (yertoʻla)", leader: "Oʻqit. Nazarov A." },
       { name: "Kompozitsiya workshopi", schedule: "Shanba 10:00", room: "206-xona", leader: "Prof. Toshmatov B." },
     ],
   },
@@ -23,15 +23,15 @@ const CIRCLES = [
     color: 'var(--navy)',
     items: [
       { name: "KVN jamoasi", schedule: "Dushanba 17:30", room: "Aktyorlik sinfxonasi", leader: "Talabalar kengashi" },
-      { name: "Xalqaro talabalar klubi", schedule: "Payshanba 16:30", room: "202-xona", leader: "Xalqaro bo'lim" },
-      { name: "Ekologiya va yashil hayot", schedule: "Seshanba 17:00", room: "Botanika bog'i", leader: "Tashabbuskor guruh" },
+      { name: "Xalqaro talabalar klubi", schedule: "Payshanba 16:30", room: "202-xona", leader: "Xalqaro boʻlim" },
+      { name: "Ekologiya va yashil hayot", schedule: "Seshanba 17:00", room: "Botanika bogʻi", leader: "Tashabbuskor guruh" },
     ],
   },
   {
     category: 'Sport',
     color: '#555',
     items: [
-      { name: "Shaxmat to'garagi", schedule: "Har kuni 12:30", room: "Talabalar klubi", leader: "Ust. Xoliqov J." },
+      { name: "Shaxmat toʻgaragi", schedule: "Har kuni 12:30", room: "Talabalar klubi", leader: "Ust. Xoliqov J." },
       { name: "Ping-pong", schedule: "Seshanba, Juma 17:00", room: "Sport zali", leader: "Jismoniy tarbiya kafedrasi" },
       { name: "Yoga va meditatsiya", schedule: "Dushanba, Chorshanba 07:30", room: "Sport zali", leader: "Inst. Qodirov M." },
     ],
@@ -43,7 +43,7 @@ export default function Togaraklar() {
     <main className="content-wrapper">
       <PageHero
         tag="Talabalar uchun"
-        title="To'garaklar va"
+        title="Toʻgaraklar va"
         emphasis="Faoliyatlar"
         breadcrumbs={BREADCRUMBS}
       />
@@ -54,7 +54,7 @@ export default function Togaraklar() {
           {CIRCLES.map((section, si) => (
             <div key={section.category}>
               <div className="section-divider" style={{ marginTop: si === 0 ? 0 : undefined }}>
-                <h2>{section.category} to'garaklar</h2>
+                <h2>{section.category} toʻgaraklar</h2>
               </div>
 
               <div className="g-2" style={{ marginBottom: '50px' }}>
@@ -93,9 +93,9 @@ export default function Togaraklar() {
             borderLeft: '4px solid var(--gold)', padding: '22px 30px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.75, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Yangi to'garak ochish yoki mavjudiga qo'shilish uchun{' '}
+              Yangi toʻgarak ochish yoki mavjudiga qoʻshilish uchun{' '}
               <strong style={{ color: 'var(--navy)' }}>Talabalar kengashi</strong>ga murojaat qiling —
-              1-bino, 112-xona. Barcha to'garaklar <strong style={{ color: 'var(--navy)' }}>bepul</strong>.
+              1-bino, 112-xona. Barcha toʻgaraklar <strong style={{ color: 'var(--navy)' }}>bepul</strong>.
             </p>
           </div>
 

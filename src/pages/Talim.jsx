@@ -9,29 +9,29 @@ export default function Talim() {
   return (
     <InfoPage
       tag="Akademik ta'lim"
-      title="O'quv jarayoni va"
+      title="Oʻquv jarayoni va"
       emphasis="ta'lim dasturlari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyada akademik ta'lim ikki bosqichli model — bakalavriat va magistratura asosida olib boriladi. Doktorantura ilmiy daraja oluvchilar uchun mo'ljallangan. Barcha o'quv jarayoni ESG xalqaro standartlariga muvofiq tashkil etilgan."
+      lead="Konservatoriyada akademik ta'lim ikki bosqichli model — bakalavriat va magistratura asosida olib boriladi. Doktorantura ilmiy daraja oluvchilar uchun moʻljallangan. Barcha oʻquv jarayoni ESG xalqaro standartlariga muvofiq tashkil etilgan."
       stats={[
-        { value: '17', label: 'Bakalavr yo\'nalishi' },
+        { value: '17', label: 'Bakalavr yoʻnalishi' },
         { value: '12', label: 'Magistratura' },
         { value: '38', label: "Sillabus moduli" },
       ]}
       sections={[
         {
-          heading: "Asosiy o'quv resurslari",
+          heading: "Asosiy oʻquv resurslari",
           cards: [
-            { tag: '01', title: 'Dars jadvallari', desc: "Joriy semestr dars jadvallari, kafedra va auditoriya bo'yicha ko'rinishlar.", meta: '/dars-jadvali' },
-            { tag: '02', title: "O'quv rejalar", desc: "Bakalavr va magistratura yo'nalishlari bo'yicha tasdiqlangan o'quv rejalari.", meta: '/oquv-rejalar' },
+            { tag: '01', title: 'Dars jadvallari', desc: "Joriy semestr dars jadvallari, kafedra va auditoriya boʻyicha koʻrinishlar.", meta: '/dars-jadvali' },
+            { tag: '02', title: "Oʻquv rejalar", desc: "Bakalavr va magistratura yoʻnalishlari boʻyicha tasdiqlangan oʻquv rejalari.", meta: '/oquv-rejalar' },
             { tag: '03', title: "Sillabuslar", desc: "Har bir fan uchun batafsil dasturlar — maqsadlar, mavzular va baholash mezonlari.", meta: '/sillabuslar' },
             { tag: '04', title: "Kelajakka qadam", desc: "Talabalar uchun karyera maslahatchisi va kasb tanlovi platformasi.", meta: '/kelajakka-qadam' },
-            { tag: '05', title: "To'garaklar", desc: "Akademik dasturdan tashqari ijodiy va ilmiy to'garaklarning to'liq ro'yxati.", meta: '/togaraklar' },
+            { tag: '05', title: "Toʻgaraklar", desc: "Akademik dasturdan tashqari ijodiy va ilmiy toʻgaraklarning toʻliq roʻyxati.", meta: '/togaraklar' },
             { tag: '06', title: "Bitiruvchilar bandligi", desc: "Career markazi: bitiruvchilarni mehnat bozoriga muvaffaqiyatli kiritish.", meta: '/bitiruvchilar-bandligi' },
           ],
         },
         {
-          heading: "O'quv jarayonining muhim sanalari",
+          heading: "Oʻquv jarayonining muhim sanalari",
           table: {
             head: ['Davr', 'Tadbir', 'Sana'],
             rows: [
@@ -46,7 +46,7 @@ export default function Talim() {
         },
       ]}
       contact={{
-        title: "O'quv ishlari prorektorligi",
+        title: "Oʻquv ishlari prorektorligi",
         responsible: "Farhod Abdullayev",
         phone: '+998 71 234-56-80',
         email: 'oquv@konservatoriya.uz',

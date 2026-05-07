@@ -28,7 +28,7 @@ export default function JonliEfir() {
           <article className="article-body">
             <p className="lead">
               Konservatoriya tadbirlarining real-time onlayn translatsiyasi. Bosh zal va Opera
-              zalidagi konsertlar, opera spektakllari va mahorat darslari to'g'ridan-to'g'ri
+              zalidagi konsertlar, opera spektakllari va mahorat darslari toʻgʻridan-toʻgʻri
               uy sharoitida tomosha qilish imkoniyati.
             </p>
           </article>
@@ -87,8 +87,8 @@ export default function JonliEfir() {
             </div>
             <div style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '24px' }}>
               <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '2.5px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '10px' }}>Web embed</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1rem', fontWeight: 500, marginBottom: '8px' }}>To'g'ridan-to'g'ri saytda</h3>
-              <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.6 }}>Saytning shu sahifasida o'rnatilgan player.</p>
+              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1rem', fontWeight: 500, marginBottom: '8px' }}>Toʻgʻridan-toʻgʻri saytda</h3>
+              <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.6 }}>Saytning shu sahifasida oʻrnatilgan player.</p>
             </div>
           </div>
 

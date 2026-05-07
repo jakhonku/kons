@@ -13,7 +13,7 @@ export default function Doktorantura() {
       title="Doktorantura va"
       emphasis="bazaviy doktorantura"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriya doktoranturasi PhD (Doctor of Philosophy) va DSc (Doctor of Science) ilmiy darajalari bo'yicha ilmiy tadqiqotchilarni tayyorlaydi. Doktorantura bo'limi 17.00.02 — Musiqa san'ati ixtisosligi bo'yicha akkreditatsiyalangan."
+      lead="Konservatoriya doktoranturasi PhD (Doctor of Philosophy) va DSc (Doctor of Science) ilmiy darajalari boʻyicha ilmiy tadqiqotchilarni tayyorlaydi. Doktorantura boʻlimi 17.00.02 — Musiqa san'ati ixtisosligi boʻyicha akkreditatsiyalangan."
       stats={[
         { value: '24', label: 'Faol doktorant' },
         { value: '8', label: 'PhD himoyasi (2025)' },
@@ -49,21 +49,21 @@ export default function Doktorantura() {
             { title: 'Magistr darajasi', desc: "Konservatoriya yoki teng huquqli OTMda magistratura bitirgan." },
             { title: '3+ yil tajriba', desc: "Akademik yoki ijodiy faoliyatda kamida 3 yillik tajriba." },
             { title: "Ilmiy nashrlar", desc: "Kamida 3 ta ilmiy maqola yoki musiqa nashrlari." },
-            { title: "Tadqiqot rejasi", desc: "Aniq mavzuli, ilmiy yangiligi bo'lgan tadqiqot rejasi." },
-            { title: "Chet tili", desc: "Ingliz yoki nemis tilida ilmiy adabiyot o'qish darajasi (B2+)." },
+            { title: "Tadqiqot rejasi", desc: "Aniq mavzuli, ilmiy yangiligi boʻlgan tadqiqot rejasi." },
+            { title: "Chet tili", desc: "Ingliz yoki nemis tilida ilmiy adabiyot oʻqish darajasi (B2+)." },
             { title: "Ilmiy rahbar", desc: "Konservatoriya professorlaridan ilmiy rahbar tayinlash." },
           ],
         },
         {
-          heading: "Tadqiqot mavzulari (mavjud yo'nalishlar)",
+          heading: "Tadqiqot mavzulari (mavjud yoʻnalishlar)",
           items: [
-            "O'zbek mumtoz musiqasi va maqom san'ati",
+            "Oʻzbek mumtoz musiqasi va maqom san'ati",
             "Etnomusiqashunoslik va folklor",
             "Zamonaviy kompozitsiya texnikalari",
             "Ijro nazariyasi va metodikasi",
             "Musiqa pedagogikasi va psixologiyasi",
             "Musiqa tarixi va tahlil",
-            "Cholg'u sozshunoslik",
+            "Cholgʻu sozshunoslik",
             "Ovoz texnologiyalari va musiqa produktsiyasi",
           ],
         },
@@ -73,17 +73,17 @@ export default function Doktorantura() {
             head: ['Bosqich', 'Sana', 'Tafsilotlar'],
             rows: [
               ["Hujjat qabuli boshlanishi", '01.06.2026', 'Online va yuzma-yuz qabul'],
-              ["Ariza topshirish muddati", '15.07.2026', "Hujjatlar to'plami"],
+              ["Ariza topshirish muddati", '15.07.2026', "Hujjatlar toʻplami"],
               ['Ijodiy va kasbiy imtihon', '20–25.08.2026', "Ixtisoslik va chet tili"],
               ['Suhbat va tadqiqot rejasi himoyasi', '01–05.09.2026', 'Ilmiy kengash huzurida'],
               ["Qabul natijalari e'lon qilinishi", '10.09.2026', "Veb-sayt va elektron pochta"],
-              ["O'qish boshlanishi", '01.10.2026', '3 yillik dastur'],
+              ["Oʻqish boshlanishi", '01.10.2026', '3 yillik dastur'],
             ],
           },
         },
       ]}
       contact={{
-        title: "Doktorantura bo'limi",
+        title: "Doktorantura boʻlimi",
         responsible: 'Akhmedov Davron Sherzodovich',
         phone: '+998 71 234-56-85',
         email: 'doktorantura@konservatoriya.uz',

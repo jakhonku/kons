@@ -3,7 +3,7 @@ import { BookOpen, Download, Eye, Mail, Phone } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Konservatoriya', to: '/tarix' },
+  { label: 'Konservatoriya', to: '/tuzilma' },
   { label: '"Musiqa" jurnali' },
 ];
 
@@ -12,7 +12,7 @@ const ISSUES = [
     year: 2024,
     number: 4,
     title: 'Zamonaviy musiqa ta\'limi',
-    desc: 'O\'zbek milliy musiqasi va xalqaro ta\'lim standartlari',
+    desc: 'Oʻzbek milliy musiqasi va xalqaro ta\'lim standartlari',
     pages: 96,
     pdf: '#',
   },
@@ -60,7 +60,7 @@ const ISSUES = [
 
 const EDITORIAL = [
   { name: 'Prof. Dilnoza Yusupova',  role: "Bosh muharrir" },
-  { name: 'Prof. Alisher Nazarov',   role: "Muharrir o'rinbosari" },
+  { name: 'Prof. Alisher Nazarov',   role: "Muharrir oʻrinbosari" },
   { name: 'Dots. Shahlo Razzaqova',  role: 'Mas\'ul kotib' },
   { name: 'Prof. Bahrom Toshmatov',  role: 'Tahririyat a\'zosi' },
   { name: 'Dots. Malika Ergasheva',  role: 'Tahririyat a\'zosi' },
@@ -132,7 +132,7 @@ export default function MusiqaJurnali() {
                     onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = '#08081a'; }}
                     onMouseOut={(e) => { e.currentTarget.style.background = 'var(--navy)'; e.currentTarget.style.color = 'var(--white)'; }}
                   >
-                    <Eye size={14} /> Online o'qish
+                    <Eye size={14} /> Online oʻqish
                   </a>
                   <a href={issue.pdf} download style={{
                     display: 'inline-flex', alignItems: 'center', gap: '6px',
@@ -183,7 +183,7 @@ export default function MusiqaJurnali() {
           }}>
             <div>
               <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>
-                Tahririyat bilan bog'lanish
+                Tahririyat bilan bogʻlanish
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--white)', fontWeight: 300, marginBottom: '8px' }}>
                 Maqola <em>yuborish</em>

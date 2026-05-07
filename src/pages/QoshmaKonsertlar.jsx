@@ -4,12 +4,12 @@ import { Music, Calendar, MapPin, Users } from 'lucide-react';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Xalqaro aloqalar', to: '/xalqaro' },
-  { label: "Qo'shma konsertlar" },
+  { label: "Qoʻshma konsertlar" },
 ];
 
 const UPCOMING = [
   {
-    title: "O'zbekiston–Avstriya Musiqa Festivali",
+    title: "Oʻzbekiston–Avstriya Musiqa Festivali",
     date: '12–14 mart 2026',
     venue: 'Alisher Navoiy nomidagi GABT, Toshkent',
     partner: 'Vena Filarmoniya Orkestri',
@@ -17,9 +17,9 @@ const UPCOMING = [
     type: 'Festival',
   },
   {
-    title: "Ipak Yo'li Simfonik Konsert",
+    title: "Ipak Yoʻli Simfonik Konsert",
     date: '5 aprel 2026',
-    venue: "O'zbekiston Davlat Konservatoriyasi Katta Zali",
+    venue: "Oʻzbekiston Davlat Konservatoriyasi Katta Zali",
     partner: 'Pekin Musiqa Konservatoriyasi Orkestri',
     flag: '🇨🇳',
     type: 'Konsert',
@@ -28,26 +28,26 @@ const UPCOMING = [
     title: "Markaziy Osiyo Yosh Solistlar Gala Konsert",
     date: '20 may 2026',
     venue: 'Toshkent Davlat Filarmoniyasi',
-    partner: "Qozog'iston, Qirg'iziston, Tojikiston konservatoriyalari",
+    partner: "Qozogʻiston, Qirgʻiziston, Tojikiston konservatoriyalari",
     flag: '🌏',
     type: 'Gala',
   },
 ];
 
 const PAST = [
-  { title: "O'zbekiston–Germaniya Kamera Musiqa Kechasi", year: 2024, partner: "Berliner Universität der Künste", flag: '🇩🇪', venue: 'Toshkent' },
-  { title: "Musiqa Magistrlari: Sharq va G'arb",           year: 2024, partner: 'Parij Konservatoriyasi',          flag: '🇫🇷', venue: 'Toshkent / Parij' },
-  { title: "Ipak Yo'li Badiiy Festivali",                  year: 2023, partner: 'Pekin va Seul konservatoriyalari', flag: '🇨🇳', venue: 'Toshkent' },
+  { title: "Oʻzbekiston–Germaniya Kamera Musiqa Kechasi", year: 2024, partner: "Berliner Universität der Künste", flag: '🇩🇪', venue: 'Toshkent' },
+  { title: "Musiqa Magistrlari: Sharq va Gʻarb",           year: 2024, partner: 'Parij Konservatoriyasi',          flag: '🇫🇷', venue: 'Toshkent / Parij' },
+  { title: "Ipak Yoʻli Badiiy Festivali",                  year: 2023, partner: 'Pekin va Seul konservatoriyalari', flag: '🇨🇳', venue: 'Toshkent' },
   { title: "Yosh Solistlar Xalqaro Konserti",             year: 2023, partner: 'Moskva Konservatoriyasi',          flag: '🇷🇺', venue: 'Moskva / Toshkent' },
-  { title: "O'zbekiston–Turkiya Do'stlik Konserti",       year: 2022, partner: 'Istambul Davlat Konservatoriyasi', flag: '🇹🇷', venue: 'Istambul' },
-  { title: "Avstriya–O'zbekiston Musiqa Almashinuvi",     year: 2022, partner: 'Vena Musiqa Universiteti',         flag: '🇦🇹', venue: 'Vena / Toshkent' },
+  { title: "Oʻzbekiston–Turkiya Doʻstlik Konserti",       year: 2022, partner: 'Istambul Davlat Konservatoriyasi', flag: '🇹🇷', venue: 'Istambul' },
+  { title: "Avstriya–Oʻzbekiston Musiqa Almashinuvi",     year: 2022, partner: 'Vena Musiqa Universiteti',         flag: '🇦🇹', venue: 'Vena / Toshkent' },
 ];
 
 const FORMATS = [
   { icon: Music,    title: 'Simfonik konsertlar',  desc: 'Ikki orkestр birgalikda yoki navbat bilan ijro etadi' },
   { icon: Users,    title: 'Kamera musiqa',        desc: 'Kichik ansambllar, duetlar va trio formatlar' },
-  { icon: Calendar, title: 'Festivallar',          desc: "Ko'p kunlik xalqaro musiqa festivallari" },
-  { icon: MapPin,   title: 'Gastrol turlar',       desc: "O'zbekiston va xorijda qo'shma gastrol kontsertlar" },
+  { icon: Calendar, title: 'Festivallar',          desc: "Koʻp kunlik xalqaro musiqa festivallari" },
+  { icon: MapPin,   title: 'Gastrol turlar',       desc: "Oʻzbekiston va xorijda qoʻshma gastrol kontsertlar" },
 ];
 
 export default function QoshmaKonsertlar() {
@@ -55,14 +55,14 @@ export default function QoshmaKonsertlar() {
     <main className="content-wrapper">
       <PageHero
         tag="Xalqaro aloqalar"
-        title="Qo'shma"
+        title="Qoʻshma"
         emphasis="Konsertlar"
         breadcrumbs={BREADCRUMBS}
       />
 
       <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {[
-          { num: '50+', label: "Qo'shma konsert (2017-)" },
+          { num: '50+', label: "Qoʻshma konsert (2017-)" },
           { num: '20+', label: 'Hamkor orkestrlar' },
           { num: '15',  label: 'Mamlakat' },
           { num: '3',   label: "Rejalashtirilgan (2026)" },
@@ -117,7 +117,7 @@ export default function QoshmaKonsertlar() {
           </div>
 
           <div className="section-divider">
-            <h2>O'tgan konsertlar arxivi</h2>
+            <h2>Oʻtgan konsertlar arxivi</h2>
           </div>
 
           <div className="doc-list" style={{ marginBottom: '60px' }}>

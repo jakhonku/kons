@@ -13,8 +13,8 @@ const CATEGORIES = ['Barchasi', 'Konsertlar', 'Tadbirlar', 'Kampus', 'Xalqaro'];
 
 const LATEST_NEWS = [
   { id: 1, cat: 'Voqealar',   title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
-  { id: 2, cat: "Ta'lim",     title: "Yangi o'quv dasturlari tasdiqlandi" },
-  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi g'olibi bo'ldi" },
+  { id: 2, cat: "Ta'lim",     title: "Yangi oʻquv dasturlari tasdiqlandi" },
+  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi gʻolibi boʻldi" },
   { id: 4, cat: 'Xalqaro',    title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
   { id: 5, cat: 'Voqealar',   title: "Bahor konsert mavsumi boshlanadi" },
 ];
@@ -27,7 +27,7 @@ const PHOTOS = [
   { id: 5, cat: 'Xalqaro',     title: 'Vena hamkorlari bilan uchrashuv', year: '2025', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&h=600&fit=crop' },
   { id: 6, cat: 'Konsertlar',  title: 'Opera studiyasi premyerasi', year: '2025', img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&h=600&fit=crop' },
   { id: 7, cat: 'Tadbirlar',   title: "Magistratura topshirish marosimi", year: '2024', img: 'https://images.unsplash.com/photo-1523240715632-d984723145e1?q=80&w=800&h=600&fit=crop' },
-  { id: 8, cat: 'Kampus',      title: "O'qitish mashg'ulotlari", year: '2024', img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&h=600&fit=crop' },
+  { id: 8, cat: 'Kampus',      title: "Oʻqitish mashgʻulotlari", year: '2024', img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&h=600&fit=crop' },
   { id: 9, cat: 'Xalqaro',     title: "Pekin musiqa festivalida", year: '2024', img: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&h=600&fit=crop' },
 ];
 
@@ -91,7 +91,7 @@ export default function Fotogalereya() {
       <div className="news-ticker-wrap">
         <div className="news-ticker-label">
           <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
-          <span>So'nggi yangiliklar</span>
+          <span>Soʻnggi yangiliklar</span>
         </div>
         <div className="news-ticker-track-wrap">
           <div className="news-ticker-track">

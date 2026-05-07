@@ -3,43 +3,43 @@ import InfoPage from '../components/InfoPage';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Ilm-fan', to: '/ilm-fan' },
-  { label: "Musiqa cholg'ulari laboratoriyasi" },
+  { label: "Musiqa cholgʻulari laboratoriyasi" },
 ];
 
 export default function MusiqaCholgulariLaboratoriyasi() {
   return (
     <InfoPage
       tag="Ilm-fan"
-      title="Musiqa cholg'ulari"
+      title="Musiqa cholgʻulari"
       emphasis="laboratoriyasi"
       breadcrumbs={BREADCRUMBS}
-      lead="Laboratoriya o'zbek milliy va akademik musiqa cholg'ularini o'rganish, ta'mirlash, restavratsiya va yangidan yaratish bilan shug'ullanadigan noyob ilmiy-amaliy markaz. Markazda 200+ tarixiy va zamonaviy cholg'u saqlanadi."
+      lead="Laboratoriya oʻzbek milliy va akademik musiqa cholgʻularini oʻrganish, ta'mirlash, restavratsiya va yangidan yaratish bilan shugʻullanadigan noyob ilmiy-amaliy markaz. Markazda 200+ tarixiy va zamonaviy cholgʻu saqlanadi."
       stats={[
-        { value: '200+', label: "Cholg'u kolleksiyasi" },
+        { value: '200+', label: "Cholgʻu kolleksiyasi" },
         { value: '8', label: "Mutaxassis sozshunos" },
         { value: '1972', label: "Tashkil etilgan" },
       ]}
       sections={[
         {
-          heading: "Faoliyat yo'nalishlari",
+          heading: "Faoliyat yoʻnalishlari",
           cards: [
-            { tag: '01', title: 'Tarixiy cholg\'ular tadqiqi', desc: "Arxiv, muzey va xususiy kolleksiyalardagi tarixiy cholg'ularni o'rganish." },
-            { tag: '02', title: "Restavratsiya va ta'mirlash", desc: "Buzilgan yoki eskirgan cholg'ularni asl holiga keltirish." },
-            { tag: '03', title: 'Yangi cholg\'ular yaratish', desc: "An'anaviy texnologiyalarga asoslangan yangi cholg'ular ishlab chiqarish." },
-            { tag: '04', title: 'Akustik tadqiqotlar', desc: "Cholg'ularning akustik xususiyatlarini ilmiy o'rganish va o'lchash." },
+            { tag: '01', title: 'Tarixiy cholgʻular tadqiqi', desc: "Arxiv, muzey va xususiy kolleksiyalardagi tarixiy cholgʻularni oʻrganish." },
+            { tag: '02', title: "Restavratsiya va ta'mirlash", desc: "Buzilgan yoki eskirgan cholgʻularni asl holiga keltirish." },
+            { tag: '03', title: 'Yangi cholgʻular yaratish', desc: "An'anaviy texnologiyalarga asoslangan yangi cholgʻular ishlab chiqarish." },
+            { tag: '04', title: 'Akustik tadqiqotlar', desc: "Cholgʻularning akustik xususiyatlarini ilmiy oʻrganish va oʻlchash." },
             { tag: '05', title: 'Kataloglash va arxivlash', desc: "Raqamli katalog yaratish, foto-video hujjatlash." },
             { tag: '06', title: "Talabalar amaliyoti", desc: "Magistr va doktorant talabalar uchun amaliy treninglar." },
           ],
         },
         {
-          heading: "Asosiy kolleksiya bo'limlari",
+          heading: "Asosiy kolleksiya boʻlimlari",
           items: [
-            { title: "Maqom cholg'ulari", desc: "Tor, tanbur, dutor (har xil turlari), nay, qonun, soz." },
-            { title: "Xalq cholg'ulari", desc: "G'ijjak, qo'biz, sibizg'i, doira, nog'ora, surnay." },
-            { title: "Akademik cholg'ular", desc: "Skripka, alt, violonchel, kontrabas, fortepiano." },
-            { title: "Dam olish cholg'ulari", desc: "Karnay, surnay, fleyta, gobo, klarnet, fagot, truba." },
-            { title: "Zarbli cholg'ular", desc: "Litavralar, bara'ban, ksilofon, vibrafon." },
-            { title: "Etnografik kolleksiya", desc: "Markaziy Osiyo va dunyo xalqlari milliy cholg'ulari." },
+            { title: "Maqom cholgʻulari", desc: "Tor, tanbur, dutor (har xil turlari), nay, qonun, soz." },
+            { title: "Xalq cholgʻulari", desc: "Gʻijjak, qoʻbiz, sibizgʻi, doira, nogʻora, surnay." },
+            { title: "Akademik cholgʻular", desc: "Skripka, alt, violonchel, kontrabas, fortepiano." },
+            { title: "Dam olish cholgʻulari", desc: "Karnay, surnay, fleyta, gobo, klarnet, fagot, truba." },
+            { title: "Zarbli cholgʻular", desc: "Litavralar, bara'ban, ksilofon, vibrafon." },
+            { title: "Etnografik kolleksiya", desc: "Markaziy Osiyo va dunyo xalqlari milliy cholgʻulari." },
           ],
         },
         {
@@ -47,11 +47,11 @@ export default function MusiqaCholgulariLaboratoriyasi() {
           table: {
             head: ['Xizmat', 'Tarif', 'Muddat'],
             rows: [
-              ['Cholg\'uni baholash va konsultatsiya', "Bepul (a'zolar uchun)", '1 ish kuni'],
-              ['Akustik o\'lchov va tahlil', "Maxsus shartnoma asosida", '5–7 ish kuni'],
+              ['Cholgʻuni baholash va konsultatsiya', "Bepul (a'zolar uchun)", '1 ish kuni'],
+              ['Akustik oʻlchov va tahlil', "Maxsus shartnoma asosida", '5–7 ish kuni'],
               ['Restavratsiya (kichik)', "Murakkablikdan keladi", '14–30 kun'],
               ['Restavratsiya (komplekt)', "Individual baholash", '45–90 kun'],
-              ['Cholg\'uni saqlash xizmati', "Yiliga shartnomaviy", '12 oy'],
+              ['Cholgʻuni saqlash xizmati', "Yiliga shartnomaviy", '12 oy'],
             ],
           },
         },

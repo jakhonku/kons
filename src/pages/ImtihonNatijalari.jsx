@@ -11,11 +11,11 @@ export default function ImtihonNatijalari() {
         { label: 'Qabul', to: '/abituriyentlar' },
         { label: 'Imtihon natijalari' },
       ]}
-      lead="O'tkazilgan kasbiy (ijodiy) imtihonlar bo'yicha qaydnomalar va yakuniy natijalar."
+      lead="Oʻtkazilgan kasbiy (ijodiy) imtihonlar boʻyicha qaydnomalar va yakuniy natijalar."
       sections={[
         {
           heading: "Natijalarni tekshirish",
-          text: "Imtihon natijalari har bir bosqich yakunlangandan so'ng 24 soat ichida e'lon qilinadi.",
+          text: "Imtihon natijalari har bir bosqich yakunlangandan soʻng 24 soat ichida e'lon qilinadi.",
         }
       ]}
     />

@@ -16,7 +16,7 @@ const DIRECTIONS = [
   },
   {
     code: '5111401',
-    name: 'Ijrochilik san\'ati (torli cholg\'ular)',
+    name: 'Ijrochilik san\'ati (torli cholgʻular)',
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 15,
@@ -24,7 +24,7 @@ const DIRECTIONS = [
   },
   {
     code: '5111402',
-    name: "Ijrochilik san'ati (dam olish cholg'ulari)",
+    name: "Ijrochilik san'ati (dam olish cholgʻulari)",
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 15,
@@ -32,7 +32,7 @@ const DIRECTIONS = [
   },
   {
     code: '5111403',
-    name: "Ijrochilik san'ati (xalq cholg'ulari)",
+    name: "Ijrochilik san'ati (xalq cholgʻulari)",
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 25,
@@ -84,7 +84,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Hujjatlarni tayyorlash',
-    desc: "Pasport nusxasi, o'rta ta'lim diplomi, 3x4 fotosurat (6 ta), tibbiy ma'lumotnoma (086-shakl), ijodiy faoliyat hujjatlari.",
+    desc: "Pasport nusxasi, oʻrta ta'lim diplomi, 3x4 fotosurat (6 ta), tibbiy ma'lumotnoma (086-shakl), ijodiy faoliyat hujjatlari.",
   },
   {
     num: '02',
@@ -94,28 +94,28 @@ const STEPS = [
   {
     num: '03',
     title: 'Kasbiy-ijodiy imtihon',
-    desc: "Tanlangan mutaxassislik bo'yicha amaliy imtihon. Fortepiano, solfejio va musiqa adabiyoti fanlari bo'yicha sinovlar.",
+    desc: "Tanlangan mutaxassislik boʻyicha amaliy imtihon. Fortepiano, solfejio va musiqa adabiyoti fanlari boʻyicha sinovlar.",
   },
   {
     num: '04',
     title: "DTM natijalari",
-    desc: "O'zbekiston Respublikasi DTM tomonidan o'tkazilgan test imtihoni natijalari hisobga olinadi. Minimal ball: 56.0.",
+    desc: "Oʻzbekiston Respublikasi DTM tomonidan oʻtkazilgan test imtihoni natijalari hisobga olinadi. Minimal ball: 56.0.",
   },
   {
     num: '05',
     title: 'Natijalar e\'lon qilinishi',
-    desc: "Qabul natijalari 1-sentyabrgacha e'lon qilinadi. Ro'yxatlar konservatoriya doskasida va rasmiy saytda chop etiladi.",
+    desc: "Qabul natijalari 1-sentyabrgacha e'lon qilinadi. Roʻyxatlar konservatoriya doskasida va rasmiy saytda chop etiladi.",
   },
 ];
 
 const DOCUMENTS = [
-  "Pasport yoki tug'ilganlik guvohnomasi nusxasi",
-  "O'rta ta'lim to'g'risidagi diplom (asl nusxa va nusxasi)",
-  "6 ta 3×4 o'lchamidagi fotosurat",
+  "Pasport yoki tugʻilganlik guvohnomasi nusxasi",
+  "Oʻrta ta'lim toʻgʻrisidagi diplom (asl nusxa va nusxasi)",
+  "6 ta 3×4 oʻlchamidagi fotosurat",
   "Tibbiy ma'lumotnoma (086-shakl)",
   "DTM guvohnomasi nusxasi",
-  "Ijodiy yutuqlar hujjatlari (mavjud bo'lsa)",
-  "Ariza (qabul komissiyasida to'ldiriladi)",
+  "Ijodiy yutuqlar hujjatlari (mavjud boʻlsa)",
+  "Ariza (qabul komissiyasida toʻldiriladi)",
 ];
 
 export default function Abituriyentlar() {
@@ -134,7 +134,7 @@ export default function Abituriyentlar() {
       <div className="stats-row">
         <div className="stat-item">
           <div className="stat-num">{DIRECTIONS.length}</div>
-          <div className="stat-label">Ta'lim yo'nalishi</div>
+          <div className="stat-label">Ta'lim yoʻnalishi</div>
         </div>
         <div className="stat-item">
           <div className="stat-num">{totalQuota}</div>
@@ -142,7 +142,7 @@ export default function Abituriyentlar() {
         </div>
         <div className="stat-item">
           <div className="stat-num">4</div>
-          <div className="stat-label">Yillik o'qish muddati</div>
+          <div className="stat-label">Yillik oʻqish muddati</div>
         </div>
         <div className="stat-item">
           <div className="stat-num">56.0</div>
@@ -189,19 +189,19 @@ export default function Abituriyentlar() {
             ))}
           </div>
 
-          {/* Ta'lim yo'nalishlari va kvota jadvali */}
+          {/* Ta'lim yoʻnalishlari va kvota jadvali */}
           <div className="section-divider">
-            <h2>Ta'lim yo'nalishlari va kvota</h2>
+            <h2>Ta'lim yoʻnalishlari va kvota</h2>
           </div>
           <div className="data-table-wrap" style={{ paddingTop: 0 }}>
             <table className="data-table">
               <thead>
                 <tr>
                   <th>Mutaxassislik kodi</th>
-                  <th>Ta'lim yo'nalishi</th>
+                  <th>Ta'lim yoʻnalishi</th>
                   <th>Daraja</th>
                   <th>Muddat</th>
-                  <th>O'qish shakli</th>
+                  <th>Oʻqish shakli</th>
                   <th style={{ textAlign: 'right' }}>Kvota</th>
                 </tr>
               </thead>
@@ -260,22 +260,22 @@ export default function Abituriyentlar() {
             ))}
           </div>
 
-          {/* Qo'shimcha ma'lumot */}
+          {/* Qoʻshimcha ma'lumot */}
           <div className="abit-info-pair" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '60px' }}>
             <div className="info-box">
               <h4>Kasbiy-ijodiy imtihon</h4>
               <p>
-                Har bir yo'nalish bo'yicha maxsus dastur asosida o'tkaziladi.
+                Har bir yoʻnalish boʻyicha maxsus dastur asosida oʻtkaziladi.
                 Imtihon dasturlari qabul komissiyasida va rasmiy saytda e'lon qilinadi.
-                Minimal o'tish bali: <strong>70 ball (100 dan)</strong>.
+                Minimal oʻtish bali: <strong>70 ball (100 dan)</strong>.
               </p>
             </div>
             <div className="info-box">
-              <h4>Bog'lanish — Qabul komissiyasi</h4>
+              <h4>Bogʻlanish — Qabul komissiyasi</h4>
               <p>
                 Tel: <strong>+998 71 234-56-90</strong><br />
                 Email: <strong>qabul@konservatoriya.uz</strong><br />
-                Manzil: Toshkent, Mustaqillik ko'chasi, 31-uy, 1-qavat, 105-xona
+                Manzil: Toshkent, Mustaqillik koʻchasi, 31-uy, 1-qavat, 105-xona
               </p>
             </div>
           </div>

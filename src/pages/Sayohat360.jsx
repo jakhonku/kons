@@ -54,8 +54,8 @@ export default function Sayohat360() {
           {/* Intro */}
           <article className="article-body" style={{ marginBottom: '32px' }}>
             <p className="lead">
-              Konservatoriyamizni virtual ravishda ko'rib chiqing — asosiy binomizdan tortib
-              konsert zallarigacha 360° panoramik ko'rinishda sayohat qiling.
+              Konservatoriyamizni virtual ravishda koʻrib chiqing — asosiy binomizdan tortib
+              konsert zallarigacha 360° panoramik koʻrinishda sayohat qiling.
             </p>
           </article>
 
@@ -106,7 +106,7 @@ export default function Sayohat360() {
                 rel="noopener noreferrer"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '9px 14px', border: '1px solid var(--gold)', background: 'var(--gold)', color: '#08081a', fontFamily: 'var(--font-sans)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', textDecoration: 'none', transition: '0.2s' }}
               >
-                <Maximize2 size={13} strokeWidth={2} /> To'liq ekran
+                <Maximize2 size={13} strokeWidth={2} /> Toʻliq ekran
               </a>
             </div>
           </div>

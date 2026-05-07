@@ -109,7 +109,7 @@ export default function InfoPage({
           {contact && (
             <div style={{ background: 'var(--light-50)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '28px 32px', marginTop: '20px' }}>
               <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '14px', fontFamily: 'var(--font-sans)' }}>
-                {contact.title || "Bog'lanish"}
+                {contact.title || "Bogʻlanish"}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', fontFamily: 'var(--font-sans)', fontSize: '0.88rem' }}>
                 {contact.responsible && (

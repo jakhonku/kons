@@ -91,7 +91,7 @@ export default function TadbirBatafsil() {
                   <div>
                     <span className="tadbir-info-label">Manzil</span>
                     <span className="tadbir-info-val">{event.venue}</span>
-                    <span className="tadbir-info-sub">O'zbekiston Davlat Konservatoriyasi</span>
+                    <span className="tadbir-info-sub">Oʻzbekiston Davlat Konservatoriyasi</span>
                   </div>
                 </div>
                 <div className="tadbir-info-row">

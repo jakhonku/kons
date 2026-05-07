@@ -20,12 +20,12 @@ const FACULTIES = [
   },
   {
     id: 2,
-    name: "Cholg'u ijrochiligi fakulteti",
+    name: "Cholgʻu ijrochiligi fakulteti",
     icon: '♫',
     kafedralar: [
       "Fortepiano",
-      "Torli cholg'ular",
-      "Dam olish cholg'ulari",
+      "Torli cholgʻular",
+      "Dam olish cholgʻulari",
       "Kamera ansambli",
       "Orkestr sinfi",
     ],
@@ -43,11 +43,11 @@ const FACULTIES = [
   },
   {
     id: 4,
-    name: "Xalq cholg'ulari fakulteti",
+    name: "Xalq cholgʻulari fakulteti",
     icon: '♬',
     kafedralar: [
-      "Dutor va g'ijjak",
-      "Doira va zarbli cholg'ular",
+      "Dutor va gʻijjak",
+      "Doira va zarbli cholgʻular",
       "Ud va tanbur",
       "Xalq ansambli",
     ],
@@ -66,12 +66,12 @@ const FACULTIES = [
 ];
 
 const DEPARTMENTS = [
-  { name: "Akademik masalalar bo'limi", head: "Mas'ul: O'quv bo'limi" },
-  { name: "Ilmiy-tadqiqot markazi",     head: "Mas'ul: Ilmiy bo'lim" },
-  { name: "Xalqaro aloqalar bo'limi",  head: "Mas'ul: Xalqaro bo'lim" },
-  { name: "Moliya-xo'jalik bo'limi",   head: "Mas'ul: Ma'muriy bo'lim" },
-  { name: "Axborot texnologiyalari",    head: "Mas'ul: IT bo'limi" },
-  { name: "Kutubxona va arxiv",         head: "Mas'ul: Kutubxona bo'limi" },
+  { name: "Akademik masalalar boʻlimi", head: "Mas'ul: Oʻquv boʻlimi" },
+  { name: "Ilmiy-tadqiqot markazi",     head: "Mas'ul: Ilmiy boʻlim" },
+  { name: "Xalqaro aloqalar boʻlimi",  head: "Mas'ul: Xalqaro boʻlim" },
+  { name: "Moliya-xoʻjalik boʻlimi",   head: "Mas'ul: Ma'muriy boʻlim" },
+  { name: "Axborot texnologiyalari",    head: "Mas'ul: IT boʻlimi" },
+  { name: "Kutubxona va arxiv",         head: "Mas'ul: Kutubxona boʻlimi" },
 ];
 
 export default function Tuzilma() {
@@ -89,8 +89,8 @@ export default function Tuzilma() {
 
           <article className="article-body">
             <p className="lead">
-              Konservatoriya tuzilmasi 5 ta fakultet, 38 kafedra va ko'plab
-              ma'muriy bo'limlardan iborat bo'lib, barcha jarayonlar zamonaviy
+              Konservatoriya tuzilmasi 5 ta fakultet, 38 kafedra va koʻplab
+              ma'muriy boʻlimlardan iborat boʻlib, barcha jarayonlar zamonaviy
               boshqaruv tizimi asosida olib boriladi.
             </p>
           </article>
@@ -108,7 +108,7 @@ export default function Tuzilma() {
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--navy)' }}>Rektor</div>
             </div>
             <div className="tuzilma-prorektor-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
-              {["Ta'lim ishlari prorektori", "Ilmiy-ijodiy ishlar prorektori", "Xalqaro aloqalar prorektori", "Ma'muriy-xo'jalik prorektori"].map((p) => (
+              {["Ta'lim ishlari prorektori", "Ilmiy-ijodiy ishlar prorektori", "Xalqaro aloqalar prorektori", "Ma'muriy-xoʻjalik prorektori"].map((p) => (
                 <div key={p} style={{ padding: '14px', border: '1px solid var(--light-border)', background: 'var(--light-50)', fontSize: '0.78rem', color: 'var(--navy)', textAlign: 'center', lineHeight: 1.4, fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
                   {p}
                 </div>
@@ -144,9 +144,9 @@ export default function Tuzilma() {
             ))}
           </div>
 
-          {/* Bo'limlar */}
+          {/* Boʻlimlar */}
           <div className="section-divider">
-            <h2>Ma'muriy bo'limlar</h2>
+            <h2>Ma'muriy boʻlimlar</h2>
           </div>
 
           <div className="tuzilma-dept-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '60px' }}>

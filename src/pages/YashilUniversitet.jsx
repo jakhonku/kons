@@ -8,26 +8,26 @@ const BREADCRUMBS = [
 ];
 
 const GOALS = [
-  { icon: Leaf,        title: 'Yashil muhit',            desc: "Kampusda 500 dan ortiq daraxt va o'simliklar, ekologik hududlar." },
+  { icon: Leaf,        title: 'Yashil muhit',            desc: "Kampusda 500 dan ortiq daraxt va oʻsimliklar, ekologik hududlar." },
   { icon: Sun,         title: 'Quyosh energiyasi',       desc: "Binolar energiyasining 30% quyosh panellaridan ta'minlanadi." },
   { icon: Recycle,     title: 'Chiqindilarni saralash',  desc: "Uch xil idish orqali chiqindilarni qayta ishlash tizimi." },
-  { icon: Droplets,    title: "Suv tejamliligi",         desc: "Avtomatik sug'orish va suv sarfini nazorat qilish tizimi." },
-  { icon: Bike,        title: 'Velosiped infratuzilmasi', desc: "Campus bo'ylab velosiped yo'llari va parkovkalar." },
+  { icon: Droplets,    title: "Suv tejamliligi",         desc: "Avtomatik sugʻorish va suv sarfini nazorat qilish tizimi." },
+  { icon: Bike,        title: 'Velosiped infratuzilmasi', desc: "Campus boʻylab velosiped yoʻllari va parkovkalar." },
   { icon: TrendingDown, title: 'Carbon izini kamaytirish', desc: "2030 yilgacha carbon-neutral maqomini olish maqsadi." },
 ];
 
 const ACHIEVEMENTS = [
-  { num: '500+', label: "Daraxt va o'simliklar" },
+  { num: '500+', label: "Daraxt va oʻsimliklar" },
   { num: '30%',  label: 'Quyosh energiyasi ulushi' },
   { num: '70%',  label: "Chiqindilarni qayta ishlash" },
   { num: '2030', label: 'Carbon-neutral maqsadi' },
 ];
 
 const INITIATIVES = [
-  { year: '2022', title: "Quyosh panellari o'rnatildi",               desc: "150 kVt quvvatli quyosh panellari asosiy binoga o'rnatildi." },
+  { year: '2022', title: "Quyosh panellari oʻrnatildi",               desc: "150 kVt quvvatli quyosh panellari asosiy binoga oʻrnatildi." },
   { year: '2023', title: "Yashil Kampus sertifikati olindi",           desc: "ISO 14001 Atrof-muhitni boshqarish sertifikati berildi." },
-  { year: '2024', title: "Chiqindilarni saralash to'liq joriy etildi", desc: "Barcha auditoriya va ofislarda uch xil saralash idishi o'rnatildi." },
-  { year: '2025', title: "Velosiped infratuzilmasi qurildi",            desc: "700 metrelik velosiped yo'li va 50 ta parkovka joyi yaratildi." },
+  { year: '2024', title: "Chiqindilarni saralash toʻliq joriy etildi", desc: "Barcha auditoriya va ofislarda uch xil saralash idishi oʻrnatildi." },
+  { year: '2025', title: "Velosiped infratuzilmasi qurildi",            desc: "700 metrelik velosiped yoʻli va 50 ta parkovka joyi yaratildi." },
 ];
 
 export default function YashilUniversitet() {
@@ -59,7 +59,7 @@ export default function YashilUniversitet() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              O'zbekiston Davlat Konservatoriyasi barqaror rivojlanish va ekologiya tamoyillarini
+              Oʻzbekiston Davlat Konservatoriyasi barqaror rivojlanish va ekologiya tamoyillarini
               ta'lim jarayoni va kampus hayotiga jadal joriy etmoqda.
             </p>
           </article>
@@ -107,13 +107,13 @@ export default function YashilUniversitet() {
               Yashil <span style={{ color: '#4ade80', fontStyle: 'italic' }}>Kelajak</span>
             </h3>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', marginBottom: '24px', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
-              2030 yilgacha konservatoriyani to'liq ekologik maqomga ko'tarish maqsad qilingan.
+              2030 yilgacha konservatoriyani toʻliq ekologik maqomga koʻtarish maqsad qilingan.
             </p>
             <a href="/kontaktlar" style={{ display: 'inline-block', padding: '12px 36px', border: '1px solid #4ade80', color: '#4ade80', textDecoration: 'none', fontFamily: 'var(--font-sans)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', transition: '0.3s' }}
               onMouseOver={(e) => { e.currentTarget.style.background = '#4ade80'; e.currentTarget.style.color = '#1a3a2a'; }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#4ade80'; }}
             >
-              BOG'LANISH →
+              BOGʻLANISH →
             </a>
           </div>
 

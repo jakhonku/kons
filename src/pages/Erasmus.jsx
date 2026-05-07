@@ -18,9 +18,9 @@ const UNIVERSITIES = [
 
 const REQUIREMENTS = [
   "Kamida 2-kurs talabasi yoki magistratura talabalari",
-  "O'rtacha ball: 3.5 va undan yuqori (4-ballik tizimda)",
+  "Oʻrtacha ball: 3.5 va undan yuqori (4-ballik tizimda)",
   "Ingliz yoki hamkor universitetning milliy tili: B2 darajasi",
-  "Motivatsion xat (ingliz tilida, kamida 500 so'z)",
+  "Motivatsion xat (ingliz tilida, kamida 500 soʻz)",
   "2 ta akademik rekomendatsiya xati",
   "Ijrochilik portfolio yoki yozma akademik ish namunasi",
 ];
@@ -28,17 +28,17 @@ const REQUIREMENTS = [
 const BENEFITS = [
   { title: 'Oylik stipendiya',     desc: '800–1 200 € (mamlakatga qarab)',     icon: GraduationCap },
   { title: "Sayohat xarajatlari",  desc: 'Masofaga qarab 820 € gacha',          icon: Globe },
-  { title: "Ta'lim to'lovi",       desc: "Hamkor universitetda to'lovsiz o'qish", icon: CheckCircle },
-  { title: 'Muddat',               desc: '1 semestr yoki 1 o\'quv yili',        icon: Calendar },
+  { title: "Ta'lim toʻlovi",       desc: "Hamkor universitetda toʻlovsiz oʻqish", icon: CheckCircle },
+  { title: 'Muddat',               desc: '1 semestr yoki 1 oʻquv yili',        icon: Calendar },
 ];
 
 const TIMELINE = [
   { month: 'Oktyabr',  action: "Tanlov e'lon qilinadi va ariza shakllari tarqatiladi" },
-  { month: 'Noyabr',   action: "Ma'lumot sessiyasi — Xalqaro aloqalar bo'limida" },
+  { month: 'Noyabr',   action: "Ma'lumot sessiyasi — Xalqaro aloqalar boʻlimida" },
   { month: 'Dekabr',   action: "Hujjatlar topshirish muddati tugaydi" },
   { month: 'Yanvar',   action: "Ichki tanlov — akademik komissiya baholaydi" },
-  { month: 'Fevral',   action: "Natijalar e'lon qilinadi va rasmiy yo'llanma beriladi" },
-  { month: 'Sentyabr', action: "O'qish boshlanadi (keyingi o'quv yili)" },
+  { month: 'Fevral',   action: "Natijalar e'lon qilinadi va rasmiy yoʻllanma beriladi" },
+  { month: 'Sentyabr', action: "Oʻqish boshlanadi (keyingi oʻquv yili)" },
 ];
 
 export default function Erasmus() {
@@ -54,7 +54,7 @@ export default function Erasmus() {
       <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {[
           { num: '6',   label: 'Hamkor universitetlar' },
-          { num: '19',  label: "O'rin (har yili)" },
+          { num: '19',  label: "Oʻrin (har yili)" },
           { num: '1200€', label: 'Oylik maksimal stipendiya' },
           { num: '2020', label: 'Dastur boshlangan yil' },
         ].map((s, i) => (
@@ -71,7 +71,7 @@ export default function Erasmus() {
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
               Erasmus+ — Yevropa Ittifoqining ta'lim almashinuvi dasturi. Konservatoriya talabalari
-              Yevropa yetakchi musiqa universitetlarida 1 semestr yoki to'liq yil o'qish imkoniga ega.
+              Yevropa yetakchi musiqa universitetlarida 1 semestr yoki toʻliq yil oʻqish imkoniga ega.
             </p>
           </article>
 
@@ -103,7 +103,7 @@ export default function Erasmus() {
                 </div>
                 <div style={{ textAlign: 'right', flexShrink: 0 }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{u.slots}</div>
-                  <div style={{ fontSize: '0.6rem', color: '#888', fontFamily: 'var(--font-sans)', letterSpacing: '1px', textTransform: 'uppercase' }}>o'rin</div>
+                  <div style={{ fontSize: '0.6rem', color: '#888', fontFamily: 'var(--font-sans)', letterSpacing: '1px', textTransform: 'uppercase' }}>oʻrin</div>
                 </div>
               </div>
             ))}

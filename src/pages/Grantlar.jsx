@@ -11,26 +11,26 @@ const GRANTS = [
     type: 'Davlat',
     color: 'var(--navy)',
     items: [
-      { name: "Prezident stipendiyasi", amount: "2 500 000 so'm/oy", deadline: 'Har yil 1-sentabr', desc: "A'lo baholar va ilmiy faollik uchun" },
-      { name: "Davlat stipendiyasi (1-toifa)", amount: "850 000 so'm/oy", deadline: 'Avtomatik', desc: "GPA 3.5 va undan yuqori talabalar" },
-      { name: "Davlat stipendiyasi (2-toifa)", amount: "620 000 so'm/oy", deadline: 'Avtomatik', desc: "GPA 3.0–3.49 talabalar" },
+      { name: "Prezident stipendiyasi", amount: "2 500 000 soʻm/oy", deadline: 'Har yil 1-sentabr', desc: "A'lo baholar va ilmiy faollik uchun" },
+      { name: "Davlat stipendiyasi (1-toifa)", amount: "850 000 soʻm/oy", deadline: 'Avtomatik', desc: "GPA 3.5 va undan yuqori talabalar" },
+      { name: "Davlat stipendiyasi (2-toifa)", amount: "620 000 soʻm/oy", deadline: 'Avtomatik', desc: "GPA 3.0–3.49 talabalar" },
     ],
   },
   {
     type: "Xalqaro",
     color: 'var(--gold-dark)',
     items: [
-      { name: "Erasmus+ Stipendiyasi", amount: "800–1 200 EUR/oy", deadline: '1-fevral', desc: "Yevropa universitetlarida o'qish uchun" },
+      { name: "Erasmus+ Stipendiyasi", amount: "800–1 200 EUR/oy", deadline: '1-fevral', desc: "Yevropa universitetlarida oʻqish uchun" },
       { name: "DAAD (Germaniya)", amount: "750 EUR/oy", deadline: '15-oktabr', desc: "Germaniyada magistratura yoki PhD" },
-      { name: "Fulbright (AQSh)", amount: "To'liq qoplash", deadline: '1-oktabr', desc: "AQSh universitetlarida o'qish" },
+      { name: "Fulbright (AQSh)", amount: "Toʻliq qoplash", deadline: '1-oktabr', desc: "AQSh universitetlarida oʻqish" },
     ],
   },
   {
     type: "Konservatoriya ichki",
     color: '#555',
     items: [
-      { name: "Ijodiy yutuqlar granti", amount: "1 200 000 so'm", deadline: 'Har semestr', desc: "Tanlov va festivallar g'oliblari uchun" },
-      { name: "Ijtimoiy yordam", amount: "400 000 so'm/oy", deadline: 'Ariza asosida', desc: "Ehtiyojmand talabalar uchun" },
+      { name: "Ijodiy yutuqlar granti", amount: "1 200 000 soʻm", deadline: 'Har semestr', desc: "Tanlov va festivallar gʻoliblari uchun" },
+      { name: "Ijtimoiy yordam", amount: "400 000 soʻm/oy", deadline: 'Ariza asosida', desc: "Ehtiyojmand talabalar uchun" },
     ],
   },
 ];
@@ -95,7 +95,7 @@ export default function Grantlar() {
             borderLeft: '4px solid var(--gold)', padding: '24px 32px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.8, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Grant va stipendiya arizalari uchun <strong style={{ color: 'var(--navy)' }}>Talabalar ishlari bo'limi</strong>ga murojaat qiling
+              Grant va stipendiya arizalari uchun <strong style={{ color: 'var(--navy)' }}>Talabalar ishlari boʻlimi</strong>ga murojaat qiling
               (1-bino, 108-xona) yoki <strong style={{ color: 'var(--navy)' }}>talabalar@konservatoriya.uz</strong> manziliga yozing.
             </p>
           </div>

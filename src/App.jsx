@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Layout from './components/layout/Layout';
 
 // Pages
@@ -75,8 +76,9 @@ import RektorTabrigi from './pages/RektorTabrigi';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <LanguageProvider>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           
@@ -164,7 +166,8 @@ export default function App() {
 
           <Route path="*" element={<NotFound />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }

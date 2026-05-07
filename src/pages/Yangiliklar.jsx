@@ -15,7 +15,7 @@ const NEWS = [
     cat: 'Voqealar',
     date: '12 APREL, 2026',
     title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha',
-    excerpt: "Konservatoriya katta zalida o'tkazilgan tadbirda yetakchi ijrochilar ishtirok etdi.",
+    excerpt: "Konservatoriya katta zalida oʻtkazilgan tadbirda yetakchi ijrochilar ishtirok etdi.",
     image: 'https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800',
     featured: true,
   },
@@ -23,8 +23,8 @@ const NEWS = [
     id: 2,
     cat: "Ta'lim",
     date: '08 APREL, 2026',
-    title: "Yangi o'quv dasturlari tasdiqlandi",
-    excerpt: "2026-2027 o'quv yili uchun yangilangan sillabuslar Akademik Kengash tomonidan tasdiqlandi.",
+    title: "Yangi oʻquv dasturlari tasdiqlandi",
+    excerpt: "2026-2027 oʻquv yili uchun yangilangan sillabuslar Akademik Kengash tomonidan tasdiqlandi.",
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800',
     featured: false,
   },
@@ -32,8 +32,8 @@ const NEWS = [
     id: 3,
     cat: 'Mukofotlar',
     date: '02 APREL, 2026',
-    title: "Talabamiz xalqaro tanlovi g'olibi bo'ldi",
-    excerpt: "Vena shahrida bo'lib o'tgan yosh ijrochilar tanlovida konservatoriya talabasi birinchi o'rinni egalladi.",
+    title: "Talabamiz xalqaro tanlovi gʻolibi boʻldi",
+    excerpt: "Vena shahrida boʻlib oʻtgan yosh ijrochilar tanlovida konservatoriya talabasi birinchi oʻrinni egalladi.",
     image: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800',
     featured: false,
   },
@@ -42,7 +42,7 @@ const NEWS = [
     cat: 'Xalqaro',
     date: '28 MART, 2026',
     title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi",
-    excerpt: "Konservatoriya va Parij Musiqa Akademiyasi o'rtasida hamkorlik to'g'risida shartnoma imzolandi.",
+    excerpt: "Konservatoriya va Parij Musiqa Akademiyasi oʻrtasida hamkorlik toʻgʻrisida shartnoma imzolandi.",
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800',
     featured: false,
   },
@@ -68,7 +68,7 @@ export default function Yangiliklar() {
     <main className="content-wrapper">
       <PageHero
         tag="Axborot xizmati"
-        title="So'nggi"
+        title="Soʻnggi"
         emphasis="Yangiliklar"
         breadcrumbs={BREADCRUMBS}
       />
@@ -116,7 +116,7 @@ export default function Yangiliklar() {
                   {featured.excerpt}
                 </p>
                 <a href="#" className="btn-outline-dark" style={{ alignSelf: 'flex-start' }}>
-                  TO'LIQ O'QISH
+                  TOʻLIQ OʻQISH
                 </a>
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function Yangiliklar() {
             </div>
           )}
 
-          {/* Ko'proq yuklash */}
+          {/* Koʻproq yuklash */}
           <div style={{ textAlign: 'center', padding: '20px 0 40px' }}>
             <button className="btn-outline-dark">BARCHASI</button>
           </div>

@@ -11,11 +11,11 @@ export default function QabulKvotasi() {
         { label: 'Qabul', to: '/abituriyentlar' },
         { label: 'Qabul kvotasi' },
       ]}
-      lead="Joriy o'quv yili uchun belgilangan davlat granti va to'lov-kontrakt asosidagi qabul rejalari."
+      lead="Joriy oʻquv yili uchun belgilangan davlat granti va toʻlov-kontrakt asosidagi qabul rejalari."
       sections={[
         {
           heading: "Kvotalar haqida",
-          text: "Kvotalar har yili O'zbekiston Respublikasi Prezidenti qarori bilan tasdiqlanadi.",
+          text: "Kvotalar har yili Oʻzbekiston Respublikasi Prezidenti qarori bilan tasdiqlanadi.",
         }
       ]}
     />
