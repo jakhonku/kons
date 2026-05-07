@@ -5,11 +5,12 @@ import PageHero from '../components/PageHero';
 import DatePicker from '../components/DatePicker';
 import { ITICKET_URL } from '../data/events';
 import { useAdminPosters } from '../hooks/useAdminStorage';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
 const WEEKDAY_ABBR_UZ = ['Yaks', 'Dush', 'Sesh', 'Chor', 'Pay', 'Juma', 'Shan'];
 
-function adaptPoster(p) {
+function adaptPoster(p, language = 'uz') {
   let month = '', day = '', weekday = '', fullDate = '';
   if (p.date) {
     const d = new Date(p.date);
@@ -27,20 +28,34 @@ function adaptPoster(p) {
     const formatted = new Intl.NumberFormat('uz-UZ').format(numeric);
     return `${formatted} UZS`;
   };
+
+  const isRu = language === 'ru';
+  const isEn = language === 'en';
+
+  const title = (isRu && p.title_ru) ? p.title_ru : (isEn && p.title_en) ? p.title_en : p.title;
+  const venue = (isRu && p.venue_ru) ? p.venue_ru : (isEn && p.venue_en) ? p.venue_en : (p.venue || 'Katta Zal');
+  const artist = (isRu && p.artist_ru) ? p.artist_ru : (isEn && p.artist_en) ? p.artist_en : (p.artist || '');
+  const desc = (isRu && p.description_ru) ? p.description_ru : (isEn && p.description_en) ? p.description_en : (p.description || '');
+  
+  let img = p.image;
+  if (isRu && p.image_ru) img = p.image_ru;
+  else if (isEn && p.image_en) img = p.image_en;
+
   const priceText = p.free ? 'Bepul' : formatPrice(p.price);
   const time = [p.time, priceText].filter(Boolean).join(' | ');
+
   return {
     id: `poster-${p.id}`,
     month, day, weekday, fullDate,
-    title: p.title,
-    venue: p.venue || 'Katta Zal',
+    title,
+    venue,
     tags: p.tags || '',
     time: time || (p.time || ''),
     free: !!p.free,
-    img: p.image || 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1600',
-    desc: p.description || '',
+    img: img || 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1600',
+    desc,
     program: [],
-    artist: p.artist || '',
+    artist,
     ticket_url: p.ticket_url || '',
   };
 }
@@ -54,13 +69,14 @@ const HALLS = ['Barchasi', 'Katta Zal', 'Organ Zali', 'Kichik Zal', 'Kamer Zali'
 
 
 export default function Taqvim() {
+  const { lang } = useTranslation();
   const [selectedHall, setSelectedHall] = useState('Barchasi');
   const [selectedDate, setSelectedDate] = useState('');
   const { items: adminPosters } = useAdminPosters();
 
   const allEvents = useMemo(() => {
-    return adminPosters.map(adaptPoster);
-  }, [adminPosters]);
+    return adminPosters.map(p => adaptPoster(p, lang));
+  }, [adminPosters, lang]);
 
   const filteredEvents = useMemo(() => {
     return allEvents.filter(event => {

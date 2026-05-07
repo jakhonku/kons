@@ -9,15 +9,25 @@ const HALLS = ['Katta Zal', 'Kichik Zal', 'Organ Zali', 'Kamer Zali'];
 
 const EMPTY = {
   title: '',
+  title_ru: '',
+  title_en: '',
   artist: '',
+  artist_ru: '',
+  artist_en: '',
   venue: 'Katta Zal',
+  venue_ru: 'Большой Зал',
+  venue_en: 'Grand Hall',
   date: '',
   time: '',
   price: '',
   free: false,
   tags: '',
   description: '',
+  description_ru: '',
+  description_en: '',
   image: '',
+  image_ru: '',
+  image_en: '',
   images: [],
   video: '',
   ticket_url: '',
@@ -35,6 +45,15 @@ export default function AdminPosters() {
   const [uploadingImage, setUploadingImage] = useState(false);
   const [formError, setFormError] = useState('');
   const [showPreview, setShowPreview] = useState(false);
+  const [formLang, setFormLang] = useState('uz');
+
+  useEffect(() => {
+    if (params.get('new') === '1') {
+      openNew();
+      params.delete('new');
+      setParams(params, { replace: true });
+    }
+  }, [params, setParams]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -55,15 +74,25 @@ export default function AdminPosters() {
     setEditing(item.id);
     setForm({
       title: item.title || '',
+      title_ru: item.title_ru || '',
+      title_en: item.title_en || '',
       artist: item.artist || '',
+      artist_ru: item.artist_ru || '',
+      artist_en: item.artist_en || '',
       venue: item.venue || 'Katta Zal',
+      venue_ru: item.venue_ru || '',
+      venue_en: item.venue_en || '',
       date: item.date || '',
       time: item.time || '',
       price: item.price || '',
       free: !!item.free,
       tags: item.tags || '',
       description: item.description || '',
+      description_ru: item.description_ru || '',
+      description_en: item.description_en || '',
       image: item.image || '',
+      image_ru: item.image_ru || '',
+      image_en: item.image_en || '',
       images: (Array.isArray(item.images) ? item.images.filter(Boolean) : (item.image ? [item.image] : [])),
       video: item.video || '',
       ticket_url: item.ticket_url || '',
@@ -84,15 +113,25 @@ export default function AdminPosters() {
     setFormError('');
     const payload = {
       title: form.title,
+      title_ru: form.title_ru,
+      title_en: form.title_en,
       artist: form.artist,
+      artist_ru: form.artist_ru,
+      artist_en: form.artist_en,
       venue: form.venue,
+      venue_ru: form.venue_ru,
+      venue_en: form.venue_en,
       date: form.date || null,
       time: form.time,
       price: form.free ? '' : form.price,
       free: form.free,
       tags: form.tags,
       description: form.description,
+      description_ru: form.description_ru,
+      description_en: form.description_en,
       image: form.images?.[0] || form.image || '',
+      image_ru: form.image_ru,
+      image_en: form.image_en,
       images: form.images || [],
       video: form.video,
       ticket_url: (form.ticket_url || '').trim() || null,
@@ -228,31 +267,24 @@ export default function AdminPosters() {
               <button type="button" className="admin-icon-btn" onClick={close} disabled={submitting}><X size={18} /></button>
             </header>
             <form onSubmit={onSubmit} className="admin-form">
-              <div className="admin-form-grid">
-                <label className="admin-field admin-field-full">
-                  <span className="admin-field-label">Tadbir nomi *</span>
-                  <input
-                    type="text"
-                    value={form.title}
-                    onChange={(e) => setForm({ ...form, title: e.target.value })}
-                    required
-                    placeholder="Masalan: Bahor Simfoniyasi"
-                  />
-                </label>
+              <div style={{ display: 'flex', gap: '10px', marginBottom: '20px', paddingBottom: '10px', borderBottom: '1px solid #eee' }}>
+                <button type="button" onClick={() => setFormLang('uz')} className={`admin-chip ${formLang === 'uz' ? 'is-active' : ''}`} style={{ padding: '8px 20px' }}>UZBEK (Asosiy)</button>
+                <button type="button" onClick={() => setFormLang('ru')} className={`admin-chip ${formLang === 'ru' ? 'is-active' : ''}`} style={{ padding: '8px 20px' }}>RUSSIAN</button>
+                <button type="button" onClick={() => setFormLang('en')} className={`admin-chip ${formLang === 'en' ? 'is-active' : ''}`} style={{ padding: '8px 20px' }}>ENGLISH</button>
+              </div>
 
-                <label className="admin-field admin-field-full">
-                  <span className="admin-field-label">Ijrochi / Sanʼatkor</span>
-                  <input
-                    type="text"
-                    value={form.artist}
-                    onChange={(e) => setForm({ ...form, artist: e.target.value })}
-                    placeholder="Ijrochining ismi yoki ansambl nomi"
-                  />
-                </label>
+              <div className="admin-form-grid">
 
                 <label className="admin-field">
                   <span className="admin-field-label">Zal</span>
-                  <select value={form.venue} onChange={(e) => setForm({ ...form, venue: e.target.value })}>
+                  <select 
+                    value={formLang === 'uz' ? form.venue : formLang === 'ru' ? form.venue_ru : form.venue_en} 
+                    onChange={(e) => {
+                      if (formLang === 'uz') setForm({ ...form, venue: e.target.value });
+                      else if (formLang === 'ru') setForm({ ...form, venue_ru: e.target.value });
+                      else setForm({ ...form, venue_en: e.target.value });
+                    }}
+                  >
                     {HALLS.map((h) => <option key={h} value={h}>{h}</option>)}
                   </select>
                 </label>
@@ -319,23 +351,30 @@ export default function AdminPosters() {
                   />
                 </label>
 
-                <label className="admin-field admin-field-full">
-                  <span className="admin-field-label">Tadbir bayoni</span>
-                  <textarea
-                    rows={4}
-                    value={form.description}
-                    onChange={(e) => setForm({ ...form, description: e.target.value })}
-                    placeholder="Tadbir haqida qisqacha maʼlumot"
-                  />
-                </label>
 
                 <label className="admin-field admin-field-full">
-                  <span className="admin-field-label">Afisha rasmlari (10 tagacha, tartib admin tomonidan)</span>
-                  <ImageGalleryEditor
-                    images={form.images || []}
-                    onChange={(images) => setForm({ ...form, images })}
-                    folder="posters"
-                  />
+                  <span className="admin-field-label">Afisha Rasmlari ({formLang.toUpperCase()}) (Birinchisi asosiy)</span>
+                  {formLang === 'uz' && (
+                    <ImageGalleryEditor
+                      images={form.images || []}
+                      onChange={(images) => setForm({ ...form, images })}
+                      folder="posters"
+                    />
+                  )}
+                  {formLang === 'ru' && (
+                    <ImageGalleryEditor
+                      images={form.images_ru || []}
+                      onChange={(images) => setForm({ ...form, images_ru: images })}
+                      folder="posters"
+                    />
+                  )}
+                  {formLang === 'en' && (
+                    <ImageGalleryEditor
+                      images={form.images_en || []}
+                      onChange={(images) => setForm({ ...form, images_en: images })}
+                      folder="posters"
+                    />
+                  )}
                 </label>
 
                 <label className="admin-field admin-field-full">

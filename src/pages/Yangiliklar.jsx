@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Loader2, Newspaper, Send } from 'lucide-react';
+import { Eye, Loader2, Newspaper, Send } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import { useAdminNews, useAdminTelegram } from '../hooks/useAdminStorage';
 import TelegramPostEmbed from '../components/TelegramPostEmbed';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -24,6 +25,7 @@ function formatDateUz(value) {
 }
 
 export default function Yangiliklar() {
+  const { lang } = useTranslation();
   const [tab, setTab] = useState('news');
   const [active, setActive] = useState("Barchasi");
   const { items: adminNews, loading } = useAdminNews();
@@ -31,19 +33,30 @@ export default function Yangiliklar() {
 
   const allNews = useMemo(() => {
     return adminNews.map((n) => {
-      const imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
-      const cover = imgs[0] || n.image || '';
+      const isRu = lang === 'ru';
+      const isEn = lang === 'en';
+      
+      const title = (isRu && n.title_ru) ? n.title_ru : (isEn && n.title_en) ? n.title_en : n.title;
+      const excerpt = (isRu && n.excerpt_ru) ? n.excerpt_ru : (isEn && n.excerpt_en) ? n.excerpt_en : n.excerpt;
+      
+      let imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
+      if (isRu && Array.isArray(n.images_ru) && n.images_ru.length > 0) imgs = n.images_ru;
+      else if (isEn && Array.isArray(n.images_en) && n.images_en.length > 0) imgs = n.images_en;
+      
+      const mainImg = imgs[0] || n.image || null;
+
       return {
         id: `admin-${n.id}`,
-        cat: n.category || 'Voqealar',
+        cat: n.category || 'Yangiliklar',
         date: formatDateUz(n.date) || formatDateUz(n.created_at),
-        title: n.title,
-        excerpt: n.excerpt || '',
-        image: cover,
+        title: title,
+        excerpt: excerpt || '',
+        image: mainImg,
         featured: !!n.featured,
+        views: n.views || 0,
       };
     });
-  }, [adminNews]);
+  }, [adminNews, lang]);
 
   const filtered = active === "Barchasi" ? allNews : allNews.filter(n => n.cat === active);
   const featured  = filtered.find(n => n.featured) ?? filtered[0];
@@ -122,23 +135,41 @@ export default function Yangiliklar() {
               )}
 
               {!loading && featured && (
-                <Link to={`/yangiliklar/${featured.id}`} className="news-featured-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '0', marginTop: '40px', marginBottom: '40px', border: '1px solid var(--light-border)', overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}>
-                  <div style={{ position: 'relative', minHeight: '380px', overflow: 'hidden' }}>
-                    <img
-                      src={featured.image}
-                      alt={featured.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
-                    />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(26,26,56,0.6) 0%, rgba(26,26,56,0.2) 100%)' }} />
-                    <div style={{ position: 'absolute', bottom: '28px', left: '28px' }}>
-                      <span style={{ background: 'var(--gold)', color: 'var(--white)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', padding: '4px 12px', fontFamily: 'var(--font-sans)' }}>
-                        {featured.cat}
-                      </span>
+                <Link to={`/yangiliklar/${featured.id}`} className="news-featured-grid" style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: featured.image ? '1.4fr 1fr' : '1fr', 
+                  gap: '0', 
+                  marginTop: '40px', 
+                  marginBottom: '40px', 
+                  border: '1px solid var(--light-border)', 
+                  overflow: 'hidden', 
+                  textDecoration: 'none', 
+                  color: 'inherit', 
+                  minHeight: featured.image ? '300px' : 'auto' 
+                }}>
+                  {featured.image && (
+                    <div style={{ 
+                      position: 'relative', 
+                      overflow: 'hidden',
+                      background: 'transparent',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <img
+                        src={featured.image}
+                        alt={featured.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                      />
+                      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(26,26,56,0.6) 0%, rgba(26,26,56,0.2) 100%)' }} />
                     </div>
-                  </div>
-                  <div style={{ background: 'var(--white)', padding: '44px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '2px', color: 'var(--gold-dark)', marginBottom: '14px', fontFamily: 'var(--font-sans)' }}>
-                      {featured.date}
+                  )}
+                  <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'var(--white)' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '2px', color: 'var(--gold-dark)', marginBottom: '14px', fontFamily: 'var(--font-sans)', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                      <span>{featured.date}</span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '5px', opacity: 0.8 }}>
+                        <Eye size={14} /> {featured.views}
+                      </span>
                     </div>
                     <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 300, color: 'var(--navy)', lineHeight: 1.25, marginBottom: '20px' }}>
                       {featured.title}
@@ -168,21 +199,34 @@ export default function Yangiliklar() {
                       onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(26,26,56,0.1)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                       onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
                     >
-                      <div style={{ position: 'relative', overflow: 'hidden', height: '180px' }}>
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                        />
-                        <div style={{ position: 'absolute', top: '14px', left: '14px' }}>
-                          <span style={{ background: 'var(--navy)', color: 'var(--white)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', padding: '3px 10px', fontFamily: 'var(--font-sans)' }}>
-                            {item.cat}
-                          </span>
+                      {item.image && (
+                        <div style={{ 
+                          position: 'relative', 
+                          overflow: 'hidden', 
+                          height: '180px',
+                          background: 'transparent',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                          />
+                          <div style={{ position: 'absolute', top: '14px', left: '14px' }}>
+                            <span style={{ background: 'var(--navy)', color: 'var(--white)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', padding: '3px 10px', fontFamily: 'var(--font-sans)' }}>
+                              {item.cat}
+                            </span>
+                          </div>
                         </div>
-                      </div>
+                      )}
                       <div style={{ padding: '26px' }}>
-                        <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '2px', color: 'var(--gold-dark)', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>
-                          {item.date}
+                        <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '2px', color: 'var(--gold-dark)', marginBottom: '12px', fontFamily: 'var(--font-sans)', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <span>{item.date}</span>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '4px', opacity: 0.7 }}>
+                            <Eye size={12} /> {item.views}
+                          </span>
                         </div>
                         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 400, color: 'var(--navy)', lineHeight: 1.3, marginBottom: '14px' }}>
                           {item.title}

@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Calendar, Tag, ArrowLeft, ArrowRight, Loader2, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Calendar, Tag, ArrowLeft, ArrowRight, Loader2, ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import { useAdminNews } from '../hooks/useAdminStorage';
-import { isVideoUrl } from '../lib/supabase';
+import { isVideoUrl, supabase } from '../lib/supabase';
 import PublicGallery from '../components/PublicGallery';
+import { useTranslation } from '../contexts/LanguageContext';
 
 function formatDateUz(value) {
   if (!value) return '';
@@ -23,34 +24,75 @@ function youTubeEmbed(url) {
   return m ? `https://www.youtube.com/embed/${m[1]}` : null;
 }
 
+function instagramEmbed(url) {
+  if (!url) return null;
+  // Har qanday instagram.com/.../id/ ko'rinishidagi havolani ushlash
+  const m = url.match(/instagram\.com\/(?:p|reels|tv)\/([\w-]+)/i);
+  if (m && m[1]) {
+    return `https://www.instagram.com/reels/${m[1]}/embed`;
+  }
+  return null;
+}
+
 export default function YangilikBatafsil() {
+  const { lang } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
   const { items: adminNews, loading } = useAdminNews();
 
   const allNews = useMemo(() => {
     return adminNews.map((n) => {
-      const imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
+      const isRu = lang === 'ru';
+      const isEn = lang === 'en';
+      
+      const title = (isRu && n.title_ru) ? n.title_ru : (isEn && n.title_en) ? n.title_en : n.title;
+      const excerpt = (isRu && n.excerpt_ru) ? n.excerpt_ru : (isEn && n.excerpt_en) ? n.excerpt_en : n.excerpt;
+      const body = (isRu && n.body_ru) ? n.body_ru : (isEn && n.body_en) ? n.body_en : n.body;
+      
+      let imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
+      if (isRu && Array.isArray(n.images_ru) && n.images_ru.length > 0) imgs = n.images_ru;
+      else if (isEn && Array.isArray(n.images_en) && n.images_en.length > 0) imgs = n.images_en;
+
       if (imgs.length === 0 && n.image) imgs.push(n.image);
+      const mainImg = imgs[0] || null;
+
       return {
         id: `admin-${n.id}`,
         cat: n.category || 'Voqealar',
         date: formatDateUz(n.date) || formatDateUz(n.created_at),
-        title: n.title,
-        excerpt: n.excerpt || '',
-        body: n.body || '',
-        image: imgs[0] || '',
+        title: title,
+        excerpt: excerpt || '',
+        body: body || '',
+        image: mainImg,
         images: imgs,
         video: n.video || '',
         featured: !!n.featured,
+        views: n.views || 0,
       };
     });
-  }, [adminNews]);
+  }, [adminNews, lang]);
 
   const idx = allNews.findIndex((n) => String(n.id) === String(id));
   const item = idx >= 0 ? allNews[idx] : null;
   const prev = idx > 0 ? allNews[idx - 1] : null;
   const next = idx >= 0 && idx < allNews.length - 1 ? allNews[idx + 1] : null;
+
+  useEffect(() => {
+    if (item && item.id.startsWith('admin-')) {
+      const numericId = item.id.replace('admin-', '');
+      const incremented = sessionStorage.getItem(`viewed-${numericId}`);
+      
+      if (!incremented) {
+        supabase
+          .from('news')
+          .update({ views: (item.views || 0) + 1 })
+          .eq('id', numericId)
+          .then(() => {
+            sessionStorage.setItem(`viewed-${numericId}`, 'true');
+          });
+      }
+    }
+  }, [item?.id]);
 
   if (loading && !item) {
     return (
@@ -75,6 +117,7 @@ export default function YangilikBatafsil() {
   }
 
   const ytEmbed = item.video ? youTubeEmbed(item.video) : null;
+  const igEmbed = item.video ? instagramEmbed(item.video) : null;
   const isDirectVideo = item.video && isVideoUrl(item.video);
 
   const BREADCRUMBS = [
@@ -107,6 +150,9 @@ export default function YangilikBatafsil() {
                     <Calendar size={12} strokeWidth={2} /> {item.date}
                   </span>
                 )}
+                <span className="news-detail-views" style={{ display: 'flex', alignItems: 'center', gap: '5px', marginLeft: '10px', opacity: 0.7 }}>
+                  <Eye size={12} strokeWidth={2} /> {item.views}
+                </span>
               </div>
 
               {/* Gallery */}
@@ -144,6 +190,22 @@ export default function YangilikBatafsil() {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                    />
+                  ) : igEmbed ? (
+                    <iframe
+                      src={igEmbed}
+                      title="Instagram video"
+                      frameBorder="0"
+                      allowTransparency="true"
+                      allow="encrypted-media"
+                      style={{ 
+                        width: '100%', 
+                        maxWidth: '400px', 
+                        height: '600px', 
+                        margin: '0 auto', 
+                        display: 'block',
+                        borderRadius: '12px'
+                      }}
                     />
                   ) : isDirectVideo ? (
                     <video src={item.video} controls />

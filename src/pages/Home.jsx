@@ -1,27 +1,40 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, Play, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '../contexts/LanguageContext';
 import { useAdminNews, useAdminTicker } from '../hooks/useAdminStorage';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const isMobile = useMediaQuery('(max-width: 991px)');
   const { items: adminNews, loading } = useAdminNews();
   const [newsIndex, setNewsIndex] = useState(0);
 
   const displayNews = useMemo(() => {
-    return adminNews.map(n => ({
-      id: n.id,
-      cat: n.category || 'Voqealar',
-      title: n.title,
-      date: n.date || n.created_at,
-      excerpt: n.excerpt || '',
-      image: (Array.isArray(n.images) ? n.images[0] : n.image) || 'https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800',
-    })).slice(0, 5);
-  }, [adminNews]);
+    return adminNews.map(n => {
+      const isRu = lang === 'ru';
+      const isEn = lang === 'en';
+      
+      const title = (isRu && n.title_ru) ? n.title_ru : (isEn && n.title_en) ? n.title_en : n.title;
+      const excerpt = (isRu && n.excerpt_ru) ? n.excerpt_ru : (isEn && n.excerpt_en) ? n.excerpt_en : n.excerpt;
+      
+      let mainImg = (Array.isArray(n.images) ? n.images[0] : n.image);
+      if (isRu && Array.isArray(n.images_ru) && n.images_ru.length > 0) mainImg = n.images_ru[0];
+      else if (isEn && Array.isArray(n.images_en) && n.images_en.length > 0) mainImg = n.images_en[0];
+
+      return {
+        id: `admin-${n.id}`,
+        cat: n.category || 'Voqealar',
+        title: title,
+        date: n.date || n.created_at,
+        excerpt: excerpt || '',
+        image: mainImg || null,
+        views: n.views || 0,
+      };
+    }).slice(0, 5);
+  }, [adminNews, lang]);
 
   useEffect(() => {
     if (displayNews.length <= 1) return;
@@ -328,27 +341,32 @@ export default function Home() {
                     position: 'relative'
                   }}
                 >
-                  {/* Rasm qismi */}
-                  <div className="news-slide-image-wrap" style={{ 
-                    flex: isMobile ? 'none' : '1.5',
-                    height: isMobile ? '300px' : '550px',
-                    width: '100%',
-                    position: 'relative',
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
-                  }}>
-                    <img
-                      src={displayNews[newsIndex].image}
-                      alt={displayNews[newsIndex].title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div style={{ 
-                      position: 'absolute', 
-                      inset: 0, 
-                      background: 'linear-gradient(to bottom, transparent 60%, rgba(7,7,14,0.8))' 
-                    }} />
-                  </div>
+                  {displayNews[newsIndex].image && displayNews[newsIndex].image !== '/Konservatoriya_logo_white-05.png' && (
+                    <div className="news-slide-image-wrap" style={{ 
+                      flex: isMobile ? 'none' : '1.5',
+                      height: isMobile ? '300px' : '550px',
+                      width: '100%',
+                      position: 'relative',
+                      borderRadius: '12px',
+                      overflow: 'hidden',
+                      boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                      background: 'transparent',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <img
+                        src={displayNews[newsIndex].image}
+                        alt={displayNews[newsIndex].title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <div style={{ 
+                        position: 'absolute', 
+                        inset: 0, 
+                        background: 'linear-gradient(to bottom, transparent 60%, rgba(7,7,14,0.8))' 
+                      }} />
+                    </div>
+                  )}
 
                   {/* Matn qismi - Glassmorphism panel */}
                   <div className="news-slide-text-panel" style={{ 
@@ -382,8 +400,11 @@ export default function Home() {
                       }}>
                         {displayNews[newsIndex].cat}
                       </span>
-                      <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
-                        {new Date(displayNews[newsIndex].date).toLocaleDateString('uz-UZ', { day: '2-digit', month: 'long', year: 'numeric' })}
+                      <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontFamily: 'var(--font-sans)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '15px' }}>
+                        <span>{new Date(displayNews[newsIndex].date).toLocaleDateString('uz-UZ', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                          <Eye size={14} /> {displayNews[newsIndex].views || 0}
+                        </span>
                       </span>
                     </div>
 

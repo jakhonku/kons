@@ -5,11 +5,12 @@ import PageHero from '../components/PageHero';
 import PublicGallery from '../components/PublicGallery';
 import { ITICKET_URL } from '../data/events';
 import { useAdminPosters } from '../hooks/useAdminStorage';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
 const WEEKDAY_ABBR_UZ = ['Yaks', 'Dush', 'Sesh', 'Chor', 'Pay', 'Juma', 'Shan'];
 
-function adaptPoster(p) {
+function adaptPoster(p, language = 'uz') {
   let month = '', day = '', weekday = '', fullDate = '';
   if (p.date) {
     const d = new Date(p.date);
@@ -27,36 +28,51 @@ function adaptPoster(p) {
     const formatted = new Intl.NumberFormat('uz-UZ').format(numeric);
     return `${formatted} UZS`;
   };
+
+  const isRu = language === 'ru';
+  const isEn = language === 'en';
+
+  const title = (isRu && p.title_ru) ? p.title_ru : (isEn && p.title_en) ? p.title_en : p.title;
+  const venue = (isRu && p.venue_ru) ? p.venue_ru : (isEn && p.venue_en) ? p.venue_en : (p.venue || 'Katta Zal');
+  const artist = (isRu && p.artist_ru) ? p.artist_ru : (isEn && p.artist_en) ? p.artist_en : (p.artist || '');
+  const desc = (isRu && p.description_ru) ? p.description_ru : (isEn && p.description_en) ? p.description_en : (p.description || '');
+
+  let imgs = Array.isArray(p.images) ? p.images.filter(Boolean) : [];
+  if (isRu && Array.isArray(p.images_ru) && p.images_ru.length > 0) imgs = p.images_ru;
+  else if (isEn && Array.isArray(p.images_en) && p.images_en.length > 0) imgs = p.images_en;
+  
+  if (imgs.length === 0 && p.image) imgs.push(p.image);
+
   const priceText = p.free ? 'Bepul' : formatPrice(p.price);
   const time = [p.time, priceText].filter(Boolean).join(' | ');
-  const imgs = Array.isArray(p.images) ? p.images.filter(Boolean) : [];
-  if (imgs.length === 0 && p.image) imgs.push(p.image);
+
   return {
     id: `poster-${p.id}`,
     month, day, weekday, fullDate,
-    title: p.title,
-    venue: p.venue || 'Katta Zal',
+    title,
+    venue,
     tags: p.tags || '',
     time: time || (p.time || ''),
     free: !!p.free,
     img: imgs[0] || 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1600',
     images: imgs,
-    desc: p.description || '',
+    desc,
     program: [],
-    artist: p.artist || '',
+    artist,
     ticket_url: p.ticket_url || '',
   };
 }
 
 export default function TadbirBatafsil() {
+  const { language } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
   const { items: adminPosters, loading } = useAdminPosters();
   const [fullImage, setFullImage] = useState(null);
 
   const allEvents = useMemo(() => {
-    return adminPosters.map(adaptPoster);
-  }, [adminPosters]);
+    return adminPosters.map(p => adaptPoster(p, language));
+  }, [adminPosters, language]);
 
   const eventIndex = allEvents.findIndex((e) => String(e.id) === String(id));
   const event = eventIndex >= 0 ? allEvents[eventIndex] : null;

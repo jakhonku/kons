@@ -23,12 +23,20 @@ export default function PublicGallery({ images = [], alt = '' }) {
 
   if (list.length === 0) return null;
   const cur = list[active];
+  const isFallback = cur === '/Konservatoriya_logo_white-05.png';
 
   return (
     <>
       <div className="public-gallery">
-        <div className="public-gallery-main" onClick={() => setLightbox(true)}>
-          <img src={cur} alt={alt} />
+        <div className="public-gallery-main" onClick={() => setLightbox(true)} style={{ background: isFallback ? 'var(--navy)' : 'transparent' }}>
+          <img 
+            src={cur} 
+            alt={alt} 
+            style={{ 
+              objectFit: isFallback ? 'contain' : 'cover',
+              padding: isFallback ? '120px' : '0'
+            }} 
+          />
           {list.length > 1 && (
             <>
               <button
@@ -60,8 +68,16 @@ export default function PublicGallery({ images = [], alt = '' }) {
                 className={`public-gallery-thumb${i === active ? ' is-active' : ''}`}
                 onClick={() => setActive(i)}
                 aria-label={`Rasm ${i + 1}`}
+                style={{ background: img === '/Konservatoriya_logo_white-05.png' ? 'var(--navy)' : 'transparent' }}
               >
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  style={{ 
+                    objectFit: img === '/Konservatoriya_logo_white-05.png' ? 'contain' : 'cover',
+                    padding: img === '/Konservatoriya_logo_white-05.png' ? '8px' : '0'
+                  }} 
+                />
               </button>
             ))}
           </div>
@@ -83,6 +99,10 @@ export default function PublicGallery({ images = [], alt = '' }) {
             alt={alt}
             className="lightbox-img"
             onClick={(e) => e.stopPropagation()}
+            style={{ 
+              objectFit: isFallback ? 'contain' : 'initial',
+              padding: isFallback ? '60px' : '0'
+            }}
           />
           {list.length > 1 && (
             <>
