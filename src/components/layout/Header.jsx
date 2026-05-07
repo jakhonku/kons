@@ -104,19 +104,19 @@ export default function Header() {
             {/* Social Links — Faqat bosh sahifada */}
             {isHome && (
               <div className="header-social-wrap">
-                <a href="https://t.me/konservatoriya_uz" target="_blank" rel="noopener noreferrer" className="h-social-link telegram" aria-label="Telegram">
+                <a href="https://t.me/Ozbekistondavlatkonservatoriyasi" target="_blank" rel="noopener noreferrer" className="h-social-link telegram" aria-label="Telegram">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                   </svg>
                 </a>
-                <a href="https://instagram.com/konservatoriya_uz" target="_blank" rel="noopener noreferrer" className="h-social-link instagram" aria-label="Instagram">
+                <a href="https://instagram.com/konservatoriya_uzb" target="_blank" rel="noopener noreferrer" className="h-social-link instagram" aria-label="Instagram">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                   </svg>
                 </a>
-                <a href="https://youtube.com/@konservatoriya_uz" target="_blank" rel="noopener noreferrer" className="h-social-link youtube" aria-label="YouTube">
+                <a href="https://youtube.com/@stateconservatoryofuzbekis282?si=z6atAUb3y8225Je3" target="_blank" rel="noopener noreferrer" className="h-social-link youtube" aria-label="YouTube">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.95 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
                     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />

@@ -2,37 +2,37 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../../contexts/LanguageContext';
 
 const MUASSASA_KEYS = [
-  { key: 'structure',    to: '/tuzilma' },
-  { key: 'management',   to: '/rahbariyat' },
-  { key: 'documents',    to: '/hujjatlar' },
-  { key: 'applicants',   to: '/abituriyentlar' },
+  { key: 'structure', to: '/tuzilma' },
+  { key: 'management', to: '/rahbariyat' },
+  { key: 'documents', to: '/hujjatlar' },
+  { key: 'applicants', to: '/abituriyentlar' },
   { key: 'international', to: '/xalqaro' },
-  { key: 'news',         to: '/yangiliklar' },
+  { key: 'news', to: '/yangiliklar' },
 ];
 
 const TALABALAR_KEYS = [
-  { key: 'students',    to: '/talabalar' },
-  { key: 'schedules',   to: '/dars-jadvali' },
-  { key: 'library',     to: '/kutubxona' },
+  { key: 'students', to: '/talabalar' },
+  { key: 'schedules', to: '/dars-jadvali' },
+  { key: 'library', to: '/kutubxona' },
   { key: 'registrator', to: '/registrator' },
-  { key: 'clubs',       to: '/togaraklar' },
-  { key: 'dorm',        to: '/yotoqxona' },
-  { key: 'hemis',       to: '/hemis-talaba' },
+  { key: 'clubs', to: '/togaraklar' },
+  { key: 'dorm', to: '/yotoqxona' },
+  { key: 'hemis', to: '/hemis-talaba' },
 ];
 
 const SOCIAL = [
   {
     label: 'Telegram',
-    href: 'https://t.me/konservatoriya_uz',
+    href: 'https://t.me/Ozbekistondavlatkonservatoriyasi',
     svg: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
       </svg>
     ),
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/konservatoriya_uz',
+    href: 'https://instagram.com/konservatoriya_uzb',
     svg: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
@@ -43,7 +43,7 @@ const SOCIAL = [
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com/@konservatoriya_uz',
+    href: 'https://youtube.com/@stateconservatoryofuzbekis282?si=z6atAUb3y8225Je3',
     svg: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.95 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
@@ -56,7 +56,7 @@ const SOCIAL = [
     href: 'https://facebook.com/konservatoriya.uz',
     svg: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
       </svg>
     ),
   },
