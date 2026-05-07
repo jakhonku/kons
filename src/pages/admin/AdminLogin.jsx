@@ -52,7 +52,7 @@ export default function AdminLogin() {
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="username"
                 required
-                placeholder="admin@konservatoriya.uz"
+                placeholder="Email manzilingiz"
               />
             </span>
           </label>
