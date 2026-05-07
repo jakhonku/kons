@@ -156,17 +156,41 @@ export default function Home() {
 
           <div className="reveal home-gallery-grid">
             <div className="gallery-item-home gallery-item-wide-tall">
-              <img src="/images/fotohisobot/img3.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G3" />
+              <img 
+                src="/images/fotohisobot/img3.jpg" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
+                alt="G3" 
+                loading="lazy"
+                decoding="async"
+              />
               <div className="gallery-hover-overlay">{t('home.gallery.photoCaption')}</div>
             </div>
             <div className="gallery-item-home">
-              <img src="/images/fotohisobot/img1.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G1" />
+              <img 
+                src="/images/fotohisobot/img1.jpg" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
+                alt="G1" 
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="gallery-item-home">
-              <img src="/images/fotohisobot/img2.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G2" />
+              <img 
+                src="/images/fotohisobot/img2.jpg" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
+                alt="G2" 
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="gallery-item-home gallery-item-wide">
-              <img src="/image.png" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} alt="G4" />
+              <img 
+                src="/image.png" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
+                alt="G4" 
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
 
@@ -359,6 +383,8 @@ export default function Home() {
                         src={displayNews[newsIndex].image}
                         alt={displayNews[newsIndex].title}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div style={{ 
                         position: 'absolute', 

@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export function useScrollReveal() {
+  const location = useLocation();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -11,12 +14,16 @@ export function useScrollReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
+      { 
+        threshold: 0.1, 
+        rootMargin: '0px 0px -50px 0px' 
+      }
     );
 
-    const targets = document.querySelectorAll('.reveal');
+    // Only observe elements that are not yet revealed
+    const targets = document.querySelectorAll('.reveal:not(.revealed)');
     targets.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  });
+  }, [location.pathname]);
 }

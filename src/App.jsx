@@ -4,6 +4,7 @@ import { AdminAuthProvider } from './contexts/AdminAuthContext';
 import Layout from './components/layout/Layout';
 import AdminLayout from './components/admin/AdminLayout';
 import ProtectedRoute from './components/admin/ProtectedRoute';
+import Preloader from './components/layout/Preloader';
 
 // Admin pages
 import AdminLogin from './pages/admin/AdminLogin';
@@ -91,6 +92,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <AdminAuthProvider>
+      <Preloader />
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Routes>
         {/* Admin (yashirin) — havolasi navigatsiyada koʻrinmaydi */}
