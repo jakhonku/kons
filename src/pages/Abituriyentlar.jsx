@@ -151,7 +151,7 @@ export default function Abituriyentlar() {
       </div>
 
       <section className="main-content">
-        <div className="container" style={{ maxWidth: '1100px' }}>
+        <div className="container">
 
           {/* Muhim sana */}
           <div className="info-box" style={{ marginTop: 0 }}>

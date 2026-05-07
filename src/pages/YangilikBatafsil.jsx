@@ -1,0 +1,211 @@
+import { useMemo, useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Calendar, Tag, ArrowLeft, ArrowRight, Loader2, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import PageHero from '../components/PageHero';
+import { useAdminNews } from '../hooks/useAdminStorage';
+import { isVideoUrl } from '../lib/supabase';
+import PublicGallery from '../components/PublicGallery';
+
+function formatDateUz(value) {
+  if (!value) return '';
+  try {
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return value;
+    return d.toLocaleDateString('uz-UZ', { day: '2-digit', month: 'long', year: 'numeric' }).toUpperCase();
+  } catch {
+    return value;
+  }
+}
+
+function youTubeEmbed(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : null;
+}
+
+export default function YangilikBatafsil() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { items: adminNews, loading } = useAdminNews();
+
+  const allNews = useMemo(() => {
+    return adminNews.map((n) => {
+      const imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
+      if (imgs.length === 0 && n.image) imgs.push(n.image);
+      return {
+        id: `admin-${n.id}`,
+        cat: n.category || 'Voqealar',
+        date: formatDateUz(n.date) || formatDateUz(n.created_at),
+        title: n.title,
+        excerpt: n.excerpt || '',
+        body: n.body || '',
+        image: imgs[0] || '',
+        images: imgs,
+        video: n.video || '',
+        featured: !!n.featured,
+      };
+    });
+  }, [adminNews]);
+
+  const idx = allNews.findIndex((n) => String(n.id) === String(id));
+  const item = idx >= 0 ? allNews[idx] : null;
+  const prev = idx > 0 ? allNews[idx - 1] : null;
+  const next = idx >= 0 && idx < allNews.length - 1 ? allNews[idx + 1] : null;
+
+  if (loading && !item) {
+    return (
+      <main className="content-wrapper">
+        <div className="container" style={{ padding: '120px 0', textAlign: 'center' }}>
+          <Loader2 size={32} className="admin-spin" />
+          <p style={{ marginTop: 16, color: '#777' }}>Yuklanmoqda…</p>
+        </div>
+      </main>
+    );
+  }
+
+  if (!item) {
+    return (
+      <main className="content-wrapper">
+        <div className="container" style={{ padding: '120px 0', textAlign: 'center' }}>
+          <h2 style={{ color: 'var(--navy)', fontSize: '2rem', marginBottom: '16px' }}>Yangilik topilmadi</h2>
+          <Link to="/yangiliklar" className="btn-outline-dark">← Yangiliklarga qaytish</Link>
+        </div>
+      </main>
+    );
+  }
+
+  const ytEmbed = item.video ? youTubeEmbed(item.video) : null;
+  const isDirectVideo = item.video && isVideoUrl(item.video);
+
+  const BREADCRUMBS = [
+    { label: 'Bosh sahifa', to: '/' },
+    { label: 'Yangiliklar', to: '/yangiliklar' },
+    { label: item.title },
+  ];
+
+  return (
+    <main className="content-wrapper">
+      <PageHero
+        tag="Yangilik"
+        title={item.title}
+        emphasis=""
+        breadcrumbs={BREADCRUMBS}
+      />
+
+      <section className="news-detail">
+        <div className="container">
+          <div className="news-detail-grid">
+
+            <article className="news-detail-main">
+              {/* Meta */}
+              <div className="news-detail-meta">
+                <span className="news-detail-cat">
+                  <Tag size={12} strokeWidth={2} /> {item.cat}
+                </span>
+                {item.date && (
+                  <span className="news-detail-date">
+                    <Calendar size={12} strokeWidth={2} /> {item.date}
+                  </span>
+                )}
+              </div>
+
+              {/* Gallery */}
+              {item.images && item.images.length > 0 && (
+                <PublicGallery images={item.images} alt={item.title} />
+              )}
+
+              {/* Excerpt */}
+              {item.excerpt && (
+                <p className="news-detail-excerpt">{item.excerpt}</p>
+              )}
+
+              {/* Body */}
+              {item.body ? (
+                <div className="news-detail-body">
+                  {item.body.split(/\n+/).filter(Boolean).map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              ) : !item.excerpt && (
+                <div className="news-detail-body">
+                  <p style={{ color: '#999', fontStyle: 'italic' }}>
+                    Yangilik matni qoʻshilmagan.
+                  </p>
+                </div>
+              )}
+
+              {/* Video */}
+              {item.video && (
+                <div className="news-detail-video">
+                  {ytEmbed ? (
+                    <iframe
+                      src={ytEmbed}
+                      title={item.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : isDirectVideo ? (
+                    <video src={item.video} controls />
+                  ) : (
+                    <a href={item.video} target="_blank" rel="noopener noreferrer" className="btn-outline-dark">
+                      Videoni koʻrish →
+                    </a>
+                  )}
+                </div>
+              )}
+
+              {/* Prev/Next */}
+              <nav className="news-detail-nav">
+                {prev ? (
+                  <button type="button" className="news-detail-nav-btn" onClick={() => navigate(`/yangiliklar/${prev.id}`)}>
+                    <ArrowLeft size={16} strokeWidth={1.8} />
+                    <span>
+                      <span className="news-detail-nav-label">Oldingi</span>
+                      <span className="news-detail-nav-title">{prev.title}</span>
+                    </span>
+                  </button>
+                ) : <span />}
+
+                <Link to="/yangiliklar" className="news-detail-nav-back">
+                  BARCHA YANGILIKLAR
+                </Link>
+
+                {next ? (
+                  <button type="button" className="news-detail-nav-btn news-detail-nav-btn-r" onClick={() => navigate(`/yangiliklar/${next.id}`)}>
+                    <span>
+                      <span className="news-detail-nav-label">Keyingi</span>
+                      <span className="news-detail-nav-title">{next.title}</span>
+                    </span>
+                    <ArrowRight size={16} strokeWidth={1.8} />
+                  </button>
+                ) : <span />}
+              </nav>
+            </article>
+
+            {/* Sidebar — boshqa yangiliklar */}
+            <aside className="news-detail-sidebar">
+              <h3 className="news-detail-sidebar-title">Boshqa yangiliklar</h3>
+              <ul className="news-detail-sidebar-list">
+                {allNews.filter((n) => String(n.id) !== String(id)).slice(0, 5).map((n) => (
+                  <li key={n.id}>
+                    <Link to={`/yangiliklar/${n.id}`}>
+                      <div className="news-detail-sidebar-thumb">
+                        {n.image && <img src={n.image} alt="" />}
+                      </div>
+                      <div>
+                        <div className="news-detail-sidebar-cat">{n.cat}</div>
+                        <div className="news-detail-sidebar-title-link">{n.title}</div>
+                        {n.date && <div className="news-detail-sidebar-date">{n.date}</div>}
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

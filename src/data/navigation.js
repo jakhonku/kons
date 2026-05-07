@@ -230,7 +230,7 @@ export function buildNavMenu(t) {
       },
     },
 
-    /* ---------- 8. AXBOROT XIZMATI ---------- */
+    /* ---------- 8. YANGILIKLAR ---------- */
     {
       id: 'axborot',
       label: t('nav.axborot.label'),

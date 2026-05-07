@@ -105,7 +105,7 @@ export default {
       studyInUzbekistan: 'Study in Uzbekistan',
       erasmus: 'Erasmus+',
 
-      axborotXizmati: 'Axborot xizmati',
+      axborotXizmati: 'Yangiliklar',
       sayohat360: 'Online tur (360°)',
       rektorTabrigi: 'Rektor tabrigi va nutqlari',
       videogalereya: 'Videogalereya',

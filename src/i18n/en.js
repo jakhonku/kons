@@ -105,7 +105,7 @@ export default {
       studyInUzbekistan: 'Study in Uzbekistan',
       erasmus: 'Erasmus+',
 
-      axborotXizmati: 'News Service',
+      axborotXizmati: 'News',
       sayohat360: 'Online Tour (360°)',
       rektorTabrigi: "Rector's Greetings & Speeches",
       videogalereya: 'Video Gallery',

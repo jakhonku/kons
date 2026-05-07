@@ -4,6 +4,39 @@ import { Calendar, MapPin, Tag, Clock, Search, FilterX, Ticket } from 'lucide-re
 import PageHero from '../components/PageHero';
 import DatePicker from '../components/DatePicker';
 import { EVENTS, ITICKET_URL } from '../data/events';
+import { useAdminPosters } from '../hooks/useAdminStorage';
+
+const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
+const WEEKDAY_ABBR_UZ = ['Yaks', 'Dush', 'Sesh', 'Chor', 'Pay', 'Juma', 'Shan'];
+
+function adaptPoster(p) {
+  let month = '', day = '', weekday = '', fullDate = '';
+  if (p.date) {
+    const d = new Date(p.date);
+    if (!Number.isNaN(d.getTime())) {
+      month = MONTH_ABBR_UZ[d.getMonth()];
+      day = String(d.getDate()).padStart(2, '0');
+      weekday = WEEKDAY_ABBR_UZ[d.getDay()];
+      fullDate = p.date;
+    }
+  }
+  const priceText = p.free ? 'Bepul' : (p.price || '');
+  const time = [p.time, priceText].filter(Boolean).join(' | ');
+  return {
+    id: `poster-${p.id}`,
+    month, day, weekday, fullDate,
+    title: p.title,
+    venue: p.venue || 'Katta Zal',
+    tags: p.tags || '',
+    time: time || (p.time || ''),
+    free: !!p.free,
+    img: p.image || 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1600',
+    desc: p.description || '',
+    program: [],
+    artist: p.artist || '',
+    ticket_url: p.ticket_url || '',
+  };
+}
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -16,14 +49,20 @@ const HALLS = ['Barchasi', 'Katta Zal', 'Organ Zali', 'Kichik Zal', 'Kamer Zali'
 export default function Taqvim() {
   const [selectedHall, setSelectedHall] = useState('Barchasi');
   const [selectedDate, setSelectedDate] = useState('');
+  const { items: adminPosters } = useAdminPosters();
+
+  const allEvents = useMemo(() => {
+    const adapted = adminPosters.map(adaptPoster);
+    return [...adapted, ...EVENTS];
+  }, [adminPosters]);
 
   const filteredEvents = useMemo(() => {
-    return EVENTS.filter(event => {
+    return allEvents.filter(event => {
       const matchesHall = selectedHall === 'Barchasi' || event.venue === selectedHall;
       const matchesDate = !selectedDate || event.fullDate === selectedDate;
       return matchesHall && matchesDate;
     });
-  }, [selectedHall, selectedDate]);
+  }, [allEvents, selectedHall, selectedDate]);
 
   return (
     <main className="content-wrapper">
@@ -159,7 +198,7 @@ export default function Taqvim() {
                         </Link>
                         {!event.free ? (
                           <a
-                            href={ITICKET_URL}
+                            href={event.ticket_url || ITICKET_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="ticket-btn-buy"

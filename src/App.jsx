@@ -1,6 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { AdminAuthProvider } from './contexts/AdminAuthContext';
 import Layout from './components/layout/Layout';
+import AdminLayout from './components/admin/AdminLayout';
+import ProtectedRoute from './components/admin/ProtectedRoute';
+
+// Admin pages
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminNews from './pages/admin/AdminNews';
+import AdminPosters from './pages/admin/AdminPosters';
+import AdminTicker from './pages/admin/AdminTicker';
+import AdminTelegram from './pages/admin/AdminTelegram';
 
 // Pages
 import Home from './pages/Home';
@@ -8,6 +19,7 @@ import Tuzilma from './pages/Tuzilma';
 import Rahbariyat from './pages/Rahbariyat';
 import Hujjatlar from './pages/Hujjatlar';
 import Yangiliklar from './pages/Yangiliklar';
+import YangilikBatafsil from './pages/YangilikBatafsil';
 import Taqvim from './pages/Taqvim';
 import Kontaktlar from './pages/Kontaktlar';
 import Abituriyentlar from './pages/Abituriyentlar';
@@ -77,8 +89,27 @@ import RektorTabrigi from './pages/RektorTabrigi';
 export default function App() {
   return (
     <LanguageProvider>
+      <AdminAuthProvider>
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Routes>
+        {/* Admin (yashirin) — havolasi navigatsiyada koʻrinmaydi */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<AdminDashboard />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="news" element={<AdminNews />} />
+          <Route path="posters" element={<AdminPosters />} />
+          <Route path="ticker" element={<AdminTicker />} />
+          <Route path="telegram" element={<AdminTelegram />} />
+        </Route>
+
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           
@@ -158,8 +189,9 @@ export default function App() {
           <Route path="qoshma-konsertlar" element={<QoshmaKonsertlar />} />
           <Route path="study-in-uzbekistan" element={<StudyInUzbekistan />} />
 
-          {/* Axborot xizmati */}
+          {/* Yangiliklar */}
           <Route path="yangiliklar" element={<Yangiliklar />} />
+          <Route path="yangiliklar/:id" element={<YangilikBatafsil />} />
           <Route path="sayohat-360" element={<Sayohat360 />} />
           <Route path="rektor-tabrigi" element={<RektorTabrigi />} />
           <Route path="yashil-universitet" element={<YashilUniversitet />} />
@@ -168,6 +200,7 @@ export default function App() {
         </Route>
         </Routes>
       </BrowserRouter>
+      </AdminAuthProvider>
     </LanguageProvider>
   );
 }

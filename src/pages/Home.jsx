@@ -1,17 +1,43 @@
+import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio } from 'lucide-react';
+import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '../contexts/LanguageContext';
+import { useAdminNews, useAdminTicker } from '../hooks/useAdminStorage';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export default function Home() {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery('(max-width: 991px)');
+  const { items: adminNews, loading } = useAdminNews();
+  const [newsIndex, setNewsIndex] = useState(0);
 
-  const LATEST_NEWS = [
-    { id: 1, cat: t('home.news_categories.events'),       title: t('home.news_items.n1') },
-    { id: 2, cat: t('home.news_categories.education'),    title: t('home.news_items.n2') },
-    { id: 3, cat: t('home.news_categories.awards'),       title: t('home.news_items.n3') },
-    { id: 4, cat: t('home.news_categories.international'),title: t('home.news_items.n4') },
-    { id: 5, cat: t('home.news_categories.events'),       title: t('home.news_items.n5') },
-  ];
+  const displayNews = useMemo(() => {
+    return adminNews.map(n => ({
+      id: n.id,
+      cat: n.category || 'Voqealar',
+      title: n.title,
+      date: n.date || n.created_at,
+      excerpt: n.excerpt || '',
+      image: (Array.isArray(n.images) ? n.images[0] : n.image) || 'https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800',
+    })).slice(0, 5);
+  }, [adminNews]);
+
+  useEffect(() => {
+    if (displayNews.length <= 1) return;
+    const timer = setInterval(() => {
+      setNewsIndex((prev) => (prev + 1) % displayNews.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [displayNews.length]);
+  const { items: tickerItems } = useAdminTicker();
+
+  const LATEST_NEWS = tickerItems.map((it) => ({
+    id: it.id,
+    cat: it.category || 'Yangilik',
+    title: it.title,
+    link: it.link || '',
+  }));
 
   const STATS = [
     { num: '1936',  label: t('home.stats.sinceYear') },
@@ -140,26 +166,39 @@ export default function Home() {
       </section>
 
       {/* ── YANGILIKLAR LENTASI ───────────────────────────── */}
-      <div className="news-ticker-wrap">
-        <div className="news-ticker-label">
-          <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
-          <span>{t('home.news.latest')}</span>
-        </div>
-        <div className="news-ticker-track-wrap">
-          <div className="news-ticker-track">
-            {[...LATEST_NEWS, ...LATEST_NEWS].map((item, i) => (
-              <span key={i} className="news-ticker-item">
-                <span className="news-ticker-cat">{item.cat}</span>
-                {item.title}
-                <span className="news-ticker-sep">·</span>
-              </span>
-            ))}
+      {LATEST_NEWS.length > 0 && (
+        <div className="news-ticker-wrap">
+          <div className="news-ticker-label">
+            <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
+            <span>{t('home.news.latest')}</span>
           </div>
+          <div className="news-ticker-track-wrap">
+            <div className="news-ticker-track">
+              {[...LATEST_NEWS, ...LATEST_NEWS].map((item, i) => {
+                const inner = (
+                  <>
+                    <span className="news-ticker-cat">{item.cat}</span>
+                    {item.title}
+                    <span className="news-ticker-sep">·</span>
+                  </>
+                );
+                if (item.link) {
+                  const isExternal = /^https?:\/\//i.test(item.link);
+                  return isExternal ? (
+                    <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="news-ticker-item">{inner}</a>
+                  ) : (
+                    <Link key={i} to={item.link} className="news-ticker-item">{inner}</Link>
+                  );
+                }
+                return <span key={i} className="news-ticker-item">{inner}</span>;
+              })}
+            </div>
+          </div>
+          <Link to="/yangiliklar" className="news-ticker-btn">
+            {t('home.news.readMore')} <ArrowRight size={13} strokeWidth={2} />
+          </Link>
         </div>
-        <Link to="/yangiliklar" className="news-ticker-btn">
-          {t('home.news.readMore')} <ArrowRight size={13} strokeWidth={2} />
-        </Link>
-      </div>
+      )}
 
       {/* ── TEZKOR HAVOLALAR ─────────────────────── */}
       <section style={{ background: 'var(--white)', borderTop: '1px solid var(--light-border)', borderBottom: '1px solid var(--light-border)', padding: '100px 0' }}>
@@ -248,86 +287,230 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TALABALAR SECTION ────────────────────────────── */}
+      {/* ── YANGILIKLAR SLIDER SECTION ────────────────────────────── */}
       <section
-        className="full-section"
-        style={{ background: "url('https://images.unsplash.com/photo-1523240715632-d984723145e1?q=80&w=2070') center/cover fixed" }}
+        className="full-section news-slider-section"
+        style={{
+          background: "linear-gradient(rgba(7,7,14,0.85), rgba(7,7,14,0.85)), url('https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=2070') center/cover fixed",
+          minHeight: '600px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingTop: '100px',
+          paddingBottom: '100px'
+        }}
       >
         <div className="container" style={{ width: '100%' }}>
-          <div className="home-talabalar-row">
+          <div className="reveal" style={{ marginBottom: '40px' }}>
+            <span className="section-tag light">YANGILIKLAR</span>
+            <h2 className="section-title light">Soʻnggi <span>Yangiliklar</span></h2>
+            <div className="ornament" style={{ maxWidth: '280px' }}>
+              <div className="ornament-diamond" />
+            </div>
+          </div>
 
-            {/* Chap matn */}
-            <div style={{ flex: 1, color: 'var(--text-primary)', minWidth: 0 }}>
-              <span className="section-tag light">{t('home.students.tag')}</span>
-              <h2 className="section-title light">
-                {t('home.students.title1')} <span>{t('home.students.titleEm')}</span>
-              </h2>
-              <div className="ornament" style={{ maxWidth: '280px' }}>
-                <div className="ornament-diamond" />
-              </div>
-              <p style={{ fontSize: '1rem', color: 'rgba(240,237,232,0.6)', marginBottom: '40px', maxWidth: '460px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', lineHeight: 1.8 }}>
-                {t('home.students.desc')}
-              </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'var(--border-subtle)', marginBottom: '40px', maxWidth: '460px' }}>
-                {STUDENT_LINKS.map((label) => (
-                  <a key={label} href="#" style={{
-                    display: 'block',
-                    background: 'rgba(7,7,14,0.6)',
-                    color: 'rgba(240,237,232,0.6)',
-                    padding: '14px 18px',
-                    fontWeight: 600,
-                    fontSize: '0.78rem',
-                    letterSpacing: '1px',
-                    textDecoration: 'none',
-                    transition: '0.3s',
-                    fontFamily: 'var(--font-sans)',
+          <div className="news-slider-viewport" style={{ position: 'relative', overflow: 'visible', minHeight: isMobile ? '600px' : '500px' }}>
+            <AnimatePresence mode="wait">
+              {displayNews.length > 0 ? (
+                <motion.div
+                  key={newsIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="news-slide-content"
+                  style={{ 
+                    display: 'flex', 
+                    flexDirection: isMobile ? 'column' : 'row',
+                    gap: isMobile ? '0' : '40px', 
+                    alignItems: 'stretch',
+                    position: 'relative'
                   }}
-                    onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(201,168,76,0.12)'; e.currentTarget.style.color = 'var(--gold-light)'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(7,7,14,0.6)'; e.currentTarget.style.color = 'rgba(240,237,232,0.6)'; }}
-                  >
-                    {label} →
-                  </a>
-                ))}
-              </div>
-              <button className="btn-outline light">{t('home.students.portalEnter')}</button>
-            </div>
+                >
+                  {/* Rasm qismi */}
+                  <div className="news-slide-image-wrap" style={{ 
+                    flex: isMobile ? 'none' : '1.5',
+                    height: isMobile ? '300px' : '550px',
+                    width: '100%',
+                    position: 'relative',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
+                  }}>
+                    <img
+                      src={displayNews[newsIndex].image}
+                      alt={displayNews[newsIndex].title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div style={{ 
+                      position: 'absolute', 
+                      inset: 0, 
+                      background: 'linear-gradient(to bottom, transparent 60%, rgba(7,7,14,0.8))' 
+                    }} />
+                  </div>
 
-            {/* Oʻng — Shisha karta */}
-            <div className="home-talabalar-card" style={{
-              background: 'rgba(7,7,14,0.7)',
-              backdropFilter: 'blur(30px)',
-              border: '1px solid var(--border-gold)',
-              padding: '50px',
-              boxShadow: '0 30px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,168,76,0.15)',
-              transform: 'perspective(800px) rotateY(-4deg)',
-              transition: 'transform 0.6s',
-            }}
-              onMouseOver={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(0deg)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.transform = 'perspective(800px) rotateY(-4deg)'; }}
-            >
-              <span className="section-tag" style={{ marginBottom: '16px' }}>{t('home.students.attentionTag')}</span>
-              <h3 style={{ color: 'var(--text-primary)', fontSize: '1.8rem', fontWeight: 300, marginBottom: '16px' }}>
-                {t('home.students.stepCardTitle1')} <span>{t('home.students.stepCardTitleEm')}</span>
-              </h3>
-              <div style={{ height: '1px', background: 'var(--border-gold)', margin: '20px 0' }} />
-              <p style={{ color: 'rgba(240,237,232,0.6)', fontSize: '0.92rem', marginBottom: '30px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', lineHeight: 1.7 }}>
-                {t('home.students.stepCardDesc')}
-              </p>
-              <Link to="/yangiliklar" style={{
-                color: 'var(--gold)',
-                fontWeight: 700,
-                fontSize: '0.7rem',
-                letterSpacing: '3px',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-                display: 'flex',
+                  {/* Matn qismi - Glassmorphism panel */}
+                  <div className="news-slide-text-panel" style={{ 
+                    flex: '1',
+                    background: 'rgba(25, 25, 35, 0.65)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(201,168,76,0.2)',
+                    padding: isMobile ? '30px' : '50px',
+                    borderRadius: '12px',
+                    marginTop: isMobile ? '-40px' : '40px',
+                    marginBottom: isMobile ? '0' : '40px',
+                    marginLeft: isMobile ? '20px' : '-80px',
+                    marginRight: isMobile ? '20px' : '0',
+                    zIndex: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+                      <span style={{ 
+                        background: 'rgba(201,168,76,0.15)', 
+                        color: 'var(--gold-light)', 
+                        padding: '6px 14px', 
+                        fontSize: '0.65rem', 
+                        fontWeight: 800, 
+                        textTransform: 'uppercase', 
+                        letterSpacing: '2px',
+                        border: '1px solid rgba(201,168,76,0.3)',
+                        borderRadius: '4px'
+                      }}>
+                        {displayNews[newsIndex].cat}
+                      </span>
+                      <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
+                        {new Date(displayNews[newsIndex].date).toLocaleDateString('uz-UZ', { day: '2-digit', month: 'long', year: 'numeric' })}
+                      </span>
+                    </div>
+
+                    <h3 style={{ 
+                      fontSize: isMobile ? '1.5rem' : '2.2rem', 
+                      fontFamily: 'var(--font-display)', 
+                      fontWeight: 400, 
+                      lineHeight: 1.2, 
+                      marginBottom: '20px',
+                      color: 'var(--text-primary)',
+                      letterSpacing: '-0.5px'
+                    }}>
+                      {displayNews[newsIndex].title}
+                    </h3>
+
+                    <p style={{ 
+                      fontSize: '0.95rem', 
+                      color: 'rgba(240,237,232,0.7)', 
+                      lineHeight: 1.7, 
+                      marginBottom: '35px', 
+                      fontFamily: 'var(--font-serif)', 
+                      fontStyle: 'italic',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden'
+                    }}>
+                      {displayNews[newsIndex].excerpt}
+                    </p>
+
+                    <div style={{ marginTop: 'auto' }}>
+                      <Link to={`/yangiliklar/admin-${displayNews[newsIndex].id}`} className="btn-gold" style={{ 
+                        padding: '12px 28px',
+                        fontSize: '0.75rem',
+                        letterSpacing: '2px'
+                      }}>
+                        BATAFSIL OʻQISH →
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ) : (
+                <div style={{ color: 'rgba(255,255,255,0.3)', textAlign: 'center', padding: '120px 0', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: '12px' }}>
+                  {loading ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px' }}>
+                      <div className="loader-spin" style={{ width: '30px', height: '30px', border: '2px solid var(--gold)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+                      <span>Yangiliklar yuklanmoqda...</span>
+                    </div>
+                  ) : 'Hozircha yangiliklar yoʻq'}
+                </div>
+              )}
+            </AnimatePresence>
+
+            {displayNews.length > 1 && (
+              <div className="slider-controls" style={{ 
+                display: 'flex', 
                 alignItems: 'center',
-                gap: '8px',
+                gap: '20px', 
+                marginTop: isMobile ? '30px' : '0',
+                position: isMobile ? 'static' : 'absolute',
+                bottom: '-20px',
+                right: '0',
+                zIndex: 10
               }}>
-                {t('home.students.readMore')} <span>→</span>
-              </Link>
-            </div>
-
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <button
+                    onClick={() => setNewsIndex((prev) => (prev - 1 + displayNews.length) % displayNews.length)}
+                    style={{ 
+                      background: 'rgba(255,255,255,0.05)', 
+                      border: '1px solid rgba(255,255,255,0.1)', 
+                      color: 'white', 
+                      width: '48px', 
+                      height: '48px', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      cursor: 'pointer', 
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      borderRadius: '50%'
+                    }}
+                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                  >
+                    <ChevronLeft size={22} />
+                  </button>
+                  <button
+                    onClick={() => setNewsIndex((prev) => (prev + 1) % displayNews.length)}
+                    style={{ 
+                      background: 'rgba(255,255,255,0.05)', 
+                      border: '1px solid rgba(255,255,255,0.1)', 
+                      color: 'white', 
+                      width: '48px', 
+                      height: '48px', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      cursor: 'pointer', 
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      borderRadius: '50%'
+                    }}
+                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                  >
+                    <ChevronRight size={22} />
+                  </button>
+                </div>
+                
+                {!isMobile && (
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginLeft: '20px' }}>
+                    {displayNews.map((_, i) => (
+                      <div
+                        key={i}
+                        onClick={() => setNewsIndex(i)}
+                        style={{
+                          width: i === newsIndex ? '40px' : '10px',
+                          height: '4px',
+                          background: i === newsIndex ? 'var(--gold)' : 'rgba(255,255,255,0.15)',
+                          cursor: 'pointer',
+                          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                          borderRadius: '2px'
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>

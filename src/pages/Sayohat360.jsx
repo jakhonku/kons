@@ -4,7 +4,7 @@ import { Maximize2, MapPin, RotateCcw } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Axborot xizmati' },
+  { label: 'Yangiliklar' },
   { label: '360° Virtual Sayohat' },
 ];
 
@@ -42,7 +42,7 @@ export default function Sayohat360() {
   return (
     <main className="content-wrapper">
       <PageHero
-        tag="Axborot xizmati"
+        tag="Yangiliklar"
         title="360°"
         emphasis="Virtual Sayohat"
         breadcrumbs={BREADCRUMBS}

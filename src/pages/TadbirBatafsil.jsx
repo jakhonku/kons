@@ -1,14 +1,59 @@
+import { useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Calendar, MapPin, Clock, Tag, Ticket, ArrowLeft, ArrowRight, Music2, User } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import PublicGallery from '../components/PublicGallery';
 import { EVENTS, ITICKET_URL } from '../data/events';
+import { useAdminPosters } from '../hooks/useAdminStorage';
+
+const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
+const WEEKDAY_ABBR_UZ = ['Yaks', 'Dush', 'Sesh', 'Chor', 'Pay', 'Juma', 'Shan'];
+
+function adaptPoster(p) {
+  let month = '', day = '', weekday = '', fullDate = '';
+  if (p.date) {
+    const d = new Date(p.date);
+    if (!Number.isNaN(d.getTime())) {
+      month = MONTH_ABBR_UZ[d.getMonth()];
+      day = String(d.getDate()).padStart(2, '0');
+      weekday = WEEKDAY_ABBR_UZ[d.getDay()];
+      fullDate = p.date;
+    }
+  }
+  const priceText = p.free ? 'Bepul' : (p.price || '');
+  const time = [p.time, priceText].filter(Boolean).join(' | ');
+  const imgs = Array.isArray(p.images) ? p.images.filter(Boolean) : [];
+  if (imgs.length === 0 && p.image) imgs.push(p.image);
+  return {
+    id: `poster-${p.id}`,
+    month, day, weekday, fullDate,
+    title: p.title,
+    venue: p.venue || 'Katta Zal',
+    tags: p.tags || '',
+    time: time || (p.time || ''),
+    free: !!p.free,
+    img: imgs[0] || 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1600',
+    images: imgs,
+    desc: p.description || '',
+    program: [],
+    artist: p.artist || '',
+    ticket_url: p.ticket_url || '',
+  };
+}
 
 export default function TadbirBatafsil() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const idNum = parseInt(id, 10);
-  const eventIndex = EVENTS.findIndex(e => e.id === idNum);
-  const event = EVENTS[eventIndex];
+  const { items: adminPosters } = useAdminPosters();
+
+  const allEvents = useMemo(() => {
+    const adapted = adminPosters.map(adaptPoster);
+    const staticEvents = EVENTS.map((e) => ({ ...e, images: e.img ? [e.img] : [] }));
+    return [...adapted, ...staticEvents];
+  }, [adminPosters]);
+
+  const eventIndex = allEvents.findIndex((e) => String(e.id) === String(id));
+  const event = eventIndex >= 0 ? allEvents[eventIndex] : null;
 
   if (!event) {
     return (
@@ -21,10 +66,10 @@ export default function TadbirBatafsil() {
     );
   }
 
-  const [timeOnly, priceText] = event.time.split('|').map(s => s.trim());
-  const tagList = event.tags.split(',').map(t => t.trim()).filter(Boolean);
-  const prevEvent = eventIndex > 0 ? EVENTS[eventIndex - 1] : null;
-  const nextEvent = eventIndex < EVENTS.length - 1 ? EVENTS[eventIndex + 1] : null;
+  const [timeOnly, priceText] = (event.time || '').split('|').map(s => s.trim());
+  const tagList = (event.tags || '').split(',').map(t => t.trim()).filter(Boolean);
+  const prevEvent = eventIndex > 0 ? allEvents[eventIndex - 1] : null;
+  const nextEvent = eventIndex >= 0 && eventIndex < allEvents.length - 1 ? allEvents[eventIndex + 1] : null;
 
   const BREADCRUMBS = [
     { label: 'Bosh sahifa', to: '/' },
@@ -106,7 +151,7 @@ export default function TadbirBatafsil() {
               </div>
 
               {!event.free ? (
-                <a href={ITICKET_URL} target="_blank" rel="noopener noreferrer" className="tadbir-buy-btn">
+                <a href={event.ticket_url || ITICKET_URL} target="_blank" rel="noopener noreferrer" className="tadbir-buy-btn">
                   <Ticket size={16} strokeWidth={2} />
                   BILET OLISH
                 </a>
@@ -138,6 +183,13 @@ export default function TadbirBatafsil() {
                 <div className="ornament-diamond" />
               </div>
               <p className="tadbir-desc">{event.desc}</p>
+
+              {event.images && event.images.length > 1 && (
+                <div style={{ marginTop: 28 }}>
+                  <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Galereya</span>
+                  <PublicGallery images={event.images} alt={event.title} />
+                </div>
+              )}
             </div>
 
             {/* Program */}

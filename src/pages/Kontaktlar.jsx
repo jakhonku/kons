@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Axborot xizmati' },
+  { label: 'Yangiliklar' },
   { label: 'Kontaktlar' },
 ];
 
@@ -65,14 +65,14 @@ export default function Kontaktlar() {
   return (
     <main className="content-wrapper">
       <PageHero
-        tag="Axborot xizmati"
+        tag="Yangiliklar"
         title="Bogʻlanish"
         emphasis="Ma'lumotlari"
         breadcrumbs={BREADCRUMBS}
       />
 
       <section className="main-content">
-        <div className="container" style={{ maxWidth: '1200px' }}>
+        <div className="container">
           <div className="contact-grid">
 
             {/* Chap: aloqa ma'lumotlari */}

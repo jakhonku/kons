@@ -31,11 +31,11 @@ export default function InfoPage({
           )}
 
           {stats && stats.length > 0 && (
-            <div className="page-stats-3" style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '16px', margin: '0 0 50px' }}>
+            <div className="page-stats-3" style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '24px', margin: '0 0 60px' }}>
               {stats.map((s) => (
-                <div key={s.label} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '24px 22px' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--navy)', lineHeight: 1, marginBottom: '6px' }}>{s.value}</div>
-                  <div style={{ fontSize: '0.72rem', color: '#888', letterSpacing: '1.2px', textTransform: 'uppercase', fontFamily: 'var(--font-sans)' }}>{s.label}</div>
+                <div key={s.label} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '30px 28px' }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: 'var(--navy)', lineHeight: 1, marginBottom: '8px' }}>{s.value}</div>
+                  <div style={{ fontSize: '0.78rem', color: '#888', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -54,13 +54,13 @@ export default function InfoPage({
               )}
 
               {sec.items && (
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 50px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 60px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
                   {sec.items.map((it, i) => (
-                    <li key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '14px 18px', fontSize: '0.9rem', color: '#444', fontFamily: 'var(--font-serif)' }}>
+                    <li key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '18px 24px', fontSize: '1rem', color: '#444', fontFamily: 'var(--font-serif)' }}>
                       {typeof it === 'string' ? it : (
                         <>
-                          <strong style={{ color: 'var(--navy)', display: 'block', fontSize: '0.95rem', marginBottom: '4px', fontFamily: 'var(--font-sans)' }}>{it.title}</strong>
-                          <span style={{ fontSize: '0.85rem', color: '#666' }}>{it.desc}</span>
+                          <strong style={{ color: 'var(--navy)', display: 'block', fontSize: '1.05rem', marginBottom: '6px', fontFamily: 'var(--font-sans)' }}>{it.title}</strong>
+                          <span style={{ fontSize: '0.92rem', color: '#666' }}>{it.desc}</span>
                         </>
                       )}
                     </li>
@@ -69,13 +69,13 @@ export default function InfoPage({
               )}
 
               {sec.cards && (
-                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(sec.cards.length, 3)}, 1fr)`, gap: '16px', marginBottom: '50px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(sec.cards.length, 3)}, 1fr)`, gap: '24px', marginBottom: '60px' }}>
                   {sec.cards.map((c, i) => (
-                    <div key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '24px 22px' }}>
-                      {c.tag && <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '2.5px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '10px', fontFamily: 'var(--font-sans)' }}>{c.tag}</div>}
-                      <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.05rem', fontWeight: 500, marginBottom: '8px', lineHeight: 1.3 }}>{c.title}</h3>
-                      {c.desc && <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.65, fontFamily: 'var(--font-serif)' }}>{c.desc}</p>}
-                      {c.meta && <div style={{ marginTop: '12px', fontSize: '0.75rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)' }}>{c.meta}</div>}
+                    <div key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '4px solid var(--gold)', padding: '32px 28px' }}>
+                      {c.tag && <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>{c.tag}</div>}
+                      <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.25rem', fontWeight: 500, marginBottom: '12px', lineHeight: 1.3 }}>{c.title}</h3>
+                      {c.desc && <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)' }}>{c.desc}</p>}
+                      {c.meta && <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>{c.meta}</div>}
                     </div>
                   ))}
                 </div>

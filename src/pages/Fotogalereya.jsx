@@ -5,7 +5,7 @@ import PageHero from '../components/PageHero';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Axborot xizmati' },
+  { label: 'Yangiliklar' },
   { label: 'Fotogalereya' },
 ];
 
@@ -40,7 +40,7 @@ export default function Fotogalereya() {
   return (
     <main className="content-wrapper">
       <PageHero
-        tag="Axborot xizmati"
+        tag="Yangiliklar"
         title="Foto"
         emphasis="Galereya"
         breadcrumbs={BREADCRUMBS}

@@ -3,12 +3,12 @@ import InfoPage from '../components/InfoPage';
 export default function RektorTabrigi() {
   return (
     <InfoPage
-      tag="Axborot xizmati"
+      tag="Yangiliklar"
       title="Rektor tabrigi"
       emphasis="va Nutqlari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Axborot xizmati', to: '/yangiliklar' },
+        { label: 'Yangiliklar', to: '/yangiliklar' },
         { label: 'Rektor tabrigi' },
       ]}
       lead="Oʻzbekiston davlat konservatoriyasi rektorining tabriklari va ma'ruzalari."
