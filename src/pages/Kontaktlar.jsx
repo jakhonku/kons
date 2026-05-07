@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero';
+import { useAdminMessages } from '../hooks/useAdminStorage';
+import { Loader2 } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -52,14 +54,33 @@ const CONTACT_ITEMS = [
 export default function Kontaktlar() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { add } = useAdminMessages();
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    
+    const res = await add({
+      full_name: form.name,
+      email: form.email,
+      phone: form.phone,
+      subject: form.subject || 'Bogʻlanish sahifasidan murojaat',
+      message: form.message,
+      type: 'Bogʻlanish',
+      status: 'new'
+    });
+
+    setLoading(false);
+    if (res.ok) {
+      setSent(true);
+    } else {
+      alert('Xabar yuborishda xatolik yuz berdi: ' + res.error);
+    }
   }
 
   return (
@@ -154,7 +175,15 @@ export default function Kontaktlar() {
                     <label>Xabar *</label>
                     <textarea name="message" value={form.message} onChange={handleChange} required placeholder="Xabaringizni yozing..." style={{ minHeight: '140px' }} />
                   </div>
-                  <button type="submit" className="btn-submit">YUBORISH</button>
+                  <button 
+                    type="submit" 
+                    className="btn-submit" 
+                    disabled={loading}
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}
+                  >
+                    {loading ? <Loader2 size={16} className="admin-spin" /> : null}
+                    {loading ? 'YUBORILMOQDA...' : 'YUBORISH'}
+                  </button>
                 </form>
               )}
             </div>

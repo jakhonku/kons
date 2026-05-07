@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Newspaper, Image as ImageIcon, LogOut, ExternalLink, Radio, Send } from 'lucide-react';
+import { LayoutDashboard, Newspaper, Image as ImageIcon, LogOut, ExternalLink, Radio, Send, MessageSquare } from 'lucide-react';
 import { useAdminAuth } from '../../contexts/AdminAuthContext';
 
 const NAV = [
@@ -8,6 +8,7 @@ const NAV = [
   { to: '/admin/posters', label: 'Afishalar', icon: ImageIcon },
   { to: '/admin/ticker', label: 'Lenta yangiliklari', icon: Radio },
   { to: '/admin/telegram', label: 'Telegram postlar', icon: Send },
+  { to: '/admin/messages', label: 'Murojaatlar', icon: MessageSquare },
 ];
 
 export default function AdminLayout() {

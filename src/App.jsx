@@ -12,6 +12,7 @@ import AdminNews from './pages/admin/AdminNews';
 import AdminPosters from './pages/admin/AdminPosters';
 import AdminTicker from './pages/admin/AdminTicker';
 import AdminTelegram from './pages/admin/AdminTelegram';
+import AdminMessages from './pages/admin/AdminMessages';
 
 // Pages
 import Home from './pages/Home';
@@ -108,6 +109,7 @@ export default function App() {
           <Route path="posters" element={<AdminPosters />} />
           <Route path="ticker" element={<AdminTicker />} />
           <Route path="telegram" element={<AdminTelegram />} />
+          <Route path="messages" element={<AdminMessages />} />
         </Route>
 
         <Route path="/" element={<Layout />}>

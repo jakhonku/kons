@@ -1,9 +1,9 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Clock, Tag, Ticket, ArrowLeft, ArrowRight, Music2, User } from 'lucide-react';
+import { Calendar, MapPin, Clock, Tag, Ticket, ArrowLeft, ArrowRight, Music2, User, X, Maximize2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import PublicGallery from '../components/PublicGallery';
-import { EVENTS, ITICKET_URL } from '../data/events';
+import { ITICKET_URL } from '../data/events';
 import { useAdminPosters } from '../hooks/useAdminStorage';
 
 const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
@@ -20,7 +20,14 @@ function adaptPoster(p) {
       fullDate = p.date;
     }
   }
-  const priceText = p.free ? 'Bepul' : (p.price || '');
+  const formatPrice = (pr) => {
+    if (!pr) return '';
+    const numeric = pr.toString().replace(/[^0-9]/g, '');
+    if (!numeric) return pr;
+    const formatted = new Intl.NumberFormat('uz-UZ').format(numeric);
+    return `${formatted} UZS`;
+  };
+  const priceText = p.free ? 'Bepul' : formatPrice(p.price);
   const time = [p.time, priceText].filter(Boolean).join(' | ');
   const imgs = Array.isArray(p.images) ? p.images.filter(Boolean) : [];
   if (imgs.length === 0 && p.image) imgs.push(p.image);
@@ -44,16 +51,26 @@ function adaptPoster(p) {
 export default function TadbirBatafsil() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { items: adminPosters } = useAdminPosters();
+  const { items: adminPosters, loading } = useAdminPosters();
+  const [fullImage, setFullImage] = useState(null);
 
   const allEvents = useMemo(() => {
-    const adapted = adminPosters.map(adaptPoster);
-    const staticEvents = EVENTS.map((e) => ({ ...e, images: e.img ? [e.img] : [] }));
-    return [...adapted, ...staticEvents];
+    return adminPosters.map(adaptPoster);
   }, [adminPosters]);
 
   const eventIndex = allEvents.findIndex((e) => String(e.id) === String(id));
   const event = eventIndex >= 0 ? allEvents[eventIndex] : null;
+
+  if (loading) {
+    return (
+      <main className="content-wrapper">
+        <div className="container" style={{ padding: '120px 0', textAlign: 'center' }}>
+          <div className="loader-spin" style={{ width: '40px', height: '40px', border: '3px solid var(--gold)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 20px' }} />
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>Ma'lumotlar yuklanmoqda...</p>
+        </div>
+      </main>
+    );
+  }
 
   if (!event) {
     return (
@@ -92,10 +109,17 @@ export default function TadbirBatafsil() {
           <div className="tadbir-hero-grid">
 
             {/* Poster */}
-            <div className="tadbir-poster-wrap reveal reveal-left">
-              <div className="tadbir-poster">
+            <div className="tadbir-poster-wrap">
+              <div 
+                className="tadbir-poster" 
+                onClick={() => setFullImage(event.img)}
+                style={{ cursor: 'zoom-in' }}
+              >
                 <img src={event.img} alt={event.title} />
                 <div className="tadbir-poster-grad" />
+                <div className="tadbir-poster-expand">
+                  <Maximize2 size={24} />
+                </div>
                 <div className="tadbir-poster-date">
                   <span className="tadbir-poster-date-month">{event.month}</span>
                   <span className="tadbir-poster-date-day">{event.day}</span>
@@ -111,7 +135,7 @@ export default function TadbirBatafsil() {
             </div>
 
             {/* Info card */}
-            <aside className="tadbir-info-card reveal reveal-right">
+            <aside className="tadbir-info-card">
               <span className="section-tag" style={{ color: 'var(--gold)' }}>Tadbir ma'lumotlari</span>
               <h2 className="tadbir-info-title">{event.title}</h2>
               <p className="tadbir-info-artist"><User size={14} strokeWidth={1.8} /> {event.artist}</p>
@@ -176,7 +200,7 @@ export default function TadbirBatafsil() {
           <div className="tadbir-content-grid">
 
             {/* Description */}
-            <div className="reveal">
+            <div>
               <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Tadbir haqida</span>
               <h3 className="tadbir-section-h">Bayoni</h3>
               <div className="ornament" style={{ margin: '12px 0 24px' }}>
@@ -194,7 +218,7 @@ export default function TadbirBatafsil() {
 
             {/* Program */}
             {event.program && event.program.length > 0 && (
-              <div className="reveal reveal-d2">
+              <div>
                 <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Konsert dasturi</span>
                 <h3 className="tadbir-section-h">Programma</h3>
                 <div className="ornament" style={{ margin: '12px 0 24px' }}>
@@ -244,6 +268,14 @@ export default function TadbirBatafsil() {
           </div>
         </div>
       </section>
+
+      {/* ── FULL SCREEN IMAGE MODAL ─────────────────────── */}
+      {fullImage && (
+        <div className="image-full-modal" onClick={() => setFullImage(null)}>
+          <button className="image-full-close"><X size={32} /></button>
+          <img src={fullImage} alt="Full view" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </main>
   );
 }

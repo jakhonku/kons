@@ -100,6 +100,10 @@ export function useAdminPosters() {
   return useTable('posters');
 }
 
+export function useAdminMessages() {
+  return useTable('messages');
+}
+
 export function useAdminTicker() {
   return useTable('ticker_news', TICKER_ORDER);
 }

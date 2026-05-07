@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero';
+import { useAdminMessages } from '../hooks/useAdminStorage';
+import { Loader2 } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -17,10 +19,36 @@ const MUROJAAT_TURLARI = [
 
 export default function OnlineMurojaat() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
+  const { add } = useAdminMessages();
 
-  const handleSubmit = (e) => {
+  const [form, setForm] = useState({
+    full_name: '',
+    phone: '',
+    email: '',
+    type: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError('');
+
+    const res = await add({
+      ...form,
+      status: 'new',
+      created_at: new Date().toISOString(),
+    });
+
+    setSubmitting(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError(res.error || 'Xatolik yuz berdi. Iltimos qaytadan urinib koʻring.');
+    }
   };
 
   return (
@@ -65,7 +93,7 @@ export default function OnlineMurojaat() {
                     Murojaat raqami: <strong style={{ color: 'var(--navy)' }}>OK-{Math.floor(Math.random() * 90000) + 10000}</strong><br />
                     14 ish kuni ichida koʻrsatgan elektron pochtangizga javob yuboriladi.
                   </p>
-                  <button onClick={() => setSubmitted(false)} className="btn-outline">
+                  <button onClick={() => { setSubmitted(false); setForm({ full_name:'', phone:'', email:'', type:'', subject:'', message:'' }); }} className="btn-outline">
                     Yangi murojaat
                   </button>
                 </div>
@@ -73,34 +101,96 @@ export default function OnlineMurojaat() {
                 <form onSubmit={handleSubmit} className="form-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
                   <div className="form-group">
                     <label>Familiya, Ism *</label>
-                    <input type="text" required placeholder="Aliyev Bobur" />
+                    <input 
+                      type="text" 
+                      required 
+                      placeholder="Aliyev Bobur" 
+                      value={form.full_name}
+                      onChange={(e) => setForm({...form, full_name: e.target.value})}
+                    />
                   </div>
                   <div className="form-group">
                     <label>Telefon *</label>
-                    <input type="tel" required placeholder="+998 90 123-45-67" />
+                    <input 
+                      type="tel" 
+                      required 
+                      placeholder="+998 90 123-45-67" 
+                      value={form.phone}
+                      onChange={(e) => setForm({...form, phone: e.target.value})}
+                    />
                   </div>
                   <div className="form-group">
                     <label>Email *</label>
-                    <input type="email" required placeholder="example@gmail.com" />
+                    <input 
+                      type="email" 
+                      required 
+                      placeholder="example@gmail.com" 
+                      value={form.email}
+                      onChange={(e) => setForm({...form, email: e.target.value})}
+                    />
                   </div>
                   <div className="form-group">
                     <label>Murojaat turi *</label>
-                    <select required defaultValue="">
+                    <select 
+                      required 
+                      value={form.type}
+                      onChange={(e) => setForm({...form, type: e.target.value})}
+                    >
                       <option value="" disabled>Tanlang</option>
-                      {MUROJAAT_TURLARI.map((t) => <option key={t}>{t}</option>)}
+                      {MUROJAAT_TURLARI.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
                   <div className="form-group span-2" style={{ gridColumn: 'span 2' }}>
                     <label>Mavzu *</label>
-                    <input type="text" required placeholder="Murojaat mavzusi" />
+                    <input 
+                      type="text" 
+                      required 
+                      placeholder="Murojaat mavzusi" 
+                      value={form.subject}
+                      onChange={(e) => setForm({...form, subject: e.target.value})}
+                    />
                   </div>
                   <div className="form-group span-2" style={{ gridColumn: 'span 2' }}>
                     <label>Murojaat matni *</label>
-                    <textarea rows="6" required placeholder="Murojaat batafsil tavsifi..." />
+                    <textarea 
+                      rows="6" 
+                      required 
+                      placeholder="Murojaat batafsil tavsifi..." 
+                      value={form.message}
+                      onChange={(e) => setForm({...form, message: e.target.value})}
+                    />
                   </div>
+
+                  {error && (
+                    <div style={{ gridColumn: 'span 2', color: '#e53e3e', fontSize: '0.85rem', marginBottom: '10px' }}>
+                      {error}
+                    </div>
+                  )}
+
                   <div style={{ gridColumn: 'span 2' }}>
-                    <button type="submit" className="btn-submit" style={{ padding: '14px 36px', background: 'var(--navy)', color: 'var(--white)', border: 'none', fontFamily: 'var(--font-sans)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer' }}>
-                      Yuborish →
+                    <button 
+                      type="submit" 
+                      className="btn-submit" 
+                      disabled={submitting}
+                      style={{ 
+                        padding: '14px 36px', 
+                        background: 'var(--navy)', 
+                        color: 'var(--white)', 
+                        border: 'none', 
+                        fontFamily: 'var(--font-sans)', 
+                        fontSize: '0.78rem', 
+                        fontWeight: 700, 
+                        letterSpacing: '2px', 
+                        textTransform: 'uppercase', 
+                        cursor: submitting ? 'not-allowed' : 'pointer',
+                        opacity: submitting ? 0.7 : 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px'
+                      }}
+                    >
+                      {submitting ? <Loader2 size={16} className="admin-spin" /> : null}
+                      {submitting ? 'Yuborilmoqda...' : 'Yuborish →'}
                     </button>
                   </div>
                 </form>

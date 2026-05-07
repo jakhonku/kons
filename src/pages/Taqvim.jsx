@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Tag, Clock, Search, FilterX, Ticket } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import DatePicker from '../components/DatePicker';
-import { EVENTS, ITICKET_URL } from '../data/events';
+import { ITICKET_URL } from '../data/events';
 import { useAdminPosters } from '../hooks/useAdminStorage';
 
 const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
@@ -20,7 +20,14 @@ function adaptPoster(p) {
       fullDate = p.date;
     }
   }
-  const priceText = p.free ? 'Bepul' : (p.price || '');
+  const formatPrice = (pr) => {
+    if (!pr) return '';
+    const numeric = pr.toString().replace(/[^0-9]/g, '');
+    if (!numeric) return pr;
+    const formatted = new Intl.NumberFormat('uz-UZ').format(numeric);
+    return `${formatted} UZS`;
+  };
+  const priceText = p.free ? 'Bepul' : formatPrice(p.price);
   const time = [p.time, priceText].filter(Boolean).join(' | ');
   return {
     id: `poster-${p.id}`,
@@ -52,8 +59,7 @@ export default function Taqvim() {
   const { items: adminPosters } = useAdminPosters();
 
   const allEvents = useMemo(() => {
-    const adapted = adminPosters.map(adaptPoster);
-    return [...adapted, ...EVENTS];
+    return adminPosters.map(adaptPoster);
   }, [adminPosters]);
 
   const filteredEvents = useMemo(() => {
