@@ -45,6 +45,7 @@ export default function NukusFiliali() {
         email: 'nukus@konservatoriya.uz',
         address: "Nukus sh., Berdaq koʻchasi, 25-uy",
         hours: 'Dushanba – Juma, 08:30 – 17:30',
+        website: 'https://uzdknf.uz',
       }}
     />
   );

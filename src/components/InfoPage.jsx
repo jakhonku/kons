@@ -142,6 +142,14 @@ export default function InfoPage({
                     <div style={{ color: '#555' }}>{contact.hours}</div>
                   </div>
                 )}
+                {contact.website && (
+                  <div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Rasmiy sayt</div>
+                    <a href={contact.website} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-dark)', textDecoration: 'none', fontWeight: 600 }}>
+                      {contact.website.replace('https://', '').replace('http://', '')}
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           )}
