@@ -123,8 +123,8 @@ export default {
     hero: {
       eyebrow: 'EST. 1936 · TOSHKENT',
       title1: 'Oʻzbekiston',
-      title2: 'Davlat',
-      titleEm: 'Konservatoriyasi',
+      title2: 'davlat',
+      titleEm: 'konservatoriyasi',
       quote: 'Musiqa fani va san\'ati har bir insonni yuksak axloq, goʻzallik va nafosat ruhida tarbiyalashda qudratli vositadir.',
       quoteAuthor: '— SH. MIRZIYOYEV',
       yearLabel: 'Konservatoriya · 1936',
