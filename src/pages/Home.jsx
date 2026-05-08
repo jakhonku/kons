@@ -463,7 +463,7 @@ export default function Home() {
                     </p>
 
                     <div style={{ marginTop: 'auto' }}>
-                      <Link to={`/yangiliklar/admin-${displayNews[newsIndex].id}`} className="btn-gold" style={{ 
+                      <Link to={`/yangiliklar/${displayNews[newsIndex].id}`} className="btn-gold" style={{ 
                         padding: '12px 28px',
                         fontSize: '0.75rem',
                         letterSpacing: '2px'
