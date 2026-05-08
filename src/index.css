@@ -7992,10 +7992,12 @@ body {
 .public-gallery-main {
   position: relative;
   aspect-ratio: 16 / 9;
+  max-height: 520px;
   background: #0a0a18;
   border-radius: 6px;
   overflow: hidden;
   cursor: zoom-in;
+  margin: 0 auto;
 }
 
 .public-gallery-main img {
