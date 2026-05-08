@@ -428,7 +428,7 @@ export default function Home() {
                         {displayNews[newsIndex].cat}
                       </span>
                       <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontFamily: 'var(--font-sans)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '15px' }}>
-                        <span>{new Date(displayNews[newsIndex].date).toLocaleDateString('uz-UZ', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
+                        <span>{new Date(displayNews[newsIndex].date).toLocaleDateString('uz-UZ', { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                           <Eye size={14} /> {displayNews[newsIndex].views || 0}
                         </span>

@@ -18,7 +18,7 @@ function formatDateUz(value) {
   try {
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return value;
-    return d.toLocaleDateString('uz-UZ', { day: '2-digit', month: 'long', year: 'numeric' }).toUpperCase();
+    return d.toLocaleDateString('uz-UZ', { day: '2-digit', month: '2-digit', year: 'numeric' });
   } catch {
     return value;
   }
