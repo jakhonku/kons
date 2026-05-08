@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Eye, Loader2, Newspaper, Send } from 'lucide-react';
+import { Eye, Loader2, Newspaper, Send, Search } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import { useAdminNews, useAdminTelegram } from '../hooks/useAdminStorage';
 import TelegramPostEmbed from '../components/TelegramPostEmbed';
@@ -30,6 +30,7 @@ export default function Yangiliklar() {
   const [active, setActive] = useState("Barchasi");
   const { items: adminNews, loading } = useAdminNews();
   const { items: telegramPosts, loading: tgLoading } = useAdminTelegram();
+  const [searchQuery, setSearchQuery] = useState('');
 
   const allNews = useMemo(() => {
     return adminNews.map((n) => {
@@ -58,7 +59,19 @@ export default function Yangiliklar() {
     });
   }, [adminNews, lang]);
 
-  const filtered = active === "Barchasi" ? allNews : allNews.filter(n => n.cat === active);
+  const filtered = useMemo(() => {
+    let result = active === "Barchasi" ? allNews : allNews.filter(n => n.cat === active);
+    
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(n => 
+        n.title.toLowerCase().includes(q) || 
+        n.excerpt.toLowerCase().includes(q)
+      );
+    }
+    
+    return result;
+  }, [allNews, active, searchQuery]);
   const featured  = filtered.find(n => n.featured) ?? filtered[0];
   const rest      = filtered.filter(n => n !== featured);
   const isEmpty = !loading && allNews.length === 0;
@@ -100,16 +113,71 @@ export default function Yangiliklar() {
           {/* Tab 1: Yangiliklar */}
           {tab === 'news' && (
             <>
-              <div className="tag-filters" style={{ borderBottom: '1px solid var(--light-border)', paddingBottom: '20px', marginTop: '4px' }}>
-                {CATEGORIES.map((cat) => (
-                  <button
-                    key={cat}
-                    className={`tag-btn${active === cat ? ' active' : ''}`}
-                    onClick={() => setActive(cat)}
-                  >
-                    {cat}
-                  </button>
-                ))}
+              <div className="news-filters-row" style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                alignItems: 'center', 
+                justifyContent: 'space-between', 
+                gap: '20px',
+                borderBottom: '1px solid var(--light-border)', 
+                paddingBottom: '20px', 
+                marginTop: '4px' 
+              }}>
+                <div className="tag-filters" style={{ border: 'none', padding: 0, marginTop: 0 }}>
+                  {CATEGORIES.map((cat) => (
+                    <button
+                      key={cat}
+                      className={`tag-btn${active === cat ? ' active' : ''}`}
+                      onClick={() => setActive(cat)}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="news-search-bar" style={{ 
+                  position: 'relative',
+                  width: '100%',
+                  maxWidth: '300px'
+                }}>
+                  <Search 
+                    size={18} 
+                    style={{ 
+                      position: 'absolute', 
+                      left: '15px', 
+                      top: '50%', 
+                      transform: 'translateY(-50%)', 
+                      color: '#999' 
+                    }} 
+                  />
+                  <input
+                    type="text"
+                    placeholder="Yangiliklarni qidirish..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '12px 15px 12px 45px',
+                      borderRadius: '30px',
+                      border: '1px solid var(--light-border)',
+                      fontSize: '0.85rem',
+                      fontFamily: 'var(--font-sans)',
+                      background: '#f9f9f9',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'var(--gold)';
+                      e.target.style.background = '#fff';
+                      e.target.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'var(--light-border)';
+                      e.target.style.background = '#f9f9f9';
+                      e.target.style.boxShadow = 'none';
+                    }}
+                  />
+                </div>
               </div>
 
               {loading && (
