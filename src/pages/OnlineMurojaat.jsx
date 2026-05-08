@@ -5,7 +5,7 @@ import { Loader2 } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Interaktiv xizmatlar', to: '/interaktiv-xizmatlar' },
+  { label: 'Interaktiv xizmatlar' },
   { label: 'Online murojaat' },
 ];
 

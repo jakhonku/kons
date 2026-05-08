@@ -8,7 +8,7 @@ export default function TalimYonalishlari() {
       emphasis="Yoʻnalishlari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Qabul', to: '/abituriyentlar' },
+        { label: 'Qabul' },
         { label: "Ta'lim yoʻnalishlari" },
       ]}
       lead="Konservatoriyada bakalavriat bosqichi boʻyicha quyidagi ta'lim yoʻnalishlari mavjud."

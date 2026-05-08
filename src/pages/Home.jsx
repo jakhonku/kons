@@ -62,7 +62,6 @@ export default function Home() {
   const QUICK_LINKS = [
     { icon: Building2, label: t('home.quickLinks.tuzilma.label'),       sub: t('home.quickLinks.tuzilma.sub'),       to: '/tuzilma' },
     { icon: Users,     label: t('home.quickLinks.rahbariyat.label'),    sub: t('home.quickLinks.rahbariyat.sub'),    to: '/rahbariyat' },
-    { icon: UserPlus,  label: t('home.quickLinks.abituriyentlar.label'),sub: t('home.quickLinks.abituriyentlar.sub'),to: '/abituriyentlar' },
     { icon: Calendar,  label: t('home.quickLinks.taqvim.label'),        sub: t('home.quickLinks.taqvim.sub'),        to: '/taqvim' },
     { icon: FileText,  label: t('home.quickLinks.hujjatlar.label'),     sub: t('home.quickLinks.hujjatlar.sub'),     to: '/hujjatlar' },
   ];

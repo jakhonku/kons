@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: "Ta'lim", to: '/talim' },
+  { label: "Ta'lim" },
   { label: 'Bitiruvchilar bandligi' },
 ];
 

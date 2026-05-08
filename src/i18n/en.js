@@ -58,7 +58,6 @@ export default {
       yashilUniversitet: 'Green University',
       vakansiyalar: 'Job Openings',
 
-      talimHaqida: 'About Education',
       darsJadvali: 'Class Schedules',
       oquvRejalar: 'Curricula',
       sillabuslar: 'Syllabi',
@@ -66,7 +65,6 @@ export default {
       togaraklar: 'Clubs',
       bitiruvchilarBandligi: 'Graduate Employment',
 
-      ilmFanHaqida: 'About Science',
       ilmiyKengash: 'Academic Council',
       ilmiyLoyihalar: 'Research Projects',
       doktorantura: 'Doctorate',
@@ -78,7 +76,6 @@ export default {
       musiqaCholgulariLab: 'Musical Instruments Laboratory',
       eurasianMusicJournal: 'Eurasian Music Journal',
 
-      interaktivHaqida: 'About Interactive Services',
       onlineMurojaat: 'Online Inquiry',
       onlineKutubxona: 'Online Library',
       hemisTalaba: 'HEMIS-Student',
@@ -86,11 +83,9 @@ export default {
       registrator: "Registrar's Office Inquiry",
       yotoqxona: 'Student Dormitory',
 
-      ijodiyHaqida: 'About Creative Activity',
       jonliEfir: 'Live Stream',
       afisha: 'Posters',
 
-      qabulHaqida: 'About Admission',
       talimYonalishlari: 'Educational Directions',
       talimDasturlari: 'Educational Programs',
       qabulTalablari: 'Admission Requirements',
@@ -98,7 +93,6 @@ export default {
       kasbiyImtihonlar: 'Professional & Creative Exams',
       imtihonNatijalari: 'Exam Results',
 
-      xalqaroHaqida: 'About International Relations',
       hamkorTashkilotlar: 'Partner Organizations',
       xorijiyTalabalar: 'For Foreign Students',
       xalqaroMemorandumlar: 'International Memoranda',
@@ -157,7 +151,6 @@ export default {
       titleEm: 'Links',
       tuzilma: { label: 'Institution Structure', sub: 'Faculties and departments' },
       rahbariyat: { label: 'Management', sub: 'Rector and vice-rectors' },
-      abituriyentlar: { label: 'Applicants', sub: 'Admission 2026 — Quota' },
       taqvim: { label: 'Events Calendar', sub: 'Upcoming concerts' },
       hujjatlar: { label: 'Regulatory Documents', sub: 'PDF, Charter, Rules' },
     },
@@ -219,8 +212,6 @@ export default {
       structure: 'Institution Structure',
       management: 'Management',
       documents: 'Regulatory Documents',
-      applicants: 'Applicants',
-      international: 'International Relations',
       news: 'News',
     },
     studentLinks: {

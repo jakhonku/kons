@@ -3,7 +3,7 @@ import { Award, Calendar, CheckCircle, Globe, GraduationCap, ChevronRight } from
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Xalqaro aloqalar', to: '/xalqaro' },
+  { label: 'Xalqaro aloqalar' },
   { label: 'Xalqaro stipendiyalar' },
 ];
 

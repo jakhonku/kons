@@ -58,7 +58,6 @@ export default {
       yashilUniversitet: 'Yashil universitet',
       vakansiyalar: 'Boʻsh ish oʻrinlari',
 
-      talimHaqida: 'Ta\'lim haqida',
       darsJadvali: 'Dars jadvallari',
       oquvRejalar: 'Oʻquv rejalar',
       sillabuslar: 'Oʻquv dasturlari (Sillabuslar)',
@@ -66,7 +65,6 @@ export default {
       togaraklar: 'Toʻgaraklar',
       bitiruvchilarBandligi: 'Bitiruvchilar bandligi (career)',
 
-      ilmFanHaqida: 'Ilm-fan haqida',
       ilmiyKengash: 'Ilmiy kengash',
       ilmiyLoyihalar: 'Ilmiy loyihalar',
       doktorantura: 'Doktorantura',
@@ -78,7 +76,6 @@ export default {
       musiqaCholgulariLab: 'Musiqa cholgʻulari laboratoriyasi',
       eurasianMusicJournal: 'Eurasian Music Journal',
 
-      interaktivHaqida: 'Interaktiv xizmatlar haqida',
       onlineMurojaat: 'Online murojaat',
       onlineKutubxona: 'Online kutubxona',
       hemisTalaba: 'HEMIS-talaba',
@@ -86,11 +83,9 @@ export default {
       registrator: 'Registrator ofisiga murojaat',
       yotoqxona: 'Talabalar turar joyi',
 
-      ijodiyHaqida: 'Ijodiy faoliyat haqida',
       jonliEfir: 'Jonli efir',
       afisha: 'Afisha',
 
-      qabulHaqida: 'Qabul haqida',
       talimYonalishlari: 'Ta\'lim yoʻnalishlari',
       talimDasturlari: 'Ta\'lim dasturlari',
       qabulTalablari: 'Qabul ta\'lablari',
@@ -98,7 +93,6 @@ export default {
       kasbiyImtihonlar: 'Kasbiy va ijodiy imtihonlar',
       imtihonNatijalari: 'Imtihon natijalari',
 
-      xalqaroHaqida: 'Xalqaro aloqalar haqida',
       hamkorTashkilotlar: 'Hamkor tashkilotlar',
       xorijiyTalabalar: 'Xorijiy talabalar uchun',
       xalqaroMemorandumlar: 'Xalqaro memorandumlar',
@@ -157,7 +151,6 @@ export default {
       titleEm: 'Yoʻnalishlar',
       tuzilma: { label: 'Muassasa tuzilmasi', sub: 'Fakultet va kafedralar' },
       rahbariyat: { label: 'Rahbariyat', sub: 'Rektor va prorektor' },
-      abituriyentlar: { label: 'Abituriyentlar', sub: 'Qabul 2026 — Kvota' },
       taqvim: { label: 'Tadbirlar taqvimi', sub: 'Kelgusi konsertlar' },
       hujjatlar: { label: 'Me\'yoriy hujjatlar', sub: 'PDF, Ustav, Qoidalar' },
     },
@@ -219,8 +212,6 @@ export default {
       structure: 'Muassasa tuzilmasi',
       management: 'Rahbariyat',
       documents: 'Me\'yoriy hujjatlar',
-      applicants: 'Abituriyentlar',
-      international: 'Xalqaro aloqalar',
       news: 'Yangiliklar',
     },
     studentLinks: {

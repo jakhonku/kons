@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Ilm-fan', to: '/ilm-fan' },
+  { label: 'Ilm-fan' },
   { label: "Musiqa cholgʻulari laboratoriyasi" },
 ];
 

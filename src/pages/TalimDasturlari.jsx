@@ -8,7 +8,7 @@ export default function TalimDasturlari() {
       emphasis="Dasturlari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Qabul', to: '/abituriyentlar' },
+        { label: 'Qabul' },
         { label: "Ta'lim dasturlari" },
       ]}
       lead="Magistratura va oliy oʻquv yurtidan keyingi ta'lim dasturlari boʻyicha ma'lumotlar."

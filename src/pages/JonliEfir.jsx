@@ -2,7 +2,7 @@ import PageHero from '../components/PageHero';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Ijodiy faoliyat', to: '/ijodiy-faoliyat' },
+  { label: 'Ijodiy faoliyat' },
   { label: 'Jonli efir' },
 ];
 

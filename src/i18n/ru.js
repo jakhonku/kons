@@ -58,7 +58,6 @@ export default {
       yashilUniversitet: 'Зелёный университет',
       vakansiyalar: 'Вакансии',
 
-      talimHaqida: 'Об образовании',
       darsJadvali: 'Расписание занятий',
       oquvRejalar: 'Учебные планы',
       sillabuslar: 'Учебные программы (Силлабусы)',
@@ -66,7 +65,6 @@ export default {
       togaraklar: 'Кружки',
       bitiruvchilarBandligi: 'Трудоустройство выпускников',
 
-      ilmFanHaqida: 'О науке',
       ilmiyKengash: 'Учёный совет',
       ilmiyLoyihalar: 'Научные проекты',
       doktorantura: 'Докторантура',
@@ -78,7 +76,6 @@ export default {
       musiqaCholgulariLab: 'Лаборатория музыкальных инструментов',
       eurasianMusicJournal: 'Eurasian Music Journal',
 
-      interaktivHaqida: 'Об интерактивных услугах',
       onlineMurojaat: 'Онлайн обращение',
       onlineKutubxona: 'Онлайн библиотека',
       hemisTalaba: 'HEMIS-студент',
@@ -86,11 +83,9 @@ export default {
       registrator: 'Обращение в офис регистратора',
       yotoqxona: 'Студенческое общежитие',
 
-      ijodiyHaqida: 'О творческой деятельности',
       jonliEfir: 'Прямой эфир',
       afisha: 'Афиша',
 
-      qabulHaqida: 'О приёме',
       talimYonalishlari: 'Направления образования',
       talimDasturlari: 'Образовательные программы',
       qabulTalablari: 'Требования к поступающим',
@@ -98,7 +93,6 @@ export default {
       kasbiyImtihonlar: 'Профессиональные и творческие экзамены',
       imtihonNatijalari: 'Результаты экзаменов',
 
-      xalqaroHaqida: 'О международных связях',
       hamkorTashkilotlar: 'Партнёрские организации',
       xorijiyTalabalar: 'Для иностранных студентов',
       xalqaroMemorandumlar: 'Международные меморандумы',
@@ -157,7 +151,6 @@ export default {
       titleEm: 'ссылки',
       tuzilma: { label: 'Структура учреждения', sub: 'Факультеты и кафедры' },
       rahbariyat: { label: 'Руководство', sub: 'Ректор и проректоры' },
-      abituriyentlar: { label: 'Абитуриенты', sub: 'Приём 2026 — Квота' },
       taqvim: { label: 'Календарь мероприятий', sub: 'Предстоящие концерты' },
       hujjatlar: { label: 'Нормативные документы', sub: 'PDF, Устав, Правила' },
     },
@@ -219,8 +212,6 @@ export default {
       structure: 'Структура учреждения',
       management: 'Руководство',
       documents: 'Нормативные документы',
-      applicants: 'Абитуриенты',
-      international: 'Международные связи',
       news: 'Новости',
     },
     studentLinks: {

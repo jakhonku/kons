@@ -8,7 +8,7 @@ export default function QabulKvotasi() {
       emphasis="Kvotasi"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Qabul', to: '/abituriyentlar' },
+        { label: 'Qabul' },
         { label: 'Qabul kvotasi' },
       ]}
       lead="Joriy oʻquv yili uchun belgilangan davlat granti va toʻlov-kontrakt asosidagi qabul rejalari."

@@ -8,7 +8,7 @@ export default function KasbiyImtihonlar() {
       emphasis="Imtihonlar"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Qabul', to: '/abituriyentlar' },
+        { label: 'Qabul' },
         { label: 'Kasbiy va ijodiy imtihonlar' },
       ]}
       lead="Kasbiy (ijodiy) imtihonlar dasturi va baholash mezonlari bilan tanishing."

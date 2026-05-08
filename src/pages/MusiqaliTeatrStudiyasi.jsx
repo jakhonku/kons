@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Ijodiy faoliyat', to: '/ijodiy-faoliyat' },
+  { label: 'Ijodiy faoliyat' },
   { label: 'Musiqali teatr studiyasi' },
 ];
 

@@ -8,7 +8,7 @@ export default function StudyInUzbekistan() {
       emphasis="Uzbekistan"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Xalqaro', to: '/xalqaro' },
+        { label: 'Xalqaro' },
         { label: 'Study in Uzbekistan' },
       ]}
       lead="Information for international students about academic opportunities and student life in Uzbekistan."

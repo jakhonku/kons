@@ -38,12 +38,6 @@ export const SEARCH_PAGES = [
     keywords: 'kontakt manzil telefon email boglanish',
   },
   {
-    title: 'Abituriyentlar',
-    path: '/abituriyentlar',
-    desc: "Qabul shartlari, hujjatlar va imtihon ma'lumotlari",
-    keywords: 'abituriyent qabul kirish imtihon hujjat',
-  },
-  {
     title: 'Talabalar',
     path: '/talabalar',
     desc: "Talabalar uchun xizmatlar va ma'lumotlar",
@@ -108,12 +102,6 @@ export const SEARCH_PAGES = [
     path: '/yotoqxona',
     desc: "Yotoqxona xonalari, narxlar va qulayliklar",
     keywords: 'yotoqxona turar xona narx qulaylik',
-  },
-  {
-    title: 'Xalqaro aloqalar',
-    path: '/xalqaro',
-    desc: "Xalqaro hamkorlik, almashinuv dasturlari",
-    keywords: 'xalqaro hamkor almashinuv chet el',
   },
   {
     title: 'Fotogalereya',

@@ -3,7 +3,7 @@ import { GraduationCap, Calendar, CheckCircle, Globe } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Xalqaro aloqalar', to: '/xalqaro' },
+  { label: 'Xalqaro aloqalar' },
   { label: 'Erasmus+ dasturi' },
 ];
 

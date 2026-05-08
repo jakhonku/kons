@@ -5,8 +5,6 @@ const MUASSASA_KEYS = [
   { key: 'structure', to: '/tuzilma' },
   { key: 'management', to: '/rahbariyat' },
   { key: 'documents', to: '/hujjatlar' },
-  { key: 'applicants', to: '/abituriyentlar' },
-  { key: 'international', to: '/xalqaro' },
   { key: 'news', to: '/yangiliklar' },
 ];
 

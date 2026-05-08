@@ -8,7 +8,7 @@ export default function XorijiyTalabalar() {
       emphasis="Talabalar uchun"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Xalqaro', to: '/xalqaro' },
+        { label: 'Xalqaro' },
         { label: 'Xorijiy talabalar uchun' },
       ]}
       lead="Xorijiy fuqarolarni konservatoriyaga qabul qilish va ularning oʻqish jarayoni boʻyicha ma'lumotlar."

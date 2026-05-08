@@ -3,7 +3,7 @@ import { GraduationCap, Users, BookOpen, Calendar, ChevronRight } from 'lucide-r
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Xalqaro aloqalar', to: '/xalqaro' },
+  { label: 'Xalqaro aloqalar' },
   { label: 'Xorijiy dasturlar' },
 ];
 

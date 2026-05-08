@@ -60,7 +60,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.educationProcess'),
           links: [
-            { label: t('nav.items.talimHaqida'),  to: '/talim' },
             { label: t('nav.items.darsJadvali'),  to: '/dars-jadvali' },
             { label: t('nav.items.oquvRejalar'),  to: '/oquv-rejalar' },
             { label: t('nav.items.sillabuslar'),  to: '/sillabuslar' },
@@ -90,7 +89,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.research'),
           links: [
-            { label: t('nav.items.ilmFanHaqida'),         to: '/ilm-fan' },
             { label: t('nav.items.ilmiyKengash'),         to: '/ilmiy-kengash' },
             { label: t('nav.items.ilmiyLoyihalar'),       to: '/ilmiy-loyihalar' },
             { label: t('nav.items.doktorantura'),         to: '/doktorantura' },
@@ -124,7 +122,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.onlineServices'),
           links: [
-            { label: t('nav.items.interaktivHaqida'), to: '/interaktiv-xizmatlar' },
             { label: t('nav.items.onlineMurojaat'),   to: '/online-murojaat' },
             { label: t('nav.items.onlineKutubxona'),  to: '/kutubxona' },
           ],
@@ -159,7 +156,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.events'),
           links: [
-            { label: t('nav.items.ijodiyHaqida'), to: '/ijodiy-faoliyat' },
             { label: t('nav.items.jonliEfir'),    to: '/jonli-efir' },
             { label: t('nav.items.afisha'),       to: '/taqvim' },
           ],
@@ -180,7 +176,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.education'),
           links: [
-            { label: t('nav.items.qabulHaqida'),       to: '/abituriyentlar' },
             { label: t('nav.items.talimYonalishlari'), to: '/talim-yonalishlari' },
             { label: t('nav.items.talimDasturlari'),   to: '/talim-dasturlari' },
           ],
@@ -210,10 +205,9 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.partnership'),
           links: [
-            { label: t('nav.items.xalqaroHaqida'),        to: '/xalqaro' },
             { label: t('nav.items.hamkorTashkilotlar'),   to: '/hamkor-tashkilotlar' },
-            { label: t('nav.items.xorijiyTalabalar'),     to: '/xorijiy-talabalar' },
             { label: t('nav.items.xalqaroMemorandumlar'), to: '/xalqaro-memorandumlar' },
+            { label: t('nav.items.xorijiyTalabalar'),     to: '/xorijiy-talabalar' },
           ],
         },
         {

@@ -8,7 +8,7 @@ export default function QabulTalablari() {
       emphasis="Talablari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Qabul', to: '/abituriyentlar' },
+        { label: 'Qabul' },
         { label: "Qabul talablari" },
       ]}
       lead="Abituriyentlar uchun qoʻyiladigan umumiy va maxsus talablar bilan tanishing."

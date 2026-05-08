@@ -8,7 +8,7 @@ export default function ImtihonNatijalari() {
       emphasis="Natijalari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
-        { label: 'Qabul', to: '/abituriyentlar' },
+        { label: 'Qabul' },
         { label: 'Imtihon natijalari' },
       ]}
       lead="Oʻtkazilgan kasbiy (ijodiy) imtihonlar boʻyicha qaydnomalar va yakuniy natijalar."

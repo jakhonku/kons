@@ -24,9 +24,7 @@ import Yangiliklar from './pages/Yangiliklar';
 import YangilikBatafsil from './pages/YangilikBatafsil';
 import Taqvim from './pages/Taqvim';
 import Kontaktlar from './pages/Kontaktlar';
-import Abituriyentlar from './pages/Abituriyentlar';
 import Talabalar from './pages/Talabalar';
-import Xalqaro from './pages/Xalqaro';
 import HamkorTashkilotlar from './pages/HamkorTashkilotlar';
 import XorijiyDasturlar from './pages/XorijiyDasturlar';
 import XalqaroMemorandumlar from './pages/XalqaroMemorandumlar';
@@ -61,9 +59,7 @@ import Bolimlar from './pages/Bolimlar';
 import NukusFiliali from './pages/NukusFiliali';
 import JamoatTashkilotlari from './pages/JamoatTashkilotlari';
 import Vakansiyalar from './pages/Vakansiyalar';
-import Talim from './pages/Talim';
 import BitiruvchilarBandligi from './pages/BitiruvchilarBandligi';
-import IlmFan from './pages/IlmFan';
 import IlmiyKengash from './pages/IlmiyKengash';
 import IlmiyLoyihalar from './pages/IlmiyLoyihalar';
 import Doktorantura from './pages/Doktorantura';
@@ -72,9 +68,7 @@ import Nashriyot from './pages/Nashriyot';
 import MusiqaJurnaliTahririyati from './pages/MusiqaJurnaliTahririyati';
 import MusiqaCholgulariLaboratoriyasi from './pages/MusiqaCholgulariLaboratoriyasi';
 import EurasianMusicJournal from './pages/EurasianMusicJournal';
-import InteraktivXizmatlar from './pages/InteraktivXizmatlar';
 import OnlineMurojaat from './pages/OnlineMurojaat';
-import IjodiyFaoliyat from './pages/IjodiyFaoliyat';
 import RektorBio from './pages/RektorBio';
 
 import JonliEfir from './pages/JonliEfir';
@@ -133,7 +127,6 @@ export default function App() {
           <Route path="hujjatlar" element={<Hujjatlar />} />
 
           {/* Ta'lim */}
-          <Route path="talim" element={<Talim />} />
           <Route path="dars-jadvali" element={<DarsJadvali />} />
           <Route path="oquv-rejalar" element={<OquvRejalar />} />
           <Route path="sillabuslar" element={<Sillabuslar />} />
@@ -143,7 +136,6 @@ export default function App() {
           <Route path="talabalar" element={<Talabalar />} />
 
           {/* Ilm-fan */}
-          <Route path="ilm-fan" element={<IlmFan />} />
           <Route path="ilmiy-kengash" element={<IlmiyKengash />} />
           <Route path="ilmiy-loyihalar" element={<IlmiyLoyihalar />} />
           <Route path="doktorantura" element={<Doktorantura />} />
@@ -156,7 +148,6 @@ export default function App() {
           <Route path="eurasian-music-journal" element={<EurasianMusicJournal />} />
 
           {/* Interaktiv */}
-          <Route path="interaktiv-xizmatlar" element={<InteraktivXizmatlar />} />
           <Route path="online-murojaat" element={<OnlineMurojaat />} />
           <Route path="kutubxona" element={<Kutubxona />} />
           <Route path="hemis-talaba" element={<HemisTalaba />} />
@@ -165,7 +156,6 @@ export default function App() {
           <Route path="yotoqxona" element={<Yotoqxona />} />
 
           {/* Ijodiy */}
-          <Route path="ijodiy-faoliyat" element={<IjodiyFaoliyat />} />
 
           <Route path="jonli-efir" element={<JonliEfir />} />
           <Route path="taqvim" element={<Taqvim />} />
@@ -174,7 +164,6 @@ export default function App() {
           <Route path="videogalereya" element={<Videogalereya />} />
 
           {/* Qabul */}
-          <Route path="abituriyentlar" element={<Abituriyentlar />} />
           <Route path="talim-yonalishlari" element={<TalimYonalishlari />} />
           <Route path="talim-dasturlari" element={<TalimDasturlari />} />
           <Route path="qabul-talablari" element={<QabulTalablari />} />
@@ -183,7 +172,6 @@ export default function App() {
           <Route path="imtihon-natijalari" element={<ImtihonNatijalari />} />
 
           {/* Xalqaro */}
-          <Route path="xalqaro" element={<Xalqaro />} />
           <Route path="hamkor-tashkilotlar" element={<HamkorTashkilotlar />} />
           <Route path="xorijiy-talabalar" element={<XorijiyTalabalar />} />
           <Route path="xorijiy-dasturlar" element={<XorijiyDasturlar />} />
