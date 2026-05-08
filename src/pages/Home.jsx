@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, Play, Eye } from 'lucide-react';
+import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, Send, ChevronLeft, ChevronRight, Play, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '../contexts/LanguageContext';
 import { useAdminNews, useAdminTicker, useAdminTelegram } from '../hooks/useAdminStorage';
