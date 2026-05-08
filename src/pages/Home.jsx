@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { Building2, Users, UserPlus, Calendar, FileText, ArrowRight, Radio, ChevronLeft, ChevronRight, Play, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '../contexts/LanguageContext';
-import { useAdminNews, useAdminTicker } from '../hooks/useAdminStorage';
+import { useAdminNews, useAdminTicker, useAdminTelegram } from '../hooks/useAdminStorage';
+import TelegramPostEmbed from '../components/TelegramPostEmbed';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export default function Home() {
   const { t, lang } = useTranslation();
   const isMobile = useMediaQuery('(max-width: 991px)');
   const { items: adminNews, loading } = useAdminNews();
+  const { items: tgPosts, loading: tgLoading } = useAdminTelegram();
   const [newsIndex, setNewsIndex] = useState(0);
 
   const displayNews = useMemo(() => {
@@ -562,61 +564,45 @@ export default function Home() {
       </section>
       
       {/* ── TELEGRAM FEED ────────────────────────────────────────── */}
-      <section style={{ padding: '100px 0', background: 'var(--bg-surface)' }}>
-        <div className="container">
-          <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="section-tag" style={{ color: 'var(--gold)' }}>TELEGRAM</span>
-            <h2 className="section-title light">Bizning <span>Telegram</span> kanalimiz</h2>
-            <div className="ornament" style={{ justifyContent: 'center' }}>
-              <div className="ornament-diamond" />
-            </div>
-          </div>
-
-          <div className="reveal telegram-grid" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', 
-            gap: '30px',
-            maxWidth: '1200px',
-            margin: '0 auto'
-          }}>
-            <div className="tg-post-card">
-              <iframe 
-                id="tg-post-1"
-                src="https://t.me/Ozbekistondavlatkonservatoriyasi/2500?embed=1&dark=1" 
-                style={{ width: '100%', height: '500px', border: 'none', borderRadius: '12px', overflow: 'hidden' }}
-              />
-            </div>
-            <div className="tg-post-card">
-              <iframe 
-                id="tg-post-2"
-                src="https://t.me/Ozbekistondavlatkonservatoriyasi/2499?embed=1&dark=1" 
-                style={{ width: '100%', height: '500px', border: 'none', borderRadius: '12px', overflow: 'hidden' }}
-              />
-            </div>
-            {!isMobile && (
-              <div className="tg-post-card">
-                <iframe 
-                  id="tg-post-3"
-                  src="https://t.me/Ozbekistondavlatkonservatoriyasi/2498?embed=1&dark=1" 
-                  style={{ width: '100%', height: '500px', border: 'none', borderRadius: '12px', overflow: 'hidden' }}
-                />
+      {tgPosts && tgPosts.length > 0 && (
+        <section style={{ padding: '100px 0', background: 'var(--bg-surface)' }}>
+          <div className="container">
+            <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <span className="section-tag" style={{ color: 'var(--gold)' }}>TELEGRAM</span>
+              <h2 className="section-title light">Bizning <span>Telegram</span> kanalimiz</h2>
+              <div className="ornament" style={{ justifyContent: 'center' }}>
+                <div className="ornament-diamond" />
               </div>
-            )}
-          </div>
+            </div>
 
-          <div style={{ textAlign: 'center', marginTop: '50px' }} className="reveal">
-            <a 
-              href="https://t.me/Ozbekistondavlatkonservatoriyasi" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-gold" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
-            >
-              <Radio size={16} /> TELEGRAM KANALGA OBUNA BOʻLISH
-            </a>
+            <div className="reveal telegram-grid" style={{ 
+              display: 'grid', 
+              gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', 
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {tgPosts.slice(0, isMobile ? 2 : 3).map((post) => (
+                <div key={post.id} className="tg-post-card">
+                  <TelegramPostEmbed url={post.post_url} caption={post.caption} />
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '50px' }} className="reveal">
+              <a 
+                href="https://t.me/Ozbekistondavlatkonservatoriyasi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-gold" 
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+              >
+                <Radio size={16} /> TELEGRAM KANALGA OBUNA BOʻLISH
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
     </main>
   );
