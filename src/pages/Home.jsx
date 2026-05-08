@@ -565,11 +565,11 @@ export default function Home() {
       
       {/* ── TELEGRAM FEED ────────────────────────────────────────── */}
       {tgPosts && tgPosts.length > 0 && (
-        <section style={{ padding: '100px 0', background: 'var(--bg-surface)' }}>
+        <section style={{ padding: '100px 0', background: 'var(--white)', borderTop: '1px solid var(--light-border)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-              <span className="section-tag" style={{ color: 'var(--gold)' }}>TELEGRAM</span>
-              <h2 className="section-title light">Bizning <span>Telegram</span> kanalimiz</h2>
+              <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>TELEGRAM</span>
+              <h2 className="section-title">Bizning <span>Telegram</span> kanalimiz</h2>
               <div className="ornament" style={{ justifyContent: 'center' }}>
                 <div className="ornament-diamond" />
               </div>
