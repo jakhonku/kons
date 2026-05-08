@@ -83,6 +83,7 @@ export default {
       registrator: 'Registrator ofisiga murojaat',
       yotoqxona: 'Talabalar turar joyi',
 
+      musiqaliTeatr: 'Musiqali teatr studiyasi',
       jonliEfir: 'Jonli efir',
       afisha: 'Afisha',
 

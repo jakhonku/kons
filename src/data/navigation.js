@@ -156,6 +156,7 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.events'),
           links: [
+            { label: t('nav.items.musiqaliTeatr'), to: '/musiqali-teatr-studiyasi' },
             { label: t('nav.items.jonliEfir'),    to: '/jonli-efir' },
             { label: t('nav.items.afisha'),       to: '/taqvim' },
           ],

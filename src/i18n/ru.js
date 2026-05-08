@@ -83,6 +83,7 @@ export default {
       registrator: 'Обращение в офис регистратора',
       yotoqxona: 'Студенческое общежитие',
 
+      musiqaliTeatr: 'Студия музыкального театра',
       jonliEfir: 'Прямой эфир',
       afisha: 'Афиша',
 

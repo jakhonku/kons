@@ -83,6 +83,7 @@ export default {
       registrator: "Registrar's Office Inquiry",
       yotoqxona: 'Student Dormitory',
 
+      musiqaliTeatr: 'Musical Theatre Studio',
       jonliEfir: 'Live Stream',
       afisha: 'Posters',
 

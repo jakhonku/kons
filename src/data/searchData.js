@@ -98,6 +98,12 @@ export const SEARCH_PAGES = [
     keywords: 'togarak klub sport ijod madaniy',
   },
   {
+    title: 'Musiqali teatr studiyasi',
+    path: '/musiqali-teatr-studiyasi',
+    desc: 'Talabalar musiqali teatr jamoasi va spektakllar',
+    keywords: 'teatr studiya musiqa spektakl sahna ijro',
+  },
+  {
     title: 'Talabalar turar joyi',
     path: '/yotoqxona',
     desc: "Yotoqxona xonalari, narxlar va qulayliklar",

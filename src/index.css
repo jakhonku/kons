@@ -469,9 +469,9 @@ img {
 .header-calendar-widget {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   text-decoration: none;
-  padding: 6px 16px;
+  padding: 8px 22px;
   border: 1px solid rgba(201, 168, 76, 0.3);
   border-radius: 6px;
   background: linear-gradient(135deg, rgba(201, 168, 76, 0.1), rgba(8, 8, 21, 0.4));
@@ -495,18 +495,18 @@ img {
 .cal-icon-box {
   background: linear-gradient(to bottom, var(--gold-light), var(--gold));
   color: var(--bg-deep);
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 42px;
+  min-width: 50px;
   box-shadow: 0 2px 8px rgba(201, 168, 76, 0.3);
 }
 
 .cal-month {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 900;
   line-height: 1.1;
   text-transform: uppercase;
@@ -514,7 +514,7 @@ img {
 }
 
 .cal-day {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 900;
   line-height: 1;
 }
@@ -533,7 +533,7 @@ img {
 
 .cal-title {
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -542,7 +542,7 @@ img {
 
 .cal-subtitle {
   color: var(--gold-light);
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;

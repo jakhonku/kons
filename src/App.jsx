@@ -69,6 +69,7 @@ import MusiqaJurnaliTahririyati from './pages/MusiqaJurnaliTahririyati';
 import MusiqaCholgulariLaboratoriyasi from './pages/MusiqaCholgulariLaboratoriyasi';
 import EurasianMusicJournal from './pages/EurasianMusicJournal';
 import OnlineMurojaat from './pages/OnlineMurojaat';
+import MusiqaliTeatrStudiyasi from './pages/MusiqaliTeatrStudiyasi';
 import RektorBio from './pages/RektorBio';
 
 import JonliEfir from './pages/JonliEfir';
@@ -157,6 +158,7 @@ export default function App() {
 
           {/* Ijodiy */}
 
+          <Route path="musiqali-teatr-studiyasi" element={<MusiqaliTeatrStudiyasi />} />
           <Route path="jonli-efir" element={<JonliEfir />} />
           <Route path="taqvim" element={<Taqvim />} />
           <Route path="taqvim/:id" element={<TadbirBatafsil />} />
