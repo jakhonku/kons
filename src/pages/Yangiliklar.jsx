@@ -47,7 +47,7 @@ export default function Yangiliklar() {
       const mainImg = imgs[0] || n.image || null;
 
       return {
-        id: `admin-${n.id}`,
+        id: String(n.id),
         cat: n.category || 'Yangiliklar',
         date: formatDateUz(n.date) || formatDateUz(n.created_at),
         title: title,

@@ -57,7 +57,7 @@ export default function YangilikBatafsil() {
       const mainImg = imgs[0] || null;
 
       return {
-        id: `admin-${n.id}`,
+        id: String(n.id),
         cat: n.category || 'Voqealar',
         date: formatDateUz(n.date) || formatDateUz(n.created_at),
         title: title,
@@ -78,8 +78,8 @@ export default function YangilikBatafsil() {
   const next = idx >= 0 && idx < allNews.length - 1 ? allNews[idx + 1] : null;
 
   useEffect(() => {
-    if (item && item.id.startsWith('admin-')) {
-      const numericId = item.id.replace('admin-', '');
+    if (item && item.id) {
+      const numericId = item.id;
       const incremented = sessionStorage.getItem(`viewed-${numericId}`);
       
       if (!incremented) {

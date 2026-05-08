@@ -27,7 +27,7 @@ export default function Home() {
       else if (isEn && Array.isArray(n.images_en) && n.images_en.length > 0) mainImg = n.images_en[0];
 
       return {
-        id: `admin-${n.id}`,
+        id: String(n.id),
         cat: n.category || 'Voqealar',
         title: title,
         date: n.date || n.created_at,
