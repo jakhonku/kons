@@ -567,7 +567,7 @@ export default function Home() {
       {tgPosts && tgPosts.length > 0 && (
         <section style={{ padding: '100px 0', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
               <span className="section-tag" style={{ color: 'var(--gold)' }}>TELEGRAM</span>
               <h2 className="section-title light">Bizning <span>Telegram</span> kanalimiz</h2>
               <div className="ornament" style={{ justifyContent: 'center' }}>
@@ -575,7 +575,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="reveal telegram-grid" style={{ 
+            <div className="telegram-grid" style={{ 
               display: 'grid', 
               gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', 
               gap: '30px',
@@ -589,7 +589,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: '50px' }} className="reveal">
+            <div style={{ textAlign: 'center', marginTop: '50px' }}>
               <a 
                 href="https://t.me/Ozbekistondavlatkonservatoriyasi" 
                 target="_blank" 
@@ -597,7 +597,7 @@ export default function Home() {
                 className="btn-gold" 
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
               >
-                <Radio size={16} /> TELEGRAM KANALGA OBUNA BOʻLISH
+                <Send size={16} /> TELEGRAM KANALGA OBUNA BOʻLISH
               </a>
             </div>
           </div>
