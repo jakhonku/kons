@@ -560,6 +560,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* ── TELEGRAM FEED ────────────────────────────────────────── */}
+      <section style={{ padding: '100px 0', background: 'var(--bg-surface)' }}>
+        <div className="container">
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <span className="section-tag" style={{ color: 'var(--gold)' }}>TELEGRAM</span>
+            <h2 className="section-title light">Bizning <span>Telegram</span> kanalimiz</h2>
+            <div className="ornament" style={{ justifyContent: 'center' }}>
+              <div className="ornament-diamond" />
+            </div>
+          </div>
+
+          <div className="reveal telegram-grid" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', 
+            gap: '30px',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            <div className="tg-post-card">
+              <iframe 
+                id="tg-post-1"
+                src="https://t.me/Ozbekistondavlatkonservatoriyasi/2500?embed=1&dark=1" 
+                style={{ width: '100%', height: '500px', border: 'none', borderRadius: '12px', overflow: 'hidden' }}
+              />
+            </div>
+            <div className="tg-post-card">
+              <iframe 
+                id="tg-post-2"
+                src="https://t.me/Ozbekistondavlatkonservatoriyasi/2499?embed=1&dark=1" 
+                style={{ width: '100%', height: '500px', border: 'none', borderRadius: '12px', overflow: 'hidden' }}
+              />
+            </div>
+            {!isMobile && (
+              <div className="tg-post-card">
+                <iframe 
+                  id="tg-post-3"
+                  src="https://t.me/Ozbekistondavlatkonservatoriyasi/2498?embed=1&dark=1" 
+                  style={{ width: '100%', height: '500px', border: 'none', borderRadius: '12px', overflow: 'hidden' }}
+                />
+              </div>
+            )}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '50px' }} className="reveal">
+            <a 
+              href="https://t.me/Ozbekistondavlatkonservatoriyasi" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-gold" 
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+            >
+              <Radio size={16} /> TELEGRAM KANALGA OBUNA BOʻLISH
+            </a>
+          </div>
+        </div>
+      </section>
 
     </main>
   );
