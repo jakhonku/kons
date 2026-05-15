@@ -32,7 +32,6 @@ export function buildNavMenu(t) {
             { label: t('nav.items.fakultetlar'),         to: '/fakultetlar' },
             { label: t('nav.items.kafedralar'),          to: '/kafedralar' },
             { label: t('nav.items.bolimlar'),            to: '/bolimlar' },
-            { label: t('nav.items.oquvUslubiy'),         to: '/oquv-uslubiy-kengash' },
             { label: t('nav.items.jamoatTashkilotlari'), to: '/jamoat-tashkilotlari' },
           ],
         },
@@ -63,6 +62,7 @@ export function buildNavMenu(t) {
             { label: t('nav.items.darsJadvali'),  to: '/dars-jadvali' },
             { label: t('nav.items.oquvRejalar'),  to: '/oquv-rejalar' },
             { label: t('nav.items.sillabuslar'),  to: '/sillabuslar' },
+            { label: t('nav.items.oquvUslubiy'),  to: '/oquv-uslubiy-kengash' },
           ],
         },
         {
