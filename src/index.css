@@ -691,7 +691,7 @@ img {
 .mega-links.is-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0 40px;
+  gap: 8px 60px;
   align-items: start;
 }
 
@@ -714,16 +714,10 @@ img {
   color: #3a3a5c;
   padding: 8px 0;
   transition: all 0.18s ease;
-  border-bottom: 1px solid rgba(26, 26, 56, 0.04);
 }
 
 .mega-links.is-grid .mega-link {
-  border-bottom: 1px solid rgba(26, 26, 56, 0.06);
-  padding: 10px 0;
-}
-
-.mega-link:last-child {
-  border-bottom: none;
+  padding: 8px 0;
 }
 
 .mega-link:hover {
