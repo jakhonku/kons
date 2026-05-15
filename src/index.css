@@ -8811,20 +8811,6 @@ img, video, iframe {
   color: rgba(255, 255, 255, 0.4);
 }
 
-.preloader-musical-notes {
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
-
-.preloader-musical-notes .note {
-  color: var(--gold);
-  font-size: 1.5rem;
-  opacity: 0.3;
-}
 
 .preloader-curtain {
   position: absolute;

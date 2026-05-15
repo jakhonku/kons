@@ -6,22 +6,20 @@ export default function Preloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate progress
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           return 100;
         }
-        return prev + 2;
+        return prev + 1.5;
       });
     }, 30);
 
-    // Actual window load event
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 800); // Small buffer for smooth exit
+      }, 1000); 
     };
 
     if (document.readyState === 'complete') {
@@ -44,67 +42,77 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ 
             opacity: 0,
-            scale: 1.1,
-            transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] } 
+            y: "-100%",
+            transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] } 
+          }}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99999,
+            backgroundColor: '#030305',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
-          <div className="preloader-content">
-            <motion.div 
-              className="preloader-logo"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <img src="/Konservatoriya_logo_white-05.png" alt="Logo" />
-            </motion.div>
+          {/* Logo with subtle breathing animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            style={{ marginBottom: '40px' }}
+          >
+            <img 
+              src="/Konservatoriya_logo_white-05.png" 
+              alt="O'zbekiston Davlat Konservatoriyasi" 
+              style={{
+                height: '70px',
+                width: 'auto',
+                opacity: 0.9,
+                filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.05))'
+              }}
+            />
+          </motion.div>
 
-            <motion.div 
-              className="preloader-title"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <div className="preloader-eyebrow">EST. 1936</div>
-              <h1>OʻZBEKISTON DAVLAT <span>KONSERVATORIYASI</span></h1>
-            </motion.div>
-
-            <div className="preloader-loader-wrap">
-              <div className="preloader-bar-bg">
-                <motion.div 
-                  className="preloader-bar-fill" 
-                  style={{ width: `${progress}%` }}
-                />
-              </div>
-              <div className="preloader-status">
-                <span>Loading Harmony</span>
-                <span>{Math.round(progress)}%</span>
-              </div>
+          {/* Minimalist Progress Line */}
+          <div style={{
+            position: 'absolute',
+            bottom: '40px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px'
+          }}>
+            <div style={{
+              width: '100%',
+              height: '1px',
+              background: 'rgba(255,255,255,0.1)',
+              overflow: 'hidden'
+            }}>
+              <motion.div 
+                style={{ 
+                  width: `${progress}%`,
+                  height: '100%',
+                  background: 'var(--gold, #C9A84C)'
+                }}
+              />
             </div>
-
-            <div className="preloader-musical-notes">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="note"
-                  animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.3, 1, 0.3],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.4,
-                    ease: "easeInOut"
-                  }}
-                >
-                  ♪
-                </motion.div>
-              ))}
-            </div>
+            <motion.div 
+              style={{
+                fontFamily: 'var(--font-sans, sans-serif)',
+                fontSize: '0.6rem',
+                letterSpacing: '4px',
+                color: 'rgba(255,255,255,0.4)',
+                textTransform: 'uppercase'
+              }}
+            >
+              {Math.round(progress)}%
+            </motion.div>
           </div>
-
-          <div className="preloader-curtain left" />
-          <div className="preloader-curtain right" />
         </motion.div>
       )}
     </AnimatePresence>
