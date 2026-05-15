@@ -99,30 +99,11 @@ export default function Home() {
             <div className="ornament-diamond" />
           </div>
 
-          <blockquote style={{
-            borderLeft: '2px solid var(--gold-dim)',
-            paddingLeft: '20px',
-            marginBottom: '40px',
-            maxWidth: '380px',
-          }}>
-            <p style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1.25rem',
-              fontStyle: 'italic',
-              color: 'rgba(240,237,232,0.7)',
-              lineHeight: 1.65,
-              fontWeight: 300,
-            }}>
+          <blockquote className="hero-quote">
+            <p className="hero-quote-text">
               {t('home.hero.quote')}
             </p>
-            <footer style={{
-              marginTop: '14px',
-              fontSize: '0.65rem',
-              fontFamily: 'var(--font-sans)',
-              letterSpacing: '3px',
-              color: 'var(--gold)',
-              fontWeight: 700,
-            }}>
+            <footer className="hero-quote-author">
               {t('home.hero.quoteAuthor')}
             </footer>
           </blockquote>

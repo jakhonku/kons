@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { AdminAuthProvider } from './contexts/AdminAuthContext';
 import Layout from './components/layout/Layout';
 import AdminLayout from './components/admin/AdminLayout';
@@ -86,6 +87,7 @@ import RektorTabrigi from './pages/RektorTabrigi';
 export default function App() {
   return (
     <LanguageProvider>
+      <ThemeProvider>
       <AdminAuthProvider>
       <Preloader />
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
@@ -195,6 +197,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       </AdminAuthProvider>
+      </ThemeProvider>
     </LanguageProvider>
   );
 }

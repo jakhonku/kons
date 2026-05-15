@@ -7,6 +7,7 @@ import { SUPPORTED_LANGUAGES } from '../../i18n';
 import { useScrollLock } from '../../hooks/useScrollLock';
 import MobileAccordion from './MobileAccordion';
 import AccessibilityWidget from '../AccessibilityWidget';
+import ThemeSwitcher from './ThemeSwitcher';
 
 export default function MobileMenu({ isOpen, onClose }) {
   useScrollLock(isOpen);
@@ -99,6 +100,14 @@ export default function MobileMenu({ isOpen, onClose }) {
                     {short}
                   </button>
                 ))}
+              </div>
+
+              <div className="mob-footer-line" />
+
+              {/* Kunduz / tun rejimi */}
+              <div className="mob-theme">
+                <span className="mob-theme-label">Rejim</span>
+                <ThemeSwitcher />
               </div>
 
               <div className="mob-footer-line" />

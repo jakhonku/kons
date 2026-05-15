@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { UTILITY_LINKS } from '../../data/navigation';
 import { useTranslation } from '../../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeSwitcher from './ThemeSwitcher';
 import AccessibilityWidget from '../AccessibilityWidget';
 
 export default function UtilityBar({ onSearchOpen }) {
@@ -40,6 +41,9 @@ export default function UtilityBar({ onSearchOpen }) {
             </svg>
             <span>{t('common.search')}</span>
           </button>
+
+          <div className="utility-divider" />
+          <ThemeSwitcher />
         </div>
 
       </div>
