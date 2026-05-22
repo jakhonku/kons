@@ -66,6 +66,7 @@ export default function YangilikBatafsil() {
         image: mainImg,
         images: imgs,
         video: n.video || '',
+        zoom_link: n.zoom_link || '',
         featured: !!n.featured,
         views: n.views || 0,
       };
@@ -214,6 +215,16 @@ export default function YangilikBatafsil() {
                       Videoni koʻrish →
                     </a>
                   )}
+                </div>
+              )}
+
+              {/* Zoom Link */}
+              {item.zoom_link && (
+                <div style={{ margin: '30px 0', textAlign: 'center' }}>
+                  <a href={item.zoom_link} target="_blank" rel="noopener noreferrer" className="btn-outline-dark" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', backgroundColor: '#2D8CFF', color: 'white', border: 'none', padding: '14px 28px', borderRadius: '8px', fontWeight: '600', fontSize: '1.1rem', boxShadow: '0 4px 12px rgba(45,140,255,0.3)' }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"/><rect x="3" y="6" width="12" height="12" rx="2" ry="2"/></svg>
+                    Zoom orqali ulanish
+                  </a>
                 </div>
               )}
 

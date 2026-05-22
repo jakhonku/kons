@@ -41,6 +41,7 @@ create table if not exists public.news (
   excerpt     text,
   body        text,
   image       text,
+  zoom_link   text,
   featured    boolean not null default false,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()

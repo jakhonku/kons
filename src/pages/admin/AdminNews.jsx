@@ -25,6 +25,7 @@ const EMPTY = {
   images_ru: [],
   images_en: [],
   video: '',
+  zoom_link: '',
   featured: false,
 };
 
@@ -88,6 +89,7 @@ export default function AdminNews() {
       images_ru: Array.isArray(item.images_ru) ? item.images_ru : [],
       images_en: Array.isArray(item.images_en) ? item.images_en : [],
       video: item.video || '',
+      zoom_link: item.zoom_link || '',
       featured: !!item.featured,
     });
     setFormError('');
@@ -121,6 +123,7 @@ export default function AdminNews() {
       images_ru: form.images_ru || [],
       images_en: form.images_en || [],
       video: form.video,
+      zoom_link: form.zoom_link || null,
       featured: form.featured,
     };
     const result = editing === 'new' ? await add(payload) : await update(editing, payload);
@@ -456,6 +459,16 @@ export default function AdminNews() {
                       </button>
                     </div>
                   )}
+                </label>
+
+                <label className="admin-field admin-field-full">
+                  <span className="admin-field-label">Zoom havola (ixtiyoriy)</span>
+                  <input
+                    type="url"
+                    value={form.zoom_link || ''}
+                    onChange={(e) => setForm({ ...form, zoom_link: e.target.value })}
+                    placeholder="Zoom uchrashuvi havolasini kiriting (https://zoom.us/...)"
+                  />
                 </label>
 
                 <label className="admin-field admin-field-full admin-checkbox">
