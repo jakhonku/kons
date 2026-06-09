@@ -14,6 +14,7 @@ export default {
     switchLanguage: 'Switch language',
     posters: 'Posters',
     concertCalendar: 'Concert calendar',
+    testMode: 'The website is running in test mode',
   },
 
   nav: {

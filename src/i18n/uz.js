@@ -14,6 +14,7 @@ export default {
     switchLanguage: 'Tilni almashtirish',
     posters: 'Afishalar',
     concertCalendar: 'Konsert taqvimi',
+    testMode: 'Sayt test rejimida ishlayapti',
   },
 
   nav: {

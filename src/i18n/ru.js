@@ -14,6 +14,7 @@ export default {
     switchLanguage: 'Сменить язык',
     posters: 'Афиши',
     concertCalendar: 'Календарь концертов',
+    testMode: 'Сайт работает в тестовом режиме',
   },
 
   nav: {

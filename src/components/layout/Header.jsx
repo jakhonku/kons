@@ -45,6 +45,14 @@ export default function Header() {
   return (
     <>
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
+        {/* Test Mode Banner */}
+        <div className="test-mode-banner">
+          <div className="test-mode-content">
+            <span className="test-mode-dot"></span>
+            <span>{t('common.testMode')}</span>
+          </div>
+        </div>
+
         {/* Utility bar — faqat desktop */}
         {isDesktop && <UtilityBar onSearchOpen={() => setIsSearchOpen(true)} />}
 
