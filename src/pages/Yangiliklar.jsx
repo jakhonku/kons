@@ -11,7 +11,7 @@ const BREADCRUMBS = [
   { label: 'Yangiliklar' },
 ];
 
-const CATEGORIES = ["Barchasi", "Voqealar", "Mukofotlar", "Ta'lim", "Xalqaro"];
+const CATEGORIES = ["Barchasi", "Voqealar", "Mukofotlar", "Taʼlim", "Xalqaro"];
 
 function formatDateUz(value) {
   if (!value) return '';

@@ -17,7 +17,7 @@ export default function Vakansiyalar() {
       stats={[
         { value: '7', label: 'Faol vakansiya' },
         { value: '4', label: 'Pedagogik' },
-        { value: '3', label: "Ma'muriy" },
+        { value: '3', label: "Maʼmuriy" },
       ]}
       sections={[
         {
@@ -33,12 +33,12 @@ export default function Vakansiyalar() {
           },
         },
         {
-          heading: "Ma'muriy vakansiyalar",
+          heading: "Maʼmuriy vakansiyalar",
           table: {
             head: ['Lavozim', "Boʻlim", 'Talab', 'Muddat'],
             rows: [
-              ['Mutaxassis', "Xalqaro aloqalar boʻlimi", "Oliy ma'lumot, ingliz tili B2+", "10.07.2026 gacha"],
-              ['Tahrirchi', "Ilmiy nashrlar boʻlimi", "Oliy filologik ma'lumot", "05.07.2026 gacha"],
+              ['Mutaxassis', "Xalqaro aloqalar boʻlimi", "Oliy maʼlumot, ingliz tili B2+", "10.07.2026 gacha"],
+              ['Tahrirchi', "Ilmiy nashrlar boʻlimi", "Oliy filologik maʼlumot", "05.07.2026 gacha"],
               ['Tizim administratori', "Axborot texnologiyalari", "IT mutaxassisligi, 2+ yil tajriba", "18.06.2026 gacha"],
             ],
           },
@@ -46,10 +46,10 @@ export default function Vakansiyalar() {
         {
           heading: 'Tanlov tartibi',
           items: [
-            { title: '1-bosqich: Hujjatlarni topshirish', desc: "Ariza, CV, ma'lumot va tajriba haqidagi hujjatlar elektron pochtaga yuboriladi." },
+            { title: '1-bosqich: Hujjatlarni topshirish', desc: "Ariza, CV, maʼlumot va tajriba haqidagi hujjatlar elektron pochtaga yuboriladi." },
             { title: '2-bosqich: Hujjat ekspertizasi', desc: "Kadrlar boʻlimi nomzodlarning hujjatlarini 5 ish kuni ichida koʻrib chiqadi." },
-            { title: '3-bosqich: Suhbat va sinov darsi', desc: "Pedagogik vakansiyalar uchun ochiq dars / ma'muriy uchun mutaxassisligi boʻyicha test." },
-            { title: "4-bosqich: Konkurs komissiyasi qarori", desc: "Ilmiy kengash yoki rektor qarori bilan natija e'lon qilinadi." },
+            { title: '3-bosqich: Suhbat va sinov darsi', desc: "Pedagogik vakansiyalar uchun ochiq dars / maʼmuriy uchun mutaxassisligi boʻyicha test." },
+            { title: "4-bosqich: Konkurs komissiyasi qarori", desc: "Ilmiy kengash yoki rektor qarori bilan natija eʼlon qilinadi." },
           ],
         },
       ]}

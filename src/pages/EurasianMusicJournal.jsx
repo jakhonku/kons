@@ -13,7 +13,7 @@ export default function EurasianMusicJournal() {
       title="Eurasian"
       emphasis="Music Journal"
       breadcrumbs={BREADCRUMBS}
-      lead="Eurasian Music Journal (EMJ) — Markaziy Osiyo va Yevroosiyo musiqa madaniyati, tarixi, nazariyasi va ijro san'atiga bagʻishlangan ingliz tilidagi xalqaro ilmiy jurnal. 2021-yildan beri konservatoriya tomonidan nashr qilinadi."
+      lead="Eurasian Music Journal (EMJ) — Markaziy Osiyo va Yevroosiyo musiqa madaniyati, tarixi, nazariyasi va ijro sanʼatiga bagʻishlangan ingliz tilidagi xalqaro ilmiy jurnal. 2021-yildan beri konservatoriya tomonidan nashr qilinadi."
       stats={[
         { value: '4', label: 'Issues per year' },
         { value: '24', label: 'Articles (2025)' },

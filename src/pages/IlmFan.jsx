@@ -27,7 +27,7 @@ export default function IlmFan() {
             { tag: '03', title: 'Doktorantura', desc: "PhD va DSc darajalari boʻyicha tayyorgarlik dasturlari.", meta: '/doktorantura' },
             { tag: '04', title: 'Ilmiy konferensiyalar', desc: "Yiliga oʻtkaziladigan xalqaro va respublika miqyosidagi konferensiyalar.", meta: '/ilmiy-konferensiyalar' },
             { tag: '05', title: 'Nashriyot', desc: "Konservatoriya nashriyoti — darsliklar, monografiyalar va oʻquv qoʻllanmalari.", meta: '/nashriyot' },
-            { tag: '06', title: "Musiqa cholgʻulari laboratoriyasi", desc: "An'anaviy va zamonaviy cholgʻularni oʻrganish va ta'mirlash markazi.", meta: '/musiqa-cholgulari-laboratoriyasi' },
+            { tag: '06', title: "Musiqa cholgʻulari laboratoriyasi", desc: "Anʼanaviy va zamonaviy cholgʻularni oʻrganish va taʼmirlash markazi.", meta: '/musiqa-cholgulari-laboratoriyasi' },
           ],
         },
         {

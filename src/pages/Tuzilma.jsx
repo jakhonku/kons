@@ -54,11 +54,11 @@ const FACULTIES = [
   },
   {
     id: 5,
-    name: "Musiqa san'ati va pedagogika fakulteti",
+    name: "Musiqa sanʼati va pedagogika fakulteti",
     icon: '𝄢',
     kafedralar: [
       "Musiqa pedagogikasi",
-      "Maktabgacha ta'lim musiqasi",
+      "Maktabgacha taʼlim musiqasi",
       "Musiqa psixologiyasi",
       "Amaliy musiqa",
     ],
@@ -66,12 +66,12 @@ const FACULTIES = [
 ];
 
 const DEPARTMENTS = [
-  { name: "Akademik masalalar boʻlimi", head: "Mas'ul: Oʻquv boʻlimi" },
-  { name: "Ilmiy-tadqiqot markazi",     head: "Mas'ul: Ilmiy boʻlim" },
-  { name: "Xalqaro aloqalar boʻlimi",  head: "Mas'ul: Xalqaro boʻlim" },
-  { name: "Moliya-xoʻjalik boʻlimi",   head: "Mas'ul: Ma'muriy boʻlim" },
-  { name: "Axborot texnologiyalari",    head: "Mas'ul: IT boʻlimi" },
-  { name: "Kutubxona va arxiv",         head: "Mas'ul: Kutubxona boʻlimi" },
+  { name: "Akademik masalalar boʻlimi", head: "Masʼul: Oʻquv boʻlimi" },
+  { name: "Ilmiy-tadqiqot markazi",     head: "Masʼul: Ilmiy boʻlim" },
+  { name: "Xalqaro aloqalar boʻlimi",  head: "Masʼul: Xalqaro boʻlim" },
+  { name: "Moliya-xoʻjalik boʻlimi",   head: "Masʼul: Maʼmuriy boʻlim" },
+  { name: "Axborot texnologiyalari",    head: "Masʼul: IT boʻlimi" },
+  { name: "Kutubxona va arxiv",         head: "Masʼul: Kutubxona boʻlimi" },
 ];
 
 export default function Tuzilma() {
@@ -90,7 +90,7 @@ export default function Tuzilma() {
           <article className="article-body">
             <p className="lead">
               Konservatoriya tuzilmasi 5 ta fakultet, 38 kafedra va koʻplab
-              ma'muriy boʻlimlardan iborat boʻlib, barcha jarayonlar zamonaviy
+              maʼmuriy boʻlimlardan iborat boʻlib, barcha jarayonlar zamonaviy
               boshqaruv tizimi asosida olib boriladi.
             </p>
           </article>
@@ -108,7 +108,7 @@ export default function Tuzilma() {
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--navy)' }}>Rektor</div>
             </div>
             <div className="tuzilma-prorektor-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
-              {["Ta'lim ishlari prorektori", "Ilmiy-ijodiy ishlar prorektori", "Xalqaro aloqalar prorektori", "Ma'muriy-xoʻjalik prorektori"].map((p) => (
+              {["Taʼlim ishlari prorektori", "Ilmiy-ijodiy ishlar prorektori", "Xalqaro aloqalar prorektori", "Maʼmuriy-xoʻjalik prorektori"].map((p) => (
                 <div key={p} style={{ padding: '14px', border: '1px solid var(--light-border)', background: 'var(--light-50)', fontSize: '0.78rem', color: 'var(--navy)', textAlign: 'center', lineHeight: 1.4, fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
                   {p}
                 </div>
@@ -146,7 +146,7 @@ export default function Tuzilma() {
 
           {/* Boʻlimlar */}
           <div className="section-divider">
-            <h2>Ma'muriy boʻlimlar</h2>
+            <h2>Maʼmuriy boʻlimlar</h2>
           </div>
 
           <div className="tuzilma-dept-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '60px' }}>

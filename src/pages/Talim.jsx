@@ -2,17 +2,17 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: "Ta'lim" },
+  { label: "Taʼlim" },
 ];
 
 export default function Talim() {
   return (
     <InfoPage
-      tag="Akademik ta'lim"
+      tag="Akademik taʼlim"
       title="Oʻquv jarayoni va"
-      emphasis="ta'lim dasturlari"
+      emphasis="taʼlim dasturlari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyada akademik ta'lim ikki bosqichli model — bakalavriat va magistratura asosida olib boriladi. Doktorantura ilmiy daraja oluvchilar uchun moʻljallangan. Barcha oʻquv jarayoni ESG xalqaro standartlariga muvofiq tashkil etilgan."
+      lead="Konservatoriyada akademik taʼlim ikki bosqichli model — bakalavriat va magistratura asosida olib boriladi. Doktorantura ilmiy daraja oluvchilar uchun moʻljallangan. Barcha oʻquv jarayoni ESG xalqaro standartlariga muvofiq tashkil etilgan."
       stats={[
         { value: '17', label: 'Bakalavr yoʻnalishi' },
         { value: '12', label: 'Magistratura' },
@@ -47,7 +47,7 @@ export default function Talim() {
       ]}
       contact={{
         title: "Oʻquv ishlari prorektorligi",
-        responsible: "Farhod Abdullayev",
+        responsible: "Abdullayev Farhod Rustambekovich",
         phone: '+998 71 234-56-80',
         email: 'oquv@konservatoriya.uz',
         hours: 'Dushanba – Juma, 09:00 – 17:00',

@@ -10,8 +10,8 @@ const BREADCRUMBS = [
 const REKTOR = {
   title: 'Rektor',
   name: "Kamoliddin Urinbayev Turdimuratovich",
-  role: "O‘zbekiston davlat konservatoriyasi rektori",
-  degree: "O‘zbekiston xalq artisti, professor",
+  role: "Oʻzbekiston davlat konservatoriyasi rektori",
+  degree: "Oʻzbekiston xalq artisti, professor",
   phone: '+998 71 234-56-78',
   email: 'rektor@konservatoriya.uz',
   initials: 'KO',
@@ -21,47 +21,36 @@ const REKTOR = {
 
 const PROREKTORS = [
   {
-    title: "Oʻquv ishlari boʻyicha prorektor",
-    name: "Farhod Abdullayev",
-    degree: "Pedagogika fanlari nomzodi, dotsent",
+    title: "Oʻzbekiston davlat konservatoriyasining Yoshlar masalalari va maʼnaviy-maʼrifiy ishlar boʻyicha birinchi prorektori",
+    name: "Xusnitdinova Yulduz Madatovna",
+    degree: "Professor",
+    phone: '+998 71 234-56-88',
+    email: 'birinchi-prorektor@konservatoriya.uz',
+
+    initials: 'XY',
+    photo: '/images/rahbariyat/Xusnitdinova.jpg',
+    reception: "Dushanba – Juma, 14:00 – 17:00"
+  },
+  {
+    title: "Oʻzbekiston davlat konservatoriyasining Oʻquv ishlari boʻyicha prorektori",
+    name: "Abdullayev Farhod Rustambekovich",
+    degree: "Professor",
     phone: '+998 71 234-56-80',
     email: 'prorektor-oquv@konservatoriya.uz',
-    bio: "Oʻquv-metodik ishlarni tashkil etish, ta'lim sifatini nazorat qilish va oʻquv jarayonini takomillashtirish sohasida faoliyat yuritadi.",
+    
     initials: 'FA',
     photo: '/images/rahbariyat/Farhod Abdullayev.JPG',
     reception: "Dushanba – Juma, 14:00 – 17:00"
   },
   {
-    title: "Ilmiy-ijodiy ishlari boʻyicha prorektor",
-    name: "Toshmatov Behruz Aliyevich",
-    degree: "San'atshunoslik fanlari doktori, professor",
+    title: "Oʻzbekiston davlat konservatoriyasining Ilmiy ishlar va innovatsiyalar boʻyicha prorektori",
+    name: "Gafurova Sayyora Akmalovna",
+    degree: "Professor",
     phone: '+998 71 234-56-82',
     email: 'prorektor-ilm@konservatoriya.uz',
-    bio: "Ilmiy tadqiqotlar, xalqaro hamkorlik va ijodiy loyihalarni boshqaradi. Bir nechta xalqaro ilmiy jurnallarda maqolalari chop etilgan.",
-    initials: 'TB',
-    photo: null,
-    reception: "Dushanba – Juma, 14:00 – 17:00"
-  },
-  {
-    title: "Ma'muriy-xoʻjalik ishlari boʻyicha prorektor",
-    name: "Xoliqov Jamshid Normatovich",
-    degree: "Iqtisod fanlari nomzodi",
-    phone: '+998 71 234-56-84',
-    email: 'prorektor-mxis@konservatoriya.uz',
-    bio: "Moddiy-texnik ta'minot, infratuzilma rivojlantirish va moliyaviy faoliyatni boshqaradi. 15 yillik davlat boshqaruvi tajribasiga ega.",
-    initials: 'XJ',
-    photo: null,
-    reception: "Dushanba – Juma, 14:00 – 17:00"
-  },
-  {
-    title: "Xalqaro hamkorlik boʻyicha prorektor",
-    name: "Yusupova Madina Otabekovna",
-    degree: "Filologiya fanlari nomzodi, dotsent",
-    phone: '+998 71 234-56-86',
-    email: 'prorektor-xalqaro@konservatoriya.uz',
-    bio: "Xalqaro hamkorlik dasturlari, xorijiy hamkor universitetlar bilan aloqalar va talabalar mobilligini muvofiqlashtiradi.",
-    initials: 'YM',
-    photo: null,
+  
+    initials: 'GS',
+    photo: '/images/rahbariyat/Gafurova.jpg',
     reception: "Dushanba – Juma, 14:00 – 17:00"
   },
 ];
@@ -77,7 +66,7 @@ export default function Rahbariyat() {
         breadcrumbs={BREADCRUMBS}
       />
 
-      {/* ── REKTOR — kinematik hero (centralasian.uz uslubida) ── */}
+      {/* ── REKTOR — kinematik hero ── */}
       <section
         className="rektor-cover"
         style={REKTOR.photo ? { backgroundImage: `url(${REKTOR.photo})` } : undefined}
@@ -90,10 +79,11 @@ export default function Rahbariyat() {
               <h1 className="rektor-cover-name-title" style={{ transition: 'color 0.3s' }}>{REKTOR.name}</h1>
             </Link>
             <p className="rektor-cover-role-line">{REKTOR.role}</p>
-            {/* Degree va kontaktlar olib tashlandi, ular endi biografiya sahifasida */}
           </div>
         </div>
       </section>
+
+
 
       {/* ── PROREKTORLAR ── */}
       <section className="main-content" style={{ paddingTop: '70px' }}>
@@ -116,7 +106,10 @@ export default function Rahbariyat() {
                 <div className="prorektor-body">
                   <div className="prorektor-badge">Prorektor</div>
                   <h3 className="prorektor-name">{p.name}</h3>
-                  <p className="prorektor-title-text">{p.title}</p>
+                  <p className="prorektor-title-text">
+                    {p.title}
+                    {p.degree && <span style={{ display: 'block', color: 'var(--gold-dark)', fontStyle: 'normal', fontWeight: 600, marginTop: '4px' }}>{p.degree}</span>}
+                  </p>
                   <p className="prorektor-bio">{p.bio}</p>
                   <div className="prorektor-contacts">
                     <a href={`tel:${p.phone}`} className="prorektor-phone">{p.phone}</a>

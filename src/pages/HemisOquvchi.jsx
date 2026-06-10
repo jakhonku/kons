@@ -12,8 +12,8 @@ const FEATURES = [
   { icon: BarChart2,     title: 'Reyting va baholar',  desc: "Talabalarga baho qoʻyish, davomadni belgilash va yakuniy natijalar." },
   { icon: ClipboardList, title: 'Topshiriqlar',        desc: "Talabalar uchun vazifalar yaratish va topshirishlarni kuzatish." },
   { icon: FileText,      title: 'Oʻquv materiallar',  desc: "Kurs materiallari, sillabuslar va metodik qoʻllanmalarni yuklash." },
-  { icon: MessageCircle, title: 'Xabarlar',            desc: "Talabalar va ma'muriyat bilan tizim ichida muloqot." },
-  { icon: Users,         title: 'Guruh roʻyxati',     desc: "Tahsil olayotgan talabalar, ularning ma'lumotlari va faoliyati." },
+  { icon: MessageCircle, title: 'Xabarlar',            desc: "Talabalar va maʼmuriyat bilan tizim ichida muloqot." },
+  { icon: Users,         title: 'Guruh roʻyxati',     desc: "Tahsil olayotgan talabalar, ularning maʼlumotlari va faoliyati." },
 ];
 
 export default function HemisOquvchi() {

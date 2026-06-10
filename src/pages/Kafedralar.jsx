@@ -57,14 +57,14 @@ export default function Kafedralar() {
             { title: "Doira va zarbli cholgʻular", desc: "Mudir: dots. Akhmedov Sardor Bobirovich" },
             { title: 'Ud va tanbur kafedrasi', desc: 'Mudir: prof. Toshmatov Akbar Sherzodovich' },
             { title: 'Xalq ansambli', desc: 'Mudir: dots. Mirzayeva Gulnora Otabekovna' },
-            { title: 'Maqom san\'ati', desc: 'Mudir: prof. Yusupov Davron Murodovich' },
+            { title: 'Maqom sanʼati', desc: 'Mudir: prof. Yusupov Davron Murodovich' },
           ],
         },
         {
-          heading: "Musiqa san'ati va pedagogika",
+          heading: "Musiqa sanʼati va pedagogika",
           items: [
             { title: 'Musiqa pedagogikasi', desc: 'Mudir: prof. Karimova Sarvinoz Otabekovna' },
-            { title: "Maktabgacha ta'lim musiqasi", desc: 'Mudir: dots. Sodiqov Sherzod Bobirovich' },
+            { title: "Maktabgacha taʼlim musiqasi", desc: 'Mudir: dots. Sodiqov Sherzod Bobirovich' },
             { title: 'Musiqa psixologiyasi', desc: 'Mudir: dots. Aliyeva Nargiza Erkinovna' },
             { title: 'Amaliy musiqa va menejment', desc: "Mudir: dots. Rashidov Otabek Sherzodovich" },
           ],

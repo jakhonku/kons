@@ -13,7 +13,7 @@ export default function Fakultetlar() {
       title="Konservatoriya"
       emphasis="fakultetlari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyada 5 ta yetakchi fakultet faoliyat koʻrsatadi. Har bir fakultet oʻz yoʻnalishi boʻyicha bakalavr va magistratura darajasidagi mutaxassislarni tayyorlaydi va musiqa san'atining yetakchi sohalarini rivojlantiradi."
+      lead="Konservatoriyada 5 ta yetakchi fakultet faoliyat koʻrsatadi. Har bir fakultet oʻz yoʻnalishi boʻyicha bakalavr va magistratura darajasidagi mutaxassislarni tayyorlaydi va musiqa sanʼatining yetakchi sohalarini rivojlantiradi."
       stats={[
         { value: '5', label: 'Fakultet' },
         { value: '38', label: 'Kafedra' },
@@ -41,12 +41,12 @@ export default function Fakultetlar() {
             {
               tag: 'Fakultet 04',
               title: "Xalq cholgʻulari fakulteti",
-              desc: "Dutor, gʻijjak, doira, ud va boshqa milliy cholgʻular boʻyicha noyob ta'lim. Maqom san'atini rivojlantirish markazi.",
+              desc: "Dutor, gʻijjak, doira, ud va boshqa milliy cholgʻular boʻyicha noyob taʼlim. Maqom sanʼatini rivojlantirish markazi.",
             },
             {
               tag: 'Fakultet 05',
-              title: "Musiqa san'ati va pedagogika",
-              desc: "Musiqa oʻqituvchilari, maktabgacha ta'lim mutaxassislari va musiqa psixologiyasi boʻyicha kadrlarni tayyorlaydi.",
+              title: "Musiqa sanʼati va pedagogika",
+              desc: "Musiqa oʻqituvchilari, maktabgacha taʼlim mutaxassislari va musiqa psixologiyasi boʻyicha kadrlarni tayyorlaydi.",
             },
           ],
         },
@@ -59,7 +59,7 @@ export default function Fakultetlar() {
               ["Cholgʻu ijrochiligi", '12', '420', '78'],
               ['Kompozitsiya va musiqa nazariyasi', '4', '95', '28'],
               ["Xalq cholgʻulari", '7', '230', '46'],
-              ["Musiqa san'ati va pedagogika", '5', '275', '38'],
+              ["Musiqa sanʼati va pedagogika", '5', '275', '38'],
             ],
           },
         },

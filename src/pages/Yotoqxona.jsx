@@ -133,7 +133,7 @@ export default function Yotoqxona() {
             borderLeft: '4px solid var(--gold)', padding: '24px 32px', marginBottom: '60px',
           }}>
             <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.1rem', marginBottom: '8px' }}>
-              Yotoqxona ma'muriyati
+              Yotoqxona maʼmuriyati
             </h4>
             <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.75, fontFamily: 'var(--font-serif)', margin: 0 }}>
               Manzil: Konservatoriya yonidagi talabalar shaharchasi, 2-bino<br />

@@ -8,7 +8,7 @@ const BREADCRUMBS = [
 const DIRECTIONS = [
   {
     code: '5111400',
-    name: 'Ijrochilik san\'ati (fortepiano)',
+    name: 'Ijrochilik sanʼati (fortepiano)',
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 20,
@@ -16,7 +16,7 @@ const DIRECTIONS = [
   },
   {
     code: '5111401',
-    name: 'Ijrochilik san\'ati (torli cholgʻular)',
+    name: 'Ijrochilik sanʼati (torli cholgʻular)',
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 15,
@@ -24,7 +24,7 @@ const DIRECTIONS = [
   },
   {
     code: '5111402',
-    name: "Ijrochilik san'ati (dam olish cholgʻulari)",
+    name: "Ijrochilik sanʼati (dam olish cholgʻulari)",
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 15,
@@ -32,7 +32,7 @@ const DIRECTIONS = [
   },
   {
     code: '5111403',
-    name: "Ijrochilik san'ati (xalq cholgʻulari)",
+    name: "Ijrochilik sanʼati (xalq cholgʻulari)",
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 25,
@@ -72,7 +72,7 @@ const DIRECTIONS = [
   },
   {
     code: '5112000',
-    name: "Musiqa ta'limi",
+    name: "Musiqa taʼlimi",
     degree: 'Bakalavr',
     duration: '4 yil',
     quota: 40,
@@ -84,7 +84,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Hujjatlarni tayyorlash',
-    desc: "Pasport nusxasi, oʻrta ta'lim diplomi, 3x4 fotosurat (6 ta), tibbiy ma'lumotnoma (086-shakl), ijodiy faoliyat hujjatlari.",
+    desc: "Pasport nusxasi, oʻrta taʼlim diplomi, 3x4 fotosurat (6 ta), tibbiy maʼlumotnoma (086-shakl), ijodiy faoliyat hujjatlari.",
   },
   {
     num: '02',
@@ -103,16 +103,16 @@ const STEPS = [
   },
   {
     num: '05',
-    title: 'Natijalar e\'lon qilinishi',
-    desc: "Qabul natijalari 1-sentyabrgacha e'lon qilinadi. Roʻyxatlar konservatoriya doskasida va rasmiy saytda chop etiladi.",
+    title: 'Natijalar eʼlon qilinishi',
+    desc: "Qabul natijalari 1-sentyabrgacha eʼlon qilinadi. Roʻyxatlar konservatoriya doskasida va rasmiy saytda chop etiladi.",
   },
 ];
 
 const DOCUMENTS = [
   "Pasport yoki tugʻilganlik guvohnomasi nusxasi",
-  "Oʻrta ta'lim toʻgʻrisidagi diplom (asl nusxa va nusxasi)",
+  "Oʻrta taʼlim toʻgʻrisidagi diplom (asl nusxa va nusxasi)",
   "6 ta 3×4 oʻlchamidagi fotosurat",
-  "Tibbiy ma'lumotnoma (086-shakl)",
+  "Tibbiy maʼlumotnoma (086-shakl)",
   "DTM guvohnomasi nusxasi",
   "Ijodiy yutuqlar hujjatlari (mavjud boʻlsa)",
   "Ariza (qabul komissiyasida toʻldiriladi)",
@@ -134,7 +134,7 @@ export default function Abituriyentlar() {
       <div className="stats-row">
         <div className="stat-item">
           <div className="stat-num">{DIRECTIONS.length}</div>
-          <div className="stat-label">Ta'lim yoʻnalishi</div>
+          <div className="stat-label">Taʼlim yoʻnalishi</div>
         </div>
         <div className="stat-item">
           <div className="stat-num">{totalQuota}</div>
@@ -189,16 +189,16 @@ export default function Abituriyentlar() {
             ))}
           </div>
 
-          {/* Ta'lim yoʻnalishlari va kvota jadvali */}
+          {/* Taʼlim yoʻnalishlari va kvota jadvali */}
           <div className="section-divider">
-            <h2>Ta'lim yoʻnalishlari va kvota</h2>
+            <h2>Taʼlim yoʻnalishlari va kvota</h2>
           </div>
           <div className="data-table-wrap" style={{ paddingTop: 0 }}>
             <table className="data-table">
               <thead>
                 <tr>
                   <th>Mutaxassislik kodi</th>
-                  <th>Ta'lim yoʻnalishi</th>
+                  <th>Taʼlim yoʻnalishi</th>
                   <th>Daraja</th>
                   <th>Muddat</th>
                   <th>Oʻqish shakli</th>
@@ -260,13 +260,13 @@ export default function Abituriyentlar() {
             ))}
           </div>
 
-          {/* Qoʻshimcha ma'lumot */}
+          {/* Qoʻshimcha maʼlumot */}
           <div className="abit-info-pair" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '60px' }}>
             <div className="info-box">
               <h4>Kasbiy-ijodiy imtihon</h4>
               <p>
                 Har bir yoʻnalish boʻyicha maxsus dastur asosida oʻtkaziladi.
-                Imtihon dasturlari qabul komissiyasida va rasmiy saytda e'lon qilinadi.
+                Imtihon dasturlari qabul komissiyasida va rasmiy saytda eʼlon qilinadi.
                 Minimal oʻtish bali: <strong>70 ball (100 dan)</strong>.
               </p>
             </div>

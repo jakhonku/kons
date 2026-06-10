@@ -34,7 +34,7 @@ export default function MusiqaliTeatrStudiyasi() {
           items: [
             { title: "Badiiy rahbar — prof. Aliyev Otabek Sherzodovich", desc: "Oʻzbekiston xalq artisti. 15+ yil tajriba." },
             { title: "Bosh dirijyor — prof. Yusupov Akbar Murodovich", desc: "Orkestr sinfi kafedrasi mudiri." },
-            { title: "Bosh rejissyor — Karimov Sardor Bobirovich", desc: "Toshkent davlat teatr san'ati instituti professori." },
+            { title: "Bosh rejissyor — Karimov Sardor Bobirovich", desc: "Toshkent davlat teatr sanʼati instituti professori." },
             { title: "Xormeyster — prof. Tursunova Dilfuza Otabekovna", desc: "Xor dirijyorligi kafedrasi mudiri." },
             { title: "Bosh xoreograf — Mirzayeva Gulnora Olimovna", desc: "Milliy va klassik raqs ustasi." },
             { title: "Studio direktori — Akhmedov Davron Sherzodovich", desc: "Loyiha boshqaruvi va sahna ishlab chiqarish." },

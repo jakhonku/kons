@@ -31,16 +31,16 @@ const REGIONS = [
     partners: [
       { name: 'Xyuston Universitet Moores Musiqa Maktabi', country: 'AQSh',      flag: '🇺🇸', type: 'Tadqiqot almashinuvi', since: 2022, status: 'Faol' },
       { name: 'Juilliard Maktabi',                         country: 'AQSh',      flag: '🇺🇸', type: 'Master-klass',         since: 2023, status: 'Faol' },
-      { name: 'Berklee Musiqa Kolleji',                    country: 'AQSh',      flag: '🇺🇸', type: 'Onlayn ta\'lim',       since: 2021, status: 'Faol' },
+      { name: 'Berklee Musiqa Kolleji',                    country: 'AQSh',      flag: '🇺🇸', type: 'Onlayn taʼlim',       since: 2021, status: 'Faol' },
     ],
   },
   {
     region: 'Osiyo',
     partners: [
       { name: 'Pekin Musiqa Konservatoriyasi',              country: 'Xitoy',     flag: '🇨🇳', type: 'Madaniy almashinuv',   since: 2020, status: 'Faol' },
-      { name: "Seul Milliy Universiteti San'at Kolleji",    country: 'Janubiy Koreya', flag: '🇰🇷', type: 'Talabalar almashinuvi', since: 2019, status: 'Faol' },
+      { name: "Seul Milliy Universiteti Sanʼat Kolleji",    country: 'Janubiy Koreya', flag: '🇰🇷', type: 'Talabalar almashinuvi', since: 2019, status: 'Faol' },
       { name: "Istambul Davlat Konservatoriyasi",           country: 'Turkiya',   flag: '🇹🇷', type: "Qoʻshma konsertlar",   since: 2020, status: 'Faol' },
-      { name: 'Tokio Musiqa va Badiiy San\'at Universiteti', country: 'Yaponiya', flag: '🇯🇵', type: 'Talabalar almashinuvi', since: 2022, status: 'Yangi' },
+      { name: 'Tokio Musiqa va Badiiy Sanʼat Universiteti', country: 'Yaponiya', flag: '🇯🇵', type: 'Talabalar almashinuvi', since: 2022, status: 'Yangi' },
     ],
   },
   {

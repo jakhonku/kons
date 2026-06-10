@@ -19,7 +19,7 @@ export default function QabulTalablari() {
             "Pasport (ID karta) nusxasi",
             "Diplom yoki attestat (asli)",
             "3.5x4.5 oʻlchamdagi rasm",
-            "Tibbiy ma'lumotnoma"
+            "Tibbiy maʼlumotnoma"
           ]
         }
       ]}

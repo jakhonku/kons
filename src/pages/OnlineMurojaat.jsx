@@ -12,7 +12,7 @@ const BREADCRUMBS = [
 const MUROJAAT_TURLARI = [
   'Taklif',
   'Shikoyat',
-  "Ma'lumot soʻrash",
+  "Maʼlumot soʻrash",
   "Hamkorlik takliflari",
   'Boshqa',
 ];
@@ -78,7 +78,7 @@ export default function OnlineMurojaat() {
                 Murojaat shakli
               </h2>
               <p style={{ color: '#888', fontSize: '0.85rem', marginBottom: '28px' }}>
-                Barcha maydonlar majburiy. Maxfiy ma'lumotlar Oʻzbekiston Respublikasi qonunchiligi asosida himoya qilinadi.
+                Barcha maydonlar majburiy. Maxfiy maʼlumotlar Oʻzbekiston Respublikasi qonunchiligi asosida himoya qilinadi.
               </p>
 
               {submitted ? (

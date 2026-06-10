@@ -13,7 +13,7 @@ export default function Doktorantura() {
       title="Doktorantura va"
       emphasis="bazaviy doktorantura"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriya doktoranturasi PhD (Doctor of Philosophy) va DSc (Doctor of Science) ilmiy darajalari boʻyicha ilmiy tadqiqotchilarni tayyorlaydi. Doktorantura boʻlimi 17.00.02 — Musiqa san'ati ixtisosligi boʻyicha akkreditatsiyalangan."
+      lead="Konservatoriya doktoranturasi PhD (Doctor of Philosophy) va DSc (Doctor of Science) ilmiy darajalari boʻyicha ilmiy tadqiqotchilarni tayyorlaydi. Doktorantura boʻlimi 17.00.02 — Musiqa sanʼati ixtisosligi boʻyicha akkreditatsiyalangan."
       stats={[
         { value: '24', label: 'Faol doktorant' },
         { value: '8', label: 'PhD himoyasi (2025)' },
@@ -57,7 +57,7 @@ export default function Doktorantura() {
         {
           heading: "Tadqiqot mavzulari (mavjud yoʻnalishlar)",
           items: [
-            "Oʻzbek mumtoz musiqasi va maqom san'ati",
+            "Oʻzbek mumtoz musiqasi va maqom sanʼati",
             "Etnomusiqashunoslik va folklor",
             "Zamonaviy kompozitsiya texnikalari",
             "Ijro nazariyasi va metodikasi",
@@ -76,7 +76,7 @@ export default function Doktorantura() {
               ["Ariza topshirish muddati", '15.07.2026', "Hujjatlar toʻplami"],
               ['Ijodiy va kasbiy imtihon', '20–25.08.2026', "Ixtisoslik va chet tili"],
               ['Suhbat va tadqiqot rejasi himoyasi', '01–05.09.2026', 'Ilmiy kengash huzurida'],
-              ["Qabul natijalari e'lon qilinishi", '10.09.2026', "Veb-sayt va elektron pochta"],
+              ["Qabul natijalari eʼlon qilinishi", '10.09.2026', "Veb-sayt va elektron pochta"],
               ["Oʻqish boshlanishi", '01.10.2026', '3 yillik dastur'],
             ],
           },

@@ -88,7 +88,7 @@ export default function Kontaktlar() {
       <PageHero
         tag="Yangiliklar"
         title="Bogʻlanish"
-        emphasis="Ma'lumotlari"
+        emphasis="Maʼlumotlari"
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -96,7 +96,7 @@ export default function Kontaktlar() {
         <div className="container">
           <div className="contact-grid">
 
-            {/* Chap: aloqa ma'lumotlari */}
+            {/* Chap: aloqa maʼlumotlari */}
             <div>
               <p className="article-body lead" style={{ marginBottom: '40px' }}>
                 Bizga murojaat qiling — har qanday savol boʻyicha yordam berishga tayyormiz.

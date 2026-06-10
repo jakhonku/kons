@@ -11,7 +11,7 @@ export default function RektorTabrigi() {
         { label: 'Yangiliklar', to: '/yangiliklar' },
         { label: 'Rektor tabrigi' },
       ]}
-      lead="Oʻzbekiston davlat konservatoriyasi rektorining tabriklari va ma'ruzalari."
+      lead="Oʻzbekiston davlat konservatoriyasi rektorining tabriklari va maʼruzalari."
       sections={[
         {
           heading: "Yangi oʻquv yili munosabati bilan tabrik",

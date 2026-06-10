@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Plus, Edit3, Trash2, X, ArrowUp, ArrowDown, Radio, Loader2 } from 'lucide-react';
 import { useAdminTicker } from '../../hooks/useAdminStorage';
 
-const CATEGORIES = ['Yangilik', 'Voqealar', 'Mukofotlar', "Ta'lim", 'Xalqaro', 'Eʼlon'];
+const CATEGORIES = ['Yangilik', 'Voqealar', 'Mukofotlar', "Taʼlim", 'Xalqaro', 'Eʼlon'];
 
 const EMPTY = { title: '', category: 'Yangilik', link: '' };
 
@@ -183,7 +183,7 @@ export default function AdminTicker() {
                     value={form.title}
                     onChange={(e) => setForm({ ...form, title: e.target.value })}
                     required
-                    placeholder="Lenta'da koʻrinadigan qisqa matn"
+                    placeholder="Lentaʼda koʻrinadigan qisqa matn"
                     maxLength={140}
                   />
                 </label>

@@ -14,7 +14,7 @@ const VIDEOS = [
   { id: 2, cat: 'Master-klass', title: "Fortepiano mahorat darsi — professor Karimov",         duration: '47:33', thumb: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&h=450&fit=crop', featured: false },
   { id: 3, cat: 'Konsertlar',  title: 'Opera studiyasi — La Traviata parchalari',               duration: '58:40', thumb: 'https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800&h=450&fit=crop', featured: false },
   { id: 4, cat: 'Hujjatli',    title: "Konservatoriya tarixi — 85 yillik yoʻl",                 duration: '24:15', thumb: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&h=450&fit=crop', featured: false },
-  { id: 5, cat: 'Intervyu',    title: "Rektor bilan suhbat: Ta'limning istiqboli",              duration: '18:55', thumb: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&h=450&fit=crop', featured: false },
+  { id: 5, cat: 'Intervyu',    title: "Rektor bilan suhbat: Taʼlimning istiqboli",              duration: '18:55', thumb: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&h=450&fit=crop', featured: false },
   { id: 6, cat: 'Master-klass', title: "Vena mehmon-professori: Kamera musiqa icrochiligi",    duration: '1:02:18', thumb: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&h=450&fit=crop', featured: false },
 ];
 

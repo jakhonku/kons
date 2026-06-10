@@ -6,7 +6,7 @@ import { uploadVideo, isVideoUrl } from '../../lib/supabase';
 import ImageGalleryEditor from '../../components/admin/ImageGalleryEditor';
 import PreviewModal from '../../components/admin/PreviewModal';
 
-const CATEGORIES = ['Voqealar', 'Mukofotlar', "Ta'lim", 'Xalqaro', 'Eʼlonlar'];
+const CATEGORIES = ['Voqealar', 'Mukofotlar', "Taʼlim", 'Xalqaro', 'Eʼlonlar'];
 
 const EMPTY = {
   title: '',

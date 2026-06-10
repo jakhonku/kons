@@ -9,7 +9,7 @@ const BREADCRUMBS = [
 
 const GOALS = [
   { icon: Leaf,        title: 'Yashil muhit',            desc: "Kampusda 500 dan ortiq daraxt va oʻsimliklar, ekologik hududlar." },
-  { icon: Sun,         title: 'Quyosh energiyasi',       desc: "Binolar energiyasining 30% quyosh panellaridan ta'minlanadi." },
+  { icon: Sun,         title: 'Quyosh energiyasi',       desc: "Binolar energiyasining 30% quyosh panellaridan taʼminlanadi." },
   { icon: Recycle,     title: 'Chiqindilarni saralash',  desc: "Uch xil idish orqali chiqindilarni qayta ishlash tizimi." },
   { icon: Droplets,    title: "Suv tejamliligi",         desc: "Avtomatik sugʻorish va suv sarfini nazorat qilish tizimi." },
   { icon: Bike,        title: 'Velosiped infratuzilmasi', desc: "Campus boʻylab velosiped yoʻllari va parkovkalar." },
@@ -60,7 +60,7 @@ export default function YashilUniversitet() {
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
               Oʻzbekiston Davlat Konservatoriyasi barqaror rivojlanish va ekologiya tamoyillarini
-              ta'lim jarayoni va kampus hayotiga jadal joriy etmoqda.
+              taʼlim jarayoni va kampus hayotiga jadal joriy etmoqda.
             </p>
           </article>
 

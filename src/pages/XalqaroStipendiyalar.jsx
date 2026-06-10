@@ -26,7 +26,7 @@ const SCHOLARSHIPS = [
     deadline: 'Dekabr 2025',
     level: 'Bakalavr, Magistratura',
     status: 'Faol',
-    desc: "Yevropa Ittifoqining rasmiy ta'lim almashinuvi granti. Yevropa yetakchi musiqa universitetlarida 1 semestr yoki 1 yil oʻqish.",
+    desc: "Yevropa Ittifoqining rasmiy taʼlim almashinuvi granti. Yevropa yetakchi musiqa universitetlarida 1 semestr yoki 1 yil oʻqish.",
   },
   {
     title: "Rossiya Davlat Stipendiyasi",

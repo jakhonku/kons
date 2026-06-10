@@ -11,7 +11,7 @@ export default function XorijiyTalabalar() {
         { label: 'Xalqaro' },
         { label: 'Xorijiy talabalar uchun' },
       ]}
-      lead="Xorijiy fuqarolarni konservatoriyaga qabul qilish va ularning oʻqish jarayoni boʻyicha ma'lumotlar."
+      lead="Xorijiy fuqarolarni konservatoriyaga qabul qilish va ularning oʻqish jarayoni boʻyicha maʼlumotlar."
       sections={[
         {
           heading: "Qabul tartibi",

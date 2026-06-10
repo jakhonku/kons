@@ -82,7 +82,7 @@ export default function TadbirBatafsil() {
       <main className="content-wrapper">
         <div className="container" style={{ padding: '120px 0', textAlign: 'center' }}>
           <div className="loader-spin" style={{ width: '40px', height: '40px', border: '3px solid var(--gold)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 20px' }} />
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>Ma'lumotlar yuklanmoqda...</p>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>Maʼlumotlar yuklanmoqda...</p>
         </div>
       </main>
     );
@@ -152,7 +152,7 @@ export default function TadbirBatafsil() {
 
             {/* Info card */}
             <aside className="tadbir-info-card">
-              <span className="section-tag" style={{ color: 'var(--gold)' }}>Tadbir ma'lumotlari</span>
+              <span className="section-tag" style={{ color: 'var(--gold)' }}>Tadbir maʼlumotlari</span>
               <h2 className="tadbir-info-title">{event.title}</h2>
               <p className="tadbir-info-artist"><User size={14} strokeWidth={1.8} /> {event.artist}</p>
 

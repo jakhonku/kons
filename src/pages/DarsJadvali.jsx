@@ -22,7 +22,7 @@ const FACULTIES = [
   "Cholgʻu ijrochiligi fakulteti",
   "Kompozitsiya va musiqa nazariyasi",
   "Xalq cholgʻulari fakulteti",
-  "Musiqa san'ati va pedagogika fakulteti",
+  "Musiqa sanʼati va pedagogika fakulteti",
 ];
 
 export default function DarsJadvali() {

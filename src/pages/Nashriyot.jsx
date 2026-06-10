@@ -13,7 +13,7 @@ export default function Nashriyot() {
       title="Konservatoriya"
       emphasis="nashriyoti"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriya nashriyoti darsliklar, monografiyalar, oʻquv qoʻllanmalari, partiturasi va musiqa toʻplamlarini chop etadi. Nashriyot Oʻzbekiston Vazirlar Mahkamasi qoshidagi Ta'lim sifatini nazorat qilish davlat inspektsiyasi tomonidan akkreditatsiyalangan."
+      lead="Konservatoriya nashriyoti darsliklar, monografiyalar, oʻquv qoʻllanmalari, partiturasi va musiqa toʻplamlarini chop etadi. Nashriyot Oʻzbekiston Vazirlar Mahkamasi qoshidagi Taʼlim sifatini nazorat qilish davlat inspektsiyasi tomonidan akkreditatsiyalangan."
       stats={[
         { value: '40+', label: 'Yillik nashr' },
         { value: '5', label: 'Nashr turi' },
@@ -36,7 +36,7 @@ export default function Nashriyot() {
           table: {
             head: ['Yil', 'Nashr nomi', 'Muallif', 'Tur'],
             rows: [
-              ['2026', "Maqom san'atining nazariy asoslari", "prof. Yusupov Davron", 'Monografiya'],
+              ['2026', "Maqom sanʼatining nazariy asoslari", "prof. Yusupov Davron", 'Monografiya'],
               ['2026', "Fortepiano texnikasi: tekshiruv va metodika", "prof. Rashidova Nargiza", "Oʻquv qoʻllanma"],
               ['2025', "20-asr oʻzbek simfonik musiqasi", "prof. Aliyeva Nigora", 'Monografiya'],
               ['2025', "Xalq cholgʻulari ansambli uchun partituralar", "Tahrir: prof. Qodirova Madina", 'Notali nashr'],

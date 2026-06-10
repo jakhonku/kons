@@ -21,10 +21,10 @@ export default {
     tuzilma: { label: 'Структура' },
     talim: { label: 'Образование' },
     ilmFan: { label: 'Наука' },
-    interaktiv: { label: 'Интерактивные услуги' },
-    ijodiy: { label: 'Творческая деятельность' },
+    interaktiv: { label: 'Сервисы' },
+    ijodiy: { label: 'Творчество' },
     qabul: { label: 'Приём' },
-    xalqaro: { label: 'Международные связи' },
+    xalqaro: { label: 'Международное' },
     axborot: { label: 'Информационная служба' },
 
     headings: {

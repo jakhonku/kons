@@ -40,7 +40,7 @@ export default function AdminTelegram() {
     if (!form.post_url.trim() || submitting) return;
     const parsed = parseTelegramUrl(form.post_url);
     if (!parsed) {
-      setFormError('Noto‘g‘ri Telegram URL. Format: https://t.me/CHANNEL/POSTID');
+      setFormError('Notoʻgʻri Telegram URL. Format: https://t.me/CHANNEL/POSTID');
       return;
     }
     setSubmitting(true);
@@ -78,7 +78,7 @@ export default function AdminTelegram() {
     if (!confirmDelete) return;
     const result = await remove(confirmDelete.id);
     if (result.ok) setConfirmDelete(null);
-    else alert(result.error || 'O‘chirib bo‘lmadi');
+    else alert(result.error || 'Oʻchirib boʻlmadi');
   }
 
   return (
@@ -165,7 +165,7 @@ export default function AdminTelegram() {
         <strong>Format:</strong> <code>https://t.me/CHANNEL/POSTID</code> — masalan,
         <code> https://t.me/conservatory_uz/45</code>.
         Faqat <strong>ochiq (public)</strong> kanallar uchun ishlaydi.
-        Postni Telegram'da uzun bosib &quot;Copy Link&quot; qilish orqali olishingiz mumkin.
+        Postni Telegramʼda uzun bosib &quot;Copy Link&quot; qilish orqali olishingiz mumkin.
       </p>
 
       {editing && (

@@ -15,7 +15,7 @@ export default function ImtihonNatijalari() {
       sections={[
         {
           heading: "Natijalarni tekshirish",
-          text: "Imtihon natijalari har bir bosqich yakunlangandan soʻng 24 soat ichida e'lon qilinadi.",
+          text: "Imtihon natijalari har bir bosqich yakunlangandan soʻng 24 soat ichida eʼlon qilinadi.",
         }
       ]}
     />

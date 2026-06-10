@@ -81,7 +81,7 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="hero">
         <div className="hero-visual">
-          <img src="/3M7A4170.JPG" className="slide active" alt="Konservatoriya" />
+          <img src="/3M7A4170.JPG" className="slide active" alt="Konservatoriya" fetchpriority="high" decoding="async" />
           <div className="staff-lines" />
         </div>
 

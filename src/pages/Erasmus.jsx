@@ -28,16 +28,16 @@ const REQUIREMENTS = [
 const BENEFITS = [
   { title: 'Oylik stipendiya',     desc: '800–1 200 € (mamlakatga qarab)',     icon: GraduationCap },
   { title: "Sayohat xarajatlari",  desc: 'Masofaga qarab 820 € gacha',          icon: Globe },
-  { title: "Ta'lim toʻlovi",       desc: "Hamkor universitetda toʻlovsiz oʻqish", icon: CheckCircle },
+  { title: "Taʼlim toʻlovi",       desc: "Hamkor universitetda toʻlovsiz oʻqish", icon: CheckCircle },
   { title: 'Muddat',               desc: '1 semestr yoki 1 oʻquv yili',        icon: Calendar },
 ];
 
 const TIMELINE = [
-  { month: 'Oktyabr',  action: "Tanlov e'lon qilinadi va ariza shakllari tarqatiladi" },
-  { month: 'Noyabr',   action: "Ma'lumot sessiyasi — Xalqaro aloqalar boʻlimida" },
+  { month: 'Oktyabr',  action: "Tanlov eʼlon qilinadi va ariza shakllari tarqatiladi" },
+  { month: 'Noyabr',   action: "Maʼlumot sessiyasi — Xalqaro aloqalar boʻlimida" },
   { month: 'Dekabr',   action: "Hujjatlar topshirish muddati tugaydi" },
   { month: 'Yanvar',   action: "Ichki tanlov — akademik komissiya baholaydi" },
-  { month: 'Fevral',   action: "Natijalar e'lon qilinadi va rasmiy yoʻllanma beriladi" },
+  { month: 'Fevral',   action: "Natijalar eʼlon qilinadi va rasmiy yoʻllanma beriladi" },
   { month: 'Sentyabr', action: "Oʻqish boshlanadi (keyingi oʻquv yili)" },
 ];
 
@@ -70,7 +70,7 @@ export default function Erasmus() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              Erasmus+ — Yevropa Ittifoqining ta'lim almashinuvi dasturi. Konservatoriya talabalari
+              Erasmus+ — Yevropa Ittifoqining taʼlim almashinuvi dasturi. Konservatoriya talabalari
               Yevropa yetakchi musiqa universitetlarida 1 semestr yoki toʻliq yil oʻqish imkoniga ega.
             </p>
           </article>

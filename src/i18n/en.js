@@ -21,11 +21,11 @@ export default {
     tuzilma: { label: 'Structure' },
     talim: { label: 'Education' },
     ilmFan: { label: 'Science' },
-    interaktiv: { label: 'Interactive Services' },
-    ijodiy: { label: 'Creative Activity' },
+    interaktiv: { label: 'Services' },
+    ijodiy: { label: 'Creative' },
     qabul: { label: 'Admission' },
-    xalqaro: { label: 'International Relations' },
-    axborot: { label: 'News & Media' },
+    xalqaro: { label: 'International' },
+    axborot: { label: 'Information Service' },
 
     headings: {
       management: 'Management',
@@ -81,7 +81,7 @@ export default {
       onlineKutubxona: 'Online Library',
       hemisTalaba: 'HEMIS-Student',
       hemisOqituvchi: 'HEMIS-Teacher',
-      registrator: "Registrar's Office Inquiry",
+      registrator: "Registrarʼs Office Inquiry",
       yotoqxona: 'Student Dormitory',
 
       musiqaliTeatr: 'Musical Theatre Studio',
@@ -103,7 +103,7 @@ export default {
 
       axborotXizmati: 'News',
       sayohat360: 'Online Tour (360°)',
-      rektorTabrigi: "Rector's Greetings & Speeches",
+      rektorTabrigi: "Rectorʼs Greetings & Speeches",
       videogalereya: 'Video Gallery',
       fotogalereya: 'Photo Gallery',
     },
@@ -220,7 +220,7 @@ export default {
       students: 'Students',
       schedules: 'Class Schedules',
       library: 'Online Library',
-      registrator: "Registrar's Office",
+      registrator: "Registrarʼs Office",
       clubs: 'Clubs',
       dorm: 'Student Dormitory',
       hemis: 'HEMIS-Student',

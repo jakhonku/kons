@@ -13,7 +13,7 @@ const CATEGORIES = ['Barchasi', 'Konsertlar', 'Tadbirlar', 'Kampus', 'Xalqaro'];
 
 const LATEST_NEWS = [
   { id: 1, cat: 'Voqealar',   title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
-  { id: 2, cat: "Ta'lim",     title: "Yangi oʻquv dasturlari tasdiqlandi" },
+  { id: 2, cat: "Taʼlim",     title: "Yangi oʻquv dasturlari tasdiqlandi" },
   { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi gʻolibi boʻldi" },
   { id: 4, cat: 'Xalqaro',    title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
   { id: 5, cat: 'Voqealar',   title: "Bahor konsert mavsumi boshlanadi" },

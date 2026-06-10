@@ -8,11 +8,11 @@ const BREADCRUMBS = [
 ];
 
 const DOCUMENTS = [
-  { name: "Oʻqish toʻgʻrisida ma'lumotnoma", days: '1 ish kuni', fee: 'Bepul' },
+  { name: "Oʻqish toʻgʻrisida maʼlumotnoma", days: '1 ish kuni', fee: 'Bepul' },
   { name: "Talaba guvohnomasi (dublikat)", days: '3 ish kuni', fee: '25 000 soʻm' },
   { name: "Akademik koʻchirma (Transcript)", days: '5 ish kuni', fee: 'Bepul' },
   { name: "Xalqaro transcript (ingliz tilida)", days: '7 ish kuni', fee: '50 000 soʻm' },
-  { name: "Akademik ta'til uchun ariza", days: '10 ish kuni', fee: 'Bepul' },
+  { name: "Akademik taʼtil uchun ariza", days: '10 ish kuni', fee: 'Bepul' },
   { name: "Boshqa universitetga koʻchirish", days: '15 ish kuni', fee: 'Bepul' },
   { name: "Diplom (bitiruvchilar)", days: 'Bitiruvdan keyin 30 kun', fee: 'Bepul' },
   { name: "Diplom qoʻshimchasi (Diploma Supplement)", days: '30 kun', fee: 'Bepul' },

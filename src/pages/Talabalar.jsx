@@ -23,7 +23,7 @@ const OQUV = [
 
 const SUPPORT = [
   { icon: GraduationCap, title: 'Grantlar',          desc: "Davlat va xorijiy grantlar, stipendiyalar",  to: '/grantlar' },
-  { icon: TrendingUp,    title: 'Kelajakka qadam',   desc: "Karyera markazi va ish bilan ta'minlash",    to: '/kelajakka-qadam' },
+  { icon: TrendingUp,    title: 'Kelajakka qadam',   desc: "Karyera markazi va ish bilan taʼminlash",    to: '/kelajakka-qadam' },
   { icon: Library,       title: 'Online kutubxona',  desc: 'Elektron kitoblar va nota bazasi',            to: '/kutubxona' },
   { icon: Building2,     title: 'Registrator ofisi', desc: "Hujjatlar, guvohnomalar, murojaat",          to: '/registrator' },
 ];

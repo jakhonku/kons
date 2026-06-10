@@ -65,7 +65,7 @@ export default function Preloader() {
           >
             <img 
               src="/Konservatoriya_logo_white-05.png" 
-              alt="O'zbekiston Davlat Konservatoriyasi" 
+              alt="Oʻzbekiston Davlat Konservatoriyasi" 
               style={{
                 height: '70px',
                 width: 'auto',

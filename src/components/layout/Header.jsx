@@ -20,7 +20,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled,    setScrolled]    = useState(false);
   const [mobileOpen,  setMobileOpen]  = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1200px)');
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
   const location  = useLocation();
   const isHome    = location.pathname === '/';
   const { t, lang } = useTranslation();
@@ -71,7 +71,9 @@ export default function Header() {
             alignItems: 'center',
             gap: '12px',
             minWidth: 0,
-            marginLeft: isHome ? (isDesktop ? '40px' : '10px') : '0'
+            marginLeft: isHome ? (isDesktop ? '40px' : '10px') : '0',
+            flexGrow: isDesktop ? 1 : 0,
+            marginRight: isDesktop ? '32px' : '0'
           }}>
             {/* Home Link */}
             {!isHome && (

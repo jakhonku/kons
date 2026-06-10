@@ -32,7 +32,7 @@ export default function IlmiyKonferensiyalar() {
             {
               tag: 'Xalqaro',
               title: 'Maqom Studies Symposium',
-              desc: "Maqom san'atining tarixiy tomirlari va bugungi ijro tendensiyalari boʻyicha simpozium.",
+              desc: "Maqom sanʼatining tarixiy tomirlari va bugungi ijro tendensiyalari boʻyicha simpozium.",
               meta: '20–22 noyabr 2026 · Ilmiy zal',
             },
             {

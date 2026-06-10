@@ -13,9 +13,9 @@ export default function OquvUslubiyKengash() {
       title="Oʻquv uslubiy"
       emphasis="kengash"
       breadcrumbs={BREADCRUMBS}
-      lead="Oʻquv uslubiy kengash — konservatoriyaning ta'lim sifati, oʻquv rejalari va metodik ta'minoti boʻyicha asosiy maslahat organi. Kengash oʻquv jarayonini muvofiqlashtiradi va mutaxassislarning kasbiy kompetensiyalarini shakllantirishga koʻmaklashadi."
+      lead="Oʻquv uslubiy kengash — konservatoriyaning taʼlim sifati, oʻquv rejalari va metodik taʼminoti boʻyicha asosiy maslahat organi. Kengash oʻquv jarayonini muvofiqlashtiradi va mutaxassislarning kasbiy kompetensiyalarini shakllantirishga koʻmaklashadi."
       stats={[
-        { value: '14', label: 'A\'zolar' },
+        { value: '14', label: 'Aʼzolar' },
         { value: '12', label: 'Yillik yigʻilish' },
         { value: '38', label: 'Kafedra qamrovi' },
       ]}
@@ -34,7 +34,7 @@ export default function OquvUslubiyKengash() {
         {
           heading: 'Yigʻilishlar grafigi',
           table: {
-            head: ['Sana', 'Mavzu', 'Mas\'ul'],
+            head: ['Sana', 'Mavzu', 'Masʼul'],
             rows: [
               ['10.01.2026', "2025-2026 1-semestr yakunlari tahlili", "Oʻquv ishlari prorektori"],
               ['12.02.2026', 'Yangi oʻquv rejalari muhokamasi', 'Oʻquv boʻlimi'],
@@ -46,7 +46,7 @@ export default function OquvUslubiyKengash() {
         },
       ]}
       contact={{
-        responsible: "Farhod Abdullayev (Oʻquv ishlari prorektori)",
+        responsible: "Abdullayev Farhod Rustambekovich (Oʻquv ishlari prorektori)",
         phone: '+998 71 234-56-80',
         email: 'oqv-kengash@konservatoriya.uz',
         hours: 'Har oyning 2-juma kuni 14:00',

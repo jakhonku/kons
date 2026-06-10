@@ -21,7 +21,7 @@ export default function InteraktivXizmatlar() {
             { tag: '02', title: 'Online kutubxona', desc: "Elektron kitoblar, partituralar, audio-video resurslar.", meta: '/kutubxona' },
             { tag: '03', title: 'HEMIS-talaba', desc: "Talabalar uchun shaxsiy kabinet — baholar, dars jadvali, hujjatlar.", meta: '/hemis-talaba' },
             { tag: '04', title: "HEMIS-oʻqituvchi", desc: "Oʻqituvchilar uchun elektron jurnal va sillabuslar boshqaruvi.", meta: '/hemis-oquvchi' },
-            { tag: '05', title: 'Registrator ofisi', desc: "Hujjatlar (transcript, diplom nusxasi, ma'lumotnomalar) uchun online buyurtma.", meta: '/registrator' },
+            { tag: '05', title: 'Registrator ofisi', desc: "Hujjatlar (transcript, diplom nusxasi, maʼlumotnomalar) uchun online buyurtma.", meta: '/registrator' },
             { tag: '06', title: 'Talabalar turar joyi', desc: "Yotoqxonaga ariza, joy taqsimoti va toʻlovlar.", meta: '/yotoqxona' },
           ],
         },
@@ -31,7 +31,7 @@ export default function InteraktivXizmatlar() {
             { title: 'Talaba sifatida', desc: "Talaba ID va parol bilan HEMIS-talaba tizimiga kiring." },
             { title: "Oʻqituvchi sifatida", desc: "Xizmat parol va elektron raqamli imzo (ERI) orqali HEMIS-oʻqituvchi." },
             { title: 'Abituriyent sifatida', desc: "Pasport raqami va telefon orqali ariza topshirish tizimi." },
-            { title: 'Tashqi mijozlar', desc: "Online murojaat — ID majburiy emas, shaxsiy ma'lumotlar yetarli." },
+            { title: 'Tashqi mijozlar', desc: "Online murojaat — ID majburiy emas, shaxsiy maʼlumotlar yetarli." },
           ],
         },
         {

@@ -11,16 +11,16 @@ const ISSUES = [
   {
     year: 2024,
     number: 4,
-    title: 'Zamonaviy musiqa ta\'limi',
-    desc: 'Oʻzbek milliy musiqasi va xalqaro ta\'lim standartlari',
+    title: 'Zamonaviy musiqa taʼlimi',
+    desc: 'Oʻzbek milliy musiqasi va xalqaro taʼlim standartlari',
     pages: 96,
     pdf: '#',
   },
   {
     year: 2024,
     number: 3,
-    title: 'Ijrochilik san\'ati',
-    desc: 'Fortepiano maktabi: an\'analar va yangiliklar',
+    title: 'Ijrochilik sanʼati',
+    desc: 'Fortepiano maktabi: anʼanalar va yangiliklar',
     pages: 88,
     pdf: '#',
   },
@@ -43,7 +43,7 @@ const ISSUES = [
   {
     year: 2023,
     number: 4,
-    title: 'Vokal san\'ati',
+    title: 'Vokal sanʼati',
     desc: 'Opera va xor ijrochiligi — metodologiya masalalari',
     pages: 100,
     pdf: '#',
@@ -52,7 +52,7 @@ const ISSUES = [
     year: 2023,
     number: 3,
     title: 'Musiqa psixologiyasi',
-    desc: 'Iste\'dod rivojlantirish va ta\'lim psixologiyasi',
+    desc: 'Isteʼdod rivojlantirish va taʼlim psixologiyasi',
     pages: 84,
     pdf: '#',
   },
@@ -61,10 +61,10 @@ const ISSUES = [
 const EDITORIAL = [
   { name: 'Prof. Dilnoza Yusupova',  role: "Bosh muharrir" },
   { name: 'Prof. Alisher Nazarov',   role: "Muharrir oʻrinbosari" },
-  { name: 'Dots. Shahlo Razzaqova',  role: 'Mas\'ul kotib' },
-  { name: 'Prof. Bahrom Toshmatov',  role: 'Tahririyat a\'zosi' },
-  { name: 'Dots. Malika Ergasheva',  role: 'Tahririyat a\'zosi' },
-  { name: 'Prof. Timur Xolmatov',    role: 'Tahririyat a\'zosi' },
+  { name: 'Dots. Shahlo Razzaqova',  role: 'Masʼul kotib' },
+  { name: 'Prof. Bahrom Toshmatov',  role: 'Tahririyat aʼzosi' },
+  { name: 'Dots. Malika Ergasheva',  role: 'Tahririyat aʼzosi' },
+  { name: 'Prof. Timur Xolmatov',    role: 'Tahririyat aʼzosi' },
 ];
 
 export default function MusiqaJurnali() {

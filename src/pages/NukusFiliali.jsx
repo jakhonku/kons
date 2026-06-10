@@ -13,7 +13,7 @@ export default function NukusFiliali() {
       title="Nukus"
       emphasis="filiali"
       breadcrumbs={BREADCRUMBS}
-      lead="Oʻzbekiston Davlat Konservatoriyasining Nukus filiali Qoraqalpogʻiston Respublikasidagi yetakchi musiqa ta'lim muassasasi sifatida 2018-yilda tashkil etilgan. Filial mintaqada professional musiqa kadrlarini tayyorlash va qoraqalpoq milliy musiqa madaniyatini rivojlantirish vazifalarini bajaradi."
+      lead="Oʻzbekiston Davlat Konservatoriyasining Nukus filiali Qoraqalpogʻiston Respublikasidagi yetakchi musiqa taʼlim muassasasi sifatida 2018-yilda tashkil etilgan. Filial mintaqada professional musiqa kadrlarini tayyorlash va qoraqalpoq milliy musiqa madaniyatini rivojlantirish vazifalarini bajaradi."
       stats={[
         { value: '2018', label: "Tashkil etilgan" },
         { value: '320+', label: 'Talaba' },
@@ -34,7 +34,7 @@ export default function NukusFiliali() {
           cards: [
             { tag: 'Filial direktori', title: 'Aytmuratov Polat Bekmuratovich', desc: "Qoraqalpoq xalq artisti, professor. Qoraqalpoq milliy musiqasi sohasidagi yetakchi mutaxassis.", meta: 'phone: +998 61 222-15-30' },
             { tag: "Oʻquv ishlari", title: 'Niyazova Gulnora Sapayevna', desc: "Pedagogika fanlari nomzodi, dotsent. Oʻquv jarayonini muvofiqlashtiradi.", meta: 'phone: +998 61 222-15-32' },
-            { tag: 'Ilmiy ishlar', title: 'Karimov Sardor Begimuratovich', desc: "San'atshunoslik fanlari nomzodi. Ilmiy va xalqaro hamkorlik.", meta: 'phone: +998 61 222-15-34' },
+            { tag: 'Ilmiy ishlar', title: 'Karimov Sardor Begimuratovich', desc: "Sanʼatshunoslik fanlari nomzodi. Ilmiy va xalqaro hamkorlik.", meta: 'phone: +998 61 222-15-34' },
           ],
         },
       ]}

@@ -30,8 +30,8 @@ export default function IjodiyFaoliyat() {
           heading: 'Yillik festivallar',
           cards: [
             { tag: 'Sentabr', title: 'Toshkent Music Festival', desc: "Xalqaro klassik musiqa festivali. 12 davlat ishtiroki.", meta: '15–25 sentabr' },
-            { tag: 'Oktabr', title: 'Maqom Days', desc: "An'anaviy maqom san'atiga bagʻishlangan haftalik festival.", meta: '10–17 oktabr' },
-            { tag: 'Noyabr', title: 'Young Artists Forum', desc: "Iste'dodli yosh ijrochilar uchun xalqaro tanlov-festival.", meta: '5–12 noyabr' },
+            { tag: 'Oktabr', title: 'Maqom Days', desc: "Anʼanaviy maqom sanʼatiga bagʻishlangan haftalik festival.", meta: '10–17 oktabr' },
+            { tag: 'Noyabr', title: 'Young Artists Forum', desc: "Isteʼdodli yosh ijrochilar uchun xalqaro tanlov-festival.", meta: '5–12 noyabr' },
             { tag: 'Mart', title: 'Spring Compositions', desc: "Bastakorlar haftaligi. Yangi asarlar premyerasi.", meta: '15–22 mart' },
             { tag: 'Aprel', title: 'Folk Music Festival', desc: "Markaziy Osiyo xalq musiqasi va etnografiya festivali.", meta: '10–15 aprel' },
             { tag: 'May', title: 'Graduation Concerts', desc: "Bitiruvchilar konsertlari va ijodiy himoyalar.", meta: '20–30 may' },

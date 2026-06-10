@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Konservatoriya' },
-  { label: "Me'yoriy hujjatlar" },
+  { label: "Meʼyoriy hujjatlar" },
 ];
 
 const DOCUMENTS = [
@@ -15,7 +15,7 @@ export default function Hujjatlar() {
     <main className="content-wrapper">
       <PageHero
         tag="Konservatoriya"
-        title="Me'yoriy"
+        title="Meʼyoriy"
         emphasis="Hujjatlar"
         breadcrumbs={BREADCRUMBS}
       />

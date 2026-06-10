@@ -23,7 +23,7 @@ const PLANS = [
     level: 'Magistratura',
     duration: '2 yil',
     programs: [
-      { name: 'Musiqa san\'ati (ijrochilik)', code: '5A111100', hours: 120, kafedra: 'Ilmiy-ijodiy kafedrasi' },
+      { name: 'Musiqa sanʼati (ijrochilik)', code: '5A111100', hours: 120, kafedra: 'Ilmiy-ijodiy kafedrasi' },
       { name: 'Musiqa nazariyasi va pedagogikasi', code: '5A111200', hours: 120, kafedra: 'Musiqa nazariyasi kafedrasi' },
       { name: 'Kompozitsiya', code: '5A111300', hours: 120, kafedra: 'Kompozitsiya kafedrasi' },
     ],
@@ -94,8 +94,8 @@ export default function OquvRejalar() {
             borderLeft: '4px solid var(--gold)', padding: '20px 28px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Oʻquv rejalari har yili <strong style={{ color: 'var(--navy)' }}>Oʻzbekiston Respublikasi Oliy ta'lim vazirligi</strong> tomonidan
-              tasdiqlangan standartlar asosida yangilanadi. Batafsil ma'lumot uchun Ta'lim ishlari boʻyicha prorektorat bilan bogʻlaning.
+              Oʻquv rejalari har yili <strong style={{ color: 'var(--navy)' }}>Oʻzbekiston Respublikasi Oliy taʼlim vazirligi</strong> tomonidan
+              tasdiqlangan standartlar asosida yangilanadi. Batafsil maʼlumot uchun Taʼlim ishlari boʻyicha prorektorat bilan bogʻlaning.
             </p>
           </div>
 

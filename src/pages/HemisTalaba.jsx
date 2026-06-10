@@ -11,9 +11,9 @@ const FEATURES = [
   { icon: Calendar,       title: 'Dars jadvali',     desc: "Joriy va keyingi semestr jadvallari. Individual darslar va guruh mashgʻulotlari." },
   { icon: BarChart2,      title: 'Elektron reyting', desc: "Barcha fanlar boʻyicha baholar, davomad va yakuniy natijalar." },
   { icon: ClipboardList,  title: 'Topshiriqlar',     desc: "Oʻqituvchilar tomonidan berilgan vazifalar va ularni topshirish muddatlari." },
-  { icon: FileText,       title: 'Hujjatlar',        desc: "Ma'lumotnoma, guvohnoma va boshqa rasmiy hujjatlarni olish." },
+  { icon: FileText,       title: 'Hujjatlar',        desc: "Maʼlumotnoma, guvohnoma va boshqa rasmiy hujjatlarni olish." },
   { icon: MessageCircle,  title: 'Murojaat',         desc: "Registrator ofisi va kafedralarga elektron murojaat yuborish." },
-  { icon: GraduationCap,  title: 'Stipendiya',       desc: "Stipendiya va grantlar haqida ma'lumot va toʻlovlar tarixi." },
+  { icon: GraduationCap,  title: 'Stipendiya',       desc: "Stipendiya va grantlar haqida maʼlumot va toʻlovlar tarixi." },
 ];
 
 export default function HemisTalaba() {

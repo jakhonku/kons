@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: "Ta'lim" },
+  { label: "Taʼlim" },
   { label: 'Bitiruvchilar bandligi' },
 ];
 
@@ -13,7 +13,7 @@ export default function BitiruvchilarBandligi() {
       title="Bitiruvchilar"
       emphasis="bandligi"
       breadcrumbs={BREADCRUMBS}
-      lead="Career markazi bitiruvchilarni mehnat bozoriga tayyorlash, ish oʻrinlari bilan ta'minlash va kasbiy oʻsishini qoʻllab-quvvatlash bilan shugʻullanadi. Markazning xizmatlari konservatoriya talabalari va bitiruvchilari uchun bepul."
+      lead="Career markazi bitiruvchilarni mehnat bozoriga tayyorlash, ish oʻrinlari bilan taʼminlash va kasbiy oʻsishini qoʻllab-quvvatlash bilan shugʻullanadi. Markazning xizmatlari konservatoriya talabalari va bitiruvchilari uchun bepul."
       stats={[
         { value: '92%', label: '6 oy ichida bandlik' },
         { value: '180+', label: 'Hamkor tashkilot' },
@@ -23,7 +23,7 @@ export default function BitiruvchilarBandligi() {
         {
           heading: "Career markazining xizmatlari",
           items: [
-            { title: 'Vakansiyalar bazasi', desc: "Oʻzbekiston va xorijiy musiqa muassasalari, teatrlar, ta'lim markazlari vakansiyalari." },
+            { title: 'Vakansiyalar bazasi', desc: "Oʻzbekiston va xorijiy musiqa muassasalari, teatrlar, taʼlim markazlari vakansiyalari." },
             { title: "CV va portfolio tayyorlash", desc: "Kasbiy CV, motivatsion xat va ijodiy portfoliolar yaratishda yordam." },
             { title: "Suhbatga tayyorgarlik", desc: "Mehnat suhbatlari simulyatsiyalari va kasbiy intervyu mahoratini oshirish." },
             { title: "Mentorlik dasturi", desc: "Tajribali bitiruvchilar va xalqaro mutaxassislar bilan jonli aloqalar." },
@@ -37,7 +37,7 @@ export default function BitiruvchilarBandligi() {
             head: ['Sektor', 'Asosiy ish beruvchilar', 'Bitiruvchi ulushi'],
             rows: [
               ['Davlat teatrlari va kontsert tashkilotlari', 'Davlat akademik teatri, Filarmoniya, Milliy orkestr', '32%'],
-              ['Ta\'lim muassasalari', 'OTM, kollej, musiqa maktabi', '28%'],
+              ['Taʼlim muassasalari', 'OTM, kollej, musiqa maktabi', '28%'],
               ['Xususiy ijodiy faoliyat', 'Solo karyera, mustaqil loyihalar', '18%'],
               ['Xalqaro tashkilotlar', 'Xorijiy orkestr va teatrlar', '12%'],
               ['Studio va prodyuserlik', 'Yozish studiyasi, audio prodyuser', '10%'],

@@ -25,8 +25,8 @@ export default function IlmiyLoyihalar() {
           cards: [
             {
               tag: 'OT-A1',
-              title: "Maqom san'atining zamonaviy interpretatsiyalari",
-              desc: "Maqom an'analarining bugungi kun ijrochiligida saqlanishi va oʻzgarishini tadqiq qiluvchi 3 yillik loyiha.",
+              title: "Maqom sanʼatining zamonaviy interpretatsiyalari",
+              desc: "Maqom anʼanalarining bugungi kun ijrochiligida saqlanishi va oʻzgarishini tadqiq qiluvchi 3 yillik loyiha.",
               meta: 'Rahbar: prof. Yusupov Davron Murodovich · 2024–2027',
             },
             {

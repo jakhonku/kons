@@ -31,7 +31,7 @@ export default function InfoPage({
           )}
 
           {stats && stats.length > 0 && (
-            <div className="page-stats-3" style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '24px', margin: '0 0 60px' }}>
+            <div className="page-stats-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '24px', margin: '0 0 60px' }}>
               {stats.map((s) => (
                 <div key={s.label} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '30px 28px' }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: 'var(--navy)', lineHeight: 1, marginBottom: '8px' }}>{s.value}</div>
@@ -54,7 +54,7 @@ export default function InfoPage({
               )}
 
               {sec.items && (
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 60px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 60px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
                   {sec.items.map((it, i) => (
                     <li key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '18px 24px', fontSize: '1rem', color: '#444', fontFamily: 'var(--font-serif)' }}>
                       {typeof it === 'string' ? it : (
@@ -69,7 +69,7 @@ export default function InfoPage({
               )}
 
               {sec.cards && (
-                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(sec.cards.length, 3)}, 1fr)`, gap: '24px', marginBottom: '60px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginBottom: '60px' }}>
                   {sec.cards.map((c, i) => (
                     <div key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '4px solid var(--gold)', padding: '32px 28px' }}>
                       {c.tag && <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>{c.tag}</div>}
@@ -114,7 +114,7 @@ export default function InfoPage({
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', fontFamily: 'var(--font-sans)', fontSize: '0.88rem' }}>
                 {contact.responsible && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Mas'ul</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Masʼul</div>
                     <div style={{ color: 'var(--navy)' }}>{contact.responsible}</div>
                   </div>
                 )}

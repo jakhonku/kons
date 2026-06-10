@@ -11,7 +11,7 @@ const SERVICES = [
   { icon: Target,     title: 'Karyera maslahat',         desc: "Individual karyera maslahati, portfoilo tuzish, auditsiya tayyorgarlik" },
   { icon: Handshake,  title: 'Hamkorlar bilan uchrashuvlar', desc: "Opera teatrlari, filarmoniya va musiqa maktablari vakillari bilan uchrashuv" },
   { icon: Clipboard,  title: 'CV va motivatsion xat',    desc: "Xalqaro standartlarga mos CV va motivatsion xat tayyorlash" },
-  { icon: Globe,      title: 'Xorijiy imkoniyatlar',     desc: "Chet el teatrlari va orkestrlariga qabul haqida ma'lumot" },
+  { icon: Globe,      title: 'Xorijiy imkoniyatlar',     desc: "Chet el teatrlari va orkestrlariga qabul haqida maʼlumot" },
   { icon: Mic,        title: 'Mock audition',            desc: "Auditsiyaga tayyorgarlik: professional hakamlar oldida mashq" },
   { icon: TrendingUp, title: 'Bandlik statistikasi',     desc: "Bitiruvchilarimizning 85% birinchi yilda ishga joylashadi" },
 ];

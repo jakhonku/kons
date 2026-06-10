@@ -4,22 +4,22 @@ export default function TalimYonalishlari() {
   return (
     <InfoPage
       tag="Qabul"
-      title="Ta'lim"
+      title="Taʼlim"
       emphasis="Yoʻnalishlari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
         { label: 'Qabul' },
-        { label: "Ta'lim yoʻnalishlari" },
+        { label: "Taʼlim yoʻnalishlari" },
       ]}
-      lead="Konservatoriyada bakalavriat bosqichi boʻyicha quyidagi ta'lim yoʻnalishlari mavjud."
+      lead="Konservatoriyada bakalavriat bosqichi boʻyicha quyidagi taʼlim yoʻnalishlari mavjud."
       sections={[
         {
           heading: "Bakalavriat yoʻnalishlari",
           items: [
             "Cholgʻu ijrochiligi (turlari boʻyicha)",
-            "Vokal san'ati (turlari boʻyicha)",
+            "Vokal sanʼati (turlari boʻyicha)",
             "Dirijyorlik (turlari boʻyicha)",
-            "Bastakorlik san'ati",
+            "Bastakorlik sanʼati",
             "Musiqashunoslik",
             "Musiqa pedagogikasi"
           ]

@@ -11,7 +11,7 @@ const GRANTS = [
     type: 'Davlat',
     color: 'var(--navy)',
     items: [
-      { name: "Prezident stipendiyasi", amount: "2 500 000 soʻm/oy", deadline: 'Har yil 1-sentabr', desc: "A'lo baholar va ilmiy faollik uchun" },
+      { name: "Prezident stipendiyasi", amount: "2 500 000 soʻm/oy", deadline: 'Har yil 1-sentabr', desc: "Aʼlo baholar va ilmiy faollik uchun" },
       { name: "Davlat stipendiyasi (1-toifa)", amount: "850 000 soʻm/oy", deadline: 'Avtomatik', desc: "GPA 3.5 va undan yuqori talabalar" },
       { name: "Davlat stipendiyasi (2-toifa)", amount: "620 000 soʻm/oy", deadline: 'Avtomatik', desc: "GPA 3.0–3.49 talabalar" },
     ],

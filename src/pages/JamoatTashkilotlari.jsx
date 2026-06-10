@@ -13,7 +13,7 @@ export default function JamoatTashkilotlari() {
       title="Jamoat"
       emphasis="tashkilotlari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyaning jamoat tashkilotlari xodimlar va talabalarning kasbiy, ijodiy va ijtimoiy faolligini muvofiqlashtiradi. Tashkilotlar a'zolari koʻngillilik asosida ishlaydi va jamoatchilik nazoratini ta'minlaydi."
+      lead="Konservatoriyaning jamoat tashkilotlari xodimlar va talabalarning kasbiy, ijodiy va ijtimoiy faolligini muvofiqlashtiradi. Tashkilotlar aʼzolari koʻngillilik asosida ishlaydi va jamoatchilik nazoratini taʼminlaydi."
       sections={[
         {
           heading: "Faoliyat koʻrsatuvchi tashkilotlar",
@@ -21,13 +21,13 @@ export default function JamoatTashkilotlari() {
             {
               tag: '01',
               title: "Kasaba uyushmasi qoʻmitasi",
-              desc: "Xodimlar va talabalarning mehnat huquqlarini himoya qiluvchi, sogʻlom yashash sharoitlarini ta'minlovchi asosiy tashkilot.",
+              desc: "Xodimlar va talabalarning mehnat huquqlarini himoya qiluvchi, sogʻlom yashash sharoitlarini taʼminlovchi asosiy tashkilot.",
               meta: 'Rais: Karimov Bobur Sherzodovich',
             },
             {
               tag: '02',
               title: "Yoshlar ittifoqi tashkiloti",
-              desc: "Talabalar tashabbuslari, koʻngillilik harakatlari va ma'naviy-marifiy tadbirlarni tashkil etadi.",
+              desc: "Talabalar tashabbuslari, koʻngillilik harakatlari va maʼnaviy-marifiy tadbirlarni tashkil etadi.",
               meta: 'Rais: Yusupov Sardor Bobirovich',
             },
             {
@@ -59,9 +59,9 @@ export default function JamoatTashkilotlari() {
         {
           heading: "Tashkilotlarning umumiy faoliyati",
           items: [
-            "Xodimlarning ijtimoiy himoyasini ta'minlash",
+            "Xodimlarning ijtimoiy himoyasini taʼminlash",
             "Talabalar boshlangʻich tashabbuslarini qoʻllab-quvvatlash",
-            "Ma'naviy-ma'rifiy tadbirlar tashkil etish",
+            "Maʼnaviy-maʼrifiy tadbirlar tashkil etish",
             "Madaniy va sport tadbirlarini oʻtkazish",
             "Sogʻliqni saqlash va dam olish dasturlari",
             "Xayriya va koʻngillilik faoliyati",

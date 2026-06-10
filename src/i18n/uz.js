@@ -8,7 +8,7 @@ export default {
     helpLinks: 'Yordamchi havolalar',
     readMore: 'Batafsil',
     institution: 'Konservatoriya',
-    learnMore: 'BATAFSIL MA\'LUMOT',
+    learnMore: 'BATAFSIL MAʼLUMOT',
     closeMenu: 'Menyuni yopish',
     openMenu: 'Menyuni ochish',
     switchLanguage: 'Tilni almashtirish',
@@ -19,12 +19,12 @@ export default {
 
   nav: {
     tuzilma: { label: 'Tuzilma' },
-    talim: { label: 'Ta\'lim' },
+    talim: { label: 'Taʼlim' },
     ilmFan: { label: 'Ilm-fan' },
     interaktiv: { label: 'Interaktiv xizmatlar' },
     ijodiy: { label: 'Ijodiy faoliyat' },
     qabul: { label: 'Qabul' },
-    xalqaro: { label: 'Xalqaro aloqalar' },
+    xalqaro: { label: 'Xalqaro' },
     axborot: { label: 'Axborot xizmati' },
 
     headings: {
@@ -38,7 +38,7 @@ export default {
       onlineServices: 'Onlayn xizmatlar',
       hemis: 'HEMIS tizimi',
       events: 'Tadbirlar',
-      education: 'Ta\'lim',
+      education: 'Taʼlim',
       admissionProcess: 'Qabul jarayoni',
       partnership: 'Hamkorlik',
       programs: 'Dasturlar',
@@ -55,7 +55,7 @@ export default {
       bolimlar: 'Boʻlimlar',
       oquvUslubiy: 'Oʻquv uslubiy kengash',
       jamoatTashkilotlari: 'Jamoat tashkilotlari',
-      kontaktlar: 'Aloqa ma\'lumotlari',
+      kontaktlar: 'Aloqa maʼlumotlari',
       yashilUniversitet: 'Yashil universitet',
       vakansiyalar: 'Boʻsh ish oʻrinlari',
 
@@ -88,9 +88,9 @@ export default {
       jonliEfir: 'Jonli efir',
       afisha: 'Afisha',
 
-      talimYonalishlari: 'Ta\'lim yoʻnalishlari',
-      talimDasturlari: 'Ta\'lim dasturlari',
-      qabulTalablari: 'Qabul ta\'lablari',
+      talimYonalishlari: 'Taʼlim yoʻnalishlari',
+      talimDasturlari: 'Taʼlim dasturlari',
+      qabulTalablari: 'Qabul taʼlablari',
       qabulKvotasi: 'Qabul kvotasi',
       kasbiyImtihonlar: 'Kasbiy va ijodiy imtihonlar',
       imtihonNatijalari: 'Imtihon natijalari',
@@ -109,8 +109,8 @@ export default {
     },
 
     featured: {
-      tuzilma: { label: '1936 yildan buyon', desc: 'Markaziy Osiyoning eng qadimgi va nufuzli oliy musiqa ta\'lim maskani.' },
-      talim: { label: 'Akademik ta\'lim', desc: 'Bakalavr, magistratura va doktorantura dasturlari yagona platformada.' },
+      tuzilma: { label: '1936 yildan buyon', desc: 'Markaziy Osiyoning eng qadimgi va nufuzli oliy musiqa taʼlim maskani.' },
+      talim: { label: 'Akademik taʼlim', desc: 'Bakalavr, magistratura va doktorantura dasturlari yagona platformada.' },
       ilmFan: { label: 'Ilmiy salohiyat', desc: 'Musiqa fani sohasidagi yetakchi tadqiqot va nashriyot markazi.' },
       interaktiv: { label: 'Yagona xizmatlar', desc: 'Talaba va oʻqituvchilar uchun barcha onlayn xizmatlar bir joyda.' },
       ijodiy: { label: 'Sahna hayoti', desc: 'Konservatoriyaning konsertlari, spektakllari va jonli efirlari.' },
@@ -126,7 +126,7 @@ export default {
       title1: 'Oʻzbekiston',
       title2: 'davlat',
       titleEm: 'konservatoriyasi',
-      quote: 'Musiqa fani va san\'ati har bir insonni yuksak axloq, goʻzallik va nafosat ruhida tarbiyalashda qudratli vositadir.',
+      quote: 'Musiqa fani va sanʼati har bir insonni yuksak axloq, goʻzallik va nafosat ruhida tarbiyalashda qudratli vositadir.',
       quoteAuthor: '— SH. MIRZIYOYEV',
       yearLabel: 'Konservatoriya · 1936',
     },
@@ -154,7 +154,7 @@ export default {
       tuzilma: { label: 'Muassasa tuzilmasi', sub: 'Fakultet va kafedralar' },
       rahbariyat: { label: 'Rahbariyat', sub: 'Rektor va prorektor' },
       taqvim: { label: 'Tadbirlar taqvimi', sub: 'Kelgusi konsertlar' },
-      hujjatlar: { label: 'Me\'yoriy hujjatlar', sub: 'PDF, Ustav, Qoidalar' },
+      hujjatlar: { label: 'Meʼyoriy hujjatlar', sub: 'PDF, Ustav, Qoidalar' },
     },
     students: {
       tag: 'Talabalar uchun',
@@ -171,12 +171,12 @@ export default {
       attentionTag: 'DIQQAT',
       stepCardTitle1: 'Kelajakka',
       stepCardTitleEm: 'Qadam',
-      stepCardDesc: 'Talabalarimiz uchun xalqaro tanlovlar va malaka oshirish dasturlari e\'lon qilindi.',
-      readMore: 'BATAFSIL MA\'LUMOT',
+      stepCardDesc: 'Talabalarimiz uchun xalqaro tanlovlar va malaka oshirish dasturlari eʼlon qilindi.',
+      readMore: 'BATAFSIL MAʼLUMOT',
     },
     news_categories: {
       events: 'Voqealar',
-      education: 'Ta\'lim',
+      education: 'Taʼlim',
       awards: 'Mukofotlar',
       international: 'Xalqaro',
     },
@@ -190,7 +190,7 @@ export default {
   },
 
   footer: {
-    aboutText: 'Oʻzbekiston Davlat Konservatoriyasi — Markaziy Osiyoning eng qadimgi va nufuzli oliy musiqa ta\'lim muassasasi. 1936 yildan buyon.',
+    aboutText: 'Oʻzbekiston Davlat Konservatoriyasi — Markaziy Osiyoning eng qadimgi va nufuzli oliy musiqa taʼlim muassasasi. 1936 yildan buyon.',
     headings: {
       institution: 'Muassasa',
       students: 'Talabalar',
@@ -213,7 +213,7 @@ export default {
     institutionLinks: {
       structure: 'Muassasa tuzilmasi',
       management: 'Rahbariyat',
-      documents: 'Me\'yoriy hujjatlar',
+      documents: 'Meʼyoriy hujjatlar',
       news: 'Yangiliklar',
     },
     studentLinks: {

@@ -4,14 +4,14 @@ export default function TalimDasturlari() {
   return (
     <InfoPage
       tag="Qabul"
-      title="Ta'lim"
+      title="Taʼlim"
       emphasis="Dasturlari"
       breadcrumbs={[
         { label: 'Bosh sahifa', to: '/' },
         { label: 'Qabul' },
-        { label: "Ta'lim dasturlari" },
+        { label: "Taʼlim dasturlari" },
       ]}
-      lead="Magistratura va oliy oʻquv yurtidan keyingi ta'lim dasturlari boʻyicha ma'lumotlar."
+      lead="Magistratura va oliy oʻquv yurtidan keyingi taʼlim dasturlari boʻyicha maʼlumotlar."
       sections={[
         {
           heading: "Magistratura",

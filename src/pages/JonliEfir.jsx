@@ -9,7 +9,7 @@ const BREADCRUMBS = [
 const UPCOMING = [
   { date: '12.05.2026', time: '19:00', title: 'La Traviata premyerasi', desc: "Musiqali teatr studiyasi tomonidan G. Verdi operasi.", status: 'live' },
   { date: '15.05.2026', time: '19:00', title: 'Beethoven 9-simfoniyasi', desc: "Konservatoriya simfonik orkestri konserti.", status: 'scheduled' },
-  { date: '18.05.2026', time: '17:00', title: 'Maqom kechalari', desc: "An'anaviy maqom san'ati.", status: 'scheduled' },
+  { date: '18.05.2026', time: '17:00', title: 'Maqom kechalari', desc: "Anʼanaviy maqom sanʼati.", status: 'scheduled' },
   { date: '22.05.2026', time: '19:00', title: 'Kamera kechasi: Mozart va Brahms', desc: "Fortepiano kafedrasi.", status: 'scheduled' },
 ];
 

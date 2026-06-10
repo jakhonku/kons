@@ -18,7 +18,7 @@ export default function KasbiyImtihonlar() {
           items: [
             "Ixtisoslik (ijro yoki ijod)",
             "Solfejio va musiqa nazariyasi",
-            "Garmoniya (ba'zi yoʻnalishlar uchun)",
+            "Garmoniya (baʼzi yoʻnalishlar uchun)",
             "Suhbat"
           ]
         }

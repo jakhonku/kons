@@ -26,7 +26,7 @@ function youTubeEmbed(url) {
 
 function instagramEmbed(url) {
   if (!url) return null;
-  // Har qanday instagram.com/.../id/ ko'rinishidagi havolani ushlash
+  // Har qanday instagram.com/.../id/ koʻrinishidagi havolani ushlash
   const m = url.match(/instagram\.com\/(?:p|reels|tv)\/([\w-]+)/i);
   if (m && m[1]) {
     return `https://www.instagram.com/reels/${m[1]}/embed`;

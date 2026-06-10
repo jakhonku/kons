@@ -15,7 +15,7 @@ export default function ImageGalleryEditor({ images = [], onChange, folder = 'ga
 
     const remaining = MAX_IMAGES - images.length;
     if (remaining <= 0) {
-      setError(`Eng ko'pi ${MAX_IMAGES} ta rasm yuklash mumkin`);
+      setError(`Eng koʻpi ${MAX_IMAGES} ta rasm yuklash mumkin`);
       return;
     }
     const toUpload = files.slice(0, remaining);
@@ -39,7 +39,7 @@ export default function ImageGalleryEditor({ images = [], onChange, folder = 'ga
     const url = window.prompt('Rasm URL manzilini kiriting:');
     if (!url) return;
     if (images.length >= MAX_IMAGES) {
-      setError(`Eng ko'pi ${MAX_IMAGES} ta rasm yuklash mumkin`);
+      setError(`Eng koʻpi ${MAX_IMAGES} ta rasm yuklash mumkin`);
       return;
     }
     onChange([...images, url.trim()]);

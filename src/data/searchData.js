@@ -1,4 +1,4 @@
-/* Sayt boʻylab qidiruv uchun ma'lumotlar bazasi */
+/* Sayt boʻylab qidiruv uchun maʼlumotlar bazasi */
 
 export const SEARCH_PAGES = [
   {
@@ -10,11 +10,11 @@ export const SEARCH_PAGES = [
   {
     title: 'Rahbariyat',
     path: '/rahbariyat',
-    desc: 'Rektor, prorektorlar va boshqaruv hay\'ati',
-    keywords: 'rahbariyat rektor prorektor hay\'at',
+    desc: 'Rektor, prorektorlar va boshqaruv hayʼati',
+    keywords: 'rahbariyat rektor prorektor hayʼat',
   },
   {
-    title: "Me'yoriy hujjatlar",
+    title: "Meʼyoriy hujjatlar",
     path: '/hujjatlar',
     desc: 'Nizomlar, buyruqlar va rasmiy hujjatlar',
     keywords: 'hujjat nizam buyruq qoida',
@@ -22,7 +22,7 @@ export const SEARCH_PAGES = [
   {
     title: 'Yangiliklar',
     path: '/yangiliklar',
-    desc: 'Konservatoriya yangiliklari va e\'lonlar',
+    desc: 'Konservatoriya yangiliklari va eʼlonlar',
     keywords: 'yangilikar xabar elon press',
   },
   {
@@ -34,13 +34,13 @@ export const SEARCH_PAGES = [
   {
     title: 'Kontaktlar',
     path: '/kontaktlar',
-    desc: "Manzil, telefon va bogʻlanish ma'lumotlari",
+    desc: "Manzil, telefon va bogʻlanish maʼlumotlari",
     keywords: 'kontakt manzil telefon email boglanish',
   },
   {
     title: 'Talabalar',
     path: '/talabalar',
-    desc: "Talabalar uchun xizmatlar va ma'lumotlar",
+    desc: "Talabalar uchun xizmatlar va maʼlumotlar",
     keywords: 'talaba xizmat',
   },
   {
@@ -88,7 +88,7 @@ export const SEARCH_PAGES = [
   {
     title: 'Registrator ofisi',
     path: '/registrator',
-    desc: "Hujjatlar olish, ma'lumotnomalar va murojaat",
+    desc: "Hujjatlar olish, maʼlumotnomalar va murojaat",
     keywords: 'registrator hujjat murojaaat malumotnoma',
   },
   {

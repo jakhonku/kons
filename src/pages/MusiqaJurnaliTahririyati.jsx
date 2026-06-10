@@ -17,7 +17,7 @@ export default function MusiqaJurnaliTahririyati() {
       stats={[
         { value: '8', label: 'Yillik son' },
         { value: '40', label: 'Yillik maqola' },
-        { value: '14', label: "Tahririyat a'zolari" },
+        { value: '14', label: "Tahririyat aʼzolari" },
       ]}
       sections={[
         {
@@ -25,7 +25,7 @@ export default function MusiqaJurnaliTahririyati() {
           cards: [
             { tag: 'Bosh muharrir', title: 'prof. Aliyeva Nigora Sherzodovna', desc: "Filologiya fanlari doktori. 18 yil tahririyat tajribasi." },
             { tag: "Bosh muharrir oʻrinbosari", title: 'prof. Tursunov Otabek Murodovich', desc: "Musiqa nazariyasi kafedrasi mudiri. Etnomusiqashunos." },
-            { tag: "Mas'ul kotib", title: 'doc. Yusupova Sevara Akbarovna', desc: "Musiqa tarixi mutaxassisi. Tahrir boʻlimi rahbari." },
+            { tag: "Masʼul kotib", title: 'doc. Yusupova Sevara Akbarovna', desc: "Musiqa tarixi mutaxassisi. Tahrir boʻlimi rahbari." },
           ],
         },
         {
@@ -40,7 +40,7 @@ export default function MusiqaJurnaliTahririyati() {
       ]}
       contact={{
         title: "Tahririyat",
-        responsible: "doc. Yusupova Sevara (mas'ul kotib)",
+        responsible: "doc. Yusupova Sevara (masʼul kotib)",
         phone: '+998 71 234-56-91',
         email: 'musiqa@konservatoriya.uz',
         address: "1-bino, 314-xona",

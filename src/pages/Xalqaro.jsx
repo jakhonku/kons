@@ -18,14 +18,14 @@ const PARTNERS = [
   { name: 'Moskva Davlat Konservatoriyasi',            country: 'Rossiya',     flag: '🇷🇺' },
   { name: 'Xyuston Universitet Moores Musiqa Maktabi', country: 'AQSh',        flag: '🇺🇸' },
   { name: 'Pekin Musiqa Konservatoriyasi',             country: 'Xitoy',       flag: '🇨🇳' },
-  { name: 'Seul Milliy Universiteti San\'at Kolleji',  country: 'Janubiy Koreya', flag: '🇰🇷' },
+  { name: 'Seul Milliy Universiteti Sanʼat Kolleji',  country: 'Janubiy Koreya', flag: '🇰🇷' },
   { name: "Istambul Davlat Konservatoriyasi",           country: 'Turkiya',     flag: '🇹🇷' },
   { name: "Berliner Universität der Künste",           country: 'Germaniya',   flag: '🇩🇪' },
 ];
 
 const PROGRAMS = [
-  { title: "Erasmus+ ta'lim dasturi", desc: "Yevropa Ittifoqi universitetlarida talabalar va oʻqituvchilar almashinuvi", badge: 'Faol', color: '#22c55e' },
-  { title: "Xalqaro stipendiyalar",   desc: "Xorijda ta'lim olish uchun davlat va xorijiy grantlar", badge: "Ariza qabul", color: 'var(--gold-dark)' },
+  { title: "Erasmus+ taʼlim dasturi", desc: "Yevropa Ittifoqi universitetlarida talabalar va oʻqituvchilar almashinuvi", badge: 'Faol', color: '#22c55e' },
+  { title: "Xalqaro stipendiyalar",   desc: "Xorijda taʼlim olish uchun davlat va xorijiy grantlar", badge: "Ariza qabul", color: 'var(--gold-dark)' },
   { title: "Qoʻshma dasturlar",       desc: "Xorijiy universitetlar bilan qoʻshma magistratura va doktorantura", badge: 'Yangi', color: 'var(--navy)' },
   { title: "Master-klass dasturlari", desc: "Xorijiy ustoz-musiqachilar bilan intensiv treninglar", badge: "Doimiy", color: '#6366f1' },
 ];

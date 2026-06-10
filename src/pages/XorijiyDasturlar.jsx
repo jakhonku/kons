@@ -9,7 +9,7 @@ const BREADCRUMBS = [
 
 const PROGRAMS = [
   {
-    title: "Erasmus+ Ta'lim Dasturi",
+    title: "Erasmus+ Taʼlim Dasturi",
     badge: 'Faol',
     badgeColor: '#22c55e',
     icon: GraduationCap,
@@ -69,7 +69,7 @@ export default function XorijiyDasturlar() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              Konservatoriya talabalari va oʻqituvchilari uchun xorijda ta'lim olish,
+              Konservatoriya talabalari va oʻqituvchilari uchun xorijda taʼlim olish,
               tajriba almashish va rivojlanish dasturlari mavjud.
             </p>
           </article>

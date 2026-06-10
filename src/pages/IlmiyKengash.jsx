@@ -15,7 +15,7 @@ export default function IlmiyKengash() {
       breadcrumbs={BREADCRUMBS}
       lead="Ilmiy kengash — konservatoriyaning oliy ilmiy organi. Kengash ilmiy daraja va unvonlar himoyasini, ilmiy ishlarning ekspertizasini, doktorantura va magistratura ilmiy yoʻnalishlarini boshqaradi."
       stats={[
-        { value: '21', label: "A'zo (oliy fan doktori)" },
+        { value: '21', label: "Aʼzo (oliy fan doktori)" },
         { value: '6', label: 'Yillik majlis' },
         { value: 'DSc.05', label: 'Ixtisoslashgan kengash' },
       ]}
@@ -32,14 +32,14 @@ export default function IlmiyKengash() {
           ],
         },
         {
-          heading: "Kengash a'zolari (asosiy tarkib)",
+          heading: "Kengash aʼzolari (asosiy tarkib)",
           cards: [
-            { tag: 'Rais', title: 'Toshmatov Behruz Aliyevich', desc: "San'atshunoslik fanlari doktori, professor. Ilmiy-ijodiy ishlar prorektori." },
-            { tag: 'Rais oʻrinbosari', title: 'Mirzayeva Gulnora Abdullayevna', desc: "San'atshunoslik fanlari doktori, professor." },
+            { tag: 'Rais', title: 'Toshmatov Behruz Aliyevich', desc: "Sanʼatshunoslik fanlari doktori, professor. Ilmiy-ijodiy ishlar prorektori." },
+            { tag: 'Rais oʻrinbosari', title: 'Mirzayeva Gulnora Abdullayevna', desc: "Sanʼatshunoslik fanlari doktori, professor." },
             { tag: 'Ilmiy kotib', title: 'Aliyeva Nigora Sherzodovna', desc: "Filologiya fanlari doktori, dotsent. Musiqa nazariyasi kafedrasi mudiri." },
-            { tag: 'A\'zo', title: 'Karimov Sherzod Rustamovich', desc: 'Professor.' },
-            { tag: 'A\'zo', title: 'Yusupov Akbar Murodovich', desc: 'Professor, Orkestr sinfi kafedrasi mudiri.' },
-            { tag: 'A\'zo', title: 'Tursunov Otabek Murodovich', desc: 'Professor, Musiqa nazariyasi kafedrasi.' },
+            { tag: 'Aʼzo', title: 'Karimov Sherzod Rustamovich', desc: 'Professor.' },
+            { tag: 'Aʼzo', title: 'Yusupov Akbar Murodovich', desc: 'Professor, Orkestr sinfi kafedrasi mudiri.' },
+            { tag: 'Aʼzo', title: 'Tursunov Otabek Murodovich', desc: 'Professor, Musiqa nazariyasi kafedrasi.' },
           ],
         },
         {
@@ -47,7 +47,7 @@ export default function IlmiyKengash() {
           table: {
             head: ['Sana', 'Mualif', 'Mavzu', 'Daraja'],
             rows: [
-              ['12.03.2026', 'Tursunova Sevara', "Maqom san'atining zamonaviy ijro tendensiyalari", 'PhD'],
+              ['12.03.2026', 'Tursunova Sevara', "Maqom sanʼatining zamonaviy ijro tendensiyalari", 'PhD'],
               ['28.02.2026', 'Akhmedov Davron', "20-asr oʻzbek bastakorlari kompozitsiya texnikalari", 'DSc'],
               ['15.01.2026', 'Olimov Sherzod', "Folklor va akademik musiqa sintezi", 'PhD'],
               ['22.12.2025', 'Mirzayeva Nargiza', "Musiqa pedagogikasida raqamli vositalar", 'PhD'],

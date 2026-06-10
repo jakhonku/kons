@@ -129,7 +129,7 @@ export default function App() {
           <Route path="kontaktlar" element={<Kontaktlar />} />
           <Route path="hujjatlar" element={<Hujjatlar />} />
 
-          {/* Ta'lim */}
+          {/* Taʼlim */}
           <Route path="dars-jadvali" element={<DarsJadvali />} />
           <Route path="oquv-rejalar" element={<OquvRejalar />} />
           <Route path="sillabuslar" element={<Sillabuslar />} />
