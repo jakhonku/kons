@@ -38,6 +38,24 @@ export default function Home() {
     }).slice(0, 5);
   }, [adminNews, lang]);
 
+  // "Konservatoriya hayotidan" galereyasi — yangiliklardagi real rasmlar,
+  // yetishmasa statik rasm bilan toʻldiriladi (hech qachon boʻsh/buzilmaydi)
+  const galleryImages = useMemo(() => {
+    const fromNews = [];
+    adminNews.forEach((n) => {
+      const imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
+      if (imgs.length) fromNews.push(...imgs);
+      else if (n.image) fromNews.push(n.image);
+    });
+    const fallback = [
+      '/images/fotohisobot/img3.jpg',
+      '/images/fotohisobot/img1.jpg',
+      '/images/fotohisobot/img2.jpg',
+      '/image.png',
+    ];
+    return fallback.map((fb, i) => fromNews[i] || fb);
+  }, [adminNews]);
+
   useEffect(() => {
     if (displayNews.length <= 1) return;
     const timer = setInterval(() => {
@@ -116,7 +134,7 @@ export default function Home() {
       {/* ── STATS ────────────────────────────────────────── */}
       <div className="stats-row">
         {STATS.map((s, i) => (
-          <div key={s.label} className={`stat-item reveal reveal-d${i + 1}`}>
+          <div key={i} className={`stat-item reveal reveal-d${i + 1}`}>
             <div className="stat-num">{s.num}</div>
             <div className="stat-label">{s.label}</div>
           </div>
@@ -138,38 +156,38 @@ export default function Home() {
 
           <div className="reveal home-gallery-grid">
             <div className="gallery-item-home gallery-item-wide-tall">
-              <img 
-                src="/images/fotohisobot/img3.jpg" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
-                alt="G3" 
+              <img
+                src={galleryImages[0]}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }}
+                alt="G3"
                 loading="lazy"
                 decoding="async"
               />
               <div className="gallery-hover-overlay">{t('home.gallery.photoCaption')}</div>
             </div>
             <div className="gallery-item-home">
-              <img 
-                src="/images/fotohisobot/img1.jpg" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
-                alt="G1" 
+              <img
+                src={galleryImages[1]}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }}
+                alt="G1"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div className="gallery-item-home">
-              <img 
-                src="/images/fotohisobot/img2.jpg" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
-                alt="G2" 
+              <img
+                src={galleryImages[2]}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }}
+                alt="G2"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div className="gallery-item-home gallery-item-wide">
-              <img 
-                src="/image.png" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }} 
-                alt="G4" 
+              <img
+                src={galleryImages[3]}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: '0.6s' }}
+                alt="G4"
                 loading="lazy"
                 decoding="async"
               />
