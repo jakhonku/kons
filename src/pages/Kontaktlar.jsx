@@ -18,7 +18,7 @@ const CONTACT_ITEMS = [
       </svg>
     ),
     label: 'Manzil',
-    value: "Toshkent sh., Olmazor tumani,\nMustaqillik koʻchasi, 31-uy",
+    value: "Toshkent sh., Shayxontohur tumani,\nBotir Zokirov koʻchasi, 1-uy",
   },
   {
     icon: (

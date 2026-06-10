@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Radio } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { Loader2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import { useAdminNews } from '../hooks/useAdminStorage';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -9,33 +10,45 @@ const BREADCRUMBS = [
   { label: 'Fotogalereya' },
 ];
 
-const CATEGORIES = ['Barchasi', 'Konsertlar', 'Tadbirlar', 'Kampus', 'Xalqaro'];
-
-const LATEST_NEWS = [
-  { id: 1, cat: 'Voqealar',   title: 'Xalqaro Teatr Kuni munosabati bilan tantanali kecha' },
-  { id: 2, cat: "Taʼlim",     title: "Yangi oʻquv dasturlari tasdiqlandi" },
-  { id: 3, cat: 'Mukofotlar', title: "Talabamiz xalqaro tanlovi gʻolibi boʻldi" },
-  { id: 4, cat: 'Xalqaro',    title: "Parij Musiqa Akademiyasi bilan memorandum imzolandi" },
-  { id: 5, cat: 'Voqealar',   title: "Bahor konsert mavsumi boshlanadi" },
-];
-
-const PHOTOS = [
-  { id: 1, cat: 'Konsertlar',  title: 'Simfonik Orkestr yozgi mavsumi', year: '2025', img: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800&h=600&fit=crop' },
-  { id: 2, cat: 'Tadbirlar',   title: 'Qabul marosimi 2025', year: '2025', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&h=600&fit=crop' },
-  { id: 3, cat: 'Konsertlar',  title: 'Yoshlar filarmoniyasi', year: '2025', img: 'https://images.unsplash.com/photo-1514320298324-ee4490b1e3b0?q=80&w=800&h=600&fit=crop' },
-  { id: 4, cat: 'Kampus',      title: "Asosiy bino va hovli", year: '2024', img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&h=600&fit=crop' },
-  { id: 5, cat: 'Xalqaro',     title: 'Vena hamkorlari bilan uchrashuv', year: '2025', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&h=600&fit=crop' },
-  { id: 6, cat: 'Konsertlar',  title: 'Opera studiyasi premyerasi', year: '2025', img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&h=600&fit=crop' },
-  { id: 7, cat: 'Tadbirlar',   title: "Magistratura topshirish marosimi", year: '2024', img: 'https://images.unsplash.com/photo-1523240715632-d984723145e1?q=80&w=800&h=600&fit=crop' },
-  { id: 8, cat: 'Kampus',      title: "Oʻqitish mashgʻulotlari", year: '2024', img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&h=600&fit=crop' },
-  { id: 9, cat: 'Xalqaro',     title: "Pekin musiqa festivalida", year: '2024', img: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&h=600&fit=crop' },
-];
-
 export default function Fotogalereya() {
+  const { lang } = useTranslation();
+  const { items: adminNews, loading } = useAdminNews();
   const [active, setActive] = useState('Barchasi');
   const [lightbox, setLightbox] = useState(null);
 
-  const filtered = active === 'Barchasi' ? PHOTOS : PHOTOS.filter(p => p.cat === active);
+  // Barcha yangiliklardagi rasmlardan galereya yigʻiladi (real, admin yuklagan)
+  const photos = useMemo(() => {
+    const isRu = lang === 'ru';
+    const isEn = lang === 'en';
+    const out = [];
+    adminNews.forEach((n) => {
+      const title = (isRu && n.title_ru) ? n.title_ru : (isEn && n.title_en) ? n.title_en : n.title;
+
+      let imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
+      if (isRu && Array.isArray(n.images_ru) && n.images_ru.length > 0) imgs = n.images_ru.filter(Boolean);
+      else if (isEn && Array.isArray(n.images_en) && n.images_en.length > 0) imgs = n.images_en.filter(Boolean);
+      if (imgs.length === 0 && n.image) imgs = [n.image];
+
+      const year = (n.date || n.created_at || '').toString().slice(0, 4);
+      imgs.forEach((img, idx) => {
+        out.push({
+          id: `${n.id}-${idx}`,
+          img,
+          title,
+          cat: n.category || 'Yangiliklar',
+          year,
+        });
+      });
+    });
+    return out;
+  }, [adminNews, lang]);
+
+  const categories = useMemo(
+    () => ['Barchasi', ...Array.from(new Set(photos.map((p) => p.cat))).filter(Boolean)],
+    [photos]
+  );
+
+  const filtered = active === 'Barchasi' ? photos : photos.filter((p) => p.cat === active);
 
   return (
     <main className="content-wrapper">
@@ -49,65 +62,63 @@ export default function Fotogalereya() {
       <section className="main-content">
         <div className="container">
 
-          {/* Kategoriya */}
-          <div className="tag-filters" style={{ borderBottom: '1px solid var(--light-border)', paddingBottom: '20px' }}>
-            {CATEGORIES.map((cat) => (
-              <button key={cat} className={`tag-btn${active === cat ? ' active' : ''}`} onClick={() => setActive(cat)}>
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Galereya grid */}
-          <div className="gallery-grid" style={{ paddingTop: '30px', gap: '8px' }}>
-            {filtered.map((photo) => (
-              <div
-                key={photo.id}
-                className="gallery-item"
-                onClick={() => setLightbox(photo)}
-                style={{ cursor: 'pointer' }}
-              >
-                <img src={photo.img} alt={photo.title} loading="lazy" />
-                <div className="overlay" style={{ flexDirection: 'column', gap: '8px' }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                    <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
-                  </svg>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--white)', fontFamily: 'var(--font-sans)', letterSpacing: '1px', textAlign: 'center', padding: '0 12px' }}>
-                    {photo.title}
-                  </div>
-                </div>
-                <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.55)', color: 'var(--gold)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '1px', padding: '3px 8px', fontFamily: 'var(--font-sans)' }}>
-                  {photo.cat}
-                </div>
+          {loading ? (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', padding: '80px 0', color: '#888' }}>
+              <Loader2 size={20} className="admin-spin" />
+              <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>Rasmlar yuklanmoqda…</span>
+            </div>
+          ) : photos.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '80px 20px', color: '#888' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--navy)', marginBottom: '10px' }}>
+                Hozircha rasmlar yoʻq
               </div>
-            ))}
-          </div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>
+                Yangiliklar qoʻshilgan sari galereya avtomatik toʻldiriladi.
+              </p>
+            </div>
+          ) : (
+            <>
+              {/* Kategoriya */}
+              {categories.length > 1 && (
+                <div className="tag-filters" style={{ borderBottom: '1px solid var(--light-border)', paddingBottom: '20px' }}>
+                  {categories.map((cat) => (
+                    <button key={cat} className={`tag-btn${active === cat ? ' active' : ''}`} onClick={() => setActive(cat)}>
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Galereya grid */}
+              <div className="gallery-grid" style={{ paddingTop: '30px', gap: '8px' }}>
+                {filtered.map((photo) => (
+                  <div
+                    key={photo.id}
+                    className="gallery-item"
+                    onClick={() => setLightbox(photo)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <img src={photo.img} alt={photo.title} loading="lazy" />
+                    <div className="overlay" style={{ flexDirection: 'column', gap: '8px' }}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                      </svg>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--white)', fontFamily: 'var(--font-sans)', letterSpacing: '1px', textAlign: 'center', padding: '0 12px' }}>
+                        {photo.title}
+                      </div>
+                    </div>
+                    <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.55)', color: 'var(--gold)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '1px', padding: '3px 8px', fontFamily: 'var(--font-sans)' }}>
+                      {photo.cat}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
 
         </div>
       </section>
-
-      {/* News Ticker */}
-      <div className="news-ticker-wrap">
-        <div className="news-ticker-label">
-          <Radio size={13} strokeWidth={2} className="news-ticker-dot" />
-          <span>Soʻnggi yangiliklar</span>
-        </div>
-        <div className="news-ticker-track-wrap">
-          <div className="news-ticker-track">
-            {[...LATEST_NEWS, ...LATEST_NEWS].map((item, i) => (
-              <span key={i} className="news-ticker-item">
-                <span className="news-ticker-cat">{item.cat}</span>
-                {item.title}
-                <span className="news-ticker-sep">·</span>
-              </span>
-            ))}
-          </div>
-        </div>
-        <Link to="/yangiliklar" className="news-ticker-btn">
-          Batafsil <ArrowRight size={13} strokeWidth={2} />
-        </Link>
-      </div>
 
       {/* Lightbox */}
       {lightbox && (
@@ -121,7 +132,7 @@ export default function Fotogalereya() {
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--white)' }}>{lightbox.title}</div>
                 <div style={{ fontSize: '0.7rem', color: 'var(--gold)', fontFamily: 'var(--font-sans)', marginTop: '4px', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                  {lightbox.cat} · {lightbox.year}
+                  {lightbox.cat}{lightbox.year ? ` · ${lightbox.year}` : ''}
                 </div>
               </div>
               <button

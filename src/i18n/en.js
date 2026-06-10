@@ -197,14 +197,14 @@ export default {
       contact: 'Contact',
     },
     address: {
-      line1: 'Tashkent, Almazar district,',
-      line2: '31 Mustaqillik str.',
+      line1: 'Tashkent, Shaykhantakhur district,',
+      line2: '1 Botir Zokirov str.',
     },
     hours: {
       weekday: 'Monday – Friday: 09:00 – 18:00',
       saturday: 'Saturday: 09:00 – 14:00',
     },
-    mapBadge: '31 Mustaqillik str., Tashkent',
+    mapBadge: '1 Botir Zokirov str., Tashkent',
     mapTitle: 'Conservatory on the map',
     copyright: '© 2026 Uzbekistan State Conservatory. All rights reserved.',
     privacy: 'Privacy Policy',

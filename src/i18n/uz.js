@@ -197,14 +197,14 @@ export default {
       contact: 'Bogʻlanish',
     },
     address: {
-      line1: 'Toshkent sh., Olmazor tumani,',
-      line2: 'Mustaqillik koʻchasi, 31-uy',
+      line1: 'Toshkent sh., Shayxontohur tumani,',
+      line2: 'Botir Zokirov koʻchasi, 1-uy',
     },
     hours: {
       weekday: 'Dushanba – Juma: 09:00 – 18:00',
       saturday: 'Shanba: 09:00 – 14:00',
     },
-    mapBadge: 'Mustaqillik koʻchasi 31, Toshkent',
+    mapBadge: 'Botir Zokirov koʻchasi 1, Toshkent',
     mapTitle: 'Konservatoriya xaritada',
     copyright: '© 2026 Oʻzbekiston Davlat Konservatoriyasi. Barcha huquqlar himoyalangan.',
     privacy: 'Maxfiylik siyosati',

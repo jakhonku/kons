@@ -275,7 +275,7 @@ export default function Abituriyentlar() {
               <p>
                 Tel: <strong>+998 71 234-56-90</strong><br />
                 Email: <strong>qabul@konservatoriya.uz</strong><br />
-                Manzil: Toshkent, Mustaqillik koʻchasi, 31-uy, 1-qavat, 105-xona
+                Manzil: Toshkent, Botir Zokirov koʻchasi, 1-uy, 1-qavat, 105-xona
               </p>
             </div>
           </div>

@@ -74,7 +74,7 @@ export default function Kafedralar() {
         responsible: "Oʻquv-uslubiy boʻlim",
         phone: '+998 71 234-56-82',
         email: 'kafedralar@konservatoriya.uz',
-        address: "Toshkent sh., Mirobod tumani, Konservatoriya koʻchasi 1-uy",
+        address: "Toshkent sh., Shayxontohur tumani, Botir Zokirov koʻchasi 1-uy",
       }}
     />
   );

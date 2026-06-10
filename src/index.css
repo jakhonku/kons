@@ -2903,6 +2903,17 @@ img {
   gap: 20px;
 }
 
+/* Online murojaat — forma + yon panel; mobil/planshetda ustma-ust */
+.murojaat-layout {
+  grid-template-columns: 1fr 360px;
+}
+
+@media (max-width: 900px) {
+  .murojaat-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .form-grid.full {
   grid-template-columns: 1fr;
 }
@@ -5079,13 +5090,50 @@ img {
     transform: none !important;
   }
 
+  /* ── BOSH SAHIFA HERO — Mobil ─────────────────────────────── */
+  .hero {
+    flex-direction: column;
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .hero-visual {
+    flex: none;
+    width: 100%;
+    height: 55vw;
+    min-height: 260px;
+    max-height: 420px;
+    position: relative;
+  }
+
+  /* Pastdan matn ustiga gradient */
+  .hero-visual::after {
+    background:
+      linear-gradient(180deg,
+        transparent 40%,
+        rgba(7, 7, 14, 0.55) 75%,
+        var(--bg-deep) 100%);
+  }
+
+  .hero-visual .slide {
+    object-position: center 30%;
+  }
+
   .hero-content {
-    padding: 48px 24px;
+    flex: none;
+    width: 100%;
+    padding: 36px 24px 48px;
+    margin-top: -4px;
+  }
+
+  .hero-year {
+    display: none;
   }
 
   .hero-content::before {
     display: none;
   }
+
 
   .main-content {
     padding: 36px 0 24px;
@@ -6485,12 +6533,18 @@ body {
 }
 
 @media (max-width: 480px) {
+  .hero-visual {
+    height: 62vw;
+    min-height: 240px;
+    max-height: 360px;
+  }
+
   .hero-content {
-    padding: 36px 20px !important;
+    padding: 28px 20px 44px !important;
   }
 
   .hero-content h1 {
-    font-size: 1.7rem !important;
+    font-size: 1.75rem !important;
   }
 
   .section-divider h2 {

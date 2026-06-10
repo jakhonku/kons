@@ -58,7 +58,7 @@ export default function Vakansiyalar() {
         responsible: "Kadrlar boʻlimi",
         phone: '+998 71 234-56-95',
         email: 'kadrlar@konservatoriya.uz',
-        address: "Toshkent sh., Konservatoriya koʻchasi 1, 2-qavat",
+        address: "Toshkent sh., Botir Zokirov koʻchasi 1, 2-qavat",
         hours: 'Dushanba – Juma, 09:00 – 17:00',
       }}
     />

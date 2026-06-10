@@ -47,7 +47,9 @@ export default function OnlineMurojaat() {
     if (res.ok) {
       setSubmitted(true);
     } else {
-      setError(res.error || 'Xatolik yuz berdi. Iltimos qaytadan urinib koʻring.');
+      // eslint-disable-next-line no-console
+      console.error('Murojaat yuborishda xatolik:', res.error);
+      setError('Murojaatni yuborishda xatolik yuz berdi. Iltimos, birozdan soʻng qaytadan urinib koʻring yoki telefon orqali bogʻlaning.');
     }
   };
 
@@ -71,7 +73,7 @@ export default function OnlineMurojaat() {
             </p>
           </article>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '40px', marginBottom: '60px' }} className="murojaat-layout">
+          <div style={{ display: 'grid', gap: '40px', marginBottom: '60px' }} className="murojaat-layout">
 
             <div style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '32px 36px' }}>
               <h2 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.4rem', fontWeight: 500, marginBottom: '8px' }}>
@@ -98,7 +100,7 @@ export default function OnlineMurojaat() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="form-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+                <form onSubmit={handleSubmit} className="form-grid">
                   <div className="form-group">
                     <label>Familiya, Ism *</label>
                     <input 
@@ -140,7 +142,7 @@ export default function OnlineMurojaat() {
                       {MUROJAAT_TURLARI.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
-                  <div className="form-group span-2" style={{ gridColumn: 'span 2' }}>
+                  <div className="form-group span-2">
                     <label>Mavzu *</label>
                     <input 
                       type="text" 
@@ -150,7 +152,7 @@ export default function OnlineMurojaat() {
                       onChange={(e) => setForm({...form, subject: e.target.value})}
                     />
                   </div>
-                  <div className="form-group span-2" style={{ gridColumn: 'span 2' }}>
+                  <div className="form-group span-2">
                     <label>Murojaat matni *</label>
                     <textarea 
                       rows="6" 
@@ -162,12 +164,12 @@ export default function OnlineMurojaat() {
                   </div>
 
                   {error && (
-                    <div style={{ gridColumn: 'span 2', color: '#e53e3e', fontSize: '0.85rem', marginBottom: '10px' }}>
+                    <div style={{ gridColumn: '1 / -1', color: '#e53e3e', fontSize: '0.85rem', marginBottom: '10px' }}>
                       {error}
                     </div>
                   )}
 
-                  <div style={{ gridColumn: 'span 2' }}>
+                  <div style={{ gridColumn: '1 / -1' }}>
                     <button 
                       type="submit" 
                       className="btn-submit" 
@@ -214,8 +216,8 @@ export default function OnlineMurojaat() {
               <div style={{ background: 'var(--white)', border: '1px solid var(--light-border)', padding: '22px 26px' }}>
                 <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', marginBottom: '10px', textTransform: 'uppercase' }}>Yuzma-yuz qabul</div>
                 <div style={{ color: '#555', fontSize: '0.85rem', lineHeight: 1.7 }}>
-                  Toshkent sh., Mirobod tumani,<br />
-                  Konservatoriya koʻchasi 1-uy<br />
+                  Toshkent sh., Shayxontohur tumani,<br />
+                  Botir Zokirov koʻchasi 1-uy<br />
                   Bosh bino, 1-qavat
                 </div>
               </div>
