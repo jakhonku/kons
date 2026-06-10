@@ -355,6 +355,7 @@ img {
   margin-left: 20px;
   padding-left: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
 }
 
 .h-social-link {
@@ -586,23 +587,42 @@ img {
   }
 }
 
-/* Rus tilida nav yorliqlari uzunroq — tor desktop oraliqda (1280–1440px)
+/* Rus va Ingliz tillarida nav yorliqlari uzunroq — tor desktop oraliqda (1280–1550px)
    afisha vidjetini ixchamlashtirib, navbarga joy bo'shatamiz (overlap'ni oldini olish) */
-@media (min-width: 1280px) and (max-width: 1440px) {
-  html[lang="ru"] .header-calendar-widget {
+@media (min-width: 1280px) and (max-width: 1550px) {
+  html[lang="ru"] .header-calendar-widget,
+  html[lang="en"] .header-calendar-widget {
     padding: 5px 8px;
     gap: 6px;
   }
 
-  html[lang="ru"] .header-calendar-widget .cal-text-box {
+  html[lang="ru"] .header-calendar-widget .cal-text-box,
+  html[lang="en"] .header-calendar-widget .cal-text-box {
     display: none;
   }
 
-  html[lang="ru"] .cal-icon-box {
+  html[lang="ru"] .cal-icon-box,
+  html[lang="en"] .cal-icon-box {
     min-width: 42px;
     padding: 4px 8px;
   }
 }
+
+/* Rus va Ingliz tillarida uzunroq nav matnlari tufayli desktop menyu elementlarini
+   (1280px - 1600px) gacha bo'lgan ekranlarda bir oz ixchamroq qilamiz */
+@media (min-width: 1280px) and (max-width: 1600px) {
+  html[lang="ru"] .desktop-nav,
+  html[lang="en"] .desktop-nav {
+    gap: 10px;
+  }
+
+  html[lang="ru"] .dnav-item,
+  html[lang="en"] .dnav-item {
+    padding: 7px 8px;
+    font-size: 0.68rem;
+  }
+}
+
 
 .desktop-nav {
   display: flex;
@@ -8759,6 +8779,28 @@ body {
   .news-rest-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
+  /* Featured rasm ustun-ustun (stacked) boʻlganda oʻz formatida toʻliq koʻrsatiladi —
+     absolute joylashuv olib tashlanadi (aks holda balandlik 0 boʻlib koʻrinmay qoladi) */
+  .news-featured-grid img {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .news-featured-grid > div:first-child {
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    background: var(--light-50) !important;
+  }
+
+  /* Featured ustidagi gradient qoplama olib tashlanadi */
+  .news-featured-grid img + div {
+    display: none !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -8780,8 +8822,20 @@ body {
     font-size: 1.45rem !important;
   }
 
-  .news-featured-grid img+div {
-    min-height: 240px !important;
+  /* Rest kartalar rasmi oʻz formati/oʻlchamiga koʻra toʻliq koʻrsatiladi — kesilmaydi */
+  .news-rest-grid img {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .news-rest-grid a > div:first-child {
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    background: var(--light-50) !important;
   }
 }
 

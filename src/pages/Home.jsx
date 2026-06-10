@@ -125,8 +125,6 @@ export default function Home() {
               {t('home.hero.quoteAuthor')}
             </footer>
           </blockquote>
-
-          <div className="hero-year">{t('home.hero.yearLabel')}</div>
         </div>
       </section>
 
