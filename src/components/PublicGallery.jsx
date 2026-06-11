@@ -29,13 +29,14 @@ export default function PublicGallery({ images = [], alt = '' }) {
     <>
       <div className="public-gallery">
         <div className="public-gallery-main" onClick={() => setLightbox(true)} style={{ background: isFallback ? 'var(--navy)' : 'transparent' }}>
-          <img 
-            src={cur} 
-            alt={alt} 
-            style={{ 
+          <img
+            src={cur}
+            alt={alt}
+            decoding="async"
+            style={{
               objectFit: isFallback ? 'contain' : 'cover',
               padding: isFallback ? '120px' : '0'
-            }} 
+            }}
           />
           {list.length > 1 && (
             <>
@@ -70,13 +71,15 @@ export default function PublicGallery({ images = [], alt = '' }) {
                 aria-label={`Rasm ${i + 1}`}
                 style={{ background: img === '/Konservatoriya_logo_white-05.png' ? 'var(--navy)' : 'transparent' }}
               >
-                <img 
-                  src={img} 
-                  alt="" 
-                  style={{ 
+                <img
+                  src={img}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  style={{
                     objectFit: img === '/Konservatoriya_logo_white-05.png' ? 'contain' : 'cover',
                     padding: img === '/Konservatoriya_logo_white-05.png' ? '8px' : '0'
-                  }} 
+                  }}
                 />
               </button>
             ))}

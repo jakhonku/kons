@@ -90,7 +90,7 @@ export default {
 
       talimYonalishlari: 'Taʼlim yoʻnalishlari',
       talimDasturlari: 'Taʼlim dasturlari',
-      qabulTalablari: 'Qabul taʼlablari',
+      qabulTalablari: 'Qabul talablari',
       qabulKvotasi: 'Qabul kvotasi',
       kasbiyImtihonlar: 'Kasbiy va ijodiy imtihonlar',
       imtihonNatijalari: 'Imtihon natijalari',

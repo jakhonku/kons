@@ -9,7 +9,7 @@ const BREADCRUMBS = [
 
 const STATS = [
   { num: '1 200+', label: 'Talabalar' },
-  { num: '38',     label: 'Kafedra' },
+  { num: '16',     label: 'Kafedra' },
   { num: '5',      label: 'Fakultet' },
   { num: '85%',    label: 'Bandlik darajasi' },
 ];

@@ -177,7 +177,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.education'),
           links: [
-            { label: t('nav.items.talimYonalishlari'), to: '/talim-yonalishlari' },
             { label: t('nav.items.talimDasturlari'),   to: '/talim-dasturlari' },
           ],
         },

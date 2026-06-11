@@ -89,7 +89,7 @@ export default function Tuzilma() {
 
           <article className="article-body">
             <p className="lead">
-              Konservatoriya tuzilmasi 5 ta fakultet, 38 kafedra va koʻplab
+              Konservatoriya tuzilmasi 5 ta fakultet, 16 kafedra va koʻplab
               maʼmuriy boʻlimlardan iborat boʻlib, barcha jarayonlar zamonaviy
               boshqaruv tizimi asosida olib boriladi.
             </p>

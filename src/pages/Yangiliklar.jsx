@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero';
 import { useAdminNews, useAdminTelegram } from '../hooks/useAdminStorage';
 import TelegramPostEmbed from '../components/TelegramPostEmbed';
 import { useTranslation } from '../contexts/LanguageContext';
+import Seo from '../components/Seo';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -79,6 +80,7 @@ export default function Yangiliklar() {
 
   return (
     <main className="content-wrapper">
+      <Seo title="Yangiliklar" description="Oʻzbekiston Davlat Konservatoriyasi soʻnggi yangiliklari, voqealari, mukofotlari va eʼlonlari." />
       <PageHero
         tag="Yangiliklar"
         title="Soʻnggi"
@@ -227,6 +229,9 @@ export default function Yangiliklar() {
                       <img
                         src={featured.image}
                         alt={featured.title}
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
                         style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
                       />
                       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(26,26,56,0.6) 0%, rgba(26,26,56,0.2) 100%)' }} />
@@ -280,6 +285,8 @@ export default function Yangiliklar() {
                           <img
                             src={item.image}
                             alt={item.title}
+                            loading="lazy"
+                            decoding="async"
                             style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
                           />
                           <div style={{ position: 'absolute', top: '14px', left: '14px' }}>

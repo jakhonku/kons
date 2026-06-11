@@ -3,6 +3,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import Header from './Header';
 import Footer from './Footer';
+import ComingSoon from '../../pages/ComingSoon';
+import { isPathOpen } from '../../config/lockedPages';
 
 export default function Layout() {
   const location = useLocation();
@@ -15,11 +17,14 @@ export default function Layout() {
   // Scroll reveal
   useScrollReveal();
 
+  // Vaqtinchalik qulf: ochiq boʻlmagan sahifalarda ComingSoon koʻrsatiladi
+  const open = isPathOpen(location.pathname);
+
   return (
     <>
       <Header />
       <div key={location.pathname} className="page-transition">
-        <Outlet />
+        {open ? <Outlet /> : <ComingSoon />}
       </div>
       <Footer />
     </>

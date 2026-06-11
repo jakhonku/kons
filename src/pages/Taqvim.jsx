@@ -6,6 +6,7 @@ import DatePicker from '../components/DatePicker';
 import { ITICKET_URL } from '../data/events';
 import { useAdminPosters } from '../hooks/useAdminStorage';
 import { useTranslation } from '../contexts/LanguageContext';
+import Seo from '../components/Seo';
 
 const MONTH_ABBR_UZ = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
 const WEEKDAY_ABBR_UZ = ['Yaks', 'Dush', 'Sesh', 'Chor', 'Pay', 'Juma', 'Shan'];
@@ -88,6 +89,7 @@ export default function Taqvim() {
 
   return (
     <main className="content-wrapper">
+      <Seo title="Tadbirlar afishasi" description="Oʻzbekiston Davlat Konservatoriyasi konsertlari va tadbirlari afishasi — sana, joy va chiptalar haqida maʼlumot." />
       <PageHero
         tag="Tadbirlar va Konsertlar"
         title="Badiiy"

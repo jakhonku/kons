@@ -17,7 +17,7 @@ export default function OquvUslubiyKengash() {
       stats={[
         { value: '14', label: 'Aʼzolar' },
         { value: '12', label: 'Yillik yigʻilish' },
-        { value: '38', label: 'Kafedra qamrovi' },
+        { value: '16', label: 'Kafedra qamrovi' },
       ]}
       sections={[
         {

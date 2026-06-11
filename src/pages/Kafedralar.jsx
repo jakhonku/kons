@@ -13,9 +13,9 @@ export default function Kafedralar() {
       title="Konservatoriya"
       emphasis="kafedralari"
       breadcrumbs={BREADCRUMBS}
-      lead="Konservatoriyaning 38 kafedrasi 5 fakultet ostida tashkil etilgan. Har bir kafedra oʻz sohasi boʻyicha oʻquv-uslubiy ishlarni amalga oshiradi va ilmiy tadqiqotlarni olib boradi."
+      lead="Konservatoriyaning 16 kafedrasi 5 fakultet ostida tashkil etilgan. Har bir kafedra oʻz sohasi boʻyicha oʻquv-uslubiy ishlarni amalga oshiradi va ilmiy tadqiqotlarni olib boradi."
       stats={[
-        { value: '38', label: 'Kafedra' },
+        { value: '16', label: 'Kafedra' },
         { value: '220+', label: 'Pedagog' },
         { value: '15', label: 'Fan doktori' },
       ]}

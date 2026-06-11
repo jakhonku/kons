@@ -16,7 +16,7 @@ export default function Fakultetlar() {
       lead="Konservatoriyada 5 ta yetakchi fakultet faoliyat koʻrsatadi. Har bir fakultet oʻz yoʻnalishi boʻyicha bakalavr va magistratura darajasidagi mutaxassislarni tayyorlaydi va musiqa sanʼatining yetakchi sohalarini rivojlantiradi."
       stats={[
         { value: '5', label: 'Fakultet' },
-        { value: '38', label: 'Kafedra' },
+        { value: '16', label: 'Kafedra' },
         { value: '1200+', label: 'Talaba' },
       ]}
       sections={[

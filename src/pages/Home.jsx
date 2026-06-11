@@ -6,6 +6,7 @@ import { useTranslation } from '../contexts/LanguageContext';
 import { useAdminNews, useAdminTicker, useAdminTelegram } from '../hooks/useAdminStorage';
 import TelegramPostEmbed from '../components/TelegramPostEmbed';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import Seo from '../components/Seo';
 
 export default function Home() {
   const { t, lang } = useTranslation();
@@ -75,7 +76,7 @@ export default function Home() {
   const STATS = [
     { num: '1936',  label: t('home.stats.sinceYear') },
     { num: '5000+', label: t('home.stats.graduates') },
-    { num: '48',    label: t('home.stats.departments') },
+    { num: '16',    label: t('home.stats.departments') },
     { num: '120+',  label: t('home.stats.partners') },
   ];
 
@@ -95,6 +96,7 @@ export default function Home() {
 
   return (
     <main>
+      <Seo description="Oʻzbekiston Davlat Konservatoriyasi rasmiy sayti — 1936-yildan buyon faoliyat yuritayotgan yetakchi musiqa taʼlim muassasasi. Qabul, fakultet va kafedralar, yangiliklar va tadbirlar afishasi." />
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="hero">

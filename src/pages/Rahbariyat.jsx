@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import Seo from '../components/Seo';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -59,6 +60,7 @@ const PROREKTORS = [
 export default function Rahbariyat() {
   return (
     <main className="content-wrapper">
+      <Seo title="Rahbariyat" description="Oʻzbekiston Davlat Konservatoriyasi rahbariyati — rektor va prorektorlar, ularning lavozimlari, qabul vaqtlari va bogʻlanish maʼlumotlari." />
       <PageHero
         tag="Konservatoriya"
         title="Muassasa"

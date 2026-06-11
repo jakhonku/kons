@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Plus, Trash2, ArrowUp, ArrowDown, Loader2, Image as ImageIcon } from 'lucide-react';
 import { uploadImage } from '../../lib/supabase';
+import { compressImage } from '../../lib/imageCompress';
 
 const MAX_IMAGES = 10;
 
@@ -24,7 +25,8 @@ export default function ImageGalleryEditor({ images = [], onChange, folder = 'ga
     setError('');
     const next = [...images];
     for (const file of toUpload) {
-      const { url, error: upErr } = await uploadImage(file, folder);
+      const optimized = await compressImage(file).catch(() => file);
+      const { url, error: upErr } = await uploadImage(optimized, folder);
       if (upErr) {
         setError(`Yuklashda xato: ${upErr.message}`);
         continue;

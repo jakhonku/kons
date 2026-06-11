@@ -264,7 +264,7 @@ export default function YangilikBatafsil() {
                   <li key={n.id}>
                     <Link to={`/yangiliklar/${n.id}`}>
                       <div className="news-detail-sidebar-thumb">
-                        {n.image && <img src={n.image} alt="" />}
+                        {n.image && <img src={n.image} alt="" loading="lazy" decoding="async" />}
                       </div>
                       <div>
                         <div className="news-detail-sidebar-cat">{n.cat}</div>

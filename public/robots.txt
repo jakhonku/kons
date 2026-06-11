@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Admin panel — indekslanmasin
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://conservatory.uz/sitemap.xml

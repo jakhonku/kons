@@ -48,7 +48,19 @@
       "Bash(command -v ffmpeg)",
       "Bash(node *)",
       "Bash(echo \"=== Escape qilingan \\\\\\\\' \\(tutuq belgisi\\) so'zlari — qaysi harf oldidan keladi ===\")",
-      "Bash(echo \"=== Qolgan escape \\\\\\\\' bormi \\(butun src\\) ===\")"
+      "Bash(echo \"=== Qolgan escape \\\\\\\\' bormi \\(butun src\\) ===\")",
+      "Bash(awk 'NR>=5100 && NR<=5146 && /@media/{print NR\": \"$0}' src/index.css)",
+      "Bash(awk 'NR<=5144 && /@media/{last=NR\": \"$0} END{print last}' src/index.css)",
+      "Bash(awk 'NR>=5000 && NR<=5150 && /@media/{print NR\": \"$0}' src/index.css)",
+      "Bash(awk 'NR>=4990 && NR<=5160 && /@media/{print NR\": \"$0}' src/index.css)",
+      "Bash(awk 'NR<=5155 && /@media/{last=NR\": \"$0} END{print last}' src/index.css)",
+      "Bash(sed -n '199,208p' src/i18n/uz.js)",
+      "Bash(sed -n '199,208p' src/i18n/ru.js)",
+      "Bash(sed -n '199,208p' src/i18n/en.js)",
+      "Bash(git check-ignore *)",
+      "Bash(git rev-list *)",
+      "Bash(git add *)",
+      "Bash(findstr /i \"robots sitemap\")"
     ]
   }
 }
