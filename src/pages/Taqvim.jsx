@@ -167,7 +167,7 @@ export default function Taqvim() {
                 return (
                   <article key={event.id} className="ticket-card">
                     <div className="ticket-poster">
-                      <img src={event.img} alt={event.title} />
+                      <img src={event.img} alt={event.title} loading="lazy" decoding="async" />
                       <div className="ticket-poster-grad" />
                       <div className="ticket-date-badge">
                         <span className="ticket-date-month">{event.month}</span>

@@ -4,8 +4,8 @@
    sayt (ayniqsa yangiliklar) tez ochilishini taʼminlash.
    ============================================================ */
 
-const DEFAULT_MAX_DIM = 1200;   // eng katta tomon (px)
-const DEFAULT_QUALITY = 0.75;   // JPEG/WebP sifati
+const DEFAULT_MAX_DIM = 1000;   // eng katta tomon (px)
+const DEFAULT_QUALITY = 0.65;   // JPEG/WebP sifati
 
 // Bularni siqmaymiz (animatsiya / vektor buziladi)
 const SKIP_TYPES = ['image/gif', 'image/svg+xml'];

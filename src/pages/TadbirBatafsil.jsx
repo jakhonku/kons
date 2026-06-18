@@ -131,7 +131,7 @@ export default function TadbirBatafsil() {
                 onClick={() => setFullImage(event.img)}
                 style={{ cursor: 'zoom-in' }}
               >
-                <img src={event.img} alt={event.title} />
+                <img src={event.img} alt={event.title} loading="lazy" decoding="async" />
                 <div className="tadbir-poster-grad" />
                 <div className="tadbir-poster-expand">
                   <Maximize2 size={24} />

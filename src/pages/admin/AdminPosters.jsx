@@ -30,6 +30,8 @@ const EMPTY = {
   image_ru: '',
   image_en: '',
   images: [],
+  images_ru: [],
+  images_en: [],
   video: '',
   ticket_url: '',
 };
@@ -96,6 +98,8 @@ export default function AdminPosters() {
       image_ru: item.image_ru || '',
       image_en: item.image_en || '',
       images: (Array.isArray(item.images) ? item.images.filter(Boolean) : (item.image ? [item.image] : [])),
+      images_ru: Array.isArray(item.images_ru) ? item.images_ru : [],
+      images_en: Array.isArray(item.images_en) ? item.images_en : [],
       video: item.video || '',
       ticket_url: item.ticket_url || '',
     });
@@ -137,9 +141,11 @@ export default function AdminPosters() {
       description_ru: form.description_ru,
       description_en: form.description_en,
       image: form.images?.[0] || form.image || '',
-      image_ru: form.image_ru,
-      image_en: form.image_en,
+      image_ru: form.images_ru?.[0] || form.image_ru || '',
+      image_en: form.images_en?.[0] || form.image_en || '',
       images: form.images || [],
+      images_ru: form.images_ru || [],
+      images_en: form.images_en || [],
       video: form.video,
       ticket_url: (form.ticket_url || '').trim() || null,
     };
