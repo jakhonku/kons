@@ -10430,8 +10430,7 @@ body,
 
 .qabul-modal-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  min-height: 480px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .qabul-modal-image-panel {
@@ -10440,19 +10439,16 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #020208;
+  background: linear-gradient(135deg, #0a0a24 0%, #070714 100%);
   border-right: 1px solid rgba(197, 160, 89, 0.15);
+  min-height: 520px;
 }
 
 .qabul-modal-image-panel img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 8s ease;
-}
-
-.qabul-modal-card:hover .qabul-modal-image-panel img {
-  transform: scale(1.08);
+  object-fit: contain;
+  padding: 8px;
 }
 
 .qabul-modal-image-overlay {
