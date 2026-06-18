@@ -4,6 +4,7 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import Header from './Header';
 import Footer from './Footer';
 import ComingSoon from '../../pages/ComingSoon';
+import QabulModal from './QabulModal';
 import { isPathOpen } from '../../config/lockedPages';
 
 export default function Layout() {
@@ -27,6 +28,7 @@ export default function Layout() {
         {open ? <Outlet /> : <ComingSoon />}
       </div>
       <Footer />
+      <QabulModal />
     </>
   );
 }
