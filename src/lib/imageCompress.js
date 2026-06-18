@@ -4,8 +4,8 @@
    sayt (ayniqsa yangiliklar) tez ochilishini taʼminlash.
    ============================================================ */
 
-const DEFAULT_MAX_DIM = 1600;   // eng katta tomon (px)
-const DEFAULT_QUALITY = 0.82;   // JPEG sifati
+const DEFAULT_MAX_DIM = 1200;   // eng katta tomon (px)
+const DEFAULT_QUALITY = 0.75;   // JPEG/WebP sifati
 
 // Bularni siqmaymiz (animatsiya / vektor buziladi)
 const SKIP_TYPES = ['image/gif', 'image/svg+xml'];
@@ -37,14 +37,26 @@ export async function compressImage(file, { maxDim = DEFAULT_MAX_DIM, quality = 
   ctx.drawImage(source, 0, 0, targetW, targetH);
   if (source.close) source.close();
 
-  const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
+  let outputType = 'image/webp';
+  let ext = 'webp';
+
+  // canvas.toBlob orqali WebP formatda siqishga harakat qilamiz
+  let blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/webp', quality));
+
+  // Agar brauzer WebP formatini qo'llab-quvvatlamasa (toBlob 'image/webp' qaytarmasa), JPEG'ga qaytamiz
+  if (!blob || blob.type !== 'image/webp') {
+    blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
+    outputType = 'image/jpeg';
+    ext = 'jpg';
+  }
+
   if (!blob) return file;
 
   // Agar kichraytirilmagan boʻlsa va siqish foyda bermasa — originalni qoldiramiz
   if (scale === 1 && blob.size >= file.size) return file;
 
   const baseName = (file.name || 'image').replace(/\.[^.]+$/, '');
-  return new File([blob], `${baseName}.jpg`, { type: 'image/jpeg', lastModified: Date.now() });
+  return new File([blob], `${baseName}.${ext}`, { type: outputType, lastModified: Date.now() });
 }
 
 async function loadImage(file) {

@@ -163,7 +163,6 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="gallery-hover-overlay">{t('home.gallery.photoCaption')}</div>
             </div>
             <div className="gallery-item-home">
               <img
@@ -347,7 +346,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="news-slider-viewport" style={{ position: 'relative', overflow: 'visible', minHeight: isMobile ? '600px' : '500px' }}>
+          <div className="news-slider-viewport" style={{ position: 'relative', overflow: 'visible', minHeight: isMobile ? '500px' : '420px' }}>
             <AnimatePresence mode="wait">
               {displayNews.length > 0 ? (
                 <motion.div
@@ -368,28 +367,52 @@ export default function Home() {
                   {displayNews[newsIndex].image && displayNews[newsIndex].image !== '/Konservatoriya_logo_white-05.png' && (
                     <div className="news-slide-image-wrap" style={{ 
                       flex: isMobile ? 'none' : '1.5',
-                      height: isMobile ? '300px' : '550px',
+                      height: isMobile ? '260px' : '420px',
                       width: '100%',
                       position: 'relative',
                       borderRadius: '12px',
                       overflow: 'hidden',
                       boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                      background: 'transparent',
+                      background: '#07070e',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
+                      {/* Blurred background image */}
+                      <img
+                        src={displayNews[newsIndex].image}
+                        alt=""
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          filter: 'blur(15px)',
+                          opacity: 0.8,
+                          transform: 'scale(1.1)',
+                          pointerEvents: 'none'
+                        }}
+                      />
+                      {/* Main contain image */}
                       <img
                         src={displayNews[newsIndex].image}
                         alt={displayNews[newsIndex].title}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          zIndex: 1
+                        }}
                         loading="lazy"
                         decoding="async"
                       />
                       <div style={{ 
                         position: 'absolute', 
                         inset: 0, 
-                        background: 'linear-gradient(to bottom, transparent 60%, rgba(7,7,14,0.8))' 
+                        background: 'linear-gradient(to bottom, transparent 60%, rgba(7,7,14,0.5))',
+                        zIndex: 2
                       }} />
                     </div>
                   )}
@@ -400,10 +423,10 @@ export default function Home() {
                     background: 'rgba(25, 25, 35, 0.65)',
                     backdropFilter: 'blur(20px)',
                     border: '1px solid rgba(201,168,76,0.2)',
-                    padding: isMobile ? '30px' : '50px',
+                    padding: isMobile ? '30px' : '40px',
                     borderRadius: '12px',
-                    marginTop: isMobile ? '-40px' : '40px',
-                    marginBottom: isMobile ? '0' : '40px',
+                    marginTop: isMobile ? '-40px' : '30px',
+                    marginBottom: isMobile ? '0' : '30px',
                     marginLeft: isMobile ? '20px' : '-80px',
                     marginRight: isMobile ? '20px' : '0',
                     zIndex: 2,
@@ -412,7 +435,7 @@ export default function Home() {
                     justifyContent: 'center',
                     boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
                       <span style={{ 
                         background: 'rgba(201,168,76,0.15)', 
                         color: 'var(--gold-light)', 
@@ -435,11 +458,11 @@ export default function Home() {
                     </div>
 
                     <h3 style={{ 
-                      fontSize: isMobile ? '1.5rem' : '2.2rem', 
+                      fontSize: isMobile ? '1.4rem' : '1.8rem', 
                       fontFamily: 'var(--font-display)', 
                       fontWeight: 400, 
-                      lineHeight: 1.2, 
-                      marginBottom: '20px',
+                      lineHeight: 1.25, 
+                      marginBottom: '15px',
                       color: 'var(--text-primary)',
                       letterSpacing: '-0.5px'
                     }}>
@@ -447,14 +470,14 @@ export default function Home() {
                     </h3>
 
                     <p style={{ 
-                      fontSize: '0.95rem', 
+                      fontSize: '0.92rem', 
                       color: 'rgba(240,237,232,0.7)', 
-                      lineHeight: 1.7, 
-                      marginBottom: '35px', 
+                      lineHeight: 1.6, 
+                      marginBottom: '25px', 
                       fontFamily: 'var(--font-serif)', 
                       fontStyle: 'italic',
                       display: '-webkit-box',
-                      WebkitLineClamp: 3,
+                      WebkitLineClamp: 2,
                       WebkitBoxOrient: 'vertical',
                       overflow: 'hidden'
                     }}>

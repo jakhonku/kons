@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero';
-import { useAdminMessages } from '../hooks/useAdminStorage';
+import { supabase } from '../lib/supabase';
 import { Loader2 } from 'lucide-react';
 
 const BREADCRUMBS = [
@@ -55,7 +55,6 @@ export default function Kontaktlar() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { add } = useAdminMessages();
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -64,22 +63,22 @@ export default function Kontaktlar() {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    
-    const res = await add({
-      full_name: form.name,
-      email: form.email,
-      phone: form.phone,
-      subject: form.subject || 'Bogʻlanish sahifasidan murojaat',
-      message: form.message,
-      type: 'Bogʻlanish',
-      status: 'new'
+
+    // SECURITY DEFINER RPC orqali yoziladi (RLS'ni xavfsiz aylanib o'tadi).
+    const { error: err } = await supabase.rpc('submit_murojaat', {
+      p_full_name: form.name,
+      p_phone: form.phone,
+      p_email: form.email,
+      p_type: 'Bogʻlanish',
+      p_subject: form.subject || 'Bogʻlanish sahifasidan murojaat',
+      p_message: form.message,
     });
 
     setLoading(false);
-    if (res.ok) {
+    if (!err) {
       setSent(true);
     } else {
-      alert('Xabar yuborishda xatolik yuz berdi: ' + res.error);
+      alert('Xabar yuborishda xatolik yuz berdi: ' + err.message);
     }
   }
 

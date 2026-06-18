@@ -33,7 +33,7 @@ export default function RektorBio() {
               }}>
                 <img 
                   src="/images/rahbariyat/rektor.jpg" 
-                  alt="Kamoliddin Urinbayev" 
+                  alt="Urinbayev Kamoliddin Turdimuratovich"
                   style={{ width: '100%', display: 'block' }} 
                 />
                 <div style={{
@@ -45,7 +45,7 @@ export default function RektorBio() {
                   padding: '20px',
                   color: '#fff'
                 }}>
-                  <h3 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>Kamoliddin Urinbayev</h3>
+                  <h3 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>Urinbayev Kamoliddin</h3>
                   <p style={{ fontSize: '0.8rem', color: 'var(--gold-light)', textTransform: 'uppercase', letterSpacing: '1px' }}>Rektor</p>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function RektorBio() {
 
               <div className="bio-text" style={{ color: '#444', lineHeight: 1.8, fontSize: '1rem' }}>
                 <p style={{ marginBottom: '20px' }}>
-                  Kamoliddin Urinbayev 1985-yilda Toshkent shahrida tugʻilgan. Oʻzbekiston davlat konservatoriyasini hamda P.I.Chaykovskiy nomidagi Moskva davlat konservatoriyasini tamomlagan. 
+                  Urinbayev Kamoliddin Turdimuratovich 1985-yilda Toshkent shahrida tugʻilgan. Oʻzbekiston davlat konservatoriyasini hamda P.I.Chaykovskiy nomidagi Moskva davlat konservatoriyasini tamomlagan. 
                 </p>
                 <p style={{ marginBottom: '20px' }}>
                   U taniqli dirijyor, Oʻzbekiston davlat simfonik orkestri asoschisi va badiiy rahbari hisoblanadi. Uning rahbarligida orkestr dunyoning nufuzli sahnalarida, jumladan Berlin filarmoniyasi, "Konzerthaus" va boshqa joylarda muvaffaqiyatli konsertlar bergan.

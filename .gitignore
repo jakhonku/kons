@@ -15,6 +15,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# Claude Code — shaxsiy lokal sozlamalar (loyiha ref + kalitlar bo'lishi mumkin)
+.claude/settings.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

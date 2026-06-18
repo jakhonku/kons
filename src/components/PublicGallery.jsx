@@ -6,6 +6,12 @@ export default function PublicGallery({ images = [], alt = '' }) {
   const [lightbox, setLightbox] = useState(false);
   const list = (images || []).filter(Boolean);
 
+  // Swipe/Drag holatlari
+  const [startX, setStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
+
   useEffect(() => {
     if (!lightbox) return;
     const onKey = (e) => {
@@ -25,19 +31,179 @@ export default function PublicGallery({ images = [], alt = '' }) {
   const cur = list[active];
   const isFallback = cur === '/Konservatoriya_logo_white-05.png';
 
+  // Drag/Swipe boshlanishi
+  const handleStart = (clientX, target) => {
+    // Agar foydalanuvchi navigatsiya tugmalarini bossa, drag boshlamaymiz
+    if (target.closest('.public-gallery-nav')) return;
+    
+    setStartX(clientX);
+    setIsDragging(true);
+    setHasMoved(false);
+    setDragOffset(0);
+  };
+
+  // Drag/Swipe jarayoni
+  const handleMove = (clientX) => {
+    if (!isDragging) return;
+    const diff = clientX - startX;
+    setDragOffset(diff);
+    if (Math.abs(diff) > 8) {
+      setHasMoved(true);
+    }
+  };
+
+  // Drag/Swipe tugashi
+  const handleEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    if (!hasMoved) {
+      // Agar qimirlamagan bo'lsa, bu shunchaki click (Lightbox ochiladi)
+      setLightbox(true);
+    } else {
+      const swipeThreshold = 60; // surish sezgirligi (px)
+      if (dragOffset < -swipeThreshold) {
+        // Chapga surildi -> Keyingi rasm
+        setActive((a) => (a + 1) % list.length);
+      } else if (dragOffset > swipeThreshold) {
+        // O'ngga surildi -> Oldingi rasm
+        setActive((a) => (a - 1 + list.length) % list.length);
+      }
+    }
+    setDragOffset(0);
+  };
+
+  const onTouchStart = (e) => handleStart(e.touches[0].clientX, e.target);
+  const onTouchMove = (e) => handleMove(e.touches[0].clientX);
+  const onTouchEnd = () => handleEnd();
+
+  const onMouseDown = (e) => {
+    if (e.button !== 0) return; // Faqat chap click
+    handleStart(e.clientX, e.target);
+    if (!e.target.closest('.public-gallery-nav')) {
+      e.preventDefault(); // Brauzerda rasmni drag qilishini to'xtatadi
+    }
+  };
+  const onMouseMove = (e) => handleMove(e.clientX);
+  const onMouseUp = () => handleEnd();
+  const onMouseLeave = () => {
+    if (isDragging) handleEnd();
+  };
+
   return (
     <>
       <div className="public-gallery">
-        <div className="public-gallery-main" onClick={() => setLightbox(true)} style={{ background: isFallback ? 'var(--navy)' : 'transparent' }}>
-          <img
-            src={cur}
-            alt={alt}
-            decoding="async"
+        <div 
+          className="public-gallery-main" 
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseLeave}
+          style={{ 
+            background: isFallback ? 'var(--navy)' : 'transparent',
+            position: 'relative',
+            overflow: 'hidden',
+            cursor: isDragging ? 'grabbing' : 'grab'
+          }}
+        >
+          {/* Slaydlar treki */}
+          <div 
+            className="public-gallery-track"
             style={{
-              objectFit: isFallback ? 'contain' : 'cover',
-              padding: isFallback ? '120px' : '0'
+              display: 'flex',
+              width: '100%',
+              height: '100%',
+              transition: isDragging ? 'none' : 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)',
+              transform: `translateX(calc(-${active * 100}% + ${dragOffset}px))`
             }}
-          />
+          >
+            {list.map((img, i) => {
+              const imgFallback = img === '/Konservatoriya_logo_white-05.png';
+              // Faqat faol va unga qo'shni rasmlarni yuklaymiz (tejamkor va tezkor yuklanish uchun)
+              const shouldLoad = Math.abs(i - active) <= 1;
+
+              return (
+                <div
+                  key={`${img}-${i}`}
+                  className="public-gallery-slide"
+                  style={{
+                    flex: '0 0 100%',
+                    width: '100%',
+                    height: '100%',
+                    outline: 'none',
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
+                    pointerEvents: 'none',
+                    background: imgFallback ? 'var(--navy)' : '#0a0a18',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden'
+                  }}
+                >
+                  {shouldLoad ? (
+                    imgFallback ? (
+                      <img
+                        src={img}
+                        alt={alt}
+                        decoding="async"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          padding: '120px',
+                          display: 'block',
+                          pointerEvents: 'none'
+                        }}
+                      />
+                    ) : (
+                      <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                        {/* Blurred background image */}
+                        <img
+                          src={img}
+                          alt=""
+                          style={{
+                            position: 'absolute',
+                            inset: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            filter: 'blur(20px)',
+                            opacity: 0.8,
+                            transform: 'scale(1.15)',
+                            pointerEvents: 'none'
+                          }}
+                        />
+                        {/* Crisp foreground image */}
+                        <img
+                          src={img}
+                          alt={alt}
+                          decoding="async"
+                          style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                            display: 'block',
+                            pointerEvents: 'none',
+                            zIndex: 1,
+                            background: 'transparent'
+                          }}
+                        />
+                      </div>
+                    )
+                  ) : (
+                    <div style={{ width: '100%', height: '100%', background: '#0a0a18' }} />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Navigatsiya tugmalari */}
           {list.length > 1 && (
             <>
               <button
@@ -60,6 +226,8 @@ export default function PublicGallery({ images = [], alt = '' }) {
             </>
           )}
         </div>
+
+        {/* Thumbs (Kichik rasmlar) */}
         {list.length > 1 && (
           <div className="public-gallery-thumbs">
             {list.map((img, i) => (
@@ -87,6 +255,7 @@ export default function PublicGallery({ images = [], alt = '' }) {
         )}
       </div>
 
+      {/* Lightbox */}
       {lightbox && (
         <div className="lightbox" onClick={() => setLightbox(false)}>
           <button

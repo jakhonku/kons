@@ -205,49 +205,49 @@ export default function Yangiliklar() {
               )}
 
               {!loading && featured && (
-                <Link to={`/yangiliklar/${featured.id}`} className="news-featured-grid" style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: featured.image ? '1.4fr 1fr' : '1fr', 
-                  gap: '0', 
-                  marginTop: '40px', 
-                  marginBottom: '40px', 
-                  border: '1px solid var(--light-border)', 
-                  overflow: 'hidden', 
-                  textDecoration: 'none', 
-                  color: 'inherit', 
-                  minHeight: featured.image ? '300px' : 'auto' 
-                }}>
+                <Link to={`/yangiliklar/${featured.id}`} className="news-featured-grid">
                   {featured.image && (
-                    <div style={{ 
-                      position: 'relative', 
-                      overflow: 'hidden',
-                      background: 'transparent',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
+                    <div className="news-featured-grid-img-wrap">
+                      {/* Blurred background image */}
+                      <img
+                        src={featured.image}
+                        alt=""
+                        className="news-featured-grid-blur"
+                      />
+                      {/* Main contain image */}
                       <img
                         src={featured.image}
                         alt={featured.title}
                         loading="eager"
                         fetchpriority="high"
                         decoding="async"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                        className="news-featured-grid-main-img"
                       />
-                      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(26,26,56,0.6) 0%, rgba(26,26,56,0.2) 100%)' }} />
+                      <div className="news-featured-grid-overlay" />
                     </div>
                   )}
-                  <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'var(--white)' }}>
+                  <div className="news-featured-grid-text">
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '2px', color: 'var(--gold-dark)', marginBottom: '14px', fontFamily: 'var(--font-sans)', display: 'flex', alignItems: 'center', gap: '15px' }}>
                       <span>{featured.date}</span>
                       <span style={{ display: 'flex', alignItems: 'center', gap: '5px', opacity: 0.8 }}>
                         <Eye size={14} /> {featured.views}
                       </span>
                     </div>
-                    <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 300, color: 'var(--navy)', lineHeight: 1.25, marginBottom: '20px' }}>
+                    <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 300, color: 'var(--navy)', lineHeight: 1.25, marginBottom: '15px' }}>
                       {featured.title}
                     </h2>
-                    <p style={{ fontSize: '1.05rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', fontStyle: 'italic', marginBottom: '32px' }}>
+                    <p style={{ 
+                      fontSize: '0.95rem', 
+                      color: '#555', 
+                      lineHeight: 1.6, 
+                      fontFamily: 'var(--font-serif)', 
+                      fontStyle: 'italic', 
+                      marginBottom: '24px',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden'
+                    }}>
                       {featured.excerpt}
                     </p>
                     <span className="btn-outline-dark" style={{ alignSelf: 'flex-start', padding: '12px 30px' }}>
@@ -277,19 +277,43 @@ export default function Yangiliklar() {
                           position: 'relative', 
                           overflow: 'hidden', 
                           height: '180px',
-                          background: 'transparent',
+                          background: '#0a0a18',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center'
                         }}>
+                          {/* Blurred background image */}
+                          <img
+                            src={item.image}
+                            alt=""
+                            style={{ 
+                              position: 'absolute', 
+                              inset: 0, 
+                              width: '100%', 
+                              height: '100%', 
+                              objectFit: 'cover', 
+                              filter: 'blur(12px)', 
+                              opacity: 0.8,
+                              transform: 'scale(1.15)',
+                              pointerEvents: 'none'
+                            }}
+                          />
+                          {/* Crisp main image */}
                           <img
                             src={item.image}
                             alt={item.title}
                             loading="lazy"
                             decoding="async"
-                            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                            style={{ 
+                              position: 'relative', 
+                              width: '100%', 
+                              height: '100%', 
+                              objectFit: 'contain', 
+                              transition: 'transform 0.5s',
+                              zIndex: 1 
+                            }}
                           />
-                          <div style={{ position: 'absolute', top: '14px', left: '14px' }}>
+                          <div style={{ position: 'absolute', top: '14px', left: '14px', zIndex: 2 }}>
                             <span style={{ background: 'var(--navy)', color: 'var(--white)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', padding: '3px 10px', fontFamily: 'var(--font-sans)' }}>
                               {item.cat}
                             </span>

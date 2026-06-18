@@ -110,7 +110,12 @@ export default function AdminPosters() {
 
   async function onSubmit(e) {
     e.preventDefault();
-    if (!form.title.trim() || submitting) return;
+    if (submitting) return;
+    if (!form.title.trim()) {
+      setFormLang('uz');
+      setFormError('Sarlavha (UZBEK) majburiy — iltimos kiriting.');
+      return;
+    }
     setSubmitting(true);
     setFormError('');
     const payload = {
@@ -277,6 +282,34 @@ export default function AdminPosters() {
 
               <div className="admin-form-grid">
 
+                <label className="admin-field admin-field-full">
+                  <span className="admin-field-label">Sarlavha ({formLang.toUpperCase()}){formLang === 'uz' ? ' *' : ''}</span>
+                  <input
+                    type="text"
+                    value={formLang === 'uz' ? form.title : formLang === 'ru' ? form.title_ru : form.title_en}
+                    onChange={(e) => {
+                      if (formLang === 'uz') setForm({ ...form, title: e.target.value });
+                      else if (formLang === 'ru') setForm({ ...form, title_ru: e.target.value });
+                      else setForm({ ...form, title_en: e.target.value });
+                    }}
+                    placeholder="Tadbir nomi"
+                  />
+                </label>
+
+                <label className="admin-field admin-field-full">
+                  <span className="admin-field-label">Ijrochi / Tashkilotchi ({formLang.toUpperCase()})</span>
+                  <input
+                    type="text"
+                    value={formLang === 'uz' ? form.artist : formLang === 'ru' ? form.artist_ru : form.artist_en}
+                    onChange={(e) => {
+                      if (formLang === 'uz') setForm({ ...form, artist: e.target.value });
+                      else if (formLang === 'ru') setForm({ ...form, artist_ru: e.target.value });
+                      else setForm({ ...form, artist_en: e.target.value });
+                    }}
+                    placeholder="Masalan: Davlat simfonik orkestri"
+                  />
+                </label>
+
                 <label className="admin-field">
                   <span className="admin-field-label">Zal</span>
                   <select 
@@ -350,6 +383,20 @@ export default function AdminPosters() {
                     value={form.tags}
                     onChange={(e) => setForm({ ...form, tags: e.target.value })}
                     placeholder="Konsert, Simfonik, Klassika"
+                  />
+                </label>
+
+                <label className="admin-field admin-field-full">
+                  <span className="admin-field-label">Tavsif ({formLang.toUpperCase()})</span>
+                  <textarea
+                    rows={4}
+                    value={formLang === 'uz' ? form.description : formLang === 'ru' ? form.description_ru : form.description_en}
+                    onChange={(e) => {
+                      if (formLang === 'uz') setForm({ ...form, description: e.target.value });
+                      else if (formLang === 'ru') setForm({ ...form, description_ru: e.target.value });
+                      else setForm({ ...form, description_en: e.target.value });
+                    }}
+                    placeholder="Tadbir haqida batafsil maʼlumot..."
                   />
                 </label>
 

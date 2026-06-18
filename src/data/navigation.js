@@ -38,7 +38,6 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.additional'),
           links: [
-            { label: t('nav.items.kontaktlar'),          to: '/kontaktlar' },
             { label: t('nav.items.yashilUniversitet'),   to: '/yashil-universitet' },
             { label: t('nav.items.vakansiyalar'),        to: '/vakansiyalar' },
           ],

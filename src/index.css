@@ -3089,7 +3089,8 @@ img {
 }
 
 .form-group select option {
-  background: var(--bg-elevated);
+  background: var(--white);
+  color: var(--navy);
 }
 
 .btn-submit {
@@ -8540,7 +8541,6 @@ body {
   height: 100%;
   object-fit: contain;
   display: block;
-  background: #0a0a18;
 }
 
 .public-gallery-nav {
@@ -8708,11 +8708,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 14px 36px;
   background: var(--gold);
   color: var(--bg-deep);
   border: 1px solid var(--gold);
   font-family: var(--font-sans);
   font-weight: 700;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
@@ -8721,10 +8723,11 @@ body {
 }
 
 .btn-gold:hover {
-  background: transparent;
-  color: var(--gold);
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(201, 168, 76, 0.2);
+  box-shadow: 0 10px 20px rgba(26, 26, 56, 0.15);
 }
 
 @keyframes spin {
@@ -8864,36 +8867,98 @@ body {
    MOBILE FIXES — inner pages (overrides inline grid styles)
    ============================================================ */
 
+/* ============================================================
+   YANGILIKLAR - FEATURED CARD STYLING
+   ============================================================ */
+.news-featured-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 1px solid var(--light-border);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  height: 380px; /* Limit height to 380px on desktop */
+}
+
+.news-featured-grid-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.news-featured-grid-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(15px);
+  opacity: 0.8;
+  transform: scale(1.1);
+  pointer-events: none;
+}
+
+.news-featured-grid-main-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.news-featured-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,26,56,0.3) 0%, rgba(26,26,56,0.1) 100%);
+  z-index: 2;
+}
+
+.news-featured-grid-text {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+  height: 100%;
+}
+
 /* Yangiliklar — featured + rest grids stack on mobile */
 @media (max-width: 900px) {
   .news-featured-grid {
     grid-template-columns: 1fr !important;
+    height: auto !important;
   }
 
   .news-rest-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  /* Featured rasm ustun-ustun (stacked) boʻlganda oʻz formatida toʻliq koʻrsatiladi —
-     absolute joylashuv olib tashlanadi (aks holda balandlik 0 boʻlib koʻrinmay qoladi) */
-  .news-featured-grid img {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block !important;
+  .news-featured-grid-img-wrap {
+    height: 240px !important;
   }
 
-  .news-featured-grid > div:first-child {
-    height: auto !important;
-    min-height: 0 !important;
-    display: block !important;
-    background: var(--light-50) !important;
-  }
-
-  /* Featured ustidagi gradient qoplama olib tashlanadi */
-  .news-featured-grid img + div {
+  .news-featured-grid-blur {
     display: none !important;
+  }
+
+  .news-featured-grid-main-img {
+    object-fit: cover !important;
+  }
+
+  .news-featured-grid-overlay {
+    display: none !important;
+  }
+
+  .news-featured-grid-text {
+    padding: 24px 20px !important;
+    height: auto !important;
   }
 }
 

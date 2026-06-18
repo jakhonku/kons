@@ -20,6 +20,10 @@ const OPEN_EXACT = new Set([
   '/taqvim',               // Afisha — tadbirlar taqvimi
   '/qabul-talablari',      // Qabul — qabul talablari (Call-center)
   '/qabul-kvotasi',        // Qabul — qabul kvotasi
+  '/online-murojaat',      // Interaktiv — online murojaat (forma ishlaydi)
+  '/nukus-filiali',        // Tuzilma — Nukus filiali (rasmiy maʼlumot bilan toʻldirilgan)
+  '/musiqali-teatr-studiyasi', // Ijodiy faoliyat — Musiqali teatr studiyasi
+  '/jonli-efir',           // Ijodiy faoliyat — Jonli efir
 ]);
 
 // Prefiks boʻyicha ochiq yoʻllar (dinamik sahifalar uchun)
