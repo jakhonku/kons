@@ -36,17 +36,9 @@ export default function RektorBio() {
                   alt="Urinbayev Kamoliddin Turdimuratovich"
                   style={{ width: '100%', display: 'block' }} 
                 />
-                <div style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  background: 'linear-gradient(to top, rgba(8,8,21,0.9), transparent)',
-                  padding: '20px',
-                  color: '#fff'
-                }}>
-                  <h3 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>Urinbayev Kamoliddin</h3>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--gold-light)', textTransform: 'uppercase', letterSpacing: '1px' }}>Rektor</p>
+                <div className="bio-photo-overlay">
+                  <h3 className="bio-photo-name">Urinbayev Kamoliddin</h3>
+                  <p className="bio-photo-role">Rektor</p>
                 </div>
               </div>
 
@@ -79,7 +71,7 @@ export default function RektorBio() {
               <div style={{ marginBottom: '40px' }}>
                 <span className="section-tag" style={{ color: 'var(--gold-dark)' }}>Biografiya</span>
                 <h2 style={{ fontSize: '2.5rem', marginTop: '10px', marginBottom: '20px', color: 'var(--navy)' }}>
-                  Urinbayev <span style={{ color: 'var(--gold-dark)' }}>Kamoliddin Turdimuratovich</span>
+                  Urinbayev Kamoliddin Turdimuratovich
                 </h2>
                 <p style={{ fontSize: '1.1rem', color: 'var(--gold-dark)', fontWeight: 600, marginBottom: '30px' }}>
                   Oʻzbekiston xalq artisti, professor
@@ -100,7 +92,7 @@ export default function RektorBio() {
                   2020-yildan buyon Oʻzbekiston davlat konservatoriyasi rektori lavozimida faoliyat yuritib kelmoqda. Uning rahbarligi davrida konservatoriyada oʻquv jarayoni raqamlashtirildi, xalqaro hamkorlik aloqalari kengaytirildi va talabalar uchun yangi ijodiy imkoniyatlar yaratildi.
                 </p>
 
-                <div style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
+                <div className="bio-stats-grid" style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
                   <div style={{ padding: '20px', borderLeft: '3px solid var(--gold)', background: 'rgba(26,26,56,0.03)' }}>
                     <h5 style={{ color: 'var(--navy)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <GraduationCap size={16} /> Taʼlim

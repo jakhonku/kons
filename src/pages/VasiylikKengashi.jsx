@@ -13,40 +13,63 @@ export default function VasiylikKengashi() {
       title="Vasiylik"
       emphasis="kengashi"
       breadcrumbs={BREADCRUMBS}
-      lead="Oʻzbekiston Davlat Konservatoriyasi Vasiylik kengashi — muassasa faoliyati, strategik rivojlanish yoʻnalishlari va moliyaviy hisobotini nazorat qiluvchi maslahat-nazorat organi. Kengash aʼzolari madaniyat, fan, taʼlim va biznes sohalaridagi yetakchi mutaxassislardan iborat."
-      stats={[
-        { value: '11', label: 'Kengash aʼzosi' },
-        { value: '4', label: 'Yiliga yigʻilish' },
-        { value: '2024', label: 'Tashkil etilgan' },
-      ]}
+      lead="Oʻzbekiston davlat konservatoriyasi va uning Nukus filialining Vasiylik kengashi tarkibi quyida keltirilgan. Kengash madaniyat, taʼlim, moliya hamda musiqa sanʼati sohalaridagi rahbar va yetakchi mutaxassislardan tashkil topgan."
       sections={[
         {
-          heading: 'Kengashning vazifalari',
-          items: [
-            { title: 'Strategik rivojlanish', desc: "Konservatoriyaning uzoq muddatli rivojlanish dasturlarini koʻrib chiqish va tasdiqlash." },
-            { title: 'Moliyaviy nazorat', desc: "Yillik byudjet, grantlar va tashqi moliyalashtirish manbalarini auditdan oʻtkazish." },
-            { title: 'Akademik sifat', desc: "Taʼlim sifati, ilmiy tadqiqotlar va xalqaro reyting koʻrsatkichlari boʻyicha tavsiyalar." },
-            { title: 'Hamkorlik aloqalari', desc: "Davlat, biznes va xalqaro hamkorlar bilan strategik aloqalarni rivojlantirish." },
+          heading: 'Kengash raisligi',
+          cards: [
+            {
+              tag: 'Kengash raisi',
+              title: 'Axmedov Baxodir Madjitovich',
+              desc: "Oʻzbekiston Respublikasi Madaniyat vazirining birinchi oʻrinbosari.",
+            },
+            {
+              tag: 'Rais oʻrinbosari',
+              title: 'Urinbayev Kamoliddin Turdimuratovich',
+              desc: "Oʻzbekiston davlat konservatoriyasi rektori.",
+            },
+            {
+              tag: 'Kengash kotibi',
+              title: 'Sultanova Tatyana Akramovna',
+              desc: "Oʻzbekiston davlat konservatoriyasining Reja-moliya boʻlimi boshligʻi.",
+            },
           ],
         },
         {
-          heading: 'Kengash tarkibi',
+          heading: 'Kengash aʼzolari',
           cards: [
-            { tag: 'Rais', title: 'Karimov Otabek Sobirovich', desc: "Oʻzbekiston Madaniyat va turizm vazirligi maslahatchisi, sanʼat fanlari doktori." },
-            { tag: 'Rais oʻrinbosari', title: 'Toshmatova Nargiza Erkinovna', desc: 'Nizomiy nomidagi TDPU kafedra mudiri, professor.' },
-            { tag: 'Kotib', title: 'Aliyev Bobur Sherzodovich', desc: "Konservatoriya yuridik boʻlim boshligʻi." },
-            { tag: 'Aʼzo', title: 'Yusupov Sherzod Akbarovich', desc: "Oʻzbekiston bastakorlar uyushmasi raisi." },
-            { tag: 'Aʼzo', title: 'Akhmedova Madina Olimjonovna', desc: 'Xalqaro hamkorlik fondi direktori.' },
-            { tag: 'Aʼzo', title: 'Rashidov Davron Murodovich', desc: 'Tadbirkorlik va hamkorlik boʻlimi vakili.' },
+            {
+              tag: 'Aʼzo',
+              title: 'Mirsoatov Alisher Kudratullayevich',
+              desc: "Oʻzbekiston Respublikasi “Oʻzbekiston Respublikasi Tashqi iqtisodiy faoliyat milliy banki” aksiyadorlik jamiyati boshqaruvi raisi.",
+            },
+            {
+              tag: 'Aʼzo',
+              title: 'Abdullayev Rustam Abdullayevich',
+              desc: "Oʻzbekiston kompozitorlar va bastakorlari uyushmasi raisi.",
+            },
+            {
+              tag: 'Aʼzo',
+              title: 'Ramiz Usmonov Beknazarovich',
+              desc: "Alisher Navoiy nomidagi DAKT direktori.",
+            },
+            {
+              tag: 'Aʼzo',
+              title: 'Zairov Zair Kamildjanovich',
+              desc: "V. Uspenskiy nomidagi RIMM direktori.",
+            },
+            {
+              tag: 'Aʼzo',
+              title: 'Azimov Ilhom Azimovich',
+              desc: "Toshkent musiqa va sanʼat kolleji direktori.",
+            },
           ],
         },
+        {
+          heading: 'Izoh',
+          text: "Vasiylik kengashi aʼzolari boshqa ishga oʻtgan taqdirda Kengash tarkibiga ushbu lavozimga yangi tayinlangan yoki mazkur vazifalarni bajarishi yuklatilgan shaxslar kiritiladi.",
+        },
       ]}
-      contact={{
-        responsible: 'Aliyev Bobur Sherzodovich (kotib)',
-        phone: '+998 71 234-56-90',
-        email: 'vasiylik@konservatoriya.uz',
-        hours: 'Dushanba – Juma, 09:00 – 17:00',
-      }}
     />
   );
 }

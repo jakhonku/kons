@@ -30,7 +30,7 @@ export default function HemisOquvchi() {
         <div className="container">
 
           {/* Main CTA */}
-          <div style={{
+          <div className="page-cta-block" style={{
             background: 'linear-gradient(110deg, var(--navy) 0%, #1e1e5a 100%)',
             borderTop: '3px solid var(--gold)',
             padding: '56px 64px',
@@ -46,11 +46,12 @@ export default function HemisOquvchi() {
                 <em>Kirish</em>
               </h2>
               <p style={{ fontSize: '0.9rem', color: 'rgba(240,237,232,0.65)', fontFamily: 'var(--font-serif)', lineHeight: 1.7, maxWidth: 420 }}>
-                Login — xodim ID raqami. Parol — birinchi marta kirishda passport seriyasi.
+                Tizimga login va parol bilan emas, davlatning yagona identifikatsiya tizimi
+                — «OneID» (elektron pasport) orqali kiriladi.
               </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a href="https://hemis.uz" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://hemis.konservatoriya.uz/dashboard/login" target="_blank" rel="noopener noreferrer" style={{
                 padding: '16px 48px', background: 'var(--gold)',
                 color: '#08081a', textDecoration: 'none',
                 fontFamily: 'var(--font-sans)', fontWeight: 700,
@@ -60,7 +61,7 @@ export default function HemisOquvchi() {
                 HEMIS ga kirish →
               </a>
               <p style={{ fontSize: '0.72rem', color: 'rgba(201,168,76,0.5)', textAlign: 'center', fontFamily: 'var(--font-sans)' }}>
-                hemis.uz
+                hemis.konservatoriya.uz
               </p>
             </div>
           </div>
@@ -100,8 +101,8 @@ export default function HemisOquvchi() {
                 Kirish muammosi yuzaga keldimi?
               </h4>
               <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-                Kadrlar boʻlimiga murojaat qiling — 1-bino, 110-xona. Telefon: +998 71 236-89-00.
-                Ish vaqti: Dushanba–Juma, 09:00–17:00.
+                «OneID» orqali kirishda muammo boʻlsa, konservatoriyaning oʻquv boʻlimi
+                yoki HEMIS administratoriga murojaat qiling.
               </p>
             </div>
           </div>

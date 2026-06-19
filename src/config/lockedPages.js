@@ -22,8 +22,13 @@ const OPEN_EXACT = new Set([
   '/qabul-kvotasi',        // Qabul — qabul kvotasi
   '/online-murojaat',      // Interaktiv — online murojaat (forma ishlaydi)
   '/nukus-filiali',        // Tuzilma — Nukus filiali (rasmiy maʼlumot bilan toʻldirilgan)
+  '/vasiylik-kengashi',    // Tuzilma — Vasiylik kengashi (rasmiy maʼlumot bilan toʻldirilgan)
+  '/hemis-talaba',         // Talabalar — HEMIS-talaba (student.konservatoriya.uz)
+  '/hemis-oquvchi',        // Konservatoriya — HEMIS-oʻqituvchi (hemis.konservatoriya.uz)
+  '/musiqa-jurnali',       // Konservatoriya — "Musiqa" jurnali (PDF sonlar bilan toʻldirilgan)
   '/musiqali-teatr-studiyasi', // Ijodiy faoliyat — Musiqali teatr studiyasi
   '/jonli-efir',           // Ijodiy faoliyat — Jonli efir
+  '/registrator',          // Talabalar — Registrator ofisi (Telegram bot bilan toʻldirilgan)
 ]);
 
 // Prefiks boʻyicha ochiq yoʻllar (dinamik sahifalar uchun)

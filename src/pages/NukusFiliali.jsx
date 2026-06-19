@@ -55,7 +55,7 @@ export default function NukusFiliali() {
 
           {/* ── Kirish + rasmiy sayt ── */}
           <div
-            className="reveal"
+            className="reveal nukus-intro-grid"
             style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.6fr) minmax(0, 1fr)', gap: '36px', alignItems: 'start', marginBottom: '64px' }}
           >
             <div>
@@ -136,7 +136,7 @@ export default function NukusFiliali() {
           <div className="reveal" style={{ marginBottom: '64px' }}>
             <div style={eyebrow}>Rahbariyat</div>
             <h2 style={sectionTitle}>Filial rahbari</h2>
-            <div style={{ display: 'flex', gap: '22px', alignItems: 'flex-start', background: 'var(--light-50, #f8f5ee)', border: '1px solid var(--light-border, #e6e1d6)', borderLeft: '3px solid var(--gold, #c9a84c)', borderRadius: '12px', padding: '26px 28px', maxWidth: '720px' }}>
+            <div className="nukus-leader" style={{ display: 'flex', gap: '22px', alignItems: 'flex-start', background: 'var(--light-50, #f8f5ee)', border: '1px solid var(--light-border, #e6e1d6)', borderLeft: '3px solid var(--gold, #c9a84c)', borderRadius: '12px', padding: '26px 28px', maxWidth: '720px' }}>
               <img
                 src="/images/rahbariyat/nukus-direktor.jpg"
                 alt="Allanbaev Rudakiy Orinbaevich — Nukus filiali direktori"

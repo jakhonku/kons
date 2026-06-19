@@ -408,6 +408,57 @@ img {
   }
 }
 
+/* Kichik telefonlar: logo + ijtimoiy ikonka + afisha + menyu bitta qatorga
+   sigʻishi uchun ikonkalarni va oraliqlarni ixchamlashtiramiz (overflow'ni oldini olamiz) */
+@media (max-width: 480px) {
+  .nav-actions-wrap {
+    gap: 6px !important;
+    margin-left: 6px !important;
+  }
+
+  .header-social-wrap {
+    margin-left: 6px;
+    padding-left: 6px;
+    gap: 4px;
+  }
+
+  .h-social-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .h-social-link svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .nav-logo img {
+    height: 34px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-social-wrap {
+    margin-left: 4px;
+    padding-left: 4px;
+    gap: 3px;
+  }
+
+  .h-social-link {
+    width: 26px;
+    height: 26px;
+  }
+
+  .h-social-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .nav-logo img {
+    height: 30px;
+  }
+}
+
 /* ---- Mobile Menu Socials ---- */
 .mob-social-btn {
   color: rgba(255, 255, 255, 0.5);
@@ -1147,7 +1198,7 @@ img {
   left: 28px;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, var(--gold) 0%, rgba(201,168,76,0.15) 60%, transparent 100%);
+  background: linear-gradient(180deg, var(--gold) 0%, rgba(201, 168, 76, 0.15) 60%, transparent 100%);
   pointer-events: none;
 }
 
@@ -1158,7 +1209,7 @@ img {
   justify-content: space-between;
   padding: 22px 24px 22px 48px;
   flex-shrink: 0;
-  border-bottom: 1px solid rgba(201,168,76,0.12);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
 }
 
 .mob-fs-logo img {
@@ -1170,8 +1221,8 @@ img {
 .mob-fs-close {
   width: 42px;
   height: 42px;
-  background: rgba(201,168,76,0.06);
-  border: 1px solid rgba(201,168,76,0.25);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -1184,7 +1235,7 @@ img {
 }
 
 .mob-fs-close:hover {
-  background: rgba(201,168,76,0.14);
+  background: rgba(201, 168, 76, 0.14);
   border-color: var(--gold);
 }
 
@@ -1198,8 +1249,13 @@ img {
   transition: background 0.3s;
 }
 
-.mob-fs-close span:first-child { transform: rotate(45deg); }
-.mob-fs-close span:last-child  { transform: rotate(-45deg); }
+.mob-fs-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.mob-fs-close span:last-child {
+  transform: rotate(-45deg);
+}
 
 /* Nav */
 .mob-fs-nav {
@@ -1208,7 +1264,7 @@ img {
 }
 
 .mob-fs-item {
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .mob-fs-label {
@@ -1234,20 +1290,20 @@ img {
 .mob-fs-label:hover,
 .mob-fs-label.open {
   color: var(--gold-light);
-  background: rgba(201,168,76,0.04);
+  background: rgba(201, 168, 76, 0.04);
   padding-left: 56px;
 }
 
 .mob-fs-label.active {
   color: var(--gold);
-  background: rgba(201,168,76,0.06);
+  background: rgba(201, 168, 76, 0.06);
   padding-left: 56px;
   font-weight: 500;
 }
 
 .mob-fs-label.active-parent {
   color: var(--gold-light);
-  background: rgba(201,168,76,0.03);
+  background: rgba(201, 168, 76, 0.03);
 }
 
 .mob-fs-arrow {
@@ -1265,8 +1321,8 @@ img {
 /* Sub menu */
 .mob-fs-sub {
   overflow: hidden;
-  background: rgba(0,0,0,0.3);
-  border-top: 1px solid rgba(201,168,76,0.08);
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
 }
 
 .mob-fs-subgroup {
@@ -1294,11 +1350,13 @@ img {
   color: rgba(240, 237, 232, 0.5);
   padding: 7px 0;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   transition: color 0.2s, gap 0.2s;
 }
 
-.mob-fs-sublink:last-child { border-bottom: none; }
+.mob-fs-sublink:last-child {
+  border-bottom: none;
+}
 
 .mob-fs-sublink:hover {
   color: var(--gold-light);
@@ -1327,13 +1385,15 @@ img {
   transition: opacity 0.2s;
 }
 
-.mob-fs-sublink:hover .mob-fs-sublink-dot { opacity: 1; }
+.mob-fs-sublink:hover .mob-fs-sublink-dot {
+  opacity: 1;
+}
 
 /* Footer */
 .mob-fs-footer {
   padding: 20px 24px 36px 48px;
   flex-shrink: 0;
-  border-top: 1px solid rgba(201,168,76,0.12);
+  border-top: 1px solid rgba(201, 168, 76, 0.12);
 }
 
 .mob-fs-langs {
@@ -1344,7 +1404,7 @@ img {
 
 .mob-fs-lang {
   background: none;
-  border: 1px solid rgba(201,168,76,0.2);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   color: rgba(240, 237, 232, 0.45);
   font-family: var(--font-sans);
   font-size: 0.68rem;
@@ -1358,19 +1418,19 @@ img {
 }
 
 .mob-fs-lang.active {
-  background: rgba(201,168,76,0.12);
+  background: rgba(201, 168, 76, 0.12);
   border-color: var(--gold);
   color: var(--gold);
 }
 
 .mob-fs-lang:hover:not(.active) {
-  border-color: rgba(201,168,76,0.5);
+  border-color: rgba(201, 168, 76, 0.5);
   color: rgba(240, 237, 232, 0.7);
 }
 
 .mob-fs-divider {
   height: 1px;
-  background: linear-gradient(90deg, rgba(201,168,76,0.3), transparent);
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.3), transparent);
   margin-bottom: 18px;
 }
 
@@ -1399,8 +1459,8 @@ img {
   height: 40px;
   font-size: 0.65rem;
   padding: 0 14px;
-  background: rgba(201,168,76,0.06);
-  border: 1px solid rgba(201,168,76,0.2);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   color: var(--gold-light);
 }
 
@@ -1413,7 +1473,7 @@ img {
 .mob-fs-socials a {
   width: 38px;
   height: 38px;
-  border: 1px solid rgba(201,168,76,0.2);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1425,7 +1485,7 @@ img {
 .mob-fs-socials a:hover {
   border-color: var(--gold);
   color: var(--gold);
-  background: rgba(201,168,76,0.08);
+  background: rgba(201, 168, 76, 0.08);
 }
 
 /* Mobile/tablet: utility bar yashiriladi, faqat navbar (JS hamburger < 1280px) */
@@ -1776,6 +1836,42 @@ img {
   color: var(--gold-dim);
   text-transform: uppercase;
   transform: rotate(180deg);
+}
+
+@media (max-height: 900px) and (min-width: 769px) {
+  .hero-content {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-quote {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-height: 750px) and (min-width: 769px) {
+  .hero-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-quote {
+    margin-bottom: 15px;
+  }
+
+  .hero-quote-text {
+    font-size: 1.35rem;
+  }
 }
 
 .btn-outline {
@@ -2790,9 +2886,11 @@ img {
   .coming-soon h1 {
     font-size: 1.8rem;
   }
+
   .coming-soon p {
     font-size: 0.95rem;
   }
+
   .coming-soon-icon {
     width: 78px;
     height: 78px;
@@ -5209,7 +5307,7 @@ img {
   .hero {
     flex-direction: column;
     height: auto;
-    min-height: 100svh;
+    min-height: auto;
   }
 
   .hero-visual {
@@ -5441,8 +5539,7 @@ img {
         rgba(8, 8, 26, 0.0) 0%,
         rgba(8, 8, 26, 0.1) 40%,
         rgba(8, 8, 26, 0.75) 65%,
-        rgba(8, 8, 26, 0.95) 100%
-      );
+        rgba(8, 8, 26, 0.95) 100%);
   }
 
   .rektor-cover-text {
@@ -5596,6 +5693,15 @@ img {
   .page-cta-block {
     padding: 28px 20px !important;
     flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .page-cta-block h2 {
+    font-size: 1.7rem !important;
+  }
+
+  .page-cta-block a {
+    padding: 15px 32px !important;
   }
 }
 
@@ -6676,6 +6782,10 @@ body {
 
   .page-cta-block h3 {
     font-size: 1.2rem !important;
+  }
+
+  .page-cta-block h2 {
+    font-size: 1.45rem !important;
   }
 
   .event-item-modern {
@@ -8880,7 +8990,8 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  height: 380px; /* Limit height to 380px on desktop */
+  height: 380px;
+  /* Limit height to 380px on desktop */
 }
 
 .news-featured-grid-img-wrap {
@@ -8916,7 +9027,7 @@ body {
 .news-featured-grid-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26,26,56,0.3) 0%, rgba(26,26,56,0.1) 100%);
+  background: linear-gradient(135deg, rgba(26, 26, 56, 0.3) 0%, rgba(26, 26, 56, 0.1) 100%);
   z-index: 2;
 }
 
@@ -8990,7 +9101,7 @@ body {
     display: block !important;
   }
 
-  .news-rest-grid a > div:first-child {
+  .news-rest-grid a>div:first-child {
     height: auto !important;
     min-height: 0 !important;
     display: block !important;
@@ -9811,25 +9922,42 @@ iframe {
   border-left: 2px solid var(--gold-dim);
   padding-left: 20px;
   margin-bottom: 40px;
-  max-width: 380px;
+  max-width: 480px;
 }
 
 .hero-quote-text {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-style: italic;
   color: rgba(240, 237, 232, 0.7);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 300;
+  margin-bottom: 0;
 }
 
 .hero-quote-author {
   margin-top: 14px;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-family: var(--font-sans);
   letter-spacing: 3px;
   color: var(--gold);
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-quote {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-quote-text {
+    font-size: 1.3rem;
+  }
+
+  .hero-quote-author {
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
 }
 
 [data-theme="light"] .hero-quote {
@@ -10578,6 +10706,32 @@ body,
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.bio-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(8, 8, 21, 0.9) 0%, rgba(8, 8, 21, 0.4) 60%, transparent 100%);
+  padding: 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+.bio-photo-name {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.bio-photo-role {
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
 /* Responsive Overrides */
 @media (max-width: 768px) {
   .qabul-modal-grid {
@@ -10602,5 +10756,84 @@ body,
 
   .qabul-modal-badge {
     margin-bottom: 14px;
+  }
+
+  /* ── Nukus filiali + Rektor bio: mobil moslashuvchanlik ── */
+  @media (max-width: 900px) {
+    .nukus-intro-grid {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+
+    .bio-layout {
+      grid-template-columns: 1fr !important;
+      gap: 36px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    /* Nukus filiali */
+    .nukus-leader {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      padding: 24px 20px !important;
+    }
+
+    .nukus-leader img {
+      margin: 0 auto;
+    }
+
+    /* Rektor bio */
+    .bio-content h2 {
+      font-size: 1.7rem !important;
+    }
+
+    .bio-stats-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      margin-top: 32px !important;
+    }
+
+    .bio-sidebar {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .bio-photo-overlay {
+      padding: 12px 16px 8px !important;
+    }
+
+    .bio-photo-name {
+      font-size: 1rem !important;
+      margin-bottom: 2px !important;
+    }
+
+    .bio-photo-role {
+      font-size: 0.7rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bio-content h2 {
+      font-size: 1.45rem !important;
+    }
+  }
+}
+
+/* "Musiqa" jurnali — statistika mobilda ixchamlashtiriladi */
+@media (max-width: 600px) {
+  .jurnal-stats > div {
+    padding: 22px 8px !important;
+  }
+
+  .jurnal-stats > div > div:first-child {
+    font-size: 1.3rem !important;
+  }
+
+  .jurnal-stats > div > div:last-child {
+    font-size: 0.55rem !important;
+    letter-spacing: 1px !important;
   }
 }

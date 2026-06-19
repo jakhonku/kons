@@ -10,10 +10,10 @@ const BREADCRUMBS = [
 ];
 
 const STATUS_LABEL = {
-  new:      { text: 'Navbatda',            color: '#b8860b', bg: '#fdf6e3' },
-  read:     { text: 'Koʻrib chiqilmoqda',  color: '#1d4ed8', bg: '#eef2ff' },
-  resolved: { text: 'Javob berilgan',      color: '#0a7c46', bg: '#f0f7f2' },
-  archived: { text: 'Yopilgan',            color: '#666',    bg: '#f3f3f3' },
+  new: { text: 'Navbatda', color: '#b8860b', bg: '#fdf6e3' },
+  read: { text: 'Koʻrib chiqilmoqda', color: '#1d4ed8', bg: '#eef2ff' },
+  resolved: { text: 'Javob berilgan', color: '#0a7c46', bg: '#f0f7f2' },
+  archived: { text: 'Yopilgan', color: '#666', bg: '#f3f3f3' },
 };
 
 const MUROJAAT_TURLARI = [
@@ -146,7 +146,7 @@ export default function OnlineMurojaat() {
                     Tasdiq xati elektron pochtangizga yuborildi. 14 ish kuni ichida koʻrsatgan
                     elektron pochtangizga rasmiy javob yuboriladi.
                   </p>
-                  <button onClick={() => { setSubmitted(false); setForm({ full_name:'', phone:'', email:'', type:'', subject:'', message:'' }); }} className="btn-outline">
+                  <button onClick={() => { setSubmitted(false); setForm({ full_name: '', phone: '', email: '', type: '', subject: '', message: '' }); }} className="btn-outline">
                     Yangi murojaat
                   </button>
                 </div>
@@ -171,7 +171,7 @@ export default function OnlineMurojaat() {
                       maxLength={200}
                       placeholder="Aliyev Bobur"
                       value={form.full_name}
-                      onChange={(e) => setForm({...form, full_name: e.target.value})}
+                      onChange={(e) => setForm({ ...form, full_name: e.target.value })}
                     />
                   </div>
                   <div className="form-group">
@@ -182,7 +182,7 @@ export default function OnlineMurojaat() {
                       maxLength={50}
                       placeholder="+998 90 123-45-67"
                       value={form.phone}
-                      onChange={(e) => setForm({...form, phone: e.target.value})}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     />
                   </div>
                   <div className="form-group">
@@ -193,15 +193,15 @@ export default function OnlineMurojaat() {
                       maxLength={320}
                       placeholder="example@gmail.com"
                       value={form.email}
-                      onChange={(e) => setForm({...form, email: e.target.value})}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
                     />
                   </div>
                   <div className="form-group">
                     <label>Murojaat turi *</label>
-                    <select 
-                      required 
+                    <select
+                      required
                       value={form.type}
-                      onChange={(e) => setForm({...form, type: e.target.value})}
+                      onChange={(e) => setForm({ ...form, type: e.target.value })}
                     >
                       <option value="" disabled>Tanlang</option>
                       {MUROJAAT_TURLARI.map((t) => <option key={t} value={t}>{t}</option>)}
@@ -215,7 +215,7 @@ export default function OnlineMurojaat() {
                       maxLength={300}
                       placeholder="Murojaat mavzusi"
                       value={form.subject}
-                      onChange={(e) => setForm({...form, subject: e.target.value})}
+                      onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     />
                   </div>
                   <div className="form-group span-2">
@@ -226,7 +226,7 @@ export default function OnlineMurojaat() {
                       maxLength={5000}
                       placeholder="Murojaat batafsil tavsifi..."
                       value={form.message}
-                      onChange={(e) => setForm({...form, message: e.target.value})}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
                     />
                   </div>
 
@@ -237,20 +237,20 @@ export default function OnlineMurojaat() {
                   )}
 
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <button 
-                      type="submit" 
-                      className="btn-submit" 
+                    <button
+                      type="submit"
+                      className="btn-submit"
                       disabled={submitting}
-                      style={{ 
-                        padding: '14px 36px', 
-                        background: 'var(--navy)', 
-                        color: 'var(--white)', 
-                        border: 'none', 
-                        fontFamily: 'var(--font-sans)', 
-                        fontSize: '0.78rem', 
-                        fontWeight: 700, 
-                        letterSpacing: '2px', 
-                        textTransform: 'uppercase', 
+                      style={{
+                        padding: '14px 36px',
+                        background: 'var(--navy)',
+                        color: 'var(--white)',
+                        border: 'none',
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                        letterSpacing: '2px',
+                        textTransform: 'uppercase',
                         cursor: submitting ? 'not-allowed' : 'pointer',
                         opacity: submitting ? 0.7 : 1,
                         display: 'flex',

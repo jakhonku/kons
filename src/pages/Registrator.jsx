@@ -7,17 +7,6 @@ const BREADCRUMBS = [
   { label: 'Registrator ofisi' },
 ];
 
-const DOCUMENTS = [
-  { name: "Oʻqish toʻgʻrisida maʼlumotnoma", days: '1 ish kuni', fee: 'Bepul' },
-  { name: "Talaba guvohnomasi (dublikat)", days: '3 ish kuni', fee: '25 000 soʻm' },
-  { name: "Akademik koʻchirma (Transcript)", days: '5 ish kuni', fee: 'Bepul' },
-  { name: "Xalqaro transcript (ingliz tilida)", days: '7 ish kuni', fee: '50 000 soʻm' },
-  { name: "Akademik taʼtil uchun ariza", days: '10 ish kuni', fee: 'Bepul' },
-  { name: "Boshqa universitetga koʻchirish", days: '15 ish kuni', fee: 'Bepul' },
-  { name: "Diplom (bitiruvchilar)", days: 'Bitiruvdan keyin 30 kun', fee: 'Bepul' },
-  { name: "Diplom qoʻshimchasi (Diploma Supplement)", days: '30 kun', fee: 'Bepul' },
-];
-
 export default function Registrator() {
   return (
     <main className="content-wrapper">
@@ -51,54 +40,61 @@ export default function Registrator() {
             ))}
           </div>
 
-          {/* Documents table */}
-          <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Hujjatlar va muddatlar</h2>
-          </div>
 
-          <div style={{ overflowX: 'auto', marginBottom: '50px' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--white)', border: '1px solid var(--light-border)', fontSize: '0.85rem' }}>
-              <thead>
-                <tr style={{ background: 'var(--navy)' }}>
-                  {["Hujjat turi", "Tayyorlanish muddati", "Toʻlov"].map((h) => (
-                    <th key={h} style={{ padding: '14px 20px', color: 'var(--gold-light)', fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '1.5px', textTransform: 'uppercase', textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-                      {h}
-                    </th>
-                  ))}
-                  <th style={{ padding: '14px 20px', color: 'var(--gold-light)', fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '1.5px', textTransform: 'uppercase', textAlign: 'center' }}>
-                    Ariza
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {DOCUMENTS.map((doc, i) => (
-                  <tr key={doc.name} style={{ borderBottom: '1px solid var(--light-border)', background: i % 2 === 0 ? 'var(--white)' : 'var(--light-50)' }}>
-                    <td style={{ padding: '14px 20px', color: 'var(--navy)', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{doc.name}</td>
-                    <td style={{ padding: '14px 20px', color: '#555', fontFamily: 'var(--font-sans)' }}>{doc.days}</td>
-                    <td style={{ padding: '14px 20px', fontFamily: 'var(--font-sans)' }}>
-                      <span style={{
-                        padding: '3px 10px',
-                        background: doc.fee === 'Bepul' ? 'rgba(26,26,56,0.06)' : 'rgba(168,137,30,0.1)',
-                        color: doc.fee === 'Bepul' ? '#888' : 'var(--gold-dark)',
-                        fontSize: '0.75rem', fontWeight: 600, borderRadius: '2px',
-                      }}>
-                        {doc.fee}
-                      </span>
-                    </td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center' }}>
-                      <button style={{
-                        padding: '5px 14px', background: 'transparent',
-                        border: '1px solid var(--navy)', color: 'var(--navy)',
-                        fontSize: '0.7rem', fontFamily: 'var(--font-sans)',
-                        cursor: 'pointer', fontWeight: 600,
-                      }}>
-                        Ariza →
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          {/* ── Telegram bot murojaat bloki ── */}
+          <div style={{
+            background: 'linear-gradient(135deg, #0f1a2e 0%, #162840 100%)',
+            border: '1px solid rgba(34,158,217,0.3)',
+            borderLeft: '4px solid #229ED9',
+            padding: '28px 32px',
+            marginBottom: '30px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '28px',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{
+              width: '56px', height: '56px', borderRadius: '50%',
+              background: '#229ED9', display: 'flex', alignItems: 'center',
+              justifyContent: 'center', flexShrink: 0,
+            }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </div>
+            <div style={{ flex: 1, minWidth: '200px' }}>
+              <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: '#229ED9', marginBottom: '6px', textTransform: 'uppercase' }}>
+                Telegram orqali murojaat
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: '1.2rem', fontWeight: 500, margin: '0 0 8px' }}>
+                Registrator navbat boti
+              </h3>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, margin: 0 }}>
+                Hujjat buyurtma qilish, navbat olish va Registrator ofisiga murojaat yuborish uchun
+                Telegram botimizdan foydalaning. Tez va qulay!
+              </p>
+            </div>
+            <a
+              href="https://t.me/Regnavbatkonsbot"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '10px',
+                background: '#229ED9', color: '#fff',
+                padding: '13px 26px', flexShrink: 0,
+                fontSize: '0.8rem', fontWeight: 700,
+                letterSpacing: '1px', textTransform: 'uppercase',
+                textDecoration: 'none', transition: 'background 0.2s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = '#1a85b8'}
+              onMouseLeave={e => e.currentTarget.style.background = '#229ED9'}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              @Regnavbatkonsbot
+            </a>
           </div>
 
           <div style={{

@@ -1,5 +1,5 @@
 import PageHero from '../components/PageHero';
-import { BookOpen, Download, Eye, Mail, Phone } from 'lucide-react';
+import { Download, Eye } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -7,65 +7,43 @@ const BREADCRUMBS = [
   { label: '"Musiqa" jurnali' },
 ];
 
-const ISSUES = [
-  {
-    year: 2024,
-    number: 4,
-    title: 'Zamonaviy musiqa taʼlimi',
-    desc: 'Oʻzbek milliy musiqasi va xalqaro taʼlim standartlari',
-    pages: 96,
-    pdf: '#',
-  },
-  {
-    year: 2024,
-    number: 3,
-    title: 'Ijrochilik sanʼati',
-    desc: 'Fortepiano maktabi: anʼanalar va yangiliklar',
-    pages: 88,
-    pdf: '#',
-  },
-  {
-    year: 2024,
-    number: 2,
-    title: 'Musiqa tarixi',
-    desc: 'Markaziy Osiyo musiqiy merosi tadqiqotlari',
-    pages: 104,
-    pdf: '#',
-  },
-  {
-    year: 2024,
-    number: 1,
-    title: 'Kompozitsiya va nazariya',
-    desc: 'Zamonaviy kompozitsiya texnikalari va tahlil',
-    pages: 92,
-    pdf: '#',
-  },
-  {
-    year: 2023,
-    number: 4,
-    title: 'Vokal sanʼati',
-    desc: 'Opera va xor ijrochiligi — metodologiya masalalari',
-    pages: 100,
-    pdf: '#',
-  },
-  {
-    year: 2023,
-    number: 3,
-    title: 'Musiqa psixologiyasi',
-    desc: 'Isteʼdod rivojlantirish va taʼlim psixologiyasi',
-    pages: 84,
-    pdf: '#',
-  },
-];
+const PDF_BASE = '/jurnallar/musiqa';
 
-const EDITORIAL = [
-  { name: 'Prof. Dilnoza Yusupova',  role: "Bosh muharrir" },
-  { name: 'Prof. Alisher Nazarov',   role: "Muharrir oʻrinbosari" },
-  { name: 'Dots. Shahlo Razzaqova',  role: 'Masʼul kotib' },
-  { name: 'Prof. Bahrom Toshmatov',  role: 'Tahririyat aʼzosi' },
-  { name: 'Dots. Malika Ergasheva',  role: 'Tahririyat aʼzosi' },
-  { name: 'Prof. Timur Xolmatov',    role: 'Tahririyat aʼzosi' },
-];
+// Jurnalning mavjud sonlari (PDF fayllar bilan). Yangi son qoʻshilsa —
+// shu roʻyxatga { year, number } qoʻshiladi va PDF public/jurnallar/musiqa ga joylanadi.
+const ISSUES = [
+  { year: 2025, number: 4 },
+  { year: 2025, number: 3 },
+  { year: 2025, number: 2 },
+  { year: 2025, number: 1 },
+  { year: 2024, number: 4 },
+  { year: 2024, number: 3 },
+  { year: 2024, number: 2 },
+  { year: 2024, number: 1 },
+  { year: 2023, number: 4 },
+  { year: 2023, number: 3 },
+  { year: 2023, number: 2 },
+  { year: 2023, number: 1 },
+  { year: 2022, number: 4 },
+  { year: 2022, number: 3 },
+  { year: 2022, number: 2 },
+  { year: 2021, number: 4 },
+  { year: 2021, number: 3 },
+  { year: 2021, number: 1 },
+  { year: 2020, number: 4 },
+  { year: 2020, number: 2 },
+  { year: 2020, number: 1 },
+  { year: 2019, number: 4 },
+  { year: 2019, number: 3 },
+  { year: 2019, number: 2 },
+  { year: 2019, number: 1 },
+  { year: 2018, number: 4 },
+  { year: 2018, number: 3 },
+  { year: 2018, number: 2 },
+  { year: 2018, number: 1 },
+].map((it) => ({ ...it, pdf: `${PDF_BASE}/musiqa-${it.year}-${it.number}.pdf` }));
+
+const YEARS = [...new Set(ISSUES.map((i) => i.year))];
 
 export default function MusiqaJurnali() {
   return (
@@ -80,134 +58,97 @@ export default function MusiqaJurnali() {
       <section className="main-content">
         <div className="container">
 
-          {/* Stats */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+          {/* Stats — faqat aniq maʼlumotlar */}
+          <div className="jurnal-stats" style={{
+            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
             background: 'var(--navy)', borderBottom: '2px solid var(--gold)', marginBottom: '60px',
           }}>
             {[
-              { num: '1992',   label: 'Asos solingan' },
-              { num: '4',      label: 'Yilik son' },
-              { num: '100+',   label: "Jami sonlar" },
-              { num: '500+',   label: "Maqolalar soni" },
+              { num: String(ISSUES.length), label: 'Mavjud sonlar' },
+              { num: `${YEARS[YEARS.length - 1]}–${YEARS[0]}`, label: 'Yillar' },
+              { num: '4', label: 'Yiliga son' },
             ].map((s) => (
               <div key={s.label} style={{ padding: '32px 20px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{s.num}</div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{s.num}</div>
                 <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>{s.label}</div>
               </div>
             ))}
           </div>
 
-          {/* Journal issues */}
-          <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Jurnal sonlari</h2>
-          </div>
+          {/* Jurnal sonlari — yil boʻyicha guruhlangan */}
+          {YEARS.map((year) => (
+            <div key={year}>
+              <div className="section-divider" style={year === YEARS[0] ? { marginTop: 0 } : undefined}>
+                <h2>{year}-yil sonlari</h2>
+              </div>
 
-          <div className="g-3" style={{ marginBottom: '60px' }}>
-            {ISSUES.map((issue) => (
-              <div key={`${issue.year}-${issue.number}`} style={{
-                background: 'var(--white)', border: '1px solid var(--light-border)',
-                borderTop: '3px solid var(--gold)', padding: '32px',
-                transition: 'box-shadow 0.3s',
-              }}
-                onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(26,26,56,0.1)'; }}
-                onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
-              >
-                <div style={{ color: 'var(--gold)', marginBottom: '12px' }}><BookOpen size={32} strokeWidth={1.5} /></div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 300, color: 'var(--gold-dark)', lineHeight: 1, marginBottom: '8px' }}>
-                  {issue.year} — №{issue.number}
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400 }}>{issue.title}</h3>
-                <p style={{ fontSize: '0.8rem', color: '#888', marginBottom: '8px', lineHeight: 1.6 }}>{issue.desc}</p>
-                <p style={{ fontSize: '0.75rem', color: '#aaa', marginBottom: '20px' }}>{issue.pages} sahifa</p>
-                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                  <a href={issue.pdf} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    padding: '10px 20px', background: 'var(--navy)',
-                    color: 'var(--white)', textDecoration: 'none',
-                    fontFamily: 'var(--font-sans)', fontWeight: 700,
-                    fontSize: '0.72rem', letterSpacing: '1.5px', textTransform: 'uppercase',
-                    transition: 'background 0.2s',
+              <div className="g-3" style={{ marginBottom: '50px' }}>
+                {ISSUES.filter((i) => i.year === year).map((issue) => (
+                  <div key={`${issue.year}-${issue.number}`} style={{
+                    background: 'var(--white)', border: '1px solid var(--light-border)',
+                    borderTop: '3px solid var(--gold)', padding: '32px',
+                    transition: 'box-shadow 0.3s',
                   }}
-                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = '#08081a'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.background = 'var(--navy)'; e.currentTarget.style.color = 'var(--white)'; }}
+                    onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(26,26,56,0.1)'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
                   >
-                    <Eye size={14} /> Online oʻqish
-                  </a>
-                  <a href={issue.pdf} download style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    padding: '10px 20px', background: 'transparent',
-                    border: '1px solid var(--gold)', color: 'var(--gold-dark)',
-                    textDecoration: 'none', fontFamily: 'var(--font-sans)',
-                    fontWeight: 700, fontSize: '0.72rem', letterSpacing: '1.5px', textTransform: 'uppercase',
-                    transition: 'background 0.2s',
-                  }}
-                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = '#08081a'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--gold-dark)'; }}
-                  >
-                    <Download size={14} /> Yuklab olish
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Tahririyat jamoasi */}
-          <div className="section-divider">
-            <h2>Tahririyat jamoasi</h2>
-          </div>
-
-          <div className="g-3" style={{ marginBottom: '60px' }}>
-            {EDITORIAL.map((member) => (
-              <div key={member.name} style={{
-                background: 'var(--white)', border: '1px solid var(--light-border)',
-                padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: '6px',
-                transition: 'box-shadow 0.3s',
-              }}
-                onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 32px rgba(26,26,56,0.08)'; }}
-                onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
-              >
-                <div style={{ width: 4, height: 32, background: 'var(--gold)', marginBottom: '8px' }} />
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--navy)', fontWeight: 400, margin: 0 }}>{member.name}</h3>
-                <p style={{ fontSize: '0.78rem', color: '#888', margin: 0, fontFamily: 'var(--font-sans)', letterSpacing: '0.5px' }}>{member.role}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Contact CTA */}
-          <div style={{
-            background: 'linear-gradient(110deg, var(--navy) 0%, #1e1e5a 100%)',
-            borderTop: '3px solid var(--gold)', padding: '48px 56px',
-            display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-            marginBottom: '60px', flexWrap: 'wrap', gap: '24px',
-          }}>
-            <div>
-              <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>
-                Tahririyat bilan bogʻlanish
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--white)', fontWeight: 300, marginBottom: '8px' }}>
-                Maqola <em>yuborish</em>
-              </h3>
-              <p style={{ fontSize: '0.88rem', color: 'rgba(240,237,232,0.65)', fontFamily: 'var(--font-serif)', maxWidth: 400 }}>
-                Ilmiy maqolalar va tadqiqotlarni jurnal tahririyatiga yuboring.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'rgba(240,237,232,0.7)' }}>
-                  <Mail size={14} color="var(--gold)" /> journal@conservatory.uz
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'rgba(240,237,232,0.7)' }}>
-                  <Phone size={14} color="var(--gold)" /> +998 71 236-89-00
-                </div>
+                    <div style={{
+                      marginBottom: '18px', borderRadius: '4px', overflow: 'hidden',
+                      border: '1px solid var(--light-border)', boxShadow: '0 6px 20px rgba(26,26,56,0.08)',
+                      background: 'var(--cream)',
+                    }}>
+                      <img
+                        src={`${PDF_BASE}/covers/musiqa-${issue.year}-${issue.number}.jpg`}
+                        alt={`"Musiqa" jurnali ${issue.year}-yil №${issue.number}-son muqovasi`}
+                        loading="lazy"
+                        onError={(e) => {
+                          if (e.currentTarget.dataset.fallback) return;
+                          e.currentTarget.dataset.fallback = '1';
+                          e.currentTarget.src = '/jurnallar/musiqa-cover.png';
+                          e.currentTarget.style.padding = '48px 24px';
+                        }}
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                      />
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 300, color: 'var(--gold-dark)', lineHeight: 1, marginBottom: '6px' }}>
+                      {issue.year}-yil
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--navy)', marginBottom: '20px', fontWeight: 400 }}>
+                      №{issue.number}-son
+                    </h3>
+                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                      <a href={issue.pdf} target="_blank" rel="noopener noreferrer" style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '6px',
+                        padding: '10px 20px', background: 'var(--navy)',
+                        color: 'var(--white)', textDecoration: 'none',
+                        fontFamily: 'var(--font-sans)', fontWeight: 700,
+                        fontSize: '0.72rem', letterSpacing: '1.5px', textTransform: 'uppercase',
+                        transition: 'background 0.2s',
+                      }}
+                        onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = '#08081a'; }}
+                        onMouseOut={(e) => { e.currentTarget.style.background = 'var(--navy)'; e.currentTarget.style.color = 'var(--white)'; }}
+                      >
+                        <Eye size={14} /> Online oʻqish
+                      </a>
+                      <a href={issue.pdf} download style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '6px',
+                        padding: '10px 20px', background: 'transparent',
+                        border: '1px solid var(--gold)', color: 'var(--gold-dark)',
+                        textDecoration: 'none', fontFamily: 'var(--font-sans)',
+                        fontWeight: 700, fontSize: '0.72rem', letterSpacing: '1.5px', textTransform: 'uppercase',
+                        transition: 'background 0.2s',
+                      }}
+                        onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.color = '#08081a'; }}
+                        onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--gold-dark)'; }}
+                      >
+                        <Download size={14} /> Yuklab olish
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            <a href="mailto:journal@conservatory.uz" style={{
-              padding: '14px 40px', background: 'var(--gold)',
-              color: '#08081a', textDecoration: 'none', fontFamily: 'var(--font-sans)',
-              fontWeight: 700, fontSize: '0.8rem', letterSpacing: '2px', textTransform: 'uppercase',
-            }}>
-              Tahririyatga yozish →
-            </a>
-          </div>
+          ))}
 
         </div>
       </section>

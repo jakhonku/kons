@@ -46,11 +46,12 @@ export default function HemisTalaba() {
                 <em>Kirish</em>
               </h2>
               <p style={{ fontSize: '0.9rem', color: 'rgba(240,237,232,0.65)', fontFamily: 'var(--font-serif)', lineHeight: 1.7, maxWidth: 420 }}>
-                Login — talaba guvohnomasi raqami. Parol — birinchi marta kirishda ID karta seriyasi.
+                Tizimga login va parol bilan emas, davlatning yagona identifikatsiya tizimi
+                — «OneID» (elektron pasport) orqali kiriladi.
               </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a href="https://student.hemis.uz" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://student.konservatoriya.uz" target="_blank" rel="noopener noreferrer" style={{
                 padding: '16px 48px', background: 'var(--gold)',
                 color: '#08081a', textDecoration: 'none',
                 fontFamily: 'var(--font-sans)', fontWeight: 700,
@@ -60,7 +61,7 @@ export default function HemisTalaba() {
                 HEMIS ga kirish →
               </a>
               <p style={{ fontSize: '0.72rem', color: 'rgba(201,168,76,0.5)', textAlign: 'center', fontFamily: 'var(--font-sans)' }}>
-                student.hemis.uz
+                student.konservatoriya.uz
               </p>
             </div>
           </div>
@@ -100,8 +101,8 @@ export default function HemisTalaba() {
                 Kirish muammosi yuzaga keldimi?
               </h4>
               <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-                Registrator ofisiga murojaat qiling — 1-bino, 105-xona. Telefon: +998 71 234-56-90.
-                Ish vaqti: Dushanba–Juma, 09:00–17:00.
+                «OneID» orqali kirishda muammo boʻlsa, konservatoriyaning Registrator ofisiga
+                yoki oʻz fakultet dekanatiga murojaat qiling.
               </p>
             </div>
           </div>
