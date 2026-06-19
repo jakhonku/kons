@@ -289,17 +289,15 @@ export default function OnlineMurojaat() {
                 </div>
               </div>
               <div style={{ 
-                background: 'linear-gradient(135deg, #0e1e38 0%, #0a1526 100%)', 
-                border: '1px solid rgba(34, 158, 217, 0.3)', 
-                borderLeft: '4px solid #229ED9',
-                padding: '22px 26px',
-                color: '#fff'
+                background: 'var(--white)', 
+                border: '1px solid var(--light-border)', 
+                padding: '22px 26px' 
               }}>
-                <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: '#229ED9', marginBottom: '10px', textTransform: 'uppercase' }}>
+                <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', marginBottom: '10px', textTransform: 'uppercase' }}>
                   Telegram orqali murojaat
                 </div>
-                <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
-                  Murojaatingizni tezkor koʻrib chiqish uchun rasmiy botimiz orqali ham yuborishingiz mumkin:
+                <p style={{ color: '#555', fontSize: '0.85rem', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+                  Murojaatingizni tezkor koʻrib chiqish uchun rasmiy Telegram botimizdan foydalaning:
                 </p>
                 <a 
                   href="https://t.me/UzDK_murojaat_bot" 
@@ -308,20 +306,31 @@ export default function OnlineMurojaat() {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '8px',
-                    background: '#229ED9',
-                    color: '#fff',
-                    padding: '10px 18px',
-                    fontSize: '0.8rem',
-                    fontWeight: 700,
+                    gap: '10px',
+                    background: 'rgba(34, 158, 217, 0.07)',
+                    border: '1px solid rgba(34, 158, 217, 0.2)',
+                    color: '#229ED9',
+                    padding: '12px 20px',
+                    fontSize: '0.82rem',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    letterSpacing: '0.5px',
-                    transition: 'background 0.2s',
+                    borderRadius: '4px',
+                    transition: 'all 0.2s ease',
                     width: '100%',
                     justifyContent: 'center'
                   }}
-                  onMouseEnter={e => e.currentTarget.style.background = '#1a85b8'}
-                  onMouseLeave={e => e.currentTarget.style.background = '#229ED9'}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = '#229ED9';
+                    e.currentTarget.style.color = '#fff';
+                    e.currentTarget.style.borderColor = '#229ED9';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(34,158,217,0.2)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'rgba(34, 158, 217, 0.07)';
+                    e.currentTarget.style.color = '#229ED9';
+                    e.currentTarget.style.borderColor = 'rgba(34, 158, 217, 0.2)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
