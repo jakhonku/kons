@@ -114,7 +114,7 @@ export default {
       ilmFan: { label: 'Scientific Potential', desc: 'Leading research and publishing center in the field of musical science.' },
       interaktiv: { label: 'Unified Services', desc: 'All online services for students and teachers in one place.' },
       ijodiy: { label: 'Stage Life', desc: 'Concerts, performances and live streams of the conservatory.' },
-      qabul: { label: 'Admission 2026', desc: '185 state quotas. Document submission: August 1–25, 2026.' },
+      qabul: { label: 'Admission 2026', desc: '' },
       xalqaro: { label: '120+ Partners', desc: 'Active relations with leading music institutes worldwide.' },
       axborot: { label: 'Latest News', desc: 'Latest news from conservatory life, events and posters.' },
     },

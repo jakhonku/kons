@@ -114,7 +114,7 @@ export default {
       ilmFan: { label: 'Ilmiy salohiyat', desc: 'Musiqa fani sohasidagi yetakchi tadqiqot va nashriyot markazi.' },
       interaktiv: { label: 'Yagona xizmatlar', desc: 'Talaba va oʻqituvchilar uchun barcha onlayn xizmatlar bir joyda.' },
       ijodiy: { label: 'Sahna hayoti', desc: 'Konservatoriyaning konsertlari, spektakllari va jonli efirlari.' },
-      qabul: { label: 'Qabul 2026', desc: '185 ta davlat kvotasi. Hujjat topshirish: 1–25 avgust 2026.' },
+      qabul: { label: 'Qabul 2026', desc: '' },
       xalqaro: { label: '120+ Hamkor', desc: 'Dunyo boʻylab yetakchi musiqa institutlari bilan faol aloqalar.' },
       axborot: { label: 'Soʻnggi Yangiliklar', desc: 'Konservatoriya hayotidan soʻnggi xabarlar, tadbirlar va afishalar.' },
     },
