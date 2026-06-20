@@ -111,18 +111,18 @@ export default function XalqaroMemorandumlar() {
             {MEMORANDUMS.map((m, idx) => (
               <div key={m.org} className="doc-item">
                 <div className="doc-info">
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', color: 'var(--gold-dark)', fontWeight: 400, flexShrink: 0, width: 24, textAlign: 'center' }}>
+                    {String(idx + 1).padStart(2, '0')}
+                  </div>
                   <div className="doc-icon" style={{ background: 'var(--light-50)', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, flexShrink: 0 }}>
                     {m.flag}
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <div className="doc-name">{m.org}</div>
                     <div className="doc-meta">
                       {m.country}{m.city ? `, ${m.city}` : ''}
                     </div>
                   </div>
-                </div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--gold-dark)', fontWeight: 400, flexShrink: 0, paddingLeft: '12px' }}>
-                  {String(idx + 1).padStart(2, '0')}
                 </div>
               </div>
             ))}
