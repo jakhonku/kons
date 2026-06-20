@@ -1,4 +1,11 @@
 import PageHero from './PageHero';
+import { useTranslation } from '../contexts/LanguageContext';
+
+const LABELS = {
+  uz: { contact: 'Bogʻlanish', responsible: 'Masʼul', phone: 'Telefon', email: 'Email', address: 'Manzil', hours: 'Qabul soatlari', website: 'Rasmiy sayt' },
+  ru: { contact: 'Контакты', responsible: 'Ответственный', phone: 'Телефон', email: 'Email', address: 'Адрес', hours: 'Часы приёма', website: 'Официальный сайт' },
+  en: { contact: 'Contact', responsible: 'Responsible', phone: 'Phone', email: 'Email', address: 'Address', hours: 'Office hours', website: 'Official website' },
+};
 
 /* Common skeleton for inner-pages that just need:
    – hero
@@ -17,6 +24,9 @@ export default function InfoPage({
   sections = [],
   contact,
 }) {
+  const { lang } = useTranslation();
+  const L = LABELS[lang] || LABELS.uz;
+
   return (
     <main className="content-wrapper">
       <PageHero tag={tag} title={title} emphasis={emphasis} breadcrumbs={breadcrumbs} />
@@ -109,42 +119,42 @@ export default function InfoPage({
           {contact && (
             <div style={{ background: 'var(--light-50)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '28px 32px', marginTop: '20px' }}>
               <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '14px', fontFamily: 'var(--font-sans)' }}>
-                {contact.title || "Bogʻlanish"}
+                {contact.title || L.contact}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', fontFamily: 'var(--font-sans)', fontSize: '0.88rem' }}>
                 {contact.responsible && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Masʼul</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.responsible}</div>
                     <div style={{ color: 'var(--navy)' }}>{contact.responsible}</div>
                   </div>
                 )}
                 {contact.phone && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Telefon</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.phone}</div>
                     <a href={`tel:${contact.phone}`} style={{ color: 'var(--navy)', textDecoration: 'none', fontWeight: 600 }}>{contact.phone}</a>
                   </div>
                 )}
                 {contact.email && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Email</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.email}</div>
                     <a href={`mailto:${contact.email}`} style={{ color: 'var(--navy)', textDecoration: 'none' }}>{contact.email}</a>
                   </div>
                 )}
                 {contact.address && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Manzil</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.address}</div>
                     <div style={{ color: '#555' }}>{contact.address}</div>
                   </div>
                 )}
                 {contact.hours && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Qabul soatlari</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.hours}</div>
                     <div style={{ color: '#555' }}>{contact.hours}</div>
                   </div>
                 )}
                 {contact.website && (
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Rasmiy sayt</div>
+                    <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.website}</div>
                     <a href={contact.website} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-dark)', textDecoration: 'none', fontWeight: 600 }}>
                       {contact.website.replace('https://', '').replace('http://', '')}
                     </a>
