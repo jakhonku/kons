@@ -1,19 +1,83 @@
 import PageHero from '../components/PageHero';
 import { MapPin, Clock, Phone } from 'lucide-react';
+import { useTranslation } from '../contexts/LanguageContext';
 
-const BREADCRUMBS = [
-  { label: 'Bosh sahifa', to: '/' },
-  { label: 'Talabalar uchun', to: '/talabalar' },
-  { label: 'Registrator ofisi' },
-];
+const T = {
+  uz: {
+    crumbHome: 'Bosh sahifa',
+    crumbStudents: 'Talabalar uchun',
+    crumbThis: 'Registrator ofisi',
+    heroTag: 'Talabalar uchun',
+    heroTitle: 'Registrator',
+    heroEm: 'Ofisi',
+    addrTitle: 'Manzil',
+    addrLines: ['227-xona', '(2-qavat)'],
+    hoursTitle: 'Ish vaqti',
+    hoursLines: ['Dushanba – Juma: 09:00 – 17:00', 'Tushlik: 13:00 – 14:00'],
+    contactTitle: 'Bogʻlanish',
+    contactLines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'],
+    tgKicker: 'Telegram orqali murojaat',
+    tgTitle: 'Registrator boti',
+    tgDesc: 'Hujjat buyurtma qilish va Registrator ofisiga murojaat yuborish uchun Telegram botimizdan foydalaning. Tez va qulay!',
+    tgBtn: 'Registrator Ofisi | Konservatoriya',
+    note: 'Arizalar HEMIS tizimi orqali ham topshirilishi mumkin. Shoshilinch hollarda bevosita ofisga murojaat qiling.',
+  },
+  ru: {
+    crumbHome: 'Главная',
+    crumbStudents: 'Для студентов',
+    crumbThis: 'Офис регистратора',
+    heroTag: 'Для студентов',
+    heroTitle: 'Офис',
+    heroEm: 'регистратора',
+    addrTitle: 'Адрес',
+    addrLines: ['Кабинет 227', '(2-й этаж)'],
+    hoursTitle: 'Время работы',
+    hoursLines: ['Понедельник – Пятница: 09:00 – 17:00', 'Обед: 13:00 – 14:00'],
+    contactTitle: 'Контакты',
+    contactLines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'],
+    tgKicker: 'Обращение через Telegram',
+    tgTitle: 'Бот регистратора',
+    tgDesc: 'Используйте наш Telegram-бот для заказа документов и обращения в офис регистратора. Быстро и удобно!',
+    tgBtn: 'Офис регистратора | Консерватория',
+    note: 'Заявления также можно подать через систему HEMIS. В срочных случаях обращайтесь непосредственно в офис.',
+  },
+  en: {
+    crumbHome: 'Home',
+    crumbStudents: 'For students',
+    crumbThis: 'Registrar Office',
+    heroTag: 'For students',
+    heroTitle: 'Registrar',
+    heroEm: 'Office',
+    addrTitle: 'Address',
+    addrLines: ['Room 227', '(2nd floor)'],
+    hoursTitle: 'Working hours',
+    hoursLines: ['Monday – Friday: 09:00 – 17:00', 'Lunch: 13:00 – 14:00'],
+    contactTitle: 'Contact',
+    contactLines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'],
+    tgKicker: 'Apply via Telegram',
+    tgTitle: 'Registrar bot',
+    tgDesc: 'Use our Telegram bot to order documents and contact the Registrar Office. Fast and convenient!',
+    tgBtn: 'Registrar Office | Conservatory',
+    note: 'Applications can also be submitted through the HEMIS system. In urgent cases, contact the office directly.',
+  },
+};
 
 export default function Registrator() {
+  const { lang } = useTranslation();
+  const tr = T[lang] || T.uz;
+
+  const BREADCRUMBS = [
+    { label: tr.crumbHome, to: '/' },
+    { label: tr.crumbStudents, to: '/talabalar' },
+    { label: tr.crumbThis },
+  ];
+
   return (
     <main className="content-wrapper">
       <PageHero
-        tag="Talabalar uchun"
-        title="Registrator"
-        emphasis="Ofisi"
+        tag={tr.heroTag}
+        title={tr.heroTitle}
+        emphasis={tr.heroEm}
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -23,9 +87,9 @@ export default function Registrator() {
           {/* Location & hours */}
           <div className="g-3" style={{ marginBottom: '50px' }}>
             {[
-              { icon: MapPin, title: 'Manzil',       lines: ['1-bino, 105-xona', '(Asosiy binoning 1-qavati)'] },
-              { icon: Clock,  title: 'Ish vaqti',    lines: ['Dushanba – Juma: 09:00 – 17:00', 'Tushlik: 13:00 – 14:00'] },
-              { icon: Phone,  title: "Bogʻlanish",   lines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'] },
+              { icon: MapPin, title: tr.addrTitle,    lines: tr.addrLines },
+              { icon: Clock,  title: tr.hoursTitle,   lines: tr.hoursLines },
+              { icon: Phone,  title: tr.contactTitle, lines: tr.contactLines },
             ].map((item) => (
               <div key={item.title} style={{
                 background: 'var(--white)', border: '1px solid var(--light-border)',
@@ -65,18 +129,17 @@ export default function Registrator() {
             </div>
             <div style={{ flex: 1, minWidth: '200px' }}>
               <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: '#229ED9', marginBottom: '6px', textTransform: 'uppercase' }}>
-                Telegram orqali murojaat
+                {tr.tgKicker}
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: '1.2rem', fontWeight: 500, margin: '0 0 8px' }}>
-                Registrator navbat boti
+                {tr.tgTitle}
               </h3>
               <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, margin: 0 }}>
-                Hujjat buyurtma qilish, navbat olish va Registrator ofisiga murojaat yuborish uchun
-                Telegram botimizdan foydalaning. Tez va qulay!
+                {tr.tgDesc}
               </p>
             </div>
             <a
-              href="https://t.me/Regnavbatkonsbot"
+              href="https://t.me/Konservatoriya_Registrar_Bot"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -93,7 +156,7 @@ export default function Registrator() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
               </svg>
-              @Regnavbatkonsbot
+              {tr.tgBtn}
             </a>
           </div>
 
@@ -102,8 +165,7 @@ export default function Registrator() {
             borderLeft: '4px solid var(--gold)', padding: '20px 28px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.75, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Arizalar HEMIS tizimi orqali ham topshirilishi mumkin.
-              Shoshilinch hollarda bevosita ofisga murojaat qiling.
+              {tr.note}
             </p>
           </div>
 

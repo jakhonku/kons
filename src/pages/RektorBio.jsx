@@ -101,7 +101,7 @@ export default function RektorBio() {
                   </div>
                   <div style={{ padding: '20px', borderLeft: '3px solid var(--gold)', background: 'rgba(26,26,56,0.03)' }}>
                     <h5 style={{ color: 'var(--navy)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Award size={16} /> Unvonlar
+                      <Award size={16} /> Mukofotlar
                     </h5>
                     <p style={{ fontSize: '0.9rem', color: '#666' }}>Oʻzbekiston xalq artisti, "Doʻstlik" ordeni sohibi.</p>
                   </div>

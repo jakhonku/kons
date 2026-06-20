@@ -33,6 +33,9 @@ const OPEN_EXACT = new Set([
   '/kasbiy-imtihonlar',    // Qabul — Kasbiy va ijodiy imtihonlar (qabul dasturlari PDF bilan toʻldirilgan)
   '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
   '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)
+  '/fotogalereya',         // Yangiliklar — Fotogalereya (konservatoriya binosi va konsert zali rasmlari bilan toʻldirilgan)
+  '/kontaktlar',           // Aloqa maʼlumotlari (Kontaktlar)
+  '/yashil-universitet',   // Konservatoriya — Yashil Universitet (ekologik raqamlar bilan toʻldirilgan)
 ]);
 
 // Prefiks boʻyicha ochiq yoʻllar (dinamik sahifalar uchun)

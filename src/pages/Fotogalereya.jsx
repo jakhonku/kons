@@ -10,6 +10,18 @@ const BREADCRUMBS = [
   { label: 'Fotogalereya' },
 ];
 
+// Konservatoriya binosi va konsert zalining doimiy rasmlari (admin rasmlaridan oldin koʻrsatiladi)
+const STATIC_PHOTOS = [
+  { id: 'static-bino', img: '/3M7A4170.JPG', title: 'Oʻzbekiston davlat konservatoriyasi binosi', cat: 'Bino', year: '' },
+  { id: 'static-zal-1', img: '/image.png', title: 'Katta konsert zali — simfonik orkestr', cat: 'Konsert zali', year: '' },
+  { id: 'static-zal-2', img: '/images/fotohisobot/img3.jpg', title: 'Konsert zalida simfonik orkestr chiqishi', cat: 'Konsert zali', year: '' },
+  { id: 'static-zal-3', img: '/images/fotohisobot/IMG_0024%20(4).JPG', title: 'Katta zalda kamera musiqasi kechasi', cat: 'Konsert zali', year: '' },
+  { id: 'static-zal-4', img: '/images/fotohisobot/IMG_0358%20(2).JPG', title: 'Milliy choʻlgʻu ansambli zal sahnasida', cat: 'Konsert zali', year: '' },
+  { id: 'static-tadbir-1', img: '/images/fotohisobot/3M7A1143%20(2).JPG', title: '«Navroʻz sadolari» xalqaro festivali', cat: 'Tadbirlar', year: '' },
+  { id: 'static-tadbir-2', img: '/images/fotohisobot/img2.jpg', title: '«Navroʻz sadolari» — Gran-pri sovrindorlari', cat: 'Tadbirlar', year: '' },
+  { id: 'static-tadbir-3', img: '/images/fotohisobot/3M7A1651%20(2).JPG', title: '«Navroʻz sadolari» festivali ochilish marosimi', cat: 'Tadbirlar', year: '' },
+];
+
 export default function Fotogalereya() {
   const { lang } = useTranslation();
   const { items: adminNews, loading } = useAdminNews();
@@ -40,7 +52,7 @@ export default function Fotogalereya() {
         });
       });
     });
-    return out;
+    return [...STATIC_PHOTOS, ...out];
   }, [adminNews, lang]);
 
   const categories = useMemo(
