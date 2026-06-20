@@ -1,26 +1,70 @@
 import PageHero from '../components/PageHero';
+import { useTranslation } from '../contexts/LanguageContext';
 
-const BREADCRUMBS = [
-  { label: 'Bosh sahifa', to: '/' },
-  { label: 'Talabalar uchun', to: '/talabalar' },
-  { label: "Oʻquv dasturlari (Sillabuslar)" },
-];
-
-const SUBJECTS = [
-  { kafedra: "Musiqa nazariyasi", fanlar: ["Solfejio", "Garmoniya", "Polifoniya", "Musiqa shakllari tahlili", "Musiqa tarixi"] },
-  { kafedra: "Fortepiano", fanlar: ["Maxsus fortepiano", "Kamera ansambli", "Fortepiano pedagogikasi", "Konsertmeystirlik sinfi"] },
-  { kafedra: "Xonandalik", fanlar: ["Vokal", "Opera tayyorgarligi", "Sahna mahorati", "Xor dirijyorligi"] },
-  { kafedra: "Kompozitsiya", fanlar: ["Kompozitsiya", "Orkestr partiturasini oʻqish", "Aranjirovka", "Elektron musiqa"] },
-  { kafedra: "Xalq cholgʻulari", fanlar: ["Dutor", "Gʻijjak", "Doira", "Xalq musiqasi tarixi"] },
-];
+const T = {
+  uz: {
+    crumbHome: 'Bosh sahifa', crumbStudents: 'Talabalar uchun', crumbThis: 'Oʻquv dasturlari (Sillabuslar)',
+    heroTag: 'Talabalar uchun', heroTitle: 'Oʻquv dasturlari', heroEm: 'Sillabuslar',
+    heading: 'Kafedra boʻyicha sillabuslar',
+    subjects: [
+      ['Musiqa nazariyasi kafedrasi', ['Solfejio', 'Garmoniya', 'Polifoniya', 'Musiqa shakllari tahlili', 'Musiqa tarixi']],
+      ['Fortepiano kafedrasi', ['Maxsus fortepiano', 'Kamera ansambli', 'Fortepiano pedagogikasi', 'Konsertmeystirlik sinfi']],
+      ['Xonandalik kafedrasi', ['Vokal', 'Opera tayyorgarligi', 'Sahna mahorati', 'Xor dirijyorligi']],
+      ['Kompozitsiya kafedrasi', ['Kompozitsiya', 'Orkestr partiturasini oʻqish', 'Aranjirovka', 'Elektron musiqa']],
+      ['Xalq cholgʻulari kafedrasi', ['Dutor', 'Gʻijjak', 'Doira', 'Xalq musiqasi tarixi']],
+    ],
+    notePre: 'Barcha sillabuslar ',
+    noteYear: '2025–2026 oʻquv yili',
+    notePost: ' uchun moʻljallangan. Qoʻshimcha fanlar va yangilangan sillabuslar uchun tegishli kafedra oʻqituvchilari bilan bogʻlaning.',
+  },
+  ru: {
+    crumbHome: 'Главная', crumbStudents: 'Для студентов', crumbThis: 'Учебные программы (силлабусы)',
+    heroTag: 'Для студентов', heroTitle: 'Учебные программы', heroEm: 'Силлабусы',
+    heading: 'Силлабусы по кафедрам',
+    subjects: [
+      ['Кафедра теории музыки', ['Сольфеджио', 'Гармония', 'Полифония', 'Анализ музыкальных форм', 'История музыки']],
+      ['Кафедра фортепиано', ['Специальное фортепиано', 'Камерный ансамбль', 'Фортепианная педагогика', 'Класс концертмейстера']],
+      ['Кафедра пения', ['Вокал', 'Подготовка оперы', 'Сценическое мастерство', 'Хоровое дирижирование']],
+      ['Кафедра композиции', ['Композиция', 'Чтение оркестровой партитуры', 'Аранжировка', 'Электронная музыка']],
+      ['Кафедра народных инструментов', ['Дутар', 'Гиджак', 'Дойра', 'История народной музыки']],
+    ],
+    notePre: 'Все силлабусы рассчитаны на ',
+    noteYear: '2025–2026 учебный год',
+    notePost: '. По дополнительным предметам и обновлённым силлабусам обращайтесь к преподавателям соответствующей кафедры.',
+  },
+  en: {
+    crumbHome: 'Home', crumbStudents: 'For students', crumbThis: 'Study programmes (Syllabi)',
+    heroTag: 'For students', heroTitle: 'Study programmes', heroEm: 'Syllabi',
+    heading: 'Syllabi by department',
+    subjects: [
+      ['Music Theory Department', ['Solfeggio', 'Harmony', 'Polyphony', 'Analysis of musical forms', 'Music history']],
+      ['Piano Department', ['Special piano', 'Chamber ensemble', 'Piano pedagogy', 'Concertmaster class']],
+      ['Singing Department', ['Vocal', 'Opera preparation', 'Stage skills', 'Choral conducting']],
+      ['Composition Department', ['Composition', 'Reading the orchestral score', 'Arrangement', 'Electronic music']],
+      ['Folk Instruments Department', ['Dutar', 'Gijjak', 'Doira', 'History of folk music']],
+    ],
+    notePre: 'All syllabi are designed for the ',
+    noteYear: '2025–2026 academic year',
+    notePost: '. For additional subjects and updated syllabi, contact the teachers of the relevant department.',
+  },
+};
 
 export default function Sillabuslar() {
+  const { lang } = useTranslation();
+  const tr = T[lang] || T.uz;
+
+  const BREADCRUMBS = [
+    { label: tr.crumbHome, to: '/' },
+    { label: tr.crumbStudents, to: '/talabalar' },
+    { label: tr.crumbThis },
+  ];
+
   return (
     <main className="content-wrapper">
       <PageHero
-        tag="Talabalar uchun"
-        title="Oʻquv dasturlari"
-        emphasis="Sillabuslar"
+        tag={tr.heroTag}
+        title={tr.heroTitle}
+        emphasis={tr.heroEm}
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -28,12 +72,12 @@ export default function Sillabuslar() {
         <div className="container">
 
           <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Kafedra boʻyicha sillabuslar</h2>
+            <h2>{tr.heading}</h2>
           </div>
 
           <div className="g-2" style={{ marginBottom: '60px' }}>
-            {SUBJECTS.map((block) => (
-              <div key={block.kafedra} style={{
+            {tr.subjects.map(([heading, fanlar]) => (
+              <div key={heading} style={{
                 background: 'var(--white)', border: '1px solid var(--light-border)',
                 borderTop: '3px solid var(--gold)', padding: '28px',
               }}>
@@ -41,10 +85,10 @@ export default function Sillabuslar() {
                   fontFamily: 'var(--font-display)', fontSize: '1.2rem',
                   color: 'var(--navy)', marginBottom: '20px', fontWeight: 400,
                 }}>
-                  {block.kafedra} kafedrasi
+                  {heading}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {block.fanlar.map((fan) => (
+                  {fanlar.map((fan) => (
                     <div key={fan} style={{
                       display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                       padding: '10px 14px', background: 'var(--light-50)',
@@ -77,8 +121,7 @@ export default function Sillabuslar() {
             borderTop: '3px solid var(--gold)', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.9rem', color: 'rgba(240,237,232,0.75)', fontFamily: 'var(--font-serif)', lineHeight: 1.8, margin: 0 }}>
-              Barcha sillabuslar <strong style={{ color: 'var(--gold-light)' }}>2025–2026 oʻquv yili</strong> uchun moʻljallangan.
-              Qoʻshimcha fanlar va yangilangan sillabuslar uchun tegishli kafedra oʻqituvchilari bilan bogʻlaning.
+              {tr.notePre}<strong style={{ color: 'var(--gold-light)' }}>{tr.noteYear}</strong>{tr.notePost}
             </p>
           </div>
 

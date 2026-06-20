@@ -1,67 +1,129 @@
 import PageHero from '../components/PageHero';
 import { Clock, MapPin } from 'lucide-react';
+import { useTranslation } from '../contexts/LanguageContext';
 
-const BREADCRUMBS = [
-  { label: 'Bosh sahifa', to: '/' },
-  { label: 'Talabalar uchun', to: '/talabalar' },
-  { label: "Toʻgaraklar" },
-];
+const COLORS = ['var(--gold-dark)', 'var(--navy)', '#555'];
 
-const CIRCLES = [
-  {
-    category: 'Ijodiy',
-    color: 'var(--gold-dark)',
-    items: [
-      { name: "Kamera musiqa ansambli", schedule: "Seshanba, Payshanba 16:00", room: "Katta zal", leader: "Prof. Karimov Sh." },
-      { name: "Tarix musiqa klubi", schedule: "Chorshanba 15:00", room: "207-xona", leader: "Dots. Mirzayeva G." },
-      { name: "Elektron musiqa studiyasi", schedule: "Juma 14:00", room: "Studiya (yertoʻla)", leader: "Oʻqit. Nazarov A." },
-      { name: "Kompozitsiya workshopi", schedule: "Shanba 10:00", room: "206-xona", leader: "Prof. Toshmatov B." },
+const T = {
+  uz: {
+    crumbHome: 'Bosh sahifa', crumbStudents: 'Talabalar uchun', crumbThis: 'Toʻgaraklar',
+    heroTag: 'Talabalar uchun', heroTitle: 'Toʻgaraklar va', heroEm: 'Faoliyatlar',
+    leaderLabel: 'Rahbar',
+    sections: [
+      ['Ijodiy toʻgaraklar', [
+        ['Kamera musiqa ansambli', 'Seshanba, Payshanba 16:00', 'Katta zal', 'Prof. Karimov Sh.'],
+        ['Tarix musiqa klubi', 'Chorshanba 15:00', '207-xona', 'Dots. Mirzayeva G.'],
+        ['Elektron musiqa studiyasi', 'Juma 14:00', 'Studiya (yertoʻla)', 'Oʻqit. Nazarov A.'],
+        ['Kompozitsiya workshopi', 'Shanba 10:00', '206-xona', 'Prof. Toshmatov B.'],
+      ]],
+      ['Madaniy va ijtimoiy toʻgaraklar', [
+        ['KVN jamoasi', 'Dushanba 17:30', 'Aktyorlik sinfxonasi', 'Talabalar kengashi'],
+        ['Xalqaro talabalar klubi', 'Payshanba 16:30', '202-xona', 'Xalqaro boʻlim'],
+        ['Ekologiya va yashil hayot', 'Seshanba 17:00', 'Botanika bogʻi', 'Tashabbuskor guruh'],
+      ]],
+      ['Sport toʻgaraklar', [
+        ['Shaxmat toʻgaragi', 'Har kuni 12:30', 'Talabalar klubi', 'Ust. Xoliqov J.'],
+        ['Ping-pong', 'Seshanba, Juma 17:00', 'Sport zali', 'Jismoniy tarbiya kafedrasi'],
+        ['Yoga va meditatsiya', 'Dushanba, Chorshanba 07:30', 'Sport zali', 'Inst. Qodirov M.'],
+      ]],
     ],
+    notePre: 'Yangi toʻgarak ochish yoki mavjudiga qoʻshilish uchun ',
+    noteBold: 'Talabalar kengashi',
+    notePost: 'ga murojaat qiling — 1-bino, 112-xona. Barcha toʻgaraklar ',
+    noteFree: 'bepul',
+    noteEnd: '.',
   },
-  {
-    category: 'Madaniy va ijtimoiy',
-    color: 'var(--navy)',
-    items: [
-      { name: "KVN jamoasi", schedule: "Dushanba 17:30", room: "Aktyorlik sinfxonasi", leader: "Talabalar kengashi" },
-      { name: "Xalqaro talabalar klubi", schedule: "Payshanba 16:30", room: "202-xona", leader: "Xalqaro boʻlim" },
-      { name: "Ekologiya va yashil hayot", schedule: "Seshanba 17:00", room: "Botanika bogʻi", leader: "Tashabbuskor guruh" },
+  ru: {
+    crumbHome: 'Главная', crumbStudents: 'Для студентов', crumbThis: 'Кружки',
+    heroTag: 'Для студентов', heroTitle: 'Кружки и', heroEm: 'занятия',
+    leaderLabel: 'Руководитель',
+    sections: [
+      ['Творческие кружки', [
+        ['Камерный музыкальный ансамбль', 'Вторник, Четверг 16:00', 'Большой зал', 'Проф. Каримов Ш.'],
+        ['Клуб истории музыки', 'Среда 15:00', 'Кабинет 207', 'Доц. Мирзаева Г.'],
+        ['Студия электронной музыки', 'Пятница 14:00', 'Студия (подвал)', 'Преп. Назаров А.'],
+        ['Мастерская композиции', 'Суббота 10:00', 'Кабинет 206', 'Проф. Тошматов Б.'],
+      ]],
+      ['Культурные и социальные кружки', [
+        ['Команда КВН', 'Понедельник 17:30', 'Класс актёрского мастерства', 'Студенческий совет'],
+        ['Клуб иностранных студентов', 'Четверг 16:30', 'Кабинет 202', 'Международный отдел'],
+        ['Экология и зелёная жизнь', 'Вторник 17:00', 'Ботанический сад', 'Инициативная группа'],
+      ]],
+      ['Спортивные кружки', [
+        ['Шахматный кружок', 'Ежедневно 12:30', 'Студенческий клуб', 'Маст. Холиков Ж.'],
+        ['Пинг-понг', 'Вторник, Пятница 17:00', 'Спортзал', 'Кафедра физвоспитания'],
+        ['Йога и медитация', 'Понедельник, Среда 07:30', 'Спортзал', 'Инстр. Кодиров М.'],
+      ]],
     ],
+    notePre: 'Чтобы открыть новый кружок или присоединиться к существующему, обращайтесь в ',
+    noteBold: 'Студенческий совет',
+    notePost: ' — здание 1, кабинет 112. Все кружки ',
+    noteFree: 'бесплатны',
+    noteEnd: '.',
   },
-  {
-    category: 'Sport',
-    color: '#555',
-    items: [
-      { name: "Shaxmat toʻgaragi", schedule: "Har kuni 12:30", room: "Talabalar klubi", leader: "Ust. Xoliqov J." },
-      { name: "Ping-pong", schedule: "Seshanba, Juma 17:00", room: "Sport zali", leader: "Jismoniy tarbiya kafedrasi" },
-      { name: "Yoga va meditatsiya", schedule: "Dushanba, Chorshanba 07:30", room: "Sport zali", leader: "Inst. Qodirov M." },
+  en: {
+    crumbHome: 'Home', crumbStudents: 'For students', crumbThis: 'Clubs',
+    heroTag: 'For students', heroTitle: 'Clubs and', heroEm: 'activities',
+    leaderLabel: 'Leader',
+    sections: [
+      ['Creative clubs', [
+        ['Chamber music ensemble', 'Tuesday, Thursday 16:00', 'Grand hall', 'Prof. Karimov Sh.'],
+        ['Music history club', 'Wednesday 15:00', 'Room 207', 'Assoc. Prof. Mirzayeva G.'],
+        ['Electronic music studio', 'Friday 14:00', 'Studio (basement)', 'Lect. Nazarov A.'],
+        ['Composition workshop', 'Saturday 10:00', 'Room 206', 'Prof. Toshmatov B.'],
+      ]],
+      ['Cultural and social clubs', [
+        ['KVN team', 'Monday 17:30', 'Acting classroom', 'Student council'],
+        ['International students club', 'Thursday 16:30', 'Room 202', 'International department'],
+        ['Ecology and green life', 'Tuesday 17:00', 'Botanical garden', 'Initiative group'],
+      ]],
+      ['Sports clubs', [
+        ['Chess club', 'Daily 12:30', 'Student club', 'Master Xoliqov J.'],
+        ['Ping-pong', 'Tuesday, Friday 17:00', 'Gym', 'Physical Education Department'],
+        ['Yoga and meditation', 'Monday, Wednesday 07:30', 'Gym', 'Instr. Qodirov M.'],
+      ]],
     ],
+    notePre: 'To open a new club or join an existing one, contact the ',
+    noteBold: 'Student council',
+    notePost: ' — building 1, room 112. All clubs are ',
+    noteFree: 'free',
+    noteEnd: '.',
   },
-];
+};
 
 export default function Togaraklar() {
+  const { lang } = useTranslation();
+  const tr = T[lang] || T.uz;
+
+  const BREADCRUMBS = [
+    { label: tr.crumbHome, to: '/' },
+    { label: tr.crumbStudents, to: '/talabalar' },
+    { label: tr.crumbThis },
+  ];
+
   return (
     <main className="content-wrapper">
       <PageHero
-        tag="Talabalar uchun"
-        title="Toʻgaraklar va"
-        emphasis="Faoliyatlar"
+        tag={tr.heroTag}
+        title={tr.heroTitle}
+        emphasis={tr.heroEm}
         breadcrumbs={BREADCRUMBS}
       />
 
       <section className="main-content">
         <div className="container">
 
-          {CIRCLES.map((section, si) => (
-            <div key={section.category}>
+          {tr.sections.map(([heading, items], si) => (
+            <div key={heading}>
               <div className="section-divider" style={{ marginTop: si === 0 ? 0 : undefined }}>
-                <h2>{section.category} toʻgaraklar</h2>
+                <h2>{heading}</h2>
               </div>
 
               <div className="g-2" style={{ marginBottom: '50px' }}>
-                {section.items.map((item) => (
-                  <div key={item.name} style={{
+                {items.map(([name, schedule, room, leader]) => (
+                  <div key={name} style={{
                     background: 'var(--white)', border: '1px solid var(--light-border)',
-                    borderLeft: `4px solid ${section.color}`, padding: '24px 28px',
+                    borderLeft: `4px solid ${COLORS[si]}`, padding: '24px 28px',
                     display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                     transition: 'box-shadow 0.3s',
                     flexWrap: 'wrap', gap: '16px',
@@ -71,16 +133,16 @@ export default function Togaraklar() {
                   >
                     <div style={{ flex: 1, minWidth: 200 }}>
                       <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: 'var(--navy)', marginBottom: '6px', fontWeight: 400 }}>
-                        {item.name}
+                        {name}
                       </h3>
                       <div style={{ fontSize: '0.75rem', color: '#888', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Clock size={12} strokeWidth={2} />{item.schedule}</span>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><MapPin size={12} strokeWidth={2} />{item.room}</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Clock size={12} strokeWidth={2} />{schedule}</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><MapPin size={12} strokeWidth={2} />{room}</span>
                       </div>
                     </div>
                     <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                      <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: '#bbb', marginBottom: '2px' }}>Rahbar</div>
-                      <div style={{ fontSize: '0.82rem', color: 'var(--navy)', fontWeight: 500 }}>{item.leader}</div>
+                      <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: '#bbb', marginBottom: '2px' }}>{tr.leaderLabel}</div>
+                      <div style={{ fontSize: '0.82rem', color: 'var(--navy)', fontWeight: 500 }}>{leader}</div>
                     </div>
                   </div>
                 ))}
@@ -93,9 +155,7 @@ export default function Togaraklar() {
             borderLeft: '4px solid var(--gold)', padding: '22px 30px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.75, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Yangi toʻgarak ochish yoki mavjudiga qoʻshilish uchun{' '}
-              <strong style={{ color: 'var(--navy)' }}>Talabalar kengashi</strong>ga murojaat qiling —
-              1-bino, 112-xona. Barcha toʻgaraklar <strong style={{ color: 'var(--navy)' }}>bepul</strong>.
+              {tr.notePre}<strong style={{ color: 'var(--navy)' }}>{tr.noteBold}</strong>{tr.notePost}<strong style={{ color: 'var(--navy)' }}>{tr.noteFree}</strong>{tr.noteEnd}
             </p>
           </div>
 
