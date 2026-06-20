@@ -59,6 +59,9 @@ import Kafedralar from './pages/Kafedralar';
 import Bolimlar from './pages/Bolimlar';
 import NukusFiliali from './pages/NukusFiliali';
 import JamoatTashkilotlari from './pages/JamoatTashkilotlari';
+import KasabaUyushmasi from './pages/KasabaUyushmasi';
+import YoshlarIttifoqi from './pages/YoshlarIttifoqi';
+import XotinQizlarQomitasi from './pages/XotinQizlarQomitasi';
 import Vakansiyalar from './pages/Vakansiyalar';
 import BitiruvchilarBandligi from './pages/BitiruvchilarBandligi';
 import IlmiyKengash from './pages/IlmiyKengash';
@@ -125,6 +128,9 @@ export default function App() {
           <Route path="bolimlar" element={<Bolimlar />} />
           <Route path="nukus-filiali" element={<NukusFiliali />} />
           <Route path="jamoat-tashkilotlari" element={<JamoatTashkilotlari />} />
+          <Route path="jamoat-tashkilotlari/kasaba-uyushmasi" element={<KasabaUyushmasi />} />
+          <Route path="jamoat-tashkilotlari/yoshlar-ittifoqi" element={<YoshlarIttifoqi />} />
+          <Route path="jamoat-tashkilotlari/xotin-qizlar-qomitasi" element={<XotinQizlarQomitasi />} />
           <Route path="vakansiyalar" element={<Vakansiyalar />} />
           <Route path="kontaktlar" element={<Kontaktlar />} />
           <Route path="hujjatlar" element={<Hujjatlar />} />

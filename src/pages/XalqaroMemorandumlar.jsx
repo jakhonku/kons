@@ -1,5 +1,4 @@
 import PageHero from '../components/PageHero';
-import { FileText, Download } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -7,23 +6,68 @@ const BREADCRUMBS = [
   { label: 'Xalqaro memorandumlar' },
 ];
 
+const FLAGS = {
+  Estoniya: '🇪🇪', Latviya: '🇱🇻', Xitoy: '🇨🇳', Italiya: '🇮🇹', "Qozogʻiston": '🇰🇿',
+  "Janubiy Koreya": '🇰🇷', Koreya: '🇰🇷', Germaniya: '🇩🇪', Ozarbayjon: '🇦🇿', Rossiya: '🇷🇺',
+  Turkiya: '🇹🇷', Ukraina: '🇺🇦', Tojikiston: '🇹🇯', Qirgʻiziston: '🇰🇬', Chexiya: '🇨🇿',
+  Belarus: '🇧🇾', Belgiya: '🇧🇪', BAA: '🇦🇪', "Buyuk Britaniya": '🇬🇧', Slovakiya: '🇸🇰',
+};
+
+// Konservatoriya imzolagan xalqaro hamkorlik memorandumlari
 const MEMORANDUMS = [
-  { org: 'Moskva Davlat Konservatoriyasi',           country: 'Rossiya',      flag: '🇷🇺', year: 2017, type: "Qoʻshma dasturlar",    status: 'Faol' },
-  { org: 'Sankt-Peterburg Davlat Konservatoriyasi',  country: 'Rossiya',      flag: '🇷🇺', year: 2018, type: 'Ilmiy hamkorlik',       status: 'Faol' },
-  { org: 'Vena Musiqa va Sanoat Badiiy Universiteti', country: 'Avstriya',    flag: '🇦🇹', year: 2019, type: 'Talabalar almashinuvi', status: 'Faol' },
-  { org: "Qozogʻiston Milliy Konservatoriyasi",       country: "Qozogʻiston", flag: '🇰🇿', year: 2016, type: 'Talabalar almashinuvi', status: 'Faol' },
-  { org: "Seul Milliy Universiteti Sanʼat Kolleji",   country: 'Janubiy Koreya', flag: '🇰🇷', year: 2019, type: 'Talabalar almashinuvi', status: 'Faol' },
-  { org: "Istambul Davlat Konservatoriyasi",          country: 'Turkiya',     flag: '🇹🇷', year: 2020, type: "Qoʻshma konsertlar",   status: 'Faol' },
-  { org: 'Pekin Musiqa Konservatoriyasi',             country: 'Xitoy',       flag: '🇨🇳', year: 2020, type: 'Madaniy almashinuv',   status: 'Faol' },
-  { org: 'Varshava Frederic Chopin Musiqa Universiteti', country: 'Polsha',   flag: '🇵🇱', year: 2020, type: 'Erasmus+ almashinuvi', status: 'Faol' },
-  { org: 'Parij Milliy Oliy Musiqa Konservatoriyasi', country: 'Fransiya',   flag: '🇫🇷', year: 2021, type: 'Ilmiy hamkorlik',       status: 'Faol' },
-  { org: 'Xyuston Universiteti Moores Musiqa Maktabi', country: 'AQSh',      flag: '🇺🇸', year: 2022, type: 'Tadqiqot almashinuvi', status: 'Faol' },
-  { org: "Tokio Musiqa va Badiiy Sanʼat Universiteti", country: 'Yaponiya',  flag: '🇯🇵', year: 2022, type: 'Talabalar almashinuvi', status: 'Yangi' },
-  { org: "Berliner Universität der Künste",           country: 'Germaniya',  flag: '🇩🇪', year: 2023, type: 'Talabalar almashinuvi', status: 'Yangi' },
-  { org: 'Juilliard Maktabi',                         country: 'AQSh',       flag: '🇺🇸', year: 2023, type: 'Master-klass',          status: 'Yangi' },
-  { org: "Barselona Oliy Musiqa Maktabi (ESMUC)",     country: 'Ispaniya',   flag: '🇪🇸', year: 2022, type: "Qoʻshma dasturlar",    status: 'Yangi' },
-  { org: "Ozarbayjon Davlat Konservatoriyasi",         country: 'Ozarbayjon', flag: '🇦🇿', year: 2019, type: 'Madaniy almashinuv',   status: 'Faol' },
-];
+  { org: "Estoniya musiqa va teatr akademiyasi", country: 'Estoniya', city: 'Tallinn' },
+  { org: "Ya. Vitols nomidagi Latviya musiqa akademiyasi", country: 'Latviya', city: 'Riga' },
+  { org: "Shimoliy-Gʻarbiy Millatlar universiteti", country: 'Xitoy', city: '' },
+  { org: "Santa Cecilia konservatoriyasi", country: 'Italiya', city: 'Rim' },
+  { org: "Qozogʻiston milliy sanʼat universiteti", country: "Qozogʻiston", city: 'Astana' },
+  { org: "Koreya musiqiy taʼlim jamoasi", country: 'Janubiy Koreya', city: 'Seul' },
+  { org: "Hannover fortepiano akademiyasi", country: 'Germaniya', city: 'Gannover' },
+  { org: "Daulin sanʼat kolleji", country: 'Xitoy', city: 'Daulin' },
+  { org: "Kashgar universiteti", country: 'Xitoy', city: 'Kashgar' },
+  { org: "Ozarbayjon davlat madaniyat va sanʼat universiteti", country: 'Ozarbayjon', city: 'Baku' },
+  { org: "P. I. Chaykovskiy nomidagi Moskva davlat konservatoriyasi", country: 'Rossiya', city: 'Moskva' },
+  { org: "Shanxay musiqa konservatoriyasi", country: 'Xitoy', city: 'Shanxay' },
+  { org: "Uzeyir Hojibekov nomidagi Baku musiqa akademiyasi", country: 'Ozarbayjon', city: 'Baku' },
+  { org: "Ozarbayjon milliy konservatoriyasi", country: 'Ozarbayjon', city: 'Baku' },
+  { org: "San Pietro a Majella konservatoriyasi", country: 'Italiya', city: 'Neapol' },
+  { org: "Ardaxan universiteti", country: 'Turkiya', city: 'Ardaxan' },
+  { org: "N. A. Rimskiy-Korsakov nomidagi Sankt-Peterburg davlat konservatoriyasi", country: 'Rossiya', city: 'Sankt-Peterburg' },
+  { org: "P. Chaykovskiy nomidagi Ukraina milliy musiqa akademiyasi", country: 'Ukraina', city: 'Kiyev' },
+  { org: "Gnesinlar nomidagi Rossiya musiqa akademiyasi", country: 'Rossiya', city: 'Moskva' },
+  { org: "T. Sattorov nomidagi Tojikiston milliy konservatoriyasi", country: 'Tojikiston', city: 'Dushanbe' },
+  { org: "Chung-Ang universiteti", country: 'Janubiy Koreya', city: 'Seul' },
+  { org: "Verdi nomidagi Milan konservatoriyasi", country: 'Italiya', city: 'Milan' },
+  { org: "Osh davlat pedagogika universiteti", country: "Qirgʻiziston", city: 'Osh' },
+  { org: "Pavlo Chubinskiy nomidagi Kiyev sanʼat akademiyasi", country: 'Ukraina', city: 'Kiyev' },
+  { org: "Chexiya musiqa akademiyasi", country: 'Chexiya', city: 'Praga' },
+  { org: "Qoʻrmangʻazi nomidagi Qozogʻiston milliy konservatoriyasi", country: "Qozogʻiston", city: 'Almati' },
+  { org: "Belorussiya davlat musiqa akademiyasi", country: 'Belarus', city: 'Minsk' },
+  { org: "M. Glinka nomidagi Nijniy Novgorod davlat konservatoriyasi", country: 'Rossiya', city: 'Nijniy Novgorod' },
+  { org: "N. Jiganov nomidagi Qozon davlat konservatoriyasi", country: 'Rossiya', city: 'Qozon' },
+  { org: "Uxan musiqa konservatoriyasi", country: 'Xitoy', city: 'Uxan' },
+  { org: "S. Ayniy nomidagi Tojik davlat akademik opera va balet teatri", country: 'Tojikiston', city: 'Dushanbe' },
+  { org: "Casella musiqa konservatoriyasi", country: 'Italiya', city: '' },
+  { org: "Rossiya sanʼat tarixi instituti", country: 'Rossiya', city: 'Sankt-Peterburg' },
+  { org: "PETROF kompaniyasi", country: 'Chexiya', city: 'Praga' },
+  { org: "M. I. Glinka nomidagi Novosibirsk davlat konservatoriyasi", country: 'Rossiya', city: 'Novosibirsk' },
+  { org: "Atatürk universiteti", country: 'Turkiya', city: 'Erzurum' },
+  { org: "Daegu katolik universiteti", country: 'Janubiy Koreya', city: 'Gyongson' },
+  { org: "Bryussel qirolicha konservatoriyasi", country: 'Belgiya', city: 'Bryussel' },
+  { org: "Kommunikatsiyalar rivojlanish ilmiy-tadqiqot instituti", country: 'Rossiya', city: 'Moskva' },
+  { org: "Rossiya sanʼatshunoslik instituti", country: 'Rossiya', city: 'Moskva' },
+  { org: "Ajou universitetining Toshkentdagi filiali", country: 'Janubiy Koreya', city: '' },
+  { org: "Fujayra tasviriy sanʼatlar akademiyasi", country: 'BAA', city: 'Fujayra' },
+  { org: "Three Gorges universiteti", country: 'Xitoy', city: 'Yichan' },
+  { org: "International School of Musicians", country: 'Buyuk Britaniya', city: 'London' },
+  { org: "A. Glazunov nomidagi Petrozavodsk davlat konservatoriyasi", country: 'Rossiya', city: 'Petrozavodsk' },
+  { org: "M. Ippolitov-Ivanov nomidagi musiqa-pedagogika instituti", country: 'Rossiya', city: 'Moskva' },
+  { org: "T. Jurgenov nomidagi Qozoq milliy sanʼat akademiyasi", country: "Qozogʻiston", city: 'Astana' },
+  { org: "Kunmin kasbiy sanʼat kolleji", country: 'Xitoy', city: 'Kunmin' },
+  { org: "Bratislava ijrochilik sanʼati akademiyasi", country: 'Slovakiya', city: 'Bratislava' },
+  { org: "Oqsaroy universiteti", country: 'Turkiya', city: 'Oqsaroy' },
+].map((m) => ({ ...m, flag: FLAGS[m.country] || '🌐' }));
+
+const COUNTRY_COUNT = new Set(MEMORANDUMS.map((m) => m.country)).size;
 
 export default function XalqaroMemorandumlar() {
   return (
@@ -37,10 +81,10 @@ export default function XalqaroMemorandumlar() {
 
       <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {[
-          { num: '15', label: 'Faol memorandum' },
-          { num: '40+', label: 'Davlat' },
-          { num: '2016', label: 'Birinchi memorandum' },
-          { num: '2023', label: "Soʻnggi imzo" },
+          { num: String(MEMORANDUMS.length), label: 'Memorandum' },
+          { num: String(COUNTRY_COUNT), label: 'Davlat' },
+          { num: '5', label: 'Qitʼa' },
+          { num: 'MOU', label: 'Hamkorlik shakli' },
         ].map((s, i) => (
           <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{s.num}</div>
@@ -64,8 +108,8 @@ export default function XalqaroMemorandumlar() {
           </div>
 
           <div className="doc-list" style={{ marginBottom: '60px' }}>
-            {MEMORANDUMS.map((m) => (
-              <div key={m.org + m.year} className="doc-item">
+            {MEMORANDUMS.map((m, idx) => (
+              <div key={m.org} className="doc-item">
                 <div className="doc-info">
                   <div className="doc-icon" style={{ background: 'var(--light-50)', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, flexShrink: 0 }}>
                     {m.flag}
@@ -73,24 +117,13 @@ export default function XalqaroMemorandumlar() {
                   <div>
                     <div className="doc-name">{m.org}</div>
                     <div className="doc-meta">
-                      {m.country} &nbsp;·&nbsp; {m.type} &nbsp;·&nbsp; {m.year}-yil
-                      <span style={{
-                        marginLeft: 10, fontSize: '0.6rem', fontWeight: 700,
-                        letterSpacing: '1.5px', textTransform: 'uppercase',
-                        padding: '2px 8px', fontFamily: 'var(--font-sans)',
-                        background: m.status === 'Faol' ? '#dcfce7' : '#fef9c3',
-                        color: m.status === 'Faol' ? '#15803d' : '#854d0e',
-                      }}>{m.status}</span>
+                      {m.country}{m.city ? `, ${m.city}` : ''}
                     </div>
                   </div>
                 </div>
-                <button
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '8px 16px', border: '1px solid var(--light-border)', background: 'none', cursor: 'pointer', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--navy)', fontFamily: 'var(--font-sans)', transition: '0.2s' }}
-                  onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.color = 'var(--gold-dark)'; }}
-                  onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--light-border)'; e.currentTarget.style.color = 'var(--navy)'; }}
-                >
-                  <FileText size={13} strokeWidth={2} /> BATAFSIL
-                </button>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--gold-dark)', fontWeight: 400, flexShrink: 0, paddingLeft: '12px' }}>
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
               </div>
             ))}
           </div>

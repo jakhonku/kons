@@ -29,12 +29,16 @@ const OPEN_EXACT = new Set([
   '/musiqali-teatr-studiyasi', // Ijodiy faoliyat — Musiqali teatr studiyasi
   '/jonli-efir',           // Ijodiy faoliyat — Jonli efir
   '/registrator',          // Talabalar — Registrator ofisi (Telegram bot bilan toʻldirilgan)
+  '/kasbiy-imtihonlar',    // Qabul — Kasbiy va ijodiy imtihonlar (qabul dasturlari PDF bilan toʻldirilgan)
+  '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
+  '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)
 ]);
 
 // Prefiks boʻyicha ochiq yoʻllar (dinamik sahifalar uchun)
 const OPEN_PREFIX = [
   '/yangiliklar/',         // Yangilik batafsil sahifasi
   '/taqvim/',              // Tadbir batafsil sahifasi
+  '/jamoat-tashkilotlari/', // Jamoat tashkilotlari — batafsil sahifalar (rahbar maʼlumoti bilan)
 ];
 
 export function isPathOpen(pathname) {
