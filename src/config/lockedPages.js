@@ -29,6 +29,7 @@ const OPEN_EXACT = new Set([
   '/musiqali-teatr-studiyasi', // Ijodiy faoliyat — Musiqali teatr studiyasi
   '/jonli-efir',           // Ijodiy faoliyat — Jonli efir
   '/registrator',          // Talabalar — Registrator ofisi (Telegram bot bilan toʻldirilgan)
+  '/oquv-rejalar',         // Talabalar — Ishchi oʻquv rejalar (2025-2026 PDF bilan toʻldirilgan)
   '/kasbiy-imtihonlar',    // Qabul — Kasbiy va ijodiy imtihonlar (qabul dasturlari PDF bilan toʻldirilgan)
   '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
   '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)

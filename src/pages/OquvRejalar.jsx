@@ -1,4 +1,7 @@
+import { useState } from 'react';
+import { FileText, Eye, Download } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import { OQUV_REJALAR } from '../data/oquvRejalar';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
@@ -6,96 +9,113 @@ const BREADCRUMBS = [
   { label: "Oʻquv rejalar" },
 ];
 
-const PLANS = [
-  {
-    level: 'Bakalavr',
-    duration: '4 yil',
-    programs: [
-      { name: 'Fortepiano', code: '5111300', hours: 240, kafedra: "Fortepiano kafedrasi" },
-      { name: 'Akademik xonandalik', code: '5111100', hours: 240, kafedra: "Xonandalik kafedrasi" },
-      { name: "Cholgʻu ijrochiligi (skripka)", code: '5111200', hours: 240, kafedra: "Torli-kamon kafedrasi" },
-      { name: "Cholgʻu ijrochiligi (viолончel)", code: '5111201', hours: 240, kafedra: "Torli-kamon kafedrasi" },
-      { name: 'Kompozitsiya', code: '5111400', hours: 240, kafedra: "Kompozitsiya kafedrasi" },
-      { name: "Xalq cholgʻulari (dutor)", code: '5111500', hours: 240, kafedra: "Xalq cholgʻulari kafedrasi" },
-    ],
-  },
-  {
-    level: 'Magistratura',
-    duration: '2 yil',
-    programs: [
-      { name: 'Musiqa sanʼati (ijrochilik)', code: '5A111100', hours: 120, kafedra: 'Ilmiy-ijodiy kafedrasi' },
-      { name: 'Musiqa nazariyasi va pedagogikasi', code: '5A111200', hours: 120, kafedra: 'Musiqa nazariyasi kafedrasi' },
-      { name: 'Kompozitsiya', code: '5A111300', hours: 120, kafedra: 'Kompozitsiya kafedrasi' },
-    ],
-  },
-];
+// "60210100 - Texnogen san'at (...)" → { code, title }
+function splitName(name) {
+  const m = name.match(/^([0-9]+)\s*-\s*(.+)$/);
+  if (m) return { code: m[1], title: m[2] };
+  return { code: '', title: name };
+}
+
+function LevelBlock({ level, duration, courses }) {
+  const [active, setActive] = useState(courses[0]?.kurs);
+  const current = courses.find((c) => c.kurs === active) || courses[0];
+
+  return (
+    <div style={{ marginBottom: '64px' }}>
+      <div className="section-divider" style={{ marginTop: 0 }}>
+        <h2>{level} — {duration}</h2>
+      </div>
+
+      {/* Kurs tablari */}
+      <div className="oquv-tabs">
+        {courses.map((c) => (
+          <button
+            key={c.kurs}
+            type="button"
+            className={`oquv-tab${c.kurs === active ? ' oquv-tab-active' : ''}`}
+            onClick={() => setActive(c.kurs)}
+          >
+            {c.kurs}-kurs
+            <span className="oquv-tab-count">{c.items.length}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Tanlangan kurs roʻyxati */}
+      <div className="doc-list" style={{ paddingTop: '24px', marginBottom: 0 }}>
+        {current.items.map((it, i) => {
+          const { code, title } = splitName(it.name);
+          return (
+            <div key={i} className="doc-item">
+              <div className="doc-info">
+                <div className="doc-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, flexShrink: 0, color: 'var(--gold-dark)' }}>
+                  <FileText size={20} strokeWidth={1.6} />
+                </div>
+                <div style={{ minWidth: 0 }}>
+                  <div className="doc-name">{title}</div>
+                  <div className="doc-meta">
+                    {code ? `Yoʻnalish kodi: ${code} · ` : ''}{level} · {current.kurs}-kurs · 2025–2026
+                  </div>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+                <a
+                  href={it.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="oquv-btn oquv-btn-view"
+                >
+                  <Eye size={13} strokeWidth={2} /> Koʻrish
+                </a>
+                <a
+                  href={it.pdf}
+                  download
+                  aria-label={`${title} — yuklab olish`}
+                  className="oquv-btn oquv-btn-dl"
+                >
+                  <Download size={13} strokeWidth={2} />
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export default function OquvRejalar() {
   return (
     <main className="content-wrapper">
       <PageHero
         tag="Talabalar uchun"
-        title="Oʻquv"
-        emphasis="Rejalar"
+        title="Ishchi oʻquv"
+        emphasis="rejalar"
         breadcrumbs={BREADCRUMBS}
       />
 
       <section className="main-content">
         <div className="container">
 
-          {PLANS.map((section) => (
-            <div key={section.level}>
-              <div className="section-divider" style={{ marginTop: section.level === 'Bakalavr' ? 0 : undefined }}>
-                <h2>{section.level} — {section.duration}</h2>
-              </div>
+          <article className="article-body" style={{ marginBottom: '30px' }}>
+            <p className="lead">
+              2025–2026 oʻquv yili uchun bakalavriat va magistratura taʼlim yoʻnalishlari boʻyicha
+              ishchi oʻquv rejalari. Kurs va yoʻnalishni tanlab, rejani PDF formatida koʻrishingiz yoki
+              yuklab olishingiz mumkin.
+            </p>
+          </article>
 
-              <div style={{ overflowX: 'auto', marginBottom: '50px' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--white)', border: '1px solid var(--light-border)', fontSize: '0.85rem' }}>
-                  <thead>
-                    <tr style={{ background: 'var(--navy)' }}>
-                      {["Yoʻnalish nomi", "Kod", "Jami soat", "Kafedra"].map((h) => (
-                        <th key={h} style={{ padding: '14px 20px', color: 'var(--gold-light)', fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '1.5px', textTransform: 'uppercase', textAlign: 'left', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-                          {h}
-                        </th>
-                      ))}
-                      <th style={{ padding: '14px 20px', color: 'var(--gold-light)', fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: '0.7rem', letterSpacing: '1.5px', textTransform: 'uppercase', textAlign: 'center' }}>
-                        Fayl
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {section.programs.map((p, i) => (
-                      <tr key={p.code} style={{ borderBottom: '1px solid var(--light-border)', background: i % 2 === 0 ? 'var(--white)' : 'var(--light-50)' }}>
-                        <td style={{ padding: '14px 20px', color: 'var(--navy)', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{p.name}</td>
-                        <td style={{ padding: '14px 20px', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontSize: '0.78rem' }}>{p.code}</td>
-                        <td style={{ padding: '14px 20px', color: '#555', fontFamily: 'var(--font-sans)' }}>{p.hours} s.</td>
-                        <td style={{ padding: '14px 20px', color: '#888', fontFamily: 'var(--font-sans)', fontSize: '0.8rem' }}>{p.kafedra}</td>
-                        <td style={{ padding: '14px 20px', textAlign: 'center' }}>
-                          <button style={{
-                            padding: '5px 14px', background: 'transparent',
-                            border: '1px solid var(--gold-dark)', color: 'var(--gold-dark)',
-                            fontSize: '0.7rem', fontFamily: 'var(--font-sans)', cursor: 'pointer',
-                            fontWeight: 600, letterSpacing: '0.5px',
-                          }}>
-                            PDF ↓
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          {OQUV_REJALAR.map((lvl) => (
+            <LevelBlock key={lvl.level} {...lvl} />
           ))}
 
-          {/* Note */}
           <div style={{
             background: 'var(--cream)', border: '1px solid var(--light-border)',
             borderLeft: '4px solid var(--gold)', padding: '20px 28px', marginBottom: '60px',
           }}>
             <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)', margin: 0 }}>
-              Oʻquv rejalari har yili <strong style={{ color: 'var(--navy)' }}>Oʻzbekiston Respublikasi Oliy taʼlim vazirligi</strong> tomonidan
-              tasdiqlangan standartlar asosida yangilanadi. Batafsil maʼlumot uchun Taʼlim ishlari boʻyicha prorektorat bilan bogʻlaning.
+              Oʻquv rejalari har yili <strong style={{ color: 'var(--navy)' }}>Oʻzbekiston Respublikasi Oliy taʼlim, fan va innovatsiyalar vazirligi</strong> tomonidan
+              tasdiqlangan davlat taʼlim standartlari asosida yangilanadi. Batafsil maʼlumot uchun Taʼlim ishlari boʻyicha prorektorat bilan bogʻlaning.
             </p>
           </div>
 
