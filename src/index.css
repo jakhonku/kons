@@ -10392,12 +10392,14 @@ iframe {
 
 .hero-quote-text {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: 2.2rem;
   font-style: italic;
-  color: #ffffff;
+  color: #ffffff !important;
+  opacity: 1 !important;
   line-height: 1.55;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .hero-quote-author {
@@ -10416,7 +10418,7 @@ iframe {
   }
 
   .hero-quote-text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .hero-quote-author {
@@ -10430,7 +10432,8 @@ iframe {
 }
 
 [data-theme="light"] .hero-quote-text {
-  color: #1a1a38;
+  color: #1a1a38 !important;
+  text-shadow: none;
 }
 
 [data-theme="light"] .hero-quote-author {
