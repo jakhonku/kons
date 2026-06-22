@@ -90,7 +90,8 @@ export default {
 
       talimYonalishlari: 'Направления образования',
       talimDasturlari: 'Образовательные программы',
-      qabulTalablari: 'Требования к поступающим',
+      qabulTalablari: 'Программы приёма и критерии оценки',
+      callCenter: '«Call-центр»',
       qabulKvotasi: 'Квота приёма',
       kasbiyImtihonlar: 'Профессиональные и творческие экзамены',
       imtihonNatijalari: 'Результаты экзаменов',

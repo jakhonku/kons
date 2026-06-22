@@ -84,6 +84,7 @@ import RektorBio from './pages/RektorBio';
 import JonliEfir from './pages/JonliEfir';
 import TalimYonalishlari from './pages/TalimYonalishlari';
 import QabulTalablari from './pages/QabulTalablari';
+import CallCenter from './pages/CallCenter';
 import QabulKvotasi from './pages/QabulKvotasi';
 import ImtihonNatijalari from './pages/ImtihonNatijalari';
 import XorijiyTalabalar from './pages/XorijiyTalabalar';
@@ -185,6 +186,7 @@ export default function App() {
           <Route path="talim-yonalishlari" element={<TalimYonalishlari />} />
           <Route path="talim-dasturlari" element={<Navigate to="/sillabuslar" replace />} />
           <Route path="qabul-talablari" element={<QabulTalablari />} />
+          <Route path="call-center" element={<CallCenter />} />
           <Route path="qabul-kvotasi" element={<QabulKvotasi />} />
           <Route path="kasbiy-imtihonlar" element={<Navigate to="/qabul-talablari" replace />} />
           <Route path="imtihon-natijalari" element={<ImtihonNatijalari />} />

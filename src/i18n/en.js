@@ -90,7 +90,8 @@ export default {
 
       talimYonalishlari: 'Educational Directions',
       talimDasturlari: 'Educational Programs',
-      qabulTalablari: 'Admission Requirements',
+      qabulTalablari: 'Admission programmes & assessment criteria',
+      callCenter: '«Call Center»',
       qabulKvotasi: 'Admission Quota',
       kasbiyImtihonlar: 'Professional & Creative Exams',
       imtihonNatijalari: 'Exam Results',

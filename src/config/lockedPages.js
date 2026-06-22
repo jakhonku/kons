@@ -18,7 +18,8 @@ const OPEN_EXACT = new Set([
   '/rahbariyat/rektor',    // Rektor biografiyasi
   '/yangiliklar',          // Yangiliklar
   '/taqvim',               // Afisha — tadbirlar taqvimi
-  '/qabul-talablari',      // Qabul — qabul talablari (Call-center)
+  '/qabul-talablari',      // Qabul — qabul dasturlari va baholash mezonlari (PDF)
+  '/call-center',          // Qabul — «Call-center» (aloqa maʼlumotlari)
   '/qabul-kvotasi',        // Qabul — qabul kvotasi
   '/online-murojaat',      // Interaktiv — online murojaat (forma ishlaydi)
   '/nukus-filiali',        // Tuzilma — Nukus filiali (rasmiy maʼlumot bilan toʻldirilgan)

@@ -177,6 +177,7 @@ export function buildNavMenu(t) {
           heading: t('nav.headings.admissionProcess'),
           links: [
             { label: t('nav.items.qabulTalablari'),    to: '/qabul-talablari' },
+            { label: t('nav.items.callCenter'),        to: '/call-center' },
             { label: t('nav.items.qabulKvotasi'),      to: '/qabul-kvotasi' },
             { label: t('nav.items.imtihonNatijalari'), to: '/imtihon-natijalari' },
           ],
