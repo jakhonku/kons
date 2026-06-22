@@ -61,7 +61,7 @@ export default {
 
       darsJadvali: 'Class Schedules',
       oquvRejalar: 'Curricula',
-      sillabuslar: 'Syllabi',
+      sillabuslar: 'Subject study programmes',
       kelajakkaQadam: 'Step Into the Future',
       togaraklar: 'Clubs',
       bitiruvchilarBandligi: 'Graduate Employment',

@@ -81,7 +81,7 @@ export const SEARCH_PAGES = [
   },
   {
     title: 'Online kutubxona',
-    path: '/kutubxona',
+    path: 'http://192.168.0.72',
     desc: "Nota bazasi, kitoblar, audio va video materiallar",
     keywords: 'kutubxona nota kitob audio video',
   },

@@ -61,7 +61,7 @@ export default {
 
       darsJadvali: 'Dars jadvallari',
       oquvRejalar: 'Oʻquv rejalar',
-      sillabuslar: 'Oʻquv dasturlari (Sillabuslar)',
+      sillabuslar: 'Fanning oʻquv dasturlari',
       kelajakkaQadam: 'Kelajakka qadam',
       togaraklar: 'Toʻgaraklar',
       bitiruvchilarBandligi: 'Bitiruvchilar bandligi (career)',

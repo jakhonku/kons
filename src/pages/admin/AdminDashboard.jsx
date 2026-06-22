@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Newspaper, Image as ImageIcon, Plus, ArrowRight, Calendar, Radio } from 'lucide-react';
-import { useAdminNews, useAdminPosters, useAdminTicker } from '../../hooks/useAdminStorage';
+import { Newspaper, Image as ImageIcon, Images, Video as VideoIcon, Plus, ArrowRight, Calendar, Radio } from 'lucide-react';
+import { useAdminNews, useAdminPosters, useAdminTicker, useAdminGallery, useAdminVideos } from '../../hooks/useAdminStorage';
 
 function formatDate(value) {
   if (!value) return '—';
@@ -18,6 +18,8 @@ export default function AdminDashboard() {
   const { items: news } = useAdminNews();
   const { items: posters } = useAdminPosters();
   const { items: ticker } = useAdminTicker();
+  const { items: albums } = useAdminGallery();
+  const { items: videos } = useAdminVideos();
 
   const featuredCount = news.filter((n) => n.featured).length;
   const upcoming = posters
@@ -58,6 +60,16 @@ export default function AdminDashboard() {
           <div className="admin-stat-label">Lenta yangiliklari</div>
         </div>
         <div className="admin-stat">
+          <div className="admin-stat-icon"><Images size={20} strokeWidth={1.6} /></div>
+          <div className="admin-stat-num">{albums.length}</div>
+          <div className="admin-stat-label">Galereya albomlari</div>
+        </div>
+        <div className="admin-stat">
+          <div className="admin-stat-icon"><VideoIcon size={20} strokeWidth={1.6} /></div>
+          <div className="admin-stat-num">{videos.length}</div>
+          <div className="admin-stat-label">Videolar</div>
+        </div>
+        <div className="admin-stat">
           <div className="admin-stat-icon">★</div>
           <div className="admin-stat-num">{featuredCount}</div>
           <div className="admin-stat-label">Asosiy yangiliklar</div>
@@ -76,6 +88,20 @@ export default function AdminDashboard() {
           <div className="admin-quick-card-icon"><ImageIcon size={20} strokeWidth={1.7} /></div>
           <h3>Afishalar boshqaruvi</h3>
           <p>Konsert va tadbir afishalarini joylash</p>
+          <span className="admin-quick-card-cta">Ochish <ArrowRight size={14} /></span>
+        </Link>
+
+        <Link to="/admin/gallery" className="admin-quick-card">
+          <div className="admin-quick-card-icon"><Images size={20} strokeWidth={1.7} /></div>
+          <h3>Foto galereya</h3>
+          <p>Galereya albomlarini yaratish va rasm yuklash</p>
+          <span className="admin-quick-card-cta">Ochish <ArrowRight size={14} /></span>
+        </Link>
+
+        <Link to="/admin/videos" className="admin-quick-card">
+          <div className="admin-quick-card-icon"><VideoIcon size={20} strokeWidth={1.7} /></div>
+          <h3>Video galereya</h3>
+          <p>Videolarni joylash (YouTube yoki mp4)</p>
           <span className="admin-quick-card-cta">Ochish <ArrowRight size={14} /></span>
         </Link>
 

@@ -61,7 +61,7 @@ export default {
 
       darsJadvali: 'Расписание занятий',
       oquvRejalar: 'Учебные планы',
-      sillabuslar: 'Учебные программы (Силлабусы)',
+      sillabuslar: 'Учебные программы дисциплин',
       kelajakkaQadam: 'Шаг в будущее',
       togaraklar: 'Кружки',
       bitiruvchilarBandligi: 'Трудоустройство выпускников',

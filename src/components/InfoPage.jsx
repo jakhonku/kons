@@ -85,7 +85,20 @@ export default function InfoPage({
                       {c.tag && <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>{c.tag}</div>}
                       <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.25rem', fontWeight: 500, marginBottom: '12px', lineHeight: 1.3 }}>{c.title}</h3>
                       {c.desc && <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)' }}>{c.desc}</p>}
-                      {c.meta && <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>{c.meta}</div>}
+                      {c.meta && (
+                        <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
+                          {c.meta.startsWith('http') || c.meta.startsWith('/') ? (
+                            <a 
+                              href={c.meta} 
+                              target={c.meta.startsWith('http') ? "_blank" : undefined}
+                              rel={c.meta.startsWith('http') ? "noopener noreferrer" : undefined}
+                              style={{ color: 'inherit', textDecoration: 'none' }}
+                            >
+                              {c.meta}
+                            </a>
+                          ) : c.meta}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

@@ -112,4 +112,12 @@ export function useAdminTelegram() {
   return useTable('telegram_posts', TICKER_ORDER);
 }
 
+export function useAdminGallery() {
+  return useTable('gallery_albums');
+}
+
+export function useAdminVideos() {
+  return useTable('videos');
+}
+
 export { uploadImage };

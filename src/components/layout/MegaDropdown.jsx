@@ -33,14 +33,27 @@ export default function MegaDropdown({ item, onClose, onMouseEnter, onMouseLeave
                       ease: 'easeOut',
                     }}
                   >
-                    <Link
-                      to={link.to}
-                      className="mega-link"
-                      onClick={onClose}
-                    >
-                      <span className="mega-link-arrow" aria-hidden="true">→</span>
-                      {link.label}
-                    </Link>
+                    {link.to.startsWith('http') ? (
+                      <a
+                        href={link.to}
+                        className="mega-link"
+                        onClick={onClose}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="mega-link-arrow" aria-hidden="true">→</span>
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.to}
+                        className="mega-link"
+                        onClick={onClose}
+                      >
+                        <span className="mega-link-arrow" aria-hidden="true">→</span>
+                        {link.label}
+                      </Link>
+                    )}
                   </motion.li>
                 ))}
               </ul>

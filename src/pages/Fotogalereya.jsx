@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ArrowLeft, Images } from 'lucide-react';
 import PageHero from '../components/PageHero';
-import { useAdminNews } from '../hooks/useAdminStorage';
+import { useAdminGallery } from '../hooks/useAdminStorage';
 import { useTranslation } from '../contexts/LanguageContext';
 
 const BREADCRUMBS = [
@@ -10,66 +10,58 @@ const BREADCRUMBS = [
   { label: 'Fotogalereya' },
 ];
 
-// Konservatoriya binosi va konsert zalining doimiy rasmlari (admin rasmlaridan oldin koʻrsatiladi)
-const STATIC_PHOTOS = [
-  { id: 'static-bino', img: '/3M7A4170.JPG', title: 'Oʻzbekiston davlat konservatoriyasi binosi', cat: 'Bino', year: '' },
-  { id: 'static-zal-1', img: '/image.png', title: 'Katta konsert zali — simfonik orkestr', cat: 'Konsert zali', year: '' },
-  { id: 'static-zal-2', img: '/images/fotohisobot/img3.jpg', title: 'Konsert zalida simfonik orkestr chiqishi', cat: 'Konsert zali', year: '' },
-  { id: 'static-zal-3', img: '/images/fotohisobot/IMG_0024%20(4).JPG', title: 'Katta zalda kamera musiqasi kechasi', cat: 'Konsert zali', year: '' },
-  { id: 'static-zal-4', img: '/images/fotohisobot/IMG_0358%20(2).JPG', title: 'Milliy choʻlgʻu ansambli zal sahnasida', cat: 'Konsert zali', year: '' },
-  { id: 'static-tadbir-1', img: '/images/fotohisobot/3M7A1143%20(2).JPG', title: '«Navroʻz sadolari» xalqaro festivali', cat: 'Tadbirlar', year: '' },
-  { id: 'static-tadbir-2', img: '/images/fotohisobot/img2.jpg', title: '«Navroʻz sadolari» — Gran-pri sovrindorlari', cat: 'Tadbirlar', year: '' },
-  { id: 'static-tadbir-3', img: '/images/fotohisobot/3M7A1651%20(2).JPG', title: '«Navroʻz sadolari» festivali ochilish marosimi', cat: 'Tadbirlar', year: '' },
-];
+const UI = {
+  uz: {
+    loading: 'Albomlar yuklanmoqda…',
+    emptyTitle: 'Hozircha albom yoʻq',
+    emptyText: 'Admin panel orqali galereyaga yangi albomlar qoʻshiladi.',
+    back: 'Albomlar',
+    photos: (n) => `${n} ta rasm`,
+    close: 'YOPISH',
+  },
+  ru: {
+    loading: 'Загрузка альбомов…',
+    emptyTitle: 'Пока нет альбомов',
+    emptyText: 'Новые альбомы добавляются в галерею через админ-панель.',
+    back: 'Альбомы',
+    photos: (n) => `${n} фото`,
+    close: 'ЗАКРЫТЬ',
+  },
+  en: {
+    loading: 'Loading albums…',
+    emptyTitle: 'No albums yet',
+    emptyText: 'New albums are added to the gallery via the admin panel.',
+    back: 'Albums',
+    photos: (n) => `${n} photos`,
+    close: 'CLOSE',
+  },
+};
 
 export default function Fotogalereya() {
   const { lang } = useTranslation();
-  const { items: adminNews, loading } = useAdminNews();
-  const [active, setActive] = useState('Barchasi');
+  const ui = UI[lang] || UI.uz;
+  const { items: dbAlbums, loading } = useAdminGallery();
+
+  const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null);
 
-  // Barcha yangiliklardagi rasmlardan galereya yigʻiladi (real, admin yuklagan)
-  const photos = useMemo(() => {
-    const isRu = lang === 'ru';
-    const isEn = lang === 'en';
-    const out = [];
-    adminNews.forEach((n) => {
-      const title = (isRu && n.title_ru) ? n.title_ru : (isEn && n.title_en) ? n.title_en : n.title;
+  const albums = useMemo(() => {
+    const pick = (a) => (lang === 'ru' && a.title_ru) ? a.title_ru : (lang === 'en' && a.title_en) ? a.title_en : a.title;
+    return (dbAlbums || []).map((a) => ({
+      id: String(a.id),
+      title: pick(a),
+      category: a.category || 'Umumiy',
+      date: (a.album_date || a.created_at || '').toString().slice(0, 10),
+      images: (Array.isArray(a.images) ? a.images.filter(Boolean) : []),
+      cover: a.cover || (Array.isArray(a.images) ? a.images[0] : ''),
+    })).filter((a) => a.images.length > 0);
+  }, [dbAlbums, lang]);
 
-      let imgs = Array.isArray(n.images) ? n.images.filter(Boolean) : [];
-      if (isRu && Array.isArray(n.images_ru) && n.images_ru.length > 0) imgs = n.images_ru.filter(Boolean);
-      else if (isEn && Array.isArray(n.images_en) && n.images_en.length > 0) imgs = n.images_en.filter(Boolean);
-      if (imgs.length === 0 && n.image) imgs = [n.image];
-
-      const year = (n.date || n.created_at || '').toString().slice(0, 4);
-      imgs.forEach((img, idx) => {
-        out.push({
-          id: `${n.id}-${idx}`,
-          img,
-          title,
-          cat: n.category || 'Yangiliklar',
-          year,
-        });
-      });
-    });
-    return [...STATIC_PHOTOS, ...out];
-  }, [adminNews, lang]);
-
-  const categories = useMemo(
-    () => ['Barchasi', ...Array.from(new Set(photos.map((p) => p.cat))).filter(Boolean)],
-    [photos]
-  );
-
-  const filtered = active === 'Barchasi' ? photos : photos.filter((p) => p.cat === active);
+  const openAlbum = albums.find((a) => a.id === openId) || null;
 
   return (
     <main className="content-wrapper">
-      <PageHero
-        tag="Yangiliklar"
-        title="Foto"
-        emphasis="Galereya"
-        breadcrumbs={BREADCRUMBS}
-      />
+      <PageHero tag="Yangiliklar" title="Foto" emphasis="Galereya" breadcrumbs={BREADCRUMBS} />
 
       <section className="main-content">
         <div className="container">
@@ -77,55 +69,83 @@ export default function Fotogalereya() {
           {loading ? (
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', padding: '80px 0', color: '#888' }}>
               <Loader2 size={20} className="admin-spin" />
-              <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>Rasmlar yuklanmoqda…</span>
+              <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>{ui.loading}</span>
             </div>
-          ) : photos.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '80px 20px', color: '#888' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--navy)', marginBottom: '10px' }}>
-                Hozircha rasmlar yoʻq
-              </div>
-              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>
-                Yangiliklar qoʻshilgan sari galereya avtomatik toʻldiriladi.
-              </p>
-            </div>
-          ) : (
+          ) : openAlbum ? (
+            /* ---------- Tanlangan albom rasmlari ---------- */
             <>
-              {/* Kategoriya */}
-              {categories.length > 1 && (
-                <div className="tag-filters" style={{ borderBottom: '1px solid var(--light-border)', paddingBottom: '20px' }}>
-                  {categories.map((cat) => (
-                    <button key={cat} className={`tag-btn${active === cat ? ' active' : ''}`} onClick={() => setActive(cat)}>
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <button
+                type="button"
+                onClick={() => setOpenId(null)}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  background: 'none', border: '1px solid var(--light-border)',
+                  padding: '8px 16px', cursor: 'pointer', color: 'var(--navy)',
+                  fontFamily: 'var(--font-sans)', fontSize: '0.72rem', fontWeight: 700,
+                  letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px',
+                }}
+              >
+                <ArrowLeft size={14} strokeWidth={2} /> {ui.back}
+              </button>
 
-              {/* Galereya grid */}
-              <div className="gallery-grid" style={{ paddingTop: '30px', gap: '8px' }}>
-                {filtered.map((photo) => (
-                  <div
-                    key={photo.id}
-                    className="gallery-item"
-                    onClick={() => setLightbox(photo)}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <img src={photo.img} alt={photo.title} loading="lazy" />
-                    <div className="overlay" style={{ flexDirection: 'column', gap: '8px' }}>
+              <div className="section-divider" style={{ marginTop: 0 }}>
+                <h2>{openAlbum.title}</h2>
+              </div>
+              <div style={{ fontSize: '0.72rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', margin: '-14px 0 24px' }}>
+                {openAlbum.category}{openAlbum.date ? ` · ${openAlbum.date}` : ''} · {ui.photos(openAlbum.images.length)}
+              </div>
+
+              <div className="gallery-grid" style={{ gap: '8px' }}>
+                {openAlbum.images.map((img, i) => (
+                  <div key={i} className="gallery-item" onClick={() => setLightbox({ img, title: openAlbum.title })} style={{ cursor: 'pointer' }}>
+                    <img src={img} alt={`${openAlbum.title} #${i + 1}`} loading="lazy" />
+                    <div className="overlay">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                        <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
                       </svg>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--white)', fontFamily: 'var(--font-sans)', letterSpacing: '1px', textAlign: 'center', padding: '0 12px' }}>
-                        {photo.title}
-                      </div>
-                    </div>
-                    <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.55)', color: 'var(--gold)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '1px', padding: '3px 8px', fontFamily: 'var(--font-sans)' }}>
-                      {photo.cat}
                     </div>
                   </div>
                 ))}
               </div>
+            </>
+          ) : (
+            /* ---------- Albomlar roʻyxati ---------- */
+            <>
+              {albums.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '80px 20px', color: '#888' }}>
+                  <Images size={36} strokeWidth={1.3} style={{ color: 'var(--gold-dark)', marginBottom: '12px' }} />
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--navy)', marginBottom: '10px' }}>
+                    {ui.emptyTitle}
+                  </div>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem' }}>{ui.emptyText}</p>
+                </div>
+              ) : (
+                <div className="gallery-grid" style={{ gap: '14px' }}>
+                  {albums.map((a) => (
+                    <div
+                      key={a.id}
+                      className="gallery-item"
+                      onClick={() => setOpenId(a.id)}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <img src={a.cover} alt={a.title} loading="lazy" />
+                      <div className="overlay" style={{ flexDirection: 'column', gap: '8px' }}>
+                        <Images size={26} strokeWidth={1.6} />
+                        <div style={{ fontSize: '0.78rem', color: 'var(--white)', fontFamily: 'var(--font-sans)', letterSpacing: '0.5px', textAlign: 'center', padding: '0 14px', fontWeight: 600 }}>
+                          {a.title}
+                        </div>
+                        <div style={{ fontSize: '0.65rem', color: 'var(--gold)', fontFamily: 'var(--font-sans)', letterSpacing: '1px' }}>
+                          {ui.photos(a.images.length)}
+                        </div>
+                      </div>
+                      <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.55)', color: 'var(--gold)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '1px', padding: '3px 8px', fontFamily: 'var(--font-sans)' }}>
+                        {a.category}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </>
           )}
 
@@ -139,19 +159,14 @@ export default function Fotogalereya() {
           onClick={() => setLightbox(null)}
         >
           <div style={{ maxWidth: '900px', width: '100%' }} onClick={(e) => e.stopPropagation()}>
-            <img src={lightbox.img} alt={lightbox.title} style={{ width: '100%', display: 'block', maxHeight: '70vh', objectFit: 'contain' }} />
+            <img src={lightbox.img} alt={lightbox.title} style={{ width: '100%', display: 'block', maxHeight: '76vh', objectFit: 'contain' }} />
             <div style={{ background: 'var(--navy)', padding: '18px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--white)' }}>{lightbox.title}</div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--gold)', fontFamily: 'var(--font-sans)', marginTop: '4px', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                  {lightbox.cat}{lightbox.year ? ` · ${lightbox.year}` : ''}
-                </div>
-              </div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--white)' }}>{lightbox.title}</div>
               <button
                 onClick={() => setLightbox(null)}
                 style={{ background: 'none', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--white)', padding: '8px 18px', cursor: 'pointer', fontFamily: 'var(--font-sans)', fontSize: '0.7rem', letterSpacing: '2px', textTransform: 'uppercase' }}
               >
-                YOPISH ×
+                {ui.close} ×
               </button>
             </div>
           </div>

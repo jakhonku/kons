@@ -18,7 +18,7 @@ export default function InteraktivXizmatlar() {
           heading: 'Asosiy xizmatlar',
           cards: [
             { tag: '01', title: 'Online murojaat', desc: "Rasmiy taklif, shikoyat va soʻrovlar uchun online tizim. 14 kun ichida javob.", meta: '/online-murojaat' },
-            { tag: '02', title: 'Online kutubxona', desc: "Elektron kitoblar, partituralar, audio-video resurslar.", meta: '/kutubxona' },
+            { tag: '02', title: 'Online kutubxona', desc: "Elektron kitoblar, partituralar, audio-video resurslar.", meta: 'http://192.168.0.72' },
             { tag: '03', title: 'HEMIS-talaba', desc: "Talabalar uchun shaxsiy kabinet — baholar, dars jadvali, hujjatlar.", meta: '/hemis-talaba' },
             { tag: '04', title: "HEMIS-oʻqituvchi", desc: "Oʻqituvchilar uchun elektron jurnal va sillabuslar boshqaruvi.", meta: '/hemis-oquvchi' },
             { tag: '05', title: 'Registrator ofisi', desc: "Hujjatlar (transcript, diplom nusxasi, maʼlumotnomalar) uchun online buyurtma.", meta: '/registrator' },

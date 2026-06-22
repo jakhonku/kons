@@ -46,6 +46,15 @@ export default function SearchPanel({ isOpen, onClose }) {
     setActive(0);
   }, [query]);
 
+  const go = useCallback((path) => {
+    if (path.startsWith('http')) {
+      window.open(path, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(path);
+    }
+    onClose();
+  }, [navigate, onClose]);
+
   /* Escape yopadi */
   useEffect(() => {
     if (!isOpen) return;
@@ -54,18 +63,12 @@ export default function SearchPanel({ isOpen, onClose }) {
       if (e.key === 'ArrowDown') setActive((p) => Math.min(p + 1, results.length - 1));
       if (e.key === 'ArrowUp')   setActive((p) => Math.max(p - 1, 0));
       if (e.key === 'Enter' && results[active]) {
-        navigate(results[active].path);
-        onClose();
+        go(results[active].path);
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [isOpen, results, active, navigate, onClose]);
-
-  const go = useCallback((path) => {
-    navigate(path);
-    onClose();
-  }, [navigate, onClose]);
+  }, [isOpen, results, active, go, onClose]);
 
   if (!isOpen) return null;
 

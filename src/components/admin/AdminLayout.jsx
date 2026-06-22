@@ -1,11 +1,13 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Newspaper, Image as ImageIcon, LogOut, ExternalLink, Radio, Send, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, Newspaper, Image as ImageIcon, Images, Video as VideoIcon, LogOut, ExternalLink, Radio, Send, MessageSquare } from 'lucide-react';
 import { useAdminAuth } from '../../contexts/AdminAuthContext';
 
 const NAV = [
   { to: '/admin/dashboard', label: 'Boshqaruv paneli', icon: LayoutDashboard },
   { to: '/admin/news', label: 'Yangiliklar', icon: Newspaper },
   { to: '/admin/posters', label: 'Afishalar', icon: ImageIcon },
+  { to: '/admin/gallery', label: 'Foto galereya', icon: Images },
+  { to: '/admin/videos', label: 'Video galereya', icon: VideoIcon },
   { to: '/admin/ticker', label: 'Lenta yangiliklari', icon: Radio },
   { to: '/admin/telegram', label: 'Telegram postlar', icon: Send },
   { to: '/admin/messages', label: 'Murojaatlar', icon: MessageSquare },

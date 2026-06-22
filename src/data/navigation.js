@@ -122,7 +122,7 @@ export function buildNavMenu(t) {
           heading: t('nav.headings.onlineServices'),
           links: [
             { label: t('nav.items.onlineMurojaat'),   to: '/online-murojaat' },
-            { label: t('nav.items.onlineKutubxona'),  to: '/kutubxona' },
+            { label: t('nav.items.onlineKutubxona'),  to: 'http://192.168.0.72' },
           ],
         },
         {
@@ -174,17 +174,10 @@ export function buildNavMenu(t) {
       to: '#',
       columns: [
         {
-          heading: t('nav.headings.education'),
-          links: [
-            { label: t('nav.items.talimDasturlari'),   to: '/talim-dasturlari' },
-          ],
-        },
-        {
           heading: t('nav.headings.admissionProcess'),
           links: [
             { label: t('nav.items.qabulTalablari'),    to: '/qabul-talablari' },
             { label: t('nav.items.qabulKvotasi'),      to: '/qabul-kvotasi' },
-            { label: t('nav.items.kasbiyImtihonlar'),  to: '/kasbiy-imtihonlar' },
             { label: t('nav.items.imtihonNatijalari'), to: '/imtihon-natijalari' },
           ],
         },
@@ -212,7 +205,7 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.programs'),
           links: [
-            { label: t('nav.items.studyInUzbekistan'), to: '/study-in-uzbekistan' },
+            { label: t('nav.items.studyInUzbekistan'), to: 'https://studyin-uzbekistan.uz/' },
             { label: t('nav.items.erasmus'),           to: '/erasmus' },
           ],
         },

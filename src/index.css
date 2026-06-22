@@ -3429,7 +3429,8 @@ img {
   justify-content: space-between;
   padding: 22px 28px;
   border-bottom: 1px solid var(--light-border);
-  transition: 0.3s;
+  box-shadow: inset 3px 0 0 transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding-left 0.3s ease;
   gap: 20px;
 }
 
@@ -3438,8 +3439,45 @@ img {
 }
 
 .doc-item:hover {
-  background: var(--light-50);
+  background: var(--cream);
+  box-shadow: inset 3px 0 0 var(--gold);
   padding-left: 34px;
+}
+
+/* PDF/hujjat roʻyxati — hover animatsiyasi (barcha sahifalar) */
+.doc-icon {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.doc-item:hover .doc-icon {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: #08081a !important;
+}
+
+.doc-name {
+  transition: color 0.3s ease;
+}
+
+.doc-item:hover .doc-name {
+  color: var(--gold-dark);
+}
+
+.doc-item:hover .oquv-btn-view {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+}
+
+@media (hover: none) {
+  .doc-item:hover {
+    background: transparent;
+    box-shadow: inset 3px 0 0 transparent;
+    padding-left: 28px;
+  }
+  .doc-item:active {
+    background: var(--cream);
+    box-shadow: inset 3px 0 0 var(--gold);
+  }
 }
 
 .doc-info {

@@ -3,9 +3,8 @@ import { Plus, Trash2, ArrowUp, ArrowDown, Loader2, Image as ImageIcon } from 'l
 import { uploadImage } from '../../lib/supabase';
 import { compressImage } from '../../lib/imageCompress';
 
-const MAX_IMAGES = 10;
-
-export default function ImageGalleryEditor({ images = [], onChange, folder = 'gallery' }) {
+export default function ImageGalleryEditor({ images = [], onChange, folder = 'gallery', max = 10 }) {
+  const MAX_IMAGES = max;
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
 

@@ -30,10 +30,14 @@ const OPEN_EXACT = new Set([
   '/jonli-efir',           // Ijodiy faoliyat — Jonli efir
   '/registrator',          // Talabalar — Registrator ofisi (Telegram bot bilan toʻldirilgan)
   '/oquv-rejalar',         // Talabalar — Ishchi oʻquv rejalar (2025-2026 PDF bilan toʻldirilgan)
-  '/kasbiy-imtihonlar',    // Qabul — Kasbiy va ijodiy imtihonlar (qabul dasturlari PDF bilan toʻldirilgan)
+  '/talim-dasturlari',     // (eski) → /sillabuslar ga redirect
+  '/sillabuslar',          // Talabalar — Fanning oʻquv dasturlari (fan dasturlari PDF bilan toʻldirilgan)
+  '/bolimlar',             // Tuzilma — Boʻlimlar (Devonxona, ARM, Yoshlar boʻlimi rasmiy maʼlumot bilan)
+  '/kasbiy-imtihonlar',    // (eski) → /qabul-talablari ga redirect (birlashtirildi)
   '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
   '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)
-  '/fotogalereya',         // Yangiliklar — Fotogalereya (konservatoriya binosi va konsert zali rasmlari bilan toʻldirilgan)
+  '/fotogalereya',         // Yangiliklar — Fotogalereya (admin albomlari + binosi/zal rasmlari)
+  '/videogalereya',        // Yangiliklar — Videogalereya (admin paneldan boshqariladi)
   '/kontaktlar',           // Aloqa maʼlumotlari (Kontaktlar)
   '/yashil-universitet',   // Konservatoriya — Yashil Universitet (ekologik raqamlar bilan toʻldirilgan)
 ]);
@@ -43,6 +47,7 @@ const OPEN_PREFIX = [
   '/yangiliklar/',         // Yangilik batafsil sahifasi
   '/taqvim/',              // Tadbir batafsil sahifasi
   '/jamoat-tashkilotlari/', // Jamoat tashkilotlari — batafsil sahifalar (rahbar maʼlumoti bilan)
+  '/bolimlar/',            // Boʻlimlar — batafsil sahifalar (Devonxona, ARM, Yoshlar boʻlimi)
 ];
 
 export function isPathOpen(pathname) {

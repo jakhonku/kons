@@ -11,7 +11,7 @@ const MUASSASA_KEYS = [
 const TALABALAR_KEYS = [
   { key: 'students', to: '/talabalar' },
   { key: 'schedules', to: '/dars-jadvali' },
-  { key: 'library', to: '/kutubxona' },
+  { key: 'library', to: 'http://192.168.0.72' },
   { key: 'registrator', to: '/registrator' },
   { key: 'clubs', to: '/togaraklar' },
   { key: 'dorm', to: '/yotoqxona' },
@@ -126,7 +126,13 @@ export default function Footer() {
         <div className="footer-col">
           <h4>{t('footer.headings.students')}</h4>
           {TALABALAR_KEYS.map(({ key, to }) => (
-            <Link key={to} to={to}>{t(`footer.studentLinks.${key}`)}</Link>
+            to.startsWith('http') ? (
+              <a key={to} href={to} target="_blank" rel="noopener noreferrer">
+                {t(`footer.studentLinks.${key}`)}
+              </a>
+            ) : (
+              <Link key={to} to={to}>{t(`footer.studentLinks.${key}`)}</Link>
+            )
           ))}
         </div>
 

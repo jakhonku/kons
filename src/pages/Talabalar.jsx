@@ -24,7 +24,7 @@ const OQUV = [
 const SUPPORT = [
   { icon: GraduationCap, title: 'Grantlar',          desc: "Davlat va xorijiy grantlar, stipendiyalar",  to: '/grantlar' },
   { icon: TrendingUp,    title: 'Kelajakka qadam',   desc: "Karyera markazi va ish bilan taʼminlash",    to: '/kelajakka-qadam' },
-  { icon: Library,       title: 'Online kutubxona',  desc: 'Elektron kitoblar va nota bazasi',            to: '/kutubxona' },
+  { icon: Library,       title: 'Online kutubxona',  desc: 'Elektron kitoblar va nota bazasi',            to: 'http://192.168.0.72' },
   { icon: Building2,     title: 'Registrator ofisi', desc: "Hujjatlar, guvohnomalar, murojaat",          to: '/registrator' },
 ];
 
@@ -91,18 +91,22 @@ export default function Talabalar() {
           </div>
 
           <div className="g-4" style={{ marginBottom: '50px' }}>
-            {SUPPORT.map((item) => (
-              <Link key={item.title} to={item.to} style={{ background: 'var(--light-50)', border: '1px solid var(--light-border)', padding: '28px 22px', textDecoration: 'none', display: 'block', transition: 'all 0.3s' }}
-                onMouseOver={(e) => { e.currentTarget.style.background = 'var(--white)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(26,26,56,0.1)'; }}
-                onMouseOut={(e) => { e.currentTarget.style.background = 'var(--light-50)'; e.currentTarget.style.boxShadow = 'none'; }}
-              >
-                <div style={{ color: 'var(--gold)', marginBottom: '14px', lineHeight: 1 }}><item.icon size={28} strokeWidth={1.5} /></div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400, lineHeight: 1.3 }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: '0.78rem', color: '#888', lineHeight: 1.5 }}>{item.desc}</p>
-              </Link>
-            ))}
+            {SUPPORT.map((item) => {
+              const Tag = item.to.startsWith('http') ? 'a' : Link;
+              const props = item.to.startsWith('http') ? { href: item.to, target: '_blank', rel: 'noopener noreferrer' } : { to: item.to };
+              return (
+                <Tag key={item.title} {...props} style={{ background: 'var(--light-50)', border: '1px solid var(--light-border)', padding: '28px 22px', textDecoration: 'none', display: 'block', transition: 'all 0.3s' }}
+                  onMouseOver={(e) => { e.currentTarget.style.background = 'var(--white)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(26,26,56,0.1)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.background = 'var(--light-50)'; e.currentTarget.style.boxShadow = 'none'; }}
+                >
+                  <div style={{ color: 'var(--gold)', marginBottom: '14px', lineHeight: 1 }}><item.icon size={28} strokeWidth={1.5} /></div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--navy)', marginBottom: '8px', fontWeight: 400, lineHeight: 1.3 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.78rem', color: '#888', lineHeight: 1.5 }}>{item.desc}</p>
+                </Tag>
+              );
+            })}
           </div>
 
           {/* Talabalar hayoti */}
@@ -162,10 +166,10 @@ export default function Talabalar() {
           <div className="talabalar-quick-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--gold)', marginBottom: '40px' }}>
             {[
               { label: 'HEMIS Tizimi', href: '#', desc: 'Shaxsiy kabinet' },
-              { label: 'Online Kutubxona', href: '#', desc: 'Elektron resurslar' },
+              { label: 'Online Kutubxona', href: 'http://192.168.0.72', desc: 'Elektron resurslar' },
               { label: "Registrator Ofisi", href: '#', desc: 'Murojaat va hujjatlar' },
             ].map((l) => (
-              <a key={l.label} href={l.href} style={{ background: 'var(--navy)', padding: '28px', textDecoration: 'none', display: 'block', textAlign: 'center', transition: '0.3s' }}
+              <a key={l.label} href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined} style={{ background: 'var(--navy)', padding: '28px', textDecoration: 'none', display: 'block', textAlign: 'center', transition: '0.3s' }}
                 onMouseOver={(e) => { e.currentTarget.style.background = '#252550'; }}
                 onMouseOut={(e) => { e.currentTarget.style.background = 'var(--navy)'; }}
               >

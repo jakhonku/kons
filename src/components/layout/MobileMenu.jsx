@@ -116,15 +116,29 @@ export default function MobileMenu({ isOpen, onClose }) {
                                 <p className="mob-fs-subheading">{col.heading}</p>
                               )}
                               {col.links?.map((link) => (
-                                <Link
-                                  key={link.to}
-                                  to={link.to}
-                                  className={`mob-fs-sublink${isLinkActive(link.to) ? ' active' : ''}`}
-                                  onClick={onClose}
-                                >
-                                  <span className="mob-fs-sublink-dot" />
-                                  {link.label}
-                                </Link>
+                                link.to.startsWith('http') ? (
+                                  <a
+                                    key={link.to}
+                                    href={link.to}
+                                    className="mob-fs-sublink"
+                                    onClick={onClose}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <span className="mob-fs-sublink-dot" />
+                                    {link.label}
+                                  </a>
+                                ) : (
+                                  <Link
+                                    key={link.to}
+                                    to={link.to}
+                                    className={`mob-fs-sublink${isLinkActive(link.to) ? ' active' : ''}`}
+                                    onClick={onClose}
+                                  >
+                                    <span className="mob-fs-sublink-dot" />
+                                    {link.label}
+                                  </Link>
+                                )
                               ))}
                             </div>
                           ))}

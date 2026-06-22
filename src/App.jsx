@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AdminAuthProvider } from './contexts/AdminAuthContext';
@@ -15,6 +15,8 @@ import AdminPosters from './pages/admin/AdminPosters';
 import AdminTicker from './pages/admin/AdminTicker';
 import AdminTelegram from './pages/admin/AdminTelegram';
 import AdminMessages from './pages/admin/AdminMessages';
+import AdminGallery from './pages/admin/AdminGallery';
+import AdminVideos from './pages/admin/AdminVideos';
 
 // Pages
 import Home from './pages/Home';
@@ -57,6 +59,9 @@ import OquvUslubiyKengash from './pages/OquvUslubiyKengash';
 import Fakultetlar from './pages/Fakultetlar';
 import Kafedralar from './pages/Kafedralar';
 import Bolimlar from './pages/Bolimlar';
+import DevonxonaBolim from './pages/DevonxonaBolim';
+import AxborotResursMarkazi from './pages/AxborotResursMarkazi';
+import YoshlarManaviyat from './pages/YoshlarManaviyat';
 import NukusFiliali from './pages/NukusFiliali';
 import JamoatTashkilotlari from './pages/JamoatTashkilotlari';
 import KasabaUyushmasi from './pages/KasabaUyushmasi';
@@ -78,10 +83,8 @@ import RektorBio from './pages/RektorBio';
 
 import JonliEfir from './pages/JonliEfir';
 import TalimYonalishlari from './pages/TalimYonalishlari';
-import TalimDasturlari from './pages/TalimDasturlari';
 import QabulTalablari from './pages/QabulTalablari';
 import QabulKvotasi from './pages/QabulKvotasi';
-import KasbiyImtihonlar from './pages/KasbiyImtihonlar';
 import ImtihonNatijalari from './pages/ImtihonNatijalari';
 import XorijiyTalabalar from './pages/XorijiyTalabalar';
 import StudyInUzbekistan from './pages/StudyInUzbekistan';
@@ -109,6 +112,8 @@ export default function App() {
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="news" element={<AdminNews />} />
           <Route path="posters" element={<AdminPosters />} />
+          <Route path="gallery" element={<AdminGallery />} />
+          <Route path="videos" element={<AdminVideos />} />
           <Route path="ticker" element={<AdminTicker />} />
           <Route path="telegram" element={<AdminTelegram />} />
           <Route path="messages" element={<AdminMessages />} />
@@ -126,6 +131,9 @@ export default function App() {
           <Route path="fakultetlar" element={<Fakultetlar />} />
           <Route path="kafedralar" element={<Kafedralar />} />
           <Route path="bolimlar" element={<Bolimlar />} />
+          <Route path="bolimlar/devonxona-arxiv" element={<DevonxonaBolim />} />
+          <Route path="bolimlar/axborot-resurs-markazi" element={<AxborotResursMarkazi />} />
+          <Route path="bolimlar/yoshlar-manaviyat-marifat" element={<YoshlarManaviyat />} />
           <Route path="nukus-filiali" element={<NukusFiliali />} />
           <Route path="jamoat-tashkilotlari" element={<JamoatTashkilotlari />} />
           <Route path="jamoat-tashkilotlari/kasaba-uyushmasi" element={<KasabaUyushmasi />} />
@@ -175,10 +183,10 @@ export default function App() {
 
           {/* Qabul */}
           <Route path="talim-yonalishlari" element={<TalimYonalishlari />} />
-          <Route path="talim-dasturlari" element={<TalimDasturlari />} />
+          <Route path="talim-dasturlari" element={<Navigate to="/sillabuslar" replace />} />
           <Route path="qabul-talablari" element={<QabulTalablari />} />
           <Route path="qabul-kvotasi" element={<QabulKvotasi />} />
-          <Route path="kasbiy-imtihonlar" element={<KasbiyImtihonlar />} />
+          <Route path="kasbiy-imtihonlar" element={<Navigate to="/qabul-talablari" replace />} />
           <Route path="imtihon-natijalari" element={<ImtihonNatijalari />} />
 
           {/* Xalqaro */}

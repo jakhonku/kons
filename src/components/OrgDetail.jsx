@@ -1,6 +1,11 @@
 import PageHero from './PageHero';
 import { Award } from 'lucide-react';
 
+/* Roʻyxat elementlarining birinchi harfini katta qiladi
+   (hujjatdan koʻchirilgan gaplar kichik harf bilan boshlangan boʻlsa). */
+const capFirst = (s) =>
+  typeof s === 'string' && s.length ? s.charAt(0).toLocaleUpperCase('uz') + s.slice(1) : s;
+
 /* Jamoat tashkiloti — batafsil sahifa skeleti.
    Rahbar rasmi + lavozim + mukofotlar, soʻng toʻliq matn va boʻlimlar. */
 export default function OrgDetail({
@@ -67,7 +72,7 @@ export default function OrgDetail({
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 50px', display: 'grid', gap: '14px' }}>
                   {sec.items.map((it, i) => (
                     <li key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '16px 22px', fontSize: '0.98rem', color: '#444', fontFamily: 'var(--font-serif)', lineHeight: 1.6 }}>
-                      {it}
+                      {capFirst(it)}
                     </li>
                   ))}
                 </ul>
