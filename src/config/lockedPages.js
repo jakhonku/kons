@@ -33,7 +33,10 @@ const OPEN_EXACT = new Set([
   '/oquv-rejalar',         // Talabalar — Ishchi oʻquv rejalar (2025-2026 PDF bilan toʻldirilgan)
   '/talim-dasturlari',     // (eski) → /sillabuslar ga redirect
   '/sillabuslar',          // Talabalar — Fanning oʻquv dasturlari (fan dasturlari PDF bilan toʻldirilgan)
-  '/bolimlar',             // Tuzilma — Boʻlimlar (Devonxona, ARM, Yoshlar boʻlimi rasmiy maʼlumot bilan)
+  '/bolimlar',
+  '/fakultetlar',
+  '/kafedralar',
+  '/tuzilma',
   '/kasbiy-imtihonlar',    // (eski) → /qabul-talablari ga redirect (birlashtirildi)
   '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
   '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)
