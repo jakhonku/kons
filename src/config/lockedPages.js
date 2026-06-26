@@ -41,6 +41,7 @@ const OPEN_EXACT = new Set([
   '/videogalereya',        // Yangiliklar — Videogalereya (admin paneldan boshqariladi)
   '/kontaktlar',           // Aloqa maʼlumotlari (Kontaktlar)
   '/yashil-universitet',   // Konservatoriya — Yashil Universitet (ekologik raqamlar bilan toʻldirilgan)
+  '/bitiruvchilar-bandligi', // Talabalar — Bitiruvchilar bandligi
 ]);
 
 // Prefiks boʻyicha ochiq yoʻllar (dinamik sahifalar uchun)

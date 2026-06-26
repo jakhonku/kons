@@ -62,6 +62,10 @@ import Bolimlar from './pages/Bolimlar';
 import DevonxonaBolim from './pages/DevonxonaBolim';
 import AxborotResursMarkazi from './pages/AxborotResursMarkazi';
 import YoshlarManaviyat from './pages/YoshlarManaviyat';
+import Fonoteka from './pages/Fonoteka';
+import IqtidorliTalabalarSektori from './pages/IqtidorliTalabalarSektori';
+import MurojaatlarNazorat from './pages/MurojaatlarNazorat';
+import TalimSifati from './pages/TalimSifati';
 import NukusFiliali from './pages/NukusFiliali';
 import JamoatTashkilotlari from './pages/JamoatTashkilotlari';
 import KasabaUyushmasi from './pages/KasabaUyushmasi';
@@ -135,6 +139,10 @@ export default function App() {
           <Route path="bolimlar/devonxona-arxiv" element={<DevonxonaBolim />} />
           <Route path="bolimlar/axborot-resurs-markazi" element={<AxborotResursMarkazi />} />
           <Route path="bolimlar/yoshlar-manaviyat-marifat" element={<YoshlarManaviyat />} />
+          <Route path="bolimlar/fonoteka" element={<Fonoteka />} />
+          <Route path="bolimlar/iqtidorli-talabalar-sektori" element={<IqtidorliTalabalarSektori />} />
+          <Route path="bolimlar/murojaatlar-nazorat" element={<MurojaatlarNazorat />} />
+          <Route path="bolimlar/talim-sifati" element={<TalimSifati />} />
           <Route path="nukus-filiali" element={<NukusFiliali />} />
           <Route path="jamoat-tashkilotlari" element={<JamoatTashkilotlari />} />
           <Route path="jamoat-tashkilotlari/kasaba-uyushmasi" element={<KasabaUyushmasi />} />

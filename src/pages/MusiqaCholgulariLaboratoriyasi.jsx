@@ -3,66 +3,43 @@ import InfoPage from '../components/InfoPage';
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Ilm-fan' },
-  { label: "Musiqa cholgʻulari laboratoriyasi" },
+  { label: '“Milliy cholgʻu” laboratoriyasi' },
 ];
 
 export default function MusiqaCholgulariLaboratoriyasi() {
   return (
     <InfoPage
       tag="Ilm-fan"
-      title="Musiqa cholgʻulari"
+      title="“Milliy cholgʻu” ilmiy-ishlab chiqarish eksperimental"
       emphasis="laboratoriyasi"
       breadcrumbs={BREADCRUMBS}
-      lead="Laboratoriya oʻzbek milliy va akademik musiqa cholgʻularini oʻrganish, taʼmirlash, restavratsiya va yangidan yaratish bilan shugʻullanadigan noyob ilmiy-amaliy markaz. Markazda 200+ tarixiy va zamonaviy cholgʻu saqlanadi."
+      lead="Oʻzbekiston davlat konservatoriyasi qoshida 1943-yilda tashkil etilgan sohaviy ilmiy-tadqiqot eksperimental laboratoriyasi Oʻzbekiston Respublikasi Madaniyat vazirligining 2000-yil 7-fevraldagi 25-sonli buyrugʻiga asosan “Milliy cholgʻu” ilmiy-ishlab chiqarish eksperimental laboratoriyasi nomi bilan faoliyat yuritib kelmoqda."
       stats={[
-        { value: '200+', label: "Cholgʻu kolleksiyasi" },
-        { value: '8', label: "Mutaxassis sozshunos" },
-        { value: '1972', label: "Tashkil etilgan" },
+        { value: '1943', label: 'Tashkil etilgan' },
+        { value: '8', label: 'Ixtiro patenti' },
+        { value: '2000', label: '“Milliy cholgʻu” nomi berilgan' },
       ]}
       sections={[
         {
-          heading: "Faoliyat yoʻnalishlari",
-          cards: [
-            { tag: '01', title: 'Tarixiy cholgʻular tadqiqi', desc: "Arxiv, muzey va xususiy kolleksiyalardagi tarixiy cholgʻularni oʻrganish." },
-            { tag: '02', title: "Restavratsiya va taʼmirlash", desc: "Buzilgan yoki eskirgan cholgʻularni asl holiga keltirish." },
-            { tag: '03', title: 'Yangi cholgʻular yaratish', desc: "Anʼanaviy texnologiyalarga asoslangan yangi cholgʻular ishlab chiqarish." },
-            { tag: '04', title: 'Akustik tadqiqotlar', desc: "Cholgʻularning akustik xususiyatlarini ilmiy oʻrganish va oʻlchash." },
-            { tag: '05', title: 'Kataloglash va arxivlash', desc: "Raqamli katalog yaratish, foto-video hujjatlash." },
-            { tag: '06', title: "Talabalar amaliyoti", desc: "Magistr va doktorant talabalar uchun amaliy treninglar." },
-          ],
+          heading: 'Laboratoriya haqida',
+          text:
+            'Laboratoriya faoliyati davomida milliy cholgʻularni yaratish, takomillashtirish, ularning akustik imkoniyatlarini kengaytirish hamda ilmiy-amaliy tajribalarni amalga oshirish borasida salmoqli ishlar olib borilgan.\n' +
+            'Bugungi kunda laboratoriyada tajriba sifatida yaratilgan taniqli usta U. Zufarovning cholgʻu sozlari, A.I. Petrosyan gʻoyalari asosida hamda Oʻzbekistonda xizmat koʻrsatgan madaniyat xodimlari — ustalar X. Muxiddinov, A. Abdugʻafurov va boshqa mohir ustalar tomonidan yasalgan oʻzbek xalq cholgʻulari saqlanmoqda.\n' +
+            'Shuningdek, laboratoriya fondidan turli xorijiy mamlakatlarning milliy cholgʻulari ham oʻrin olgan boʻlib, ular laboratoriyaga sovgʻa tariqasida topshirilgan. Mazkur kolleksiya milliy va jahon cholgʻu madaniyatini oʻrganishda muhim ilmiy-amaliy manba hisoblanadi.',
         },
         {
-          heading: "Asosiy kolleksiya boʻlimlari",
+          heading: 'Ilmiy-amaliy faoliyat',
           items: [
-            { title: "Maqom cholgʻulari", desc: "Tor, tanbur, dutor (har xil turlari), nay, qonun, soz." },
-            { title: "Xalq cholgʻulari", desc: "Gʻijjak, qoʻbiz, sibizgʻi, doira, nogʻora, surnay." },
-            { title: "Akademik cholgʻular", desc: "Skripka, alt, violonchel, kontrabas, fortepiano." },
-            { title: "Dam olish cholgʻulari", desc: "Karnay, surnay, fleyta, gobo, klarnet, fagot, truba." },
-            { title: "Zarbli cholgʻular", desc: "Litavralar, baraʼban, ksilofon, vibrafon." },
-            { title: "Etnografik kolleksiya", desc: "Markaziy Osiyo va dunyo xalqlari milliy cholgʻulari." },
+            { title: 'Cholgʻularni yaratish va takomillashtirish', desc: 'Milliy cholgʻularni yangidan yaratish hamda akustik imkoniyatlarini kengaytirish.' },
+            { title: 'Tarixiy cholgʻularni asrash', desc: 'Tarixiy cholgʻularni asrab-avaylash va restavratsiya qilish.' },
+            { title: 'Ilmiy tajribalar', desc: 'Musiqiy cholgʻular bilan bogʻliq innovatsion ishlanmalar muntazam olib boriladi.' },
+            { title: 'Patentlangan ixtirolar', desc: 'Intellektual mulk agentligi tomonidan 8 ta cholgʻu uchun Oʻzbekiston Respublikasining ixtiro patenti roʻyxatdan oʻtkazilgan.' },
           ],
-        },
-        {
-          heading: "Xizmatlar (tashqi mijozlar uchun)",
-          table: {
-            head: ['Xizmat', 'Tarif', 'Muddat'],
-            rows: [
-              ['Cholgʻuni baholash va konsultatsiya', "Bepul (aʼzolar uchun)", '1 ish kuni'],
-              ['Akustik oʻlchov va tahlil', "Maxsus shartnoma asosida", '5–7 ish kuni'],
-              ['Restavratsiya (kichik)', "Murakkablikdan keladi", '14–30 kun'],
-              ['Restavratsiya (komplekt)', "Individual baholash", '45–90 kun'],
-              ['Cholgʻuni saqlash xizmati', "Yiliga shartnomaviy", '12 oy'],
-            ],
-          },
         },
       ]}
       contact={{
-        title: "Laboratoriya rahbariyati",
-        responsible: "doc. Karimov Sardor Bobirovich",
-        phone: '+998 71 234-56-93',
-        email: 'lab@konservatoriya.uz',
-        address: "2-bino, podval qavat, 02-xona",
-        hours: 'Dushanba – Juma, 10:00 – 17:00',
+        title: 'Laboratoriya rahbariyati',
+        responsible: 'Islamov Azamat Xaydarovich — laboratoriya direktori',
       }}
     />
   );

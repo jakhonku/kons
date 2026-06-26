@@ -8,50 +8,40 @@ const BREADCRUMBS = [
 ];
 
 const STATS = [
-  { num: '120+', label: 'Hamkor tashkilot' },
-  { num: '40+',  label: 'Davlat' },
-  { num: '15',   label: 'Faol memorandum' },
-  { num: '200+', label: "Chet ellik oʻqituvchi" },
+  { num: '100+', label: 'Hamkor tashkilot' },
+  { num: '19', label: 'Hamkorlik davlatlari' },
 ];
 
-const REGIONS = [
-  {
-    region: 'Yevropa',
-    partners: [
-      { name: 'Vena Musiqa va Sanoat Badiiy Universiteti', country: 'Avstriya',   flag: '🇦🇹', type: 'Talabalar almashinuvi', since: 2019, status: 'Faol' },
-      { name: 'Parij Milliy Oliy Musiqa Konservatoriyasi', country: 'Fransiya',   flag: '🇫🇷', type: 'Ilmiy hamkorlik',       since: 2021, status: 'Faol' },
-      { name: "Berliner Universität der Künste",           country: 'Germaniya',  flag: '🇩🇪', type: 'Talabalar almashinuvi', since: 2023, status: 'Faol' },
-      { name: 'Varshava Frederic Chopin Musiqa Universiteti', country: 'Polsha', flag: '🇵🇱', type: 'Erasmus+ almashinuvi',  since: 2020, status: 'Faol' },
-      { name: 'Rim Santa Cecilia Milliy Akademiyasi',      country: 'Italiya',    flag: '🇮🇹', type: 'Madaniy almashinuv',   since: 2018, status: 'Faol' },
-      { name: 'Barselona Oliy Musiqa Maktabi (ESMUC)',     country: 'Ispaniya',   flag: '🇪🇸', type: "Qoʻshma dasturlar",    since: 2022, status: 'Yangi' },
-    ],
-  },
-  {
-    region: 'Amerika',
-    partners: [
-      { name: 'Xyuston Universitet Moores Musiqa Maktabi', country: 'AQSh',      flag: '🇺🇸', type: 'Tadqiqot almashinuvi', since: 2022, status: 'Faol' },
-      { name: 'Juilliard Maktabi',                         country: 'AQSh',      flag: '🇺🇸', type: 'Master-klass',         since: 2023, status: 'Faol' },
-      { name: 'Berklee Musiqa Kolleji',                    country: 'AQSh',      flag: '🇺🇸', type: 'Onlayn taʼlim',       since: 2021, status: 'Faol' },
-    ],
-  },
-  {
-    region: 'Osiyo',
-    partners: [
-      { name: 'Pekin Musiqa Konservatoriyasi',              country: 'Xitoy',     flag: '🇨🇳', type: 'Madaniy almashinuv',   since: 2020, status: 'Faol' },
-      { name: "Seul Milliy Universiteti Sanʼat Kolleji",    country: 'Janubiy Koreya', flag: '🇰🇷', type: 'Talabalar almashinuvi', since: 2019, status: 'Faol' },
-      { name: "Istambul Davlat Konservatoriyasi",           country: 'Turkiya',   flag: '🇹🇷', type: "Qoʻshma konsertlar",   since: 2020, status: 'Faol' },
-      { name: 'Tokio Musiqa va Badiiy Sanʼat Universiteti', country: 'Yaponiya', flag: '🇯🇵', type: 'Talabalar almashinuvi', since: 2022, status: 'Yangi' },
-    ],
-  },
-  {
-    region: "MDH va Markaziy Osiyo",
-    partners: [
-      { name: 'Moskva Davlat Konservatoriyasi',             country: 'Rossiya',   flag: '🇷🇺', type: "Qoʻshma dasturlar",    since: 2017, status: 'Faol' },
-      { name: 'Sankt-Peterburg Davlat Konservatoriyasi',   country: 'Rossiya',   flag: '🇷🇺', type: 'Ilmiy hamkorlik',       since: 2018, status: 'Faol' },
-      { name: "Qozogʻiston Milliy Konservatoriyasi",        country: "Qozogʻiston", flag: '🇰🇿', type: 'Talabalar almashinuvi', since: 2016, status: 'Faol' },
-      { name: "Ozarbayjon Davlat Konservatoriyasi",         country: 'Ozarbayjon', flag: '🇦🇿', type: 'Madaniy almashinuv',  since: 2019, status: 'Faol' },
-    ],
-  },
+/* Haqiqiy maʼlumot — hamkorlik davlatlari geografiyasi */
+const COUNTRIES = [
+  { name: 'Estoniya', flag: '🇪🇪' },
+  { name: 'Latviya', flag: '🇱🇻' },
+  { name: 'Chexiya', flag: '🇨🇿' },
+  { name: 'Belgiya', flag: '🇧🇪' },
+  { name: 'Slovakiya', flag: '🇸🇰' },
+  { name: 'Rossiya', flag: '🇷🇺' },
+  { name: 'Belarus', flag: '🇧🇾' },
+  { name: 'Ukraina', flag: '🇺🇦' },
+  { name: 'Xitoy', flag: '🇨🇳' },
+  { name: 'Janubiy Koreya', flag: '🇰🇷' },
+  { name: 'Italiya', flag: '🇮🇹' },
+  { name: 'Germaniya', flag: '🇩🇪' },
+  { name: 'Buyuk Britaniya', flag: '🇬🇧' },
+  { name: 'Turkiya', flag: '🇹🇷' },
+  { name: 'Ozarbayjon', flag: '🇦🇿' },
+  { name: 'Qozogʻiston', flag: '🇰🇿' },
+  { name: 'Qirgʻiziston', flag: '🇰🇬' },
+  { name: 'Tojikiston', flag: '🇹🇯' },
+  { name: 'BAA', flag: '🇦🇪' },
+];
+
+const TASKS = [
+  'Xorijiy oliy taʼlim muassasalari, ilmiy markazlar va xalqaro tashkilotlar bilan hamkorlik aloqalarini oʻrnatish va rivojlantirish.',
+  'Xalqaro shartnomalar, memorandumlar va hamkorlik bitimlarini tayyorlash hamda ularning ijrosini monitoring qilish.',
+  'Professor-oʻqituvchilar, talabalar va tadqiqotchilarni xalqaro grantlar, stajirovkalar va akademik almashinuv dasturlarida ishtirok etishga koʻmaklashish.',
+  'Xorijiy mutaxassislar ishtirokida mahorat darslari, seminarlar va konferensiyalar tashkil etish.',
+  'Xorijiy delegatsiyalar tashriflari va akademik mobillik jarayonlarini muvofiqlashtirish.',
+  'Xalqaro reytinglar va grant dasturlarida konservatoriya ishtirokini kengaytirish.',
 ];
 
 export default function HamkorTashkilotlar() {
@@ -64,9 +54,9 @@ export default function HamkorTashkilotlar() {
         breadcrumbs={BREADCRUMBS}
       />
 
-      <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
+      <div className="page-stats-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', background: 'var(--navy)', borderBottom: '2px solid var(--gold)' }}>
         {STATS.map((s, i) => (
-          <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+          <div key={s.label} style={{ padding: '36px 20px', textAlign: 'center', borderRight: i < STATS.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{s.num}</div>
             <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-sans)' }}>{s.label}</div>
           </div>
@@ -78,44 +68,44 @@ export default function HamkorTashkilotlar() {
 
           <article className="article-body" style={{ marginBottom: '20px' }}>
             <p className="lead">
-              Oʻzbekiston Davlat Konservatoriyasi dunyo boʻylab 120 dan ortiq yetakchi musiqa
-              institutlari va universitetlari bilan faol hamkorlik olib boradi.
+              Oʻzbekiston davlat konservatoriyasining Xalqaro aloqalar boʻlimi Konservatoriyaning
+              xalqaro faoliyatini rivojlantirish, xorijiy taʼlim va ilmiy muassasalar bilan
+              hamkorlikni mustahkamlash hamda professor-oʻqituvchilar, talabalar va
+              tadqiqotchilarning xalqaro akademik mobilligini qoʻllab-quvvatlash bilan
+              shugʻullanadi. Konservatoriya xorijiy mamlakatlardagi 100 ga yaqin oliy taʼlim
+              tashkiloti bilan hamkorlik aloqalarini yoʻlga qoʻygan.
             </p>
           </article>
 
-          {REGIONS.map((r) => (
-            <div key={r.region}>
-              <div className="section-divider" style={{ marginTop: 0 }}>
-                <h2>{r.region}</h2>
+          {/* Hamkorlik geografiyasi */}
+          <div className="section-divider" style={{ marginTop: 0 }}>
+            <h2>Hamkorlik geografiyasi</h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1px', background: 'var(--light-border)', border: '1px solid var(--light-border)', marginBottom: '50px' }}>
+            {COUNTRIES.map((c) => (
+              <div key={c.name} style={{ background: 'var(--white)', padding: '20px 18px', display: 'flex', alignItems: 'center', gap: '12px', transition: '0.3s' }}
+                onMouseOver={(e) => { e.currentTarget.style.background = 'var(--light-50)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.background = 'var(--white)'; }}
+              >
+                <span style={{ fontSize: '1.6rem', lineHeight: 1, flexShrink: 0 }}>{c.flag}</span>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'var(--navy)' }}>{c.name}</span>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--light-border)', border: '1px solid var(--light-border)', marginBottom: '40px' }} className="page-stats-3">
-                {r.partners.map((p) => (
-                  <div key={p.name} style={{ background: 'var(--white)', padding: '24px 20px', transition: '0.3s', display: 'flex', flexDirection: 'column', gap: '10px' }}
-                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--light-50)'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.background = 'var(--white)'; }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '8px' }}>
-                      <span style={{ fontSize: '1.8rem', lineHeight: 1, flexShrink: 0 }}>{p.flag}</span>
-                      <span style={{
-                        fontSize: '0.6rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase',
-                        padding: '3px 8px', fontFamily: 'var(--font-sans)', flexShrink: 0,
-                        background: p.status === 'Faol' ? '#dcfce7' : '#fef9c3',
-                        color: p.status === 'Faol' ? '#15803d' : '#854d0e',
-                      }}>{p.status}</span>
-                    </div>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.92rem', color: 'var(--navy)', lineHeight: 1.35 }}>{p.name}</div>
-                    <div style={{ fontSize: '0.72rem', color: '#888', fontFamily: 'var(--font-sans)' }}>
-                      <span>{p.country}</span>
-                      <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
-                      <span>{p.type}</span>
-                      <span style={{ margin: '0 8px', opacity: 0.4 }}>·</span>
-                      <span>{p.since}-yildan</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Boʻlim vazifalari */}
+          <div className="section-divider">
+            <h2>Boʻlimning asosiy vazifalari</h2>
+          </div>
+
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 50px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+            {TASKS.map((task) => (
+              <li key={task} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '18px 24px', fontSize: '0.95rem', color: '#555', lineHeight: 1.65, fontFamily: 'var(--font-serif)' }}>
+                {task}
+              </li>
+            ))}
+          </ul>
 
           <div style={{ background: 'var(--navy)', padding: '40px', textAlign: 'center', marginBottom: '40px' }}>
             <div style={{ color: 'var(--gold)', marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
@@ -124,8 +114,12 @@ export default function HamkorTashkilotlar() {
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 300, color: 'var(--white)', marginBottom: '12px' }}>
               Yangi <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Hamkorlik</span>
             </h3>
-            <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.88rem', marginBottom: '24px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', maxWidth: 500, margin: '0 auto 24px' }}>
-              Xalqaro hamkorlik boʻyicha takliflaringiz yoki savolaringiz boʻlsa, Xalqaro aloqalar boʻlimi bilan bogʻlaning.
+            <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.88rem', marginBottom: '8px', fontFamily: 'var(--font-serif)', fontStyle: 'italic', maxWidth: 520, margin: '0 auto 8px' }}>
+              Xalqaro hamkorlik boʻyicha takliflaringiz yoki savollaringiz boʻlsa, Xalqaro
+              aloqalar boʻlimi bilan bogʻlaning.
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', marginBottom: '24px', fontFamily: 'var(--font-sans)' }}>
+              Boʻlim boshligʻi: Gaibova Habiba Sodiqjon qizi
             </p>
             <a href="/kontaktlar" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',

@@ -104,7 +104,53 @@ export default function Registrator() {
             ))}
           </div>
 
+          {/* ── MA'LUMOT — Ofis haqida ── */}
+          <div className="section-divider" style={{ marginTop: 0 }}>
+            <h2>Registrator ofisi haqida</h2>
+          </div>
 
+          <article className="article-body" style={{ marginBottom: '32px' }}>
+            <p>
+              Registrator ofisi talabalar faoliyatini tashkil etish va boshqarish, ularga oʻquv
+              jarayoniga oid xizmatlarni sifatli va oʻz vaqtida koʻrsatish bilan shugʻullanadi.
+              Ofis xizmat koʻrsatish (front office) va maʼlumotlar bazasi (back office)
+              boʻlimlaridan iborat.
+            </p>
+          </article>
+
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+            {[
+              'Talabalarga oʻquv jarayoniga tegishli xizmatlarni tizim orqali koʻrsatish.',
+              'Elektron taʼlim platformalaridan samarali foydalanishga koʻmaklashish.',
+              'Oʻqishni koʻchirish, akademik taʼtilga chiqarish va qaytarish, tiklash jarayonlarini tashkil qilish.',
+              'Yakuniy nazoratlar jadvali asosida oʻquv ishlarini tizim orqali nazorat qilish.',
+              'Ilmiy, innovatsion faoliyat va akademik mobillik boʻyicha xizmat koʻrsatish.',
+              'Oʻquv dasturlaridagi farqlarni bartaraf etish maqsadida qayta oʻqishni tashkil qilish.',
+            ].map((task) => (
+              <li key={task} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '16px 22px', fontSize: '0.92rem', color: '#555', lineHeight: 1.6, fontFamily: 'var(--font-serif)' }}>
+                {task}
+              </li>
+            ))}
+          </ul>
+
+          {/* Rahbariyat tarkibi */}
+          <div className="section-divider">
+            <h2>Rahbariyat tarkibi</h2>
+          </div>
+
+          <div className="g-3" style={{ marginBottom: '50px' }}>
+            {[
+              { name: 'Xabibullayev Qaxramon Rofiq oʻgʻli', role: 'Registrator ofisi boshligʻi', extra: 'dotsent' },
+              { name: 'Tajitdinov Abdulla Aʼlamovich', role: 'Xizmat koʻrsatish (front office) boʻlimi boshligʻi', extra: 'oʻqituvchi' },
+              { name: 'Toirov Akbar Zoir oʻgʻli', role: 'Maʼlumotlar bazasi (back office) boʻlimi boshligʻi', extra: 'katta oʻqituvchi' },
+            ].map((p) => (
+              <div key={p.name} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '24px 26px' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: 'var(--navy)', marginBottom: '6px', lineHeight: 1.35 }}>{p.name}</div>
+                <div style={{ fontSize: '0.82rem', color: '#555', fontFamily: 'var(--font-serif)', marginBottom: '8px' }}>{p.role}</div>
+                <div style={{ fontSize: '0.66rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)' }}>{p.extra}</div>
+              </div>
+            ))}
+          </div>
 
           {/* ── Telegram bot murojaat bloki ── */}
           <div style={{

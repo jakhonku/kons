@@ -19,6 +19,10 @@ const T = {
       { to: '/bolimlar/devonxona-arxiv', img: PHOTOS.devonxona, name: 'Devonxona va arxiv boʻlimi', desc: 'Ish yuritish, ijro intizomi va hujjatlar aylanishini taʼminlaydi.', boss: 'Axmedova Maʼsuma Faxruddinovna' },
       { to: '/bolimlar/axborot-resurs-markazi', img: PHOTOS.arm, name: 'Axborot resurs markazi', desc: '150 000 dan ortiq musiqiy va badiiy adabiyot fondi, oʻquv zallari.', boss: 'Xodjaeva Shohida Bahramovna' },
       { to: '/bolimlar/yoshlar-manaviyat-marifat', img: PHOTOS.yoshlar, name: 'Yoshlar bilan ishlash, maʼnaviyat-maʼrifat boʻlimi', desc: 'Talabalar maʼnaviyati, tarbiyasi va ijodiy faoliyatini tashkil etadi.', boss: 'Raxmanov Asatilla Izzatilla oʻgʻli' },
+      { to: '/bolimlar/talim-sifati', name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
+      { to: '/bolimlar/murojaatlar-nazorat', name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
+      { to: '/bolimlar/iqtidorli-talabalar-sektori', name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
+      { to: '/bolimlar/fonoteka', name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
     ],
   },
   ru: {
@@ -30,6 +34,10 @@ const T = {
       { to: '/bolimlar/devonxona-arxiv', img: PHOTOS.devonxona, name: 'Канцелярия и архивный отдел', desc: 'Обеспечивает делопроизводство, исполнительскую дисциплину и документооборот.', boss: 'Ахмедова Маъсума Фахруддиновна' },
       { to: '/bolimlar/axborot-resurs-markazi', img: PHOTOS.arm, name: 'Информационно-ресурсный центр', desc: 'Фонд более 150 000 музыкальных и художественных изданий, учебные залы.', boss: 'Ходжаева Шохида Бахрамовна' },
       { to: '/bolimlar/yoshlar-manaviyat-marifat', img: PHOTOS.yoshlar, name: 'Отдел по работе с молодёжью, духовности и просветительства', desc: 'Организует духовное воспитание, просвещение и творческую деятельность студентов.', boss: 'Рахманов Асатилла Иззатилла угли' },
+      { to: '/bolimlar/talim-sifati', name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
+      { to: '/bolimlar/murojaatlar-nazorat', name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
+      { to: '/bolimlar/iqtidorli-talabalar-sektori', name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
+      { to: '/bolimlar/fonoteka', name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
     ],
   },
   en: {
@@ -41,6 +49,10 @@ const T = {
       { to: '/bolimlar/devonxona-arxiv', img: PHOTOS.devonxona, name: 'Chancellery and Archive Department', desc: 'Ensures records management, executive discipline and document circulation.', boss: 'Akhmedova Maʼsuma Fakhruddinovna' },
       { to: '/bolimlar/axborot-resurs-markazi', img: PHOTOS.arm, name: 'Information Resource Center', desc: 'A fund of over 150,000 music and fiction publications, reading halls.', boss: 'Khodjaeva Shohida Bahramovna' },
       { to: '/bolimlar/yoshlar-manaviyat-marifat', img: PHOTOS.yoshlar, name: 'Department for Youth Affairs, Spirituality and Enlightenment', desc: 'Organizes the spiritual education, enlightenment and creative activities of students.', boss: 'Rakhmanov Asatilla Izzatilla oʻgʻli' },
+      { to: '/bolimlar/talim-sifati', name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
+      { to: '/bolimlar/murojaatlar-nazorat', name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
+      { to: '/bolimlar/iqtidorli-talabalar-sektori', name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
+      { to: '/bolimlar/fonoteka', name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
     ],
   },
 };
@@ -92,13 +104,23 @@ export default function Bolimlar() {
                     width: 96, aspectRatio: '3 / 4', flexShrink: 0, borderRadius: '4px',
                     overflow: 'hidden', background: 'var(--cream)',
                     border: '1px solid var(--light-border)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
-                    <img
-                      src={it.img}
-                      alt={it.boss}
-                      loading="lazy"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
-                    />
+                    {it.img ? (
+                      <img
+                        src={it.img}
+                        alt={it.boss}
+                        loading="lazy"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                      />
+                    ) : (
+                      <span style={{
+                        fontFamily: 'var(--font-display)', fontSize: '1.8rem',
+                        color: 'var(--gold-dark)', fontWeight: 500,
+                      }}>
+                        {it.boss.split(' ').slice(0, 2).map((w) => w[0]).join('')}
+                      </span>
+                    )}
                   </div>
                   <div style={{ minWidth: 0 }}>
                     <div style={{

@@ -1,100 +1,40 @@
 import PageHero from '../components/PageHero';
-import { Target, Handshake, Clipboard, Globe, Mic, TrendingUp } from 'lucide-react';
+import { Target, Handshake, Clipboard, FileSignature, LineChart, Compass } from 'lucide-react';
 import { useTranslation } from '../contexts/LanguageContext';
 
-const SERVICE_ICONS = [Target, Handshake, Clipboard, Globe, Mic, TrendingUp];
+const SERVICE_ICONS = [Target, Handshake, Clipboard, FileSignature, LineChart, Compass];
+
+/* Haqiqiy maʼlumot — “Kelajakka qadam” karyera markazi */
+const LEAD = 'Oʻzbekiston davlat konservatoriyasida faoliyat yuritayotgan “Kelajakka qadam” karyera markazi bitiruvchilarning bandligini taʼminlash, ularni mehnat bozoriga tayyorlash hamda ish beruvchilar bilan hamkorlikni rivojlantirishga xizmat qilmoqda.';
+
+const STATS = [
+  ['93%', 'Ishga joylashish darajasi'],
+  ['200+', 'Hamkor tashkilotlar'],
+  ['925', 'Bandligi taʼminlangan bitiruvchi'],
+];
+
+const SERVICES = [
+  ['Ishga joylashtirish maslahatlari', 'Bitiruvchilarni ishga joylashtirish boʻyicha individual maslahatlar berish.'],
+  ['Boʻsh ish oʻrinlari yarmarkasi', 'Boʻsh ish oʻrinlari yarmarkalarini tashkil etish.'],
+  ['Ish beruvchilar bilan uchrashuvlar', 'Ish beruvchilar bilan bevosita uchrashuvlar oʻtkazish.'],
+  ['Shartnomalarni rasmiylashtirish', 'Mehnat shartnomalarini rasmiylashtirishda koʻmaklashish.'],
+  ['Kasbiy monitoring', 'Bitiruvchilarning kasbiy faoliyatini monitoring qilish.'],
+  ['Kasbiy yoʻnaltirish', 'Mehnat bozoridagi talab va ehtiyojlar boʻyicha maʼlumot va konsultatsiya.'],
+];
+
+const PARTNERS = [
+  'Madaniyat va sanʼat muassasalari',
+  'Ixtisoslashtirilgan musiqa maktablari',
+  'Sanʼat maktablari',
+  'Teatrlar',
+  'Orkestr jamoalari',
+  'Davlat va nodavlat madaniyat muassasalari',
+];
 
 const T = {
-  uz: {
-    crumbHome: 'Bosh sahifa', crumbStudents: 'Talabalar uchun', crumbThis: 'Kelajakka qadam',
-    heroTag: 'Talabalar uchun', heroTitle: 'Kelajakka', heroEm: 'Qadam',
-    stats: [
-      ['85%', 'Birinchi yilda ishga joylashgan'],
-      ['120+', 'Hamkor tashkilotlar'],
-      ['40+', 'Xorijiy imkoniyatlar'],
-    ],
-    servicesHeading: 'Xizmatlar',
-    services: [
-      ['Karyera maslahat', 'Individual karyera maslahati, portfoilo tuzish, auditsiya tayyorgarlik'],
-      ['Hamkorlar bilan uchrashuvlar', 'Opera teatrlari, filarmoniya va musiqa maktablari vakillari bilan uchrashuv'],
-      ['CV va motivatsion xat', 'Xalqaro standartlarga mos CV va motivatsion xat tayyorlash'],
-      ['Xorijiy imkoniyatlar', 'Chet el teatrlari va orkestrlariga qabul haqida maʼlumot'],
-      ['Mock audition', 'Auditsiyaga tayyorgarlik: professional hakamlar oldida mashq'],
-      ['Bandlik statistikasi', 'Bitiruvchilarimizning 85% birinchi yilda ishga joylashadi'],
-    ],
-    partnersHeading: 'Asosiy hamkorlar',
-    partners: [
-      'Oʻzbek Milliy Simfonik Orkestri',
-      'Alisher Navoiy nomidagi GABT',
-      'Toshkent Davlat Filarmoniyasi',
-      'Yoshlar simfonik orkestri',
-      'Toshkent shahar musiqa maktablari',
-      'Oʻzbekiston Bastakorlar Uyushmasi',
-    ],
-    contactTitle: 'Karyera markazi',
-    contactLine1: '2-bino, 210-xona · Telefon: +998 71 234-56-95 · karyera@konservatoriya.uz',
-    contactLine2: 'Ish vaqti: Dushanba–Juma, 09:00–17:00',
-  },
-  ru: {
-    crumbHome: 'Главная', crumbStudents: 'Для студентов', crumbThis: 'Шаг в будущее',
-    heroTag: 'Для студентов', heroTitle: 'Шаг в', heroEm: 'будущее',
-    stats: [
-      ['85%', 'Трудоустроены в первый год'],
-      ['120+', 'Партнёрских организаций'],
-      ['40+', 'Зарубежных возможностей'],
-    ],
-    servicesHeading: 'Услуги',
-    services: [
-      ['Карьерная консультация', 'Индивидуальная карьерная консультация, составление портфолио, подготовка к прослушиванию'],
-      ['Встречи с партнёрами', 'Встречи с представителями оперных театров, филармонии и музыкальных школ'],
-      ['CV и мотивационное письмо', 'Подготовка CV и мотивационного письма по международным стандартам'],
-      ['Зарубежные возможности', 'Информация о приёме в зарубежные театры и оркестры'],
-      ['Mock audition', 'Подготовка к прослушиванию: репетиция перед профессиональным жюри'],
-      ['Статистика трудоустройства', '85% наших выпускников трудоустраиваются в первый год'],
-    ],
-    partnersHeading: 'Основные партнёры',
-    partners: [
-      'Узбекский национальный симфонический оркестр',
-      'ГАБТ имени Алишера Навои',
-      'Ташкентская государственная филармония',
-      'Молодёжный симфонический оркестр',
-      'Музыкальные школы города Ташкента',
-      'Союз композиторов Узбекистана',
-    ],
-    contactTitle: 'Центр карьеры',
-    contactLine1: 'Здание 2, кабинет 210 · Телефон: +998 71 234-56-95 · karyera@konservatoriya.uz',
-    contactLine2: 'Время работы: Понедельник–Пятница, 09:00–17:00',
-  },
-  en: {
-    crumbHome: 'Home', crumbStudents: 'For students', crumbThis: 'Step into the future',
-    heroTag: 'For students', heroTitle: 'Step into the', heroEm: 'Future',
-    stats: [
-      ['85%', 'Employed in the first year'],
-      ['120+', 'Partner organizations'],
-      ['40+', 'International opportunities'],
-    ],
-    servicesHeading: 'Services',
-    services: [
-      ['Career counselling', 'Individual career counselling, portfolio building, audition preparation'],
-      ['Meetings with partners', 'Meetings with representatives of opera theatres, the philharmonic and music schools'],
-      ['CV and motivation letter', 'Preparation of a CV and motivation letter according to international standards'],
-      ['International opportunities', 'Information about admission to foreign theatres and orchestras'],
-      ['Mock audition', 'Audition preparation: rehearsal before a professional jury'],
-      ['Employment statistics', '85% of our graduates find a job in the first year'],
-    ],
-    partnersHeading: 'Main partners',
-    partners: [
-      'Uzbek National Symphony Orchestra',
-      'Alisher Navoi State Academic Bolshoi Theatre',
-      'Tashkent State Philharmonic',
-      'Youth Symphony Orchestra',
-      'Music schools of Tashkent city',
-      'Union of Composers of Uzbekistan',
-    ],
-    contactTitle: 'Career Center',
-    contactLine1: 'Building 2, room 210 · Phone: +998 71 234-56-95 · karyera@konservatoriya.uz',
-    contactLine2: 'Working hours: Monday–Friday, 09:00–17:00',
-  },
+  uz: { crumbHome: 'Bosh sahifa', crumbStudents: 'Talabalar uchun', crumbThis: 'Kelajakka qadam', heroTag: 'Talabalar uchun', heroTitle: 'Kelajakka', heroEm: 'Qadam', servicesHeading: 'Xizmatlar', partnersHeading: 'Hamkor tashkilotlar', contactTitle: '“Kelajakka qadam” karyera markazi', contactLine1: 'Bitiruvchilar bandligi, kasbiy yoʻnaltirish va ish beruvchilar bilan hamkorlik boʻyicha Karyera markaziga murojaat qiling.', contactLine2: 'Soʻnggi uch yilda 992 nafar bitiruvchidan 925 nafari ish bilan taʼminlandi (93%).' },
+  ru: { crumbHome: 'Главная', crumbStudents: 'Для студентов', crumbThis: 'Шаг в будущее', heroTag: 'Для студентов', heroTitle: 'Шаг в', heroEm: 'будущее', servicesHeading: 'Услуги', partnersHeading: 'Партнёрские организации', contactTitle: 'Карьерный центр «Kelajakka qadam»', contactLine1: 'Bitiruvchilar bandligi, kasbiy yoʻnaltirish va ish beruvchilar bilan hamkorlik boʻyicha Karyera markaziga murojaat qiling.', contactLine2: 'Soʻnggi uch yilda 992 nafar bitiruvchidan 925 nafari ish bilan taʼminlandi (93%).' },
+  en: { crumbHome: 'Home', crumbStudents: 'For students', crumbThis: 'Step into the future', heroTag: 'For students', heroTitle: 'Step into the', heroEm: 'Future', servicesHeading: 'Services', partnersHeading: 'Partner organizations', contactTitle: '“Kelajakka qadam” career center', contactLine1: 'Bitiruvchilar bandligi, kasbiy yoʻnaltirish va ish beruvchilar bilan hamkorlik boʻyicha Karyera markaziga murojaat qiling.', contactLine2: 'Soʻnggi uch yilda 992 nafar bitiruvchidan 925 nafari ish bilan taʼminlandi (93%).' },
 };
 
 export default function KelajakkaQadam() {
@@ -119,13 +59,17 @@ export default function KelajakkaQadam() {
       <section className="main-content">
         <div className="container">
 
+          <article className="article-body" style={{ marginBottom: '40px' }}>
+            <p className="lead">{LEAD}</p>
+          </article>
+
           {/* Stats banner */}
           <div className="page-stats-3" style={{
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
             background: 'var(--navy)', borderBottom: '2px solid var(--gold)',
             marginBottom: '60px',
           }}>
-            {tr.stats.map(([num, label]) => (
+            {STATS.map(([num, label]) => (
               <div key={label} style={{ padding: '36px 24px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '3rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '8px' }}>{num}</div>
                 <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>{label}</div>
@@ -139,7 +83,7 @@ export default function KelajakkaQadam() {
           </div>
 
           <div className="g-3" style={{ marginBottom: '60px' }}>
-            {tr.services.map(([title, desc], i) => {
+            {SERVICES.map(([title, desc], i) => {
               const Icon = SERVICE_ICONS[i];
               return (
                 <div key={title} style={{
@@ -163,7 +107,7 @@ export default function KelajakkaQadam() {
           </div>
 
           <div className="g-3" style={{ marginBottom: '60px' }}>
-            {tr.partners.map((p) => (
+            {PARTNERS.map((p) => (
               <div key={p} style={{
                 padding: '18px 24px',
                 background: 'var(--white)', border: '1px solid var(--light-border)',
