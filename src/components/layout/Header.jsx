@@ -72,11 +72,11 @@ export default function Header() {
             gap: '12px',
             minWidth: 0,
             marginLeft: isHome ? (isDesktop ? '40px' : '10px') : '0',
-            flexGrow: isDesktop ? 1 : 0,
+            flexGrow: (isDesktop || !isHome) ? 1 : 0,
             marginRight: isDesktop ? '32px' : '0'
           }}>
-            {/* Home Link */}
-            {!isHome && (
+            {/* Home Link — faqat desktopda koʻrinadi (mobilda yashirilgan) */}
+            {!isHome && isDesktop && (
               <Link
                 to="/"
                 className="nav-home-link"

@@ -53,6 +53,38 @@ export default function BitiruvchilarBandligi() {
         { heading: tr.h2, text: tr.note, table: { head: tr.tableHead, rows: TABLE_ROWS } },
       ]}
       contact={{ title: tr.contactTitle }}
-    />
+    >
+      <div style={{ marginTop: '40px', textAlign: 'center' }}>
+        <a 
+          href="https://career.edu.uz/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '12px',
+            background: 'var(--navy)',
+            color: 'var(--white)',
+            padding: '16px 36px',
+            fontSize: '1.1rem',
+            fontWeight: '600',
+            fontFamily: 'var(--font-sans)',
+            textDecoration: 'none',
+            borderRadius: '6px',
+            transition: 'background 0.3s, transform 0.2s',
+            boxShadow: '0 8px 24px rgba(26,26,56,0.15)'
+          }}
+          onMouseOver={(e) => { e.currentTarget.style.background = 'var(--gold-dark)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.background = 'var(--navy)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+        >
+          career.edu.uz platformasiga oʻtish
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </InfoPage>
   );
 }

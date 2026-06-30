@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Tuzilma', to: '/tuzilma' },
+  { label: 'Tuzilma' },
   { label: 'Boʻlimlar', to: '/bolimlar' },
   { label: 'Iqtidorli talabalar sektori' },
 ];
@@ -42,10 +42,12 @@ export default function IqtidorliTalabalarSektori() {
             'Shuningdek, talabalarga ilmiy maqola yozish metodikasi, tadqiqot olib borish asoslari hamda ilmiy manbalar bilan ishlash koʻnikmalarini shakllantirish boʻyicha amaliy yordam koʻrsatiladi.',
         },
       ]}
-      contact={{
-        title: 'Sektor rahbariyati',
-        responsible: 'Bekmurodova Mohinur Safarali qizi — sektor boshligʻi',
+      head={{
+        photo: '/bolimlar/bekmurodova-mohinur.jpeg',
+        name: 'Bekmurodova Mohinur Safarali qizi',
+        position: 'Sektor boshligʻi',
       }}
     />
   );
 }
+

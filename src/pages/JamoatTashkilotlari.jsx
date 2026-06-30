@@ -69,7 +69,7 @@ export default function JamoatTashkilotlari() {
 
   const BREADCRUMBS = [
     { label: tr.crumbHome, to: '/' },
-    { label: tr.crumbTuzilma, to: '/tuzilma' },
+    { label: tr.crumbTuzilma },
     { label: tr.crumbThis },
   ];
 
@@ -130,3 +130,4 @@ export default function JamoatTashkilotlari() {
     </main>
   );
 }
+

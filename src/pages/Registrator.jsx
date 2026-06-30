@@ -5,9 +5,10 @@ import { useTranslation } from '../contexts/LanguageContext';
 const T = {
   uz: {
     crumbHome: 'Bosh sahifa',
-    crumbStudents: 'Talabalar uchun',
+    crumbTuzilma: 'Tuzilma',
+    crumbBolimlar: 'Boʻlimlar',
     crumbThis: 'Registrator ofisi',
-    heroTag: 'Talabalar uchun',
+    heroTag: 'Tuzilma',
     heroTitle: 'Registrator',
     heroEm: 'Ofisi',
     addrTitle: 'Manzil',
@@ -16,17 +17,30 @@ const T = {
     hoursLines: ['Dushanba – Juma: 09:00 – 17:00', 'Tushlik: 13:00 – 14:00'],
     contactTitle: 'Bogʻlanish',
     contactLines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'],
-    tgKicker: 'Telegram orqali murojaat',
-    tgTitle: 'Registrator boti',
-    tgDesc: 'Hujjat buyurtma qilish va Registrator ofisiga murojaat yuborish uchun Telegram botimizdan foydalaning. Tez va qulay!',
-    tgBtn: 'Registrator Ofisi | Konservatoriya',
+    aboutHeading: 'Registrator ofisi haqida',
+    aboutText: 'Registrator ofisi talabalar faoliyatini tashkil etish va boshqarish, ularga oʻquv jarayoniga oid xizmatlarni sifatli va oʻz vaqtida koʻrsatish bilan shugʻullanadi. Ofis xizmat koʻrsatish (front office) va maʼlumotlar bazasi (back office) boʻlimlaridan iborat.',
+    tasks: [
+      'Talabalarga oʻquv jarayoniga tegishli xizmatlarni tizim orqali koʻrsatish.',
+      'Elektron taʼlim platformalaridan samarali foydalanishga koʻmaklashish.',
+      'Oʻqishni koʻchirish, akademik taʼtilga chiqarish va qaytarish, tiklash jarayonlarini tashkil qilish.',
+      'Yakuniy nazoratlar jadvali asosida oʻquv ishlarini tizim orqali nazorat qilish.',
+      'Ilmiy, innovatsion faoliyat va akademik mobillik boʻyicha xizmat koʻrsatish.',
+      'Oʻquv dasturlaridagi farqlarni bartaraf etish maqsadida qayta oʻqishni tashkil qilish.',
+    ],
+    staffHeading: 'Rahbariyat tarkibi',
+    staff: [
+      { name: 'Xabibullayev Qaxramon Rofiq oʻgʻli', role: 'Registrator ofisi boshligʻi', extra: 'dotsent', img: '/bolimlar/xabibullayev-qaxramon.jpeg' },
+      { name: 'Tajitdinov Abdulla Aʼlamovich', role: 'Xizmat koʻrsatish (front office) boʻlimi boshligʻi', extra: 'oʻqituvchi', img: '/bolimlar/tajitdinov-abdulla.png' },
+      { name: 'Toirov Akbar Zoir oʻgʻli', role: 'Maʼlumotlar bazasi (back office) boʻlimi boshligʻi', extra: 'katta oʻqituvchi', img: '/bolimlar/toirov-akbar.png' },
+    ],
     note: 'Arizalar HEMIS tizimi orqali ham topshirilishi mumkin. Shoshilinch hollarda bevosita ofisga murojaat qiling.',
   },
   ru: {
     crumbHome: 'Главная',
-    crumbStudents: 'Для студентов',
+    crumbTuzilma: 'Структура',
+    crumbBolimlar: 'Отделы',
     crumbThis: 'Офис регистратора',
-    heroTag: 'Для студентов',
+    heroTag: 'Структура',
     heroTitle: 'Офис',
     heroEm: 'регистратора',
     addrTitle: 'Адрес',
@@ -35,17 +49,30 @@ const T = {
     hoursLines: ['Понедельник – Пятница: 09:00 – 17:00', 'Обед: 13:00 – 14:00'],
     contactTitle: 'Контакты',
     contactLines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'],
-    tgKicker: 'Обращение через Telegram',
-    tgTitle: 'Бот регистратора',
-    tgDesc: 'Используйте наш Telegram-бот для заказа документов и обращения в офис регистратора. Быстро и удобно!',
-    tgBtn: 'Офис регистратора | Консерватория',
+    aboutHeading: 'Об офисе регистратора',
+    aboutText: 'Офис регистратора занимается организацией и управлением деятельностью студентов, качественным и своевременным оказанием им услуг, связанных с учебным процессом. Офис состоит из подразделений обслуживания (front office) и базы данных (back office).',
+    tasks: [
+      'Оказание студентам услуг, связанных с учебным процессом, через систему.',
+      'Содействие эффективному использованию платформ электронного обучения.',
+      'Организация перевода, оформления и возврата из академического отпуска, восстановления.',
+      'Контроль учебной работы через систему на основе графика итогового контроля.',
+      'Оказание услуг по научной, инновационной деятельности и академической мобильности.',
+      'Организация повторного обучения для устранения разницы в учебных программах.',
+    ],
+    staffHeading: 'Состав руководства',
+    staff: [
+      { name: 'Хабибуллаев Кахрамон Рофик угли', role: 'Начальник офиса регистратора', extra: 'доцент', img: '/bolimlar/xabibullayev-qaxramon.jpeg' },
+      { name: 'Таджитдинов Абдулла Аъламович', role: 'Начальник отдела обслуживания (front office)', extra: 'преподаватель', img: '/bolimlar/tajitdinov-abdulla.png' },
+      { name: 'Тоиров Акбар Зоир угли', role: 'Начальник отдела базы данных (back office)', extra: 'старший преподаватель', img: '/bolimlar/toirov-akbar.png' },
+    ],
     note: 'Заявления также можно подать через систему HEMIS. В срочных случаях обращайтесь непосредственно в офис.',
   },
   en: {
     crumbHome: 'Home',
-    crumbStudents: 'For students',
+    crumbTuzilma: 'Structure',
+    crumbBolimlar: 'Departments',
     crumbThis: 'Registrar Office',
-    heroTag: 'For students',
+    heroTag: 'Structure',
     heroTitle: 'Registrar',
     heroEm: 'Office',
     addrTitle: 'Address',
@@ -54,10 +81,22 @@ const T = {
     hoursLines: ['Monday – Friday: 09:00 – 17:00', 'Lunch: 13:00 – 14:00'],
     contactTitle: 'Contact',
     contactLines: ['+998 71 234-56-90', 'registrator@konservatoriya.uz'],
-    tgKicker: 'Apply via Telegram',
-    tgTitle: 'Registrar bot',
-    tgDesc: 'Use our Telegram bot to order documents and contact the Registrar Office. Fast and convenient!',
-    tgBtn: 'Registrar Office | Conservatory',
+    aboutHeading: 'About the Registrar Office',
+    aboutText: 'The Registrar Office organizes and manages student activities, providing them with high-quality and timely services related to the educational process. The office consists of front office (service) and back office (database) units.',
+    tasks: [
+      'Providing students with educational-process services through the system.',
+      'Assisting in the effective use of e-learning platforms.',
+      'Organizing transfers, academic leave and return, and reinstatement processes.',
+      'Monitoring academic work through the system based on the final assessment schedule.',
+      'Providing services for research, innovation activities and academic mobility.',
+      'Organizing re-study to eliminate differences in curricula.',
+    ],
+    staffHeading: 'Management team',
+    staff: [
+      { name: 'Khabibullaev Qakhramon Rofiq oʻgʻli', role: 'Head of the Registrar Office', extra: 'associate professor', img: '/bolimlar/xabibullayev-qaxramon.jpeg' },
+      { name: 'Tajitdinov Abdulla Aʼlamovich', role: 'Head of the front office unit', extra: 'lecturer', img: '/bolimlar/tajitdinov-abdulla.png' },
+      { name: 'Toirov Akbar Zoir oʻgʻli', role: 'Head of the back office (database) unit', extra: 'senior lecturer', img: '/bolimlar/toirov-akbar.png' },
+    ],
     note: 'Applications can also be submitted through the HEMIS system. In urgent cases, contact the office directly.',
   },
 };
@@ -68,7 +107,8 @@ export default function Registrator() {
 
   const BREADCRUMBS = [
     { label: tr.crumbHome, to: '/' },
-    { label: tr.crumbStudents, to: '/talabalar' },
+    { label: tr.crumbTuzilma },
+    { label: tr.crumbBolimlar, to: '/bolimlar' },
     { label: tr.crumbThis },
   ];
 
@@ -104,29 +144,17 @@ export default function Registrator() {
             ))}
           </div>
 
-          {/* ── MA'LUMOT — Ofis haqida ── */}
+          {/* ── Ofis haqida ── */}
           <div className="section-divider" style={{ marginTop: 0 }}>
-            <h2>Registrator ofisi haqida</h2>
+            <h2>{tr.aboutHeading}</h2>
           </div>
 
           <article className="article-body" style={{ marginBottom: '32px' }}>
-            <p>
-              Registrator ofisi talabalar faoliyatini tashkil etish va boshqarish, ularga oʻquv
-              jarayoniga oid xizmatlarni sifatli va oʻz vaqtida koʻrsatish bilan shugʻullanadi.
-              Ofis xizmat koʻrsatish (front office) va maʼlumotlar bazasi (back office)
-              boʻlimlaridan iborat.
-            </p>
+            <p>{tr.aboutText}</p>
           </article>
 
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
-            {[
-              'Talabalarga oʻquv jarayoniga tegishli xizmatlarni tizim orqali koʻrsatish.',
-              'Elektron taʼlim platformalaridan samarali foydalanishga koʻmaklashish.',
-              'Oʻqishni koʻchirish, akademik taʼtilga chiqarish va qaytarish, tiklash jarayonlarini tashkil qilish.',
-              'Yakuniy nazoratlar jadvali asosida oʻquv ishlarini tizim orqali nazorat qilish.',
-              'Ilmiy, innovatsion faoliyat va akademik mobillik boʻyicha xizmat koʻrsatish.',
-              'Oʻquv dasturlaridagi farqlarni bartaraf etish maqsadida qayta oʻqishni tashkil qilish.',
-            ].map((task) => (
+            {tr.tasks.map((task) => (
               <li key={task} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderLeft: '3px solid var(--gold)', padding: '16px 22px', fontSize: '0.92rem', color: '#555', lineHeight: 1.6, fontFamily: 'var(--font-serif)' }}>
                 {task}
               </li>
@@ -135,75 +163,29 @@ export default function Registrator() {
 
           {/* Rahbariyat tarkibi */}
           <div className="section-divider">
-            <h2>Rahbariyat tarkibi</h2>
+            <h2>{tr.staffHeading}</h2>
           </div>
 
           <div className="g-3" style={{ marginBottom: '50px' }}>
-            {[
-              { name: 'Xabibullayev Qaxramon Rofiq oʻgʻli', role: 'Registrator ofisi boshligʻi', extra: 'dotsent' },
-              { name: 'Tajitdinov Abdulla Aʼlamovich', role: 'Xizmat koʻrsatish (front office) boʻlimi boshligʻi', extra: 'oʻqituvchi' },
-              { name: 'Toirov Akbar Zoir oʻgʻli', role: 'Maʼlumotlar bazasi (back office) boʻlimi boshligʻi', extra: 'katta oʻqituvchi' },
-            ].map((p) => (
-              <div key={p.name} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '24px 26px' }}>
+            {tr.staff.map((p) => (
+              <div key={p.name} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '3px solid var(--gold)', padding: '24px 26px', textAlign: 'center' }}>
+                <div style={{
+                  width: 120, aspectRatio: '3 / 4', margin: '0 auto 16px', borderRadius: '6px',
+                  overflow: 'hidden', background: 'var(--cream)', border: '1px solid var(--light-border)',
+                }}>
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                  />
+                </div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: 'var(--navy)', marginBottom: '6px', lineHeight: 1.35 }}>{p.name}</div>
                 <div style={{ fontSize: '0.82rem', color: '#555', fontFamily: 'var(--font-serif)', marginBottom: '8px' }}>{p.role}</div>
                 <div style={{ fontSize: '0.66rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)' }}>{p.extra}</div>
               </div>
             ))}
-          </div>
-
-          {/* ── Telegram bot murojaat bloki ── */}
-          <div style={{
-            background: 'linear-gradient(135deg, #0f1a2e 0%, #162840 100%)',
-            border: '1px solid rgba(34,158,217,0.3)',
-            borderLeft: '4px solid #229ED9',
-            padding: '28px 32px',
-            marginBottom: '30px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '28px',
-            flexWrap: 'wrap',
-          }}>
-            <div style={{
-              width: '56px', height: '56px', borderRadius: '50%',
-              background: '#229ED9', display: 'flex', alignItems: 'center',
-              justifyContent: 'center', flexShrink: 0,
-            }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-              </svg>
-            </div>
-            <div style={{ flex: 1, minWidth: '200px' }}>
-              <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '3px', color: '#229ED9', marginBottom: '6px', textTransform: 'uppercase' }}>
-                {tr.tgKicker}
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: '1.2rem', fontWeight: 500, margin: '0 0 8px' }}>
-                {tr.tgTitle}
-              </h3>
-              <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, margin: 0 }}>
-                {tr.tgDesc}
-              </p>
-            </div>
-            <a
-              href="https://t.me/Konservatoriya_Registrar_Bot"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '10px',
-                background: '#229ED9', color: '#fff',
-                padding: '13px 26px', flexShrink: 0,
-                fontSize: '0.8rem', fontWeight: 700,
-                letterSpacing: '1px', textTransform: 'uppercase',
-                textDecoration: 'none', transition: 'background 0.2s',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = '#1a85b8'}
-              onMouseLeave={e => e.currentTarget.style.background = '#229ED9'}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-              </svg>
-              {tr.tgBtn}
-            </a>
           </div>
 
           <div style={{

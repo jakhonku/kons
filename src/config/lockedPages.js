@@ -29,14 +29,15 @@ const OPEN_EXACT = new Set([
   '/musiqa-jurnali',       // Konservatoriya — "Musiqa" jurnali (PDF sonlar bilan toʻldirilgan)
   '/musiqali-teatr-studiyasi', // Ijodiy faoliyat — Musiqali teatr studiyasi
   '/jonli-efir',           // Ijodiy faoliyat — Jonli efir
-  '/registrator',          // Talabalar — Registrator ofisi (Telegram bot bilan toʻldirilgan)
+  '/registrator',          // Tuzilma — Registrator ofisi boʻlimi (toʻliq maʼlumot + hodimlar)
+  '/registrator-murojaat', // Interaktiv — Registrator ofisiga murojaat (Telegram bot)
   '/oquv-rejalar',         // Talabalar — Ishchi oʻquv rejalar (2025-2026 PDF bilan toʻldirilgan)
   '/talim-dasturlari',     // (eski) → /sillabuslar ga redirect
   '/sillabuslar',          // Talabalar — Fanning oʻquv dasturlari (fan dasturlari PDF bilan toʻldirilgan)
   '/bolimlar',
   '/fakultetlar',
   '/kafedralar',
-  '/tuzilma',
+
   '/kasbiy-imtihonlar',    // (eski) → /qabul-talablari ga redirect (birlashtirildi)
   '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
   '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)
@@ -45,6 +46,11 @@ const OPEN_EXACT = new Set([
   '/kontaktlar',           // Aloqa maʼlumotlari (Kontaktlar)
   '/yashil-universitet',   // Konservatoriya — Yashil Universitet (ekologik raqamlar bilan toʻldirilgan)
   '/bitiruvchilar-bandligi', // Talabalar — Bitiruvchilar bandligi
+  '/togaraklar',           // Talabalar — Toʻgaraklar (rasmiy roʻyxat bilan toʻldirilgan)
+  '/kelajakka-qadam',      // Talabalar — «Kelajakka qadam» karyera markazi (rasmiy maʼlumot)
+  '/musiqa-cholgulari-laboratoriyasi', // Ilm-fan — «Milliy cholgʻu» laboratoriyasi (rasmiy maʼlumot)
+  '/hamkor-tashkilotlar',  // Xalqaro — Hamkor tashkilotlar / Xalqaro aloqalar boʻlimi (rasmiy maʼlumot)
+  '/vakansiyalar',         // Tuzilma — Boʻsh ish oʻrinlari (hozircha boʻsh, «tez orada» holati)
 ]);
 
 // Prefiks boʻyicha ochiq yoʻllar (dinamik sahifalar uchun)

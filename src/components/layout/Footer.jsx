@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../../contexts/LanguageContext';
 
 const MUASSASA_KEYS = [
-  { key: 'structure', to: '/tuzilma' },
   { key: 'management', to: '/rahbariyat' },
   { key: 'documents', to: '/hujjatlar' },
   { key: 'news', to: '/yangiliklar' },

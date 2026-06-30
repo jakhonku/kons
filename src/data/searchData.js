@@ -2,12 +2,6 @@
 
 export const SEARCH_PAGES = [
   {
-    title: 'Muassasa tuzilmasi',
-    path: '/tuzilma',
-    desc: 'Kafedra, boʻlim va strukturaviy boʻlinmalar',
-    keywords: 'tuzilma struktura kafedra bolim',
-  },
-  {
     title: 'Rahbariyat',
     path: '/rahbariyat',
     desc: 'Rektor, prorektorlar va boshqaruv hayʼati',

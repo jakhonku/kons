@@ -2,9 +2,9 @@ import PageHero from './PageHero';
 import { useTranslation } from '../contexts/LanguageContext';
 
 const LABELS = {
-  uz: { contact: 'Bogʻlanish', responsible: 'Masʼul', phone: 'Telefon', email: 'Email', address: 'Manzil', hours: 'Qabul soatlari', website: 'Rasmiy sayt' },
-  ru: { contact: 'Контакты', responsible: 'Ответственный', phone: 'Телефон', email: 'Email', address: 'Адрес', hours: 'Часы приёма', website: 'Официальный сайт' },
-  en: { contact: 'Contact', responsible: 'Responsible', phone: 'Phone', email: 'Email', address: 'Address', hours: 'Office hours', website: 'Official website' },
+  uz: { contact: 'Bogʻlanish', responsible: 'Masʼul', phone: 'Telefon', email: 'Email', address: 'Manzil', hours: 'Qabul soatlari', website: 'Rasmiy sayt', head: 'Boʻlim rahbari' },
+  ru: { contact: 'Контакты', responsible: 'Ответственный', phone: 'Телефон', email: 'Email', address: 'Адрес', hours: 'Часы приёма', website: 'Официальный сайт', head: 'Руководитель отдела' },
+  en: { contact: 'Contact', responsible: 'Responsible', phone: 'Phone', email: 'Email', address: 'Address', hours: 'Office hours', website: 'Official website', head: 'Head of department' },
 };
 
 /* Common skeleton for inner-pages that just need:
@@ -22,7 +22,9 @@ export default function InfoPage({
   lead,
   stats,
   sections = [],
+  head,
   contact,
+  children,
 }) {
   const { lang } = useTranslation();
   const L = LABELS[lang] || LABELS.uz;
@@ -33,6 +35,39 @@ export default function InfoPage({
 
       <section className="main-content">
         <div className="container">
+
+          {head && (
+            <div style={{
+              display: 'flex', gap: '28px', alignItems: 'center', flexWrap: 'wrap',
+              background: 'var(--light-50)', border: '1px solid var(--light-border)',
+              borderLeft: '3px solid var(--gold)', padding: '24px 28px', marginBottom: '40px',
+            }}>
+              {head.photo && (
+                <img
+                  src={head.photo}
+                  alt={head.name || ''}
+                  loading="eager"
+                  decoding="async"
+                  style={{ width: 130, aspectRatio: '3 / 4', objectFit: 'cover', objectPosition: 'top', borderRadius: '6px', border: '1px solid var(--light-border)', background: 'var(--cream)', flexShrink: 0 }}
+                />
+              )}
+              <div style={{ minWidth: 200, flex: 1 }}>
+                <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', marginBottom: '10px' }}>
+                  {head.label || L.head}
+                </div>
+                {head.name && (
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: 'var(--navy)', lineHeight: 1.3, marginBottom: '6px' }}>
+                    {head.name}
+                  </div>
+                )}
+                {head.position && (
+                  <div style={{ fontSize: '0.92rem', color: '#666', fontFamily: 'var(--font-serif)', lineHeight: 1.55 }}>
+                    {head.position}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           {lead && (
             <article className="article-body">
@@ -76,6 +111,30 @@ export default function InfoPage({
                     </li>
                   ))}
                 </ul>
+              )}
+
+              {sec.flags && (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '12px', marginBottom: '60px' }}>
+                  {sec.flags.map((f, i) => (
+                    <div key={i} style={{
+                      display: 'flex', alignItems: 'center', gap: '12px',
+                      background: 'var(--white)', border: '1px solid var(--light-border)',
+                      borderRadius: '4px', padding: '12px 14px',
+                    }}>
+                      <img
+                        src={`https://flagcdn.com/w40/${f.code}.png`}
+                        srcSet={`https://flagcdn.com/w80/${f.code}.png 2x`}
+                        width="28"
+                        height="21"
+                        alt={f.name}
+                        loading="lazy"
+                        decoding="async"
+                        style={{ flexShrink: 0, width: '28px', height: 'auto', borderRadius: '2px', border: '1px solid var(--light-border)', display: 'block' }}
+                      />
+                      <span style={{ fontSize: '0.9rem', color: 'var(--navy)', fontFamily: 'var(--font-sans)', lineHeight: 1.25 }}>{f.name}</span>
+                    </div>
+                  ))}
+                </div>
               )}
 
               {sec.cards && (
@@ -134,7 +193,17 @@ export default function InfoPage({
               <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '14px', fontFamily: 'var(--font-sans)' }}>
                 {contact.title || L.contact}
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', fontFamily: 'var(--font-sans)', fontSize: '0.88rem' }}>
+              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              {contact.photo && (
+                <img
+                  src={contact.photo}
+                  alt={contact.responsible || ''}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: 110, aspectRatio: '3 / 4', objectFit: 'cover', objectPosition: 'top', borderRadius: '4px', border: '1px solid var(--light-border)', background: 'var(--cream)', flexShrink: 0 }}
+                />
+              )}
+              <div style={{ flex: 1, minWidth: 220, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', fontFamily: 'var(--font-sans)', fontSize: '0.88rem' }}>
                 {contact.responsible && (
                   <div>
                     <div style={{ fontSize: '0.7rem', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{L.responsible}</div>
@@ -174,8 +243,11 @@ export default function InfoPage({
                   </div>
                 )}
               </div>
+              </div>
             </div>
           )}
+
+          {children}
 
         </div>
       </section>

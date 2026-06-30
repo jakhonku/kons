@@ -208,13 +208,6 @@ export default function Yangiliklar() {
                 <Link to={`/yangiliklar/${featured.id}`} className="news-featured-grid">
                   {featured.image && (
                     <div className="news-featured-grid-img-wrap">
-                      {/* Blurred background image */}
-                      <img
-                        src={featured.image}
-                        alt=""
-                        className="news-featured-grid-blur"
-                      />
-                      {/* Main contain image */}
                       <img
                         src={featured.image}
                         alt={featured.title}
@@ -223,7 +216,7 @@ export default function Yangiliklar() {
                         decoding="async"
                         className="news-featured-grid-main-img"
                       />
-                      <div className="news-featured-grid-overlay" />
+                      <span className="news-card-badge">{featured.cat}</span>
                     </div>
                   )}
                   <div className="news-featured-grid-text">
@@ -258,82 +251,38 @@ export default function Yangiliklar() {
               )}
 
               {rest.length > 0 && (
-                <div className="news-rest-grid" style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(420px, 1fr))', 
-                  gap: '30px', 
-                  marginBottom: '60px' 
-                }}>
+                <div className="news-rest-grid">
                   {rest.map((item) => (
                     <Link
                       key={item.id}
                       to={`/yangiliklar/${item.id}`}
-                      style={{ background: 'var(--white)', border: '1px solid var(--light-border)', overflow: 'hidden', transition: 'box-shadow 0.3s, transform 0.3s', cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block' }}
-                      onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(26,26,56,0.1)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                      onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
+                      className="news-card"
                     >
-                      {item.image && (
-                        <div style={{ 
-                          position: 'relative', 
-                          overflow: 'hidden', 
-                          height: '180px',
-                          background: '#0a0a18',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center'
-                        }}>
-                          {/* Blurred background image */}
-                          <img
-                            src={item.image}
-                            alt=""
-                            style={{ 
-                              position: 'absolute', 
-                              inset: 0, 
-                              width: '100%', 
-                              height: '100%', 
-                              objectFit: 'cover', 
-                              filter: 'blur(12px)', 
-                              opacity: 0.8,
-                              transform: 'scale(1.15)',
-                              pointerEvents: 'none'
-                            }}
-                          />
-                          {/* Crisp main image */}
+                      <div className="news-card-img-wrap">
+                        {item.image ? (
                           <img
                             src={item.image}
                             alt={item.title}
                             loading="lazy"
                             decoding="async"
-                            style={{ 
-                              position: 'relative', 
-                              width: '100%', 
-                              height: '100%', 
-                              objectFit: 'contain', 
-                              transition: 'transform 0.5s',
-                              zIndex: 1 
-                            }}
+                            className="news-card-img"
                           />
-                          <div style={{ position: 'absolute', top: '14px', left: '14px', zIndex: 2 }}>
-                            <span style={{ background: 'var(--navy)', color: 'var(--white)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', padding: '3px 10px', fontFamily: 'var(--font-sans)' }}>
-                              {item.cat}
-                            </span>
+                        ) : (
+                          <div className="news-card-img-fallback">
+                            <Newspaper size={40} strokeWidth={1.2} />
                           </div>
-                        </div>
-                      )}
-                      <div style={{ padding: '26px' }}>
-                        <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '2px', color: 'var(--gold-dark)', marginBottom: '12px', fontFamily: 'var(--font-sans)', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        )}
+                        <span className="news-card-badge">{item.cat}</span>
+                      </div>
+                      <div className="news-card-body">
+                        <div className="news-card-meta">
                           <span>{item.date}</span>
-                          <span style={{ display: 'flex', alignItems: 'center', gap: '4px', opacity: 0.7 }}>
+                          <span className="news-card-views">
                             <Eye size={12} /> {item.views}
                           </span>
                         </div>
-                        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 400, color: 'var(--navy)', lineHeight: 1.3, marginBottom: '14px' }}>
-                          {item.title}
-                        </h3>
-                        <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
-                          {item.excerpt}
-                        </p>
-
+                        <h3 className="news-card-title">{item.title}</h3>
+                        {item.excerpt && <p className="news-card-excerpt">{item.excerpt}</p>}
                       </div>
                     </Link>
                   ))}

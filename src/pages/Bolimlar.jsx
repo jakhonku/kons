@@ -7,6 +7,12 @@ const PHOTOS = {
   devonxona: '/bolimlar/axmedova-masuma.jpeg',
   arm: '/bolimlar/xodjaeva-shohida.jpeg',
   yoshlar: '/bolimlar/raxmanov-asatilla.png',
+  talimSifati: '/bolimlar/abdugapparov-abdufattox.jpeg',
+  murojaatlar: '/bolimlar/saidakbarxodjayeva-nigora.jpeg',
+  iqtidorli: '/bolimlar/bekmurodova-mohinur.jpeg',
+  fonoteka: '/bolimlar/jamolidinov-javohir.jpeg',
+  xalqaro: '/bolimlar/gaibova-habiba.jpeg',
+  registrator: '/bolimlar/xabibullayev-qaxramon.jpeg',
 };
 
 const T = {
@@ -19,10 +25,12 @@ const T = {
       { to: '/bolimlar/devonxona-arxiv', img: PHOTOS.devonxona, name: 'Devonxona va arxiv boʻlimi', desc: 'Ish yuritish, ijro intizomi va hujjatlar aylanishini taʼminlaydi.', boss: 'Axmedova Maʼsuma Faxruddinovna' },
       { to: '/bolimlar/axborot-resurs-markazi', img: PHOTOS.arm, name: 'Axborot resurs markazi', desc: '150 000 dan ortiq musiqiy va badiiy adabiyot fondi, oʻquv zallari.', boss: 'Xodjaeva Shohida Bahramovna' },
       { to: '/bolimlar/yoshlar-manaviyat-marifat', img: PHOTOS.yoshlar, name: 'Yoshlar bilan ishlash, maʼnaviyat-maʼrifat boʻlimi', desc: 'Talabalar maʼnaviyati, tarbiyasi va ijodiy faoliyatini tashkil etadi.', boss: 'Raxmanov Asatilla Izzatilla oʻgʻli' },
-      { to: '/bolimlar/talim-sifati', name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
-      { to: '/bolimlar/murojaatlar-nazorat', name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
-      { to: '/bolimlar/iqtidorli-talabalar-sektori', name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
-      { to: '/bolimlar/fonoteka', name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
+      { to: '/bolimlar/talim-sifati', img: PHOTOS.talimSifati, name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
+      { to: '/bolimlar/murojaatlar-nazorat', img: PHOTOS.murojaatlar, name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
+      { to: '/bolimlar/iqtidorli-talabalar-sektori', img: PHOTOS.iqtidorli, name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
+      { to: '/bolimlar/fonoteka', img: PHOTOS.fonoteka, name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
+      { to: '/bolimlar/xalqaro-aloqalar', img: PHOTOS.xalqaro, name: 'Xalqaro aloqalar boʻlimi', desc: '100 ga yaqin xorijiy oliy taʼlim muassasasi bilan hamkorlik va akademik mobillik.', boss: 'Gaibova Habiba Sodiqjon qizi' },
+      { to: '/registrator', img: PHOTOS.registrator, name: 'Registrator ofisi', desc: 'Talabalarning oʻquv jarayonini tashkil etish, hujjatlar va akademik xizmatlarni koʻrsatuvchi front/back office boʻlimi.', boss: 'Xabibullayev Qaxramon Rofiq oʻgʻli' },
     ],
   },
   ru: {
@@ -34,10 +42,12 @@ const T = {
       { to: '/bolimlar/devonxona-arxiv', img: PHOTOS.devonxona, name: 'Канцелярия и архивный отдел', desc: 'Обеспечивает делопроизводство, исполнительскую дисциплину и документооборот.', boss: 'Ахмедова Маъсума Фахруддиновна' },
       { to: '/bolimlar/axborot-resurs-markazi', img: PHOTOS.arm, name: 'Информационно-ресурсный центр', desc: 'Фонд более 150 000 музыкальных и художественных изданий, учебные залы.', boss: 'Ходжаева Шохида Бахрамовна' },
       { to: '/bolimlar/yoshlar-manaviyat-marifat', img: PHOTOS.yoshlar, name: 'Отдел по работе с молодёжью, духовности и просветительства', desc: 'Организует духовное воспитание, просвещение и творческую деятельность студентов.', boss: 'Рахманов Асатилла Иззатилла угли' },
-      { to: '/bolimlar/talim-sifati', name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
-      { to: '/bolimlar/murojaatlar-nazorat', name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
-      { to: '/bolimlar/iqtidorli-talabalar-sektori', name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
-      { to: '/bolimlar/fonoteka', name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
+      { to: '/bolimlar/talim-sifati', img: PHOTOS.talimSifati, name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
+      { to: '/bolimlar/murojaatlar-nazorat', img: PHOTOS.murojaatlar, name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
+      { to: '/bolimlar/iqtidorli-talabalar-sektori', img: PHOTOS.iqtidorli, name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
+      { to: '/bolimlar/fonoteka', img: PHOTOS.fonoteka, name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
+      { to: '/bolimlar/xalqaro-aloqalar', img: PHOTOS.xalqaro, name: 'Отдел международных связей', desc: 'Сотрудничество с почти 100 зарубежными вузами и академическая мобильность.', boss: 'Гаибова Хабиба Содикжон кизи' },
+      { to: '/registrator', img: PHOTOS.registrator, name: 'Офис регистратора', desc: 'Отдел (front/back office), организующий учебный процесс студентов и оказывающий документальные и академические услуги.', boss: 'Хабибуллаев Кахрамон Рофик угли' },
     ],
   },
   en: {
@@ -49,10 +59,12 @@ const T = {
       { to: '/bolimlar/devonxona-arxiv', img: PHOTOS.devonxona, name: 'Chancellery and Archive Department', desc: 'Ensures records management, executive discipline and document circulation.', boss: 'Akhmedova Maʼsuma Fakhruddinovna' },
       { to: '/bolimlar/axborot-resurs-markazi', img: PHOTOS.arm, name: 'Information Resource Center', desc: 'A fund of over 150,000 music and fiction publications, reading halls.', boss: 'Khodjaeva Shohida Bahramovna' },
       { to: '/bolimlar/yoshlar-manaviyat-marifat', img: PHOTOS.yoshlar, name: 'Department for Youth Affairs, Spirituality and Enlightenment', desc: 'Organizes the spiritual education, enlightenment and creative activities of students.', boss: 'Rakhmanov Asatilla Izzatilla oʻgʻli' },
-      { to: '/bolimlar/talim-sifati', name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
-      { to: '/bolimlar/murojaatlar-nazorat', name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
-      { to: '/bolimlar/iqtidorli-talabalar-sektori', name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
-      { to: '/bolimlar/fonoteka', name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
+      { to: '/bolimlar/talim-sifati', img: PHOTOS.talimSifati, name: 'Taʼlim sifatini taʼminlash boʻlimi', desc: 'Taʼlim sifati monitoringi, ichki baholash va davlat akkreditatsiyasiga tayyorgarlik.', boss: 'Abdugapparov Abdufattox Abdurazzakovich' },
+      { to: '/bolimlar/murojaatlar-nazorat', img: PHOTOS.murojaatlar, name: 'Murojaatlar, nazorat va monitoring boʻlimi', desc: 'Jismoniy va yuridik shaxslar murojaatlari bilan ishlash va ijro intizomi nazorati.', boss: 'Saidakbarxodjayeva Nigora Raxmatillayevna' },
+      { to: '/bolimlar/iqtidorli-talabalar-sektori', img: PHOTOS.iqtidorli, name: 'Iqtidorli talabalar ilmiy-tadqiqot sektori', desc: 'Talabalarni ilmiy-tadqiqot faoliyatiga jalb etish va iqtidorli yoshlarni qoʻllab-quvvatlash.', boss: 'Bekmurodova Mohinur Safarali qizi' },
+      { to: '/bolimlar/fonoteka', img: PHOTOS.fonoteka, name: 'Fonoteka boʻlimi', desc: '200+ kompozitor toʻplami va 3000+ ijro asari saqlanadigan musiqiy arxiv boʻlimi.', boss: 'Jamolidinov Javohir Fayzullo ogʻli' },
+      { to: '/bolimlar/xalqaro-aloqalar', img: PHOTOS.xalqaro, name: 'International Relations Department', desc: 'Cooperation with nearly 100 foreign universities and academic mobility.', boss: 'Gaibova Habiba Sodiqjon qizi' },
+      { to: '/registrator', img: PHOTOS.registrator, name: 'Registrar Office', desc: 'A front/back office department that organizes the student educational process and provides document and academic services.', boss: 'Khabibullaev Qakhramon Rofiq oʻgʻli' },
     ],
   },
 };
@@ -69,7 +81,7 @@ export default function Bolimlar() {
         emphasis={tr.emphasis}
         breadcrumbs={[
           { label: tr.crumbHome, to: '/' },
-          { label: tr.crumbTuzilma, to: '/tuzilma' },
+          { label: tr.crumbTuzilma },
           { label: tr.crumbThis },
         ]}
       />
@@ -167,3 +179,4 @@ export default function Bolimlar() {
     </main>
   );
 }
+

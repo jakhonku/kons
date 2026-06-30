@@ -5,19 +5,34 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const PDF_BASE = '/qabul-dasturlari';
 
-// Qabul dasturlari va baholash mezonlari (taʼlim yoʻnalishlari boʻyicha)
+// Qaysi yoʻnalishlarning ruscha PDF varianti mavjud (qolganlari UZga tushadi).
+const RU_AVAILABLE = new Set([
+  'bastakorlik-sanati', 'cholgu-ijrochiligi-fleyta-goboy', 'cholgu-ijrochiligi-torli',
+  'cholgu-ijrochiligi-fortepiano-organ', 'dirijyorlik-akademik-xor',
+  'sanatshunoslik-musiqashunoslik', 'texnogen-ovoz-rejissyorligi', 'vokal-akademik-xonandalik',
+]);
+
+// Qabul dasturlari va baholash mezonlari (taʼlim yoʻnalishlari boʻyicha).
+// `slug` — public/qabul-dasturlari/{uz,ru}/ ichidagi fayl nomi.
 const PROGRAMS = [
-  { code: '60210100', name: 'Texnogen sanʼat — musiqiy ovoz rejissyorligi', file: 'ovoz-rejissyorligi' },
-  { code: '60210900', name: 'Bastakorlik sanʼati', file: 'bastakorlik' },
-  { code: '60211000', name: 'Sanʼatshunoslik — musiqashunoslik', file: 'musiqashunoslik' },
-  { code: '60211300', name: 'Dirijyorlik — akademik xor dirijyorligi', file: 'xor-dirijyorligi' },
-  { code: '60211300', name: 'Dirijyorlik — opera-simfoniya dirijyorligi', file: 'opera-simfoniya-dirijyorligi' },
-  { code: '60211400', name: 'Vokal sanʼati — akademik xonandalik', file: 'vokal-akademik-xonandalik' },
-  { code: '60211500', name: 'Cholgʻu ijrochiligi — fortepiano, organ', file: 'fortepiano-organ' },
-  { code: '60211500', name: 'Cholgʻu ijrochiligi — puflama va zarbli cholgʻular', file: 'puflama-zarbli' },
-  { code: '60211500', name: 'Cholgʻu ijrochiligi — torli cholgʻular', file: 'torli-cholgular' },
-  { code: '60211500', name: 'Cholgʻu ijrochiligi — xalq cholgʻulari (ud, qonun)', file: 'xalq-cholgulari' },
-].map((p) => ({ ...p, pdf: `${PDF_BASE}/${p.code}-${p.file}.pdf` }));
+  { code: '60210100', slug: 'texnogen-ovoz-rejissyorligi', name: { uz: 'Texnogen sanʼat — musiqiy ovoz rejissyorligi', ru: 'Техногенное искусство — музыкальная звукорежиссура', en: 'Technogenic art — musical sound directing' } },
+  { code: '60210900', slug: 'bastakorlik-sanati', name: { uz: 'Bastakorlik sanʼati', ru: 'Искусство композиции', en: 'Art of composition' } },
+  { code: '60211000', slug: 'sanatshunoslik-musiqashunoslik', name: { uz: 'Sanʼatshunoslik — musiqashunoslik', ru: 'Искусствоведение — музыковедение', en: 'Art studies — musicology' } },
+  { code: '60211300', slug: 'dirijyorlik-akademik-xor', name: { uz: 'Dirijyorlik — akademik xor dirijyorligi', ru: 'Дирижирование — академическое хоровое дирижирование', en: 'Conducting — academic choral conducting' } },
+  { code: '60211300', slug: 'dirijyorlik-opera-simfoniya', name: { uz: 'Dirijyorlik — opera-simfoniya dirijyorligi', ru: 'Дирижирование — оперно-симфоническое дирижирование', en: 'Conducting — opera and symphony conducting' } },
+  { code: '60211400', slug: 'vokal-akademik-xonandalik', name: { uz: 'Vokal sanʼati — akademik xonandalik', ru: 'Вокальное искусство — академическое пение', en: 'Vocal art — academic singing' } },
+  { code: '60211500', slug: 'cholgu-ijrochiligi-fortepiano-organ', name: { uz: 'Cholgʻu ijrochiligi — fortepiano, organ', ru: 'Инструментальное исполнительство — фортепиано, орган', en: 'Instrumental performance — piano, organ' } },
+  { code: '60211500', slug: 'cholgu-ijrochiligi-fleyta-goboy', name: { uz: 'Cholgʻu ijrochiligi — puflama va zarbli cholgʻular', ru: 'Инструментальное исполнительство — духовые и ударные инструменты', en: 'Instrumental performance — wind and percussion instruments' } },
+  { code: '60211500', slug: 'cholgu-ijrochiligi-torli', name: { uz: 'Cholgʻu ijrochiligi — torli cholgʻular', ru: 'Инструментальное исполнительство — струнные инструменты', en: 'Instrumental performance — string instruments' } },
+  { code: '60211500', slug: 'cholgu-ijrochiligi-xalq', name: { uz: 'Cholgʻu ijrochiligi — xalq cholgʻulari', ru: 'Инструментальное исполнительство — народные инструменты', en: 'Instrumental performance — folk instruments' } },
+];
+
+// Til boʻyicha PDF manzili (ruscha boʻlmasa UZ fallback).
+function pdfFor(slug, lang) {
+  return lang === 'ru' && RU_AVAILABLE.has(slug)
+    ? `${PDF_BASE}/ru/${slug}.pdf`
+    : `${PDF_BASE}/uz/${slug}.pdf`;
+}
 
 const CONTENT = {
   uz: {
@@ -28,6 +43,7 @@ const CONTENT = {
     stages: ['Ixtisoslik (ijro yoki ijod)', 'Solfejio va musiqa nazariyasi', 'Garmoniya (baʼzi yoʻnalishlar uchun)', 'Suhbat'],
     progHeading: 'Qabul dasturlari va baholash mezonlari',
     codeLabel: 'Taʼlim yoʻnalishi kodi', metaTail: 'Baholash mezonlari',
+    uzFallback: 'oʻzbekcha',
     view: 'Koʻrish', download: 'yuklab olish',
     noteHeading: 'Qoʻshimcha maʼlumot',
     noteText: 'Kasbiy va ijodiy imtihonlar boʻyicha savollar uchun Qabul komissiyasiga murojaat qiling: qabul@konservatoriya.uz · +998 71 234-56-90',
@@ -40,6 +56,7 @@ const CONTENT = {
     stages: ['Специальность (исполнение или творчество)', 'Сольфеджио и теория музыки', 'Гармония (для некоторых направлений)', 'Собеседование'],
     progHeading: 'Программы приёма и критерии оценки',
     codeLabel: 'Код направления', metaTail: 'Критерии оценки',
+    uzFallback: 'на узбекском',
     view: 'Просмотр', download: 'скачать',
     noteHeading: 'Дополнительная информация',
     noteText: 'По вопросам профессиональных и творческих экзаменов обращайтесь в Приёмную комиссию: qabul@konservatoriya.uz · +998 71 234-56-90',
@@ -52,6 +69,7 @@ const CONTENT = {
     stages: ['Specialty (performance or composition)', 'Solfeggio and music theory', 'Harmony (for some programmes)', 'Interview'],
     progHeading: 'Admission programmes and assessment criteria',
     codeLabel: 'Programme code', metaTail: 'Assessment criteria',
+    uzFallback: 'in Uzbek',
     view: 'View', download: 'download',
     noteHeading: 'Additional information',
     noteText: 'For questions about professional and creative exams, contact the Admissions Committee: qabul@konservatoriya.uz · +998 71 234-56-90',
@@ -90,27 +108,32 @@ export default function QabulTalablari() {
               <h2>{c.progHeading}</h2>
             </div>
             <div className="doc-list" style={{ marginBottom: '40px' }}>
-              {PROGRAMS.map((p) => (
-                <div key={`${p.code}-${p.file}`} className="doc-item">
-                  <div className="doc-info">
-                    <div className="doc-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, flexShrink: 0, color: 'var(--gold-dark)' }}>
-                      <FileText size={20} strokeWidth={1.6} />
+              {PROGRAMS.map((p) => {
+                const name = p.name[lang] || p.name.uz;
+                const pdf = pdfFor(p.slug, lang);
+                const isFallback = lang === 'ru' && !RU_AVAILABLE.has(p.slug);
+                return (
+                  <div key={`${p.code}-${p.slug}`} className="doc-item">
+                    <div className="doc-info">
+                      <div className="doc-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, flexShrink: 0, color: 'var(--gold-dark)' }}>
+                        <FileText size={20} strokeWidth={1.6} />
+                      </div>
+                      <div style={{ minWidth: 0 }}>
+                        <div className="doc-name" style={{ overflowWrap: 'anywhere' }}>{name}</div>
+                        <div className="doc-meta">{c.codeLabel}: {p.code} &nbsp;·&nbsp; PDF · {c.metaTail}{isFallback ? ` · ${c.uzFallback}` : ''}</div>
+                      </div>
                     </div>
-                    <div style={{ minWidth: 0 }}>
-                      <div className="doc-name" style={{ overflowWrap: 'anywhere' }}>{p.name}</div>
-                      <div className="doc-meta">{c.codeLabel}: {p.code} &nbsp;·&nbsp; PDF · {c.metaTail}</div>
+                    <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+                      <a href={pdf} target="_blank" rel="noopener noreferrer" className="oquv-btn oquv-btn-view">
+                        <Eye size={13} strokeWidth={2} /> {c.view}
+                      </a>
+                      <a href={pdf} download aria-label={`${name} — ${c.download}`} className="oquv-btn oquv-btn-dl">
+                        <Download size={13} strokeWidth={2} />
+                      </a>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
-                    <a href={p.pdf} target="_blank" rel="noopener noreferrer" className="oquv-btn oquv-btn-view">
-                      <Eye size={13} strokeWidth={2} /> {c.view}
-                    </a>
-                    <a href={p.pdf} download aria-label={`${p.name} — ${c.download}`} className="oquv-btn oquv-btn-dl">
-                      <Download size={13} strokeWidth={2} />
-                    </a>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div style={{ background: 'var(--cream)', border: '1px solid var(--light-border)', borderLeft: '4px solid var(--gold)', padding: '24px 32px', marginBottom: '60px' }}>

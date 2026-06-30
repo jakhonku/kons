@@ -20,7 +20,7 @@ import AdminVideos from './pages/admin/AdminVideos';
 
 // Pages
 import Home from './pages/Home';
-import Tuzilma from './pages/Tuzilma';
+
 import Rahbariyat from './pages/Rahbariyat';
 import Hujjatlar from './pages/Hujjatlar';
 import Yangiliklar from './pages/Yangiliklar';
@@ -45,6 +45,7 @@ import Grantlar from './pages/Grantlar';
 import KelajakkaQadam from './pages/KelajakkaQadam';
 import Kutubxona from './pages/Kutubxona';
 import Registrator from './pages/Registrator';
+import RegistratorMurojaat from './pages/RegistratorMurojaat';
 import Togaraklar from './pages/Togaraklar';
 import Yotoqxona from './pages/Yotoqxona';
 import TadbirBatafsil from './pages/TadbirBatafsil';
@@ -66,6 +67,7 @@ import Fonoteka from './pages/Fonoteka';
 import IqtidorliTalabalarSektori from './pages/IqtidorliTalabalarSektori';
 import MurojaatlarNazorat from './pages/MurojaatlarNazorat';
 import TalimSifati from './pages/TalimSifati';
+import XalqaroAloqalarBolim from './pages/XalqaroAloqalarBolim';
 import NukusFiliali from './pages/NukusFiliali';
 import JamoatTashkilotlari from './pages/JamoatTashkilotlari';
 import KasabaUyushmasi from './pages/KasabaUyushmasi';
@@ -86,7 +88,6 @@ import MusiqaliTeatrStudiyasi from './pages/MusiqaliTeatrStudiyasi';
 import RektorBio from './pages/RektorBio';
 
 import JonliEfir from './pages/JonliEfir';
-import TalimYonalishlari from './pages/TalimYonalishlari';
 import QabulTalablari from './pages/QabulTalablari';
 import CallCenter from './pages/CallCenter';
 import QabulKvotasi from './pages/QabulKvotasi';
@@ -128,7 +129,6 @@ export default function App() {
           <Route index element={<Home />} />
           
           {/* Tuzilma */}
-          <Route path="tuzilma" element={<Tuzilma />} />
           <Route path="rahbariyat" element={<Rahbariyat />} />
           <Route path="rahbariyat/rektor" element={<RektorBio />} />
           <Route path="vasiylik-kengashi" element={<VasiylikKengashi />} />
@@ -143,6 +143,7 @@ export default function App() {
           <Route path="bolimlar/iqtidorli-talabalar-sektori" element={<IqtidorliTalabalarSektori />} />
           <Route path="bolimlar/murojaatlar-nazorat" element={<MurojaatlarNazorat />} />
           <Route path="bolimlar/talim-sifati" element={<TalimSifati />} />
+          <Route path="bolimlar/xalqaro-aloqalar" element={<XalqaroAloqalarBolim />} />
           <Route path="nukus-filiali" element={<NukusFiliali />} />
           <Route path="jamoat-tashkilotlari" element={<JamoatTashkilotlari />} />
           <Route path="jamoat-tashkilotlari/kasaba-uyushmasi" element={<KasabaUyushmasi />} />
@@ -179,6 +180,7 @@ export default function App() {
           <Route path="hemis-talaba" element={<HemisTalaba />} />
           <Route path="hemis-oquvchi" element={<HemisOquvchi />} />
           <Route path="registrator" element={<Registrator />} />
+          <Route path="registrator-murojaat" element={<RegistratorMurojaat />} />
           <Route path="yotoqxona" element={<Yotoqxona />} />
 
           {/* Ijodiy */}
@@ -191,7 +193,6 @@ export default function App() {
           <Route path="videogalereya" element={<Videogalereya />} />
 
           {/* Qabul */}
-          <Route path="talim-yonalishlari" element={<TalimYonalishlari />} />
           <Route path="talim-dasturlari" element={<Navigate to="/sillabuslar" replace />} />
           <Route path="qabul-talablari" element={<QabulTalablari />} />
           <Route path="call-center" element={<CallCenter />} />

@@ -3,7 +3,7 @@ import { Download, Eye } from 'lucide-react';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Konservatoriya', to: '/tuzilma' },
+  { label: 'Konservatoriya' },
   { label: '"Musiqa" jurnali' },
 ];
 
@@ -138,3 +138,4 @@ export default function MusiqaJurnali() {
     </main>
   );
 }
+

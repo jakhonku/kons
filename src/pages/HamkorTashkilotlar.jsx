@@ -14,25 +14,25 @@ const STATS = [
 
 /* Haqiqiy maʼlumot — hamkorlik davlatlari geografiyasi */
 const COUNTRIES = [
-  { name: 'Estoniya', flag: '🇪🇪' },
-  { name: 'Latviya', flag: '🇱🇻' },
-  { name: 'Chexiya', flag: '🇨🇿' },
-  { name: 'Belgiya', flag: '🇧🇪' },
-  { name: 'Slovakiya', flag: '🇸🇰' },
-  { name: 'Rossiya', flag: '🇷🇺' },
-  { name: 'Belarus', flag: '🇧🇾' },
-  { name: 'Ukraina', flag: '🇺🇦' },
-  { name: 'Xitoy', flag: '🇨🇳' },
-  { name: 'Janubiy Koreya', flag: '🇰🇷' },
-  { name: 'Italiya', flag: '🇮🇹' },
-  { name: 'Germaniya', flag: '🇩🇪' },
-  { name: 'Buyuk Britaniya', flag: '🇬🇧' },
-  { name: 'Turkiya', flag: '🇹🇷' },
-  { name: 'Ozarbayjon', flag: '🇦🇿' },
-  { name: 'Qozogʻiston', flag: '🇰🇿' },
-  { name: 'Qirgʻiziston', flag: '🇰🇬' },
-  { name: 'Tojikiston', flag: '🇹🇯' },
-  { name: 'BAA', flag: '🇦🇪' },
+  { name: 'Estoniya', code: 'ee' },
+  { name: 'Latviya', code: 'lv' },
+  { name: 'Chexiya', code: 'cz' },
+  { name: 'Belgiya', code: 'be' },
+  { name: 'Slovakiya', code: 'sk' },
+  { name: 'Rossiya', code: 'ru' },
+  { name: 'Belarus', code: 'by' },
+  { name: 'Ukraina', code: 'ua' },
+  { name: 'Xitoy', code: 'cn' },
+  { name: 'Janubiy Koreya', code: 'kr' },
+  { name: 'Italiya', code: 'it' },
+  { name: 'Germaniya', code: 'de' },
+  { name: 'Buyuk Britaniya', code: 'gb' },
+  { name: 'Turkiya', code: 'tr' },
+  { name: 'Ozarbayjon', code: 'az' },
+  { name: 'Qozogʻiston', code: 'kz' },
+  { name: 'Qirgʻiziston', code: 'kg' },
+  { name: 'Tojikiston', code: 'tj' },
+  { name: 'BAA', code: 'ae' },
 ];
 
 const TASKS = [
@@ -88,7 +88,16 @@ export default function HamkorTashkilotlar() {
                 onMouseOver={(e) => { e.currentTarget.style.background = 'var(--light-50)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.background = 'var(--white)'; }}
               >
-                <span style={{ fontSize: '1.6rem', lineHeight: 1, flexShrink: 0 }}>{c.flag}</span>
+                <img
+                  src={`https://flagcdn.com/w40/${c.code}.png`}
+                  srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`}
+                  width="30"
+                  height="22"
+                  alt={c.name}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ flexShrink: 0, width: '30px', height: 'auto', borderRadius: '2px', border: '1px solid var(--light-border)', display: 'block' }}
+                />
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'var(--navy)' }}>{c.name}</span>
               </div>
             ))}

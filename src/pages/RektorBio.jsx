@@ -56,7 +56,7 @@ export default function RektorBio() {
 
   const BREADCRUMBS = [
     { label: tr.crumbHome, to: '/' },
-    { label: tr.crumbKons, to: '/tuzilma' },
+    { label: tr.crumbKons },
     { label: tr.crumbRahbariyat, to: '/rahbariyat' },
     { label: tr.crumbThis },
   ];
@@ -167,3 +167,4 @@ export default function RektorBio() {
     </main>
   );
 }
+

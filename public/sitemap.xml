@@ -1,33 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://conservatory.uz/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://conservatory.uz/rahbariyat</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://conservatory.uz/yangiliklar</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://conservatory.uz/taqvim</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://conservatory.uz/qabul-talablari</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://conservatory.uz/qabul-kvotasi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Bosh sahifa -->
+  <url><loc>https://konservatoriya.uz/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+  <!-- Yangiliklar va tadbirlar -->
+  <url><loc>https://konservatoriya.uz/yangiliklar</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://konservatoriya.uz/taqvim</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://konservatoriya.uz/fotogalereya</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/videogalereya</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Qabul -->
+  <url><loc>https://konservatoriya.uz/qabul-talablari</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://konservatoriya.uz/qabul-kvotasi</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://konservatoriya.uz/call-center</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Tuzilma -->
+  <url><loc>https://konservatoriya.uz/rahbariyat</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://konservatoriya.uz/rahbariyat/rektor</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/fakultetlar</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://konservatoriya.uz/kafedralar</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/devonxona-arxiv</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/axborot-resurs-markazi</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/yoshlar-manaviyat-marifat</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/fonoteka</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/iqtidorli-talabalar-sektori</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/murojaatlar-nazorat</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/talim-sifati</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/bolimlar/xalqaro-aloqalar</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/nukus-filiali</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/vasiylik-kengashi</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/jamoat-tashkilotlari</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/jamoat-tashkilotlari/kasaba-uyushmasi</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://konservatoriya.uz/jamoat-tashkilotlari/yoshlar-ittifoqi</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://konservatoriya.uz/jamoat-tashkilotlari/xotin-qizlar-qomitasi</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://konservatoriya.uz/vakansiyalar</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/kontaktlar</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Taʼlim va talabalar -->
+  <url><loc>https://konservatoriya.uz/oquv-rejalar</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/sillabuslar</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/togaraklar</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/kelajakka-qadam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/bitiruvchilar-bandligi</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/registrator</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Interaktiv xizmatlar -->
+  <url><loc>https://konservatoriya.uz/online-murojaat</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://konservatoriya.uz/hemis-talaba</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/hemis-oquvchi</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Ilm-fan -->
+  <url><loc>https://konservatoriya.uz/musiqa-jurnali</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://konservatoriya.uz/musiqa-cholgulari-laboratoriyasi</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Ijodiy faoliyat -->
+  <url><loc>https://konservatoriya.uz/musiqali-teatr-studiyasi</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/jonli-efir</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+
+  <!-- Xalqaro -->
+  <url><loc>https://konservatoriya.uz/hamkor-tashkilotlar</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://konservatoriya.uz/xalqaro-memorandumlar</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Konservatoriya -->
+  <url><loc>https://konservatoriya.uz/yashil-universitet</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
 </urlset>
+

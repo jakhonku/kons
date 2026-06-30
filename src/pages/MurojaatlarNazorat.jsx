@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Tuzilma', to: '/tuzilma' },
+  { label: 'Tuzilma' },
   { label: 'Boʻlimlar', to: '/bolimlar' },
   { label: 'Murojaatlar, nazorat va monitoring boʻlimi' },
 ];
@@ -37,10 +37,12 @@ export default function MurojaatlarNazorat() {
           ],
         },
       ]}
-      contact={{
-        title: 'Boʻlim rahbariyati',
-        responsible: 'Saidakbarxodjayeva Nigora Raxmatillayevna — boʻlim boshligʻi',
+      head={{
+        photo: '/bolimlar/saidakbarxodjayeva-nigora.jpeg',
+        name: 'Saidakbarxodjayeva Nigora Raxmatillayevna',
+        position: 'Boʻlim boshligʻi',
       }}
     />
   );
 }
+

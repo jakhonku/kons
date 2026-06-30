@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Tuzilma', to: '/tuzilma' },
+  { label: 'Tuzilma' },
   { label: 'Boʻlimlar', to: '/bolimlar' },
   { label: 'Taʼlim sifatini taʼminlash boʻlimi' },
 ];
@@ -36,10 +36,12 @@ export default function TalimSifati() {
           ],
         },
       ]}
-      contact={{
-        title: 'Boʻlim rahbariyati',
-        responsible: 'Abdugapparov Abdufattox Abdurazzakovich — boʻlim boshligʻi, professor, “Shuhrat” medali sohibi',
+      head={{
+        photo: '/bolimlar/abdugapparov-abdufattox.jpeg',
+        name: 'Abdugapparov Abdufattox Abdurazzakovich',
+        position: 'Boʻlim boshligʻi · professor · “Shuhrat” medali sohibi',
       }}
     />
   );
 }
+

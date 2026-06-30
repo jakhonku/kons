@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
    ============================================================ */
 
 const SITE_NAME = 'Oʻzbekiston Davlat Konservatoriyasi';
-const SITE_URL = 'https://conservatory.uz';
+const SITE_URL = 'https://konservatoriya.uz';
 const DEFAULT_IMAGE = `${SITE_URL}/image.png`;
 
 function upsertMeta(attr, key, content) {

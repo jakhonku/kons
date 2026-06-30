@@ -60,7 +60,7 @@ export default function DevonxonaBolim() {
       emphasis={tr.emphasis}
       breadcrumbs={[
         { label: tr.crumbHome, to: '/' },
-        { label: tr.crumbTuzilma, to: '/tuzilma' },
+        { label: tr.crumbTuzilma },
         { label: tr.crumbBolimlar, to: '/bolimlar' },
         { label: tr.crumbThis },
       ]}
@@ -78,3 +78,4 @@ export default function DevonxonaBolim() {
     />
   );
 }
+

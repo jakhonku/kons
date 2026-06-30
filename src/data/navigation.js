@@ -135,7 +135,7 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.forStudents'),
           links: [
-            { label: t('nav.items.registrator'),     to: '/registrator' },
+            { label: t('nav.items.registrator'),     to: '/registrator-murojaat' },
             { label: t('nav.items.yotoqxona'),       to: '/yotoqxona' },
           ],
         },

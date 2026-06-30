@@ -2,7 +2,7 @@ import InfoPage from '../components/InfoPage';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Tuzilma', to: '/tuzilma' },
+  { label: 'Tuzilma' },
   { label: 'Boʻlimlar', to: '/bolimlar' },
   { label: 'Fonoteka boʻlimi' },
 ];
@@ -40,10 +40,12 @@ export default function Fonoteka() {
           ],
         },
       ]}
-      contact={{
-        title: 'Boʻlim rahbariyati',
-        responsible: 'Jamolidinov Javohir Fayzullo ogʻli — Fonoteka boʻlimi mudiri',
+      head={{
+        photo: '/bolimlar/jamolidinov-javohir.jpeg',
+        name: 'Jamolidinov Javohir Fayzullo ogʻli',
+        position: 'Fonoteka boʻlimi mudiri',
       }}
     />
   );
 }
+

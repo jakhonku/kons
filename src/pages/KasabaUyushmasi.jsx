@@ -2,7 +2,7 @@ import OrgDetail from '../components/OrgDetail';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Tuzilma', to: '/tuzilma' },
+  { label: 'Tuzilma' },
   { label: 'Jamoat tashkilotlari', to: '/jamoat-tashkilotlari' },
   { label: 'Kasaba uyushma qoʻmitasi' },
 ];
@@ -39,3 +39,4 @@ export default function KasabaUyushmasi() {
     />
   );
 }
+

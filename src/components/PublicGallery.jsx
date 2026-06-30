@@ -137,7 +137,7 @@ export default function PublicGallery({ images = [], alt = '' }) {
                     userSelect: 'none',
                     WebkitUserSelect: 'none',
                     pointerEvents: 'none',
-                    background: imgFallback ? 'var(--navy)' : '#0a0a18',
+                    background: imgFallback ? 'var(--navy)' : 'var(--light-100)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -145,58 +145,22 @@ export default function PublicGallery({ images = [], alt = '' }) {
                   }}
                 >
                   {shouldLoad ? (
-                    imgFallback ? (
-                      <img
-                        src={img}
-                        alt={alt}
-                        decoding="async"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'contain',
-                          padding: '120px',
-                          display: 'block',
-                          pointerEvents: 'none'
-                        }}
-                      />
-                    ) : (
-                      <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                        {/* Blurred background image */}
-                        <img
-                          src={img}
-                          alt=""
-                          style={{
-                            position: 'absolute',
-                            inset: 0,
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            filter: 'blur(20px)',
-                            opacity: 0.8,
-                            transform: 'scale(1.15)',
-                            pointerEvents: 'none'
-                          }}
-                        />
-                        {/* Crisp foreground image */}
-                        <img
-                          src={img}
-                          alt={alt}
-                          decoding="async"
-                          style={{
-                            position: 'relative',
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'contain',
-                            display: 'block',
-                            pointerEvents: 'none',
-                            zIndex: 1,
-                            background: 'transparent'
-                          }}
-                        />
-                      </div>
-                    )
+                    <img
+                      src={img}
+                      alt={alt}
+                      decoding="async"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: imgFallback ? 'contain' : 'cover',
+                        objectPosition: 'center',
+                        padding: imgFallback ? '120px' : '0',
+                        display: 'block',
+                        pointerEvents: 'none'
+                      }}
+                    />
                   ) : (
-                    <div style={{ width: '100%', height: '100%', background: '#0a0a18' }} />
+                    <div style={{ width: '100%', height: '100%', background: 'var(--light-100)' }} />
                   )}
                 </div>
               );

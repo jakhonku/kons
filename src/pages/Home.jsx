@@ -77,11 +77,10 @@ export default function Home() {
     { num: '1936',  label: t('home.stats.sinceYear') },
     { num: '5000+', label: t('home.stats.graduates') },
     { num: '16',    label: t('home.stats.departments') },
-    { num: '120+',  label: t('home.stats.partners') },
+    { num: '100+',  label: t('home.stats.partners') },
   ];
 
   const QUICK_LINKS = [
-    { icon: Building2, label: t('home.quickLinks.tuzilma.label'),       sub: t('home.quickLinks.tuzilma.sub'),       to: '/tuzilma' },
     { icon: Users,     label: t('home.quickLinks.rahbariyat.label'),    sub: t('home.quickLinks.rahbariyat.sub'),    to: '/rahbariyat' },
     { icon: Calendar,  label: t('home.quickLinks.taqvim.label'),        sub: t('home.quickLinks.taqvim.sub'),        to: '/taqvim' },
     { icon: FileText,  label: t('home.quickLinks.hujjatlar.label'),     sub: t('home.quickLinks.hujjatlar.sub'),     to: '/hujjatlar' },
@@ -357,63 +356,36 @@ export default function Home() {
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   className="news-slide-content"
                   style={{ 
-                    display: 'flex', 
+                    display: 'flex',
                     flexDirection: isMobile ? 'column' : 'row',
-                    gap: isMobile ? '0' : '40px', 
-                    alignItems: 'stretch',
+                    gap: isMobile ? '0' : '40px',
+                    alignItems: 'flex-start',
                     position: 'relative'
                   }}
                 >
                   {displayNews[newsIndex].image && displayNews[newsIndex].image !== '/Konservatoriya_logo_white-05.png' && (
-                    <div className="news-slide-image-wrap" style={{ 
+                    <div className="news-slide-image-wrap" style={{
                       flex: isMobile ? 'none' : '1.5',
-                      height: isMobile ? '260px' : '420px',
                       width: '100%',
-                      position: 'relative',
+                      alignSelf: isMobile ? 'stretch' : 'flex-start',
                       borderRadius: '12px',
                       overflow: 'hidden',
-                      boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                      background: '#07070e',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
+                      boxShadow: '0 20px 50px rgba(0,0,0,0.4)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      background: 'rgba(255,255,255,0.03)'
                     }}>
-                      {/* Blurred background image */}
-                      <img
-                        src={displayNews[newsIndex].image}
-                        alt=""
-                        style={{
-                          position: 'absolute',
-                          inset: 0,
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          filter: 'blur(15px)',
-                          opacity: 0.8,
-                          transform: 'scale(1.1)',
-                          pointerEvents: 'none'
-                        }}
-                      />
-                      {/* Main contain image */}
+                      {/* Asosiy rasm — oʻz tabiiy nisbatida, kesilmaydi, fon yoʻq */}
                       <img
                         src={displayNews[newsIndex].image}
                         alt={displayNews[newsIndex].title}
                         style={{
-                          position: 'relative',
+                          display: 'block',
                           width: '100%',
-                          height: '100%',
-                          objectFit: 'contain',
-                          zIndex: 1
+                          height: 'auto'
                         }}
                         loading="lazy"
                         decoding="async"
                       />
-                      <div style={{ 
-                        position: 'absolute', 
-                        inset: 0, 
-                        background: 'linear-gradient(to bottom, transparent 60%, rgba(7,7,14,0.5))',
-                        zIndex: 2
-                      }} />
                     </div>
                   )}
 

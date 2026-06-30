@@ -2,7 +2,7 @@ import OrgDetail from '../components/OrgDetail';
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Tuzilma', to: '/tuzilma' },
+  { label: 'Tuzilma' },
   { label: 'Jamoat tashkilotlari', to: '/jamoat-tashkilotlari' },
   { label: 'Xotin-qizlar qoʻmitasi' },
 ];
@@ -46,3 +46,4 @@ export default function XotinQizlarQomitasi() {
     />
   );
 }
+

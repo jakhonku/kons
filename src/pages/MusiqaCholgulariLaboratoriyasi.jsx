@@ -37,9 +37,11 @@ export default function MusiqaCholgulariLaboratoriyasi() {
           ],
         },
       ]}
-      contact={{
-        title: 'Laboratoriya rahbariyati',
-        responsible: 'Islamov Azamat Xaydarovich — laboratoriya direktori',
+      head={{
+        photo: '/bolimlar/islamov-azamat.jpeg',
+        label: 'Laboratoriya rahbari',
+        name: 'Islamov Azamat Xaydarovich',
+        position: 'Laboratoriya direktori',
       }}
     />
   );

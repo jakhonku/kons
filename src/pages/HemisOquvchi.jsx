@@ -3,7 +3,7 @@ import { Calendar, BarChart2, ClipboardList, FileText, MessageCircle, Users } fr
 
 const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
-  { label: 'Konservatoriya', to: '/tuzilma' },
+  { label: 'Konservatoriya' },
   { label: "HEMIS-oʻqituvchi" },
 ];
 
@@ -112,3 +112,4 @@ export default function HemisOquvchi() {
     </main>
   );
 }
+
