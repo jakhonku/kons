@@ -95,6 +95,7 @@ export default {
       qabulKvotasi: 'Admission Quota',
       kasbiyImtihonlar: 'Professional & Creative Exams',
       imtihonNatijalari: 'Exam Results',
+      imtihonJadvali: 'Exam Schedule',
 
       hamkorTashkilotlar: 'Partner Organizations',
       xorijiyTalabalar: 'For Foreign Students',

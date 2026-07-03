@@ -71,7 +71,7 @@ export const SEO_MAP = {
   },
   '/jamoat-tashkilotlari': {
     title: 'Jamoat tashkilotlari',
-    description: 'Konservatoriyadagi jamoat tashkilotlari — kasaba uyushmasi, Yoshlar ittifoqi va Xotin-qizlar qoʻmitasi.',
+    description: 'Konservatoriyadagi jamoat tashkilotlari — kasaba uyushmasi, Yoshlar ittifoqi va Xotin-qizlar maslahat kengashi.',
   },
   '/jamoat-tashkilotlari/kasaba-uyushmasi': {
     title: 'Kasaba uyushmasi',
@@ -81,9 +81,9 @@ export const SEO_MAP = {
     title: 'Yoshlar ittifoqi',
     description: 'Konservatoriya Yoshlar ittifoqi boshlangʻich tashkiloti — talabalar tashabbuslari va tadbirlari.',
   },
-  '/jamoat-tashkilotlari/xotin-qizlar-qomitasi': {
-    title: 'Xotin-qizlar qoʻmitasi',
-    description: 'Konservatoriya Xotin-qizlar qoʻmitasi — qizlar va ayollarni qoʻllab-quvvatlash boʻyicha faoliyat.',
+  '/jamoat-tashkilotlari/xotin-qizlar-maslahat-kengashi': {
+    title: 'Xotin-qizlar maslahat kengashi',
+    description: 'Konservatoriya Xotin-qizlar maslahat kengashi — qizlar va ayollarni qoʻllab-quvvatlash boʻyicha faoliyat.',
   },
   '/vakansiyalar': {
     title: 'Boʻsh ish oʻrinlari',

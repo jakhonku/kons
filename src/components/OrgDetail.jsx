@@ -16,6 +16,7 @@ export default function OrgDetail({
   leader,
   intro = [],
   sections = [],
+  children,
 }) {
   return (
     <main className="content-wrapper">
@@ -79,6 +80,8 @@ export default function OrgDetail({
               )}
             </div>
           ))}
+
+          {children}
 
         </div>
       </section>

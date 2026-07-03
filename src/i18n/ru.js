@@ -95,6 +95,7 @@ export default {
       qabulKvotasi: 'Квота приёма',
       kasbiyImtihonlar: 'Профессиональные и творческие экзамены',
       imtihonNatijalari: 'Результаты экзаменов',
+      imtihonJadvali: 'Расписание экзаменов',
 
       hamkorTashkilotlar: 'Партнёрские организации',
       xorijiyTalabalar: 'Для иностранных студентов',

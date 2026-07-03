@@ -19,6 +19,7 @@ const OPEN_EXACT = new Set([
   '/yangiliklar',          // Yangiliklar
   '/taqvim',               // Afisha — tadbirlar taqvimi
   '/qabul-talablari',      // Qabul — qabul dasturlari va baholash mezonlari (PDF)
+  '/imtihon-jadvali',      // Qabul — imtihon jadvali (PDF)
   '/call-center',          // Qabul — «Call-center» (aloqa maʼlumotlari)
   '/qabul-kvotasi',        // Qabul — qabul kvotasi
   '/online-murojaat',      // Interaktiv — online murojaat (forma ishlaydi)
@@ -36,10 +37,11 @@ const OPEN_EXACT = new Set([
   '/sillabuslar',          // Talabalar — Fanning oʻquv dasturlari (fan dasturlari PDF bilan toʻldirilgan)
   '/bolimlar',
   '/fakultetlar',
-  '/kafedralar',
+  // '/kafedralar',
 
   '/kasbiy-imtihonlar',    // (eski) → /qabul-talablari ga redirect (birlashtirildi)
   '/xalqaro-memorandumlar',// Xalqaro aloqalar — Xalqaro memorandumlar (50 ta muassasa roʻyxati)
+  '/erasmus',              // Xalqaro aloqalar — Erasmus+ dasturi
   '/jamoat-tashkilotlari', // Tuzilma — Jamoat tashkilotlari (rasmiy maʼlumot bilan toʻldirilgan)
   '/fotogalereya',         // Yangiliklar — Fotogalereya (admin albomlari + binosi/zal rasmlari)
   '/videogalereya',        // Yangiliklar — Videogalereya (admin paneldan boshqariladi)
@@ -59,6 +61,7 @@ const OPEN_PREFIX = [
   '/taqvim/',              // Tadbir batafsil sahifasi
   '/jamoat-tashkilotlari/', // Jamoat tashkilotlari — batafsil sahifalar (rahbar maʼlumoti bilan)
   '/bolimlar/',            // Boʻlimlar — batafsil sahifalar (Devonxona, ARM, Yoshlar boʻlimi)
+  '/fakultetlar/',         // Fakultetlar — batafsil sahifalar
 ];
 
 export function isPathOpen(pathname) {

@@ -89,8 +89,7 @@ export default function HamkorTashkilotlar() {
                 onMouseOut={(e) => { e.currentTarget.style.background = 'var(--white)'; }}
               >
                 <img
-                  src={`https://flagcdn.com/w40/${c.code}.png`}
-                  srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`}
+                  src={`https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/4x3/${c.code}.svg`}
                   width="30"
                   height="22"
                   alt={c.name}

@@ -95,6 +95,7 @@ export default {
       qabulKvotasi: 'Qabul kvotasi',
       kasbiyImtihonlar: 'Kasbiy va ijodiy imtihonlar',
       imtihonNatijalari: 'Imtihon natijalari',
+      imtihonJadvali: 'Imtihon jadvali',
 
       hamkorTashkilotlar: 'Hamkor tashkilotlar',
       xorijiyTalabalar: 'Xorijiy talabalar uchun',

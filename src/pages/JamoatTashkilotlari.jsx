@@ -6,7 +6,7 @@ import { useTranslation } from '../contexts/LanguageContext';
 const ORG_META = [
   { to: '/jamoat-tashkilotlari/kasaba-uyushmasi', leaderName: 'Mirpayazov Boxodir Alimovich', photo: '/jamoat/mirpayazov-boxodir.jpeg' },
   { to: '/jamoat-tashkilotlari/yoshlar-ittifoqi', leaderName: 'Turajanova Nilufar Elmurod qizi', photo: '/jamoat/turajanova-nilufar.jpeg' },
-  { to: '/jamoat-tashkilotlari/xotin-qizlar-qomitasi', leaderName: 'Xamdamova Sayyora Xusanovna', photo: '/jamoat/xamdamova-sayyora.jpeg' },
+  { to: '/jamoat-tashkilotlari/xotin-qizlar-maslahat-kengashi', leaderName: 'Xamdamova Sayyora Xusanovna', photo: '/jamoat/xamdamova-sayyora.jpeg' },
 ];
 
 const T = {
@@ -14,7 +14,7 @@ const T = {
     crumbHome: 'Bosh sahifa', crumbTuzilma: 'Tuzilma', crumbThis: 'Jamoat tashkilotlari',
     tag: 'Tuzilma', title: 'Jamoat', emphasis: 'tashkilotlari',
     lead: 'Konservatoriyaning jamoat tashkilotlari professor-oʻqituvchilar, xodimlar va talabalarning mehnat, kasbiy hamda ijtimoiy huquqlarini himoya qiladi, maʼnaviy-maʼrifiy faollikni muvofiqlashtiradi. Tashkilotlar oʻz faoliyatini ixtiyoriylik, qonuniylik va oshkoralik tamoyillari asosida amalga oshiradi.',
-    titles: ['Kasaba uyushma qoʻmitasi', 'Yoshlar ittifoqi', 'Xotin-qizlar qoʻmitasi'],
+    titles: ['Kasaba uyushma qoʻmitasi', 'Yoshlar ittifoqi', 'Xotin-qizlar maslahat kengashi'],
     roles: ['Rais', 'Yoshlar yetakchisi', 'Rais'],
     more: 'Batafsil',
     activityHeading: 'Tashkilotlarning umumiy faoliyati',
@@ -23,7 +23,7 @@ const T = {
       'Talabalar tashabbuslarini qoʻllab-quvvatlash',
       'Maʼnaviy-maʼrifiy tadbirlar tashkil etish',
       'Madaniy va sport tadbirlarini oʻtkazish',
-      'Sogʻliqni saqlash va dam olish dasturlari',
+      'Sogʻliqni saqlash va dam olish danturlari',
       'Xayriya va koʻngillilik faoliyati',
     ],
   },
@@ -31,7 +31,7 @@ const T = {
     crumbHome: 'Главная', crumbTuzilma: 'Структура', crumbThis: 'Общественные организации',
     tag: 'Структура', title: 'Общественные', emphasis: 'организации',
     lead: 'Общественные организации консерватории защищают трудовые, профессиональные и социальные права профессорско-преподавательского состава, сотрудников и студентов, координируют духовно-просветительскую активность. Организации осуществляют свою деятельность на основе принципов добровольности, законности и открытости.',
-    titles: ['Профсоюзный комитет', 'Союз молодёжи', 'Комитет женщин'],
+    titles: ['Профсоюзный комитет', 'Союз молодёжи', 'Женский консультативный совет'],
     roles: ['Председатель', 'Лидер молодёжи', 'Председатель'],
     more: 'Подробнее',
     activityHeading: 'Общая деятельность организаций',
@@ -41,14 +41,14 @@ const T = {
       'Организация духовно-просветительских мероприятий',
       'Проведение культурных и спортивных мероприятий',
       'Программы здравоохранения и отдыха',
-      'Благотворительная и волонтёрская деятельность',
+      'Благотворительная и волонтерская деятельность',
     ],
   },
   en: {
     crumbHome: 'Home', crumbTuzilma: 'Structure', crumbThis: 'Public organizations',
     tag: 'Structure', title: 'Public', emphasis: 'organizations',
     lead: 'The public organizations of the conservatory protect the labour, professional and social rights of the teaching staff, employees and students, and coordinate spiritual and educational activity. The organizations carry out their activities on the basis of the principles of voluntariness, legality and openness.',
-    titles: ['Trade Union Committee', 'Youth Union', 'Women’s Committee'],
+    titles: ['Trade Union Committee', 'Youth Union', 'Women’s Advisory Council'],
     roles: ['Chairman', 'Youth Leader', 'Chairwoman'],
     more: 'Read more',
     activityHeading: 'General activities of the organizations',

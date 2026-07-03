@@ -4,7 +4,7 @@ const BREADCRUMBS = [
   { label: 'Bosh sahifa', to: '/' },
   { label: 'Tuzilma' },
   { label: 'Jamoat tashkilotlari', to: '/jamoat-tashkilotlari' },
-  { label: 'Xotin-qizlar qoʻmitasi' },
+  { label: 'Xotin-qizlar maslahat kengashi' },
 ];
 
 export default function XotinQizlarQomitasi() {
@@ -12,11 +12,11 @@ export default function XotinQizlarQomitasi() {
     <OrgDetail
       tag="Jamoat tashkilotlari"
       title="Xotin-qizlar"
-      emphasis="qoʻmitasi"
+      emphasis="maslahat kengashi"
       breadcrumbs={BREADCRUMBS}
       leader={{
         name: 'Xamdamova Sayyora Xusanovna',
-        role: "Xotin-qizlar qoʻmitasi raisi",
+        role: "Xotin-qizlar maslahat kengashi raisi",
         photo: '/jamoat/xamdamova-sayyora.jpeg',
         awards: [
           "“Moʻtabar ayol” koʻkrak nishoni — 2020-yil",
@@ -24,7 +24,7 @@ export default function XotinQizlarQomitasi() {
         ],
       }}
       intro={[
-        "Oʻzbekiston davlat konservatoriyasining 2 ta fakultetida xotin-qizlar kengashlari raislari faoliyat koʻrsatmoqda. Konservatoriya ilmiy kengashining qaroriga muvofiq xotin-qizlar qoʻmitasi raisiga hamda barcha fakultetlar xotin-qizlar kengashi raislariga ichki imkoniyatdan kelib chiqib, qoʻshimcha haq toʻlanadi.",
+        "Oʻzbekiston davlat konservatoriyasining 2 ta fakultetida xotin-qizlar kengashlari raislari faoliyat koʻrsatmoqda. Konservatoriya ilmiy kengashining qaroriga muvofiq xotin-qizlar maslahat kengashi raisiga hamda barcha fakultetlar xotin-qizlar kengashi raislariga ichki imkoniyatdan kelib chiqib, qoʻshimcha haq toʻlanadi.",
         "Konservatoriya xotin-qizlar kengashi raisiga Oʻzbekiston Respublikasi Oliy taʼlim, fan va innovatsiyalar vazirining 2020-yil 17-iyundagi 326-son buyrugʻiga asosan xotin-qizlar masalalari boʻyicha rektor maslahatchisi, fakultetlar xotin-qizlar kengashi raislariga esa 2021-yil 13-dekabrdagi 518-son buyrugʻiga asosan dekan maslahatchisi maqomi berilgan.",
       ]}
       sections={[

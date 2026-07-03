@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PageHero from './PageHero';
 import { useTranslation } from '../contexts/LanguageContext';
 
@@ -122,8 +123,7 @@ export default function InfoPage({
                       borderRadius: '4px', padding: '12px 14px',
                     }}>
                       <img
-                        src={`https://flagcdn.com/w40/${f.code}.png`}
-                        srcSet={`https://flagcdn.com/w80/${f.code}.png 2x`}
+                        src={`https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/4x3/${f.code}.svg`}
                         width="28"
                         height="21"
                         alt={f.name}
@@ -139,27 +139,53 @@ export default function InfoPage({
 
               {sec.cards && (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginBottom: '60px' }}>
-                  {sec.cards.map((c, i) => (
-                    <div key={i} style={{ background: 'var(--white)', border: '1px solid var(--light-border)', borderTop: '4px solid var(--gold)', padding: '32px 28px' }}>
-                      {c.tag && <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>{c.tag}</div>}
-                      <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.25rem', fontWeight: 500, marginBottom: '12px', lineHeight: 1.3 }}>{c.title}</h3>
-                      {c.desc && <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)' }}>{c.desc}</p>}
-                      {c.meta && (
-                        <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
-                          {c.meta.startsWith('http') || c.meta.startsWith('/') ? (
-                            <a 
-                              href={c.meta} 
-                              target={c.meta.startsWith('http') ? "_blank" : undefined}
-                              rel={c.meta.startsWith('http') ? "noopener noreferrer" : undefined}
-                              style={{ color: 'inherit', textDecoration: 'none' }}
-                            >
-                              {c.meta}
-                            </a>
-                          ) : c.meta}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                  {sec.cards.map((c, i) => {
+                    const inner = (
+                      <>
+                        {c.tag && <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '3px', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-sans)' }}>{c.tag}</div>}
+                        <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--navy)', fontSize: '1.25rem', fontWeight: 500, marginBottom: '12px', lineHeight: 1.3 }}>{c.title}</h3>
+                        {c.desc && <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.7, fontFamily: 'var(--font-serif)' }}>{c.desc}</p>}
+                        {c.to && (
+                          <div style={{ marginTop: '16px', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--navy)', fontFamily: 'var(--font-sans)' }}>
+                            {lang === 'ru' ? 'Подробнее →' : lang === 'en' ? 'Learn more →' : 'Batafsil →'}
+                          </div>
+                        )}
+                        {c.meta && (
+                          <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--gold-dark)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
+                            {c.meta.startsWith('http') || c.meta.startsWith('/') ? (
+                              <a
+                                href={c.meta}
+                                target={c.meta.startsWith('http') ? '_blank' : undefined}
+                                rel={c.meta.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                style={{ color: 'inherit', textDecoration: 'none' }}
+                              >
+                                {c.meta}
+                              </a>
+                            ) : c.meta}
+                          </div>
+                        )}
+                      </>
+                    );
+                    const cardStyle = {
+                      background: 'var(--white)', border: '1px solid var(--light-border)',
+                      borderTop: '4px solid var(--gold)', padding: '32px 28px',
+                      display: 'block', textDecoration: 'none',
+                      transition: c.to ? 'box-shadow 0.25s, transform 0.25s' : undefined,
+                    };
+                    return c.to ? (
+                      <Link
+                        key={i}
+                        to={c.to}
+                        style={cardStyle}
+                        onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 8px 28px rgba(26,26,56,0.12)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+                        onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none'; }}
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div key={i} style={cardStyle}>{inner}</div>
+                    );
+                  })}
                 </div>
               )}
 

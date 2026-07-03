@@ -21,31 +21,31 @@ export function buildNavMenu(t) {
           heading: t('nav.headings.management'),
           links: [
 
-            { label: t('nav.items.rahbariyat'),          to: '/rahbariyat' },
-            { label: t('nav.items.vasiylikKengashi'),    to: '/vasiylik-kengashi' },
-            { label: t('nav.items.nukusFiliali'),        to: '/nukus-filiali' },
+            { label: t('nav.items.rahbariyat'), to: '/rahbariyat' },
+            { label: t('nav.items.vasiylikKengashi'), to: '/vasiylik-kengashi' },
+            { label: t('nav.items.nukusFiliali'), to: '/nukus-filiali' },
           ],
         },
         {
           heading: t('nav.headings.academic'),
           links: [
-            { label: t('nav.items.fakultetlar'),         to: '/fakultetlar' },
-            { label: t('nav.items.kafedralar'),          to: '/kafedralar' },
-            { label: t('nav.items.bolimlar'),            to: '/bolimlar' },
+            { label: t('nav.items.fakultetlar'), to: '/fakultetlar' },
+            { label: t('nav.items.kafedralar'), to: '/kafedralar' },
+            { label: t('nav.items.bolimlar'), to: '/bolimlar' },
             { label: t('nav.items.jamoatTashkilotlari'), to: '/jamoat-tashkilotlari' },
           ],
         },
         {
           heading: t('nav.headings.additional'),
           links: [
-            { label: t('nav.items.yashilUniversitet'),   to: '/yashil-universitet' },
-            { label: t('nav.items.vakansiyalar'),        to: '/vakansiyalar' },
+            { label: t('nav.items.yashilUniversitet'), to: '/yashil-universitet' },
+            { label: t('nav.items.vakansiyalar'), to: '/vakansiyalar' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.tuzilma.label'),
-        desc:  t('nav.featured.tuzilma.desc'),
+        desc: t('nav.featured.tuzilma.desc'),
       },
     },
 
@@ -58,24 +58,24 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.educationProcess'),
           links: [
-            { label: t('nav.items.darsJadvali'),  to: '/dars-jadvali' },
-            { label: t('nav.items.oquvRejalar'),  to: '/oquv-rejalar' },
-            { label: t('nav.items.sillabuslar'),  to: '/sillabuslar' },
-            { label: t('nav.items.oquvUslubiy'),  to: '/oquv-uslubiy-kengash' },
+            { label: t('nav.items.darsJadvali'), to: '/dars-jadvali' },
+            { label: t('nav.items.oquvRejalar'), to: '/oquv-rejalar' },
+            { label: t('nav.items.sillabuslar'), to: '/sillabuslar' },
+            { label: t('nav.items.oquvUslubiy'), to: '/oquv-uslubiy-kengash' },
           ],
         },
         {
           heading: t('nav.headings.forStudents'),
           links: [
-            { label: t('nav.items.kelajakkaQadam'),         to: '/kelajakka-qadam' },
-            { label: t('nav.items.togaraklar'),             to: '/togaraklar' },
-            { label: t('nav.items.bitiruvchilarBandligi'),  to: '/bitiruvchilar-bandligi' },
+            { label: t('nav.items.kelajakkaQadam'), to: '/kelajakka-qadam' },
+            { label: t('nav.items.togaraklar'), to: '/togaraklar' },
+            { label: t('nav.items.bitiruvchilarBandligi'), to: '/bitiruvchilar-bandligi' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.talim.label'),
-        desc:  t('nav.featured.talim.desc'),
+        desc: t('nav.featured.talim.desc'),
       },
     },
 
@@ -88,27 +88,27 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.research'),
           links: [
-            { label: t('nav.items.ilmiyKengash'),         to: '/ilmiy-kengash' },
-            { label: t('nav.items.ilmiyLoyihalar'),       to: '/ilmiy-loyihalar' },
-            { label: t('nav.items.doktorantura'),         to: '/doktorantura' },
+            { label: t('nav.items.ilmiyKengash'), to: '/ilmiy-kengash' },
+            { label: t('nav.items.ilmiyLoyihalar'), to: '/ilmiy-loyihalar' },
+            { label: t('nav.items.doktorantura'), to: '/doktorantura' },
             { label: t('nav.items.ilmiyKonferensiyalar'), to: '/ilmiy-konferensiyalar' },
-            { label: t('nav.items.grantlar'),             to: '/grantlar' },
-            { label: t('nav.items.musiqaCholgulariLab'),  to: '/musiqa-cholgulari-laboratoriyasi' },
+            { label: t('nav.items.grantlar'), to: '/grantlar' },
+            { label: t('nav.items.musiqaCholgulariLab'), to: '/musiqa-cholgulari-laboratoriyasi' },
           ],
         },
         {
           heading: t('nav.headings.publishing'),
           links: [
-            { label: t('nav.items.nashriyot'),            to: '/nashriyot' },
-            { label: t('nav.items.musiqaJurnali'),        to: '/musiqa-jurnali' },
-            { label: t('nav.items.musiqaJurnaliTah'),     to: '/musiqa-jurnali-tahririyati' },
+            { label: t('nav.items.nashriyot'), to: '/nashriyot' },
+            { label: t('nav.items.musiqaJurnali'), to: '/musiqa-jurnali' },
+            { label: t('nav.items.musiqaJurnaliTah'), to: '/musiqa-jurnali-tahririyati' },
             { label: t('nav.items.eurasianMusicJournal'), to: '/eurasian-music-journal' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.ilmFan.label'),
-        desc:  t('nav.featured.ilmFan.desc'),
+        desc: t('nav.featured.ilmFan.desc'),
       },
     },
 
@@ -121,28 +121,28 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.onlineServices'),
           links: [
-            { label: t('nav.items.onlineMurojaat'),   to: '/online-murojaat' },
-            { label: t('nav.items.onlineKutubxona'),  to: 'http://192.168.0.72' },
+            { label: t('nav.items.onlineMurojaat'), to: '/online-murojaat' },
+            { label: t('nav.items.onlineKutubxona'), to: 'http://192.168.0.72' },
           ],
         },
         {
           heading: t('nav.headings.hemis'),
           links: [
-            { label: t('nav.items.hemisTalaba'),     to: '/hemis-talaba' },
-            { label: t('nav.items.hemisOqituvchi'),  to: '/hemis-oquvchi' },
+            { label: t('nav.items.hemisTalaba'), to: '/hemis-talaba' },
+            { label: t('nav.items.hemisOqituvchi'), to: '/hemis-oquvchi' },
           ],
         },
         {
           heading: t('nav.headings.forStudents'),
           links: [
-            { label: t('nav.items.registrator'),     to: '/registrator-murojaat' },
-            { label: t('nav.items.yotoqxona'),       to: '/yotoqxona' },
+            { label: t('nav.items.registrator'), to: '/registrator-murojaat' },
+            { label: t('nav.items.yotoqxona'), to: '/yotoqxona' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.interaktiv.label'),
-        desc:  t('nav.featured.interaktiv.desc'),
+        desc: t('nav.featured.interaktiv.desc'),
       },
     },
 
@@ -156,14 +156,14 @@ export function buildNavMenu(t) {
           heading: t('nav.headings.events'),
           links: [
             { label: t('nav.items.musiqaliTeatr'), to: '/musiqali-teatr-studiyasi' },
-            { label: t('nav.items.jonliEfir'),    to: '/jonli-efir' },
-            { label: t('nav.items.afisha'),       to: '/taqvim' },
+            { label: t('nav.items.jonliEfir'), to: '/jonli-efir' },
+            { label: t('nav.items.afisha'), to: '/taqvim' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.ijodiy.label'),
-        desc:  t('nav.featured.ijodiy.desc'),
+        desc: t('nav.featured.ijodiy.desc'),
       },
     },
 
@@ -176,16 +176,17 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.admissionProcess'),
           links: [
-            { label: t('nav.items.qabulTalablari'),    to: '/qabul-talablari' },
-            { label: t('nav.items.callCenter'),        to: '/call-center' },
-            { label: t('nav.items.qabulKvotasi'),      to: '/qabul-kvotasi' },
+            { label: t('nav.items.qabulTalablari'), to: '/qabul-talablari' },
+            { label: t('nav.items.callCenter'), to: '/call-center' },
+            { label: t('nav.items.qabulKvotasi'), to: '/qabul-kvotasi' },
             { label: t('nav.items.imtihonNatijalari'), to: '/imtihon-natijalari' },
+            { label: t('nav.items.imtihonJadvali'), to: '/imtihon-jadvali' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.qabul.label'),
-        desc:  t('nav.featured.qabul.desc'),
+        desc: t('nav.featured.qabul.desc'),
       },
     },
 
@@ -198,22 +199,22 @@ export function buildNavMenu(t) {
         {
           heading: t('nav.headings.partnership'),
           links: [
-            { label: t('nav.items.hamkorTashkilotlar'),   to: '/hamkor-tashkilotlar' },
+            { label: t('nav.items.hamkorTashkilotlar'), to: '/hamkor-tashkilotlar' },
             { label: t('nav.items.xalqaroMemorandumlar'), to: '/xalqaro-memorandumlar' },
-            { label: t('nav.items.xorijiyTalabalar'),     to: '/xorijiy-talabalar' },
+            { label: t('nav.items.xorijiyTalabalar'), to: '/xorijiy-talabalar' },
           ],
         },
         {
           heading: t('nav.headings.programs'),
           links: [
             { label: t('nav.items.studyInUzbekistan'), to: 'https://studyin-uzbekistan.uz/' },
-            { label: t('nav.items.erasmus'),           to: '/erasmus' },
+            { label: t('nav.items.erasmus'), to: '/erasmus' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.xalqaro.label'),
-        desc:  t('nav.featured.xalqaro.desc'),
+        desc: t('nav.featured.xalqaro.desc'),
       },
     },
 
@@ -227,17 +228,17 @@ export function buildNavMenu(t) {
           heading: t('nav.headings.news'),
           links: [
             { label: t('nav.items.axborotXizmati'), to: '/yangiliklar' },
-            { label: t('nav.items.sayohat360'),     to: '/sayohat-360' },
-            { label: t('nav.items.rektorTabrigi'),  to: '/rektor-tabrigi' },
-            { label: t('nav.items.videogalereya'),  to: '/videogalereya' },
-            { label: t('nav.items.fotogalereya'),   to: '/fotogalereya' },
-            { label: t('nav.items.kontaktlar'),     to: '/kontaktlar' },
+            { label: t('nav.items.sayohat360'), to: '/sayohat-360' },
+            { label: t('nav.items.rektorTabrigi'), to: '/rektor-tabrigi' },
+            { label: t('nav.items.videogalereya'), to: '/videogalereya' },
+            { label: t('nav.items.fotogalereya'), to: '/fotogalereya' },
+            { label: t('nav.items.kontaktlar'), to: '/kontaktlar' },
           ],
         },
       ],
       featured: {
         label: t('nav.featured.axborot.label'),
-        desc:  t('nav.featured.axborot.desc'),
+        desc: t('nav.featured.axborot.desc'),
       },
     },
   ];

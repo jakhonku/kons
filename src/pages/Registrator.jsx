@@ -27,7 +27,7 @@ const T = {
       'Ilmiy, innovatsion faoliyat va akademik mobillik boʻyicha xizmat koʻrsatish.',
       'Oʻquv dasturlaridagi farqlarni bartaraf etish maqsadida qayta oʻqishni tashkil qilish.',
     ],
-    staffHeading: 'Rahbariyat tarkibi',
+    staffHeading: 'Boʻlim tarkibi',
     staff: [
       { name: 'Xabibullayev Qaxramon Rofiq oʻgʻli', role: 'Registrator ofisi boshligʻi', extra: 'dotsent', img: '/bolimlar/xabibullayev-qaxramon.jpeg' },
       { name: 'Tajitdinov Abdulla Aʼlamovich', role: 'Xizmat koʻrsatish (front office) boʻlimi boshligʻi', extra: 'oʻqituvchi', img: '/bolimlar/tajitdinov-abdulla.png' },
@@ -59,7 +59,7 @@ const T = {
       'Оказание услуг по научной, инновационной деятельности и академической мобильности.',
       'Организация повторного обучения для устранения разницы в учебных программах.',
     ],
-    staffHeading: 'Состав руководства',
+    staffHeading: 'Состав отдела',
     staff: [
       { name: 'Хабибуллаев Кахрамон Рофик угли', role: 'Начальник офиса регистратора', extra: 'доцент', img: '/bolimlar/xabibullayev-qaxramon.jpeg' },
       { name: 'Таджитдинов Абдулла Аъламович', role: 'Начальник отдела обслуживания (front office)', extra: 'преподаватель', img: '/bolimlar/tajitdinov-abdulla.png' },
@@ -91,7 +91,7 @@ const T = {
       'Providing services for research, innovation activities and academic mobility.',
       'Organizing re-study to eliminate differences in curricula.',
     ],
-    staffHeading: 'Management team',
+    staffHeading: 'Department staff',
     staff: [
       { name: 'Khabibullaev Qakhramon Rofiq oʻgʻli', role: 'Head of the Registrar Office', extra: 'associate professor', img: '/bolimlar/xabibullayev-qaxramon.jpeg' },
       { name: 'Tajitdinov Abdulla Aʼlamovich', role: 'Head of the front office unit', extra: 'lecturer', img: '/bolimlar/tajitdinov-abdulla.png' },

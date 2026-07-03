@@ -58,6 +58,8 @@ import NotFound from './pages/NotFound';
 import VasiylikKengashi from './pages/VasiylikKengashi';
 import OquvUslubiyKengash from './pages/OquvUslubiyKengash';
 import Fakultetlar from './pages/Fakultetlar';
+import MusiqaSanati from './pages/MusiqaSanati';
+import CholuIjrochiligi from './pages/CholuIjrochiligi';
 import Kafedralar from './pages/Kafedralar';
 import Bolimlar from './pages/Bolimlar';
 import DevonxonaBolim from './pages/DevonxonaBolim';
@@ -91,6 +93,7 @@ import JonliEfir from './pages/JonliEfir';
 import QabulTalablari from './pages/QabulTalablari';
 import CallCenter from './pages/CallCenter';
 import QabulKvotasi from './pages/QabulKvotasi';
+import ImtihonJadvali from './pages/ImtihonJadvali';
 import ImtihonNatijalari from './pages/ImtihonNatijalari';
 import XorijiyTalabalar from './pages/XorijiyTalabalar';
 import StudyInUzbekistan from './pages/StudyInUzbekistan';
@@ -134,6 +137,8 @@ export default function App() {
           <Route path="vasiylik-kengashi" element={<VasiylikKengashi />} />
           <Route path="oquv-uslubiy-kengash" element={<OquvUslubiyKengash />} />
           <Route path="fakultetlar" element={<Fakultetlar />} />
+          <Route path="fakultetlar/musiqa-sanati" element={<MusiqaSanati />} />
+          <Route path="fakultetlar/cholgu-ijrochiligi" element={<CholuIjrochiligi />} />
           <Route path="kafedralar" element={<Kafedralar />} />
           <Route path="bolimlar" element={<Bolimlar />} />
           <Route path="bolimlar/devonxona-arxiv" element={<DevonxonaBolim />} />
@@ -148,7 +153,7 @@ export default function App() {
           <Route path="jamoat-tashkilotlari" element={<JamoatTashkilotlari />} />
           <Route path="jamoat-tashkilotlari/kasaba-uyushmasi" element={<KasabaUyushmasi />} />
           <Route path="jamoat-tashkilotlari/yoshlar-ittifoqi" element={<YoshlarIttifoqi />} />
-          <Route path="jamoat-tashkilotlari/xotin-qizlar-qomitasi" element={<XotinQizlarQomitasi />} />
+          <Route path="jamoat-tashkilotlari/xotin-qizlar-maslahat-kengashi" element={<XotinQizlarQomitasi />} />
           <Route path="vakansiyalar" element={<Vakansiyalar />} />
           <Route path="kontaktlar" element={<Kontaktlar />} />
           <Route path="hujjatlar" element={<Hujjatlar />} />
@@ -198,6 +203,7 @@ export default function App() {
           <Route path="call-center" element={<CallCenter />} />
           <Route path="qabul-kvotasi" element={<QabulKvotasi />} />
           <Route path="kasbiy-imtihonlar" element={<Navigate to="/qabul-talablari" replace />} />
+          <Route path="imtihon-jadvali" element={<ImtihonJadvali />} />
           <Route path="imtihon-natijalari" element={<ImtihonNatijalari />} />
 
           {/* Xalqaro */}
