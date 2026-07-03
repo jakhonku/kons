@@ -27,7 +27,7 @@ export default function OrgDetail({
 
           {/* Rahbar kartochkasi */}
           {leader && (
-            <div className="org-leader">
+            <div className="org-leader" style={{ maxWidth: '680px', margin: '0 auto 40px' }}>
               <div className="org-leader-photo">
                 <img src={leader.photo} alt={leader.name} loading="lazy" />
               </div>
