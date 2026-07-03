@@ -3,7 +3,7 @@ import { useTranslation } from '../contexts/LanguageContext';
 
 const LEAD_UZ = `Musiqa san'ati fakultetida 8 ta ta'lim yo'nalishi mavjud. Jumladan, Akademik xonandalik va opera tayyorlovi, Akademik xor dirijyorligi, Maxsus fortepiano, San'atshunoslik (musiqashunoslik), Professional ta'lim: cholg'u ijrochiligi (turlari bo'yicha), Professional ta'lim: vokal san'ati (turlari bo'yicha), Bastakorlik san'ati va Musiqiy ovoz rejissyorligi.`;
 
-const LEAD_RU = `На факультете музыкального искусства действуют 8 направлений образования. В частности, академическое пение и оперная подготовка, академическое хоровое дирижирование, специальное фортепиано, искусствоведение (музыковедение), профессиональное образование: instrumental'noye ispolnitel'stvo (по видам), профессиональное образование: вокальное искусство (по видам), композиторское искусство и музыкальная звукорежиссура.`;
+const LEAD_RU = `На факультете музыкального искусства действуют 8 направлений образования. В частности, академическое пение и оперная подготовка, академическое хоровое дирижирование, специальное фортепиано, искусствоведение (музыковедение), профессиональное образование: инструментальное исполнительство (по видам), профессиональное образование: вокальное искусство (по видам), композиторское искусство и музыкальная звукорежиссура.`;
 
 const LEAD_EN = `There are 8 educational directions at the Faculty of Music Art. These include Academic Singing and Opera Training, Academic Choral Conducting, Special Piano, Art History (Musicology), Professional Education: Instrumental Performance (by type), Professional Education: Vocal Art (by type), Compositional Art, and Music Sound Engineering.`;
 
@@ -215,11 +215,38 @@ export default function MusiqaSanati() {
         <h2>{tr.hDeputies}</h2>
       </div>
 
-      <div className="prorektor-grid">
+      <div className="prorektor-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
         {DEPUTIES.map((dep, idx) => (
           <div key={idx} className="prorektor-card">
-            <div className="prorektor-photo">
-              <img src={dep.photo} alt={dep.name} loading="lazy" />
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              paddingTop: '20px',
+              paddingBottom: '20px',
+              background: 'var(--light-50)',
+              borderBottom: '1px solid var(--light-border)'
+            }}>
+              <div style={{
+                width: '180px',
+                height: '240px',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                background: 'var(--cream)',
+                boxShadow: '0 4px 12px rgba(26, 26, 56, 0.08)',
+              }}>
+                <img
+                  src={dep.photo}
+                  alt={dep.name}
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    display: 'block',
+                  }}
+                />
+              </div>
             </div>
             <div className="prorektor-body">
               <div className="prorektor-badge">{dep.title}</div>

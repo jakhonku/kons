@@ -237,11 +237,38 @@ export default function CholuIjrochiligi() {
         <h2>{tr.hDeputies}</h2>
       </div>
 
-      <div className="prorektor-grid">
+      <div className="prorektor-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
         {DEPUTIES.map((dep, idx) => (
           <div key={idx} className="prorektor-card">
-            <div className="prorektor-photo">
-              <img src={dep.photo} alt={dep.name} loading="lazy" />
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              paddingTop: '20px',
+              paddingBottom: '20px',
+              background: 'var(--light-50)',
+              borderBottom: '1px solid var(--light-border)'
+            }}>
+              <div style={{
+                width: '180px',
+                height: '240px',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                background: 'var(--cream)',
+                boxShadow: '0 4px 12px rgba(26, 26, 56, 0.08)',
+              }}>
+                <img
+                  src={dep.photo}
+                  alt={dep.name}
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    display: 'block',
+                  }}
+                />
+              </div>
             </div>
             <div className="prorektor-body">
               {dep.awards && dep.awards.length > 0 && (
