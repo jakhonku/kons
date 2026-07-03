@@ -89,7 +89,7 @@ const PROFESSOR_RU = `Общее количество профессорско-�
 — 37 старших преподавателей;
 — 12 преподавателей.
 
-Общее число студентов на факультете составляет 535 человек. Среди них есть лауреаты государственных стипендий, государственных наград, победители международных и республиканских конкурсов.`;
+Общее число студентов на факультете составляет 535 человек. Среди них есть лауреаты государственных стипендений, государственных наград, победители международных и республиканских конкурсов.`;
 
 const PROFESSOR_EN = `The total number of professors and teachers is 123. In particular:
 — 6 doctors of science;
@@ -215,9 +215,16 @@ export default function MusiqaSanati() {
         <h2>{tr.hDeputies}</h2>
       </div>
 
-      <div className="prorektor-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+      <div 
+        className="prorektor-grid" 
+        style={{ 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 340px))',
+          justifyContent: 'center',
+          gap: '30px'
+        }}
+      >
         {DEPUTIES.map((dep, idx) => (
-          <div key={idx} className="prorektor-card">
+          <div key={idx} className="prorektor-card" style={{ maxWidth: '340px' }}>
             <div style={{
               display: 'flex',
               justifyContent: 'center',

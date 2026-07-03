@@ -27,7 +27,7 @@ const HAQIDA_RU = `На сегодняшний день в специализи�
 
 С целью укрепления научного потенциала профессорско-преподавательского состава факультета регулярно проводятся научно-методические семинары, круглые столы с известными учёными и специалистами, различные проекты и научные доклады.
 
-Налажено эффективное сотрудничество факультета с зарубежными учреждениями музыкального искусства: Италией, Германией, США, Францией, Россией, Южной Кореей.`;
+Налажено эффективное сотрудничество факультета с зарубежными учреждениями музыкального искусства: Италией, Германией, США, Францией, Россией, Южной Корей.`;
 
 const HAQIDA_EN = `To date, distinguished representatives of musical art — Honored Art Workers of Uzbekistan, People's Artists of Uzbekistan, Honored Artists of Uzbekistan, Honored Youth Coaches of Uzbekistan — are training highly qualified personnel for the development of musical art at the specialized departments.
 
@@ -237,9 +237,16 @@ export default function CholuIjrochiligi() {
         <h2>{tr.hDeputies}</h2>
       </div>
 
-      <div className="prorektor-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+      <div 
+        className="prorektor-grid" 
+        style={{ 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 340px))',
+          justifyContent: 'center',
+          gap: '30px'
+        }}
+      >
         {DEPUTIES.map((dep, idx) => (
-          <div key={idx} className="prorektor-card">
+          <div key={idx} className="prorektor-card" style={{ maxWidth: '340px' }}>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
