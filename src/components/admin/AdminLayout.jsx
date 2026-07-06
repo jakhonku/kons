@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Newspaper, Image as ImageIcon, Images, Video as VideoIcon, LogOut, ExternalLink, Radio, Send, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, Newspaper, Image as ImageIcon, Images, Video as VideoIcon, LogOut, ExternalLink, Radio, Send, MessageSquare, MonitorPlay } from 'lucide-react';
 import { useAdminAuth } from '../../contexts/AdminAuthContext';
 
 const NAV = [
@@ -10,6 +10,7 @@ const NAV = [
   { to: '/admin/videos', label: 'Video galereya', icon: VideoIcon },
   { to: '/admin/ticker', label: 'Lenta yangiliklari', icon: Radio },
   { to: '/admin/telegram', label: 'Telegram postlar', icon: Send },
+  { to: '/admin/online-imtihonlar', label: 'Online imtihonlar', icon: MonitorPlay },
   { to: '/admin/messages', label: 'Murojaatlar', icon: MessageSquare },
 ];
 

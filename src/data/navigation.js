@@ -181,6 +181,7 @@ export function buildNavMenu(t) {
             { label: t('nav.items.qabulKvotasi'), to: '/qabul-kvotasi' },
             { label: t('nav.items.imtihonNatijalari'), to: '/imtihon-natijalari' },
             { label: t('nav.items.imtihonJadvali'), to: '/imtihon-jadvali' },
+            { label: t('nav.items.onlineImtihonKuzatish'), to: '/online-imtihonlar' },
           ],
         },
       ],

@@ -120,4 +120,14 @@ export function useAdminVideos() {
   return useTable('videos');
 }
 
+const IMTIHON_ORDER = {
+  column: 'sort_order',
+  ascending: true,
+  secondary: { column: 'created_at', ascending: false },
+};
+
+export function useAdminOnlineImtihonlar() {
+  return useTable('online_imtihonlar', IMTIHON_ORDER);
+}
+
 export { uploadImage };

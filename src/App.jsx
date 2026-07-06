@@ -15,6 +15,7 @@ import AdminPosters from './pages/admin/AdminPosters';
 import AdminTicker from './pages/admin/AdminTicker';
 import AdminTelegram from './pages/admin/AdminTelegram';
 import AdminMessages from './pages/admin/AdminMessages';
+import AdminOnlineImtihonlar from './pages/admin/AdminOnlineImtihonlar';
 import AdminGallery from './pages/admin/AdminGallery';
 import AdminVideos from './pages/admin/AdminVideos';
 
@@ -95,6 +96,7 @@ import CallCenter from './pages/CallCenter';
 import QabulKvotasi from './pages/QabulKvotasi';
 import ImtihonJadvali from './pages/ImtihonJadvali';
 import ImtihonNatijalari from './pages/ImtihonNatijalari';
+import OnlineImtihonlar from './pages/OnlineImtihonlar';
 import XorijiyTalabalar from './pages/XorijiyTalabalar';
 import StudyInUzbekistan from './pages/StudyInUzbekistan';
 import RektorTabrigi from './pages/RektorTabrigi';
@@ -125,6 +127,7 @@ export default function App() {
           <Route path="videos" element={<AdminVideos />} />
           <Route path="ticker" element={<AdminTicker />} />
           <Route path="telegram" element={<AdminTelegram />} />
+          <Route path="online-imtihonlar" element={<AdminOnlineImtihonlar />} />
           <Route path="messages" element={<AdminMessages />} />
         </Route>
 
@@ -205,6 +208,7 @@ export default function App() {
           <Route path="kasbiy-imtihonlar" element={<Navigate to="/qabul-talablari" replace />} />
           <Route path="imtihon-jadvali" element={<ImtihonJadvali />} />
           <Route path="imtihon-natijalari" element={<ImtihonNatijalari />} />
+          <Route path="online-imtihonlar" element={<OnlineImtihonlar />} />
 
           {/* Xalqaro */}
           <Route path="hamkor-tashkilotlar" element={<HamkorTashkilotlar />} />

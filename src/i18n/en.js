@@ -96,6 +96,7 @@ export default {
       kasbiyImtihonlar: 'Professional & Creative Exams',
       imtihonNatijalari: 'Exam Results',
       imtihonJadvali: 'Exam Schedule',
+      onlineImtihonKuzatish: 'Online exam observation',
 
       hamkorTashkilotlar: 'Partner Organizations',
       xorijiyTalabalar: 'For Foreign Students',

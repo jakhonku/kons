@@ -96,6 +96,7 @@ export default {
       kasbiyImtihonlar: 'Kasbiy va ijodiy imtihonlar',
       imtihonNatijalari: 'Imtihon natijalari',
       imtihonJadvali: 'Imtihon jadvali',
+      onlineImtihonKuzatish: 'Online imtihonlarni kuzatish',
 
       hamkorTashkilotlar: 'Hamkor tashkilotlar',
       xorijiyTalabalar: 'Xorijiy talabalar uchun',

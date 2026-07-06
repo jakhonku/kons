@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Newspaper, Image as ImageIcon, Images, Video as VideoIcon, Plus, ArrowRight, Calendar, Radio } from 'lucide-react';
-import { useAdminNews, useAdminPosters, useAdminTicker, useAdminGallery, useAdminVideos } from '../../hooks/useAdminStorage';
+import { Newspaper, Image as ImageIcon, Images, Video as VideoIcon, Plus, ArrowRight, Calendar, Radio, MonitorPlay } from 'lucide-react';
+import { useAdminNews, useAdminPosters, useAdminTicker, useAdminGallery, useAdminVideos, useAdminOnlineImtihonlar } from '../../hooks/useAdminStorage';
 
 function formatDate(value) {
   if (!value) return '—';
@@ -20,6 +20,7 @@ export default function AdminDashboard() {
   const { items: ticker } = useAdminTicker();
   const { items: albums } = useAdminGallery();
   const { items: videos } = useAdminVideos();
+  const { items: onlineImtihonlar } = useAdminOnlineImtihonlar();
 
   const featuredCount = news.filter((n) => n.featured).length;
   const upcoming = posters
@@ -74,6 +75,11 @@ export default function AdminDashboard() {
           <div className="admin-stat-num">{featuredCount}</div>
           <div className="admin-stat-label">Asosiy yangiliklar</div>
         </div>
+        <div className="admin-stat">
+          <div className="admin-stat-icon"><MonitorPlay size={20} strokeWidth={1.6} /></div>
+          <div className="admin-stat-num">{onlineImtihonlar.filter(x => x.holat === 'faol').length}</div>
+          <div className="admin-stat-label">Faol online imtihon</div>
+        </div>
       </div>
 
       <div className="admin-quick-grid">
@@ -110,6 +116,13 @@ export default function AdminDashboard() {
           <h3>Tezkor yangilik</h3>
           <p>Tezkor yangilik joylash</p>
           <span className="admin-quick-card-cta">Yangi qoʻshish <ArrowRight size={14} /></span>
+        </Link>
+
+        <Link to="/admin/online-imtihonlar" className="admin-quick-card">
+          <div className="admin-quick-card-icon"><MonitorPlay size={20} strokeWidth={1.7} /></div>
+          <h3>Online imtihonlar</h3>
+          <p>Zoom havolalarini boshqarish ({onlineImtihonlar.length} ta)</p>
+          <span className="admin-quick-card-cta">Ochish <ArrowRight size={14} /></span>
         </Link>
       </div>
 

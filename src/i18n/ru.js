@@ -96,6 +96,7 @@ export default {
       kasbiyImtihonlar: 'Профессиональные и творческие экзамены',
       imtihonNatijalari: 'Результаты экзаменов',
       imtihonJadvali: 'Расписание экзаменов',
+      onlineImtihonKuzatish: 'Онлайн наблюдение за экзаменами',
 
       hamkorTashkilotlar: 'Партнёрские организации',
       xorijiyTalabalar: 'Для иностранных студентов',
