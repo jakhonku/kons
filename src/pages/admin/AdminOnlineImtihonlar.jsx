@@ -1,59 +1,17 @@
 import { useState, useMemo } from 'react';
 import {
   Plus, Edit3, Trash2, Search, X, Video, Link as LinkIcon,
-  ChevronUp, ChevronDown, Loader2, Calendar, Clock, CheckCircle,
-  AlertCircle, Clock3,
+  ChevronUp, ChevronDown, Loader2,
 } from 'lucide-react';
 import { useAdminOnlineImtihonlar } from '../../hooks/useAdminStorage';
-
-const HOLAT_OPTIONS = [
-  { value: 'kutilmoqda', label: 'Kutilmoqda', color: '#f59e0b' },
-  { value: 'faol',       label: 'Faol (hozir)',   color: '#22c55e' },
-  { value: 'yakunlangan', label: 'Yakunlangan',  color: '#94a3b8' },
-];
 
 const EMPTY = {
   nomi: '',
   nomi_ru: '',
   nomi_en: '',
-  tavsif: '',
-  tavsif_ru: '',
-  tavsif_en: '',
   zoom_link: '',
-  sana: '',
-  vaqt: '',
-  holat: 'kutilmoqda',
   sort_order: 0,
 };
-
-function HolatBadge({ holat }) {
-  const opt = HOLAT_OPTIONS.find((o) => o.value === holat) || HOLAT_OPTIONS[0];
-  const Icon =
-    holat === 'faol'
-      ? CheckCircle
-      : holat === 'yakunlangan'
-      ? AlertCircle
-      : Clock3;
-  return (
-    <span
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 4,
-        padding: '2px 10px',
-        borderRadius: 99,
-        fontSize: '0.72rem',
-        fontWeight: 600,
-        background: opt.color + '20',
-        color: opt.color,
-        border: `1px solid ${opt.color}40`,
-      }}
-    >
-      <Icon size={12} strokeWidth={2} />
-      {opt.label}
-    </span>
-  );
-}
 
 export default function AdminOnlineImtihonlar() {
   const { items, loading, error, add, update, remove } =
@@ -62,7 +20,6 @@ export default function AdminOnlineImtihonlar() {
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(EMPTY);
   const [query, setQuery] = useState('');
-  const [filterHolat, setFilterHolat] = useState('Barchasi');
   const [confirmDelete, setConfirmDelete] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState('');
@@ -71,21 +28,14 @@ export default function AdminOnlineImtihonlar() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return items.filter((item) => {
-      const matchHolat =
-        filterHolat === 'Barchasi' || item.holat === filterHolat;
-      const matchQ =
-        !q ||
-        (item.nomi || '').toLowerCase().includes(q) ||
-        (item.tavsif || '').toLowerCase().includes(q);
-      return matchHolat && matchQ;
+      return !q || (item.nomi || '').toLowerCase().includes(q);
     });
-  }, [items, query, filterHolat]);
+  }, [items, query]);
 
   function openNew() {
     setEditing('new');
     setForm({
       ...EMPTY,
-      sana: new Date().toISOString().slice(0, 10),
       sort_order: items.length,
     });
     setFormError('');
@@ -98,13 +48,7 @@ export default function AdminOnlineImtihonlar() {
       nomi: item.nomi || '',
       nomi_ru: item.nomi_ru || '',
       nomi_en: item.nomi_en || '',
-      tavsif: item.tavsif || '',
-      tavsif_ru: item.tavsif_ru || '',
-      tavsif_en: item.tavsif_en || '',
       zoom_link: item.zoom_link || '',
-      sana: item.sana || '',
-      vaqt: item.vaqt || '',
-      holat: item.holat || 'kutilmoqda',
       sort_order: item.sort_order ?? 0,
     });
     setFormError('');
@@ -150,14 +94,9 @@ export default function AdminOnlineImtihonlar() {
       nomi: form.nomi.trim(),
       nomi_ru: form.nomi_ru.trim() || null,
       nomi_en: form.nomi_en.trim() || null,
-      tavsif: form.tavsif.trim() || null,
-      tavsif_ru: form.tavsif_ru.trim() || null,
-      tavsif_en: form.tavsif_en.trim() || null,
       zoom_link: form.zoom_link.trim(),
-      sana: form.sana || null,
-      vaqt: form.vaqt.trim() || null,
-      holat: form.holat,
       sort_order: Number(form.sort_order) || 0,
+      holat: 'faol', // Always active
     };
 
     const res =
@@ -208,20 +147,6 @@ export default function AdminOnlineImtihonlar() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-        </div>
-        <div className="admin-filter-chips">
-          {['Barchasi', ...HOLAT_OPTIONS.map((o) => o.value)].map((h) => (
-            <button
-              key={h}
-              type="button"
-              className={`admin-chip${filterHolat === h ? ' is-active' : ''}`}
-              onClick={() => setFilterHolat(h)}
-            >
-              {h === 'Barchasi'
-                ? 'Barchasi'
-                : HOLAT_OPTIONS.find((o) => o.value === h)?.label || h}
-            </button>
-          ))}
         </div>
       </div>
 
@@ -292,38 +217,6 @@ export default function AdminOnlineImtihonlar() {
                   </label>
                 )}
 
-                {formLang === 'uz' && (
-                  <label className="admin-field admin-field-full">
-                    <span className="admin-field-label">Tavsif (O'zbekcha)</span>
-                    <textarea
-                      rows={3}
-                      value={form.tavsif}
-                      onChange={(e) => setField('tavsif', e.target.value)}
-                      placeholder="Imtihon haqida qo'shimcha ma'lumot…"
-                    />
-                  </label>
-                )}
-                {formLang === 'ru' && (
-                  <label className="admin-field admin-field-full">
-                    <span className="admin-field-label">Описание (Русский)</span>
-                    <textarea
-                      rows={3}
-                      value={form.tavsif_ru}
-                      onChange={(e) => setField('tavsif_ru', e.target.value)}
-                    />
-                  </label>
-                )}
-                {formLang === 'en' && (
-                  <label className="admin-field admin-field-full">
-                    <span className="admin-field-label">Description (English)</span>
-                    <textarea
-                      rows={3}
-                      value={form.tavsif_en}
-                      onChange={(e) => setField('tavsif_en', e.target.value)}
-                    />
-                  </label>
-                )}
-
                 <label className="admin-field admin-field-full">
                   <span className="admin-field-label">
                     Zoom havola <span style={{ color: 'red' }}>*</span>
@@ -334,48 +227,6 @@ export default function AdminOnlineImtihonlar() {
                     onChange={(e) => setField('zoom_link', e.target.value)}
                     placeholder="https://us05web.zoom.us/j/..."
                     required
-                  />
-                </label>
-
-                <label className="admin-field">
-                  <span className="admin-field-label">Sana</span>
-                  <input
-                    type="date"
-                    value={form.sana}
-                    onChange={(e) => setField('sana', e.target.value)}
-                  />
-                </label>
-
-                <label className="admin-field">
-                  <span className="admin-field-label">Vaqt</span>
-                  <input
-                    type="time"
-                    value={form.vaqt}
-                    onChange={(e) => setField('vaqt', e.target.value)}
-                  />
-                </label>
-
-                <label className="admin-field">
-                  <span className="admin-field-label">Holat</span>
-                  <select
-                    value={form.holat}
-                    onChange={(e) => setField('holat', e.target.value)}
-                  >
-                    {HOLAT_OPTIONS.map((o) => (
-                      <option key={o.value} value={o.value}>
-                        {o.label}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-
-                <label className="admin-field">
-                  <span className="admin-field-label">Tartib raqami</span>
-                  <input
-                    type="number"
-                    min={0}
-                    value={form.sort_order}
-                    onChange={(e) => setField('sort_order', e.target.value)}
                   />
                 </label>
 
@@ -456,11 +307,11 @@ export default function AdminOnlineImtihonlar() {
           <Video size={32} strokeWidth={1.4} />
           <h3>Online imtihon topilmadi</h3>
           <p>
-            {query || filterHolat !== 'Barchasi'
+            {query
               ? 'Hech narsa topilmadi'
               : "Hali online imtihon qo'shilmagan"}
           </p>
-          {!query && filterHolat === 'Barchasi' && (
+          {!query && (
             <button type="button" className="admin-btn admin-btn-primary" onClick={openNew}>
               <Plus size={16} /> Birinchi imtihonni qo'shing
             </button>
@@ -473,8 +324,6 @@ export default function AdminOnlineImtihonlar() {
               <tr>
                 <th style={{ width: 60 }}>Tartib</th>
                 <th>Imtihon nomi</th>
-                <th>Sana / Vaqt</th>
-                <th>Holat</th>
                 <th>Zoom havola</th>
                 <th style={{ width: 120, textAlign: 'right' }}>Amallar</th>
               </tr>
@@ -511,35 +360,6 @@ export default function AdminOnlineImtihonlar() {
                     <div className="admin-cell-title">
                       {item.nomi}
                     </div>
-                    {item.tavsif && (
-                      <div className="admin-cell-sub">
-                        {item.tavsif}
-                      </div>
-                    )}
-                  </td>
-                  <td>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                      {item.sana && (
-                        <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '0.83rem', color: '#555' }}>
-                          <Calendar size={13} strokeWidth={1.8} style={{ color: '#888' }} />
-                          {new Date(item.sana).toLocaleDateString('uz-UZ', {
-                            year: 'numeric', month: 'short', day: '2-digit',
-                          })}
-                        </span>
-                      )}
-                      {item.vaqt && (
-                        <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '0.83rem', color: '#555' }}>
-                          <Clock size={13} strokeWidth={1.8} style={{ color: '#888' }} />
-                          {item.vaqt}
-                        </span>
-                      )}
-                      {!item.sana && !item.vaqt && (
-                        <span style={{ color: '#bbb', fontSize: '0.8rem' }}>—</span>
-                      )}
-                    </div>
-                  </td>
-                  <td>
-                    <HolatBadge holat={item.holat} />
                   </td>
                   <td>
                     <a
@@ -553,7 +373,7 @@ export default function AdminOnlineImtihonlar() {
                         fontSize: '0.78rem',
                         color: '#2563eb',
                         textDecoration: 'none',
-                        maxWidth: 160,
+                        maxWidth: 240,
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                         whiteSpace: 'nowrap',
@@ -561,7 +381,7 @@ export default function AdminOnlineImtihonlar() {
                       title={item.zoom_link}
                     >
                       <LinkIcon size={12} />
-                      Zoom
+                      {item.zoom_link}
                     </a>
                   </td>
                   <td style={{ textAlign: 'right' }}>
