@@ -179,6 +179,11 @@ export function buildNavMenu(t) {
             { label: t('nav.items.qabulTalablari'), to: '/qabul-talablari' },
             { label: t('nav.items.callCenter'), to: '/call-center' },
             { label: t('nav.items.qabulKvotasi'), to: '/qabul-kvotasi' },
+          ],
+        },
+        {
+          heading: t('nav.headings.exams'),
+          links: [
             { label: t('nav.items.imtihonNatijalari'), to: '/imtihon-natijalari' },
             { label: t('nav.items.imtihonJadvali'), to: '/imtihon-jadvali' },
             { label: t('nav.items.onlineImtihonKuzatish'), to: '/online-imtihonlar' },

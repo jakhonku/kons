@@ -40,6 +40,7 @@ export default {
       events: 'Tadbirlar',
       education: 'Taʼlim',
       admissionProcess: 'Qabul jarayoni',
+      exams: 'Imtihonlar',
       partnership: 'Hamkorlik',
       programs: 'Dasturlar',
       news: 'Yangiliklar',
