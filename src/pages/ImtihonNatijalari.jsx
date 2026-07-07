@@ -71,9 +71,9 @@ const DOCUMENTS = [
   {
     id: 'chang',
     urls: {
-      uz: '/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_chang.pdf',
-      ru: '/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_chang.pdf',
-      en: '/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_chang.pdf',
+      uz: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_chang.pdf',
+      ru: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_chang.pdf',
+      en: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_chang.pdf',
     },
     title: {
       uz: 'Cholgʻu ijrochiligi: Xalq cholgʻulari (Chang)',
@@ -89,9 +89,9 @@ const DOCUMENTS = [
   {
     id: 'nay_koshnay_bayan_akardeon',
     urls: {
-      uz: '/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_nay_koshnay_bayan_akardeon.pdf',
-      ru: '/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_nay_koshnay_bayan_akardeon.pdf',
-      en: '/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_nay_koshnay_bayan_akardeon.pdf',
+      uz: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_nay_koshnay_bayan_akardeon.pdf',
+      ru: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_nay_koshnay_bayan_akardeon.pdf',
+      en: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_xalq_cholgulari_nay_koshnay_bayan_akardeon.pdf',
     },
     title: {
       uz: 'Cholgʻu ijrochiligi: Xalq cholgʻulari (Nay, Qoʻshnay, Bayan, Akkordeon)',
@@ -107,9 +107,9 @@ const DOCUMENTS = [
   {
     id: 'skripka_alt_ozbek',
     urls: {
-      uz: '/imtihon-natijalari/cholgu_ijrochiligi_torli_cholgular_skripka_alt_ozbek.pdf',
-      ru: '/imtihon-natijalari/cholgu_ijrochiligi_torli_cholgular_skripka_alt_ozbek.pdf',
-      en: '/imtihon-natijalari/cholgu_ijrochiligi_torli_cholgular_skripka_alt_ozbek.pdf',
+      uz: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_torli_cholgular_skripka_alt_ozbek.pdf',
+      ru: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_torli_cholgular_skripka_alt_ozbek.pdf',
+      en: '/pdf/imtihon-natijalari/cholgu_ijrochiligi_torli_cholgular_skripka_alt_ozbek.pdf',
     },
     title: {
       uz: 'Cholgʻu ijrochiligi: Torli cholgʻular (Skripka, Alt) (Oʻzbek)',
