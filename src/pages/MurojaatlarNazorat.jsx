@@ -38,7 +38,6 @@ export default function MurojaatlarNazorat() {
         },
       ]}
       head={{
-        photo: '/bolimlar/saidakbarxodjayeva-nigora.jpeg',
         name: 'Saidakbarxodjayeva Nigora Raxmatillayevna',
         position: 'Boʻlim boshligʻi',
       }}

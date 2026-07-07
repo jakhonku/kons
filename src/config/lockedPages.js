@@ -20,6 +20,7 @@ const OPEN_EXACT = new Set([
   '/taqvim',               // Afisha — tadbirlar taqvimi
   '/qabul-talablari',      // Qabul — qabul dasturlari va baholash mezonlari (PDF)
   '/imtihon-jadvali',      // Qabul — imtihon jadvali (PDF)
+  '/imtihon-natijalari',   // Qabul — imtihon natijalari (PDF)
   '/online-imtihonlar',     // Qabul — online imtihon kuzatish (Zoom)
   '/call-center',          // Qabul — «Call-center» (aloqa maʼlumotlari)
   '/qabul-kvotasi',        // Qabul — qabul kvotasi
