@@ -18,6 +18,7 @@ import AdminMessages from './pages/admin/AdminMessages';
 import AdminOnlineImtihonlar from './pages/admin/AdminOnlineImtihonlar';
 import AdminGallery from './pages/admin/AdminGallery';
 import AdminVideos from './pages/admin/AdminVideos';
+import AdminImtihonNatijalari from './pages/admin/AdminImtihonNatijalari';
 
 // Pages
 import Home from './pages/Home';
@@ -128,6 +129,7 @@ export default function App() {
           <Route path="ticker" element={<AdminTicker />} />
           <Route path="telegram" element={<AdminTelegram />} />
           <Route path="online-imtihonlar" element={<AdminOnlineImtihonlar />} />
+          <Route path="imtihon-natijalari" element={<AdminImtihonNatijalari />} />
           <Route path="messages" element={<AdminMessages />} />
         </Route>
 

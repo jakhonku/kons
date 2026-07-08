@@ -130,4 +130,14 @@ export function useAdminOnlineImtihonlar() {
   return useTable('online_imtihonlar', IMTIHON_ORDER);
 }
 
+const NATIJALARI_ORDER = {
+  column: 'sana',
+  ascending: false,
+  secondary: { column: 'sort_order', ascending: true },
+};
+
+export function useAdminImtihonNatijalari() {
+  return useTable('imtihon_natijalari', NATIJALARI_ORDER);
+}
+
 export { uploadImage };

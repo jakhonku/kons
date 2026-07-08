@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Newspaper, Image as ImageIcon, Images, Video as VideoIcon, Plus, ArrowRight, Calendar, Radio, MonitorPlay } from 'lucide-react';
-import { useAdminNews, useAdminPosters, useAdminTicker, useAdminGallery, useAdminVideos, useAdminOnlineImtihonlar } from '../../hooks/useAdminStorage';
+import { Newspaper, Image as ImageIcon, Images, Video as VideoIcon, Plus, ArrowRight, Calendar, Radio, MonitorPlay, FileText } from 'lucide-react';
+import { useAdminNews, useAdminPosters, useAdminTicker, useAdminGallery, useAdminVideos, useAdminOnlineImtihonlar, useAdminImtihonNatijalari } from '../../hooks/useAdminStorage';
 
 function formatDate(value) {
   if (!value) return '—';
@@ -21,6 +21,7 @@ export default function AdminDashboard() {
   const { items: albums } = useAdminGallery();
   const { items: videos } = useAdminVideos();
   const { items: onlineImtihonlar } = useAdminOnlineImtihonlar();
+  const { items: imtihonNatijalari } = useAdminImtihonNatijalari();
 
   const featuredCount = news.filter((n) => n.featured).length;
   const upcoming = posters
@@ -80,6 +81,11 @@ export default function AdminDashboard() {
           <div className="admin-stat-num">{onlineImtihonlar.filter(x => x.holat === 'faol').length}</div>
           <div className="admin-stat-label">Faol online imtihon</div>
         </div>
+        <div className="admin-stat">
+          <div className="admin-stat-icon"><FileText size={20} strokeWidth={1.6} /></div>
+          <div className="admin-stat-num">{imtihonNatijalari.length}</div>
+          <div className="admin-stat-label">Imtihon natijalari</div>
+        </div>
       </div>
 
       <div className="admin-quick-grid">
@@ -122,6 +128,13 @@ export default function AdminDashboard() {
           <div className="admin-quick-card-icon"><MonitorPlay size={20} strokeWidth={1.7} /></div>
           <h3>Online imtihonlar</h3>
           <p>Zoom havolalarini boshqarish ({onlineImtihonlar.length} ta)</p>
+          <span className="admin-quick-card-cta">Ochish <ArrowRight size={14} /></span>
+        </Link>
+
+        <Link to="/admin/imtihon-natijalari" className="admin-quick-card">
+          <div className="admin-quick-card-icon"><FileText size={20} strokeWidth={1.7} /></div>
+          <h3>Imtihon natijalari</h3>
+          <p>Natija fayllarini (PDF) yuklash va boshqarish ({imtihonNatijalari.length} ta)</p>
           <span className="admin-quick-card-cta">Ochish <ArrowRight size={14} /></span>
         </Link>
       </div>
